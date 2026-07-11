@@ -82,8 +82,9 @@ def run_s1(
     use_bm25: bool = False,
     max_workers: int = 1,
     on_complete: Callable[[str, Forecast, list[dict]], None] | None = None,
+    forecast_cache: dict[str, list[Forecast]] | None = None,
 ) -> tuple[list[tuple[str, Forecast]], list[dict]]:
-    """Multi agent, independent; aggregate forecasts. Returns (results, detail_records)."""
+    """Multi agent, independent; optionally cache agent forecasts for S2 round 0."""
     results = []
     detail_records = []
 
@@ -109,6 +110,9 @@ def run_s1(
             })
         agg = aggregator.aggregate(forecasts, evidence_sets=agent_evidence,
                                    resolution_date=ex.resolution_date)
+        if forecast_cache is not None:
+            with _write_lock:
+                forecast_cache[ex.qid] = list(forecasts)
         return ex.qid, agg, local_details
 
     if max_workers <= 1:
@@ -164,8 +168,9 @@ def run_s2(
     max_workers: int = 1,
     on_complete: Callable[[str, Forecast, list[dict]], None] | None = None,
     show_rationale: bool = True,
+    initial_forecasts_by_qid: dict[str, list[Forecast]] | None = None,
 ) -> tuple[list[tuple[str, Forecast]], list[dict]]:
-    """Multi agent, iterative; history_summary each round; aggregate final. Returns (results, detail_records)."""
+    """Multi agent deliberation, optionally reusing S1 forecasts as round 0."""
     results = []
     detail_records = []
 
@@ -181,18 +186,31 @@ def run_s2(
             for i in range(num_agents)
         ]
         local_details = []
+        reusable = (initial_forecasts_by_qid or {}).get(ex.qid)
+        if reusable is not None and len(reusable) != num_agents:
+            logger.warning(
+                "S2 qid=%s cannot reuse S1: expected %d forecasts, got %d",
+                ex.qid, num_agents, len(reusable),
+            )
+            reusable = None
         for round_id in range(num_rounds):
-            forecasts = []
-            for i in range(num_agents):
-                agent = agent_factory(i)
-                priv = sp["private_map"].get(i, [])
-                f = agent.predict(ex.qid, ex.question, sp["public_evidence"], priv, history)
-                forecasts.append(f)
-                logger.info("S2 qid=%s round=%d agent_id=%d p_yes=%.3f label=%s", ex.qid, round_id + 1, i, f.p_yes, f.label)
+            if round_id == 0 and reusable is not None:
+                forecasts = list(reusable)
+                logger.info("S2 qid=%s round=1 reused %d S1 forecasts", ex.qid, len(forecasts))
+            else:
+                forecasts = []
+                for i in range(num_agents):
+                    agent = agent_factory(i)
+                    priv = sp["private_map"].get(i, [])
+                    f = agent.predict(ex.qid, ex.question, sp["public_evidence"], priv, history)
+                    forecasts.append(f)
+                    logger.info("S2 qid=%s round=%d agent_id=%d p_yes=%.3f label=%s", ex.qid, round_id + 1, i, f.p_yes, f.label)
+            for i, f in enumerate(forecasts):
                 local_details.append({
                     "qid": ex.qid, "scenario": "s2", "agent_id": i, "round_id": round_id,
                     "p_yes": f.p_yes, "label": f.label,
                     "rationale": f.rationale, "evidence_used": f.evidence_used,
+                    "reused_from_s1": round_id == 0 and reusable is not None,
                 })
             if round_id == 0:
                 round1_forecasts = list(forecasts)

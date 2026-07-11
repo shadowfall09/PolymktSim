@@ -5,7 +5,17 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import (
+    APIConnectionError,
+    APIStatusError,
+    APITimeoutError,
+    AuthenticationError,
+    BadRequestError,
+    InternalServerError,
+    OpenAI,
+    PermissionDeniedError,
+    RateLimitError,
+)
 
 load_dotenv()
 
@@ -126,21 +136,73 @@ class LLMAgent(BaseAgent):
         self.total_completion_tokens = 0
         self.total_cost_usd = 0.0
         self._client = OpenAI(
-            api_key=api_key or os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("OPENROUTER_API_KEY") or os.environ.get("OPENAI_API_KEY", ""),
+            api_key=(
+                api_key
+                or os.environ.get("CMU_API_KEY")
+                or os.environ.get("ANTHROPIC_AUTH_TOKEN")
+                or os.environ.get("OPENROUTER_API_KEY")
+                or os.environ.get("OPENAI_API_KEY", "")
+            ),
             base_url=self.base_url,
         )
 
-    def _call_api(self, messages: list[dict], _retries: int = 3) -> tuple[str, dict]:
-        """Returns (content, usage_dict). Retries up to _retries times on empty/None response."""
+    def _call_api(self, messages: list[dict], _retries: int = 5) -> tuple[str, dict]:
+        """Call the LLM with exponential-backoff retries for transient failures."""
         import time
         last_err = None
+        content = None
         for attempt in range(_retries):
-            r = self._client.chat.completions.create(
-                model=self.model_name,
-                messages=messages,
-                temperature=self.temperature,
-                max_completion_tokens=self.max_tokens,
-            )
+            try:
+                r = self._client.chat.completions.create(
+                    model=self.model_name,
+                    messages=messages,
+                    temperature=self.temperature,
+                    max_completion_tokens=self.max_tokens,
+                )
+            except (AuthenticationError, PermissionDeniedError) as exc:
+                # Some gateway deployments briefly return 401/403 while their
+                # credential/tag routing is being refreshed. Retry a bounded
+                # number of times, then surface a configuration-focused error.
+                last_err = f"attempt {attempt + 1}/{_retries}: {type(exc).__name__}: {exc}"
+                if attempt == _retries - 1:
+                    raise RuntimeError(
+                        f"LLM authorization remained unavailable after {_retries} attempts for "
+                        f"model={self.model_name!r} at {self.base_url!r}. Check the API key, model "
+                        f"name, and gateway tag permissions. Last error: {last_err}"
+                    ) from exc
+                delay = min(2 ** attempt, 16)
+                logger.warning(
+                    "model=%s authorization/configuration error; retrying in %ss: %s",
+                    self.model_name, delay, last_err,
+                )
+                time.sleep(delay)
+                continue
+            except BadRequestError as exc:
+                raise RuntimeError(
+                    f"LLM request was rejected for model={self.model_name!r}; this error is not retryable. "
+                    f"Original error: {exc}"
+                ) from exc
+            except (RateLimitError, APITimeoutError, APIConnectionError, InternalServerError) as exc:
+                last_err = f"attempt {attempt + 1}/{_retries}: {type(exc).__name__}: {exc}"
+                if attempt == _retries - 1:
+                    break
+                delay = min(2 ** attempt, 16)
+                logger.warning("model=%s transient API failure; retrying in %ss: %s", self.model_name, delay, last_err)
+                time.sleep(delay)
+                continue
+            except APIStatusError as exc:
+                # Other 5xx responses are transient; other 4xx responses are configuration/input errors.
+                if (exc.status_code or 0) >= 500:
+                    last_err = f"attempt {attempt + 1}/{_retries}: HTTP {exc.status_code}: {exc}"
+                    if attempt == _retries - 1:
+                        break
+                    delay = min(2 ** attempt, 16)
+                    logger.warning("model=%s server error; retrying in %ss: %s", self.model_name, delay, last_err)
+                    time.sleep(delay)
+                    continue
+                raise RuntimeError(
+                    f"LLM request failed with non-retryable HTTP {exc.status_code} for model={self.model_name!r}: {exc}"
+                ) from exc
             # Extract content — some models return None content (e.g. mid-stream failures)
             content = None
             if r.choices:
@@ -155,9 +217,11 @@ class LLMAgent(BaseAgent):
             last_err = f"attempt {attempt+1}: empty response — {r.model_dump()}"
             logger.warning("qid=? model=%s %s", self.model_name, last_err)
             if attempt < _retries - 1:
-                time.sleep(2 ** attempt)
-        else:
-            raise RuntimeError(f"API returned no content after {_retries} retries. Last: {last_err}")
+                time.sleep(min(2 ** attempt, 16))
+        if not content:
+            if last_err and "empty response" not in last_err:
+                raise RuntimeError(f"LLM transient API failures persisted after {_retries} attempts. Last: {last_err}")
+            raise RuntimeError(f"API returned no content after {_retries} attempts. Last: {last_err}")
         usage = {}
         if r.usage:
             pt = getattr(r.usage, "prompt_tokens", 0) or 0

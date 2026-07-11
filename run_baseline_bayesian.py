@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from src.agents.llm_agent import LLMAgent, _parse_forecast
 from src.agents.prompts import format_evidence
 from src.data.schema import EvidenceItem, Forecast
+from src.data.baseline_loader import load_processed_baseline_questions
 from src.evaluation.metrics import brier_score
 from src.utils.logger import setup_logging
 
@@ -142,6 +143,8 @@ def main():
     ap.add_argument("--k", type=int, default=5, help="Number of evidence items to process sequentially")
     ap.add_argument("--max-workers", type=int, default=15)
     ap.add_argument("--output", type=str, default=None)
+    ap.add_argument("--dataset-jsonl", type=str, default=None,
+                    help="Processed JSONL with embedded evidence; bypasses legacy CSV/cache loading")
     args = ap.parse_args()
 
     setup_logging()
@@ -151,8 +154,9 @@ def main():
     if out_path.exists():
         out_path.unlink()
 
-    questions = load_questions()
-    print(f"Loaded {len(questions)} questions")
+    questions = (load_processed_baseline_questions(args.dataset_jsonl)
+                 if args.dataset_jsonl else load_questions())
+    print(f"Loaded {len(questions)} questions from {args.dataset_jsonl or 'legacy CSV/cache'}")
     print(f"Sequential Bayesian Update: K={args.k}, workers={args.max_workers}")
     print(f"Output: {out_path}\n")
 

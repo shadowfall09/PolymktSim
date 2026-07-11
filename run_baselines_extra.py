@@ -26,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from src.agents.llm_agent import LLMAgent, _parse_forecast, _fallback_forecast
 from src.agents.prompts import format_evidence, OUTPUT_INSTRUCTIONS
 from src.data.schema import EvidenceItem, Forecast
+from src.data.baseline_loader import load_processed_baseline_questions
 from src.evaluation.metrics import brier_score
 from src.utils.logger import setup_logging
 
@@ -566,11 +567,15 @@ if __name__ == "__main__":
                        help="Number of agents for crowd-ensemble (default: 5)")
     parser.add_argument("--output", type=str, default=None,
                        help="Custom output path")
+    parser.add_argument("--dataset-jsonl", type=str, default=None,
+                        help="Processed JSONL with embedded evidence; bypasses legacy CSV/cache loading")
     args = parser.parse_args()
 
     setup_logging()
-    questions = load_questions()
-    print(f"Loaded {len(questions)} questions (temporal filter applied)")
+    questions = (load_processed_baseline_questions(args.dataset_jsonl)
+                 if args.dataset_jsonl else load_questions())
+    source = args.dataset_jsonl or "legacy CSV/cache (temporal filter applied)"
+    print(f"Loaded {len(questions)} questions from {source}")
 
     if args.baseline in ("superforecaster", "all"):
         run_superforecaster(questions, max_workers=args.max_workers, out_path=args.output)

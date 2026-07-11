@@ -463,6 +463,10 @@ def main():
     run_s2_ = args.scenario in ("s2", "all", "s1s2")
 
     detail_path = out_path.with_name(out_path.stem + "_detail.jsonl")
+    # When S1 and S2 run together with the same routing configuration, S2's
+    # first round is identical to S1's independent-agent round. Cache those
+    # forecasts so S2 can deliberate from them without repeating API calls.
+    s1_forecast_cache: dict[str, list[Forecast]] = {}
 
     # Streaming write callback: writes each question's result immediately (thread-safe)
     def _make_on_complete(scenario: str):
@@ -513,7 +517,8 @@ def main():
                                   public_ratio=args.public_ratio,
                                   use_bm25=args.bm25,
                                   max_workers=args.max_workers,
-                                  on_complete=_make_on_complete("s1"))
+                                  on_complete=_make_on_complete("s1"),
+                                  forecast_cache=s1_forecast_cache if run_s2_ else None)
         print_eval(results, outcome_map, "S1")
         print()
 
@@ -529,7 +534,8 @@ def main():
                                   herding_threshold=args.herding_threshold,
                                   max_workers=args.max_workers,
                                   on_complete=_make_on_complete("s2"),
-                                  show_rationale=not args.no_rationale_sharing)
+                                  show_rationale=not args.no_rationale_sharing,
+                                  initial_forecasts_by_qid=s1_forecast_cache if run_s1_ else None)
         print_eval(results, outcome_map, "S2")
         print()
 

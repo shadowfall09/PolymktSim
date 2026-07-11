@@ -51,6 +51,10 @@ After each round, agents receive a *history summary* containing every other agen
 Final forecast aggregates the last-round predictions.
 Instantiates a structured Delphi process adapted for LLMs.
 
+When S1 and S2 are requested together (`--scenario s1s2` or `all`), S2 reuses
+the per-agent S1 forecasts as round 0 because the evidence routing and initial
+prompt are identical. Only the subsequent deliberation rounds make new API calls.
+
 ### 3. Evidence Routing
 
 **Random split (default)**

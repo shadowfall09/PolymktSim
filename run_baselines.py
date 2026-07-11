@@ -26,6 +26,7 @@ from src.agents.prompts import (
     format_evidence,
 )
 from src.data.schema import EvidenceItem, Forecast
+from src.data.baseline_loader import load_processed_baseline_questions
 from src.evaluation.metrics import brier_score, log_loss, accuracy
 from src.utils.logger import setup_logging
 
@@ -233,13 +234,17 @@ def main():
     ap.add_argument("--max-workers", type=int, default=15)
     ap.add_argument("--num-samples", type=int, default=3, help="Number of samples for self-consistency")
     ap.add_argument("--output-dir", type=str, default="data/results")
+    ap.add_argument("--dataset-jsonl", type=str, default=None,
+                    help="Processed JSONL with embedded evidence; bypasses legacy CSV/cache loading")
     args = ap.parse_args()
 
     setup_logging()
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    questions = load_questions()
-    print(f"Loaded {len(questions)} questions (after temporal filter)\n")
+    questions = (load_processed_baseline_questions(args.dataset_jsonl)
+                 if args.dataset_jsonl else load_questions())
+    source = args.dataset_jsonl or "legacy CSV/cache (after temporal filter)"
+    print(f"Loaded {len(questions)} questions from {source}\n")
 
     if args.baseline in ("zeroshot", "all"):
         out = Path(args.output_dir) / "baseline_zeroshot.jsonl"
