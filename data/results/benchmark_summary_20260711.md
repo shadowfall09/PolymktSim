@@ -7,7 +7,8 @@ dataset column for that metric; ties are both bold.
 |---|---:|---:|---:|---:|---:|
 | PolyMarket 375 | 0.2284 / 58.13% | **0.2171** / 60.00% | 0.2298 / 59.20% | 0.2191 / **60.27%** | 0.2279 / **60.27%** |
 | FutureX 231 | 0.2611 / 60.61% | **0.2433** / 60.17% | 0.2735 / 56.71% | 0.2495 / **61.04%** | 0.2944 / 54.55% |
-| ForecastBench 233 | 0.1945 / 67.38% | **0.1771** / **72.53%** | 0.1821 / 69.96% | 0.1829 / 69.53% | 0.1798 / 71.24% |
+| ForecastBench 233 | 0.1945 / 67.38% | **0.1771** / **72.53%** | 0.1831 / 69.96% | 0.1827 / 70.39% | 0.1798 / 71.24% |
+| Average (macro, 3 datasets) | 0.2280 / 62.04% | **0.2125** / **64.23%** | 0.2288 / 61.96% | 0.2171 / 63.90% | 0.2340 / 62.02% |
 
 ## Canonical result files
 
@@ -18,3 +19,5 @@ dataset column for that metric; ties are both bold.
 | ForecastBench 233 | `forecastbench_cot.jsonl` | `forecastbench_standard_debate.jsonl` | `forecastbench_infodelphi.jsonl` | `forecastbench_moa.jsonl` |
 
 The two renamed InfoDelphi files retain matching `_detail.jsonl` companions.
+For ForecastBench, `forecastbench_infodelphi.jsonl` is the rerun; the
+superseded file is retained as `forecastbench_infodelphi_previous.jsonl`.
