@@ -1,0 +1,305 @@
+{
+  "row_index": 128,
+  "market_id": "678511",
+  "slug": "bitcoin-above-92k-on-november-19",
+  "question": "Will the price of Bitcoin be above $92,000 on November 19?",
+  "event_title": "Bitcoin above ___ on November 19?",
+  "end_date_limit": "2025-11-19",
+  "row_end_date_raw": "2025-11-19",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+    "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+    "November 19 2026 12:00 PM ET to UTC conversion"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2026-01.zip, 1.8 MB, 2026-02-02T10:20:24.000Z ; BTCUSDT-1m-2025-12.zip.CHECKSUM, 0.1 kB, 2026-01-02T10:44:36.000Z ; BTCUSDT-1m-2025-12.zip, 1.8 MB",
+      "score": 0.9996594,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/spot/monthly/klines/BTCUSDT/1m/",
+      "content": "Home / data / spot / monthly / klines / BTCUSDT / 1m /. Item, Size, Last Modified ../ · BTCUSDT-1m-2026-02.zip.CHECKSUM, 0.1 kB, 2026-03-02T07:22:17.000Z.",
+      "score": 0.9995592,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/daily/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2025-12-31.zip, 58.6 kB, 2026-01-01T08:33:53.000Z ; BTCUSDT-1m-2025-12-30.zip.CHECKSUM, 0.1 kB, 2025-12-31T09:42:18.000Z ; BTCUSDT-1m-2025-12-30.zip",
+      "score": 0.99861145,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "btcusdt - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/spot/monthly/trades/BTCUSDT/",
+      "content": "BTCUSDT-trades-2026-01.zip, 826.3 MB, 2026-02-02T06:16:57.000Z ; BTCUSDT-trades-2025-12.zip.CHECKSUM, 0.1 kB, 2026-01-05T08:36:46.000Z ; BTCUSDT-trades-2025-12.",
+      "score": 0.9982039,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "Open time: The timestamp for when the interval began. Open: The price of Bitcoin at the beginning of the interval. High: The highest price during the interval. Low: The lowest price during the interval. Close: The price of Bitcoin at the end of the interval. Volume: The trading volume during the interval. Close time: The timestamp for when the interval closed. Quote asset volume: The total quote asset volume traded during the interval. Number of trades: The number of trades executed within the interval. Taker buy base asset volume: The volume of the base asset bought by takers. Taker buy quote asset volume: The volume of the quote asset spent by takers. Ignore: A placeholder column from Binance API, not used in analysis. ## Data Sources [...] ## Dataset Overview This dataset contains historical price data for Bitcoin (BTC/USDT) from January 1, 2018, to the present. The data is sourced using the Binance API, providing granular candlestick data in four timeframes: 15-minute (15M) 1-hour (1H) 4-hour (4H) 1-day (1D) This dataset includes the following fields for each timeframe: [...] 2018-02-18 11039.55 11274.0 10080.0 10383.43 61137.380728 2018-02-18 23:59:59.999 649423311.3100228...",
+      "score": 0.9976769,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "Optimus Prime's user avatar ## 1 Answer 1 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: `binance.vision` Here's a sample bash script that downloads and unpacks the raw data for the whole month: `#!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: `.csv` [...] `.csv` | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line `BTCUSDT-1s-2023-07-01.csv` `1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0` enab...",
+      "score": 0.99722075,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Parameters: : symbol (str) – Name of symbol pair e.g. BNBBTC interval (str) – Binance Kline interval start\\_str (str|int) – Start date string in UTC format or timestamp in milliseconds end\\_str (str|int) – optional - end date string in UTC format or timestamp in milliseconds (default will fetch everything up to now) limit (int) – Default None (fetches full range in batches of max 1000 per request). To limit the number of rows, pass an integer. Returns: : list of OHLCV values (Open time, Open, High, Low, Close, Volume, Close time, Quote asset volume, Number of trades, Taker buy base asset volume, Taker buy quote asset volume, Ignore) [...] Parameters: : symbol (str) – Name of symbol pair e.g. BNBBTC interval (str) – Binance Kline interval start\\_str (str|int) – Start date string in UTC format or timestamp in milliseconds end\\_str (str|int) – optional - end date string in UTC format or timestamp in milliseconds (default will fetch everything up to now) limit (int) – Default None (fetches full range in batches of max 1000 per request). To limit the number of rows, pass an integer. Returns: : list of OHLCV values (Open time, Open, High, Low, Close, Volume, Close time, Quote asset vo...",
+      "score": 0.99632156,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 0.00767 550.091172 71,719.71 0.00008 5.737576 B 96.13% 3.86% S Chart Info Trading Data Square Image 3: ai-insight Time 1s 15m 1H 4H 1D 1W Original Trading View Depth 2026/03/25 Open 70,556.74 High 72,026.09 Low 70,408.00 Close 71,726.07 CHANGE 1.65%Range 2.29% Image 4: img # BTC/USDT Bitcoin Price 71,711.17 $ 71,711.17 24h Chg 597.86 +0.84% 24h High 72,026.09 24h Low 68,923.07 24h Vol(BTC) 20,935.17 24h Vol(USDT) 1,474,832,511.37 Networks BTC (5) Token Tags POW Payments Vol Hot Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount BTC TP/SL Avbl - USDT Max Buy -- BTC Log In Price USDT BBO Amount BTC TP/SL Avbl [...] Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.04008 12:01:02 71,720...",
+      "score": 0.98201376,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| Item | Size | Last Modified | --- | ../ | | | | BTCUSDT-1h-2026-02.zip.CHECKSUM | 0.1 kB | 2026-03-02T09:14:26.000Z | | BTCUSDT-1h-2026-02.zip | 34.3 kB | 2026-03-02T09:14:25.000Z | | BTCUSDT-1h-2026-01.zip.CHECKSUM | 0.1 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2026-01.zip | 37.3 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2025-12.zip.CHECKSUM | 0.1 kB | 2026-01-02T10:44:36.000Z | | BTCUSDT-1h-2025-12.zip | 37.3 kB | 2026-01-02T10:44:36.000Z | | BTCUSDT-1h-2025-11.zip.CHECKSUM | 0.1 kB | 2025-12-02T09:35:27.000Z | | BTCUSDT-1h-2025-11.zip | 36.7 kB | 2025-12-02T09:35:27.000Z | | BTCUSDT-1h-2025-10.zip.CHECKSUM | 0.1 kB | 2025-11-02T09:50:43.000Z | | BTCUSDT-1h-2025-10.zip | 38.0 kB | 2025-11-02T09:50:43.000Z | [...] # Binance Data Collection Image 1Market Data []( Home / data / futures / um / monthly / klines / BTCUSDT / 1h / []( [...] | BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z...",
+      "score": 0.98159516,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D 1W Last Price Original Trading View Depth Order Book 0.1 Price (USDT) Size(BTC) Sum(BTC) 71,047.5 71,051.1 Trades Top Movers Price (USDT) Amount(BTC) Time 71,047.5 0.006 20:40:48 Positions(0) Open Orders(0) Order History Trade History Transaction History Position History Bots Assets [...] Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide servic...",
+      "score": 0.95791227,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "search_index": 1
+    },
+    {
+      "title": "EST to UTC Converter - FreeConvert.com",
+      "url": "https://www.freeconvert.com/time/est-to-utc",
+      "content": "English English Deutsch Español Français Português Italiano Dutch 日本語 简体中文 한국어 Svenska Türkçe Bahasa Indonesia Polish © FreeConvert.com v2.30 All rights reserved (2026) Report a Bug [...] MP3 Converter MP4 to MP3 Video to MP3 Audio Converter Image Converter JPG to PDF PDF to JPG HEIC to JPG Image to PDF Image Converter Document & Ebook PDF to WORD EPUB to PDF EPUB to MOBI Document Converter Archive & Time RAR to Zip PST to EST CST to EST Archive Converter Unit Converter Lbs to Kg Kg to Lbs Feet to Meters Unit Converter Web Apps Collage Maker Image Resizer Crop Image Color Picker Mobile Apps Collage Maker Android Collage Maker iOS Image Converter Android Image Converter iOS About Us Donate Privacy Terms Security and Compliance About Us Donate Privacy Terms Security and Compliance Contact Status Logo © FreeConvert.com v2.30 All rights reserved (2026) English [...] Others ▼ Unit Converter Time Converter Archive Converter Compress ▼ Video & Audio ▼ Video Compressor MP3 Compressor WAV Compressor Image ▼ Image Compressor JPEG Compressor PNG Compressor PDF & Documents ▼ PDF Compressor GIF ▼ GIF Compressor Tools ▼ Video Tools ▼ Crop Video Trim Video Image Tools ▼ GIF Maker Resize Image...",
+      "score": 0.6601948,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC Converter",
+      "url": "https://www.worldtimebuddy.com/edt-to-utc-converter",
+      "content": "| Eastern Daylight Time (EDT) to Universal Time (UTC) | | | --- | 12 pm EDT | is | 4 pm UTC | | 1 pm EDT | is | 5 pm UTC | | 2 pm EDT | is | 6 pm UTC | | 3 pm EDT | is | 7 pm UTC | | 4 pm EDT | is | 8 pm UTC | | 5 pm EDT | is | 9 pm UTC | | 6 pm EDT | is | 10 pm UTC | | 7 pm EDT | is | 11 pm UTC | | 8 pm EDT | is | 12 am UTC | | 9 pm EDT | is | 1 am UTC | | 10 pm EDT | is | 2 am UTC | | 11 pm EDT | is | 3 am UTC | [...] EDT stands for Eastern Daylight Time. UTC is known as Universal Time. UTC is 4 hours ahead of EDT. So, when it is 12:00 am EDT1:00 am EDT2:00 am EDT3:00 am EDT4:00 am EDT5:00 am EDT6:00 am EDT7:00 am EDT8:00 am EDT9:00 am EDT10:00 am EDT11:00 am EDT12:00 pm EDT1:00 pm EDT2:00 pm EDT3:00 pm EDT4:00 pm EDT5:00 pm EDT6:00 pm EDT7:00 pm EDT8:00 pm EDT9:00 pm EDT10:00 pm EDT11:00 pm EDT it will be 4:00 am UTC5:00 am UTC6:00 am UTC7:00 am UTC8:00 am UTC9:00 am UTC10:00 am UTC11:00 am UTC12:00 pm UTC1:00 pm UTC2:00 pm UTC3:00 pm UTC4:00 pm UTC5:00 pm UTC6:00 pm UTC7:00 pm UTC8:00 pm UTC9:00 pm UTC10:00 pm UTC11:00 pm UTC12:00 am UTC1:00 am UTC2:00 am UTC3:00 am UTC Other conversions: EDT to Hong Kong Time, EDT to Melbourne Time, EDT to Copenhagen Time, EDT to Austin Tim...",
+      "score": 0.6301622,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC Converter - Time.now",
+      "url": "https://time.now/tool/et-to-utc-converter/",
+      "content": "EDT 9:00 AM → UTC 1:00 PM EDT 5:00 PM → UTC 9:00 PM 4-hour difference during summer International Coordination EST Midnight → UTC 5:00 AM EDT Midnight → UTC 4:00 AM UTC used for global scheduling Technical Applications Server logs → UTC timestamps API calls → UTC standards UTC preferred for technical systems #### Conversion Tips & Best Practices • Add 5 hours to EST (winter) or 4 hours to EDT (summer) to get UTC • UTC is the preferred standard for international business, aviation, and technical applications • UTC is also known as \"Zulu Time\" in military and aviation contexts • For practical purposes, UTC and GMT are the same, though UTC is the modern standard • Always use 24-hour format when expressing UTC time (no AM/PM) [...] Time Difference: UTC is 5 hours ahead of EST (winter) and 4 hours ahead of EDT (summer). The difference changes twice yearly with daylight saving transitions. #### Daylight Saving Time Impact Winter Period (EST): From first Sunday in November to second Sunday in March, ET is UTC-5, making UTC 5 hours ahead Summer Period (EDT): From second Sunday in March to first Sunday in November, ET is UTC-4, making UTC 4 hours ahead UTC Stability: UTC never changes an...",
+      "score": 0.58777803,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC Converter - Savvy Time World Clock",
+      "url": "https://savvytime.com/converter/et-to-utc",
+      "content": "| 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | | 23:00 | 3:00 | [...] savvy time logo ##### Savvy Time World Clock Home Converter ET to UTC | # ET to UTC Converter Swap Order to UTC to ET Share Converter ET/EDT Eastern Time GMT -4 UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 12:30 am00:30 in EDT is 4:30 am04:30 in UTC EDT to UTC call time Best time for a conference call or a meeting is between 9am-1pm in EDT which corresponds to 1pm-5pm in UTC 12:30 am00:30 Eastern Daylight Time (EDT). Offset UTC -4:00 hours 4:30 am04:30 Universal Time Coordinated (UTC). Offset UTC 0:00 hours 12:30 am00:30 EDT / 4:30 am04:30 UTC [...] Coordinated Universal Time (UTC) is the world time standard that regulates clocks and time. It is successor to Greenwich Mean Time (GMT). For casual use, UTC is the same as GMT, but is used by the scientific community. UTC is the time standard commonly used across the world since 1972. It is used in many technical fields, like aviation industry and meteorologists, also used to synchronize time across internet networks. ### UTC representations, usage and related time zones W3C/ISO-860...",
+      "score": 0.56690645,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - Savvy Time",
+      "url": "https://savvytime.com/converter/est-to-utc",
+      "content": "| 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | | 23:00 | 3:00 | [...] Time zones with the GMT -5 offset: CDT - Central Daylight Time EST - Eastern Standard Time ET - Eastern Time COT - Colombia Time CST - Cuba Standard Time EASST - Easter Island Summer Time ECT - Ecuador Time PET - Peru Time R - Romeo Time Zone ## Universal Time Coordinated Offset: UTC is 0 hours ahead Greenwich Mean Time (GMT) and is used in Universal Coordinated Universal Time (UTC) is the world time standard that regulates clocks and time. It is successor to Greenwich Mean Time (GMT). For casual use, UTC is the same as GMT, but is used by the scientific community. UTC is the time standard commonly used across the world since 1972. It is used in many technical fields, like aviation industry and meteorologists, also used to synchronize time across internet networks. [...] ## Eastern Standard Time Offset: EST is 5 hours behind Greenwich Mean Time (GMT) and is used in North America Countries: It is used in following countries: Bahamas, Canada, Haiti, Jamaica, Cayman Islands, Mexico, Panama, Turks & Caicos Is, United States Principal Cities: The largest city in the EST timezone is New York Ci...",
+      "score": 0.53342235,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC - Online Converter",
+      "url": "https://www.onlineconverter.com/est-to-utc",
+      "content": "Based International Air Transport Association (IATA) timezone codes. Time zones use hours and minutes offset from Coordinated Universal Time (UTC), most a whole number of hours, a few are offset by 30 or 45 minutes. Eastern Standard Time (EST) is UTC-5:00, and Eastern Daylight Time (EDT) is UTC-4:00, this time zone is called Eastern Time Zone (ET) in the United States, parts of eastern Canada, Mexico, Panama and the Caribbean Islands. Coordinated Universal Time (UTC) is the primary time standard now, time zones around the world are expressed using offsets from UTC, UTC offset is the difference in hours and minutes from UTC, a time zone can be determined by adding or subtracting the number of UTC offset. [...] ## Related Unit Converters Unit Converter Convert between various units Time Zone Converter Convert between various time zone units ## Reverse Conversion Tool UTC to EST ## Related EST Time Zone Converters EST to PST Convert to Pacific Standard Time EST to MST Convert to Mountain Standard Time EST to CST Convert to Central Standard Time EST to GMT Convert to Greenwich Mean Time ## Related UTC Time Zone Converters PST to UTC Convert from Pacific Standard Time MST to UTC Conv...",
+      "score": 0.51544976,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/eastern/utc",
+      "content": "Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in ET vs UTC ET --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ = UTC --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ Coordinated Universal Time is 4:00 hours ahead of Eastern Time ## ET to UTC converter i Drag the handle or click on a cell to convert time - ET - UTC - Current time --:-- --:-- --:-- ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ [...] ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤ...",
+      "score": 0.49143207,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-predicti%256f%256e/bit%2563oi%256e",
+      "content": "| Month | Min Price | Average Price | Max Price | ROI | | | | | | | | Jan 1, 2027 | $96,519.86 | $115,956.68 | $135,393.51 | +91.37% | | Feb 1, 2027 | $97,791.5 | $117,228.32 | $136,665.14 | +93.17% | | Mar 1, 2027 | $99,063.14 | $118,499.96 | $137,936.78 | +94.96% | | Apr 1, 2027 | $100,334.78 | $119,771.6 | $139,208.42 | +96.76% | | May 1, 2027 | $101,606.42 | $121,043.24 | $140,480.06 | +98.56% | | Jun 1, 2027 | $102,878.06 | $122,314.88 | $141,751.7 | +100.36% | | Jul 1, 2027 | $104,149.7 | $123,586.52 | $143,023.34 | +102.15% | | Aug 1, 2027 | $105,421.34 | $124,858.16 | $144,294.98 | +103.95% | | Sep 1, 2027 | $106,692.97 | $126,129.8 | $145,566.62 | +105.75% | | Oct 1, 2027 | $107,964.61 | $127,401.43 | $146,838.26 | +107.54% | [...] | Nov 1, 2027 | $109,236.25 | $128,673.07 | $148,109.89 | +109.34% | | Dec 1, 2027 | $110,507.89 | $129,944.71 | $149,381.53 | +111.14% | [...] | Nov 1, 2028 | $124,495.92 | $143,932.74 | $163,369.56 | +130.91% | | Dec 1, 2028 | $125,767.56 | $145,204.38 | $164,641.2 | +132.71% |",
+      "score": 0.48616135,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "Crypto MSK's Profile | Binance Square",
+      "url": "https://www.binance.com/en-AE/square/profile/square-creator-ae6293952",
+      "content": "... BTC {spot}(BTCUSDT). BTC/USDT Futures Signal (15-min chart) Current Price: $66,998. Long (Buy) Setup: Entry: $66,700 – $66,950 TP1",
+      "score": 0.4549328,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "UTC to EST Time Converter",
+      "url": "https://www.utctime.net/utc-to-est-converter",
+      "content": "UTC to EST in 12-hour (AM/PM) time format. | UTC Time | EST Time | --- | | 12:00 AM | 07:00 PM | | 01:00 AM | 08:00 PM | | 02:00 AM | 09:00 PM | | 03:00 AM | 10:00 PM | | 04:00 AM | 11:00 PM | | 05:00 AM | 12:00 AM | | 06:00 AM | 01:00 AM | | 07:00 AM | 02:00 AM | | 08:00 AM | 03:00 AM | | 09:00 AM | 04:00 AM | | 10:00 AM | 05:00 AM | | 11:00 AM | 06:00 AM | | 12:00 PM | 07:00 AM | | 01:00 PM | 08:00 AM | | 02:00 PM | 09:00 AM | | 03:00 PM | 10:00 AM | | 04:00 PM | 11:00 AM | | 05:00 PM | 12:00 PM | | 06:00 PM | 01:00 PM | | 07:00 PM | 02:00 PM | | 08:00 PM | 03:00 PM | | 09:00 PM | 04:00 PM | | 10:00 PM | 05:00 PM | | 11:00 PM | 06:00 PM | UTC to EST in 24-hour time format. [...] UTC to EST in 24-hour time format. | UTC Time | EST Time | --- | | 00:00 | 19:00 | | 01:00 | 20:00 | | 02:00 | 21:00 | | 03:00 | 22:00 | | 04:00 | 23:00 | | 05:00 | 00:00 | | 06:00 | 01:00 | | 07:00 | 02:00 | | 08:00 | 03:00 | | 09:00 | 04:00 | | 10:00 | 05:00 | | 11:00 | 06:00 | | 12:00 | 07:00 | | 13:00 | 08:00 | | 14:00 | 09:00 | | 15:00 | 10:00 | | 16:00 | 11:00 | | 17:00 | 12:00 | | 18:00 | 13:00 | | 19:00 | 14:00 | | 20:00 | 15:00 | | 21:00 | 16:00 | | 22:00 | 17:00 | | 23:00 | 18:00 | [...] 15:1...",
+      "score": 0.430507,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/est/utc",
+      "content": "If you want to reach out to someone in UTC and you are available anytime, you can schedule a call between 2:00 am and 6:00 pm your time. This time span will be between 7:00 am and 11:00 pm UTC time. Quickly and easily compare or convert EST time to UTC time, or the other way around, with the help of this time converter. Below, you can see the complete table of the conversions between EST and UTC. World Clock Time Zone Map Europe Time Map Australia Time Map US Time Map Canada Time Map World Time Directory World Map Free Clocks Contact Us Copyright © 2005 - 2026 24TimeZones.com. All rights reserved. What time is it right now? :) [...] Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in EST vs UTC You’re comparing Eastern Standard Time (EST) and Coordinated Universal Time (UTC)! Most locations are observing Eastern Daylight Time (EDT). Maybe you should check the difference between Eastern Time (EDT) an...",
+      "score": 0.41179726,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "Time Zone Converter – Time Difference Calculator (Classic)",
+      "url": "https://www.timeanddate.com/worldclock/converter-classic.html",
+      "content": "Calendar Calendars Home Calendar 2026 Calendar 2027 Monthly Calendar Printable Calendar (PDF) Add Your Own Calendar Events Calendar Creator Holidays Worldwide On This Day in History Fun Holidays Months of the Year Days of the Week About Leap Years Calendar & Holiday News Weather Worldwide Local Weather 2-Week Forecast Hour-by-Hour Past Week Climate Sun, Moon & Space Sun & Moon Home Sun Calculator Moon Calculator Moon Phases Night Sky Meteor Showers Day and Night Map Moon Light World Map Eclipses Live Streams Seasons Astronomy News [...] ## Related Time Zone Tools Event Time Announcer – Show local times worldwide for your event. Meeting Planner – The best times for your meeting across time zones How was your experience?Thank you for your feedbackContact Us Image 2: Illustration of a pink shield with a white heart. #### Love Our Site? Become a Supporter Browse our site advert free. Sun & Moon times precise to the second. Exclusive calendar templates for PDF Calendar. Image 3: The timeanddate logo © Time and Date AS 1995–2026 #### Company About us Careers/Jobs Contact Us Contact Details Sitemap Newsletter #### Legal Link policy Advertising Disclaimer Terms & Conditions Privacy Poli...",
+      "score": 0.40570828,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "search_index": 3
+    },
+    {
+      "title": "Square Post Sitemap - 1635 of 5696",
+      "url": "https://www.binance.com/en/square/sitemap/post/1635",
+      "content": "$BTC USDT PERP UPDATE $BTC holding strong after the shakeout ⚡ Price: $82,960.4 24H Change: +0.14% 24H High: $84,599.0 24H Low: $81,832.0 Volume (USDT):",
+      "score": 0.25475034,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "An additional 50% BTC plummet to $30-40k about to print?",
+      "url": "https://www.binance.com/en/square/post/293385948407137",
+      "content": "Price action will take at least 100 days to form a base, and up to 200+ before a recovery begins. 3. All this talk of a bullish 2026 is well and",
+      "score": 0.25184128,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "#btcoin Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/btcoin",
+      "content": "We updated the analysis on the 1-Day (1D) chart: ​Price Strength: As you can see in my current capture, $BTC has risen to $67,469. We have managed to regain",
+      "score": 0.20832422,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031: Yearly Forecast & ...",
+      "url": "https://www.binance.com/en-IN/price-prediction/bitcoin",
+      "content": "Our Bitcoin price prediction helps you forecast BTC price targets in 2026 & over the next four years based on a fixed interest rate and the consensus rating",
+      "score": 0.19447523,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "#btcanalisis Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/square/hashtag/btcanalisis",
+      "content": "⚠️ Bitcoin in critical zone: Historical rebound or deeper drop? Today BTC is trading around $66,700 — $67,000, more than 47% below its all-time high of $126,198",
+      "score": 0.17309275,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "#bitcoinwarning Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/bitcoinwarning",
+      "content": "⚠️ THE \"90K\" TRAP HAS JUST SNAPPED! $BTC $XRP Stop looking at the green candles on the 1-minute chart. The whales have just trapped millions of retail",
+      "score": 0.1621812,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "# #btc Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/%20%23BTC",
+      "content": "Explore what the # #btc community is talking about on Binance Square. Join top crypto influencers in discussions driving today's crypto and",
+      "score": 0.13544947,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    },
+    {
+      "title": "#dailymarket Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/dailymarket",
+      "content": "Explore what the #dailymarket community is talking about on Binance Square. Join top crypto influencers in discussions driving today's crypto and Web3",
+      "score": 0.12748985,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m klines 2026-11-19 17:00:00 UTC close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "BTC/USDT 1m candle November 19 2026 12:00 PM ET Binance close price site:binance.com",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "November 19 2026 12:00 PM ET to UTC conversion",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

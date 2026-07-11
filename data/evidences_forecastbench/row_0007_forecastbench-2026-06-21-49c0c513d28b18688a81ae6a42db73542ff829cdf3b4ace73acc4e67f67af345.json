@@ -1,0 +1,864 @@
+{
+  "row_index": 7,
+  "market_id": "forecastbench_2026_06_21_49c0c513d28b18688a81ae6a42db73542ff829cdf3b4ace73acc4e67f67af345",
+  "slug": "",
+  "question": "Will there be more than ten times as many fatalities in Yemen for the 30 days before 2026-06-28 compared to one plus the 30-day average of fatalities over the 360 days preceding 2026-06-21? e.g. If the forecast due date is 2024-01-01 and we have the following data: Date,fatalities 2023-11-11,1 2023-10-10,2 to calculate one plus the 30-day average of fatalities over the preceding 360 days, we’d have: 1+(1+2)/12=1.25. In this example, for the question to resolve positively, 13 (10 x 1.25) or more fatalities would need to occur in the 30 days leading up to the resolution. Resolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published. Background: ACLED classifies events into six distinct categories: 1. Battles: violent interactions between two organized armed groups at a particular time and location; 2. Protests: in-person public demonstrations of three or more participants in which the participants do not engage in violence, though violence may be used against them; 3. Riots: violent events where demonstrators or mobs of three or more engage in violent or destructive acts, including but not limited to physical fights, rock throwing, property destruction, etc.; 4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature, are at range and widely destructive; 5. Violence against civilians: violent events where an organized armed group inflicts violence upon unarmed non-combatants; and 6. Strategic developments: contextually important information regarding incidents and activities of groups that are not recorded as any of the other event types, yet may trigger future events or contribute to political dynamics within and across states. Detailed information about the categories can be found at: https://acleddata.com/knowledge-base/codebook/#acled-events",
+  "event_title": "Will there be more than ten times as many fatalities in Yemen for the 30 days before 2026-06-28 compared to one plus the 30-day average of fatalities over the 360 days preceding 2026-06-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,fatalities\n2023-11-11,1\n2023-10-10,2\nto calculate one plus the 30-day average of fatalities over the preceding 360 days, we’d have: 1+(1+2)/12=1.25.\n\nIn this example, for the question to resolve positively, 13 (10 x 1.25) or more fatalities would need to occur in the 30 days leading up to the resolution.\n\nResolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published.\n\nBackground: ACLED classifies events into six distinct categories:\n\n1. Battles: violent interactions between two organized armed groups at a particular time and\n   location;\n2. Protests: in-person public demonstrations of three or more participants in which the participants\n   do not engage in violence, though violence may be used against them;\n3. Riots: violent events where demonstrators or mobs of three or more engage in violent or\n   destructive acts, including but not limited to physical fights, rock throwing, property\n   destruction, etc.;\n4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature,\n   are at range and widely destructive;\n5. Violence against civilians: violent events where an organized armed group inflicts violence upon\n   unarmed non-combatants; and\n6. Strategic developments: contextually important information regarding incidents and activities of\n   groups that are not recorded as any of the other event types, yet may trigger future events or\n   contribute to political dynamics within and across states.\n\nDetailed information about the categories can be found at:\nhttps://acleddata.com/knowledge-base/codebook/#acled-events",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
+  "end_date_limit": "2026-06-27",
+  "row_end_date_raw": "2026-06-28",
+  "expanded_queries": [
+    "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+    "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+    "Yemen ACLED actors institutions armed groups official reports conflict parties",
+    "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+    "Yemen conflict analysis ACLED expert report fatalities trends 2024"
+  ],
+  "supplemental_query": null,
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 47,
+    "hard_quarantined_late_date_count": 2,
+    "llm_filter_input_count": 47,
+    "supplemental_search_triggered": false,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 25,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 22,
+    "llm_kept_count": 25,
+    "llm_kept_leak_no_count": 25,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "ACLED Codebook | ACLED",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "When summarized fatalities are reported, but events occur across several days or in multiple locations simultaneously (e.g., “12 fatalities result from fighting over a span of 3 days”), the total number of reported fatalities is divided and that fraction is recorded for each day of the event (4 reported fatalities per battle day, in the example above). If an odd number of fatalities is recorded (including 1), the proportion of reported fatalities is divided by assigning the first day the additional fatality and it is then distributed as evenly as possible. The disaggregation of fatalities is recorded in the Notes column of the relevant events. ## Notes [...] Dates are a necessary component of all ACLED events. ACLED events are atomic as events are recorded by day. If a military campaign in an area starts on 1 March 2020 and lasts until 5 March 2020 with violent activity reported on each day, this is recorded as five different events, with a different date for each entry. This episode would not be entered as a single campaign of violence. This allows ACLED to record the exact number of active days of a conflict. Events that the source material indicates as occurring in the space...",
+      "score": 0.9520065749385545,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "Data Update: Expanded Coverage of Political Violence in Yemen | ACLED",
+      "url": "https://acleddata.com/update-log/data-update-expanded-coverage-political-violence-yemen",
+      "content": "Users should note a 30-day gap in coverage between 1 and 30 January due to a suspension in reporting by the source over that period. At the time of writing, ACLED is working on integrating new data from this source covering the period from 2 October 2022 to 31 December 2023. The new data for this period will be published at a later date to provide additional insight into the conflict trajectory in Yemen since the expiration of the UN-brokered truce. [...] Forthcoming expansion:New data covering 2 October 2022 to 31 December 2023 will be integrated in future updates. Users conducting temporal analysis should be aware that data for this earlier period is not yet available, and therefore trends prior to 1 January 2024 are not directly comparable to present-day coverage. Coverage note: There is a gap in coverage, with only sporadic events from this source recorded between 1 to 30 January 2024. ## Related content 24 February 2026 7 May 2026 7 May 2026 middle east map for regional overview april 2026 8 April 2026 middle east map for regional overview april 2026 ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu Social media profiles Clarity in Crisis Footer bottom [...]...",
+      "score": 0.9460016386353522,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "Fatalities | ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "When summarized fatalities are reported but events occur across several days or in multiple locations simultaneously (e.g. “12 fatalities result from fighting over a span of three days in one location”), the total number of fatalities is divided equally across days and locations of the event (4 fatalities per battle day for the one location, in the example above). If an odd number (including 1), the proportion of fatalities is divided by assigning the first day the additional fatality and distributed as evenly as possible. Such disaggregation of fatalities is recorded in the ‘Notes’ column. It is important to remember that though the ‘Notes’ column entries may match across these events, these are not duplicates but rather are unique events with different locations or dates coded. [...] To account for these various biases of sources, ACLED develops tailor-made sourcing processes per country and region. The goal is to generate particular source combinations that reflect the reality of disorder and fatality counts in each space. One strategy that ACLED has found to be especially fruitful is the prioritization of reports from local sources, such as local partners and subnational med...",
+      "score": 0.9455013633329711,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "PUBLIC_Yemen Methodology v3 (Aug 2021)",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2021/11/PUBLIC_Yemen-Methodology-v4Jan-2022.pdf",
+      "content": "ACLED strives to triangulate information and especially reports on high-fatality events. Given the lack of other primary reports on these fatality numbers, high-fatality events reported by the Saudi-led coalition were carefully considered. The options available to ACLED were: (a) to not code the fatalities stemming from these reports, because of the lack of other primary fatality reports, though this would mean omitting the rising trend in fatalities from airstrikes; (b) code the fatalities as reported, despite the lack of confirmation and the break from previous trends; or (c) create a compromise that would result in acknowledgement without amplification. Discussions with outside experts regarding trends in violence suggested that there has been an increase in fatalities resulting from [...] in Yemen. While more than 1,000 fatalities in a single week was reported only once between January 2015 and September 2021 (week of 3-9 November 2018), this new reporting has returned 10 weeks of 1,000+ fatalities since the week of 2 October 2021 (inclusive of 6 October when these events began to be reported). This underlines an unrealistically dramatic shift in conflict patterns, especiall...",
+      "score": 0.9302409638070288,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] FAQs: ACLED Fatality Methodology",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/02/FAQs_-ACLED-Fatality-Methodology_2020.pdf",
+      "content": "1998 2000 Guinea-Bissau Beginning of ACLED coverage for country (1997) 1999 Ivory Coast 2002 2007 2010 2011 Liberia 1999 2003 Libya 2011 Ongoing Mali 2012 Ongoing Republic of Congo Beginning of ACLED coverage for country (1997) 1999 Senegal Beginning of ACLED coverage for country (1997) 2001 Sierra Leone Beginning of ACLED coverage for country (1997) 2002 Somalia Beginning of ACLED coverage for country (1997) Ongoing South Sudan 2013 Ongoing Sudan Beginning of ACLED coverage for country (1997) 2005 Meanwhile, there are a number of countries that, while not at war, experience significant violence in a specific subnational region or at the hands of a specific actor. So while ​unspecified number of fatalities in these countries are, on average, coded as 3 as these countries are not ‘at war’, [...] on average, coded as 3 as these countries are not ‘at war’, violence within certain contexts in these countries tends to be significant enough to warrant coding ​unspecified number of fatalities ​as 10 in those specific contexts. These decisions are based on qualitative assessments by ACLED researchers -- one of the advantages to a researcher-based conflict data collection project relativ...",
+      "score": 0.9245611046052115,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "content": "Applying the conflict period rates (PCDR) to the Yemen population, we estimate 1,115,024 deaths would have occurred in the 5-year crisis period, whereas we would have expected 946,812 deaths had the estimated baseline rate (BCDR) prevailed—a 17.8% increase in deaths. Excess deaths attributable to direct and indirect causes linked to the crisis led to 168,212 more deaths, or an average of 92 excess deaths per day in the population. Of these, 67.2% were attributable to direct combat related violence and the remainder were attributable to indirect causes. At the governorate level, PCDR varied across the country ranging from 0.11 to 0.35 per 10,000 per day. The excess deaths for each governorate are calculated from their excess death rates based on their population. Hajjah, Ibb, Aden, Saada, [...] 36. Coghlan, Brennan, Ngoy, Dofara, Otto, Clements, _et al._. Mortality in the Democratic Republic of Congo: a nationwide survey. _Lancet_. 2006/01/10 ed. 2006 Jan 7;367(9504):44–51. doi: doi: 10.1016/S0140-6736(06)67923-3 [DOI67923-3)] [PubMed] [Google Scholar67923-3&)] 37. Degomme, Guha-Sapir. Patterns of mortality rates in Darfur conflict. _Lancet_. 2010/01/30 ed. 2010 Jan 23;375(9711):...",
+      "score": 0.9177691893396964,
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "- 32 -Actor Actor type Primary country of operation Reported fatalities MILITARY FORCES OF AFGHANISTAN State forces Afghanistan 34,284 TALIBAN Rebel forces Afghanistan 30,243 HOUTHI MILITARY FORCES State forces 12 Yemen 26,812 PRO-HADI MILITARY FORCES Rebel forces Yemen 18,583 MILITARY FORCES OF SYRIA State forces Syria 8,236 That the primary actors engaged in conflict in Ukraine, Syria, and Afghanistan are the most active armed groups is unsurprising given that these three countries are among the most violent in 2019. Both of the 12 ACLED treats the forces allied with both the government of President Hadi and the Houthi-led executive bodies as state forces in Yemen. It is important to note that the classification does not imply legitimacy, but rather acknowledges the fact that there [...] Both the Houthis and the Saudi-backed military forces of Yemen are two of the top five actors involved in events resulting in the most reported fatalities (see Table 5), as are the National Resistance Forces, which increased their rate of activity more than any other group last year (see Table 7). [...] Entrenched conflicts show few signs of ending. Ukraine registered the largest increase in p...",
+      "score": 0.709684,
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "search_index": 3
+    },
+    {
+      "title": "Yemen Conflict | ACLED",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "content": "Yemen’s conflict environment is known to be one of the most volatile in the region. The current conflict, with its wider implications for the region, has added complexity to an already fractured political setting.1 As a result, ACLED records a wide range of violent events, including air or drone strikes and armed battles between opposing factions, as well as typically less reported episodes like tribal or communal clashes, assassinations, bombings — either suicidal or remotely-activated — and peaceful or violent demonstrations. ACLED does not track criminal or domestic violence, nor does it record deaths from famine or diseases. [...] The geographical coverage of these sources, however, is not uniform across Yemen. Along the frontline, sources affiliated with governments or armed groups widely report the occurrence of incidents, yet they often tend to only acknowledge their opponents’ losses. This is especially evident in the sparsely populated areas of al-Jawf and Hajjah governorates, where the limited presence of independent reporting has often made it difficult to corroborate the credibility of the information, which is usually done by triangulating multiple sources. In these...",
+      "score": 0.6899958,
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "content": "coded as “Violence against Civilians”, although the victims will still be coded as Protesters, to distinguish it from wider patterns of violence against civilians not engaged in demonstrations. If the event involves violence by rioters against civilians (for example, a political official, or a representative of a business), then it is also coded as “Violence against Civilians”. The second type of event captured in this category is spontaneous acts of violence by disorganised groups, which may target property, or businesses, or may involve clashes with other disorganised groups or security institutions (e.g. inter-communal actions that are spontaneous and disorganized are examples of this action). Rioters can only 13 perpetrate such an event, as protesters are by definition, non-violent. [...] violent events in unstable and warring states. ACLED focuses on tracking a range of violent and non-violent actions by political agents, including governments, rebels, militias, communal groups, political parties, rioters, protesters and civilians. Data contain specific information on the date, location, group names, interaction type, event type, reported fatalities and contextual notes. AC...",
+      "score": 0.6836946,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "content": "• 1, 2, or 3; with 1 being the most precise. source The sources used to record the event. Separated by a semicolon. • E.g. Ansar Allah; Yemen Data Project source_ scale An indication of the geographic closeness of the used sources to the event (for more, see the section Source Scale). • E.g. Local partner-National notes A short description of the event. • E.g. On 16 February 2023, OLF-Shane abducted an unidentified number of civilians after stopping a vehicle in an area near Abomsa (Merti, Arsi, Oromia). The abductees were traveling from Adama to Abomsa, Arsi. fatalities The number of reported fatalities arising from an event. When there are conflicting reports, the most conservative estimate is recorded. • E.g. 3 • No information on fatalities is recorded as 0 reported fatalities. [...] Reported Fatalities Events that result in fatalities have the relevant information recorded in the ‘Fatalities’ column. Events recorded by ACLED do not have to meet a minimum fatality number for inclusion. ACLED only records estimated fatalities when reported by the source material. When and where possible, ACLED researchers seek out information to triangulate the fatality numbers reported by so...",
+      "score": 0.6803909,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "Yemen, year 2017: Update on incidents according to the ...",
+      "url": "https://fln.dk/media/ou1fkgl1/yeme178.pdf",
+      "content": "Incidents comprise the following categories: battles, headquarters or bases es-tablished, non-violent strategic activities, riots/protests, violence against civilians, non-violent transfer of territory, remote violence. For details on these categories, please see • ACLED – Armed Conflict Location & Event Data Project: Armed Conflict Location and Event Data Project (ACLED) Codebook; ACLED - ASIA, 2015 Codebook_2015_ASIA-CR.pdf • ACLED – Armed Conflict Location & Event Data Project: Armed Conflict Location and Event Data Project (ACLED) Codebook, 2017 Codebook_2017.pdf • ACLED – Armed Conflict Location & Event Data Project: User Guide, January 2017 3 YEMEN, YEAR 2017: UPDATE ON INCIDENTS ACCORDING TO THE ARMED CONFLICT LOCATION & EVENT DATA PROJECT (ACLED) COMPILED BY ACCORD, 18 JUNE [...] 3 Conflict incidents per province 4 Localization of conflict incidents 4 Disclaimer 8 Conflict incidents by category Category Number of incidents Number of incidents with at least one fatality Number of fatalities Remote violence 5626 844 6013 Battles 1877 1295 10552 Strategic developments 149 9 42 Riots/protests 122 1 3 Violence against civilians 100 75 204 Non-violent activities 11 0 0 Total 7...",
+      "score": 0.6609831,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "Events that result in fatalities have the relevant information recorded in the Fatalities column. Events recorded by ACLED do not have to meet a minimum fatality number for inclusion. ACLED only records estimated fatalities when reported by the source material. When and where possible, ACLED researchers seek out information to triangulate the fatality numbers reported by sources, but ACLED does not independently verify reported fatality estimates. Additionally, ACLED is a living dataset, so all fatality figures are revised and corrected — upward or downward — if new or better information becomes available (which, in some cases, can be months or years after an event has taken place). Fatality data are typically the most biased and least accurate component of conflict reporting. They are [...] | source | The sources used to record the event. Separated by a semicolon. | E.g., Ansar Allah; Yemen Data Project | | source\\_ scale | An indication of the geographic closeness of the used sources to the event (for more, see the section Source Scale). | E.g., Local partner-National | | notes | A short description of the event. | E.g., On 16 February 2023, OLF-Shane abducted an unidentified...",
+      "score": 0.65252984,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "type Violence against civilians are only one subset of this violence. Civilians can also be targeted in events coded with event type Explosions/Remote violence - 9 -and Riots, as can Protesters (i.e. unarmed demonstrators). Protesters can also be targeted through lethal forms of violence in events coded with sub-event type Excessive force against protesters coded under event type Protests.5 While ACLED records fatalities, it is important to remember that these are reported fatalities. Fatality numbers are frequently the most biased and poorly reported component of conflict data. They are often debated and can vary widely. Conflict actors may overstate or under-report fatalities to appear strong to the opposition or to minimize international backlash against the state involved. Fatality [...] as a percent of total ACLED dataset Main event type contributing to fatalities Main engagement type contributing to fatalities AFGHANISTAN 41,725 33% Battles (Armed clash) Afghan military vs. Taliban YEMEN 25,702 20% Battles (Armed clash) Saudi-backed Hadi forces vs. Houthi forces SYRIA 15,217 12% Battles (Armed clash) Syrian military vs. opposition rebels (e.g. HTS, IS, etc.) NIGERIA 5,403...",
+      "score": 0.6490677,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "Yemen, June 2026 Monthly Forecast : Security Council Report",
+      "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-06/yemen-89.php",
+      "content": "| | | --- | | Security Council Resolutions | | | 14 January 2026S/RES/2812) | This resolution extends the Secretary-General’s monthly reporting requirement on Houthi attacks on merchant and commercial vessels in the Red Sea until 15 July 2026. | | Security Council Press Statements | | | 23 December 2025SC/16265 | This press statement called for de-escalation and underlined strong support towards a political settlement in Yemen and for the Presidential Leadership Council, while also reiterating condemnation of detentions by the Houthis and the demand for the immediate and unconditional release of all those detained. | | Security Council Meeting Records | | | 14 April 2026S/PV.10135 | This was a meeting on political and humanitarian developments in Yemen. | relating to Yemen [...] Following months of negotiations, which took place in Jordan, Switzerland, and Oman under UN auspices, on 14 May, Grundberg announced that the conflict parties in Yemen agreed to release over 1,600 conflict-related detainees. The negotiations were facilitated by the Supervisory Committee on the implementation of the detainee release agreement, which is co-chaired by the UN and the International Committee...",
+      "score": 0.6437107,
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "search_index": 2
+    },
+    {
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "When a report indicates that an event did indeed lead to fatalities, yet there is no additional information on how many fatalities may have occurred, ACLED codes this unspecified number of fatalities as either 3 or 10 fatalities depending on the circumstances of the event. If the information in the event and the general understanding of the conflict context indicates the event has a high death toll (likely over 10), then 10 fatalities are coded. For example, “Houthi forces launched a large-scale attack against IRG forces in Yemen resulting in an unspecified number of fatalities” is coded as 10 fatalities, as similar battles in the area have led to high (more than 10) fatalities. In all other cases where the circumstances point to a death toll likely less than 10, a more conservative [...] The total number of fatalities for each event is found in the ‘Fatalities’ column. The ‘Fatalities’ column refers to the estimated number of reported fatalities associated with a single event. ACLED does not collect data on injuries, nor are fatalities attributed to specific groups (for more, see this section below), but such information may be mentioned in the ‘Notes’ column. All fatalities re...",
+      "score": 0.63939893,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "Yemen Conflict",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "content": "ground since September 2021, overall levels of political violence remained relatively low compared to previous years. In other words, the trends reported following this initial shift underlined an unrealistically dramatic change in conflict patterns, especially when considering the lack of such reporting by other primary sources. For this reason, ACLED has decided to not code the precise number of fatalities reported by Saudi sources during this brief shift in reporting, instead opting to treat these reports as an ‘unspecified number’ of fatalities, which ACLED codes as 10 fatalities in war zones like Yemen, according to ACLED’s Fatality Methodology. [...] The strategy of coding reported fatalities from all of these reports since October 2021 — both those with ‘precise reporting’ between 10 October 2021 and 30 January 2022, as well as those since 31 January 2022 which note “unspecified losses” — as 10 allows ACLED to capture the rise in airstrike fatalities, while avoiding an artificial fatality spike in the data. The outside experts who were consulted confirmed the likelihood of an increase in Houthi fatalities from Saudi-led Coalition airstrikes, though there was no general se...",
+      "score": 0.608897,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] FAQs: ACLED Fatality Methodology",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/02/FAQs_-ACLED-Fatality-Methodology_2020.pdf",
+      "content": "media are better at estimates, some are worse. Some (e.g. international media) will report on stories only if they reach a certain fatality threshold that elicits audience attention. Other information sources (e.g. in-depth human rights reporting by INGOs) will concentrate on attacks on civilians, regardless of fatalities. ACLED incorporates all forms of media and reporting to maximize the accuracy, reliability, and thoroughness of each component of its data, including fatalities if they occur. ACLED advises caution in using fatality numbers from any conflict data source. Fatality information is the most biased, and least accurate, part of any conflict report and extreme caution should be employed when using any fatality number from any source. What alternatives exist to assessing a [...] as reports arise of individuals succumbing to their injuries. In this way, ACLED is a ‘living dataset’. This is different from datasets with an annual publication schedule in which events cannot be regularly updated to reflect the latest information. Does ACLED have processes in place for quality control over fatality estimates? ACLED takes a number of steps to ensure quality control of fatalit...",
+      "score": 0.5900477,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "Yemen Conflict | ACLED",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "content": "To avoid artificially increasing the number of reported fatalities, ACLED has taken several steps to ensure that fatality estimates during the Yemen conflict are the most accurate possible and least subject to media biases: Although the use of a discretionary fatality estimate can result in artificially increasing the number of fatalities, we can easily assume that there are several cases where fatalities go under-reported or are not reported at all. In the end, these expedients help control the inherent bias and avoid inflating fatality counts significantly while ensuring consistency within the country and across other regions (for more information on fatalities, see ACLED’s Fatality Methodology). [...] ACLED does not code fatality figures according to which group suffered fatalities because most source reports do not offer this level of detail, and instead report on the total number of deaths arising from a conflict event. The only exception to this is in events with civilians coded as ‘Actor 2’ because ACLED treats civilians as unarmed non-combatants, the number of fatalities reported for each event with civilians coded as ‘Actor 2’ — typically coded under the ‘Violence again...",
+      "score": 0.5602773,
+      "query": "Yemen conflict analysis ACLED expert report fatalities trends 2024",
+      "search_index": 5
+    },
+    {
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "content": "The insecurity index is classified according to quantiles: 0.25 quantile as Insecure; 0.5 quantile as Serious; 0.75 quantile as Severe; and 1 quantile as Extreme. Where, _epqr_ is the number of events q in governorate p for year r. _Eqr_ is the sum total of events q in all governorates in year r, _Fpqr_ is the total fatality from events q in governorate p for year r, and the Security Score is the sum of weighted fatalities in governorate p for year r, where n = 6 . We matched the insecurity index obtained for each governorate for each year with the corresponding PCDR to obtain the analysis data set. To understand how the different levels of conflict insecurity in Yemen affect the overall mortality, we assessed associations between the PCDR in governorates and their insecurity index using [...] 30.Human Rights Watch. World Report 2020. Events of 2019 [Internet]. 2020 [cited 2021 Mar 3]. Available from: [Google Scholar] 31.More than 70,000 killed in Yemen’s civil war: ACLED. Aljazeera [Internet]. 2019 [cited 2021 Mar 3]; Available from: [Google Scholar] 32. Ghobari says 10,000 killed in Yemen war, far more than other estimates. _Reuters [Internet]._ 2016 [cited 2021 Mar 3]; Availa...",
+      "score": 0.55796635,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "search_index": 1
+    },
+    {
+      "title": "Country policy and information note: security situation, Yemen, March 2025 (accessible version) - GOV.UK",
+      "url": "https://www.gov.uk/government/publications/yemen-country-policy-and-information-notes/country-policy-and-information-note-security-and-humanitarian-situation-yemen-december-2021-accessible-version",
+      "content": "10.4.7 The Armed Conflict Location & Event Data Project (ACLED) provided the following definitions for the different types of security events it collected data on: ‘Battles: Violent interactions between two organized armed groups; ‘Explosions/Remote violence: An event involving one side using remote weapons (e.g. artillery). These events can be against other armed actors, or used against civilians; ‘Violence against civilians: Violent events where an organized armed group deliberately inflicts violence upon unarmed non-combatants; ‘Protests: Public demonstrations in which the participants are not violent; ‘Riots: Violent events where demonstrators or mobs engage in destructive acts against property and/or disorganized acts of violence against people; [...] 31. USSD, Country Reports on Terrorism 2022: Yemen, 30 November 2023 ↩ 32. CIA World Factbook, Yemen (Military and Security), updated 22 December 2024 ↩ 33. ACLED, [… [YCO]]( (Actor Profiles: Saudi-led Coalition), no date, updated 31 January 2024 ↩ 34. PCNS, Yemen’s Path to Stability … (page 6), 15 October 2024 ↩ 35. CIVIC, … Climate… Environment … and Conflict in Yemen (footnote 39), October 2022 ↩ 36. Ground News, News from...",
+      "score": 0.55565286,
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "search_index": 3
+    },
+    {
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "content": "$$ T E D = \\left{\\right. \\left(\\right. \\mu_{c} - \\mu_{p} \\left.\\right) \\star \\left(\\right. \\frac{365}{10000} \\left.\\right) \\star n \\star m e d i a n . a d j . t o t . p o p \\left.\\right} + t o t . d i r e c t d e a t h s $$ (2) _μ_ _c_ = posterior mean CDR for conflict period /10000/day—(PCDR) _μ_ _p_ = posterior mean CDR for pre-conflict period /10000/day—(BCDR) _n_ = number of years (2015–2019) _median tot_._pop_ = median of the adjusted total population _tot_. _direct_._deaths_ = total direct ACLED deaths from 2015–2019 _median tot_._pop_ = median of the adjusted total population _tot_. _direct deaths_ = total direct ACLED deaths from 2015–2019 [...] Table 2. Excess death rate estimates using baselines and conflict period CE-DAT surveys, Yemen, 2015–2019. | Rate estimates (10000/day) [LCL, UCL] a | | Total Crude Death Rate (2015–2019) | 0.23 [0.19, 0.27] | | Posterior Crude Death Rate (PCDR) | 0.20 [0.17, 0.24] | | Baseline Crude Death Rate (BCDR) | 0.19 [0.17, 0.22] | | Direct (Violent) Death rate | 0.02b | | Total Excess Death Rate (TED) | 0.03 [0.00, 0.07] | Open in a new tab a LCL: Lower credible level; UCL: Upper credible level. b No confidence interval provided. Data so...",
+      "score": 0.5510187,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019 | PLOS Global Public Health",
+      "url": "https://journals.plos.org/globalpublichealth/article?id=10.1371%2Fjournal.pgph.0000581",
+      "content": "Conflict in Yemen has displaced millions and destroyed health infrastructure, resulting in the world’s largest humanitarian disaster. The objective of this paper is to examine mortality in Yemen to determine whether it has increased significantly since the conflict began in 2015 compared to the preceding period. We analysed 91 household surveys using the Standardized Monitoring and Assessment of Relief and Transitions methodology, covering 2,864 clusters undertaken from 2012–2019, and deaths from Armed Conflict Location & Event Data Project database covering the conflict period 2015–2019. We used a Poisson-Gamma model to estimate pre-conflict (μp, baseline value) and conflict period (μc) mean death rates using household survey data from 2012–2019. To analyse changes in the distribution of [...] Applying the conflict period rates (PCDR) to the Yemen population, we estimate 1,115,024 deaths would have occurred in the 5-year crisis period, whereas we would have expected 946,812 deaths had the estimated baseline rate (BCDR) prevailed—a 17.8% increase in deaths. Excess deaths attributable to direct and indirect causes linked to the crisis led to 168,212 more deaths, or an average of...",
+      "score": 0.55072874,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "Conflict Watchlist 2024 | Yemen and the Red Sea: Rising Tensions Threaten Peace Process and International Security | ACLED",
+      "url": "https://acleddata.com/report/conflict-watchlist-2024-yemen-and-red-sea-rising-tensions-threaten-peace-process-and",
+      "content": "Overall, the truce has contributed to a significant de-escalation, with the activity of the warring parties decreasing by 70% in 2023 compared to the year prior. However, a low-intensity conflict has since surfaced, continuing to threaten civilian lives and uphold consistently severe violence. For instance, the share of violent events that targeted civilians more than doubled in 2023, with over 1,120 events recorded by ACLED last year alone. Behind these patterns are several factors, including the increasing repression of the Houthi-led Sanaa-based government against the last shreds of local opposition; the increased mobility spurred by the truce, which led to frequent landmine and explosive remnants of war incidents; and an over 55% increase in the violence against migrants attempting to [...] The war in Yemen is estimated to have directly killed over 160,000 people since March 2015, when a military coalition led by Saudi Arabia intervened to restore the internationally recognized government ousted by the Houthis. A nationwide UN-mediated truce came into effect in April 2022 as a result of several compounding factors: an unprecedented military balance amid warring parties, a re...",
+      "score": 0.53590065,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] YEMEN: ENDING THE WAR, BUILDING A SUSTAINABLE PEACE",
+      "url": "https://mei.edu/wp-content/uploads/2022/03/Yemen-Ending-the-War-Building-a-Sustainable-Peace.pdf",
+      "content": "displaced. Yemen’s collapsed economy remains the key driver of the humanitarian crisis. KEY POLICY RECOMMENDATIONS • Encourage U.N. Special Envoy Hans Grundberg to include a more diverse group of Yemeni stakeholders in potential peace talks, and review the 2013-14 National Dialogue Conference recommendations for possible openings to promote a political dialogue. • Press for a comprehensive ceasefire, including reopening the Sana’a airport and relieving pressure on the port at Hodeida and hold the parties accountable for their response. • Hold the Houthis accountable for their continued military aggression in Yemen and cross-border against Saudi Arabia and the UAE, including their re-designation as a Foreign Terrorist Organization (FTO) if they refuse to reengage in peace talks or use the [...] support, the Houthis have also expanded their cross-border attacks in Saudi Arabia and the UAE and have seized a UAE-flagged merchant ship in the Red Sea. • Despite firm support from the Biden administration, U.N.-led efforts to promote a comprehensive ceasefire and restart negotiations have also not made progress. New U.N. Special Envoy Hans Grundberg has proposed to the U.N. Security Cou...",
+      "score": 0.53123426,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "search_index": 4
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "Both the Houthis and the Saudi-backed military forces of Yemen are two of the top five actors involved in events resulting in the most reported fatalities (see Table 5), as are the National Resistance Forces, which increased their rate of activity more than any other group last year (see Table 7). [...] - 4 -Introduction to ACLED The Armed Conflict Location & Event Data Project (ACLED) is a disaggregated data collection, analysis, and crisis mapping project that tracks political violence and demonstrations across much of the world. ACLED currently covers Africa; the Middle East; South Asia; Southeast Asia; Central Asia and the Caucasus; and Southeastern and Eastern Europe and the Balkans.1 In ACLED 2019: The Year in Review, we analyze the past year of data on political violence and demonstrations across these regions of coverage. ACLED is an event-based data project, meaning that each engagement is recorded by date and location. Along with this information, ACLED records the actors, types of violence, and fatalities associated with each event — allowing for a multitude of ways to explore [...] of 35%. Demonstrations were also more deadly in 2019. Overall, ACLED records a 106% in...",
+      "score": 0.5176446,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "Yemen War Deaths on Overall Decline as UN Works to Salvage Truce | ACLED",
+      "url": "https://acleddata.com/press/yemen-war-deaths-overall-decline-un-works-salvage-truce",
+      "content": "20 March 2019: With the UN announcing a new plan to shore up the December 2018 Stockholm Agreement between Yemen’s warring parties, the latest Armed Conflict Location & Event Data Project (ACLED) data show that overall conflict-related fatalities have declined by more than 20% since the deal’s implementation, predominantly as a result of the ceasefire in Hodeidah. Despite repeated violations of the truce, ACLED has recorded over 1,000 fewer fatalities in January and February 2019 compared to the previous two-month period, and civilian fatalities reported as a result of direct targeting in Hodeidah province specifically have diminished to their lowest numbers in more than a year. [...] For interview requests and press inquiries, please contact: Sam Jones, Communications Manager (/cdn-cgi/l/email-protection) \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ 1Fatality numbers are frequently the most biased and poorly reported component of conflict data. While ACLED codes the most conservative reports of fatality counts to minimize over-counting, this does not account for biases that exist around fatality counts at-large. Find more information about ACLED’s methodology for coding fatalities here. 2This figure...",
+      "score": 0.51735204,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "content": "You logged out of HDX Thank you for using HDX ! small logo Armed Conflict Location & Event Data Project (ACLED) Share Visit Website # Armed Conflict Location & Event Data Project (ACLED) Get Notified Unsubscribe 5 Members 539 Followers Visit Website Member since 9 January 2015 The Armed Conflict Location & Event Data Project (ACLED)\") is a disaggregated data collection, analysis, and crisis mapping project. ACLED collects the dates, actors, locations, fatalities, and types of all reported political violence and protest events in more than 200 countries and territories in real time. The ACLED team conducts analysis to describe, explore, and test conflict scenarios, and makes both data and analysis open for free use by the public. [...] A weekly dataset providing the total number of reported civilian targeting events and fatalities broken down by country. Civilian targeting events include violence against civilians events and explosions/remote violence events in which civilians were directly targeted. Note: These are aggregated data files organized by country-year and country-month. To access full event data, please register to use the Data Export Tool and API on the ACLED website...",
+      "score": 0.5057865,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "The UN-Mediated Truce in Yemen: Impacts of the First Two Months | ACLED",
+      "url": "https://acleddata.com/report/un-mediated-truce-yemen-impacts-first-two-months",
+      "content": "Notably, reported fatalities have also continued to decrease during the truce. While armed clash events between Houthi and anti-Houthi forces remained at similar levels between the first and the second month of the truce, the lethality of these clashes fell, with an estimated 125 fatalities in the first 31 days compared to 53 in the second 31 days. This decreased lethality is an encouraging development as the truce extension begins. ### Civilians Suffer Disproportionately During the Truce [...] ## Impact of the Truce on Fatalities During its first two months, the truce had a significant impact on the war’s death toll. ACLED records 400 total reported fatalities over the first two months of the truce, a decrease of 85% compared to the two months prior and a decrease of 87% compared to the same period last year. In fact, April and May 2022 saw the lowest levels of total reported fatalities since the start of ACLED’s Yemen coverage in January 2015 (see graph below). Throughout these two months, the weekly total fatality counts were consistently the lowest since March 2015. [...] ### Civilians Suffer Disproportionately During the Truce Of the 400 total fatalities reported during the...",
+      "score": 0.49523994,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "search_index": 2
+    },
+    {
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "content": "Table 2. Excess death rate estimates using baselines and conflict period CE-DAT surveys, Yemen, 2015–2019. | Rate estimates (10000/day) [LCL, UCL] a | | Total Crude Death Rate (2015–2019) | 0.23 [0.19, 0.27] | | Posterior Crude Death Rate (PCDR) | 0.20 [0.17, 0.24] | | Baseline Crude Death Rate (BCDR) | 0.19 [0.17, 0.22] | | Direct (Violent) Death rate | 0.02b | | Total Excess Death Rate (TED) | 0.03 [0.00, 0.07] | Open in a new tab a LCL: Lower credible level; UCL: Upper credible level. b No confidence interval provided. Data source: www.acleddata.com. [...] $$ T E D = \\left{\\right. \\left(\\right. \\mu_{c} - \\mu_{p} \\left.\\right) \\star \\left(\\right. \\frac{365}{10000} \\left.\\right) \\star n \\star m e d i a n . a d j . t o t . p o p \\left.\\right} + t o t . d i r e c t d e a t h s $$ (2) _μ_ _c_ = posterior mean CDR for conflict period /10000/day—(PCDR) _μ_ _p_ = posterior mean CDR for pre-conflict period /10000/day—(BCDR) _n_ = number of years (2015–2019) _median tot_._pop_ = median of the adjusted total population _tot_. _direct_._deaths_ = total direct ACLED deaths from 2015–2019 _median tot_._pop_ = median of the adjusted total population _tot_. _direct deaths_ = total direct ACL...",
+      "score": 0.48865002,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "Adult mortality patterns in Yemen before and during armed conflict: evidence from a web survey of the global diaspora",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10413691",
+      "content": "The cause of death amongst the 65 individuals who died in Yemen was reported as disease (n = 29, 44.6%), intentional injury (n = 5, 7.7%), accidental injury (n = 2, 3.1%), and _other_ or _unknown_ causes (n = 29, 44.6%), with no discernible patterns over time (data not shown). [...] ### Mortality patterns Of the 1704 individuals in the study population the majority were reported to be alive (n = 1591, 93.4%). Only 85 individuals were reported to have died (5%), with most deaths occurring amongst parents or spouses’ parents (n = 64, 75%of deaths) (Table 3).Table 3Vital status of individuals in the sample, by familial relationshipRelationshipAliveDeceasedUnknownTotalParents of respondent or spouse214 (75.3%)64 (22.5%)6 (2.1%)284Siblings of respondent or spouse574 (95.0%)12 (2.0%)18 (3.0%)604Nieces/nephews of respondent or spouse803 (98.4%)9 (1.1%)4 (0.5%)816All individuals1591 (93.4%)85 (5.0%)28 (1.6%)1704 [...] Of the 85 individuals reported to have died, 65 (76%) died in Yemen (29 of whom died before 2008). Deaths stratified by period of analysis are presented in Table 4.Table 4Period and location of reported deaths, by familial relationshipPre-analysis period (Pre-January 2008)...",
+      "score": 0.47110215,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] The Humanitarian Crisis in Yemen: Beyond the Man-Made Disaster",
+      "url": "https://www.ipinst.org/wp-content/uploads/2018/01/IPI-Rpt-Humanitarian-Crisis-in-Yemen.pdf",
+      "content": "Assessing the Security and Humanitarian Situation As of January 2018, the possibility of Yemen reaching an effective and lasting peace agreement in the foreseeable future looks very unlikely. Years of mediation and conflict-resolution efforts have produced limited results, despite agreements signed by the parties in 2011 (Agreement on the Implementation Mechanism for the Transition Process in Yemen in Accordance with the Initiative of the Gulf Cooperation Council)12 and 2014 (The Peace and National Partnership Agreement).13 In 2016 the UN special envoy for Yemen, Ismail Ould Cheikh Ahmed, presented a conflict-settlement plan as a result of the Kuwait Talks, but to no avail. As a result of repeated setbacks, in January 2017 Ould Cheikh Ahmed resigned, the second UN mediator in less than [...] government-by-imam system and the volatile local networks bolstered by tribal alliances.3 Three years into the current crisis, Yemen is torn apart by an interlinked series of conflicts with intricate and mobile front lines. Yemeni armed forces, under the control of the Hadi government and backed by a Saudi-led international coalition, are engaged in a non-international armed conflict with Ho...",
+      "score": 0.4581311,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "search_index": 4
+    },
+    {
+      "title": "Yemen humanitarian crisis set to worsen in 2026: UN - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+      "url": "https://www.al-monitor.com/originals/2026/01/yemen-humanitarian-crisis-set-worsen-2026-un",
+      "content": "The humanitarian crisis in Yemen is set to get much worse in 2026 as food insecurity increases and international aid evaporates, the United Nations warned on Monday. Julien Harneis, the UN resident and humanitarian coordinator for Yemen, said he feared the calamitous situation would go under the radar until the death toll mounts. The picture in Yemen is \"very, very concerning\", he told reporters in Geneva. Last year, 19.5 million people in the country needed humanitarian aid -- and the UN's response plan for the country was only 28-percent financed, at $688 million. \"We are expecting things to be much worse in 2026,\" said Harneis, pointing out that 21 million Yemenis were now in need, and aid was drying up. [...] search icon search icon Newsletters Events Logo Logo Subscribe Sign in ## The Middle Eastʼs leading independent news source since 2012 ## Search ## Secondary Navigation Saudi Arabia United Arab Emirates Palestine Lebanon Israel Egypt China United States Russia Qatar Oman Iraq Jordan Algeria Bahrain Kuwait Libya Morocco Sudan Tunisia Yemen Somalia # Yemen humanitarian crisis set to worsen in 2026: UN by Robin MILLARD by Robin MILLARD Jan 19, 2026 Add AL-MONITOR on Google...",
+      "score": 0.45072258,
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "search_index": 2
+    },
+    {
+      "title": "Brokering a Ceasefire in Yemen's Economic Conflict",
+      "url": "https://www.crisisgroup.org/rpt/middle-east-north-africa/yemen/231-brokering-ceasefire-yemens-economic-conflict",
+      "content": "The UN proposal called for a nationwide ceasefire first, including a halt to aerial and maritime attacks, to come into effect within 72 hours of the document’s signing by both parties.[fn]Shuttle negotiations during this period yielded multiple drafts of an agreement. Two drafts, one in English, the other in Arabic, from August and September 2020, respectively, are on file with Crisis Group. The ceasefire would be overseen by a Military Coordination Committee, made up of military representatives of both parties and chaired by the UN, and would in turn form governorate-level ceasefire committees. As part of the ceasefire, the agreement also calls for the reopening of access roads throughout the country, notably those around Taiz city, Hodeida, Marib, Saada and al-Jawf.Hide FootnoteThe [...] efforts to secure roads bisected by front lines, while the initiative the UN pursued in 2020-2021 included provisions on reopening Hodeida port and Sanaa airport.Hide FootnoteBut such a move could help resolve their internal liquidity problems and increase economic activity in Sanaa, cementing the city’s status as the country’s economic centre of gravity. For its part, the government would ben...",
+      "score": 0.4395795,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "search_index": 4
+    },
+    {
+      "title": "Yemen | Global Humanitarian Overview 2026 | Humanitarian Action",
+      "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2026/article/yemen-4",
+      "content": "A woman wearing a veil is holding a small child and is standing at the doorway of a shelter made from tarps. Aden, Yemen A displaced woman with her child outside her tent in Ash-Shab IDP site. UNOCHA/Ahmed Haleem for YPN Protection risks are escalating as resilience collapses. Over 16 million people require protection assistance, of which 4.7 million are internally displaced. Women and girls face heightened risks of violence, with nearly one million now cut off from safe spaces and psychosocial support following the suspension of gender-based programmes. Landmines and explosive remnants of war continue to endanger lives. In addition, an estimated 329,000 migrants, 58,000 refugees and asylum seekers are in urgent need of life-saving humanitarian assistance and protection support. [...] Health, WASH, Shelter, and Protection services are shrinking as essential systems collapse. Hundreds of health facilities have closed, leaving 8.41 million people with limited access to basic care. Water and sanitation will deteriorate for over 15 million people already water insecure. With 17.4 million lacking adequate sanitation and hygiene, preventable waterborne diseases will surge. At the same...",
+      "score": 0.43755972,
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "search_index": 2
+    },
+    {
+      "title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker",
+      "url": "https://www.cfr.org/global-conflict-tracker/conflict/war-yemen",
+      "content": "Talks between Iran and Saudi Arabia in April 2023, mediated by China, have raised hopes of apolitical settlementto end the conflict in Yemen. The talks led to a breakthrough agreement tore-establishdiplomatic relations and re-open both sides’ embassies after years of tension and hostility.Iran’s UN mission said that the agreement couldaccelerate effortsto renew the lapsed cease-fire. [...] Though a six-monthUN-brokeredcease-fire officially lapsed in October 2022, both sides have since refrained from major escalatory actions and hostility levels remain low.Peace talks between Saudi and Houthi officials, mediated by Oman,resumedin April 2023, accompanying ongoing UN mediation efforts. However, concrete progress remains elusive, and the first official Houthi visit to the Saudi capital since the war began, on September 14, yielded nothing beyond optimistic statements. The discussions were reportedly centered around a complete reopening of Houthi-controlled ports and Sanaa airport, reconstruction efforts, and a timeline for foreign forces to withdraw from Yemen. Negotiations have also been overshadowed by the suspension of the only commercial air route out of Sanaa and a late [...] M...",
+      "score": 0.42605945,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "search_index": 4
+    },
+    {
+      "title": "Yemen Humanitarian Update - April 2026 | OCHA",
+      "url": "https://www.unocha.org/publications/report/yemen/yemen-humanitarian-update-april-2026",
+      "content": "## Search form # Yemen Humanitarian Update - April 2026 ## Attachments Preview of Humanitarian Update_April_2026_EN_Final.pdf Download attachment (PDF | 2.64 MB | English version) ### HIGHLIGHTS Yemen’s 2026 humanitarian outlook: Rising needs, shrinking resources Yemen’s health system under strain as funding cuts, outbreaks and supply disruptions deepen needs Excluded by default: Migrants stranded in Yemen need both inclusion and a safe way back home Torrential rains and flooding exacerbate humanitarian needs YHF in action: Strengthened local, data-driven life-saving support across Yemen YEMEN’S 2026 HUMANITARIAN OUTLOOK: RISING NEEDS, SHRINKING RESOURCES [...] On 18 March, the United Nations and humanitarian partners launched the 2026 Yemen Humanitarian Needs and Response Plan (YHNRP), calling for US$2.16 billion to deliver assistance and protection services to millions of men, women and children, prioritizing those facing the most severe needs. In 2026, 22.3 million people, more than two‑thirds of the population, require humanitarian assistance and protection services, including 5.2 million internally displaced people, as well as migrants, refugees and asylum seekers. [...] Ye...",
+      "score": 0.4179133,
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "search_index": 2
+    },
+    {
+      "title": "Yemen war: Coalition ceasefire to help combat coronavirus begins",
+      "url": "https://www.bbc.com/news/world-middle-east-52224358",
+      "content": "The five-year conflict has devastated Yemen, reportedly killed more than 100,000 people, and triggered what the UN considers the world's worst humanitarian crisis. ## What did the coalition say? Spokesman Col Turki al-Malki announced that the coalition would begin a ceasefire at midday local time (10:00 GMT) on Thursday because it was \"determined to create a conducive environment for the UN envoy's [peace] efforts, and to alleviate the suffering of the brotherly people of Yemen and support the efforts towards combating the spread of Covid-19 pandemic\". [...] At the start of the war, Saudi officials forecast that it would last only a few weeks. But five years of military stalemate have followed. The UN has verified the deaths of at least 7,500 civilians, with most caused by coalition air strikes. But a monitoring group has estimated that the fighting has killed 112,000 people, including 12,600 civilians. The fighting and blockade have also triggered the world's worst humanitarian crisis. Some 24 million people - 80% of the population - need humanitarian assistance, and almost 10 million are considered \"one step away from famine\". ## UN appeals to Yemen rebels over 'diverted' aid...",
+      "score": 0.37751824,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "search_index": 4
+    },
+    {
+      "title": "Yemen | OCHA",
+      "url": "https://www.unocha.org/yemen",
+      "content": "Yemen Infographic ### Yemen: Al Mahwit Governorate Humanitarian Presence (4Ws) May 2026 Please refer to the attached Infographic. Yemen Infographic ### Yemen: Ibb Governorate Humanitarian Presence (4Ws) May 2026 Please refer to the attached Infographic. Yemen Situation Report ### Yemen Humanitarian Update - April 2026 HIGHLIGHTS Yemen’s 2026 humanitarian outlook: Rising needs, shrinking resources Yemen’s health system under strain as funding cuts, outbreaks and supply disruptions deepen needs Excluded by default:... Yemen Situation Report ### Yemen: Humanitarian Situation in Eastern and Southern Governorates - Update as of 8 January 2026 [...] Key Highlights: Escalating tensions in the southern and eastern governorates have led to the displacement of 1,634 households from Hadramawt to Marib. Rapid Response Mechanism (RRM) has assisted... ## Funding for OCHA Yemen Total requirements (USD) : 9.9M 2026 Opening balance (USD) : 0 2026 Earmarked funding (USD) : 2.3M 2026 Total (USD) : 2.3M 2026 ## Earmarked contributions Private Contributions : $0.9 million ## Unearmarked contributions Australia Belgium Denmark Estonia Finland Germany Iceland Ireland Luxembourg Monaco Netherlands New...",
+      "score": 0.37456247,
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "search_index": 2
+    },
+    {
+      "title": "Conflict Watchlist 2026 - ACLED",
+      "url": "https://acleddata.com/series/conflict-watchlist-2026",
+      "content": "Main navigation User account menu User account menu Main navigation (drawer) Conflict Watchlist 2026 # Conflict Watchlist 2026 ACLED’s Conflict Watchlist highlights 10 countries and regions projected to face armed conflict, political unrest, and humanitarian emergencies in 2026. Each country and regional report assesses the state of conflict, analyzing prospects of conflict escalation and resolution. ACLED’s conflict data shed light on how governments and armed groups are changing the global political landscape. 11 December 2025 Explore further What’s driving conflict today? A review of global trends Israel recalibrates its military campaigns in a region still on edge Ahead of elections, Myanmar's military capitalizes on foreign support to divide the resistance [...] The ACLED Conflict Index is a global assessment of how and where conflicts in every country and territory in the world vary according to four indicators — deadliness, danger to civilians, geographic diffusion, and the number of armed groups. Explore further ## Discover CAST | Conflict Alert System The ACLED Conflict Alert System (CAST) is a conflict forecasting visualization platform that predicts political violence...",
+      "score": 0.3605346,
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "search_index": 3
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project on JSTOR",
+      "url": "https://www.jstor.org/publisher/acledp",
+      "content": "| ACLED-Religion Overview31 July-10 September 2021 | 2021 | | ACLED-Religion Overview6-12 March 2021 | 2021 | | ACLED-Religion Overview6-12 November 2021 | 2021 | | ACLED’s Afghanistan Coverage:: Adapting Sourcing Strategy in an Evolving Context | 2022 | | Actor Profile:: Proud Boys | 2021 | | Actor Profile:: Dan Na Ambassagou | 2022 | | Actor Profile:: The March 23 Movement | 2023 | | Actor Profile:: Volunteers for the Defense of the Homeland (VDP) | 2024 | | Actor Profile:: Oath Keepers | 2021 | | Actor Profile:: Jama’at Nusrat al-Islam wal-Muslimin(JNIM) | 2023 | | Actor Profile:: Boogaloo Boys | 2021 | | Actor Profile: The Jalisco New Generation Cartel (CJNG) | 2023 | | Aden Security | 2021 | | Administering Violence | 2023 | | Africa Overview:: July 2024 | 2024 | [...] | The US-Taliban Peace Deal:: 10 Weeks On | 2020 | | Violence Against Civilians by State Forces in Mainland China:: 2018-2020 | 2020 | | Violence in Yemen During the UN-Mediated Truce:: April-October 2022 | 2022 | | Violence mars one-third of Venezuela’s post-election demonstrations | ACLED Insight | 2024 | | Violence Targeting Civilians Increased During Elections in Papua New Guinea | 2022 | | Violence Targe...",
+      "score": 0.31355688,
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "search_index": 3
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Yemen conflict analysis ACLED expert report fatalities trends 2024",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+    "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+    "Yemen ACLED actors institutions armed groups official reports conflict parties",
+    "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+    "Yemen conflict analysis ACLED expert report fatalities trends 2024"
+  ],
+  "refilter_queries": [],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook | ACLED",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff methodological background on how ACLED codes dates and disaggregates fatalities, which is relevant to how the resolution dataset will count Yemen fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "Data Update: Expanded Coverage of Political Violence in Yemen | ACLED",
+      "url": "https://acleddata.com/update-log/data-update-expanded-coverage-political-violence-yemen",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background directly about ACLED Yemen coverage and reporting gaps/expansions. This can materially affect interpretation of baseline and comparison windows in the forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Fatalities | ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological explanation of ACLED fatality coding. Relevant to understanding how fatalities are counted for resolution, though not Yemen-specific."
+    },
+    {
+      "stage": "cached",
+      "title": "PUBLIC_Yemen Methodology v3 (Aug 2021)",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2021/11/PUBLIC_Yemen-Methodology-v4Jan-2022.pdf",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe historical Yemen methodology document describing ACLED treatment of Yemen fatality reporting and source triangulation. Useful supporting context for dataset behavior."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] FAQs: ACLED Fatality Methodology",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/02/FAQs_-ACLED-Fatality-Methodology_2020.pdf",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe general ACLED fatality methodology FAQ. Only indirectly useful for this Yemen forecast, but not leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "query": "Yemen ACLED fatalities methodology codebook API export country:Yemen fatalities event_date on or before 2026-06-04 30-day average 360 days primary source",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical academic analysis of Yemen mortality and ACLED data through 2019. Background only; not directly predictive for the specific 2026 30-day fatality threshold."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED annual report with older Yemen fatality context. Tangential background, not leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen Conflict | ACLED",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe ACLED Yemen conflict methodology page explaining sourcing and coverage limitations in Yemen. Useful context for interpreting future ACLED fatality counts."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe older ACLED codebook background. Methodological but dated and not Yemen-specific, so low relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe ACLED codebook PDF describing fatality field conventions and conservative estimates. Relevant to resolution mechanics, with no post-cutoff outcome information."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen Conflict Monitor | ACLED",
+      "url": "https://acleddata.com/monitor/yemen-conflict-monitor",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Drop: snippet explicitly shows post-cutoff publication dates ('27 March 2026', '7 May 2026') and current monitor page state after the 2026-06-20 cutoff."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen, year 2017: Update on incidents according to the ...",
+      "url": "https://fln.dk/media/ou1fkgl1/yeme178.pdf",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Keep: pre-cutoff historical background on ACLED incident categories and Yemen incidents; no post-cutoff publication or outcome leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Keep: ACLED codebook methodology directly informs how fatalities are recorded and revised, which is relevant to interpreting the resolution source; no explicit post-cutoff publication state."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Keep: archival ACLED annual report provides general methodological background on fatalities; safely pre-cutoff and no leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen, June 2026 Monthly Forecast : Security Council Report",
+      "url": "https://www.securitycouncilreport.org/monthly-forecast/2026-06/yemen-89.php",
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Keep: June 2026 Yemen monthly forecast is contemporaneous pre-cutoff context about conflict dynamics, negotiations, and Security Council activity; useful supporting context and no explicit post-cutoff publication marker."
+    },
+    {
+      "stage": "cached",
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Keep: ACLED fatalities methodology is directly relevant to how the resolving dataset counts Yemen fatalities, including unspecified fatality coding; no explicit post-cutoff publication state."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen Conflict",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Keep: Yemen-specific ACLED methodology on fatality coding is directly relevant to interpreting likely ACLED fatality totals in Yemen; no explicit post-cutoff publication or completed post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] FAQs: ACLED Fatality Methodology",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/02/FAQs_-ACLED-Fatality-Methodology_2020.pdf",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Keep: ACLED FAQ on fatality methodology is useful supporting context for dataset behavior and revisions; safely pre-cutoff."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen Conflict | ACLED",
+      "url": "https://acleddata.com/methodology/yemen-conflict",
+      "query": "Yemen conflict analysis ACLED expert report fatalities trends 2024",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Keep: Yemen Conflict methodology page gives Yemen-specific fatality coding practices directly relevant to the resolution source; no explicit post-cutoff publication state."
+    },
+    {
+      "stage": "cached",
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "query": "ACLED Yemen fatalities dataset codebook fatalities field event categories official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Keep: academic historical analysis of Yemen conflict and ACLED data is generic background only, but it is safe and non-leaking."
+    },
+    {
+      "stage": "cached",
+      "title": "Country policy and information note: security situation, Yemen, March 2025 (accessible version) - GOV.UK",
+      "url": "https://www.gov.uk/government/publications/yemen-country-policy-and-information-notes/country-policy-and-information-note-security-and-humanitarian-situation-yemen-december-2021-accessible-version",
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background on ACLED event definitions and Yemen security context; no explicit post-cutoff publication/update or completed post-cutoff outcome. Only weakly relevant because it does not inform near-term fatalities by June 2026."
+    },
+    {
+      "stage": "cached",
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical academic analysis of Yemen mortality and ACLED data through 2019. No explicit post-cutoff publication/update after 2026-06-20. Useful only as distant background, not a leading indicator for the forecast window."
+    },
+    {
+      "stage": "cached",
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ACLED data, 2012–2019 | PLOS Global Public Health",
+      "url": "https://journals.plos.org/globalpublichealth/article?id=10.1371%2Fjournal.pgph.0000581",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical study covering 2012-2019 mortality and ACLED data. Safe and pre-cutoff in substance, but only generic background with little direct value for forecasting fatalities in the specific June 2026 window."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict Watchlist 2024 | Yemen and the Red Sea: Rising Tensions Threaten Peace Process and International Security | ACLED",
+      "url": "https://acleddata.com/report/conflict-watchlist-2024-yemen-and-red-sea-rising-tensions-threaten-peace-process-and",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "ACLED analytical background on Yemen conflict dynamics, de-escalation, and civilian targeting trends. No explicit post-cutoff publication/update after the cutoff. Though dated, it is more relevant than generic background because it describes structural violence patterns that could inform baseline risk."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] YEMEN: ENDING THE WAR, BUILDING A SUSTAINABLE PEACE",
+      "url": "https://mei.edu/wp-content/uploads/2022/03/Yemen-Ending-the-War-Building-a-Sustainable-Peace.pdf",
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Older policy paper on Yemen war and peace process. No explicit post-cutoff publication/update or leaked outcome. Tangential strategic background only, with limited direct forecasting value for the target period."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "ACLED annual report for 2019 explaining actors and methodology. Safe historical background with no post-cutoff leakage, but not directly informative about fatalities near June 2026."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen War Deaths on Overall Decline as UN Works to Salvage Truce | ACLED",
+      "url": "https://acleddata.com/press/yemen-war-deaths-overall-decline-un-works-salvage-truce",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical 2019 ACLED press piece on declining fatalities after the Stockholm Agreement. No post-cutoff leakage; however, it is old and only weakly informative for the 2026 forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "General HDX/ACLED dataset description stating ACLED provides real-time event and fatality data and weekly civilian targeting datasets. Safe metadata/background with no explicit post-cutoff result. Moderately relevant because it clarifies source availability and structure, though it does not provide contemporaneous Yemen evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "The UN-Mediated Truce in Yemen: Impacts of the First Two Months | ACLED",
+      "url": "https://acleddata.com/report/un-mediated-truce-yemen-impacts-first-two-months",
+      "query": "ACLED Yemen historical fatalities 30 day average 360 day comparable methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "ACLED report on the 2022 Yemen truce and its impact on fatalities. Historical but substantively relevant to understanding how truce conditions affect lethality and baseline conflict dynamics. No explicit post-cutoff publication/update after 2026-06-20."
+    },
+    {
+      "stage": "cached",
+      "title": "Civil war and death in Yemen: Analysis of SMART survey and ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10022117",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Duplicate-style snippet from the same historical mortality paper as item 1. Safe historical background without post-cutoff leakage, but low relevance to forecasting the specific June 2026 fatality threshold."
+    },
+    {
+      "stage": "cached",
+      "title": "Adult mortality patterns in Yemen before and during armed conflict: evidence from a web survey of the global diaspora",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10413691",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff academic background on mortality in Yemen; no explicit post-cutoff publication/update or completed post-cutoff outcome. Only tangentially useful for forecasting near-term ACLED fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Humanitarian Crisis in Yemen: Beyond the Man-Made Disaster",
+      "url": "https://www.ipinst.org/wp-content/uploads/2018/01/IPI-Rpt-Humanitarian-Crisis-in-Yemen.pdf",
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff 2018 background report on Yemen's humanitarian/security situation. Safe historical context with no post-cutoff publication marker, but weakly relevant to a June 2026 short-horizon fatalities forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen humanitarian crisis set to worsen in 2026: UN - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+      "url": "https://www.al-monitor.com/originals/2026/01/yemen-humanitarian-crisis-set-worsen-2026-un",
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Published before the 2026-06-20 cutoff (January 2026) and contains prospective UN warning that conditions and death toll could worsen in 2026. This is valid pre-cutoff forward-looking evidence relevant to elevated fatality risk."
+    },
+    {
+      "stage": "cached",
+      "title": "Brokering a Ceasefire in Yemen's Economic Conflict",
+      "url": "https://www.crisisgroup.org/rpt/middle-east-north-africa/yemen/231-brokering-ceasefire-yemens-economic-conflict",
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical/background analysis of ceasefire and economic conflict dynamics in Yemen. No explicit post-cutoff publication/update after cutoff in the provided text. Indirect relevance only."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen | Global Humanitarian Overview 2026 | Humanitarian Action",
+      "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2026/article/yemen-4",
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "2026 humanitarian overview provides contemporaneous pre-cutoff context on worsening protection risks, displacement, mines/ERW, and collapsing services in Yemen. No explicit post-cutoff publication date in snippet; useful supporting context for conflict-related fatality risk."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict in Yemen and the Red Sea | Global Conflict Tracker",
+      "url": "https://www.cfr.org/global-conflict-tracker/conflict/war-yemen",
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Background tracker on conflict intensity, cease-fire lapse, and low hostility levels since 2022. Safe as no explicit post-cutoff publication/update is shown; moderately relevant as context on baseline conflict dynamics."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen Humanitarian Update - April 2026 | OCHA",
+      "url": "https://www.unocha.org/publications/report/yemen/yemen-humanitarian-update-april-2026",
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "April 2026 OCHA humanitarian update is clearly pre-cutoff and contemporaneous. It documents rising needs, flooding, outbreaks, and strain that may correlate with instability and fatalities, though not direct ACLED event counts."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen war: Coalition ceasefire to help combat coronavirus begins",
+      "url": "https://www.bbc.com/news/world-middle-east-52224358",
+      "query": "Yemen conflict forecast drivers ceasefire talks front lines humanitarian access schedule",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Older BBC report on a 2020 ceasefire announcement. Safe historical context with prospective language at the time, but very limited value for forecasting fatalities in the specific June 2026 window."
+    },
+    {
+      "stage": "cached",
+      "title": "Yemen | OCHA",
+      "url": "https://www.unocha.org/yemen",
+      "query": "Yemen conflict June 2026 before 2026-06-04 ceasefire airstrikes frontlines displacement humanitarian access contemporary reporting forecast fatalities next 30 days",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "OCHA Yemen page lists May 2026 and January 2026 situation materials, which are pre-cutoff contemporaneous humanitarian context. No explicit post-cutoff publication/update in the snippet; moderately relevant supporting evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict Watchlist 2026 - ACLED",
+      "url": "https://acleddata.com/series/conflict-watchlist-2026",
+      "query": "Yemen conflict fatalities seasonal patterns ACLED analysis historical base rate Ramadan summer escalation independent analysis on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "ACLED Conflict Watchlist 2026 was published 11 December 2025, well before cutoff, and offers ACLED's own forward-looking assessment of conflict escalation prospects in 2026. Relevant prospective evidence, though not Yemen-specific in the snippet."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project on JSTOR",
+      "url": "https://www.jstor.org/publisher/acledp",
+      "query": "Yemen ACLED actors institutions armed groups official reports conflict parties",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background source about ACLED and related publications. The snippet lists historical materials from 2020-2024 and does not indicate any post-cutoff publication, update, or completed post-cutoff outcome relevant to Yemen. Relevance is low because it is generic ACLED background rather than evidence about Yemen fatalities near the forecast window."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 40,
+    "dropped": 1,
+    "relevance": {
+      "high": 4,
+      "medium": 17,
+      "low": 20
+    },
+    "supplemental_for_relevance": false
+  }
+}

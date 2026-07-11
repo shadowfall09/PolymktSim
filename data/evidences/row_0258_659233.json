@@ -1,0 +1,305 @@
+{
+  "row_index": 258,
+  "market_id": "659233",
+  "slug": "will-bitcoin-reach-200k-in-november-2025",
+  "question": "Will Bitcoin reach $200,000 in November?",
+  "event_title": "What price will Bitcoin hit in November?",
+  "end_date_limit": "2025-12-01",
+  "row_end_date_raw": "2025-12-01",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m historical highs November site:binance.com",
+    "Binance API BTCUSDT klines 1m November",
+    "Binance BTC_USDT 1m chart historical November high 200000"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] ``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Cr...",
+      "score": 0.99992037,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Retrieving Full Historical Data for Every Cryptocurrency on Binance ...",
+      "url": "https://betterprogramming.pub/easiest-way-to-use-the-bitmex-api-with-python-fbf66dc38633",
+      "content": "I’ve recently been investigating the relationship between data science and the cryptocurrency market for a pretty long article I’m writing. During the process, I needed to retrieve price history and other data, so I decided to write a supplementary piece about how I accomplished that. I hope you find it useful. Make sure to follow me if you enjoy this piece and want to see more! ## TL;DR To retrieve Bitcoin prices and data (1m klines): 1. Sign-up on Binance and/or BitMex to get API access. 2. Import the functions I’ve created for easy-of-use and add your API details. 3. a. Call the function: get\\_all\\_binance(“BTCUSDT”, “1m”, save = True) b. Call the function: get\\_all\\_bitmex(“XBTUSD”, “1m”, save = True) ### Example use: Press enter or click to view image in full size [...] ## Responses (16) Write a response What are your thoughts? Felito Felito Nov 26, 2019 ``` Hi, Thanks for sharing important info but… something I am missing . Next my error : from kucoin import kucoin ImportError: cannot import name ‘kucoin’ from ‘kucoin’ (C:\\Users\\felix\\AppData\\Local\\Programs\\Python\\Python38–32\\lib\\site-packages\\kucoin\\__init__.py) Please help Thanks in advance Best regards... ``` 1 CoinsInf...",
+      "score": 0.9998134,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "BTCUSDT 1min Perpetual Dataset ( Binance APIs ) - Kaggle",
+      "url": "https://www.kaggle.com/datasets/sid17a/btcusdt-1min-perpetual-dataset-binance-apis",
+      "content": "7175.91 7176.1 7175.91 7176.1 0.321 2303.51967 9 0.221 1585.91067 2020-01-01 00:47:00+00:00 7176.07 7176.65 7176.07 7176.54 3.564 25576.81026 14 3.432 24629.55398 2020-01-01 00:48:00+00:00 7176.54 7177.11 7176.54 7177.11 10.717 76915.99583 15 6.274 45028.62042 2020-01-01 00:49:00+00:00 [...] Format: CSV Columns Description open – Opening price of BTCUSDT for the interval high – Highest traded price during the interval low – Lowest traded price during the interval close – Closing price of BTCUSDT for the interval volume – Base asset volume (BTC traded) quote_volume – Quote asset volume (USDT traded) num_trades – Total number of executed trades taker_buy_base_vol – Volume of BTC bought by taker (market buy orders) taker_buy_quote_vol – USDT value of taker buy volume timestamp_utc – Candle open time in UTC Additional Notes Each row represents a fully aggregated 1-minute candlestick Data is raw, unfiltered, and exchange-accurate No synthetic smoothing or future data leakage [...] | 112468.94 - 114884.27 | 13,614 | | 114884.27 - 117299.60 | 14,833 | | 117299.60 - 119714.94 | 32,239 | | 119714.94 - 122130.27 | 4,272 | | 122130.27 - 124545.60 | 940 |",
+      "score": 0.99963737,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] Scheduled changes: The All Book Tickers stream (!bookTicker) is set to be removed in late November 2022. Please use the Individual Book Ticker Streams instead. (@bookTicker). Multiple @bookTicker streams can be subscribed to over one connection. For example: wss://stream.binance.us:9443/stream?streams=btcusdt@bookTicker/bnbbtc@bookTicker Market Data: Added a new optional parameter type in two endpoints: GET /api/v3/ticker and GET /api/v3/ticker/24hr. Also removed Individual Symbol Ticker Streams as it duplicates with Ticker Order Book Stream, supported new candlestick chart interval: 1s. Get Asset Distribution History endpoint: Updated this endpoint to also query the rebate distribution record. [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/openOrders\" data ={\"symbol\": \"BTCUSDT\", \"timestamp\": 1499827319559}...",
+      "score": 0.9995345,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Fetch Candlestick/Kline data from Binance API using Python ...",
+      "url": "https://stackoverflow.com/questions/51358147/fetch-candlestick-kline-data-from-binance-api-using-python-preferably-requests",
+      "content": "import requests import datetime import pandas as pd import numpy as np def gget_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00'): \"\"\" interval: str tick interval - 4h/1h/1d ... \"\"\" columns = ['open_time','open', 'high', 'low', 'close', 'volume','close_time', 'qav','num_trades','taker_base_vol','taker_quote_vol', 'ignore'] usecols=['open', 'high', 'low', 'close', 'volume', 'qav','num_trades','taker_base_vol','taker_quote_vol'] start = int(datetime.datetime.timestamp(pd.to_datetime(start))1000) end_u = int(datetime.datetime.timestamp(pd.to_datetime(end))1000) df = pd.DataFrame() print(f'Downloading {interval} {ticker} ohlc-data ...', end=' ') while True: url = f' data = pd.DataFrame(requests.get(url, headers={'Cache-Control': [...] = pd.DataFrame(requests.get(url, headers={'Cache-Control': 'no-cache', \"Pragma\": \"no-cache\"}).json(), columns=columns, dtype=np.float64) start = int(data.open_time.tolist()[-1])+1 data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] data = data[usecols] df = pd.concat([df, data], axis=0) if end in data.index.tolist(): break print('Done.') df.ind...",
+      "score": 0.9991239,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "Optimus Prime's user avatar ## 1 Answer 1 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: `binance.vision` Here's a sample bash script that downloads and unpacks the raw data for the whole month: `#!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: `.csv` [...] I need to some how get the tick data for BTCUSDT for specific days. This is the raw tick data, the ( Last Price ) I will attach an image of a chart from TV and the price that shows on the right that moves up and down every second, I need that price but I need it for 1 month. I have tried the following sites to obtain it but I am probably missing something or just dont know how to get the BTCUSDT 1 second raw tick data for 1 month. Binance Data Collection enter i...",
+      "score": 0.99857855,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "| Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hour...",
+      "score": 0.9984988,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "## Dataset Overview This dataset contains historical price data for Bitcoin (BTC/USDT) from January 1, 2018, to the present. The data is sourced using the Binance API, providing granular candlestick data in four timeframes: 15-minute (15M) 1-hour (1H) 4-hour (4H) 1-day (1D) This dataset includes the following fields for each timeframe: [...] ## Data Sources Binance API: Used for retrieving 15-minute, 1-hour, 4-hour, and 1-day candlestick data from 2018 to the present. ## File Contents 1. btc_15m_data_2018_to_present.csv: 15-minute interval data from 2018 to the present. 2. btc_1h_data_2018_to_present.csv: 1-hour interval data from 2018 to the present. 3. btc_4h_data_2018_to_present.csv: 4-hour interval data from 2018 to the present. 4. btc_1d_data_2018_to_present.csv: 1-day interval data from 2018 to the present. ## Automated Daily Updates This dataset is automatically updated every day using a custom Python program. The source code for the update script is available on GitHub: 🔗 Bitcoin Dataset Kaggle Auto Updater ## Licensing [...] 2018-02-18 11039.55 11274.0 10080.0 10383.43 61137.380728 2018-02-18 23:59:59.999 649423311.3100228 537534 29593.863774 2018-02-19 10375.01 11250.0...",
+      "score": 0.99824536,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Data - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "- Symbol - The symbol for which the timeseries data refers - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period [...] There are two types of future contracts on Binance, USDT-M (UM) and COIN-M (CM); Please see the below graphic created by Binance Futures that explains the main differences between these assets. Most often, users are looking for USDT-M (UM). Contracts that end in a number, like 'BTCUSDT\\_210326' refers to the maturity of the contract --> YYMMDD format. Please reach out if you find discrepancies or errors in the data that need to be addressed and we will do our best to resolve. - Unix Timestamp - This is the unix timestamp or also known as \"Epoch Time\". Use this to convert to your local timezone - Date - This timestamp is in...",
+      "score": 0.992062,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Changelog | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs",
+      "content": "| `GET /api/v3/account` `account.status` | 10 | 20 | | `GET /api/v3/rateLimit/order` `account.rateLimits.orders` | 20 | 40 | | `GET /api/v3/exchangeInfo` `exchangeInfo` | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1-100 | 1 | 2 | | `GET /api/v3/depth` `depth` - Limit 101-500 | 5 | 10 | | `GET /api/v3/depth` `depth` - Limit 501-1000 | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1001-5000 | 50 | 100 | | `GET /api/v3/aggTrades` `trades.aggregate` | 1 | 2 | | `GET /api/v3/trades` `trades.recent` | 1 | 2 | | `GET /api/v3/historicalTrades` `trades.historical` | 5 | 10 | | `GET /api/v3/klines` `klines` | 1 | 2 | | `GET /api/v3/uiKlines` `uiKlines` | 1 | 2 | | `GET /api/v3/ticker/bookTicker` `ticker.book` - With `symbol` | 1 | 2 | [...] | `GET /api/v3/ticker/bookTicker` `ticker.book` - Without `symbol` or With `symbols` | 2 | 4 | | `GET /api/v3/ticker/price` `ticker.price` - With `symbol` | 1 | 2 | | `GET /api/v3/ticker/price` `ticker.price` - Without `symbol` or With `symbols` | 2 | 4 | | `GET /api/v3/ticker/24hr` `ticker.24hr` - With `symbol` or With `symbols` using 1-20 symbols | 1 | 2 | | `GET /api/v3/ticker/24hr` `ticker.24hr` - With `symbols using 21-100 symbols` | 20 | 4...",
+      "score": 0.98625773,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "search_index": 2
+    },
+    {
+      "title": "Biggest US dollar gains ever — 5 Things to know in Bitcoin ...",
+      "url": "https://www.binance.com/en/square/post/17018871126313",
+      "content": "Monthly BTC price performance: “A new ballgame” Bitcoin may not be at $100,000 yet, but over the weekend, BTC price action quietly made history. Capping the November monthly candle at $96,400, BTC/USD sealed its biggest-ever one-month US dollar gains. “It’s a new ballgame,” one bullish reaction from Cory Klippsten, CEO of investment platform Swan Bitcoin, read. BTC/USD 1-month chart. Source: Cointelegraph/TradingView The candle clearly stands out on the monthly chart as something unprecedented, yet in percentage terms, it is in fact nothing out of the ordinary. Data from monitoring resource CoinGlass showed that at just above 37%, November’s upside does not even compete with Bitcoin’s most successful eleventh months of the year. [...] Ranging below all-time highs is keeping Bitcoin traders guessing over when the magical six-figure BTC price tag will appear. November 2024 sets the record for Bitcoin’s biggest US dollar gains in a single monthly candle. Funding rates show a lack of overheated market conditions — a key ingredient in supporting further upside. A bumper week of US employment data precedes the Federal Reserve’s crunch interest rate decision. Onchain profit trends are...",
+      "score": 0.80625874,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "BTC sets a new historical high｜Binance Morning Report ...",
+      "url": "https://www.binance.com/en/square/post/11-21-2024-btc-11-21-16516927314162",
+      "content": "Article # BTC sets a new historical high｜Binance Morning Report (November 21) Binance News Nov 20, 2024・Verified Binance official account Follow View Hidden Replies Report Block User ● BTC breaks $94,500, setting a new historical high According to Binance market data, BTC broke through 94,500 USDT this morning, reaching 94,977 USDT, setting a new historical high. ● Survey: Among 106 analysts, 94 believe the Federal Reserve will cut interest rates by 25 basis points in December According to Golden Finance, a Reuters survey: Among 106 analysts, 94 believe the Federal Reserve will cut interest rates by 25 basis points to 4.25%-4.50% in December. ● Michael Saylor increases the size of convertible notes maturing in 2029 to $2.6 billion [...] According to Odaily Planet Daily, Bob Prince, Chief Investment Officer of Bridgewater Associates, stated at an investment summit in Hong Kong that Trump's policies may prevent the US from achieving a 2% inflation target. If the US inflation rate remains close to 3% after a year and a half, Trump may nominate a Federal Reserve chairman willing to accept a higher inflation target to cut interest rates. He added that if the inflation rate remains un...",
+      "score": 0.6854659,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt",
+      "content": "| 55930.27 - 58438.40 | 88,260 | | 58438.40 - 60946.54 | 85,624 | | 60946.54 - 63454.67 | 95,619 | | 63454.67 - 65962.80 | 80,955 | | 65962.80 - 68470.94 | 108,299 | | 68470.94 - 70979.07 | 68,904 | | 70979.07 - 73487.20 | 20,323 | | 73487.20 - 75995.34 | 5,168 | | 75995.34 - 78503.47 | 9,163 | | 78503.47 - 81011.60 | 7,580 | | 81011.60 - 83519.74 | 23,076 | | 83519.74 - 86027.87 | 38,966 | | 86027.87 - 88536.00 | 48,939 | | 88536.00 - 91044.14 | 44,610 | | 91044.14 - 93552.27 | 38,345 | | 93552.27 - 96060.40 | 57,922 | | 96060.40 - 98568.53 | 57,875 | | 98568.53 - 101076.67 | 21,316 | | 101076.67 - 103584.80 | 37,078 | | 103584.80 - 106092.93 | 52,290 | | 106092.93 - 108601.07 | 39,543 | | 108601.07 - 111109.20 | 42,824 | | 111109.20 - 113617.33 | 33,762 | [...] | 55950.02 - 58459.02 | 88,535 | | 58459.02 - 60968.02 | 85,910 | | 60968.02 - 63477.02 | 95,461 | | 63477.02 - 65986.02 | 80,865 | | 65986.02 - 68495.02 | 108,509 | | 68495.02 - 71004.02 | 68,767 | | 71004.02 - 73513.02 | 20,234 | | 73513.02 - 76022.02 | 5,234 | | 76022.02 - 78531.02 | 9,081 | | 78531.02 - 81040.01 | 7,609 | | 81040.01 - 83549.01 | 23,182 | | 83549.01 - 86058.01 | 38,910 | | 86058.01 - 88567.01 | 49,01...",
+      "score": 0.68140936,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt/versions/5",
+      "content": "69k| Label | Count | --- | | 3162.92 - 4479.66 | 187,557 | | 4479.66 - 5796.40 | 69,800 | | 5796.40 - 7113.14 | 274,229 | | 7113.14 - 8429.89 | 279,926 | | 8429.89 - 9746.63 | 313,564 | | 9746.63 - 11063.37 | 200,714 | | 11063.37 - 12380.11 | 122,358 | | 12380.11 - 13696.85 | 26,873 | | 13696.85 - 15013.59 | 17,049 | | 15013.59 - 16330.34 | 17,417 | | 16330.34 - 17647.08 | 8,909 | | 17647.08 - 18963.82 | 21,730 | | 18963.82 - 20280.56 | 15,902 | | 20280.56 - 21597.30 | 680 | | 21597.30 - 22914.04 | 2,988 | | 22914.04 - 24230.79 | 9,365 | | 24230.79 - 25547.53 | 1,488 | | 25547.53 - 26864.27 | 2,353 | | 26864.27 - 28181.01 | 3,614 | | 28181.01 - 29497.75 | 9,732 | | 29497.75 - 30814.49 | 15,113 | | 30814.49 - 32131.24 | 19,390 | | 32131.24 - 33447.98 | 25,033 | [...] 68.8k| Label | Count | --- | | 3157.67 - 4474.52 | 187,585 | | 4474.52 - 5791.36 | 69,707 | | 5791.36 - 7108.21 | 274,292 | | 7108.21 - 8425.06 | 280,204 | | 8425.06 - 9741.90 | 313,392 | | 9741.90 - 11058.75 | 201,022 | | 11058.75 - 12375.60 | 122,027 | | 12375.60 - 13692.44 | 27,076 | | 13692.44 - 15009.29 | 16,982 | | 15009.29 - 16326.14 | 17,245 | | 16326.14 - 17642.98 | 8,964 | | 17642.98 - 18959.83 | 21,800 | |...",
+      "score": 0.6102915,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "BTC/USDT: Technical Analysis of Indicators,Formation and ...",
+      "url": "https://www.binance.com/en/square/post/16046608186210",
+      "content": "Article # BTC/USDT: Technical Analysis of Indicators,Formation and Trading Strategy for the 15-Minute Chart OracleBtc Nov 10, 2024 Follow View Hidden Replies Report Block User Current Price: $79,467.97 (as of Nov 8, 2024, 15:15) 🚀 Candlestick and EMA Analysis: • Price Action: BTC has shown a strong rally, reaching a high of $79,788.96 before encountering minor resistance. The current price is consolidating just below this peak. • Exponential Moving Averages (EMAs): • 7-EMA ($79,200): BTC is currently above this short-term EMA, signaling a bullish trend. If the price remains above this level, it could indicate sustained upward momentum. [...] • Take-Profit: Target $80,500 as an initial take-profit level, with further upside potential if momentum strengthens. Use a trailing stop to capture additional gains if BTC rallies further. Short Position Strategy: • Entry Price: Enter a short position if BTC fails to break above $79,800 and shows signs of declining momentum, especially if the Stochastic RSI starts turning down from overbought levels. • Stop-Loss: Place a stop-loss at $80,000 to avoid getting caught in a sudden bullish breakout. • Take-Profit: Aim for $78,200, close to the 2...",
+      "score": 0.6083387,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-prediction/bitcoin",
+      "content": "| Nov 1, 2032 | $185,635.73 | $205,068.96 | $224,502.18 | +215.18% | | Dec 1, 2032 | $186,908.38 | $206,341.6 | $225,774.83 | +216.97% | [...] | Nov 1, 2027 | $109,276.8 | $128,710.02 | $148,143.25 | +107.98% | | Dec 1, 2027 | $110,549.44 | $129,982.67 | $149,415.9 | +109.77% | [...] | Nov 1, 2031 | $170,363.94 | $189,797.17 | $209,230.4 | +193.74% | | Dec 1, 2031 | $171,636.59 | $191,069.82 | $210,503.05 | +195.53% |",
+      "score": 0.45900398,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "70803.85 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.13100 9.39K 71,726.07 0.00023 16.496996 71,725.38 0.00008 5.738030 71,724.87 0.00008 5.737989 71,722.58 0.00008 5.737806 71,722.54 0.00007 5.020577 71,722.20 0.00818 586.687596 71,722.19 0.00008 5.737775 71,721.77 0.00232 166.394506 71,721.31 0.00048 34.426228 71,721.30 0.01640 1.17K 71,711.17 $ 71,711.17 71,721.29 3.27321 234.75K 71,721.28 0.00016 11.475404 71,721.00 0.00300 215.163000 71,720.98 0.46037 33.01K 71,720.97 0.00285 204.404764 71,720.61 0.39189 28.10K 71,720.54 0.00007 5.020437 71,720.49 1.43582 102.97K 71,720.48 0.74288 53.27K 71,720.32 0.01016 728.678451 71,720.31 0.05310 3.80K 71,720.25 1.13080 81.10K 71,720.06 0.00009 6.454805 71,719.97 0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 [...] 1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/US...",
+      "score": 0.45202848,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin price in November of each year from 2010 to 2023. - Binance",
+      "url": "https://www.binance.com/en/square/post/16501220668481",
+      "content": "Post mzayaplast Nov 20, 2024Bullish Follow View Hidden Replies Report Block User # #Bitcoin price in November of each year from 2010 to 2023. Please note that the price of Bitcoin can fluctuate significantly during the month, and the numbers listed are approximate averages or end-of-month values: 👍 What to do if you could go back in time 1. 2010: Bitcoin was relatively unknown and was trading for less than $1, with prices ranging from $0.10 to $0.50 by the end of November. 2. 2011: Bitcoin saw its first major surge, reaching around $2 in early November, before rising to $10 by the end of the month 3. 2012: Bitcoin traded between $12 and $13 throughout November. 4. 2013: Bitcoin saw a major surge, going from $200 in early November to around $1,000 by the end of the month. [...] 5. 2014: Bitcoin traded between $300 and $400 throughout November. 6. 2015: Bitcoin remained relatively stable, averaging around $300 to $350 by the end of November. 7. 2016: Bitcoin was around $700 at the beginning of November and rose to around $750 by the end of the month. 8. 2017: This was a record year for Bitcoin, with the price rising from around $6,500 to over $10,000 in November. 9. 2018: Bitcoin...",
+      "score": 0.44059017,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin USD (BTC-USD) Price History & Historical Data",
+      "url": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "content": "70,955.97 +0.51% USDCE-USD USD Coin Bridged USD 1.00 +0.03% USDD-USD USDD USD 1.00 +0.01% JLP-USD Jupiter Perps LP USD 3.91 +0.59% JITOSOL-USD Jito Staked SOL USD 116.41 +0.82% KCS-USD KuCoin Token USD 8.21 -0.90% KAS-USD Kaspa USD 0.04 +6.42% POL28321-USD Polygon (prev. MATIC) USD 0.10 +1.50% WBNB-USD Wrapped BNB USD 646.64 +1.12% BBTC31369-USD BounceBit BTC USD 70,925.76 +2.65% U39120-USD United Stables USD 1.00 -0.04% WLD-USD Worldcoin USD 0.32 -0.39% BNSOL-USD Binance Staked SOL USD 101.37 +1.00% RENDER-USD Render USD 1.85 +3.66% ENA-USD Ethena USD 0.11 +14.81% QNT-USD Quant USD 76.29 +1.24% USDTB34691-USD Ethena Labs (USDtb) USD 1.00 +0.01% ATOM-USD Cosmos USD 1.75 -2.08% RETH-USD Rocket Pool ETH USD 2,508.32 +0.16% [...] | Date | Open | High | Low | Close Close price adjusted for splits. | Adj Close Adjusted close price adjusted for splits and dividend and/or capital gain distributions. | Volume | --- --- --- | Mar 26, 2026 | 71,311.66 | 71,350.84 | 71,181.13 | 71,252.23 | 71,252.23 | 35,089,559,552 | | Mar 24, 2026 | 70,912.67 | 71,371.30 | 68,920.70 | 70,517.86 | 70,517.86 | 40,181,522,399 | | Mar 23, 2026 | 67,843.00 | 71,782.26 | 67,458.84 | 70,914.86 | 70,914.86 | 51,...",
+      "score": 0.42133808,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "TradingShot's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/tradingshot",
+      "content": "did on the 2022 pattern. If it does, expect BTC to easily break below its 1W MA200 (orange trend-line) and hit the 2.0 Fibonacci extension (blue) around $51000 before rebounding one last time. The eventual Bear Cycle bottom should be within the 1W MA350 (red trend-line) and 1W MA450 (black trend-line), just above the 0.5 Fibonacci retracement level from the November 2022 Bear Cycle bottom. The 2.0 (blue) Fib ext and that 0.5 Fib (dotted black) form what we call the 'Effective Buy Zone' in the middle of which the previous Bear Cycle bottomed. That is expected to be this time within the $50000 - $45000 range. Please LIKE 👍, FOLLOW ✅, SHARE 🙌 and COMMENT ✍ if you enjoy this idea! $BTC #bitcoin #BTCUSDT #BTC #BTCUSD #signals [...] $BTC #BTC#bitcoin#BTCUSD#BTCUSDT#signals BTC+0.15% 1 3 637 [...] The 1M CCI seems to agree with that potential Cycle bottom as it hit and rebounded on the Lower Lows trend-line that goes back to 2015. The Time Cycles help at identifying all prior bottoms. In addition to that, the ratio just formed a 1D MA200 (black trend-line) / 1W MA50 (blue trend-line) Bearish Cross, which last time it was formed (November 2022) it was right at the bottom of the previous...",
+      "score": 0.3737392,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Historical Market Data We've made Candlestick, Trade, and AggTrade data for all pairs available for download. What Data Is Available We provide data at daily and monthly intervals. Data for a day is uploaded the following day, and we begin to upload data for a month at the beginning of the following month. Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Field Name Description open\\_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close\\_time Candlestick close time in Unix time format quote\\_volume Quote asset volume count Number of trades [...] All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and serv...",
+      "score": 0.35260347,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "January 23, 2026 Cryptocurrency Market Analysis and ...",
+      "url": "https://www.binance.com/en/square/post/35463787337897",
+      "content": "Execution points: Market sentiment unstable after PCE data, patiently wait for 3-5 bullish candlestick stabilization signals before entering the market 🛡️ Long-term holders (low risk, holding for 1 month+) Asset: BTC core position (can be paired with a small amount of ETH) Entry point: - First level: $89,000 (current pullback level, dollar-cost averaging 1/3) - Second level: $87,000 (strong support level, dollar-cost averaging 1/3) - Third level: $84,000 (extreme pullback level, dollar-cost averaging 1/3) Stop loss: no hard stop loss (long-term do not focus on short-term fluctuations) Target level: - Medium term: $95,000-$98,000 (previous high point area) - Long term: $100,000+ (breaking historical high) Position: - Core position: 50-70% (hold firmly) [...] - ETH: $2,945 (-2.3%), Range $2,900-$3,015, Panic (31) - Total Market Cap: $3.02 trillion (-1.8%), Liquidation in 24 hours: $428 million - Key event: U.S. November PCE data meets expectations (year-on-year +2.8%, month-on-month +0.2%), expectations for a rate cut by the Federal Reserve in January cool; market focuses on the interest rate meeting results next Wednesday (1.27) 📉 Technical analysis Bitcoin (BTC) - Daily: breakin...",
+      "score": 0.28446713,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin price today - BTC price chart & live trends",
+      "url": "https://www.kraken.com/prices/bitcoin",
+      "content": "Content provided herein may originate from third parties not associated with Payward Ventures, Inc. (D/B/A Kraken) or any of its subsidiaries. Kraken does not vouch for or take responsibility for such third-party content. These materials are for general information purposes only and are not investment advice or a recommendation or solicitation to buy, sell, stake or hold any cryptoasset or to engage in any specific trading strategy. Any reliance on this content is at the reader’s own risk. Kraken shall not be held liable for inaccuracies or any decisions made based on this content. Kraken does not endorse nor validate the accuracy of the information provided for any specific asset. Displayed prices are merely representative and the actual values and related data may differ. The [...] The Bitcoin price chart shows several important pieces of information about the current price of Bitcoin, including its recent price movement and trading volume. The vertical axis represents the value of the asset in your chosen currency, such as USD, while the horizontal axis shows the time period, which can range from minutes to years. Bitcoin price charts often use candlesticks to illustrate pric...",
+      "score": 0.27786517,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Analysis of a 1-Minute BTC/USDT Candle Chart ...",
+      "url": "https://www.binance.com/en/square/post/16101593279274",
+      "content": "This chart provides a detailed view of short-term price movements and helps traders assess real-time market dynamics for quick decision-making.",
+      "score": 0.27250028,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "#ma Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/ma",
+      "content": "### “Crypto Market Watch: Bitcoin Faces Resistance Despite 84% Yearly Growth” Bitcoin (BTC/USDT) Market Update In the cryptocurrency market, $BTC (bitcoin) has always remained the focal point for investors and traders alike. According to the latest chart screenshot, Bitcoin is currently trading at 108,876 #USDT, showing an increase of around 0.40% over the past 24 hours. Market Snapshot 24h High: 109,912 USDT 24h Low: 107,255 USDT 24h Trading Volume (BTC): 14,237.05 BTC 24h Trading Volume (USDT): 1.55 Billion USDT These figures highlight significant market volatility, creating opportunities for short-term trading. Technical Analysis The chart displays several Moving Averages (#MA): MA(7): 108,981 MA(25): 109,101 MA(99): 109,178 [...] Market Update In the cryptocurrency market, $BTC (bitcoin) has always remained the focal point for investors and traders alike. According to the latest chart screenshot, Bitcoin is currently trading at 108,876 #USDT , showing an increase of around 0.40% over the past 24 hours. Market Snapshot 24h High: 109,912 USDT 24h Low: 107,255 USDT 24h Trading Volume (BTC): 14,237.05 BTC 24h Trading Volume (USDT): 1.55 Billion USDT These figures highlight signi...",
+      "score": 0.25920445,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Short-term Price Prediction Using Time Series Analysis",
+      "url": "https://repository.rit.edu/cgi/viewcontent.cgi?article=12824&context=theses",
+      "content": "stationary and non -stationary variables. Figure 7 UAE Production Trend by Economic Sector (FCSC, 2021) 0 > 100000 > 200000 > 300000 > 00000 500000 > 00000 > 2010 2011 2012 2013 201 2015 201 201 201 2019 2020 > Agri cul ture ,Fores try ,a nd Fi s hi ng > Mining (incl .oil &ga s ) > Ma nufa cturing > Power ,a ter ,a nd a s te ons truc on > hol es a le a nd Reta il > Tra ns porta on a nd Stora ge > Hotel s a nd Res ta ura nts > Informa on a nd ommunica on > Fi na nce a nd Ins ura nce 22 > Figure 8of Bitcoin prices is an example of a univariate, non -stationary, continuous timeseries. > Figure 8Bitcoin price fluctuations 2015 -2024 (Investing.com) 3.5 ARMA Model [...] order to predict Bitcoin prices using only historical data. The choice to use ARIMA is because it is eas ier to train, faster to implement, and easily interpretable, which makes it practical and feasible for inexperienced researchers , investors, or hobbyists. The downside is that ARIMA often performed worse than deep learning models, according to the literature. However , t he majority in the literature that used ARIMA did not report the specific parameters that were tested in their studies , and it was often applied...",
+      "score": 0.2406144,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin / TetherUS Trade Ideas - BTCUSDT",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/ideas/page-40/?sort=recent",
+      "content": "move back toward the 69,345 high. In that case, we can look for a long position on a break above 69,345. ✔️ The main resistance for Bitcoin remains 71,452, and only after price holds above this level can we confidently confirm a bullish trend. ❌ Disclaimer ❌ Trading futures is highly risky and dangerous. If you're not an expert, these triggers may not be suitable for you. You should first learn risk and capital management. You can also use the educational content from this channel. Finally, these triggers reflect my personal opinions on price action, and the market may move completely against this analysis. So, do your own research before opening any position. [...] RSm Architecture #1 — From Price to Structural StatePrice is continuous and noisy. Most traders analyze candles. RSm analyzes structure. The first step of the model is transformation. Raw price is converted into standardized structural states. Instead of reacting to every fluctuation, RSm determines whether price is in a positive or negative deviation regime relative to its statistical range. This regime is called a structural sign. As long as deviation persists, the sign remains unchanged. When structural exhaustion...",
+      "score": 0.2326765,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "search_index": 3
+    },
+    {
+      "title": "#btcusd Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/btcusd",
+      "content": "​At the US Market Open, BTC/USDT is showing a clear Bearish Divergence. However, stay sharp: we are seeing a significant Change of Character (CHoCH) toward a",
+      "score": 0.17389092,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price | BTC Price Index, Live Chart and GBP ...",
+      "url": "https://www.binance.com/en-GB/price/bitcoin/BDT",
+      "content": "Binance: Your UK Gateway into Web3 Trading in cryptoassets involves a high degree of risk and may not be suitable for all investors. The value of cryptoassets can be extremely volatile and unpredictable, and can fluctuate significantly in a short period of time. Investors should carefully consider their investment objectives, risk tolerance, and financial situation before trading in cryptoassets. Investments in cryptoassets are not covered by the Financial Ombudsman Service or subject to protection under the Financial Services Compensation Scheme. Profits derived from cryptoasset trading may be subject to Capital Gains Tax. Learn more about the risk ⚠️ Important Notice: Limited Availability of Services for UK Retail Clients [...] Please be informed that certain services offered on this platform are not accessible to Retail Clients based in the UK. Our commitment to regulatory compliance means that certain offerings are reserved exclusively for UK Professional Clients. Get Started Step 1: Register & Verify Account Register your account and complete the individual or entity verification, which is required to comply with local regulation. Step 2: Complete Client Questionnaire Compl...",
+      "score": 0.11693554,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSD/XAUUSD Time to dump Gold and buy Bitcoin??",
+      "url": "https://www.binance.com/en-AE/square/post/304112917717601",
+      "content": "Each Bear Cycle since 2014 has lasted for exactly 396 days. And last month, it completed again 396 days from the January 2025 High. No to this",
+      "score": 0.11609115,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m historical highs November site:binance.com",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API BTCUSDT klines 1m November",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance BTC_USDT 1m chart historical November high 200000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

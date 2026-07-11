@@ -1,0 +1,316 @@
+{
+  "row_index": 146,
+  "market_id": "mkt_673800",
+  "slug": "",
+  "question": "Will Ethereum dip to $3,000 November 10-16?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "event_title": "Will Ethereum dip to $3,000 November 10-16?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "resolution_date": "2025-11-17",
+  "evidence_cutoff_date": "2025-11-16",
+  "end_date_limit": "2025-11-16",
+  "row_end_date_raw": "2025-11-17",
+  "expanded_queries": [
+    "Binance ETH/USDT 1m candle low price API documentation",
+    "Ethereum ETH/USDT historical 1-minute lows Binance November 10 16 prior year",
+    "Binance official ETH USDT spot trading pair and Ethereum market structure",
+    "Ethereum price volatility liquidity catalysts November 10 16 schedule ETF macro events",
+    "ETHUSDT price level 3000 technical analysis support resistance expert outlook"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 49,
+    "hard_quarantined_late_date_count": 7,
+    "llm_filter_input_count": 49,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 25,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 24,
+    "llm_kept_count": 25,
+    "llm_kept_leak_no_count": 24,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.82117355,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "options\\_index\\_price\\_socket()(_modules/binance/ws/streams.html#BinanceSocketManager.options_index_price_socket) : Subscribe to an options index price stream. Underlying (e.g., ETHUSDT, BTCUSDT) index stream for all symbols. Updates every 1000ms. URL PATH: /market Stream Name: !index@arr API Reference: Response is an array with index price for all underlying assets: - Event type: ‘indexPrice’ - Event time - Underlying symbol (e.g., ‘ETHUSDT’, ‘BTCUSDT’) - Index price options\\_kline\\_socket(symbol: str, interval='1m')(_modules/binance/ws/streams.html#BinanceSocketManager.options_kline_socket) : Subscribe to a Kline/Candlestick data stream. [...] Message Format ``` {\"e\": \"kline\", # event type \"E\": 1499404907056, # event time \"s\": \"ETHBTC\", # symbol \"k\":{\"t\": 1499404860000, # start time of this bar \"T\": 1499404919999, # end time of this bar \"s\": \"ETHBTC\", # symbol \"i\": \"1m\", # interval \"f\": 77462, # first trade id \"L\": 77465, # last trade id \"o\":\"0.10278577\", # open \"c\":\"0.10278645\", # close \"h\":\"0.10278712\", # high \"l\":\"0.10278518\", # low \"v\":\"17.47929838\", # volume \"n\": 4, # number of trades \"x\": false, # whether this bar is final \"q\":\"1.79662878\", # quote volume \"V\":\"2.348798...",
+      "score": 0.7845341,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "ETH/USDT Technical analysis, Price Prediction and Trade Plan",
+      "url": "https://www.binance.com/en/square/post/25458551064689",
+      "content": "RSI >70 → Overbought, signals high pullback risk. 📉 Support & Resistance Immediate Support: $2,667 (EMA 7) Stronger Support: $2,545 (EMA 25) and $2,500 psychological level Resistance: $2,834.86 (24h high) Breakout Target: $2,900 → $3,000 📊 Volume & Volatility Huge volume ($2.88B) = Buyer dominance 3.82% price pump may signal exhaustion near resistance ⚠️ Cautionary Signals RSI is overbought → Pullback likely MACD divergence (price up, momentum fading) = Caution 🔮 Price Prediction ⏳ Short-Term (24–48 Hours): Bullish: Break above $2,834 → Rally to $2,900–$3,000 Bearish: Rejection = Pullback to $2,670–$2,655 📅 Medium-Term (1 Week): Above EMA(7) → Target $3,000–$3,200 Below EMA(25) → Structure broken → Drop to $2,340 🧠 Trade Plan 🟩 Long (Pullback Entry) [...] 🧠 Trade Plan 🟩 Long (Pullback Entry) Entry: $2,700–$2,670 Confirmation: Reversal candle + RSI cooling (<65) Targets: $2,834 → $2,900 → $3,000 Stop Loss: $2,640 🟩 Long (Breakout Entry) Entry: Close above $2,834 with volume Targets: $2,900 → $3,000 Stop Loss: $2,780 🟥 Short (Overbought Rejection) Entry: Rejection at $2,834 + RSI >72 + bearish candle Targets: $2,667 → $2,545 Stop Loss: $2,860 💡 Risk Management 🔸 Max 2% of capital...",
+      "score": 0.7769112,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "Ethereum Price Targets $3,000 As Analyst Calls It A ‘Powder Keg’ — TradingView News",
+      "url": "https://www.tradingview.com/news/newsbtc:e2ae1f759094b:0-ethereum-price-targets-3-000-as-analyst-calls-it-a-powder-keg",
+      "content": "Ethereum Price Eyes A $3,300 Breakout The Ethereum price action is drawing attention as it continues to trade within a well-defined consolidation range, hovering near $2,555 at the time of writing. Based on a recently released technical analysis by crypto analyst Pentoshi on X social media, ETH could be on the verge of a significant move, with $3,300 marked as the next bullish target in the near term. The crypto expert’s chart reveals that since early May 2025, Ethereum has been locked between two key levels—a support zone around $2,190 and resistance near $2,750. This range has remained intact for over eight weeks, signaling a period of accumulation and low volatility after the sharp decline experienced in the first quarter of the year. [...] Pentoshi has pinpointed $2,100 as the key downside risk in his bullish outlook, aligning closely with the lower support zone marked on the chart. While the next bullish extension and major resistance level has been identified as $3,300, the analyst expects Ethereum to make a move toward this price level within the next three months. He suggests that the current setup offers a favorable risk-reward profile, estimating a potential upside of...",
+      "score": 0.7657514,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "Ether Technical Analysis: Prices Could Reach Mid-$3,000s Soon",
+      "url": "https://www.forbes.com/sites/digital-assets/2025/06/10/ether-technical-analysis-prices-could-reach-mid-3000s-soon",
+      "content": "“Now that ether has broken above $2,800, the next key resistance level is $3,000—a psychological barrier and a price ceiling seen multiple times in March. If ETH can close above that with strong volume, it opens the door to a move toward $3,200,” Joe DiPasquale, CEO of cryptocurrency hedge fund manager BitBull Capital, stated via email. “On the downside, immediate support lies near $2,650, with stronger buying interest likely around $2,400, which coincides with the 100-day moving average,” he added. The market observer also used a technical indicator called the Relative Strength Index, which looks at an asset’s recent price movements to get a better sense of whether that asset is underbought or overbought, to evaluate ether. [...] “Resistance levels stand at $2,820, if breached, we could see ETH cruise to low $3k territory. If the low $3k territory is breached, ETH could see mid-January 2025 levels at $3.3k - $3.4k,\" stated Aguilar. “Support levels are in the mid $2.6k range, if support is unable to hold, we could see ETH retrace to mid $2.5k, followed by low $2.4k range.\" Editorial StandardsReprints & Permissions LOADING VIDEO PLAYER... FORBES’ FEATURED Video [...] “Technical t...",
+      "score": 0.7576693,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "node-binance-api - NPM",
+      "url": "https://www.npmjs.com/package/node-binance-api",
+      "content": "``` console.info( await binance.futuresTime() ); console.info( await binance.futuresExchangeInfo() ); console.info( await binance.futuresCandles( \"TRXUSDT\", \"1m\" ) ); console.info( await binance.futuresDepth( \"ADAUSDT\" ) ); console.info( await binance.futuresQuote() ); console.info( await binance.futuresQuote( \"BCHUSDT\" ) ); console.info( await binance.futuresDaily() ); console.info( await binance.futuresOpenInterest( \"BTCUSDT\" ) ); console.info( await binance.futuresMarkPrice() ); console.info( await binance.futuresMarkPrice( \"ETHUSDT\" ) ); console.info( await binance.futuresTrades( \"LTCUSDT\" ) ); console.info( await binance.futuresAggTrades( \"XTZUSDT\" ) ); console.info( await binance.futuresLiquidationOrders() ); console.info( await binance.futuresFundingRate() ); [...] ``` #### Get Candlestick Updates via WebSocket ``` // Periods: 1m,3m,5m,15m,30m,1h,2h,4h,6h,8h,12h,1d,3d,1w,1M binance.websockets.candlesticks(['BNBBTC'], \"1m\", (candlesticks) => { let { e:eventType, E:eventTime, s:symbol, k:ticks } = candlesticks; let { o:open, h:high, l:low, c:close, v:volume, n:trades, i:interval, x:isFinal, q:quoteVolume, V:buyVolume, Q:quoteBuyVolume } = ticks; console.info(symbol+\" \"+inte...",
+      "score": 0.7409441,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "$ETH ETH/USDT refers to the trading pair between Ethereum",
+      "url": "https://www.binance.com/en/square/post/21465971380562",
+      "content": "Image 1: Binance Square Login Sign Up DiscoverNewsNotificationProfileBookmarksChatsHistoryCreator CenterSettings Post Image 2 -----SHARM----- Mar 12, 2025 Follow Report Block User $ETH ETH/USDT refers to the trading pair between Ethereum (ETH) and Tether (USDT) on a cryptocurrency exchange like Binance. ETH (Ethereum): A decentralized platform that runs smart contracts, allowing developers to create and deploy applications (dApps). It's the second-largest cryptocurrency by market capitalization, after Bitcoin. USDT (Tether): A stablecoin pegged 1:1 to the US Dollar. It's often used as a stable asset for trading and a safe haven during volatile market conditions. Trading ETH/USDT: [...] Trading ETH/USDT: This pair allows traders to buy or sell Ethereum (ETH) using USDT (Tether). Since USDT is pegged to the US Dollar, it provides a relatively stable trading base compared to more volatile cryptocurrencies. For traders: It’s commonly used for: Speculation: Traders buy or sell ETH based on price movements. Hedging: Converting volatile assets like ETH into USDT to avoid market fluctuations. Liquidity: USDT is widely used for quick entry and exit from positions in Ethereum and other cr...",
+      "score": 0.72465646,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "search_index": 3
+    },
+    {
+      "title": "0.02766 | ETH BTC | Ethereum to BTC – Binance Spot",
+      "url": "https://www.binance.com/en/trade/ETH_BTC",
+      "content": "BTC/USDT +1.08% 62,804.00BNB/USDT +1.42% 570.80ETH/USDT +0.55% 1,749.87SOL/USDT +0.72% 77.88SPCXB/USDT +0.49% 150.53XLM/USDT -0.88% 0.1811XRP/USDT +0.99% 1.0921GRAM/USDT +0.96% 1.582ZEC/USDT +0.25% 465.29SENT/USDT +4.63% 0.01401SXT/USDT +1.94% 0.00682TRX/USDT +1.07% 0.3314VANRY/USDT +7.23% 0.007384DOGE/USDT +1.58% 0.07261UNI/USDT +1.46% 3.336HMSTR/USDT +1.70% 0.0001973ADA/BTC -0.75% 0.00000266AGLD/USDT -5.90% 0.1498SCR/USDT +2.80% 0.02684COINB/USDT +1.44% 160.37NEAR/USDT +1.82% 1.905AUDIO/USDT -0.07% 0.01354WLD/USDT +3.68% 0.3831ETHFI/USDT +5.90% 0.413 Announcements Cookie Preference Online Support Audio 1Audio 2 Image 5: Company Logo ## Privacy Preference Center [...] Disconnected Quick Preview BTC/USDT +1.08% 62,804.00BNB/USDT +1.42% 570.80ETH/USDT +0.55% 1,749.87SOL/USDT +0.72% 77.88SPCXB/USDT +0.49% 150.53XLM/USDT -0.88% 0.1811XRP/USDT +0.99% 1.0921GRAM/USDT +0.96% 1.582ZEC/USDT +0.25% 465.29SENT/USDT +4.63% 0.01401SXT/USDT +1.94% 0.00682TRX/USDT +1.07% 0.3314VANRY/USDT +7.23% 0.007384DOGE/USDT +1.58% 0.07261UNI/USDT +1.46% 3.336HMSTR/USDT +1.70% 0.0001973ADA/BTC -0.75% 0.00000266AGLD/USDT -5.90% 0.1498SCR/USDT +2.80% 0.02684COINB/USDT +1.44% 160.37NEAR/USDT +1.82% 1.905AUDI...",
+      "score": 0.6811549,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "search_index": 3
+    },
+    {
+      "title": "ETF Surge, Rate Cuts Stir Volatility in October 2025 - Alpha Node",
+      "url": "https://alphanode.global/insights/october-2025-etf-surge-rate-cuts-report",
+      "content": "None of these positives eliminated volatility or timing risk, and the end of the month proved that disciplined process beats confident prediction. The correct posture for November is to maintain a Bitcoin-anchored core, to keep a patient Ethereum sleeve through the upgrade window, and to use the growing menu of regulated instruments to control drawdown around known catalysts. The operative words are discipline, sizing, and telemetry. Add when basis is clean and flows are turning, trim into exuberance when creations run hot, and let the data around rollup costs and network throughput guide increases in Ether exposure rather than headline excitement. Respect macro as the master variable, but do not let it drown out the structural story that the plumbing is getting better and the [...] Skip to content Book Consult Company logo Insights + Key Market News + Digital Currency Basics + Research and Industry Reports + Video Resources Retail Investor Wholesale Investor Finance Professional Insights + Key Market News + Digital Currency Basics + Research and Industry Reports + Video Resources Retail Investor Wholesale Investor Finance Professional 31 October 2025 # October 2025 Cryptocurren...",
+      "score": 0.6698534,
+      "query": "Ethereum price volatility liquidity catalysts November 10 16 schedule ETF macro events",
+      "search_index": 4
+    },
+    {
+      "title": "1743.77 | ETH USDT | Ethereum to USDT",
+      "url": "https://www.binance.com/en/trade/ETH_USDT",
+      "content": "# ETH/USDT Ethereum Price 1,747.32 $ 1,747.32 24h Chg -25.78 -1.45% 24h High 1,773.35 24h Low 1,713.44 24h Vol(ETH) 226,951.81 24h Vol(USDT) 395,087,482.26 Networks ETH (9) Token Tags Layer 1 / Layer 2 Vol Hot Trading Competition Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount ETH TP/SL Avbl - USDT Max Buy -- ETH Log In Price USDT BBO Amount ETH TP/SL Avbl - ETH Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (ETH) Time 1,747.10 0.0500 01:30:04 1,747.10 0.0213 01:30:04 1,747.09 0.0028 01:30:04 1,747.09 0.0120 01:30:04 1,747.09 0.0002 01:30:04 1,747.07 0.0120 01:30:04 1,747.06 0.0208 01:30:04 1,747.06 0.0092 01:30:04 1,747.05 0.0210 [...] Log In or Register Now to trade Connecting Quick Preview SOL/USDT -2.35% 78.20BTC/USDT -1.60% 62,411.99BNB/USDT -1.03% 570.58ETH/USDT -1.45% 1,747.32SPCXB/USDT -0.57% 149.96XRP/USDT -1.67% 1.0925TRX/USDT -0.90% 0.3288UNI/USDT +4.42% 3.376OGN/USDT +13.54% 0.01895VANRY/USDT +17.61% 0.007461MAV/USDT +8.28% 0.01020DOGE/USDT -1.72% 0.07273SYN/USDT -7.84% 0.34789XLM/USDT -3.61% 0.1814LTC/USDT +0.07% 43.96EIGEN/USDT +10.77% 0.2478AGLD/USDT -16.84% 0.1516SCR/USDT -1.21% 0.02698COINB/USDT -1.84%...",
+      "score": 0.65887916,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "search_index": 3
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M Stream Name: `@kline_` e.g. \"btcusd\\_200626@kline\\_1m\" Update Speed: 250ms ## Continues Contract Kline/Candlestick Streams > Payload: [...] Order types (type): LIMIT MARKET STOP STOP\\_MARKET TAKE\\_PROFIT TAKE\\_PROFIT\\_MARKET TRAILING\\_STOP\\_MARKET Order side (side): BUY SELL Position side (positionSide): BOTH LONG SHORT Time in force (timeInForce): GTC - Good Till Cancel IOC - Immediate or Cancel FOK - Fill or Kill GTX - Good Till Crossing (Post Only) Working Type (workingType) MARK\\_PRICE CONTRACT\\_PRICE Response Type (newOrderRespType) ACK RESULT Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M Rate limiters (rateLimitType) > REQUEST\\_WEIGHT ``` {\"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 6000} ``` > ORDERS [...] + 1m + 3m + 5m + 15m + 30m + 1h + 2h + 4h + 6h + 8h + 12h + 1d + 3d + 1w + 1M ## Continues Contract Kline/Candlestick Data > Response: ``` ``` `GET /dapi/v1/continuousKlines` Kline/candlestick...",
+      "score": 0.6493346,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "#ethusdt Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/ethusdt",
+      "content": "Entry: 1740–1750 TP1: 1668 TP2: 1630 SL: 1780 The current structure favors a sell-on-rally approach while price remains below resistance. Manage risk and wait for confirmation before entering. #ETHUSDT View More Image 6 ETH+0.11% 4 712 Image 7 Image 8 Aesthetic_Meow · 11h Bullish Follow Report Block User Habibies! $ETH looks poised for a cautious long entry: Entry Point: 1,730 🎯TP: 1,770 🛑SL: 1,710. Reason: strong 4H support holding, volume uptick, and recent bullish momentum suggesting continuation. Risk is moderate, so tight SL is key.⚡📈 #WriteToEarnUpgrade #Binance #ETHUSDT Trade here hurry👇 {future}(ETHUSDT) Habibies! $ETH looks poised for a cautious long entry: Entry Point: 1,730 🎯TP: 1,770 🛑SL: 1,710. [...] · 20h See original Follow Report Block User Ethereum rejection signals point to further downside $ETH continues trading below the main moving averages, which keeps the short-term trend bearish. Unless buyers reclaim the resistance zone, sellers are likely to remain in control. {future}(ETHUSDT) Trade setup Entry: 1740–1750 Target 1: 1668 Target 2: 1630 Stop loss: 1780 The current structure favors a sell-on-rebound strategy as long as price remains below the resistance....",
+      "score": 0.64639384,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "search_index": 3
+    },
+    {
+      "title": "Technical Analysis of Ethereum / TetherUS (BINANCE:ETHUSDT) — TradingView",
+      "url": "https://www.tradingview.com/symbols/ETHUSDT/technicals",
+      "content": "Ethereum / TetherUS Ethereum / TetherUS Ethereum / TetherUS ## Ethereum / TetherUS # Indicators' summary | Name | Value | Action | --- | Relative Strength Index (14) | — | — | | Stochastic %K (14, 3, 3) | — | — | | Commodity Channel Index (20) | — | — | | Average Directional Index (14) | — | — | | Awesome Oscillator | — | — | | Momentum (10) | — | — | | MACD Level (12, 26) | — | — | | Stochastic RSI Fast (3, 3, 14, 14) | — | — | | Williams Percent Range (14) | — | — | | Bull Bear Power | — | — | | Ultimate Oscillator (7, 14, 28) | — | — | [...] | Name | Value | Action | --- | Exponential Moving Average (10) | — | — | | Simple Moving Average (10) | — | — | | Exponential Moving Average (20) | — | — | | Simple Moving Average (20) | — | — | | Exponential Moving Average (30) | — | — | | Simple Moving Average (30) | — | — | | Exponential Moving Average (50) | — | — | | Simple Moving Average (50) | — | — | | Exponential Moving Average (100) | — | — | | Simple Moving Average (100) | — | — | | Exponential Moving Average (200) | — | — | | Simple Moving Average (200) | — | — | | Ichimoku Base Line (9, 26, 52, 26) | — | — | | Volume Weighted Moving Average (20) | — | — | | Hull Moving Avera...",
+      "score": 0.6172364,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "| Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hour...",
+      "score": 0.5954225,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "def _get_symbols(self) -> List[str]: params = dict() endpoint = \"/fapi/v1/exchangeInfo\" if self.futures else \"/api/v3/exchangeInfo\" data = self._make_request(endpoint, params) symbols = [x[\"symbol\"] for x in data[\"symbols\"]] return symbols def get_historical_data(self, symbol: str, interval: Optional[str] = \"1m\", start_time: Optional[int] = None, end_time: Optional[int] = None, limit: Optional[int] = 1500): params = dict() params[\"symbol\"] = symbol params[\"interval\"] = interval params[\"limit\"] = limit if start_time is not None: params[\"startTime\"] = start_time if end_time is not None: params[\"endTime\"] = end_time endpoint = \"/fapi/v1/klines\" if self.futures else \"/api/v3/klines\" raw_candles = self._make_request(endpoint, params) candles = [] if raw_candles is not None: [...] usecols=['open', 'high', 'low', 'close', 'volume'] data = data[usecols] data = data.astype('float') return data api_key = 'хххх...xxx' # use your api-key symbol = 'ETHUSDT' eth = get_binance_data(api_key, symbol) eth.head()` [...] `# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars...",
+      "score": 0.5829428,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API for Historical Crypto Prices | by Zachary Raicik - Medium",
+      "url": "https://medium.com/@raicik.zach/binance-api-for-historical-crypto-prices-bd09f183c09d",
+      "content": "In this post, we focus on pulling prices from the `klines` endpoint. The Klines endpoint (/api/v3/klines) is a market data endpoint provided by the Binance API that allows developers to retrieve historical klines/candlestick chart data for a specific symbol (i.e., cryptocurrency) and interval. A `kline` is a representation of a fixed time interval of an asset’s price data, commonly used to represent the opening price, closing price, highest price, and lowest price for a given time period. The Klines endpoint allows developers to retrieve klines data for a variety of time intervals, such as 1 minute, 3 minutes, 5 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 6 hours, 8 hours, 12 hours, and 1 day. ## API Keys [...] json_data = convert_to_json(response.json()) return json_data We run the function `get_historical_prices(..)` in main. We use argparse to collect the required arguments through the command line. The function for main looks like this. def main(): parser = argparse.ArgumentParser() parser.add_argument( \"--symbol\", default=\"ETHUSDT\", help=\"The symbol of the cryptocurrency to retrieve price data for (e.g. 'ETHUSDT')\", ) parser.add_argument( \"--interval\", defaul...",
+      "score": 0.54956865,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Technical analyses - Ethereum (ETH) - English",
+      "url": "https://www.centralcharts.com/en/technical-analysis/ts_532-ethereum--lg_11-en",
+      "content": "Timeframe : 1H - Simple chart Status : INVALID The bullish trend is currently very strong on ETHEREUM - ETH/USD. As long as the price remains above the support at 2,329.89 USD, you could try to benefit from the boom. The first bullish objective is… Thank you Reply Chart ETHEREUM - ETH/USDT USDT > Analyses Londinia Londinia AI has published a new analysis for rickloureiro. 0 115419 16366 0 ETHEREUM - ETH/USDT - 1H\") ETHEREUM - ETH/USDT - 1H\") Timeframe : 1H - Simple chart Status : NEUTRAL The neutral short-term trend shows a weakening of the basic, slightly bearish trend on ETHEREUM - ETH/USDT. It is difficult to advise a trading direction under these conditions. The first support is… Thank you Reply Chart [...] Central Patterns + Channel : Resistance of is broken + Channel : Near resistance + Channel : Near support + Channel : Support is broken + Triangle : Resistance is broken + Triangle : Near resistance + Triangle : Near support + Triangle : Support is broken + Horizontal resistances + Horizontal supports Central Candlesticks + Engulfing lines + Cover and piercing line + Doji + Gap + Harami + Marubozu and Long line + Tasuki gap + Three crows/soldiers Central Indicators + Aroo...",
+      "score": 0.5370662,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "ETHUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/ethusdt",
+      "content": "Image 1: homeImage 2: logo Futures Options Trading Bots Copy Trading Smart Money Campaigns Data More Log InSign Up Cross 20x S Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Limit Market Stop Limit Avbl- USDT Price USDT BBO Size ETH Register NowLog In Image 3 # ETHUSDT Perp 1,768.55 3.25 +0.18% Mark 0.00 Index 0.00 Funding (8h) / Countdown 0.00000% / 24h High 1,833.00 24h Low 1,728.30 24h Vol(ETH) 5,894,476.846 24h Vol(USDT) 10,457,766,959.63 Open Interest(USDT) 0 ETHUSDT +0.18% Chart Info Data Time 1s 15m 1H 4H 1D 1W Original Trading View Depth Order Book 0.01 Price (USDT) Size(ETH) Sum(ETH) 1,768.55 0.00 Trades Top Movers Price (USDT) Amount(ETH) Time No Data",
+      "score": 0.53488034,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum technical analysis — Daily Updates｜Bitget",
+      "url": "https://www.bitget.com/price/ethereum/technical",
+      "content": "Technical rating: Neutral Sell : 7 Neutral : 1 Buy : 7 | Name | Value | Rating | --- | EMA(10) | 1,723.49 | Buy | | SMA(10) | 1,694.19 | Buy | | EMA(20) | 1,709.35 | Buy | | SMA(20) | 1,676.56 | Buy | | EMA(30) | 1,732.59 | Buy | | SMA(30) | 1,685.16 | Buy | | EMA(50) | 1,803.81 | Sell | | SMA(50) | 1,794.55 | Sell | | EMA(100) | 1,949.78 | Sell | | SMA(10) | 2,027.24 | Sell | | EMA(200) | 2,092.07 | Sell | | SMA(200) | 2,251.64 | Sell | | IBL Neutral | | VWMA | 1,676.89 | Buy | | HMA | 1,826.85 | Sell | ## Pivot points [...] Sell — base line > price, conversion line crosses price from above, leading line 1 < price, and leading line 1 < leading line 2 Neutral — neither Buy nor Sell Relative strength index (RSI) Buy — indicator < 30 and rising Sell — indicator > 70 and falling Neutral — neither Buy nor Sell Stochastic Buy — main line < 20 and main line crosses over the signal line Sell — main line > 80 and main line crosses under the signal line Neutral — neither Buy nor Sell Commodity channel index (CCI) Buy — indicator ≤ 100 and rising Sell — indicator > 100 and falling Neutral — neither Buy nor Sell Average directional index (ADX) Buy — indicator > 20 and +DI line crosses over...",
+      "score": 0.53021276,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "search_index": 5
+    },
+    {
+      "title": "Market Data - Options REST API | Binance Developer Docs",
+      "url": "https://developers.binance.com/docs/derivatives/options-trading/market-data/Kline-Candlestick-Data",
+      "content": "Ask AI about this page Feedback Welcome to the new Binance API documentation.Looking for the previous version?Switch to the legacy docs Image 1: Binance Developer DocsImage 2: Binance Developer Docs Search Ask AI Legacy Docs Language Documentation API Reference SDKs & Tools Agent Native Dev ForumBinance.com Account Account Funding Flow (USER_DATA)getOption Margin Account Information (USER_DATA)get Market Maker Block Trade Query Block Trade Details (USER_DATA)getAccept Block Trade Order (TRADE)postAccount Block Trade List (USER_DATA)getExtend Block Trade Order (TRADE)putNew Block Trade Order (TRADE)postCancel Block Trade Order (TRADE)deleteQuery Block Trade Order (TRADE)get Market Data [...] Market Data Check Server Time getExchange Information getHistorical Exercise Records getIndex Price getKline/Candlestick Data getOpen Interest getOption Mark Price getOrder Book getRecent Block Trades List getRecent Trades List getTest Connectivity get24hr Ticker Price Change Statistics get Market Maker Endpoints Auto-Cancel All Open Orders (Kill-Switch) Heartbeat (TRADE)postGet Auto-Cancel All Open Orders (Kill-Switch) Config (TRADE)getSet Auto-Cancel All Open Orders (Kill-Switch) Config (TR...",
+      "score": 0.44333586,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Analyst ratings price targets 2026 - Bitcoin Foundation",
+      "url": "https://bitcoinfoundation.org/news/ethereum/ethereum-price-prediction-2026",
+      "content": "### Bitcoin vs Ethereum in 2026 | Factor | Bitcoin | Ethereum | --- | Main role | Store of value, digital gold | Smart contract and settlement infrastructure | | Main 2026 catalyst | ETF flows, macro liquidity, halving cycle | ETF flows, staking, Layer-2 growth, tokenization | | Risk profile | Lower beta, usually more defensive | Higher beta, more sensitive to adoption cycles | | Upside driver | Institutional treasury and ETF demand | Real-world usage and ecosystem activity | | Forecast style | Macro-heavy | Utility-plus-macro driven | [...] As such, any crypto market 2026 prediction will need to include the impact of macroeconomic variables on both assets at the same time. Therefore, a favorable set of fundamentals alone could not provide sufficient protection against an asset’s cyclically related downturns over the next year, thus providing a wider array of likely outcomes for any ETH price forecast 2026. ### Main Catalysts to Watch in 2026 The key catalysts for ETH-USD in July 2026 are whether ETF flows, Layer-2 activity, staking demand, and tokenized asset adoption begin improving at the same time, because any one factor alone may not be enough to push ETH into a stronger tr...",
+      "score": 0.41591915,
+      "query": "Ethereum price volatility liquidity catalysts November 10 16 schedule ETF macro events",
+      "search_index": 4
+    },
+    {
+      "title": "Ethereum / Tether Price Chart — ETHUSDT",
+      "url": "https://www.tradingview.com/symbols/ETHUSDT",
+      "content": "Skip to main content Full chart Full chart ‪115.50 K‬ ETH Previous close 1,771.45 USDT Open 1,771.45 USDT Day's range 1,725.18– 1,785.00 USDT ## Community forum Image 23 JOJO-14 Image 24: BINANCE:ETHUSDTETHUSDT one more push to 1800 and bears start moan.. 6 4 4 Image 25 HeistFly Image 26: BINANCE:ETHUSDTETHUSDT There's very obvious resistance @ 1800-1850, which is actually holding pretty well. I don’t really believe that we we'll able to consolidate higher, but I don’t see any large orders from either side, so who knows. I opened small short with a potential of 1550 and SL slighty above 1900. Let's see if there any big buyers or not... 3 4 4 Image 27 flus7ter Image 28: BINANCE:ETHUSDTETHUSDT.P opened a short here sl 1803 0 4 4 Image 29 optionplus [...] What is Ethereum / TetherUS highest price ever? Ethereum / TetherUS (ETH) reached its highest price on Aug 24, 2025 — it amounted to 4,956.78 USDT. Find more insights on the ETH price chart. See the list of crypto gainers and choose what best fits your strategy. What is Ethereum / TetherUS lowest price ever? Ethereum / TetherUS (ETH) reached the lowest price of 81.79 USDT on Dec 15, 2018. View more Ethereum / TetherUS dynamics on...",
+      "score": 0.38776046,
+      "query": "Ethereum ETH/USDT historical 1-minute lows Binance November 10 16 prior year",
+      "search_index": 2
+    },
+    {
+      "title": "How to pull REALTIME Cryptocurrency Prices with Python [FOR ...",
+      "url": "https://www.youtube.com/watch?v=P_SIZDsI3Ro",
+      "content": "the binance uh document binance API documentation so I'm going to copy paste that so this is the URL we need vsss or WSS stream binance.com something and then stream and then Define the streams you want to subscribe to now this here equals to has to be this one so we are just adding our assets to this string here so we can just use assets here and then we have our socket now we can just use this URL to provide that that to our websocket library and then we are pulling data from the web socket from the binance web socket and then we are getting Bitcoin eth and BNB Kine data on the one minute time interval all right so let's define this WS here so we're just calling that ws this simply using the web socket library then web socket app and now here you have to define the string containing the [...] just looping over those names and then adds this string and also transform the strings to lowercase letters here so I'm just reassigning that to assets so assets list is looking like this so that is exactly how we need to post that to the API so it is understanding what we want from it now we cannot provide a list here but we can only provide a string to the API so to subscribe to multipl...",
+      "score": 0.36956587,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Price Today | Live ETH Price, Chart & Market Data - Binance",
+      "url": "https://www.binance.com/en/price/ethereum",
+      "content": "Key factors: Institutional inflows into ETH Spot ETFs and significant whale accumulation indicate growing long-term confidence. Ethereum's exchange supply is near all-time lows, suggesting a potential supply squeeze. Geopolitical tensions and a large ETH short position introduce market uncertainty and potential volatility. Not advice. Information provided on an “as is” basis, without endorsement representation or warranty. Please DYOR. ## Crypto Time Machine Compare crypto returns versus Gold and Silver What if I invested USD Back in Select Coin Image 59: ETH ETH Image 60: BTC BTC Image 61: ETH ETH Image 62: USDT USDT Image 63: BNB BNB Image 64: USDC USDC Image 65: XRP XRP Image 66: SOL SOL Image 67: TRX TRX Image 68: DOGE DOGE Image 69: USDS USDS [...] London (EIP-1559) (2021): This pivotal update restructured Ethereum’s fee model and introduced the ETH burn mechanism — a deflationary feature that can reduce the circulating supply and potentially support ETH price stability over time. The Merge (2022): Ethereum transitioned from Proof-of-Work (PoW) to Proof-of-Stake (PoS), cutting energy usage by over 99% and reinforcing the network’s long-term sustainability and staking econom...",
+      "score": 0.35776997,
+      "query": "Ethereum ETH/USDT historical 1-minute lows Binance November 10 16 prior year",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum Historical Data - Investing.com",
+      "url": "",
+      "content": "Ethereum historical data table with daily open, high, low, close, volume, and change percentage values.",
+      "score": 0.39270994,
+      "query": "Ethereum ETH/USDT historical 1-minute lows Binance November 10 16 prior year",
+      "search_index": 2,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETH/USDT 1m candle low price API documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Ethereum ETH/USDT historical 1-minute lows Binance November 10 16 prior year",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance official ETH USDT spot trading pair and Ethereum market structure",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Ethereum price volatility liquidity catalysts November 10 16 schedule ETF macro events",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "ETHUSDT price level 3000 technical analysis support resistance expert outlook",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

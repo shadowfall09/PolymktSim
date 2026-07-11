@@ -1,0 +1,411 @@
+{
+  "row_index": 90,
+  "market_id": "mkt_635919",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $102,000 on October 21?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final “Close” price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with “1m” and “Candles” selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $102,000 on October 21?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final “Close” price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with “1m” and “Candles” selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-10-21",
+  "evidence_cutoff_date": "2025-10-20",
+  "end_date_limit": "2025-10-20",
+  "row_end_date_raw": "2025-10-21",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m candles official API documentation close price",
+    "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+    "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+    "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+    "Bitcoin price outlook October 21 analyst report exchange liquidity market structure"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 4,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 37,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 13,
+    "llm_kept_count": 37,
+    "llm_kept_leak_no_count": 37,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] \"clientOrderId\": \"BqtFCj5odMoWtSqGk2X9tU\", \"transactTime\": 1660801720215, \"price\": \"23410.00000000\", \"origQty\": \"0.00650000\", \"executedQty\": \"0.00000000\", \"cummulativeQuoteQty\": \"0.00000000\", \"status\": \"CANCELED\", \"timeInForce\": \"GTC\", \"type\": \"STOP_LOSS_LIMIT\", \"side\": \"SELL\", \"stopPrice\": \"23405.00000000\", \"selfTradePreventionMode\": \"NONE\" }, { \"symbol\": \"BTCUSDT\", \"orderId\": 12569138902, \"orderListId\": 1274512, \"clientOrderId\": \"jLnZpj5enfMXTuhKB1d0us\", \"transactTime\": 1660801720215, \"price\": \"23420.00000000\", \"origQty\": \"0....",
+      "score": 0.84918517,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Market Data - Futures (USDS-M) REST API | Binance Developer Docs",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Index-Constituents",
+      "content": "`{ \"symbol\": \"BTCUSDT\", \"time\": 1745401553408, \"constituents\": [ { \"exchange\": \"binance\", \"symbol\": \"BTCUSDT\", \"price\": \"94057.03000000\", \"weight\": \"0.51282051\" }, { \"exchange\": \"coinbase\", \"symbol\": \"BTC-USDT\", \"price\": \"94140.58000000\", \"weight\": \"0.15384615\" }, { \"exchange\": \"gateio\", \"symbol\": \"BTC_USDT\", \"price\": \"94060.10000000\", \"weight\": \"0.02564103\" }, { \"exchange\": \"kucoin\", \"symbol\": \"BTC-USDT\", \"price\": \"94096.70000000\", \"weight\": \"0.07692308\" }, { \"exchange\": \"mxc\", \"symbol\": \"BTCUSDT\", \"price\": \"94057.02000000\", \"weight\": \"0.07692308\" }, { \"exchange\": \"bitget\", \"symbol\": \"BTCUSDT\", \"price\": \"94064.03000000\", \"weight\": \"0.07692308\" }, { [...] \"weight\": \"0.07692308\" }, { \"exchange\": \"bybit\", \"symbol\": \"BTCUSDT\", \"price\": \"94067.90000000\", \"weight\": \"0.07692308\" } ] }` [...] Binance Logo Binance Logo # Query Index Price Constituents ## API Description​ Query index price constituents Note: Prices from constituents of TradFi perps will be hiden and displayed as -1. ## HTTP Request​ GET `/fapi/v1/constituents` `/fapi/v1/constituents` ## Request Weight​ 2 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | ## Response Exa...",
+      "score": 0.80625874,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\",...",
+      "score": 0.79542017,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt",
+      "content": "| 06/02/2024 - 08/11/2024 | 100,053 | | 08/11/2024 - 10/19/2024 | 100,054 | | 10/19/2024 - 12/28/2024 | 100,053 | | 12/28/2024 - 03/07/2025 | 100,054 | | 03/07/2025 - 05/16/2025 | 100,053 | | 05/16/2025 - 07/24/2025 | 100,054 | | 07/24/2025 - 10/02/2025 | 100,053 | | 10/02/2025 - 12/10/2025 | 100,054 | | 12/10/2025 - 02/18/2026 | 100,053 | | 02/18/2026 - 04/28/2026 | 100,054 | | 04/28/2026 - 07/07/2026 | 100,054 | [...] | DateTime | Count | --- | | 01/01/2017 - 03/11/2017 | 100,054 | | 03/11/2017 - 05/19/2017 | 100,054 | | 05/19/2017 - 07/28/2017 | 100,053 | | 07/28/2017 - 10/05/2017 | 100,054 | | 10/05/2017 - 12/14/2017 | 100,053 | | 12/14/2017 - 02/21/2018 | 100,054 | | 02/21/2018 - 05/02/2018 | 100,053 | | 05/02/2018 - 07/10/2018 | 100,054 | | 07/10/2018 - 09/18/2018 | 100,053 | | 09/18/2018 - 11/26/2018 | 100,054 | | 11/26/2018 - 02/04/2019 | 100,053 | | 02/04/2019 - 04/14/2019 | 100,054 | | 04/14/2019 - 06/23/2019 | 100,054 | | 06/23/2019 - 08/31/2019 | 100,053 | | 08/31/2019 - 11/09/2019 | 100,054 | | 11/09/2019 - 01/17/2020 | 100,053 | | 01/17/2020 - 03/27/2020 | 100,054 | | 03/27/2020 - 06/04/2020 | 100,053 | | 06/04/2020 - 08/13/2020 | 100,054 | | 08/13/2020 - 10/21/202...",
+      "score": 0.78670514,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "CME Sees Record Open Interest in Bitcoin Futures Ahead of ETF Debut",
+      "url": "https://finance.yahoo.com/news/cme-sees-record-open-interest-083304500.html",
+      "content": "Activity on the CME has picked up amid increased expectations that in the upcoming weeks several futures-based ETFs may begin trading in the U.S., as well as stronger participation from state-side institutional investors. \"Speculation about an imminent futures ETF really took off last week as the SEC had been uncharacteristically quiet ahead of the approval deadline for the first of the ETFs on October 18,\" said Martha Reyes, head of research at digital asset prime brokerage and exchange Bequant. \"U.S. institutions, in particular, have been fueling the rally as evidenced by activity on the CME and the basis flippening on the CME over the retail-led exchanges,\" Reyes added. [...] The dollar value of open interest (OI), or the number of futures contracts traded but not liquidated with an offsetting position, stood at $3.64 billion on Friday, marking a more than doubling for the month, according to data provided by bybt. The previous lifetime high of $3.26 billion was recorded during the bull market frenzy in February. Glassnode data shows the total number of outstanding contracts on the CME has increased by 60% to 56,410. The spread between the CME-based front-month futures contra...",
+      "score": 0.74652773,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    },
+    {
+      "title": "node-binance-api - NPM",
+      "url": "https://www.npmjs.com/package/node-binance-api",
+      "content": "volume: '1675.48000000' }, '1517558100000': { open: '0.00100860', high: '0.00101450', low: '0.00100100', close: '0.00100270', volume: '1918.46000000' }, '1517558160000': { open: '0.00100460', high: '0.00101480', low: '0.00100310', close: '0.00100670', volume: '2464.12000000' }, '1517558220000': { open: '0.00100510', high: '0.00100660', low: '0.00100110', close: '0.00100250', volume: '1484.59000000' } } // (..many more entries not shown) ///BNBBTC last price: 0.00100250 [...] ``` { '1517557800000': { open: '0.00100090', high: '0.00100650', low: '0.00099810', close: '0.00100370', volume: '1161.52000000' }, '1517557860000': { open: '0.00100360', high: '0.00101010', low: '0.00100000', close: '0.00100310', volume: '1977.68000000' }, '1517557920000': { open: '0.00100100', high: '0.00101130', low: '0.00100080', close: '0.00100670', volume: '2002.00000000' }, '1517557980000': { open: '0.00100660', high: '0.00101400', low: '0.00100200', close: '0.00100640', volume: '3896.40000000' }, '1517558040000': { open: '0.00100630', high: '0.00101390', low: '0.00100350', close: '0.00100470', volume: '1675.48000000' }, '1517558100000': [...] ``` console.info( await binance.futuresTime() ); console.i...",
+      "score": 0.7125728,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, // Trade ID of the first trade in the interval \"lastId\": 3220849281, // Trade ID of the last trade in the interval \"count\": 697727 // Number of trades in the interval }` [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", \"priceChangePercent\": \"-0.317\", \"weightedAvgPrice\": \"26234.58803036\", \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", \"quoteVolume\": \"485217905.04210480\", \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, \"lastId\": 3220849281, \"count\": 697727 }, { \"symbol\":...",
+      "score": 0.7055624,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Binance BTC-USDT Liquidity Falls 70% after Revoking Zero-fee ...",
+      "url": "https://www.investing.com/news/cryptocurrency-news/binance-btcusdt-liquidity-falls-70-after-revoking-zerofee-trading-3037481",
+      "content": "In this article: BTC/USD+3.08% Threshold US Dollar+2.95% Binance BTC liquidity for BUSD and USDT dropped by almost 70%. Conversely, the BTC-TUSD trading pair saw a 250% hike within 24 hours. Traders bought and sold over $18.5 billion of crypto Binance in the past 24 hours. Data from Kaiko, a market intelligence firm, shows that the liquidity for BTC-USDT and BTC-BUSD trading pairs on the most prominent crypto marketplace, Binance, has dropped significantly by almost 70% and 60%, respectively. [...] On the flip side, the BTC-TUSD trading pair has seen an impressive increase of over 250% in liquidity, going from just 9 Bitcoin to 29 BTC within a 24-hour window. A researcher at the data analytic firm noted that the considerable drop in liquidity was due to Binance’s recent decision to remove its flagship no-fee trading feature for all BTC pairs except BTC/TUSD. > Binance BTC-USDT liquidity has dropped by nearly 70% since zero-fee trading was phased out earlier todayBTC-BUSD liquidity has dropped 60% in the same timeframeBTC-TUSD up over 250% (from just 9 BTC to 29) pic.twitter.com/4Qr39KUIQi > — Riyad Carey (@riyad_carey) March 22, 2023 [...] More In Tools Currency Correlation Pivo...",
+      "score": 0.6994397,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "binance-us-api-docs/rest-api.md at master - GitHub",
+      "url": "https://github.com/binance-us/binance-official-api-docs/blob/master/rest-api.md?plain=1",
+      "content": "```javascript { \"symbol\": \"BNBBTC\", // Symbol Name \"openPrice\": \"99.00000000\", // Opening price of the Interval \"highPrice\": \"100.00000000\", // Highest price in the interval \"lowPrice\": \"0.10000000\", // Lowest price in the interval \"lastPrice\": \"4.00000200\", // Closing price of the interval \"volume\": \"8913.30000000\", // Total trade volume (in base asset) \"quoteVolume\": \"15.30000000\", // Total trade volume (in quote asset) \"openTime\": 1499783499040, // Start of the ticker interval \"closeTime\": 1499869899040, // End of the ticker interval \"firstId\": 28385, // First tradeId considered \"lastId\": 28460, // Last tradeId considered \"count\": 76 // Total trade count } ``` OR ```javascript [ { \"symbol\": \"BNBBTC\", \"openPrice\": \"99.00000000\", \"highPrice\": \"100.00000000\", [...] \"m\": true, // Was the buyer the maker? \"M\": true // Was the trade the best price match? } ] ``` ### Kline/Candlestick data ``` GET /api/v3/klines ``` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. \\\\Weight:\\\\ 1 \\\\Parameters:\\\\ Name | Type | Mandatory | Description ------------ ------------ | ------------ symbol | STRING | YES | interval | ENUM | YES | startTime | LONG | NO | en...",
+      "score": 0.6816637,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "``` 1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0 ``` enables you to calculate this: From millisecond timestamp `1688169600000` (July 1st, 2023 0:00:00 UTC) To millisecond timestamp `1688169600999` (July 1st, 2023 0:00:00.999 UTC) Full candle + Open price `30471.99` USDT for 1 BTC + Close price `30472.00` USDT for 1 BTC + Close is higher than open => candle is green Knots + Lowest price `30471.99` USDT for 1 BTC - Same as open price of green candle => no knot below + Highest price `30472.00` USDT for 1 BTC - Same as close price of green candle => no knot above Share Improve this answer answered Aug 21, 2023 at 21:45 Petr Hejda's user avatar Petr Hejda [...] ``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time...",
+      "score": 0.6745014,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Binance trade volume and market listings | CoinMarketCap",
+      "url": "https://coinmarketcap.com/exchanges/binance",
+      "content": "## How Much Are Binance Fees? Binance offers a competitive, tiered fee structure for both spot and futures trading. For regular users, spot trading fees start at 0.1% for both maker and taker. Users can receive additional discounts by paying fees in BNB or increasing their trading volume to qualify for VIP levels. Binance also offers zero-fee trading on select BTC and FDUSD spot pairs. For the most accurate and up-to-date fee schedule, see the official Binance Fee Structure page. ## Is It Possible To Use Leverage or Margin Trading on Binance? [...] Indicators Image 31Fear and Greed IndexImage 32Altcoin Season IndexImage 33Market Cycle IndicatorsImage 34Bitcoin DominanceImage 35CoinMarketCap 20 IndexImage 36CoinMarketCap 100 Index ETF Flows Image 37Crypto ETFsImage 38Bitcoin ETFsImage 39Ethereum ETFs Technical analysis Image 40RSIImage 41MACD Derivatives Image 42OverviewImage 43LiquidationsImage 44Funding Rates DexScan Image 45Signals NewImage 46TrendingImage 47NewImage 48GainersImage 49Meme ExplorerImage 50Top Traders More Showing 3 of 7 items. 4 items are hidden. Portfolio Watchlist Search / Log In Image 51 Image 52: Binance # Binance Spot Trading Volume(24h) $6,408,360,769.37...",
+      "score": 0.63234437,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "BTC USDT | Bitcoin to USDT",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "22:23:24 63,360.00 0.01196 22:23:23 63,360.00 0.00039 22:23:22 63,359.99 0.00440 22:23:22 63,360.00 0.03156 22:23:21 63,359.99 0.00010 22:23:20 63,359.99 0.00315 22:23:19 63,360.00 0.00008 22:23:18 63,360.00 0.00187 22:23:18 63,359.99 0.00355 22:23:15 63,359.99 0.00140 22:23:15 63,359.99 0.00010 22:23:14 63,359.99 0.00008 22:23:14 All New bStocks Hot tCommodities Solana RWA Layer 1 / Layer 2 AI MEME Monitoring Seed DeFi Storage NFT Gaming Fan Token Megadrop Launchpool Infrastructure BSC Payments Launchpad Margin Grid USDC USDT U USD1 USD BNB BTC ALTS FIAT Name Last Price / 24h Chg 0G/USDC 5x 0.197 +5.91% 1000CAT/USDC 5x 0.00134 +0.00% 1000CHEEMS/USDC 0.000466 +0.22% 1000SATS/USDC 5x 0.00000940 +0.86% [...] Image 1: Binance Buy Crypto Markets Trade Futures Earn Square More Log InSign Up Image 2 Scan to Download App iOS & Android More Download Options Order Book 0.01 Price (USDT) Amount (BTC) Total 63,362.72 0.00009 5.702644 63,362.47 0.13656 8.65K 63,362.46 0.00009 5.702621 63,362.39 0.00252 159.673222 63,362.05 0.06058 3.83K 63,362.04 0.08179 5.18K 63,362.03 0.00018 11.405165 63,362.00 0.02009 1.27K 63,361.99 0.00018 11.405158 63,361.78 0.00023 14.573209 63,361.60 0.00009 5.7025...",
+      "score": 0.62934244,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "What Are Binance Trading Fees? (2025)",
+      "url": "https://www.binance.com/en/square/post/24640040632442",
+      "content": "For example, a $1,000 BTC trade incurs a $1 fee (0.1%) for both maker and taker orders at VIP 0. Binance offers several ways to reduce these fees: BNB Discount: Paying fees with BNB reduces spot trading fees by 25%, lowering both maker and taker fees to 0.075%. For a $1,000 trade, the fee drops to $0.75. Referral Discount: Using the referral code 28191927 during signup provides a 20% lifetime discount on spot trading fees, reducing the fee to 0.08% (or 0.06% with BNB). Zero-Fee Pairs: Binance offers zero-fee trading for select pairs like BTC and ETH (Tier 0). For instance, trading BTC/USDT incurs no fees, ideal for high-volume traders. 2. Futures Trading Fees [...] Below, we break down the fee types, tiers, and savings strategies for 2025. ## Binance Trading Fees: A Detailed Breakdown Binance’s trading fees vary depending on the type of trading (spot, futures, etc.), user VIP level, and whether BNB is used to pay fees. Fees are calculated as a percentage of the trade’s value, with discounts for higher volumes and BNB payments. Here’s a comprehensive look at Binance trading fees in 2025. 1. Spot Trading Fees Spot trading involves buying or selling cryptocurrencies at current mark...",
+      "score": 0.6279746,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "Spot Trading Fee Rate | Binance",
+      "url": "https://www.binance.com/fee/spotMaker",
+      "content": "| VIP 8 | ≥ 2,000,000,000 USD | and | ≥ 4,500 BNB | 0.016% / 0.025% | 0.01200% / 0.01875% | Standard / 0.020% | Standard / 0.01500% | | VIP 9 | ≥ 4,000,000,000 USD | and | ≥ 5,500 BNB | 0.011% / 0.023% | 0.00825% / 0.01725% | Standard / 0.018% | Standard / 0.01350% | [...] Trade volume will be converted into USD equivalent values based on the exchange rate under Multi-Asset mode.Learn more | and/or | BNB Balance | Maker / Taker Makers add liquidity by placing orders on the book; takers remove liquidity by matching existing orders immediately.Learn More. | Maker / Taker BNB 25% off | USDC Maker / Taker | USDC Maker / Taker BNB 25% off | --- --- --- --- | | | | | | | | | | | Regular User | < 1,000,000 USD | or | ≥ 0 BNB | 0.100% / 0.100% | 0.07500% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | | VIP 1 | ≥ 1,000,000 USD | and | ≥ 5 BNB | 0.090% / 0.100% | 0.06750% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | [...] | VIP 2 | ≥ 5,000,000 USD | and | ≥ 25 BNB | 0.080% / 0.100% | 0.06000% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | | VIP 3 | ≥ 20,000,000 USD | and | ≥ 100 BNB | 0.040% / 0.060% | 0.03000% / 0.04500% | Standard / 0.055% | Standard / 0.04125%...",
+      "score": 0.62330866,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US Now Offers Zero-Fee Trading For Spot Bitcoin Pairs",
+      "url": "https://bitcoinmagazine.com/business/binance-us-offers-zero-fee-trading-for-bitcoin-pairings",
+      "content": "HomeBUSINESSBinance.US Now Offers Zero-Fee Trading For Spot Bitcoin Pairs BUSINESS # Binance.US Now Offers Zero-Fee Trading For Spot Bitcoin Pairs Shawn Amick By Shawn Amick portal without fees. However, users of the platform will still pay a 0.5% fee when using the Buy Crypto function. “As an established leader on low fee trading, we are excited to be the first US crypto exchange to eliminate spot trading fees on numerous bitcoin pair trades for all users,” said Brian Shroder, CEO of Binance.US. “We see this as an opportunity to revolutionize the way fees are approached in our industry, increase accessibility to crypto, and help our market and customers in a time of need,” Shroder continued. [...] On Binance’s breakdown of the fee structure, the company relayed the driving force behind its decision to eliminate many of its fees. “As recession fears mount and inflation costs increase, we believe in offering greater cost savings on Bitcoin and value to everyone in the crypto ecosystem.” The adjustment to Binance’s fee structure comes after a $200 million funding round –led by Fundamental Labs – which took place this past April. At that time, Shroder stated that “The fundraising e...",
+      "score": 0.6175132,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bitcoin (BTC/USDT) price data from Binance exchange with the following specifications: Timezone Information: All timestamps are in UTC (Coordinated Universal Time) Open time format: YYYY-MM-DD HH:MM:SS.ffffff UTC Close time format: YYYY-MM-DD HH:MM:SS.ffffff UTC [...] Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing tim...",
+      "score": 0.61668247,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "Spot Trading Fee Rate - Binance",
+      "url": "https://www.binance.com/en/fee",
+      "content": "| VIP 9 | ≥ 4,000,000,000 USD | and | ≥ 5,500 BNB | 0.011% / 0.023% | 0.00825% / 0.01725% | Standard / 0.018% | Standard / 0.01350% | [...] | VIP 3 | ≥ 20,000,000 USD | and | ≥ 100 BNB | 0.040% / 0.060% | 0.03000% / 0.04500% | Standard / 0.055% | Standard / 0.04125% | | VIP 4 | ≥ 75,000,000 USD | and | ≥ 500 BNB | 0.040% / 0.052% | 0.03000% / 0.03900% | Standard / 0.047% | Standard / 0.03525% | | VIP 5 | ≥ 150,000,000 USD | and | ≥ 1,000 BNB | 0.025% / 0.031% | 0.01875% / 0.02325% | Standard / 0.026% | Standard / 0.01950% | | VIP 6 | ≥ 400,000,000 USD | and | ≥ 1,750 BNB | 0.020% / 0.029% | 0.01500% / 0.02175% | Standard / 0.024% | Standard / 0.01800% | | VIP 7 | ≥ 800,000,000 USD | and | ≥ 3,000 BNB | 0.019% / 0.028% | 0.01425% / 0.02100% | Standard / 0.023% | Standard / 0.01725% | | VIP 8 | ≥ 2,000,000,000 USD | and | ≥ 4,500 BNB | 0.016% / 0.025% | 0.01200% / 0.01875% | Standard / 0.020% | Standard / 0.01500% | [...] The 30-day trading volume is calculated...Learn more | and/or | BNB Balance | Maker / Taker Makers add liquidity by placing orders on the book; takers remove liquidity by matching existing orders immediately.Learn More. | Maker / Taker BNB 25% off | USDC Maker /...",
+      "score": 0.614464,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Spot Trading 101: A Thorough Guide",
+      "url": "https://www.bitdegree.org/crypto/tutorials/binance-spot-trading",
+      "content": "An Extensive Guide to Binance Spot Trading Key Takeaways The Binance spot trading market has more than 1,500 trading pairs and allows immediate buying and selling of over 600 cryptocurrencies; There are several order types in the Binance spot trading market, including market, limit, stop-limit, OCO, and trailing stop orders; The standard Binance spot fee is 0.1%. However, you can lower it by increasing your Binance VIP level, while some trading pairs are fee-free overall. An Extensive Guide to Binance Spot Trading [...] If your monthly trade volume is below 1,000,000 BUSD or your BNB balance is zero, the Binance spot trading fee will be 0.1% for both makers and takers. This is the only tier where the maker and taker percentages match. Thus, it’s the standard Binance spot fee. However, if you want an even better deal, you can use BNB to pay your transaction cost and get a 25% discount, reducing the standard maker / taker fee from 0.1% to 0.075%. Now, moving up the ladder, for those with a monthly trade volume of 1,000,000 BUSD (or more) and a BNB balance of at least 25, fees drop to 0.09% for makers and remain at 0.1% for takers. Again, if you use BNB to pay, these fees will be d...",
+      "score": 0.6021791,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "ff137/bitstamp-btcusd-minute-data: Daily updates of 1-minute BTC ...",
+      "url": "https://github.com/ff137/bitstamp-btcusd-minute-data",
+      "content": "Some facts about the data: Date Range: From 1 January 2012 to 7 January 2025. Number of Records: 6,846,600 File Size: Approximately 90MB zipped, 326MB unzipped. Data Integrity: No missing minutes, no duplicates, and no null values. ### Data Preview Below is a preview of the first and last two rows of the bulk dataset: | timestamp | open | high | low | close | volume | --- --- --- | | 1325412060 | 4.58 | 4.58 | 4.58 | 4.58 | 0.0 | | 1325412120 | 4.58 | 4.58 | 4.58 | 4.58 | 0.0 | | ... | ... | ... | ... | ... | ... | | 1736207940 | 102280.0 | 102280.0 | 102280.0 | 102280.0 | 0.007554 | | 1736208000 | 102278.0 | 102291.0 | 102263.0 | 102263.0 | 0.523107 | ## Daily Updates [...] ### Python Template for Loading the Data If you need a basic template for just loading the data into a single DataFrame: ``` import pandas as pd # Load historical and recent data DATA_DIR = 'data' df_hist = pd read_csvf'{DATA_DIR}/historical/btcusd_bitstamp_1min_2012-2025.csv.gz'{DATA_DIR}{DATA_DIR} compression = 'gzip' df_recent = pd read_csvf'{DATA_DIR}/updates/btcusd_bitstamp_1min_latest.csv'{DATA_DIR}{DATA_DIR} # Combine the datasets df = pd concat df_hist df_recent ignore_index = True df info ``` ## Wan...",
+      "score": 0.5923135,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "October is typically the best month for bitcoin, but this year looks a lot different",
+      "url": "https://www.youtube.com/watch?v=FK8S43RH61A",
+      "content": "a pretty small risk. You do have to watch ETF flows because something is definitely going on there. Spot crypto funds have rad in $40 billion dollar so far this year and any let up in flows could signal lower crypto demand which impacts price. And finally, watch the current trading range in Bitcoin which has been in place since July from roughly roughly 108,000 to the downside to 125,000 to the upside. And remember, Bitcoin is famous for its rugps and false breakouts both to the upside and also to the downside. Josh, definitely October not going well for all of crypto. In fact, since last Friday, you've had the crypto market that shrunk by 600 billion. And if we take a look at our Wi-Fi Interactive, you'll see the action here today. We are watching Bitcoin that is around 106,000. It had [...] I mean, we're going to see a lot of retail come into AI, come into rare minerals, right? This has been a hot topic for the last week as well and absolutely into crypto assets because this this asset class is not going away. It is only going to proliferate into tokenization and into stable coins further. Do you have line of sight, Ma, into what we've been seeing in terms of ETF flows? Have t...",
+      "score": 0.5709301,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    },
+    {
+      "title": "VanEck Mid-October 2025 Bitcoin ChainCheck | VanEck",
+      "url": "https://www.vaneck.com/us/en/blogs/digital-assets/matthew-sigel-vaneck-mid-october-2025-bitcoin-chaincheck",
+      "content": "1 Yr Correlation Blockchain Revenue with Token Price Source: Artemis as of 10/10/2025. Past performance is no guarantee of future results. Not intended as a recommendation to buy or sell any securities named herein. While macro liquidity and market structure provide indicators of Bitcoin’s shorter-term cycles, which generally drive risk appetite across the broader crypto market, onchain fundamentals offer the clearest window into crypto’s real adoption. Across major networks, token prices have shown statistically significant relationships with the revenues their blockchains generate, evidence that usage and value are intertwined. [...] Since 2013, global liquidity across the top five currencies has roughly doubled from $50 trillion to nearly $100 trillion, during which Bitcoin’s price has increased over 700x. Among individual currencies, the euro M2 money supply remains the strongest explanatory variable (r = 0.69, t = 10), highlighting Bitcoin’s growing role as a neutral reserve asset amid synchronized currency debasement. [...] Total Crypto Equities’ Market Cap: The MVIS® Global Digital Assets Equity Index (MVDAPP)’s 30-day moving average rose 18% over the past month as miners...",
+      "score": 0.56719416,
+      "query": "Bitcoin price outlook October 21 analyst report exchange liquidity market structure",
+      "search_index": 5
+    },
+    {
+      "title": "Types of Fees on Binance (Detailed Summary)",
+      "url": "https://www.binance.com/en/square/post/14496572008914",
+      "content": "Taker: The person who executes an order immediately, usually market orders. When you take liquidity from the market, you are a taker. 2.2 How to calculate Spot trading fees Trading fees on Binance depend on your account level. These levels are determined based on the trading volume over the last 30 days and the BNB balance you hold. Binance has a fee reduction program when you use BNB to pay trading fees. Basic trading fee (Level 0): Maker: 0.10% Taker: 0.10% Example: If you buy 1 BTC for $25,000, the trading fee will be: Maker: 0.10% 25,000 = 25 USD Taker: 0.10% 25,000 = 25 USD 2.3 Fee reduction when using BNB [...] 2.3 Fee reduction when using BNB If you use BNB to pay trading fees, you will receive a discount. Currently, Binance offers a 25% discount for Spot transactions when using BNB. Example: Taker fee when using BNB will be 0.10% (1 - 25%) = 0.075%. If you buy 1 BTC for $25,000 and use BNB for payment, the fee will be 0.075% 25,000 = 18.75 USD. 2.4 VIP levels Binance has a VIP level system from VIP 0 to VIP 9, based on: Trading volume over the last 30 days (measured in BTC). BNB balance. The higher the level, the lower the trading fees. Image 3 VIP fee on Binance ### 3....",
+      "score": 0.5596998,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "search_index": 3
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "df = df.reindex(columns=column_names) return df def GetHistoricalData(client, symbol, start_time, end_time, limit=1500): collection = [] while start_time < end_time: data = client.get_historical_data(symbol, start_time=start_time, end_time=end_time, limit=limit) print(client.exchange + \" \" + symbol + \" : Collected \" + str(len(data)) + \" initial data from \"+ str(ms_to_dt_local(data)) +\" to \" + str(ms_to_dt_local(data[-1]))) start_time = int(data[-1] + 1000) collection +=data time.sleep(1.1) return collection client = BinanceClient(futures=False) symbol = \"BTCUSDT\" interval = \"1m\" fromDate = int(datetime.strptime('2021-11-15', '%Y-%m-%d').timestamp() 1000) toDate = int(datetime.strptime('2021-11-16', '%Y-%m-%d').timestamp() 1000) data = GetHistoricalData(client, symbol, fromDate, toDate) [...] def _get_symbols(self) -> List[str]: params = dict() endpoint = \"/fapi/v1/exchangeInfo\" if self.futures else \"/api/v3/exchangeInfo\" data = self._make_request(endpoint, params) symbols = [x[\"symbol\"] for x in data[\"symbols\"]] return symbols def get_historical_data(self, symbol: str, interval: Optional[str] = \"1m\", start_time: Optional[int] = None, end_time: Optional[int] = None, limit: Option...",
+      "score": 0.55275756,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin rises to the highest since May, is now up 30% in October",
+      "url": "https://www.cnbc.com/2021/10/11/bitcoin-rises-to-the-highest-since-may-is-now-up-30percent-in-october.html",
+      "content": "Bitcoin rises on optimistic ETF prospects — hopeful issuer shares 2021 outlook Ben McMillan, chief investment officer at the quantitative index fund manager IDX, attributed the jump to increasing concerns about inflation being more than transitory as well as trading data that looks increasingly positive for the bitcoin price. \"We're looking at food prices that are at a 10-year peak, oil topping $80 for the first time in five or six years, and that's really hitting consumers in the pocketbook,\" he said. \"A lot of investors are starting to look back to the original appeal of bitcoin as a store of value, as something that can't be weighed by any central bank.\" [...] CNBC Join IC Join Pro Join IC Join Pro # Bitcoin rises to the highest since May, is now up 30% in October Bitcoin extended its two-week rally Monday, climbing to the highest level since early May, according to Coin Metrics. The cryptocurrency last traded more than 3% higher at $57,530.81 after hitting as high as $57,740.82. The comeback — a gain of another 12% would take it back to its all-time high of about $65,000 — comes amid increasing hopes and expectations that a bitcoin futures ETF could be approved soon. That, a...",
+      "score": 0.52612424,
+      "query": "Bitcoin price outlook October 21 analyst report exchange liquidity market structure",
+      "search_index": 5
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "``` [[ [ [ 1499040000000, // Open time 1499040000000, // Open time \"0.01634790\", // Open \"0.01634790\", // Open \"0.80000000\", // High \"0.80000000\", // High \"0.01575800\", // Low \"0.01575800\", // Low \"0.01577100\", // Close \"0.01577100\", // Close \"148976.11427815\", // Volume \"148976.11427815\", // Volume 1499644799999, // Close time 1499644799999, // Close time \"2434.19055334\", // Quote asset volume \"2434.19055334\", // Quote asset volume 308, // Number of trades 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. \"17928899.62484339\" // Ignore. ] ] ] ] ``` [...] ⚠️ You are viewing the legacy Binance API documentation. The new documentation is now the default and is actively maintained. Switch to the new docs. # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. ## HTTP Request​ GET `/fapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000...",
+      "score": 0.51691306,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "Crypto Price Prediction: Bitcoin Forecast To Hit $5 Million As Price Soars Through 2021",
+      "url": "https://www.forbes.com/sites/billybambrough/2021/10/23/crypto-price-prediction-bitcoin-forecast-to-hit-5-million-as-price-soars-through-2021",
+      "content": "Mini Crossword Frase Pinpoint Queens Crossclimb # Crypto Price Prediction: Bitcoin Forecast To Hit $5 Million As Price Soars Through 2021 ByBilly Bambrough, Senior Contributor. Bitcoin has rocketed through October, climbing as hype surrounding the first U.S. bitcoin futures exchange-traded fund (ETF) and fresh inflation fears galvanize investors. Subscribe now to Forbes' CryptoAsset & Blockchain Advisor and discover hot new NFT and crypto blockbusters poised for 1,000% gains The bitcoin price has added around 40% since this time last month, earlier this week hitting an all-time high of around $67,000—$2,000 per bitcoin higher than its April peak. [...] The group, made up of crypto analysts, researchers and entrepreneurs, returned an average bitcoin price prediction of $80,021 in 2021 before ending the year at $71,415. By the end of 2025 and 2030, panelists expect the bitcoin price to skyrocket to an average of $249,578 and $5.2 million respectively. \"The bull run is different this year,\" said panelist Gunnar Jaerv, First Digital Trust's chief operating officer, who has an end of 2021 bitcoin price prediction of $70,000. \"More innovations, more regulatory involvement (despite fea...",
+      "score": 0.491725,
+      "query": "Bitcoin price outlook October 21 analyst report exchange liquidity market structure",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin's October Seasonality Exposed: a 90% Win Rate ...",
+      "url": "https://roguequant.substack.com/p/bitcoins-october-seasonality-exposed",
+      "content": "### The October Weekly Breakdown I broke down each October into weekly chunks to see where that 21.5% actually comes from. Share Here’s what jumped out: Week 4 is the money week. Week 1: +1.8% average (70% hit rate) Week 2: +4.1% average (70% hit rate) Week 3: +3.3% average (80% hit rate) Week 4: +5.4% average (70% hit rate) Final days: -0.3% average (50% hit rate) Week 4 delivers 25% of October’s total performance in just 7 days. But here’s the interesting part - Week 3 has the highest hit rate at 80%, even though Week 4 has the biggest average move. Translation: Week 3 is more consistent, Week 4 is more explosive. ### The End-of-Month Reality Check Notice that “Final” period? Those last few days of October are actually negative on average. [...] Look at this: October’s best days: Sunday: +0.26% (53% hit rate) Saturday: +0.18% (56% hit rate) Thursday: +0.12% (43% hit rate) October’s worst days: Monday: -0.26% (33% hit rate) Friday: -0.25% (51% hit rate) Now compare this to Bitcoin’s all-time day-of-week pattern: All-time best days: Wednesday: +0.05% (51% hit rate) Thursday: +0.05% (49% hit rate) All-time worst days: Saturday: -0.06% (48% hit rate) Sunday: -0.02% (51% hit rate)...",
+      "score": 0.48352703,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing timestamp in UTC Quote asset volume: Volume in quote asset (USDT) Number of trades: Number of trades during period Taker buy base asset volume: Volume of taker buy orders Taker buy quote asset volume: Volume of taker buy orders in quote asset Ignore: Unused field [...] menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bi...",
+      "score": 0.467308,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "search_index": 1
+    },
+    {
+      "title": "GitHub - nonisich/Binance-Data-Downloader: This tool facilitates the seamless download and visualization of historical data for cryptocurrency pairs from the Binance exchange. Overcoming the 1500-bar limit per request, the tool allows users to efficiently download candlestick data for specified timeframes, ranging from days to years. · GitHub",
+      "url": "https://github.com/nonisich/Binance-Data-Downloader",
+      "content": "BranchesTags Open more actions menu ## Folders and files | Name | Name | Last commit message | Last commit date | --- --- | | Latest commit History6 Commits 6 Commits | | .idea | .idea | | | | \\_\\_pycache\\_\\_ | \\_\\_pycache\\_\\_ | | | | api | api | | | | README.md | README.md | | | | functions.py | functions.py | | | | keys.py | keys.py | | | | main.py | main.py | | | | | ## Repository files navigation ## Binance Data Downloader This code is a tool for downloading and visualizing historical data of cryptocurrency pairs from the Binance exchange. The code allows the user to get candlestick data on selected trading pairs for an unlimited or specified period of time to build candlestick charts. [...] Skip to content ## Navigation Menu Sign in Appearance settings # Search code, repositories, users, issues, pull requests... Search syntax tips Sign in Sign up Appearance settings You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} nonisich / Binance-Data-Downloader Public Notifications Yo...",
+      "score": 0.4368388,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Market Data - Amberdata",
+      "url": "https://www.amberdata.io/binance-market-data",
+      "content": "Tickers: Tickers represent the best bids/asks from an order book. The bid price represents the maximum price that a buyer is willing to pay for an asset. The ask price represents the minimum price that a seller is willing to take for that same asset. ## Binance Historical Trade Data Our Binance trade datasets consist of all tick-by-tick trade data, timestamped, and with the trade direction normalized from the taker side. We have Binance spot data from 2017-08-17 and Binance.US spot data from 2019-09-17. We provide historical trade data via our REST API and real-time trade data via WebSockets for every single asset on Binance. We collect trade data by connecting to Binance’s REST API’s. We poll their market data REST API made publicly available in our API documentation. [...] Our spot data for Binance goes back to 2017-08-17 and for Binance futures to 2019-09-08. We do not cover Binance US. For the OHLCV values, the price is always in quote and the volume unit is always in base. For example, if the pair was BTC-USD, then the price values returned are in USD and the volume value is in BTC. Our OHLCV endpoints are available via REST API for historical (time series) data as well as...",
+      "score": 0.43266314,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "The two eras of Bitcoin valuation: pre- and post- ETFs - 21Shares",
+      "url": "https://www.21shares.com/en-us/insights/the-two-eras-of-bitcoin-valuation-pre--and-post--etfs",
+      "content": "Daily inflows and outflows offer a near-term view of shifting sentiment (similar to onchain value transfers previously), with steady inflows reflecting strong demand and large outflows often aligning with risk-off behavior. Futures market data adds important context, especially as the derivatives market’s open interest has grown by roughly 500% since early 2020 and now represents a much larger share of Bitcoin market structure. Rising open interest often signals upcoming volatility, while shifts in funding rates help show how the market is positioned. Most interestingly, open interest growth of 50-90% has preceded major volatility spikes (Oct 2020–Apr 2021, Oct 2024–Nov 2024, Apr 2025–Oct 2025). [...] At the same time, billions of dollars in Bitcoin exposure now trade on traditional exchanges without any blockchain activity, as shares of these products move between investors in the secondary market. Futures markets expanded as well. Open interest reached record levels in the beginning of October 20251, allowing market participants to take large positions without moving any coins. Broader macroeconomic forces, including global liquidity conditions and interest rate policy, also b...",
+      "score": 0.4233394,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    },
+    {
+      "title": "The Bitcoin Price Forecast (2021-2027) - by Ryan Allis",
+      "url": "https://coinstack.substack.com/p/the-bitcoin-price-forecast-2021-2027",
+      "content": "1. There is a max supply of 21 million Bitcoin. This number can’t be increased by anyone. 2. Bitcoin is a globally-neutral decentralized form of money. 3. Bitcoin is used to store your savings in a digital asset that over the long run increases in value instead of being inflated away like fiat cash. 4. Bitcoin can easily be used pay for things on the internet (ranging from newsletter subscriptions to Tesla cars) and to quickly and cheaply transfer money to people on platforms that integrate with it like Cash App, Square, Paypal, and now the Visa network. 5. Bitcoin is already held by 1.8% of the world population, with the pace of adoption being faster than the pace of the internet. [...] There’s just too many people who get what Bitcoin actually is now and realize this isn’t just a speculative asset, but rather the globally-neutral currency of exchange that increases its value over time--powering an entire sector of emerging innovation. It’s only volatile because people are figuring out what it is as it appreciates toward its long term intrinsic value somewhere north of the value of the market cap of Gold, making it worth above $500k. ## What Are Other Analysts Saying for This C...",
+      "score": 0.42090955,
+      "query": "Bitcoin price outlook October 21 analyst report exchange liquidity market structure",
+      "search_index": 5
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "binance Share Improve this question edited Aug 19, 2023 at 17:02 asked Aug 19, 2023 at 6:54 Optimus Prime's user avatar Optimus Prime 6344 silver badges1414 bronze badges 0 Add a comment | ## 1 Answer 1 Reset to default 3 +50 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: Here's a sample bash script that downloads and unpacks the raw data for the whole month: [...] ``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line [...] Explore Stack...",
+      "score": 0.42019567,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "Free Historical Crypto Trade/Tick data from Binance - YouTube",
+      "url": "https://www.youtube.com/watch?v=ApdjC9aylnw",
+      "content": "# Free Historical Crypto Trade/Tick data from Binance ## Chad Thackray 23000 subscribers 302 likes ### Description 14715 views Posted: 2 Oct 2022 Historical Trade or Tick level-data can be expensive from an external data provider. Fortunately Binance provides a free data source. Using trade data and aggregating the candles yourself can often improve the quality of the dataset your're using as you're not mixing prices from different exchanges. ⭐ Code: TimescaleDB real-time streaming tutorial: 00:00 - Intro 02:05 - Binance Trade Data Download 07:29 - Aggregating Trade data to OHLC with Pandas [...] what we're going to be using here so back to uh Jupiter notebook here and we want to select a particular column so in our case that's going to be the price column that's the only one we're going to be aggregating obviously because open high low close just uses the price so we've got the price and the next thing we'll want to do is resample it so dot resample so let's say I wanted to resample this to one minute bars to make that something we can handle that's gonna be one t for one minute again this is just standard pandas date time offsets you'll be well familiar with these if you've us...",
+      "score": 0.41905406,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "Spot ETF basis trades driving 80% surge in CME bitcoin futures ...",
+      "url": "https://www.theblock.co/post/301041/spot-etf-basis-trades-driving-80-surge-in-cme-bitcoin-futures-open-interest-analyst-says",
+      "content": "Discover the institutional crypto exchange LMAX Digital through high-level info and live data here. ✕ Institutional crypto intel Explore and the CME bitcoin futures market for basis trades, causing a sharp increase in open interest. \"Spot bitcoin ETFs have contributed to an 80% increase in open interest on the CME bitcoin futures market year-to-date,\" CF Benchmarks lead research analyst Gabriel Selby told The Block. Selby added that this institutional investor activity could drive bitcoin liquidity and \"set the stage for a more robust and interconnected market ecosystem.\" ## Record number of futures contracts on CME after spot ETF approval [...] ## Basis trading pressure on spot bitcoin price The arbitrage opportunities between trading the difference between the spot and futures price can put pressure on the current bitcoin spot price. When the bitcoin futures price is higher than the spot price, buying in the spot market increases the spot price, while selling in the futures market decreases the futures price. Conversely, when the futures price is lower than the spot price, selling in the spot market decreases the spot price, while buying in the futures market increases the fut...",
+      "score": 0.41506538,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    },
+    {
+      "title": "Binance Historical Data — Free OHLCV, Futures & Trade CSVs",
+      "url": "https://www.cryptodatadownload.com/data/binance",
+      "content": "Historical Trade Prints Every transaction, regardless of size, takes place between a buyer and a seller and is recorded with the timestamp at which it occurred. These are actual historical trades; We have a complete trade history for BTCUSDT on Binance; however, this is a massive amount of data and is too big for us to make available in ZIP or CSV. We have written Python code showing how to pull this data for yourself. Historical Trade Prints ###### Latest Posts Step by Step Guide to Load Cryptocurrency data into MetaTrader New Cryptocurrency Futures Added to CFTC Commitment of Traders Data Blockchain Mining Hashrate and Cryptocurrency Price Arbitrage StableCoin Depegging Risk Prediction Studied with Machine Learning",
+      "score": 0.39424816,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "search_index": 2
+    },
+    {
+      "title": "Market impact of the bitcoin ETF introduction on bitcoin futures",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1057521924007427",
+      "content": "Bitcoin is the first and most famous cryptocurrency. The first US bitcoin exchange-traded fund (ETF), “BITO”, issued by ProShares, began trading on October 19, 2021. BITO holds bitcoin futures contracts rather than the spot bitcoin. According to the Hajric (2021), BITO is the second-most heavily traded fund on its debut day on record, with more than 24 million shares changed hands. In August 2021, the Securities and Exchange Commission (SEC) Chairman Gary Gensler expressed a preference for ETFs that hold bitcoin futures because they are traded on regulated venues such as the Chicago Mercantile Exchange (CME).1 Spot bitcoin, on the contrary, is predominantly traded on non-regulated exchanges and large bitcoin price dispersions exist among these exchanges (Makarov & Schoar, 2020Cong et al., [...] Fig. 1 plots the time-varying bitcoin futures prices and open interest. It is noticeable that the futures prices and open interest rise substantially after March 17, 2020 (COVID-19 pandemic and the U.S. Federal Reserve stimulus program shocks), as shown in the first dashed vertical line.7 More importantly, after the second dashed vertical line (Oct. 19, 2021, the introduction date of BITO...",
+      "score": 0.36867893,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "search_index": 4
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m candles official API documentation close price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin BTCUSDT historical 1-minute candle data Binance October 21 prior years",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance BTCUSDT trading pair Binance Spot market official fee liquidity page",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Bitcoin October seasonality ETF flows CME futures open interest pre-Oct 21",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Bitcoin price outlook October 21 analyst report exchange liquidity market structure",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

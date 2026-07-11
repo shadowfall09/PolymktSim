@@ -1,0 +1,305 @@
+{
+  "row_index": 52,
+  "market_id": "635925",
+  "slug": "bitcoin-above-108k-on-october-21",
+  "question": "Will the price of Bitcoin be above $108,000 on October 21?",
+  "event_title": "Bitcoin above ___ on October 21?",
+  "end_date_limit": "2025-10-21",
+  "row_end_date_raw": "2025-10-21",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+    "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+    "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "# Binance API credentials 'your_api_key' 'your_api_secret' # Define the symbol for BTC/USDT pair 'BTCUSDT' # Define custom start and end time 2024 3 15 0 0 0 2024 6 15 0 0 0 str str # Convert the data into a pandas dataframe for easier manipulation 'Open Time' 'Open' 'High' 'Low' 'Close' 'Volume' 'Close Time' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote Asset Volume' 'Ignore' 'Open' 'High' 'Low' 'Close' 'Volume' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote Asset Volume' for in float ``` [...] from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, column...",
+      "score": 0.999617,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Get historical Klines from Binance - gist no Github",
+      "url": "https://gist.github.com/sammchardy/0c740c40276e8f05b6390ce304476605",
+      "content": "| # uses the date\\_to\\_milliseconds and interval\\_to\\_milliseconds functions | | # | | # | | | | from binance.client import Client | | import time | | | | def get\\_historical\\_klines(symbol, interval, start\\_str, end\\_str=None): | | \"\"\"Get Historical Klines from Binance | | | See dateparse docs for valid start and end string formats | | | If using offset strings for dates add \"UTC\" to date string e.g. \"now UTC\", \"11 hours ago UTC\" | | | :param symbol: Name of symbol pair e.g BNBBTC | | :type symbol: str | | :param interval: Biannce Kline interval | | :type interval: str | | :param start\\_str: Start date string in UTC format | | :type start\\_str: str | | :param end\\_str: optional - end date string in UTC format | | :type end\\_str: str | | | :return: list of OHLCV values | | | \"\"\" | [...] | # it wasn't listed yet, increment our start date | | start\\_ts += timeframe | | | | idx += 1 | | # check if we received less than the required limit and exit the loop | | if len(temp\\_data) < limit: | | # exit the while loop | | break | | | | # sleep after every 3rd call to be kind to the API | | if idx % 3 == 0: | | time.sleep(1) | | | | return output\\_data | [...] | | :return: list of OHLCV v...",
+      "score": 0.999608,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] `import pandas as pd from datetime import datetime, timezone, timedelta import calendar def get_klines_iter(symbol, interval, start, end = None, limit=1000): # start and end must be isoformat YYYY-MM-DD # We are using utc time zone # the maximum records is 1000 per each Binance API call df = pd.DataFrame() if start is None: print('start time must not be None') return start = calendar.timegm(datetime.fromisoformat(st...",
+      "score": 0.9994967,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "``` {{ \"e\": \"kline\", // Event type \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"k\": { \"k\": { \"t\": 1638747660000, // Kline start time \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"o\": \"0.0010\",",
+      "score": 0.99843913,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"}...",
+      "score": 0.99701905,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Source code for binance.client",
+      "url": "https://python-binance.readthedocs.io/en/latest/_modules/binance/client.html",
+      "content": "[docs] def get_historical_klines( self, symbol, interval, start_str=None, end_str=None, limit=None, klines_type: HistoricalKlinesType = HistoricalKlinesType.SPOT, ): \"\"\"Get Historical Klines from Binance :param symbol: Name of symbol pair e.g. BNBBTC :type symbol: str :param interval: Binance Kline interval :type interval: str :param start_str: optional - start date string in UTC format or timestamp in milliseconds :type start_str: str|int :param end_str: optional - end date string in UTC format or timestamp in milliseconds (default will fetch everything up to now) :type end_str: str|int :param limit: Default 1000; max 1000. :type limit: int :param klines_type: Historical klines type: SPOT or FUTURES :type klines_type: HistoricalKlinesType :return: list [...] def _historical_klines( self, symbol, interval, start_str=None, end_str=None, limit=None, klines_type: HistoricalKlinesType = HistoricalKlinesType.SPOT, ): \"\"\"Get Historical Klines from Binance (spot or futures) See dateparser docs for valid start and end string formats If using offset strings for dates add \"UTC\" to date string e.g. \"now UTC\", \"11 hours ago UTC\" :param symbol: Name of symbol pair e.g. BNBBTC :type symbol: s...",
+      "score": 0.9966234,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-154.13000000\", // Absolute price change \"priceChangePercent\": \"-0.740\", // Relative price change in percent \"weightedAvgPrice\": \"20677.46305250\", // QuoteVolume / Volume \"openPrice\": \"20825.27000000\", \"highPrice\": \"20972.46000000\", \"lowPrice\": \"20327.92000000\", \"lastPrice\": \"20671.14000000\", \"volume\": \"72.65112300\", \"quoteVolume\": \"1502240.91155513\", // Sum of (price volume) for all trades \"openTime\": 1655432400000, // Open time for ticker window \"closeTime\": 1655446835460, // Close time for ticker window \"firstId\": 11147809, // Trade IDs \"lastId\": 11149775, \"count\": 1967 // Number of trades in the interval }, { \"symbol\": \"BNBBTC\", \"priceChange\": \"0.00008530\", [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Inte...",
+      "score": 0.99635005,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/openOrders\" data ={\"symbol\": \"BTCUSDT\", \"timestamp\": 1499827319559} get_open_order_result = binanceus_request(uri_path, data, api_key, secret_key) [...] Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, prices for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get Average Price > Example ``` -X \"GET\"\" ``` ``` import requests resp = requests. get(' print(resp. json()) ``` > Response ``` {\" mins \": 5, \" price \": \"0.00378906 \"} ``` `GET /api/v3/avgPrice` Use this endpoint to get the...",
+      "score": 0.9962638,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation",
+      "url": "https://docs.binance.us/developer-guides/rest-api",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, prices for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get Average Price > Example ``` -X \"GET\"\" ``` ``` import requests resp = requests. get(' print(resp. json()) ``` > Response ``` {\" mins \": 5, \" price \": \"0.00378906 \"} ``` `GET /api/v3/avgPrice` Use this endpoint to get the current average price for a symbol. Weight: 1 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Data Source: Memory [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =...",
+      "score": 0.99477994,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19 -13.16% PullbackROBO/USDT 12:00:19 -6.86% PullbackBAT/BTC 12:00:18 -7.93% PullbackBAT/USDT 12:00:18 -5.67% PullbackONT/USDT 12:00:18 +14.65% RallyONT/BTC 12:00:18 +9.63% RallyAPT/BTC 12:00:18 -6.01% PullbackHOOK/USDT 12:00:18 +10.47% Rally Open Orders(0) Order History Trade History [...] Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01...",
+      "score": 0.9946568,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Save Historical data from Binance",
+      "url": "https://sammchardy.github.io/historical-data-download-binance/",
+      "content": "``` frombinance.client import Client # fetch 1 minute klines for the last day up until now klines = get_historical_klines(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\") # fetch 30 minute klines for the last month of 2017 klines = get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") # fetch weekly klines since it listed klines = get_historical_klines(\"NEOBTC\", KLINE_INTERVAL_1WEEK,\"1 Jan, 2017\") ``` The full code can be found in the examples folder of the python-binance package. ### Save to file Once we have fetched the list of klines, it makes sense to save them to a file for later use. [...] First install the `dateparser` package ``` install ``` Now we can create a function to take a readable string into milliseconds. With this function we can convert all sorts of handy date formats to milliseconds like the examples below. ``` print(date_to_milliseconds(\"January 01, 2018\")) print(date_to_milliseconds(\"11 hours ago UTC\")) print(date_to_milliseconds(\"now UTC\")) ``` ### Binance Kline endpoint Now we have that out of the way we can start to work with the Binance API. For our purposes we are interested in the get\\_klines endpoint t...",
+      "score": 0.99371004,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Data - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "- Symbol - The symbol for which the timeseries data refers - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period [...] - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period You can read more about the differences on Binance's website. [...] - High - This is the highest price of the tick period - Low...",
+      "score": 0.9918121,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin USD (BTC-USD) Price History & Historical Data - Yahoo ...",
+      "url": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "content": "| Jan 22, 2026 | 89,378.52 | 90,258.96 | 88,438.45 | 89,462.45 | 89,462.45 | 35,549,685,694 | | Jan 21, 2026 | 88,326.51 | 90,430.41 | 87,231.57 | 89,376.96 | 89,376.96 | 56,330,422,434 | | Jan 20, 2026 | 92,553.60 | 92,798.43 | 87,814.93 | 88,310.91 | 88,310.91 | 53,072,968,031 | | Jan 19, 2026 | 93,655.67 | 93,660.83 | 92,089.25 | 92,553.59 | 92,553.59 | 39,195,241,508 | | Jan 18, 2026 | 95,101.18 | 95,491.51 | 93,588.87 | 93,634.43 | 93,634.43 | 20,809,781,232 | | Jan 17, 2026 | 95,525.16 | 95,598.48 | 95,005.62 | 95,099.92 | 95,099.92 | 16,021,715,122 | | Jan 16, 2026 | 95,554.10 | 95,801.89 | 94,259.27 | 95,525.12 | 95,525.12 | 33,248,170,537 | | Jan 15, 2026 | 96,931.29 | 97,150.17 | 95,103.24 | 95,551.19 | 95,551.19 | 53,086,363,027 | [...] | Feb 7, 2026 | 70,553.80 | 71,611.15 | 67,364.45 | 69,281.97 | 69,281.97 | 62,347,107,663 | | Feb 6, 2026 | 62,704.45 | 71,681.30 | 60,074.20 | 70,555.39 | 70,555.39 | 114,674,259,489 | | Feb 5, 2026 | 73,016.38 | 73,161.55 | 62,353.54 | 62,702.10 | 62,702.10 | 125,509,410,908 | | Feb 4, 2026 | 75,640.09 | 76,864.66 | 71,779.93 | 73,019.70 | 73,019.70 | 67,215,363,944 | | Feb 3, 2026 | 78,693.51 | 79,118.85 | 72,897.14 | 75,633.55 | 7...",
+      "score": 0.98959166,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/bitcoin/historical-data",
+      "content": "| Mar 16, 2026 | 74,864.1 | 72,816.2 | 74,900.7 | 72,307.2 | 89.61K | +2.81% | | Mar 15, 2026 | 72,816.0 | 71,203.5 | 73,135.9 | 70,866.9 | 43.82K | +2.27% | | Mar 14, 2026 | 71,203.1 | 70,954.2 | 71,293.1 | 70,403.4 | 35.82K | +0.35% | | Mar 13, 2026 | 70,957.0 | 70,500.3 | 73,904.1 | 70,396.4 | 99.06K | +0.66% | | Mar 12, 2026 | 70,494.1 | 70,192.0 | 70,734.1 | 69,226.5 | 67.11K | +0.43% | | Mar 11, 2026 | 70,190.1 | 69,952.4 | 71,317.5 | 68,997.5 | 77.24K | +0.34% | | Mar 10, 2026 | 69,951.9 | 68,424.7 | 71,742.9 | 68,401.8 | 93.01K | +2.22% | | Mar 09, 2026 | 68,435.5 | 65,994.0 | 69,452.7 | 65,858.8 | 90.37K | +3.73% | | Mar 08, 2026 | 65,972.6 | 67,317.1 | 68,187.0 | 65,641.7 | 59.59K | -1.91% | | Mar 07, 2026 | 67,258.9 | 68,123.4 | 68,519.4 | 66,983.1 | 43.68K | -1.27% | [...] | Mar 06, 2026 | 68,123.9 | 70,892.9 | 71,361.1 | 67,755.5 | 76.77K | -3.90% | | Mar 05, 2026 | 70,887.5 | 72,744.3 | 73,540.2 | 70,661.7 | 89.38K | -2.59% | | Mar 04, 2026 | 72,768.7 | 68,319.3 | 74,031.0 | 67,426.4 | 136.55K | +6.51% | | Mar 03, 2026 | 68,318.5 | 68,802.7 | 69,213.3 | 66,288.7 | 80.59K | -0.69% | | Mar 02, 2026 | 68,790.8 | 65,806.6 | 69,986.4 | 65,307.8 | 108.80K | +4.60% | | Ma...",
+      "score": 0.98201376,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price History and Historical Data | CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/bitcoin/historical-data/",
+      "content": "| Jan 21, 2026 | $88,326.51 | $90,430.41 | $87,231.57 | $89,376.96 | $56,330,422,434 | $1,785,689,879,859 | | Jan 20, 2026 | $92,553.60 | $92,798.43 | $87,814.93 | $88,310.90 | $53,072,968,031 | $1,764,636,107,426 | | Jan 19, 2026 | $93,655.67 | $93,660.83 | $92,089.25 | $92,553.60 | $39,195,241,508 | $1,849,045,615,036 | | Jan 18, 2026 | $95,101.18 | $95,491.51 | $93,588.87 | $93,634.43 | $20,809,781,232 | $1,871,022,219,174 | | Jan 17, 2026 | $95,525.16 | $95,598.47 | $95,005.61 | $95,099.92 | $16,021,715,122 | $1,899,854,321,010 | | Jan 16, 2026 | $95,554.10 | $95,801.89 | $94,259.27 | $95,525.12 | $33,248,170,537 | $1,908,282,176,973 | | Jan 15, 2026 | $96,931.29 | $97,150.17 | $95,103.24 | $95,551.19 | $53,086,363,027 | $1,908,822,996,745 | [...] | Jan 28, 2026 | $89,104.04 | $90,439.29 | $88,721.46 | $89,184.57 | $39,807,419,296 | $1,781,761,763,763 | | Jan 27, 2026 | $88,257.47 | $89,427.13 | $87,228.92 | $89,102.57 | $38,744,942,267 | $1,780,416,231,733 | | Jan 26, 2026 | $86,566.52 | $88,743.07 | $86,429.29 | $88,267.14 | $45,329,286,974 | $1,763,466,493,264 | | Jan 25, 2026 | $89,104.76 | $89,193.15 | $86,003.71 | $86,572.22 | $36,124,986,722 | $1,729,646,133,352 | | J...",
+      "score": 0.97462875,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D 1W Last Price Original Trading View Depth Order Book 0.1 Price (USDT) Size(BTC) Sum(BTC) 71,047.5 71,051.1 Trades Top Movers Price (USDT) Amount(BTC) Time 71,047.5 0.006 20:40:48 Positions(0) Open Orders(0) Order History Trade History Transaction History Position History Bots Assets [...] Transaction History Position History Bots Assets Log In or Register Now to trade Account Margin Ratio Margin Ratio 0.00% Maintenance Margin 0.0000 USDT Margin Balance 0.0000 USDT Stable connection Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restri...",
+      "score": 0.95362186,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "The safest choice when buying BTCis to go to a well-known crypto exchange. Some of the popular names are Binance, Coinbase, Kraken. But you'll have to find a reliable broker and create an account first. You can trade BTCright from TradingView charts — just choose a broker and connect to your account. [...] Bitcoin / TetherUSprice has fallen by −6.59% over the last week, its month performance shows a 2.91% increase, and as for the last year, Bitcoin / TetherUShas decreased by −19.32%. See more dynamics on BTC price chart. Keep track of coins' changes with our Crypto Coins Heatmap. Bitcoin / TetherUS(BTC) reached its highest price on Oct 6, 2025— it amounted to 126,199.63 USDT. Find more insights on the BTC price chart. See the list of crypto gainers and choose what best fits your strategy. Bitcoin / TetherUS(BTC) reached the lowest price of 2,817.00 USDTon Sep 15, 2017. View more Bitcoin / TetherUSdynamics on the price chart. See the list of crypto losers to find unexpected opportunities. [...] Get started # Bitcoin / TetherUS No trades OverviewNewsCommunityTechnicalsSeasonalsMarkets ## Chart﻿ ﻿ Full chart ## Key data points ﻿ Previous close — Open — Day's range — ## About Bitcoi...",
+      "score": 0.9507779,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Historical Market Data We've made Candlestick, Trade, and AggTrade data for all pairs available for download. What Data Is Available We provide data at daily and monthly intervals. Data for a day is uploaded the following day, and we begin to upload data for a month at the beginning of the following month. Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Field Name Description open\\_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close\\_time Candlestick close time in Unix time format quote\\_volume Quote asset volume count Number of trades [...] All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and serv...",
+      "score": 0.8311431,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin (BTC) - USDT - Historical OHLC chart, social data chart and ...",
+      "url": "https://www.cryptocompare.com/coins/btc/charts/USDT?p=1D",
+      "content": "#### Developers Widgets API Turn Lights {{LightsStatus}} Conference Screen Conference Ticker #### Get in touch Careers Contact Us FAQs #### Get the CryptoCompare App []( []( © 2014 - 2026 Crypto Coin Comparison Ltd Made with in London CryptoCompare needs a newer browser in order to work. Please use one of the browsers below: Firefox Chrome Opera Internet Explorer Safari [...] #### Popular Coins - Bitcoin - Ethereum - Litecoin - XRP - Monero - Cardano - BNB - BCH - Stellar - Polkadot Research News Portfolio Login Signup + No notifications...yet! When someone replies or reacts to one of your posts, you'll see it here. Until then, head over to the forums and join the conversation! Go to the Forums + Quiz + View My Profile + Account + API Keys + Billing + Turn {{LightsStatus}} + Logout #### Our company About us Press Releases Research Privacy policy Terms & Conditions Website disclaimer #### Marketing Branding guidelines Advertise with us Latest Newsletter Newsletter RSS Submit Content [...] + Markets + Data + {API} + Home + Top Lists + Exchanges + Mining + Mining Calc + Wallets + News + Portfolio + Turn {{LightsStatus}} + API + Login / Register + Powered By CoinDesk Data Markets Co...",
+      "score": 0.6370308,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "EDT to UTC Converter - FreeConvert.com",
+      "url": "https://www.freeconvert.com/time/edt-to-utc",
+      "content": "English English Deutsch Español Français Português Italiano Dutch 日本語 简体中文 한국어 Svenska Türkçe Bahasa Indonesia Polish © FreeConvert.com v2.30 All rights reserved (2026) Report a Bug [...] MP3 Converter MP4 to MP3 Video to MP3 Audio Converter Image Converter JPG to PDF PDF to JPG HEIC to JPG Image to PDF Image Converter Document & Ebook PDF to WORD EPUB to PDF EPUB to MOBI Document Converter Archive & Time RAR to Zip PST to EST CST to EST Archive Converter Unit Converter Lbs to Kg Kg to Lbs Feet to Meters Unit Converter Web Apps Collage Maker Image Resizer Crop Image Color Picker Mobile Apps Collage Maker Android Collage Maker iOS Image Converter Android Image Converter iOS About Us Donate Privacy Terms Security and Compliance About Us Donate Privacy Terms Security and Compliance Contact Status Logo © FreeConvert.com v2.30 All rights reserved (2026) English [...] ▼ API Job Builder API Documentation Conversion APIs ▼ File Conversion API Image Conversion API Audio Conversion API Document Conversion API PDF Conversion API MP4 Conversion API Video Conversion API Specific APIs ▼ JPG to PDF API Video to MP3 API HEIC to JPG API PDF to JPG API Webp to PNG API PDF to WORD API MP4 to MP3 A...",
+      "score": 0.61140573,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC Converter - World Time Buddy",
+      "url": "https://www.worldtimebuddy.com/edt-to-utc-converter",
+      "content": "| Eastern Daylight Time (EDT) to Universal Time (UTC) | | | --- | 12 pm EDT | is | 4 pm UTC | | 1 pm EDT | is | 5 pm UTC | | 2 pm EDT | is | 6 pm UTC | | 3 pm EDT | is | 7 pm UTC | | 4 pm EDT | is | 8 pm UTC | | 5 pm EDT | is | 9 pm UTC | | 6 pm EDT | is | 10 pm UTC | | 7 pm EDT | is | 11 pm UTC | | 8 pm EDT | is | 12 am UTC | | 9 pm EDT | is | 1 am UTC | | 10 pm EDT | is | 2 am UTC | | 11 pm EDT | is | 3 am UTC | [...] EDT stands for Eastern Daylight Time. UTC is known as Universal Time. UTC is 4 hours ahead of EDT. So, when it is 12:00 am EDT1:00 am EDT2:00 am EDT3:00 am EDT4:00 am EDT5:00 am EDT6:00 am EDT7:00 am EDT8:00 am EDT9:00 am EDT10:00 am EDT11:00 am EDT12:00 pm EDT1:00 pm EDT2:00 pm EDT3:00 pm EDT4:00 pm EDT5:00 pm EDT6:00 pm EDT7:00 pm EDT8:00 pm EDT9:00 pm EDT10:00 pm EDT11:00 pm EDT it will be 4:00 am UTC5:00 am UTC6:00 am UTC7:00 am UTC8:00 am UTC9:00 am UTC10:00 am UTC11:00 am UTC12:00 pm UTC1:00 pm UTC2:00 pm UTC3:00 pm UTC4:00 pm UTC5:00 pm UTC6:00 pm UTC7:00 pm UTC8:00 pm UTC9:00 pm UTC10:00 pm UTC11:00 pm UTC12:00 am UTC1:00 am UTC2:00 am UTC3:00 am UTC Other conversions: EDT to Hong Kong Time, EDT to Melbourne Time, EDT to Copenhagen Time, EDT to Austin Tim...",
+      "score": 0.608897,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC Converter - Savvy Time World Clock",
+      "url": "https://savvytime.com/converter/et-to-utc",
+      "content": "savvy time logo ##### Savvy Time World Clock Home Converter ET to UTC | # ET to UTC Converter Swap Order to UTC to ET Share Converter ET/EDT Eastern Time GMT -4 UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 12:30 am00:30 in EDT is 4:30 am04:30 in UTC EDT to UTC call time Best time for a conference call or a meeting is between 9am-1pm in EDT which corresponds to 1pm-5pm in UTC 12:30 am00:30 Eastern Daylight Time (EDT). Offset UTC -4:00 hours 4:30 am04:30 Universal Time Coordinated (UTC). Offset UTC 0:00 hours 12:30 am00:30 EDT / 4:30 am04:30 UTC [...] | ET | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:00 | 9:00 | | 6:00 | 10:00 | | 7:00 | 11:00 | | 8:00 | 12:00 | | 9:00 | 13:...",
+      "score": 0.5920305,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC Converter - Savvy Time World Clock",
+      "url": "https://savvytime.com/converter/edt-to-utc",
+      "content": "Daylight saving time clock moves forward for one hour from 2am to 3amStart: Eastern Daylight Time (EDT) started on Sunday, March 8, 2026 at 2:00 am local time and clocks were set one hour forward to Sunday, March 8, 2026, 3:00 am. Daylight saving starts annually the on second Sunday of March Daylight saving time clock moves back for one hour from 2am to 1amEnd: Eastern Daylight Time (EDT) ends on Sunday, November 1, 2026 at 2:00 am local time and clocks are set one hour back to Sunday, November 1, 2026, 1:00 am local standard time instead. Daylight saving ends annually the on first Sunday of November ### EDT representations, usage and related time zones W3C/ISO-8601: International standard covering representation and exchange of dates and time-related data [...] savvy time logo ##### Savvy Time World Clock Home Converter EDT to UTC | # EDT to UTC Converter Swap Order to UTC to EDT Share Converter EDT Eastern Daylight Time GMT -4 UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 12:30 am00:30 in EDT is 4:30 am04:30 in UTC EDT to UTC call time Best time for a conference call or a meeting is between 9am-1pm i...",
+      "score": 0.54477775,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC Time Converter - Datetime360",
+      "url": "https://datetime360.com/edt-utc-time/",
+      "content": "World Clock # EDT to UTC Time Converter Convert time between Eastern Daylight Time and Coordinated Universal Time.Schedule Meeting or Call EDT and UTC Hours Mapping Table Work hours Sleep hours EDT UTC --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- --:-- ## EDT (Eastern Daylight Time) EDT · North America Location : North America IANA : America/New\\_York Currently : Standard Time UTC offset : UTC --:-- ## UTC (Coordinated Universal Time) UTC · Worldwide Location : Worldwide [...] UTC · Worldwide Location : Worldwide IANA : Etc/UTC Currently : Standard Time UTC offset : UTC --:-- EDT to UTC Time Converter - Datetime360",
+      "score": 0.528315,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "UTC to EDT Time Converter",
+      "url": "https://www.utctime.net/utc-to-edt-converter",
+      "content": "UTC to EDT in 12-hour (AM/PM) time format. | UTC Time | EDT Time | --- | | 12:00 AM | 08:00 PM | | 01:00 AM | 09:00 PM | | 02:00 AM | 10:00 PM | | 03:00 AM | 11:00 PM | | 04:00 AM | 12:00 AM | | 05:00 AM | 01:00 AM | | 06:00 AM | 02:00 AM | | 07:00 AM | 03:00 AM | | 08:00 AM | 04:00 AM | | 09:00 AM | 05:00 AM | | 10:00 AM | 06:00 AM | | 11:00 AM | 07:00 AM | | 12:00 PM | 08:00 AM | | 01:00 PM | 09:00 AM | | 02:00 PM | 10:00 AM | | 03:00 PM | 11:00 AM | | 04:00 PM | 12:00 PM | | 05:00 PM | 01:00 PM | | 06:00 PM | 02:00 PM | | 07:00 PM | 03:00 PM | | 08:00 PM | 04:00 PM | | 09:00 PM | 05:00 PM | | 10:00 PM | 06:00 PM | | 11:00 PM | 07:00 PM | UTC to EDT in 24-hour time format. [...] UTC to EDT in 24-hour time format. | UTC Time | EDT Time | --- | | 00:00 | 20:00 | | 01:00 | 21:00 | | 02:00 | 22:00 | | 03:00 | 23:00 | | 04:00 | 00:00 | | 05:00 | 01:00 | | 06:00 | 02:00 | | 07:00 | 03:00 | | 08:00 | 04:00 | | 09:00 | 05:00 | | 10:00 | 06:00 | | 11:00 | 07:00 | | 12:00 | 08:00 | | 13:00 | 09:00 | | 14:00 | 10:00 | | 15:00 | 11:00 | | 16:00 | 12:00 | | 17:00 | 13:00 | | 18:00 | 14:00 | | 19:00 | 15:00 | | 20:00 | 16:00 | | 21:00 | 17:00 | | 22:00 | 18:00 | | 23:00 | 19:00 | [...] 04:4...",
+      "score": 0.51457167,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - FreeConvert.com",
+      "url": "https://www.freeconvert.com/time/est-to-utc",
+      "content": "English English Deutsch Español Français Português Italiano Dutch 日本語 简体中文 한국어 Svenska Türkçe Bahasa Indonesia Polish © FreeConvert.com v2.30 All rights reserved (2026) Report a Bug [...] MP3 Converter MP4 to MP3 Video to MP3 Audio Converter Image Converter JPG to PDF PDF to JPG HEIC to JPG Image to PDF Image Converter Document & Ebook PDF to WORD EPUB to PDF EPUB to MOBI Document Converter Archive & Time RAR to Zip PST to EST CST to EST Archive Converter Unit Converter Lbs to Kg Kg to Lbs Feet to Meters Unit Converter Web Apps Collage Maker Image Resizer Crop Image Color Picker Mobile Apps Collage Maker Android Collage Maker iOS Image Converter Android Image Converter iOS About Us Donate Privacy Terms Security and Compliance About Us Donate Privacy Terms Security and Compliance Contact Status Logo © FreeConvert.com v2.30 All rights reserved (2026) English [...] FreeConvert.com can convert UTC to these other time zones: PST to UTC CDT to UTC WET to UTC ACST to UTC AEST to UTC NZST to UTC SAST to UTC SST to UTC CST to UTC PST to UTC AKST to UTC WIB to UTC NDT to UTC ADT to UTC HDT to UTC WIT to UTC MST to UTC CST to UTC MSK to UTC HST to UTC GMT to UTC EST to UTC BST to UTC CET t...",
+      "score": 0.4942147,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC Converter - Current Time UTC - UTC time",
+      "url": "https://currenttimeutc.com/edt-to-utc/",
+      "content": "Developers — MCP API # UTC time 1:19:14 AM Utc-to-Edt Edt-to-Est Edt-to-Ist Est-to-Utc Utc-to-Ist Recent Searches URL copied to clipboard! Copied embed code to clipboard! ## Frequently Asked Questions ### How do you convert EDT to UTC? UTC is 4 hours ahead of EDT ### What is the time difference between EDT and UTC? The time difference between Eastern Daylight Time (EDT) and Coordinated Universal Time (UTC) is 4 hours. UTC is ahead of EDT. [...] 🏠 Home 🌍 Time Zones + Zones + Countries + Cities + US States + UTC Offsets + Military 🛠️ Tools + Converters + Countdowns + AWS Regions 📝 Content + Blog + Privacy Policy + Contact 🔧 Developer + MCP API × ## Settings 24-hour time format Display times in 24-hour format (e.g., 14:30) instead of 12-hour format (e.g., 2:30 PM) Quiet mode Hide seconds from time displays for a cleaner, less distracting view View only mode Hide interactive elements and local information for a simplified, read-only view Hide scheduler Hide the meeting scheduler component to focus on time displays Send feedback Share your thoughts, report issues, or suggest improvements Share your thoughts MCP API Access the Model Context Protocol API for developers and integrations",
+      "score": 0.48206395,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EDT to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/edt/utc",
+      "content": "Quickly and easily compare or convert EDT time to UTC time, or the other way around, with the help of this time converter. Below, you can see the complete table of the conversions between EDT and UTC. World Clock Time Zone Map Europe Time Map Australia Time Map US Time Map Canada Time Map World Time Directory World Map Free Clocks Contact Us Copyright © 2005 - 2026 24TimeZones.com. All rights reserved. What time is it right now? :) [...] ㅤㅤㅤㅤ ㅤㅤㅤㅤ Google Apple Outlook Yahoo ICS Other ## Announce an event across time zones ## The best time to call from EDT to UTC When planning a call between EDT and UTC, you need to consider time difference between these time zones. EDT is 4 hours behind of UTC. If you are in EDT, the most convenient time to accommodate all parties is between 9:00 am and 2:00 pm for a conference call or meeting. In UTC, this will be a usual working time of between 1:00 pm and 6:00 pm. If you want to reach out to someone in UTC and you are available anytime, you can schedule a call between 3:00 am and 7:00 pm your time. This time span will be between 7:00 am and 11:00 pm UTC time. [...] ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤ...",
+      "score": 0.45246392,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - Savvy Time",
+      "url": "https://savvytime.com/converter/est-to-utc",
+      "content": "savvy time logo ##### Savvy Time World Clock Home Converter EST to UTC | # EST to UTC Converter Swap Order to UTC to EST Share Converter EDT/EST Eastern Daylight Time GMT -4 EST automatically adjusted to EDT time zone, that is in use UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 6:00 am06:00 in EDT is 10:00 am10:00 in UTC EDT to UTC call time Best time for a conference call or a meeting is between 9am-1pm in EDT which corresponds to 1pm-5pm in UTC 6:00 am06:00 Eastern Daylight Time (EDT). Offset UTC -4:00 hours 10:00 am10:00 Universal Time Coordinated (UTC). Offset UTC 0:00 hours 6:00 am06:00 EDT / 10:00 am10:00 UTC [...] | EDT | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:0...",
+      "score": 0.44376975,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "AI-Based Content Generation for Media Monetisation - Bridged Media",
+      "url": "https://www.bridged.media/blog/monetise/ai-based-content-generation-publishing/",
+      "content": "слоты игровые автоматы бесплатно 67. MichaelJeack on We went through a long process choosing a gas fireplace during a home renovation, and what stood out the most was how different brands approach heat output and installation details. Some models are clearly designed for aesthetics first, while others prioritize consistent heat delivery. I found it useful to compare installation types, control systems, and upkeep needs before making a decision. If someone is considering a similar project, it’s worth spending time learning how gas fireplaces actually perform during regular use, not just how they appear in marketing images. 68. Pembuatan Akun Binance on [...] [url= белорусских рублей в долларах[/url] [url= отличается фиксированный купон от постоянного[/url] [url= свеча в трейдинге это[/url] [url= узнать счет в альфа банке[/url] [url= российских рублей в белорусские рубли онлайн[/url] [url= какая сеть[/url] [url= можно перевести с тинькова на тинькофф без комиссии[/url] [url= гаранта это как[/url] [url= проверка биткоина[/url] [url= значит плечо в криптовалюте[/url] [url= [url= криптовалют[/url] [url= криптовалюты[/url] [url= крипты[/url] [url= обменник[/url] [url= криптовалюту[/ur...",
+      "score": 0.04369106,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m historical close 2026-10-21 12:00 ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API klines BTCUSDT 1m 2026-10-21 16:00 UTC close price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "12:00 PM ET Oct 21 2026 to UTC conversion (EDT to UTC)",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

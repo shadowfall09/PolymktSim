@@ -1,0 +1,265 @@
+{
+  "row_index": 353,
+  "market_id": "253519",
+  "slug": "will-btc-hit-50000-by-jan-31",
+  "question": "Will BTC hit $50,000 by Jan 31?",
+  "event_title": "Will BTC hit $50,000 by Jan 31?",
+  "end_date_limit": "2024-01-31",
+  "row_end_date_raw": "2024-01-31",
+  "expanded_queries": [
+    "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+    "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+    "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 25,
+    "deduped_result_count": 25
+  },
+  "evidences": [
+    {
+      "title": "Get Public Product Candles - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/api-reference/advanced-trade-api/rest-api/public/get-public-product-candles",
+      "content": "#### Authorizations A JWT signed using your CDP API Key Secret, encoded in base64. Refer to the Creating API Keys section of our Coinbase App Authentication docs for information on how to generate your Bearer Token. #### Path Parameters The trading pair (e.g. 'BTC-USD'). #### Query Parameters The UNIX timestamp indicating the start of the time interval. The UNIX timestamp indicating the end of the time interval. The timeframe each candle represents. `UNKNOWN_GRANULARITY` `ONE_MINUTE` `FIVE_MINUTE` `FIFTEEN_MINUTE` `THIRTY_MINUTE` `ONE_HOUR` `TWO_HOUR` `FOUR_HOUR` `SIX_HOUR` `ONE_DAY` The number of candle buckets to be returned. By default, returns 350 (max 350). #### Response A successful response. Show child attributes Was this page helpful? light logo dark logo [...] light logo dark logo Coinbase Advanced Trade API ##### REST API cURL `curl --request GET \\ --url \\ --header 'Authorization: Bearer <token>'` `{ \"candles\": [ { \"start\": \"1639508050\", \"low\": \"140.21\", \"high\": \"140.21\", \"open\": \"140.21\", \"close\": \"140.21\", \"volume\": \"56437345\" } ] }` # Get Public Product Candles Get rates for a single product by product ID, grouped in buckets. cURL `curl --request GET \\ --url \\ --hea...",
+      "score": 0.99910307,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Get product candles - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-candles",
+      "content": "light logo dark logo Coinbase Exchange API ##### REST API ##### FIX API ##### Websocket Feed cURL `curl --request GET \\ --url `[ {} ]` # Get product candles Historic rates for a product. Rates are returned in grouped buckets. Candle schema is of the form `[timestamp, price_low, price_high, price_open, price_close]` `[timestamp, price_low, price_high, price_open, price_close]` cURL `curl --request GET \\ --url `[ {} ]` ## ​ Time Range `start` `end` `granularity` `{60, 300, 900, 3600, 21600, 86400}` `300` `start` ## ​ Max Candles `300` `300` ## ​ Response Items `time` `low` `high` `open` `close` `volume` #### Path Parameters #### Query Parameters Timestamp for starting range of aggregations Timestamp for ending range of aggregations #### Response [...] Timestamp for ending range of aggregations #### Response Was this page helpful? light logo dark logo",
+      "score": 0.9990601,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Coinbase API v2 Getting Historic Price for Multiple Days",
+      "url": "https://stackoverflow.com/questions/51417285/coinbase-api-v2-getting-historic-price-for-multiple-days",
+      "content": "26 Any reason you aren't using Coinbase Pro? The new API is very easy to use. Simply add the `get` command you want followed by the parameters separated with a question mark. Here is the new historic rates api documentation: The `get` command with the new API most similar to prices is \"candles\". It requires three parameters to be identified, start and stop time in ISO format and granularity which is in seconds. Here is an example: Also, note the time zone is not for your time zone, I believe it's GMT. ## NOTE 2024 Coinbase Pro API is now deprecated: > ## 2024-SEP-11 > > The Pro API () has been deprecated. For REST API access, leverage the Exchange API. Share Improve this answer edited Dec 25, 2024 at 8:44 informatik01 [...] #### Related Coinbase Historic Spot Price at Date-Time 3\") Coinbase API Python client.get\\_historic\\_prices() Historical ethereum prices - Coinbase API GDAX api - Get Historic Rates returning inconsistent results 2\") Coinbase - get\\_spot\\_price - historical 2\") Get live Exchange rates with coinbase api 0\") coinbase pro api - historic prices - invalid interval 2\") How to get historic Bitcoin Price Index using coinbase or any other open source API Coinbase API:...",
+      "score": 0.99836427,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Get Product Candles - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/api-reference/advanced-trade-api/rest-api/products/get-product-candles",
+      "content": "#### Authorizations A JWT signed using your CDP API Key Secret, encoded in base64. Refer to the Creating API Keys section of our Coinbase App Authentication docs for information on how to generate your Bearer Token. #### Path Parameters The trading pair (e.g. 'BTC-USD'). #### Query Parameters The UNIX timestamp indicating the start of the time interval. The UNIX timestamp indicating the end of the time interval. The timeframe each candle represents. `UNKNOWN_GRANULARITY` `ONE_MINUTE` `FIVE_MINUTE` `FIFTEEN_MINUTE` `THIRTY_MINUTE` `ONE_HOUR` `TWO_HOUR` `FOUR_HOUR` `SIX_HOUR` `ONE_DAY` The number of candle buckets to be returned. By default, returns 350 (max 350). #### Response A successful response. Show child attributes Was this page helpful? light logo dark logo [...] light logo dark logo Coinbase Advanced Trade API ##### REST API cURL `curl --request GET \\ --url \\ --header 'Authorization: Bearer <token>'` `{ \"candles\": [ { \"start\": \"1639508050\", \"low\": \"140.21\", \"high\": \"140.21\", \"open\": \"140.21\", \"close\": \"140.21\", \"volume\": \"56437345\" } ] }` # Get Product Candles Get rates for a single product by product ID, grouped in buckets. cURL `curl --request GET \\ --url \\ --header 'Au...",
+      "score": 0.998147,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Download Coinbase API Data via Python - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/blog/posts/Use-Python-to-Download-Coinbase-Price-Data/",
+      "content": "Working Example for Accessing Bitcoin or Ethereum Public On-Chain Blockchain Data in Python April 3, 2024, 12:43 a.m.by CryptoDataDownload How to Authenticate with the CryptoDataDownload API Token March 12, 2024, 4:21 p.m.by CryptoDataDownload Differences between On-Chain Data and Exchange Data and Related Use Cases Jan. 26, 2024, 4:13 p.m.by CryptoDataDownload Predictive Power of Cryptocurrency Exchange Inflows and Our Comments Jan. 23, 2024, 3:47 p.m.by CryptoDataDownload Smash Day Candlestick Trading Setup Signals in Python Jan. 20, 2024, 12:06 a.m.by CryptoDataDownload Top 3 Reasons Why Backtesting Trading Strategies is Crucial Jan. 18, 2024, 2:31 a.m.by CryptoDataDownload [...] Foundational Properties of Market Volatility for Strategy Development Jan. 14, 2024, 2:26 a.m.by CryptoDataDownload Combining NR4 Inside Days & Historical Volatility to Produce Trading Signals ###### Follow Us ###### Notify me of new content ###### CryptoDataDownload The industry's top free cryptocurrency data platform since 2017. We provide comprehensive market data, OHLCV candlestick CSVs, advanced analytics, and institutional-grade risk assessment & other tools to empower informed decision-making...",
+      "score": 0.9964619,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Candles | Product Docs - Coin Metrics",
+      "url": "https://gitbook-docs.coinmetrics.io/market-data/market-data-overview/candles",
+      "content": "Query parameters pairsstring[]Required Comma separated list of asset pairs or patterns like `btc-`, or `-btc`. Use the /catalog-all/pair-candles endpoint for the full list of supported asset pairs. frequencystringOptional Candle duration. Supported values are `1m`, `5m`, `10m`, `15m`, `30m`, `1h`, `4h`, `1d`, and `1d-HH:00`. Note: The `timezone` parameter value will be taken into account when the `1d` or `1d-HH:00` frequency is specified. Default: `1d`Example: `5m` start\\_timestringOptional [...] Pair Candles An sample of the pair candles data for the `btc-usd` pair from our `/timeseries/pair-candles` API endpoint is provided below. `time`: The time of the beginning of the candle interval in ISO 8601 date-time format.\\ `pair`: The id of the pair. \\ `price_open`: The opening price of the candle.\\ `price_high`: The high price of the candle.\\ `price_low`: The low price of the candle.\\ `price_close`: The close price of the candle. ## Release History [...] ``` curl --compressed \" --compressed \" ``` ``` import requests import requests response = requests.get(' response = requests.get(' print(response)print(response) ``` ``` from coinmetrics.api_client import CoinMetricsClient from coi...",
+      "score": 0.9956006,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Get historical funding rates - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/api-reference/international-exchange-api/rest-api/instruments/get-historical-funding-rate",
+      "content": "request := &instruments.GetHistoricalFundingRequest{ InstrumentId: \"BTC-PERP\", } response, err := instrumentsSvc.GetHistoricalFunding(context.Background(), request)` `client = IntxClient() request = GetHistoricalFundingRatesRequest( instrument_id=\"BTC-PERP\", ) response = client.get_historical_funding_rates(request)` `const instrumentsService = new InstrumentsService(client); [...] instrumentsService.getHistoricalFundingRates({ instrument: 'ETH-PERP', }).then(async (response) => { console.log('Historical Funding Rates: ', response); })` `intxctl get-historical-funding-rates --help` #### Path Parameters Identifies the instrument by name (e.g., `BTC-PERP`), UUID (e.g., `ce55a827-f04a-45c0-9d9b-8bbdb9b48065`), or instrument ID (e.g., `7149252043835013`) `BTC-PERP` `ce55a827-f04a-45c0-9d9b-8bbdb9b48065` `7149252043835013` #### Query Parameters The number of results to return (defaults to 25 with a max supported value of 100) `30` `30` The number of results from the beginning to skip past `50` `50` #### Response Funding Rates list The unique identifier of the instrument for which the funding rate applies `\"14thr7ft-1-0\"` `\"14thr7ft-1-0\"` [...] `curl --request GET \\ --url `{ \"instrumen...",
+      "score": 0.99453074,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Data API- Prices - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/coinbase-app/track-apis/prices",
+      "content": "#### ​ Response `{ \"data\": { \"amount\": \"1020.25\", \"currency\": \"USD\" } }` ## ​ Get Sell Price `quote: true` ### ​ HTTP Request `GET ### ​ Scopes ### ​ Examples #### ​ Request `curl / -H 'Authorization: Bearer abd90df5f27a7b170cd775abf89d632b350b7c1c9d53e08b340cd9832ce52c2c'` #### ​ Response `{ \"data\": { \"amount\": \"1010.25\", \"currency\": \"USD\" } }` ## ​ Get Spot Price `date` ### ​ HTTP Request `GET ### ​ Scopes ### ​ Arguments | Parameter | Type | Required | Description | --- --- | | date | string | Optional | For historic spot price, use format `YYYY-MM-DD` (UTC) | `YYYY-MM-DD` ### ​ Examples #### ​ Request `curl \\ -H 'Authorization: Bearer abd90df5f27a7b170cd775abf89d632b350b7c1c9d53e08b340cd9832ce52c2c'` #### ​ Response [...] #### ​ Response `{ \"data\": { \"amount\": \"1015.00\", \"currency\": \"USD\" } }` Was this page helpful? light logo dark logo [...] light logo dark logo ##### GET STARTED ##### PAYMENTS ##### TRADING ##### WALLETS ##### ONCHAIN TOOLS ##### CONSUMER APIS ##### BUSINESS APIS ##### INSTITUTIONAL APIS # Data API- Prices ## ​ Table of Endpoints | Name | Method | Endpoint | Scope | --- --- | | Get Buy Price | GET | `/v2/prices/:currency_pair/buy` | N/A | | Get Sell Price...",
+      "score": 0.96295285,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin (BTC) Price USD Today, News, Charts, Market Cap | Coinbase",
+      "url": "https://www.coinbase.com/price/bitcoin",
+      "content": "### What is the history of Bitcoin? 󰀎 Bitcoin was first launched in January 2009 when its creator, Satoshi Nakamoto, mined the genesis block (Block 0). The first documented exchange of Bitcoin for goods occurred on May 22, 2010, when 10,000 BTC were used to purchase two pizzas. This date is now known as Bitcoin Pizza Day. In the years that followed, Bitcoin began trading on various exchanges, with its BTC/USD price starting at just a fraction of a cent. By February 2011, Bitcoin reached parity with the U.S. dollar. Since then, its price has experienced significant rises and declines, reaching multiple all‑time highs, including above $122,000 in July 2025. The Bitcoin price today reflects a mix of global demand, adoption trends, and developments within the cryptocurrency ecosystem. [...] sec-cftc-token-taxonomy sec-cftc-digital-commodities +8 ## Network & Addresses | Network | Address | | --- | Arbitrum | 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf | 󰋈 | | Solana | cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij | 󰋈 | | Ethereum | 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf | 󰋈 | | Base | 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf | 󰋈 | | Lightning | NA | 󰋈 | | Bitcoin | NA | 󰋈 | See a...",
+      "score": 0.87831426,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin price history Feb 23, 2026 - Statista",
+      "url": "https://www.statista.com/statistics/326707/bitcoin-price-index/?srsltid=AfmBOooYxEe4MRknR-Ho8tJi80N944CI0BCYjKvKpZfc_FPHhrEw2Rpx",
+      "content": "| Jan 2, 2024 | 44,168.68 | | Jan 1, 2024 | 42,208.2 | | Dec 31, 2023 | 42,220.61 | | Dec 30, 2023 | 42,074.71 | | Dec 29, 2023 | 42,600.65 | | Dec 28, 2023 | 43,418.47 | | Dec 27, 2023 | 42,516.43 | | Dec 26, 2023 | 43,638.24 | | Dec 25, 2023 | 43,034.97 | | Dec 24, 2023 | 43,752.03 | | Dec 23, 2023 | 44,003.7 | | Dec 22, 2023 | 43,849.7 | | Dec 21, 2023 | 43,634.12 | | Dec 20, 2023 | 42,250.21 | | Dec 19, 2023 | 42,684.18 | | Dec 18, 2023 | 41,410.82 | | Dec 17, 2023 | 42,247.07 | | Dec 16, 2023 | 41,992.01 | | Dec 15, 2023 | 43,009.6 | | Dec 14, 2023 | 42,931.76 | | Dec 13, 2023 | 41,450.82 | | Dec 12, 2023 | 41,200.96 | | Dec 11, 2023 | 43,757.96 | | Dec 10, 2023 | 43,745.49 | | Dec 9, 2023 | 44,202.18 | | Dec 8, 2023 | 43,270.12 | | Dec 7, 2023 | 43,788.29 | [...] | Jan 28, 2024 | 42,119.61 | | Jan 27, 2024 | 41,862.94 | | Jan 26, 2024 | 39,938.29 | | Jan 25, 2024 | 40,123.67 | | Jan 24, 2024 | 39,833.45 | | Jan 23, 2024 | 39,504.73 | | Jan 22, 2024 | 41,541.9 | | Jan 21, 2024 | 41,626.11 | | Jan 20, 2024 | 41,600.94 | | Jan 19, 2024 | 41,261.39 | | Jan 18, 2024 | 42,713.86 | | Jan 17, 2024 | 43,148 | | Jan 16, 2024 | 42,587.34 | | Jan 15, 2024 | 41,800.93 | | Jan 14, 2024...",
+      "score": 0.7316155,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Convert Bitcoin BTC to United States Dollar USD - Coinbase",
+      "url": "https://www.coinbase.com/converter/(",
+      "content": "#### BTC to USD over time | BTC | Today | 24H 󰌾 3.20% | 1M 󰌾 7.63% | 1Y 󰌲 -12.76% | --- --- | 0.5 BTC | $37,252.64 USD | $36,059.17 USD | $34,409.15 USD | $42,005.70 USD | | 1 BTC | $74,505.29 USD | $72,118.34 USD | $68,818.31 USD | $84,011.40 USD | | 5 BTC | $372,526.43 USD | $360,591.68 USD | $344,091.52 USD | $420,056.98 USD | | 10 BTC | $745,052.85 USD | $721,183.35 USD | $688,183.05 USD | $840,113.95 USD | | 50 BTC | $3,725,264.25 USD | $3,605,916.75 USD | $3,440,915.25 USD | $4,200,569.75 USD | | 100 BTC | $7,450,528.50 USD | $7,211,833.50 USD | $6,881,830.50 USD | $8,401,139.50 USD | | 500 BTC | $37,252,642.50 USD | $36,059,167.50 USD | $34,409,152.50 USD | $42,005,697.50 USD | | 1,000 BTC | $74,505,285.00 USD | $72,118,335.00 USD | $68,818,305.00 USD | $84,011,395.00 USD | [...] $74,505.29Price $1.49TMarket cap $56.15BVolume (24h) 20M BTCCir. Supply 󰍤 Whitepaper󰒮 Official websiteRead more 󰏖 # Conversion tables #### BTC to USD values from Today at 9:48 pm | | | 0.5 BTC = $37,252.64 USD | | 1 BTC = $74,505.29 USD | | 5 BTC = $372,526.43 USD | | 10 BTC = $745,052.85 USD | | 50 BTC = $3,725,264.25 USD | | 100 BTC = $7,450,528.50 USD | | 500 BTC = $37,252,642.50 USD | | 1,000...",
+      "score": 0.72884524,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Convert Bitcoin BTC to United States Dollar USD - Coinbase",
+      "url": "https://www.coinbase.com/converter/btc",
+      "content": "#### BTC to USD over time | BTC | Today | 24H 󰌲 -3.39% | 1M 󰌾 0.60% | 1Y 󰌲 -26.63% | --- --- | 0.5 BTC | $33,994.20 USD | $35,146.31 USD | $33,789.72 USD | $43,046.47 USD | | 1 BTC | $67,988.39 USD | $70,292.63 USD | $67,579.45 USD | $86,092.95 USD | | 5 BTC | $339,941.95 USD | $351,463.13 USD | $337,897.23 USD | $430,464.73 USD | | 10 BTC | $679,883.90 USD | $702,926.25 USD | $675,794.45 USD | $860,929.45 USD | | 50 BTC | $3,399,419.50 USD | $3,514,631.25 USD | $3,378,972.25 USD | $4,304,647.25 USD | | 100 BTC | $6,798,839.00 USD | $7,029,262.50 USD | $6,757,944.50 USD | $8,609,294.50 USD | | 500 BTC | $33,994,195.00 USD | $35,146,312.50 USD | $33,789,722.50 USD | $43,046,472.50 USD | | 1,000 BTC | $67,988,390.00 USD | $70,292,625.00 USD | $67,579,445.00 USD | $86,092,945.00 USD | [...] This content is being provided to you for informational purposes only, does not constitute an offer, or solicitation of an offer nor a recommendation by Coinbase to buy, sell, or hold any security, financial product, or instrument referenced in the content, and does not constitute investment advice, financial advice, trading advice, or any other sort of advice. Data presented may reflect asset p...",
+      "score": 0.71687365,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Convert Bitcoin (BTC) to US Dollar (USD) - Coinbase",
+      "url": "https://www.coinbase.com/converter/btc/usd",
+      "content": "#### BTC to USD over time | BTC | Today | 24H 󰌾 3.75% | 1M 󰌾 10.38% | 1Y 󰌲 -24.04% | --- --- | 0.5 BTC | $35,243.51 USD | $33,920.46 USD | $31,585.00 USD | $43,714.54 USD | | 1 BTC | $70,487.01 USD | $67,840.93 USD | $63,170.01 USD | $87,429.08 USD | | 5 BTC | $352,435.05 USD | $339,204.63 USD | $315,850.02 USD | $437,145.38 USD | | 10 BTC | $704,870.10 USD | $678,409.25 USD | $631,700.05 USD | $874,290.75 USD | | 50 BTC | $3,524,350.50 USD | $3,392,046.25 USD | $3,158,500.25 USD | $4,371,453.75 USD | | 100 BTC | $7,048,701.00 USD | $6,784,092.50 USD | $6,317,000.50 USD | $8,742,907.50 USD | | 500 BTC | $35,243,505.00 USD | $33,920,462.50 USD | $31,585,002.50 USD | $43,714,537.50 USD | | 1,000 BTC | $70,487,010.00 USD | $67,840,925.00 USD | $63,170,005.00 USD | $87,429,075.00 USD | [...] The exchange rate of Bitcoin is increasing. The current value of 1 BTC is $70,487.01 USD. In other words, to buy 5 Bitcoin, it would cost you $352,435.05 USD. Inversely, $1.00 USD would allow you to trade for 0.00001419 BTC while $50.00 USD would convert to 0.0007094 BTC, not including platform or gas fees. In the last 7 days, the exchange rate has fallen by 4.87%. Meanwhile, in the last 24 hour...",
+      "score": 0.71185225,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Convert Bitcoin (BTC) to US Dollar (USD) - Coinbase",
+      "url": "https://www.coinbase.com/en-gb/converter/BTC/USD",
+      "content": "#### BTC to USD over time | BTC | Today | 24H 󰌾 3.69% | 1M 󰌾 9.03% | 1Y 󰌲 -24.02% | --- --- | 0.5 BTC | $35,248.55 USD | $33,948.55 USD | $32,067.37 USD | $43,714.54 USD | | 1 BTC | $70,497.11 USD | $67,897.11 USD | $64,134.74 USD | $87,429.08 USD | | 5 BTC | $352,485.53 USD | $339,485.52 USD | $320,673.68 USD | $437,145.38 USD | | 10 BTC | $704,971.05 USD | $678,971.05 USD | $641,347.35 USD | $874,290.75 USD | | 50 BTC | $3,524,855.25 USD | $3,394,855.25 USD | $3,206,736.75 USD | $4,371,453.75 USD | | 100 BTC | $7,049,710.50 USD | $6,789,710.50 USD | $6,413,473.50 USD | $8,742,907.50 USD | | 500 BTC | $35,248,552.50 USD | $33,948,552.50 USD | $32,067,367.50 USD | $43,714,537.50 USD | | 1,000 BTC | $70,497,105.00 USD | $67,897,105.00 USD | $64,134,735.00 USD | $87,429,075.00 USD | [...] This content is being provided to you for informational purposes only, does not constitute an offer, or solicitation of an offer nor a recommendation by Coinbase to buy, sell, or hold any security, financial product, or instrument referenced in the content, and does not constitute investment advice, financial advice, trading advice, or any other sort of advice. Data presented may reflect asset pr...",
+      "score": 0.71113056,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Convert Bitcoin USD (BTCFi) (BTCUSD) to US Dollar ... - Coinbase",
+      "url": "https://www.coinbase.com/converter/btcusd/usd",
+      "content": "#### BTCUSD to USD over time | BTCUSD | Today | 24H 󰌾 0.08% | 1M 󰌾 0.16% | 1Y 󰌾 0.15% | --- --- | 0.5 BTCUSD | $0.5003 USD | $0.4999 USD | $0.4995 USD | $0.4996 USD | | 1 BTCUSD | $1.00 USD | $0.9999 USD | $0.9991 USD | $0.9991 USD | | 5 BTCUSD | $5.00 USD | $5.00 USD | $5.00 USD | $5.00 USD | | 10 BTCUSD | $10.01 USD | $10.00 USD | $9.99 USD | $9.99 USD | | 50 BTCUSD | $50.03 USD | $49.99 USD | $49.95 USD | $49.96 USD | | 100 BTCUSD | $100.07 USD | $99.99 USD | $99.91 USD | $99.91 USD | | 500 BTCUSD | $500.33 USD | $499.94 USD | $499.54 USD | $499.57 USD | | 1,000 BTCUSD | $1,000.66 USD | $999.88 USD | $999.08 USD | $999.14 USD | ## Frequently asked questions Right now, 1 Bitcoin USD (BTCFi) is worth about $1.00. Based on the current rate, you could get 0.9993 BTCUSD for 1 USD. [...] #### USD to BTCUSD values from Today at 11:29 pm | | | $0.50 USD = 0.4997 BTCUSD | | $1.00 USD = 0.9993 BTCUSD | | $5.00 USD = 5.00 BTCUSD | | $10.00 USD = 9.99 BTCUSD | | $50.00 USD = 49.97 BTCUSD | | $100.00 USD = 99.93 BTCUSD | | $500.00 USD = 499.67 BTCUSD | | $1,000.00 USD = 999.34 BTCUSD | #### BTCUSD to USD over time [...] ### Bitcoin USD (BTCFi) Market Stats BtcUSD is a completely decentral...",
+      "score": 0.6607204,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Cryptocurrency Calculator, Converter - Coinbase",
+      "url": "https://www.coinbase.com/converter/cop",
+      "content": "#### BTC to USD over time | BTC | Today | 24H 󰌾 0.03% | 1M 󰌾 3.37% | 1Y 󰌲 -23.10% | --- --- | 0.5 BTC | $35,424.00 USD | $35,412.01 USD | $34,229.09 USD | $43,606.71 USD | | 1 BTC | $70,848.01 USD | $70,824.02 USD | $68,458.18 USD | $87,213.43 USD | | 5 BTC | $354,240.03 USD | $354,120.08 USD | $342,290.88 USD | $436,067.13 USD | | 10 BTC | $708,480.05 USD | $708,240.15 USD | $684,581.75 USD | $872,134.25 USD | | 50 BTC | $3,542,400.25 USD | $3,541,200.75 USD | $3,422,908.75 USD | $4,360,671.25 USD | | 100 BTC | $7,084,800.50 USD | $7,082,401.50 USD | $6,845,817.50 USD | $8,721,342.50 USD | | 500 BTC | $35,424,002.50 USD | $35,412,007.50 USD | $34,229,087.50 USD | $43,606,712.50 USD | | 1,000 BTC | $70,848,005.00 USD | $70,824,015.00 USD | $68,458,175.00 USD | $87,213,425.00 USD | [...] In the last 7 days, the exchange rate has increased by 0.13%. Meanwhile, in the last 24 hours, the rate has changed by 0.03%, which means that the highest exchange rate of 1 BTC to USD was $72,028.14 USD and the lowest 24 hour value was 1 BTC for $70,546.98 USD.Last month, 1 BTC was worth $68,458.18 USD. Today, it's up 3.43%.Looking back a year, Bitcoin has changed by $87,213.43 USD. That means t...",
+      "score": 0.64639384,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Welcome to Exchange APIs - Coinbase Developer Documentation",
+      "url": "https://docs.cdp.coinbase.com/exchange/introduction/welcome",
+      "content": "Welcome to Coinbase Exchange API documentation for traders and developers! The APIs are separated into two categories, trading and market data: Trading APIs require authentication and let you place orders and access account information. Market Data APIs provide market data and are public. Coinbase Exchange offers multiple connectivity options tailored to your trading and data needs: REST API for lower-frequency trading and general requests. FIX Order Entry API for higher-frequency trading. WebSocket Feed for market data. FIX Market Data API for latency sensitive market data feeds. Exchange’s developer docs are part of Coinbase Developer Platform, the single portal from which to access Coinbase’s full suite of APIs and blockchain infrastructure products. [...] By accessing the Exchange Market Data API, you agree to be bound by the Market Data Terms of Use. Was this page helpful? OverviewQuickstart - Making Your First REST API Call Responses are generated using AI and may contain mistakes.",
+      "score": 0.64422506,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "search_index": 3
+    },
+    {
+      "title": "Convert United States Dollar USD to Bitcoin BTC - Coinbase",
+      "url": "https://www.coinbase.com/converter/usd/btc",
+      "content": "#### USD to BTC over time | USD | Today | 24H 󰌲 -0.00% | 1M 󰌲 -0.00% | 1Y 󰌲 -0.00% | --- --- | 0.5 USD | 0.00000711 BTC | 0.00000702 BTC | 0.00000752 BTC | 0.00000598 BTC | | 1 USD | 0.000014 BTC | 0.000014 BTC | 0.000015 BTC | 0.000012 BTC | | 5 USD | 0.000071 BTC | 0.000070 BTC | 0.000075 BTC | 0.000060 BTC | | 10 USD | 0.000142 BTC | 0.000140 BTC | 0.000150 BTC | 0.000120 BTC | | 50 USD | 0.000711 BTC | 0.000702 BTC | 0.000752 BTC | 0.000598 BTC | | 100 USD | 0.0014 BTC | 0.0014 BTC | 0.0015 BTC | 0.0012 BTC | | 500 USD | 0.0071 BTC | 0.0070 BTC | 0.0075 BTC | 0.0060 BTC | | 1,000 USD | 0.0142 BTC | 0.0140 BTC | 0.0150 BTC | 0.0120 BTC | ## Frequently asked questions Right now, 1 Bitcoin is worth about $70,324.48. Based on the current rate, you could get 0.000014 BTC for 1 USD. [...] # Conversion tables #### USD to BTC values from Today at 11:23 am | | | $0.50 USD = 0.00000711 BTC | | $1.00 USD = 0.000014 BTC | | $5.00 USD = 0.000071 BTC | | $10.00 USD = 0.000142 BTC | | $50.00 USD = 0.000711 BTC | | $100.00 USD = 0.0014 BTC | | $500.00 USD = 0.0071 BTC | | $1,000.00 USD = 0.0142 BTC | #### BTC to USD values from Today at 11:23 am | | | 0.5 BTC = $35,162.24 USD | | 1 BTC = $7...",
+      "score": 0.6388584,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin USD Price (BTC-USD) - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/BTC-USD/history?period1=1675209600&period2=1677542400&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true",
+      "content": "2,387.25 +0.96% WETH-USD WETH USD 2,180.67 +0.85% LINK-USD Chainlink USD 9.44 +2.30% AETHWETH-USD Aave Ethereum WETH USD 2,143.21 +0.37% XMR-USD Monero USD 341.20 -0.29% WEETH-USD Wrapped eETH USD 2,385.50 +1.01% CBBTC32994-USD Coinbase Wrapped BTC USD 71,656.27 +0.96% USDE29470-USD Ethena USDe USD 1.00 -0.01% XLM-USD Stellar USD 0.18 +6.82% DAI-USD Dai USD 1.00 +0.00% CC37263-USD Canton USD 0.14 -3.04% AETHUSDT-USD Aave Ethereum USDT USD 1.00 -0.03% BTCB-USD Bitcoin BEP2 USD 71,634.81 +0.85% USD136148-USD World Liberty Financial USD USD 1.00 +0.02% LTC-USD Litecoin USD 56.52 +1.54% RAIN38341-USD Rain USD 0.01 +2.41% AVAX-USD Avalanche USD 9.73 +1.89% HBAR-USD Hedera USD 0.10 +1.58% PYUSD-USD PayPal USD USD 1.00 +0.01% [...] 0.10 +1.58% PYUSD-USD PayPal USD USD 1.00 +0.01% ZEC-USD Zcash USD 236.86 +3.29% TAO22974-USD Bittensor USD 356.09 +13.36% SUI20947-USD Sui USD 0.97 +1.95% SHIB-USD Shiba Inu USD 0.00 +1.36% SUSDE-USD Ethena Staked USDe USD 1.22 -0.02% TON11419-USD Toncoin USD 1.34 +1.10% CRO-USD Cronos USD 0.08 -0.64% WLFI33251-USD World Liberty Financial USD 0.10 -2.45% XAUT-USD Tether Gold USD 4,541.92 +3.55% MNT27075-USD Mantle USD 0.74 +4.09% UNI7083-USD Uniswap USD 3.7...",
+      "score": 0.5999311,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin (BTC) Price USD Today, News, Charts, Market Cap | Coinbase",
+      "url": "https://www.coinbase.com/price/bitcoin",
+      "content": "Certain content has been prepared by third parties not affiliated with Coinbase Inc. or any of its affiliates and Coinbase is not responsible for such content. Coinbase is not liable for any errors or delays in content, or for any actions taken in reliance on any content. Information is provided for informational purposes only and is not investment advice. This is not a recommendation to buy or sell a particular digital asset or to employ a particular investment strategy. Coinbase makes no representation on the accuracy, suitability, or validity of any information provided or for a particular asset. Prices shown are for illustrative purposes only. Actual cryptocurrency prices and associated stats may vary. Data presented may reflect assets traded on Coinbase’s exchange and select other [...] The remaining ~1 million BTC will be released gradually through mining rewards until around the year 2140. Every four years, a “halving” event cuts the mining reward in half, slowing the issuance of new coins. This predictable supply schedule is one reason many people view Bitcoin as a deflationary asset. Because Bitcoin’s circulating supply changes slowly, changes in market demand are a maj...",
+      "score": 0.49538648,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin (BTC) Price USD Today, News, Charts, Market Cap",
+      "url": "https://www.coinbase.com/price/bitcoin",
+      "content": "Source↗ ## Recent trends The latest BTC price is $70,815.90. Compared to Bitcoin's value of $69,837.99 from 24 hours ago, there's been a 1% increase, while the current price is -1% down from $71,448.74 which was recorded one week ago. Bitcoin's all time high is $126,210.50, which was reached on October 6, 2025. This is a -44% change from its price today. The current circulating supply of Bitcoin is 20,003,043. This is 95% of its max supply of 21,000,000 BTC and 100% of its total supply of 20,003,043. The market cap is currently $1.42T, which is a result of multiplying the current price of Bitcoin($70,815.90) by the total supply(20,003,043 BTC). The fully diluted valuation of Bitcoin is $1.49T. The diluted valuation of Bitcoin is $1.49T. [...] ### What is the history of Bitcoin? 󰀎 Bitcoin was first launched in January 2009 when its creator, Satoshi Nakamoto, mined the genesis block (Block 0). The first documented exchange of Bitcoin for goods occurred on May 22, 2010, when 10,000 BTC were used to purchase two pizzas. This date is now known as Bitcoin Pizza Day. In the years that followed, Bitcoin began trading on various exchanges, with its BTC/USD price starting at just a fracti...",
+      "score": 0.3276683,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "search_index": 2
+    },
+    {
+      "title": "Ripple (XRP) Price USD Today, News, Charts, Market Cap",
+      "url": "https://www.coinbase.com/price/xrp",
+      "content": "Data API Verifications Node AgentKit Staking Faucet Exchange API International Exchange API Prime API Derivatives API Support Help center Contact us Create account ID verification Account information Payment methods Account access Supported crypto Status Asset prices Bitcoin price Ethereum price Solana price XRP price Stock prices NVIDIA price Apple price Microsoft price Amazon price X logo LinkedIn logo Instagram logo Tiktok logo © 2026Coinbase • Privacy • Terms & Conditions 󰄚 United States • English [...] 󰟶 󰝲 USD 󰅈 ## About ## Investment Risk ## Info ## Insights ## FAQ ## News ## Social ## Guides ## Calculator ## Bytes ## Related ## Legal ## About ## Investment Risk ## Info ## Insights ## FAQ ## News ## Social ## Guides ## Calculator ## Bytes ## Related ## Legal ## About XRP XRP is the native token of the XRP Ledger, and the cryptocurrency used by the Ripple payment network. Built for enterprise use on a global scale, XRP powers cost-efficient cross-border payments. 󰍤 Whitepaper󰒮 Official website Buy XRP 󰐲 Happening now AI generated 7h ago 󰓿 XRP surged ↗84% in trading volume since Monday evening, ranking first among Dynamic/Trending Assets. See more Earn up to $2,000 when you...",
+      "score": 0.01584536,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "search_index": 2
+    },
+    {
+      "title": "NexQloud Price, NXQ Price, Live Charts, and Marketcap",
+      "url": "https://www.coinbase.com/en-gb/price/nexqloud",
+      "content": "NexQloud has a current supply of 21,000,000 with 0 in circulation. The last known price of NexQloud is 37.99978639 USD and is down -3.54 over the last 24 hours.",
+      "score": 0.0001208901,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "search_index": 2
+    },
+    {
+      "title": "MOONVEMBER to BORG: Swap, Convert ...",
+      "url": "https://www.coinbase.com/en-ar/converter/moonvember/borg",
+      "content": "The current value of 1 MOONVEMBER is 0.0001093 BORG. In other words, to buy 5 MOONVEMBER, it would cost you 0.0005466 BORG. Inversely, 1 BORG would allow you to",
+      "score": 3.712541e-05,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "search_index": 2
+    },
+    {
+      "title": "FOFAR to SOLIDE",
+      "url": "https://www.coinbase.com/en-in/converter/fofar/solide",
+      "content": "Inversely, 1 SOLIDE would allow you to trade for 9.55 FOFAR while 50 SOLIDE would convert to 477.36 FOFAR, not including platform or gas fees.",
+      "score": 1.9036359e-05,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Coinbase BTC-USD 1m candles Dec 26 2023 08:00 ET to Jan 31 2024 23:59 ET high 50000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:coinbase.com \"advanced-trade/BTC-USD\" 1m Candles Jan 2024 high",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 5
+    },
+    {
+      "search_index": 3,
+      "query": "Coinbase Pro API BTC-USD historic rates 1m Jan 2024 Coinbase candles",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

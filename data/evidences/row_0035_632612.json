@@ -1,0 +1,305 @@
+{
+  "row_index": 35,
+  "market_id": "632612",
+  "slug": "bitcoin-above-124k-on-october-19",
+  "question": "Will the price of Bitcoin be above $124,000 on October 19?",
+  "event_title": "Bitcoin above ___ on October 19?",
+  "end_date_limit": "2025-10-19",
+  "row_end_date_raw": "2025-10-19",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+    "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+    "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`def get_binance_data(api_key, pair, countdown='open', interval='4h', start='1 Jan 2018', end=None): client = Client(api_key=api_key) intervals = { '15m': Client.KLINE_INTERVAL_15MINUTE, '1h': Client.KLINE_INTERVAL_1HOUR, '4h': Client.KLINE_INTERVAL_4HOUR, '1d': Client.KLINE_INTERVAL_1DAY } interval = intervals.get(interval, '4h') print(f'Historical interval {interval}') klines = client.get_historical_klines(symbol=pair, interval=interval, start_str=start, end_str=end) data = pd.DataFrame(klines) data.columns = ['open_time','open', 'high', 'low', 'close', 'volume','close_time', 'qav','num_trades','taker_base_vol','taker_quote_vol', 'ignore'] data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] usecols=['open', 'high', 'low', 'close', 'volume'] [...] `# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l'...",
+      "score": 0.99997354,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Binance API for Historical Crypto Prices | by Zachary Raicik - Medium",
+      "url": "https://medium.com/@raicik.zach/binance-api-for-historical-crypto-prices-bd09f183c09d",
+      "content": "symbol, \"interval\": interval, \"startTime\": int(dt.datetime.timestamp(start_date) 1000), \"endTime\": int(dt.datetime.timestamp(end_date) 1000), \"limit\": 1000, } response = make_api_request(URL, params, headers) if response is not None: json_data = convert_to_json(response.json()) return json_data [...] ``` params = { \"symbol\": symbol, \"interval\": interval, \"startTime\": int(dt.datetime.timestamp(start_date) 1000), \"endTime\": int(dt.datetime.timestamp(end_date) 1000), \"limit\": 1000, } params \"symbol\" \"interval\" \"startTime\" int 1000 \"endTime\" int 1000 \"limit\" 1000 ``` ``` headers = {\"X-MBX-APIKEY\": API_KEY} ``` We also use the start and end date to calculate the number of price data points we are requesting. ``` number_data_points = compute_number_data_points( start_date.strftime(\"%Y-%m-%d\"), end_date.strftime(\"%Y-%m-%d\"), interval )\"%Y-%m-%d\"\"%Y-%m-%d\" ``` [...] symbol: The crypto symbol of the asset (e.g. ETHUSDT) interval: The interval at which we want the request to return prices (e.g. 1d, 12h) start\\_date: The day at which you want the request to start returning prices end\\_date: The last day at which you want the request to start returning prices The function’s s signature will...",
+      "score": 0.99994934,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Creates datetime object for specified start and end times. ### 4. Fetching Historical Klines Data Now, we use the `get_historical_klines` main function to extract historical candlestick data for our custom time range. ``` klines = client.get_historical_klines( symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time)) str str ``` [...] from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbo...",
+      "score": 0.9999465,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Save Historical data from Binance",
+      "url": "https://sammchardy.github.io/historical-data-download-binance/",
+      "content": "`get_historical_klines` has been added to the binance.client, so now all you need to do is run ``` import json frombinance.client import Client client = Client(\"\", \"\") klines = client. get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") ``` ### Next Steps With these cached klines we can open them at a later date and run backtesting on them. See the related [Kucoin post][kucoin-post] to download historical klines on Kucoin. Subsequent posts will look at how to use pandas and TA-Lib for some simple backtesting. Twitter Facebook Google+ # binance # klines # backtesting [...] ``` frombinance.client import Client # fetch 1 minute klines for the last day up until now klines = get_historical_klines(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\") # fetch 30 minute klines for the last month of 2017 klines = get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") # fetch weekly klines since it listed klines = get_historical_klines(\"NEOBTC\", KLINE_INTERVAL_1WEEK,\"1 Jan, 2017\") ``` The full code can be found in the examples folder of the python-binance package. ### Save to file Once we have fetched the...",
+      "score": 0.9997584,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "### Klines​ `{ \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"method\": \"klines\", \"params\": { \"symbol\": \"BNBBTC\", \"interval\": \"1h\", \"startTime\": 1655969280000, \"limit\": 1 } }` Get klines (candlestick bars). Klines are uniquely identified by their open & close time. If you need access to real-time kline updates, please consider using WebSocket Streams: `<symbol>@kline_<interval>` If you need historical kline data, please consider using data.binance.vision. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | `symbol` | STRING | YES | | | `interval` | ENUM | YES | | | `startTime` | LONG | NO | | | `endTime` | LONG | NO | | | `timeZone` | STRING | NO | Default: 0 (UTC) | | `limit` | INT | NO | Default: 500; Maximum: 1000 | [...] ### UI Klines​ `{ \"id\": \"b137468a-fb20-4c06-bd6b-625148eec958\", \"method\": \"uiKlines\", \"params\": { \"symbol\": \"BNBBTC\", \"interval\": \"1h\", \"startTime\": 1655969280000, \"limit\": 1 } }` Get klines (candlestick bars) optimized for presentation. This request is similar to `klines`, having the same parameters and response. `uiKlines` return modified kline data, optimized for presentation of candlestick charts. `klines` `uiKlines` Weight: 2 Para...",
+      "score": 0.99965405,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Parameters: : startTime (int) – required - Start timestamp in ms endTime (int) – required - End timestamp in ms Returns: : API response ``` {\"avgCostTimestampOfLast30d\": 7241837, # Average time taken for data download in the past 30 days \"downloadId\": \"546975389218332672\"} ``` Note: : Request Limitation is 5 times per month, shared by front end download page and rest api The time between startTime and endTime can not be longer than 1 year Raises: : BinanceRequestException, BinanceAPIException [...] Returns: : API response Response ACK: ``` {\"symbol\": \"LTCBTC\", \"orderId\": 1, \"clientOrderId\": \"myOrder1\" # Will be newClientOrderId \"transactTime\": 1499827319559} ``` Response RESULT: ``` {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\"} ``` Response FULL: [...] Parameters: : symbol (str) – required countdownTime (int) – required recvWindow (int) – optional - the number of milliseconds the request is valid for Returns: : API response { : “...",
+      "score": 0.9993687,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Get the price of a currency at specific time in the past using binance ...",
+      "url": "https://bitcoin.stackexchange.com/questions/78788/get-the-price-of-a-currency-at-specific-time-in-the-past-using-binance-historica",
+      "content": "Kline/Candlestick data `GET /api/v1/klines Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 1 Parameters: Name Type Mandatory Description symbol STRING YES interval ENUM YES startTime LONG NO endTime LONG NO limit INT NO Default 500; max 1000. If startTime and endTime are not sent, the most recent klines are returned. Response: [ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ] ]` JBaczuk's user avatar ## Your Answer [...] I want to query the binance api for historical data but i want to indicate the specific time i want. For instance i want to know the price of etherum at 1103 hours Friday 31 August 2018. Is this kind of thing possible on binance api?. Gandalf's user avatar ## 1 Answer 1 Maybe the klines api will suit your needs: Kline/Candlestick data",
+      "score": 0.9992267,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Binace API, Python and Close Price : r/quant - Reddit",
+      "url": "https://www.reddit.com/r/quant/comments/1afgsa6/binace_api_python_and_close_price/",
+      "content": "# Binace API, Python and Close Price Hi guys! I need help understanding how closing prices work in real-time. In context: I use the Binance API in Python, analyzing closing prices in 30-minute windows, for this, I work with 1-minute intervals. I have a \"while True\" in my code that is constantly requesting through the \"futures\\_continous\\_klines\" module, limit windows of 30. When I'm running the code in real-time, the last value of the closing price always fluctuates according to each loop do while (which was to be expected). [...] In my Backtests, when I work with historical data, I have perfect closing prices every 1 minute. I would like to know if there is a possibility of obtaining the last value of the window without fluctuation and closing at the perfect clock minute. In my tests, I decided to set a sleep time of 60 seconds, using the clock as a reference, however, my graphs always \"appeared\" out of place compared to historical data. Does anyone have any suggestions on how I can get around this problem? I want my real-time closing price values to be the same as the closing price values in the historical data I use. Thank you very much! # Related Answers Section Create your...",
+      "score": 0.99843913,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] Response - MINI: `{ \"symbol\": \"BNBBTC\", // Symbol Name \"openPrice\": \"99.00000000\", // Opening price of the Interval \"highPrice\": \"100.00000000\", // Highest price in the interval \"lowPrice\": \"0.10000000\", // Lowest price in the interval \"lastPrice\": \"4.00000200\", // Closing price of the interval \"volume\": \"8913.30000000\", // Total trade volume (in base asset) \"quoteVolume\": \"15.30000000\", // Total trade volume (in quote asset) \"openTime\": 1499783499040, // Start of the ticker interval \"closeTime\": 1499869899040, // End of t...",
+      "score": 0.9979007,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] Change Log Intr...",
+      "score": 0.99620515,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin (BTC) Price Analysis for October 19 - Binance",
+      "url": "https://www.binance.com/en/square/post/31237417214346",
+      "content": "Bitcoin (BTC) Price Analysis for October 19. U.today. Oct 19 ... end of the month. Bitcoin is trading at $108,455 at press time. #BTC.",
+      "score": 0.8266142,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19 -13.16% PullbackROBO/USDT 12:00:19 -6.86% PullbackBAT/BTC 12:00:18 -7.93% PullbackBAT/USDT 12:00:18 -5.67% PullbackONT/USDT 12:00:18 +14.65% RallyONT/BTC 12:00:18 +9.63% RallyAPT/BTC 12:00:18 -6.01% PullbackHOOK/USDT 12:00:18 +10.47% Rally Open Orders(0) Order History Trade History [...] 0.13100 9.39K 71,726.07 0.00023 16.496996 71,725.38 0.00008 5.738030 71,724.87 0.00008 5.737989 71,722.58 0.00008 5.737806 71,722.54 0.00007 5.020577 71,722.20 0.00818 586.687596 71,722.19 0.00008 5.737775 71,721.77 0.00232 166.394506 71,721.31 0.00048 34.426228 71,721.30 0.01640 1.17K 71,711.17 $ 71,711.17 71,721.29 3.27321 234.75K 71,721.28 0.00016 11.475404 71,721.00 0.00300 215.163000 71,720.98 0.46037 33.01K 71,72...",
+      "score": 0.80771893,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin analysis October 19, BTC candle closes beautifully - Binance",
+      "url": "https://www.binance.com/en/square/post/15063392904714",
+      "content": "Bitcoin analysis October 19, BTC candle closes beautifully. See original. Disclaimer: Includes third-party opinions. No financial advice.",
+      "score": 0.7935067,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price: BTC Live Price Chart, Market Cap & ...",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "| # | Exchange | | Pair | Price | Spread | +2% Depth | -2% Depth | 24h Volume | Volume % | Last Updated | --- --- --- --- --- | | | 1 | Image 54: Binance Binance | CEX | BTC/USDT | $70,824.57 | 0.01% | $14,873,697 | $18,250,552 | $1,374,060,852 | 3.44% | Recently | | 2 | Image 55: Gate Gate | CEX | BTC/USDT | $70,764.75 | 0.01% | $10,349,267 | $9,088,611 | $811,918,099 | 2.03% | Recently | | 3 | Image 56: Bybit Bybit | CEX | BTC/USDT | $70,786.12 | 0.01% | $1,715,877 | $1,286,775 | $850,436,495 | 2.13% | Recently | | 5 | Image 57: Coinbase Exchange Coinbase Exchange | CEX | BTC/USD | $70,744.11 | 0.01% | $17,106,174 | $16,874,421 | $562,232,083 | 1.41% | Recently | [...] | 4 | Image 58: OKX OKX | CEX | BTC/USDT | $70,815.68 | 0.01% | $1,439,800 | $2,637,120 | $454,830,953 | 1.14% | Recently | | 6 | Image 59: Kraken Kraken | CEX | BTC/USD | $70,764.97 | 0.01% | $21,445,122 | $20,651,096 | $136,840,549 | 0.34% | Recently | | 7 | Image 60: Bitget Bitget | CEX | BTC/USDT | $70,760.76 | 0.01% | $5,125,887 | $765,986 | $188,196,105 | 0.47% | Recently | | 8 | Image 61: Bullish Bullish | CEX | BTC/USDC | $70,769.56 | 0.01% | $18,669,281 | $16,599,959 | $587,192,028 | 1.47% | Recently |...",
+      "score": 0.6010557,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "EST to UTC Converter - Savvy Time",
+      "url": "https://savvytime.com/converter/est-to-utc",
+      "content": "## Eastern Standard Time Offset: EST is 5 hours behind Greenwich Mean Time (GMT) and is used in North America Countries: It is used in following countries: Bahamas, Canada, Haiti, Jamaica, Cayman Islands, Mexico, Panama, Turks & Caicos Is, United States Principal Cities: The largest city in the EST timezone is New York City from USA with population about 8.175 million people. Other major cities in the area are Toronto, Montreal, Brooklyn, Borough of Queens French: HNE - Heure Normale de l'Est Spanish: ET - Tiempo del Este, ET - Zona Sureste EST Time Zone Geo Map EST timezone map Daylight Saving: This is a standard time zone, however during summer some places switch clocks for one hour forward when daylight saving comes into effect and observe Eastern Daylight Time (EDT). [...] | EDT | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:0...",
+      "score": 0.5174983,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "ET to UTC Converter - Time.now",
+      "url": "https://time.now/tool/et-to-utc-converter/",
+      "content": "### Let it calculate or press the button By default, it will convert automatically every time you change the input. You can uncheck “Auto Convert” if you want to make multiple changes before hitting “Convert Time” manually. ### Adjust for daylight saving with one click ET switches between EST (UTC-5) and EDT (UTC-4), depending on the time of year. If you leave “Daylight Saving Aware” checked, the tool will figure that out for you based on the date you enter. You can uncheck it if you're working off fixed offsets instead. ### Understand the results instantly Your results appear in the UTC panel (or ET panel if you’ve swapped). You’ll see: [...] Time Difference: UTC is 5 hours ahead of EST (winter) and 4 hours ahead of EDT (summer). The difference changes twice yearly with daylight saving transitions. #### Daylight Saving Time Impact Winter Period (EST): From first Sunday in November to second Sunday in March, ET is UTC-5, making UTC 5 hours ahead Summer Period (EDT): From second Sunday in March to first Sunday in November, ET is UTC-4, making UTC 4 hours ahead UTC Stability: UTC never changes and remains constant year-round, making it ideal for international coordination and tech...",
+      "score": 0.50446826,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Live Dashboard | Newhedge",
+      "url": "https://newhedge.io/bitcoin",
+      "content": "Get instant access to full data Sign Up | Exchange | Pair | 24h | --- | Binance | USDT/COP | $3.88B | | Crypto.com | BTC/USD | $1.43B | | Binance | BTC/USDT | $1.39B | | Binance | NBTBIDR | $1.35B | | Binance | USDC/USDT | $1.24B | | Binance | AXSBIDR | $1.19B | | Gate | BTC/USDT | $1.14B | | Binance | BTC/USD1 | $976.11M | | Binance | BNB/USD1 | $924.84M | | Binance | ETH/USDT | $891.35M | | Mexc | BTC/USDT | $888.81M | | Bybit | BTC/USDT | $873.29M | | Coinbase | BTC/USD | $704.58M | | Binance | ETH/USD1 | $699.73M | | Kucoin | ETH/USDT | $684.98M | | Premium Exchange | BTC/USD | $000,000,000 | | Premium Exchange | BTC/USD | $000,000,000 | | Premium Exchange | BTC/USD | $000,000,000 | | Premium Exchange | BTC/USD | $000,000,000 | | Get instant access to full data Sign Up | [...] | Price Target | Probability | Volume (Total) | Volume (24h) | Liquidity | --- --- | ↑ $150,000 | 0.1% | $23,741,804 | $1,165,998 | $2,447,413 | | ↑ $110,000 | 0.2% | $2,972,968 | $349,863 | $572,608 | | ↑ $105,000 | 0.2% | $1,651,038 | $170,858 | $619,977 | | ↑ $100,000 | 0.3% | $2,815,537 | $100,785 | $640,870 | | ↑ $95,000 | 0.3% | $2,793,042 | $60,533 | $471,476 | | ↑ $90,000 | 0.5% | $4,308,716 |...",
+      "score": 0.47051823,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2025-10.zip, 1.8 MB, 2025-11-02T09:50:43.000Z ; BTCUSDT-1m-2025-09.zip.CHECKSUM, 0.1 kB, 2025-10-02T09:11:51.000Z ; BTCUSDT-1m-2025-09.zip, 1.7 MB",
+      "score": 0.4678915,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "UTC to EDT Time Converter",
+      "url": "https://www.utctime.net/utc-to-edt-converter",
+      "content": "UTC to EDT in 24-hour time format. | UTC Time | EDT Time | --- | | 00:00 | 20:00 | | 01:00 | 21:00 | | 02:00 | 22:00 | | 03:00 | 23:00 | | 04:00 | 00:00 | | 05:00 | 01:00 | | 06:00 | 02:00 | | 07:00 | 03:00 | | 08:00 | 04:00 | | 09:00 | 05:00 | | 10:00 | 06:00 | | 11:00 | 07:00 | | 12:00 | 08:00 | | 13:00 | 09:00 | | 14:00 | 10:00 | | 15:00 | 11:00 | | 16:00 | 12:00 | | 17:00 | 13:00 | | 18:00 | 14:00 | | 19:00 | 15:00 | | 20:00 | 16:00 | | 21:00 | 17:00 | | 22:00 | 18:00 | | 23:00 | 19:00 | [...] UTC to EDT in 12-hour (AM/PM) time format. | UTC Time | EDT Time | --- | | 12:00 AM | 08:00 PM | | 01:00 AM | 09:00 PM | | 02:00 AM | 10:00 PM | | 03:00 AM | 11:00 PM | | 04:00 AM | 12:00 AM | | 05:00 AM | 01:00 AM | | 06:00 AM | 02:00 AM | | 07:00 AM | 03:00 AM | | 08:00 AM | 04:00 AM | | 09:00 AM | 05:00 AM | | 10:00 AM | 06:00 AM | | 11:00 AM | 07:00 AM | | 12:00 PM | 08:00 AM | | 01:00 PM | 09:00 AM | | 02:00 PM | 10:00 AM | | 03:00 PM | 11:00 AM | | 04:00 PM | 12:00 PM | | 05:00 PM | 01:00 PM | | 06:00 PM | 02:00 PM | | 07:00 PM | 03:00 PM | | 08:00 PM | 04:00 PM | | 09:00 PM | 05:00 PM | | 10:00 PM | 06:00 PM | | 11:00 PM | 07:00 PM | UTC to EDT in 24-hour time format. [...] 04:4...",
+      "score": 0.42620277,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "Long by MasterAnanda 9494 Bitcoin - Strong bear flag will send the price down (Sell now!)On the chart we can see a strong downtrend that started in October 2025, and the price has been moving in the descending parallel channel. As long as the price is in this channel, we are in a downtrend, and as long as the price prints bearish flags, we have to be cautious. From a clean technical poi Short by Xanrox 142142 Bitcoin | We Are Officially In Bear MarketThe structure of Bitcoin is telling us just one thing: we are going to keep moving to lower zones from here on; we are in a bear phase of the markets. Now saying that we are in bear markets is a little extreme, some might say but let's face the facts here: this bull market we had was never suppose Short by SwallowAcademy 4040 [...] Long by Ratner 2525 Bitcoin - Bulls Pushing Toward 80K?Market Overview Bitcoin has recently delivered a strong technical development by closing above the previous daily high, a level that previously acted as resistance. This breakout signals a potential continuation of the broader bullish structure that has been developing over the past weeks. The move Long by TehThomas 3434 See all ideas ## Technicals﻿ ﻿...",
+      "score": 0.41421208,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT USDⓈ-Margined Perpetual Chart",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Please log in first. Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Refresh Chart Copy Price 0.00 Draw horizontal line on 0.00 More Settings Remove Drawings [...] homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D...",
+      "score": 0.39236066,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Historical Data",
+      "url": "https://www.investing.com/crypto/bitcoin/historical-data",
+      "content": "Highest: 75,991.2 Change %: 11.9 Average: 69,675.3 Difference: 12,922.5 Lowest: 63,068.7 ## FAQ ### What Is the Bitcoin (BTC) Price Today? The Bitcoin price today is 71,639.0, with a previous close of 70,952.9. ### How Has Bitcoin (BTC) Performed Over the Last Year? Over the past 12 months, the Bitcoin price has changed by -17.5%, reflecting its overall trend and historical movement. ### What Is the 52-Week Range for Bitcoin (BTC)? The Bitcoin 52-week range spans from 60,187.0 to 126,186.0 ### What Is the Daily Trading Range of Bitcoin? The coin has fluctuated within a day range of 70,414.5 to 71,978.6. Find a Crypto Broker Indices Commodities Bonds Stocks 1D 1W 1M 6M 1Y 5Y Max 46,581.10 +457.4 +0.99% US 500\") 6,617.40 +61.1 +0.93% Dow Jones [...] +0.99% US 500\") 6,617.40 +61.1 +0.93% Dow Jones 46,124.06 -84.41 -0.18% S&P 500\") 6,556.37 -24.63 -0.37% Nasdaq 21,761.89 -184.87 -0.84% S&P 500 VIX\") 25.48 -1.47 -5.45% Dollar Index\") 99.055 -0.187 -0.19% Crude Oil WTI Futures\") 87.85 -4.50 -4.87% Brent Oil Futures\") 94.89 -5.34 -5.33% Natural Gas Futures\") 2.862 -0.050 -1.72% Gold Futures\") 4,600.87 +166.77 +3.76% Silver Futures\") 73.09 +3.521 +5.06% Copper Futures\") 5.5367 +0.0817 +...",
+      "score": 0.37408215,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    },
+    {
+      "title": "EST to UTC Converter - World Time Buddy",
+      "url": "https://www.worldtimebuddy.com/est-to-utc-converter",
+      "content": "# EST to UTC Converter World Clock & Time Converter Features Widgets World Clock WidgetEvent Widget Mobile App Sign In Sign in with FacebookSign in with Email am pm Link to this view Settings Show Timezones Mark Weekends Calendars... Loading ... 14 Mar 15 16 17 18 19 20 Outlook / iCal Google Calendar Clipboard \"Copy meeting times to clipboard.\") Gmail Link to this selection Event DST = EDT)\">+0 EDT/EST Eastern Daylight Time (US) ▶Corrected from EST 12:37a Sun, Mar 15 -12:37a Sun, Mar 15 Sun Mar15 1 am EST 2 am EST 3 am EST 4 am EST 5 am EST 6 am EST 7 am EST 8 am EST 9 am EST 10 am EST 11 am EST 12 pm EST 1 pm EST 2 pm EST 3 pm EST 4 pm EST 5 pm EST 6 pm EST 7 pm EST 8 pm EST 9 pm EST 10 pm EST 11 pm EST Mon [...] Privacy • Terms of Service [...] | | | | --- | Converting EST to UTC This time zone converter lets you visually and very quickly convert EST to UTC and vice-versa. Simply mouse over the colored hour-tiles and glance at the hours selected by the column... and done! EST stands for Eastern Standard Time. UTC is known as Universal Time. UTC is 4 hours ahead of EST. So, when it is it will be Other conversions: EST to Hong Kong Time, EST to Melbourne Time, EST to Copenhagen...",
+      "score": 0.26365197,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "EST to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/est/utc",
+      "content": "Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in EST vs UTC You’re comparing Eastern Standard Time (EST) and Coordinated Universal Time (UTC)! Most locations are observing Eastern Daylight Time (EDT). Maybe you should check the difference between Eastern Time (EDT) and Coordinated Universal Time (UTC) instead. EST --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ = UTC --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ Coordinated Universal Time is 5:00 hours ahead of Eastern Standard Time [...] ## EST to UTC converter i Drag the handle or click on a cell to convert time - EST - UTC - Current time --:-- --:-- --:-- ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤ...",
+      "score": 0.26105106,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Daylight saving time in the United States",
+      "url": "https://en.wikipedia.org/wiki/Daylight_saving_time_in_the_United_States",
+      "content": "## Time zones [edit] US time zones, with abbreviations and UTC offsets| Time zone | Standard time | Daylight saving time | --- | Eastern | EST (UTC−05:00) | EDT (UTC−04:00) | | Central \"Central Time Zone (North America)\") | CST (UTC−06:00) | CDT (UTC−05:00) | | Mountain | MST (UTC−07:00) | MDT (UTC−06:00) | | Pacific | PST (UTC−08:00) | PDT (UTC−07:00) | | Alaska | AKST (UTC−09:00) | AKDT (UTC−08:00) | | Hawaii–Aleutian | HST (UTC−10:00) | HDT (UTC−09:00) Aleutian Islands only | ## See also [edit] General topic Daylight saving time Daylight saving time by country History of time in the United States includes a list of historical daylight saving dates back to 1918 Permanent time observation in the United States [...] Most of the United States observes daylight saving time (DST), the practice of setting the clock forward by one hour when there is longer daylight during the day, so that evenings have more daylight and mornings have less. Exceptions include Arizona (except for the Navajo Nation, which observes daylight saving time),( and the territories of American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, and the United States Virgin Islands. The Uniform Time Act of 1...",
+      "score": 0.25199312,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "EST to UTC Converter - FreeConvert.com",
+      "url": "https://www.freeconvert.com/time/est-to-utc",
+      "content": "FreeConvert.com can convert EST to these other time zones: EST to PST EST to CDT EST to WET EST to ACST EST to AEST EST to NZST EST to SAST EST to SST EST to CST EST to PST EST to AKST EST to WIB EST to NDT EST to ADT EST to HDT EST to WIT EST to MST EST to CST EST to MSK EST to HST EST to GMT EST to BST EST to CET EST to KST EST to MDT EST to NZDT EST to IST EST to AKDT EST to CAT EST to EET EST to MEST EST to EDT EST to NST EST to IDT EST to AWST EST to MET EST to IST EST to PDT EST to CDT EST to WAT EST to AST EST to UTC EST to ACDT EST to EAT EST to IST EST to HKT EST to WEST EST to JST EST to CEST EST to WITA EST to EEST EST to PKT EST to ChST EST to AEDT EST to CST FreeConvert.com can convert UTC to these other time zones: [...] FreeConvert.com can convert UTC to these other time zones: PST to UTC CDT to UTC WET to UTC ACST to UTC AEST to UTC NZST to UTC SAST to UTC SST to UTC CST to UTC PST to UTC AKST to UTC WIB to UTC NDT to UTC ADT to UTC HDT to UTC WIT to UTC MST to UTC CST to UTC MSK to UTC HST to UTC GMT to UTC EST to UTC BST to UTC CET to UTC KST to UTC MDT to UTC NZDT to UTC IST to UTC AKDT to UTC CAT to UTC EET to UTC MEST to UTC EDT to UTC NST to UTC IDT to UTC...",
+      "score": 0.23233669,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Daylight Saving Time",
+      "url": "https://aa.usno.navy.mil/faq/daylight_time",
+      "content": "Daylight Saving Time and time zones in the U.S. are defined in the U.S. Code, Title 15, Chapter 6, Subchapter IX - Standard Time . By act of Congress, civil clocks in most areas of the United States are adjusted ahead one hour in the summer months (known as Daylight Saving Time) and returned back one hour in the winter months (known as standard time). The dates marking the beginning and end of Daylight Saving Time have changed as Congress has passed new statutes. As of 2007, Daylight Saving Time begins in the United States on the second Sunday in March and ends on the first Sunday in November. On the second Sunday in March, clocks are set ahead one hour at 2:00 a.m. local standard time (which becomes 3:00 a.m. local Daylight Saving Time). On the first Sunday in November, clocks [...] Although standard time in time zones was instituted in the U.S. and Canada by the railroads in 1883, it was not established in U.S. law until passage of The Standard Time Act on March 19, 1918. The Standard Time Act also established Daylight Saving Time, which was a contentious idea at the time. Daylight saving time was repealed in 1919, but standard time in time zones remained in law. Daylight time...",
+      "score": 0.2155657,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Daylight Saving Time 2026: When Does the Time Change?",
+      "url": "https://www.almanac.com/content/when-daylight-saving-time",
+      "content": "more light in the evening. (Again, we generally change our clocks before bed on Saturday.) QUICK TIP: Figuring out Daylight Saving Time doesn’t have to be tricky. Use Almanac’s Time Zone Converter for Daylight Saving Time — it adjusts automatically and shows you the exact local time. Daylight Saving Time Dates (Note that DST dates are for locations in the United States and Canada only; other countries may follow different dates!) Year Daylight Saving Time Begins Daylight Saving Time Ends 2025 Sunday, March 9 at 2:00 A.M. Sunday, November 2 at 2:00 A.M. 2026 Sunday, March 8 at 2:00 A.M. Sunday, November 1 at 2:00 A.M. 2027 Sunday, March 14 at 2:00 A.M. Sunday, November 7 at 2:00 A.M. 2028 Sunday, March 12 at 2:00 A.M. Sunday, November 5 at 2:00 A.M. Note: In the U.S., exceptions to DST are [...] ### Is it Daylight “Saving” or “Savings” Time? The correct term is “Daylight Saving Time“ and not “Daylight Savings Time” (with an extra “s”), though many of us are guilty of saying it the wrong way. The technical explanation is that the word “saving” is singular because it acts as part of an adjective rather than a verb. ## Using Daylight Time (DT) Versus Standard Time (ST) After Dayligh...",
+      "score": 0.14680773,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Daylight Saving Time 2026 in the United States",
+      "url": "https://www.timeanddate.com/time/change/usa",
+      "content": "## Daylight Saving Time History in United States United States first observed Daylight Saving Time in 1918. United States has observed DST for 109 years between 1918 and 2026 (DST in at least one location). See Worldwide DST Statistics ## DST in the USA Today Daylight Saving Time (DST) in the USA starts on the second Sunday in March and ends on the first Sunday in November. The current schedule was introduced in 2007 and follows the Energy Policy Act of 2005. According to section 110 of the act, the US Department of Transportation (DOT) governs the use of DST. The law does not affect the rights of the states and territories that choose not to observe DST. ## Confusing DST Rules [...] Home Time Zones Time Change Dates United States # Time Change 2026 in the United States Next change: Nov 1 1 hour Back 1 Nov 2026, 02:00 | | | --- | | Country: | United States | | Long Name: | United States of America | | Abbreviations: | US, USA | | Capital: | Washington DC | | Time Zones: | 7 (Main Country) | | Total Time Zones: | 13 (with dependencies) | | Dial Code: | +1 | ## 8 Mar Forward 1 hour ## 8 Mar 2026 - Daylight Saving Time Started When local standard time was about to reach Sunday, 8 M...",
+      "score": 0.11453701,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin above ___ on February 25? - Polymarket",
+      "url": "https://polymarket.com/event/bitcoin-above-on-february-25",
+      "content": "No 76,000 $292,989 Vol. No 78,000 $207,266 Vol. No $5,923,009 Vol. 58,000 Yes 60,000 Yes 62,000 Yes 64,000 Yes 66,000 Yes 68,000 Yes 70,000 No 72,000 No 74,000 No 76,000 No 78,000 No ## Rules ## Market Context Market Opened: Feb 18, 2026, 12:00 PM ET Resolver Outcome proposed: Yes No dispute Final outcome: Yes ## Market Context Resolver ### Related Market icon Bitcoin all time high by December 31, 2026? Market icon Ethereum all time high by December 31, 2026? ## Comments (3,823) ## Top Holders ## Positions ## Activity Beware of external links. Beware of external links. ## Frequently Asked Questions ### What is the \"Bitcoin above \\_\\_\\_ on February 25?\" prediction market? [...] Browse New Trending Popular Liquid Ending Soon Competitive Topics Live Crypto Live Crypto Politics Politics Middle East Middle East Crypto Crypto Sports Sports Pop Culture Pop Culture Tech Tech AI AI Market icon # Bitcoin above \\_\\_\\_ on February 25? Market icon # Bitcoin above \\_\\_\\_ on February 25? Ended: Feb 25 12PM Mar 26 12PM Mar 27 12PM Mar 28 12PM Mar 29 More Ended: Feb 25 12PM Mar 26 12PM Mar 27 12PM Mar 28 12PM Mar 29 More $5,923,009 Vol. 58,000 $628,993 Vol. Yes 60,000 $345,522 Vol. Yes 62,000 $3...",
+      "score": 0.0755372,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m candle October 19 12:00 ET close price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "12:00 ET October 19 to UTC conversion (is US daylight saving/EDT in effect)",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance API historical klines BTCUSDT interval=1m retrieve close price at specific timestamp",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

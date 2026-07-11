@@ -1,0 +1,305 @@
+{
+  "row_index": 215,
+  "market_id": "650978",
+  "slug": "will-bitcoin-reach-118k-october-27-november-2",
+  "question": "Will Bitcoin reach $118,000 October 27-November 2?",
+  "event_title": "What price will Bitcoin hit October 27-November 2?",
+  "end_date_limit": "2025-11-03",
+  "row_end_date_raw": "2025-11-03",
+  "expanded_queries": [
+    "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+    "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+    "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "BTC/USDT 1-Minute Historical CSV & Excel Download - CryptoDatum",
+      "url": "https://cryptodatum.io/csv_downloads",
+      "content": "#### Standard CSV (Python) `time, open, high, low, close, volume 1364774400, 100.0, 93.03, 93.25, 93.03, 247.28` ### Frequently Asked Questions1. What exchanges are supported? CryptoDatum currently provides historical cryptocurrency data from Binance and Bitfinex. #### 2. What timeframes are available? Datasets can be downloaded with candlestick intervals from 1 minute (1m) to 1 day (1d). #### 3. What fields are included in the dataset? Each dataset contains timestamp, open, high, low, close and trading volume (OHLCV). #### 4. How are the datasets delivered? Datasets are delivered as a ZIP file containing CSV or Excel files ready for analysis. ### Popular Crypto Datasets [...] FAQs Download crypto data # Menu close Download crypto data FAQs # Download Historical Crypto Data Download full historical cryptocurrency price datasets (OHLCV) in CSV or Excel format. Select exchanges like Binance or Bitfinex, choose your trading pairs and candle sizes from 1 minute to 1 day, and receive a ready-to-use dataset in a single download. ### Instructions [...] We use cookies to give you a better experience on CryptoDatum.io. By continuing to use our site, you are agreeing to the use of cookies...",
+      "score": 0.9998523,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-11.zip | 37.7 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-10.zip.CHECKSUM | 0.1 kB | 2021-11-01T14:57:28.000Z | | BTCUSDT-1h-2021-10.zip | 39.1 kB | 2021-11-01T14:57:28.000Z | | BTCUSDT-1h-2021-09.zip.CHECKSUM | 0.1 kB | 2021-10-01T14:11:37.000Z | | BTCUSDT-1h-2021-09.zip | 37.8 kB | 2021-10-01T14:11:37.000Z | | BTCUSDT-1h-2021-08.zip.CHECKSUM | 0.1 kB | 2021-09-02T15:34:32.000Z | [...] | BTCUSDT-1h-2024-10.zip.CHECKSUM | 0.1 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-10.zip | 37.4 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-09.zip.CHECKSUM | 0.1 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-09.zip | 36.4 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-08.zip.CHECKSUM | 0.1 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-08.zip | 37.8 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-07.zip.CHECKS...",
+      "score": 0.99932814,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Save Historical data from Binance",
+      "url": "https://sammchardy.github.io/historical-data-download-binance/",
+      "content": "``` frombinance.client import Client # fetch 1 minute klines for the last day up until now klines = get_historical_klines(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\") # fetch 30 minute klines for the last month of 2017 klines = get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") # fetch weekly klines since it listed klines = get_historical_klines(\"NEOBTC\", KLINE_INTERVAL_1WEEK,\"1 Jan, 2017\") ``` The full code can be found in the examples folder of the python-binance package. ### Save to file Once we have fetched the list of klines, it makes sense to save them to a file for later use. [...] `get_historical_klines` has been added to the binance.client, so now all you need to do is run ``` import json frombinance.client import Client client = Client(\"\", \"\") klines = client. get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") ``` ### Next Steps With these cached klines we can open them at a later date and run backtesting on them. See the related [Kucoin post][kucoin-post] to download historical klines on Kucoin. Subsequent posts will look at how to use pandas and TA-Lib for some simple ba...",
+      "score": 0.9990746,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt/versions/5",
+      "content": "| 32128.31 - 33445.15 | 25,168 | | 33445.15 - 34762.00 | 32,928 | | 34762.00 - 36078.85 | 28,091 | | 36078.85 - 37395.69 | 31,484 | | 37395.69 - 38712.54 | 44,100 | | 38712.54 - 40029.38 | 49,069 | | 40029.38 - 41346.23 | 31,571 | | 41346.23 - 42663.08 | 42,044 | | 42663.08 - 43979.92 | 35,640 | | 43979.92 - 45296.77 | 25,041 | | 45296.77 - 46613.61 | 30,117 | | 46613.61 - 47930.46 | 50,747 | | 47930.46 - 49247.31 | 40,318 | | 49247.31 - 50564.15 | 24,549 | | 50564.15 - 51881.00 | 16,628 | | 51881.00 - 53197.85 | 5,862 | | 53197.85 - 54514.69 | 14,576 | | 54514.69 - 55831.54 | 22,319 | | 55831.54 - 57148.38 | 28,809 | | 57148.38 - 58465.23 | 29,461 | | 58465.23 - 59782.08 | 20,719 | | 59782.08 - 61098.92 | 17,693 | | 61098.92 - 62415.77 | 16,440 | | 62415.77 - 63732.62 | 10,591 | [...] | 62223.66 - 63536.26 | 11,401 | | 63536.26 - 64848.87 | 7,236 | | 64848.87 - 66161.48 | 4,075 | | 66161.48 - 67474.09 | 2,086 | | 67474.09 - 68786.70 | 1,180 | [...] | 32128.30 - 33445.14 | 25,167 | | 33445.14 - 34761.99 | 32,929 | | 34761.99 - 36078.83 | 28,095 | | 36078.83 - 37395.68 | 31,485 | | 37395.68 - 38712.53 | 44,096 | | 38712.53 - 40029.37 | 49,068 | | 40029.37 - 41346.22 | 31,573 | |...",
+      "score": 0.9985221,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt",
+      "content": "| 111109.20 - 113617.33 | 33,762 | | 113617.33 - 116125.47 | 33,828 | | 116125.47 - 118633.60 | 36,834 | | 118633.60 - 121141.73 | 14,931 | | 121141.73 - 123649.87 | 9,221 | | 123649.87 - 126158.00 | 2,711 | [...] 126k| Label | Count | --- | | 752.81 - 3263.19 | 319,464 | | 3263.19 - 5773.58 | 366,313 | | 5773.58 - 8283.96 | 570,537 | | 8283.96 - 10794.35 | 521,462 | | 10794.35 - 13304.73 | 179,158 | | 13304.73 - 15815.11 | 55,705 | | 15815.11 - 18325.50 | 130,603 | | 18325.50 - 20835.88 | 167,729 | | 20835.88 - 23346.26 | 125,540 | | 23346.26 - 25856.65 | 76,115 | | 25856.65 - 28367.03 | 181,250 | | 28367.03 - 30877.42 | 171,490 | | 30877.42 - 33387.80 | 51,604 | | 33387.80 - 35898.18 | 80,863 | | 35898.18 - 38408.57 | 98,468 | | 38408.57 - 40918.95 | 96,504 | | 40918.95 - 43429.33 | 129,458 | | 43429.33 - 45939.72 | 77,515 | | 45939.72 - 48450.10 | 93,924 | | 48450.10 - 50960.49 | 61,142 | | 50960.49 - 53470.87 | 34,829 | | 53470.87 - 55981.25 | 46,043 | | 55981.25 - 58491.64 | 88,960 | [...] | DateTime | Count | --- | | 01/01/2017 - 03/09/2017 | 96,826 | | 03/09/2017 - 05/15/2017 | 96,826 | | 05/15/2017 - 07/21/2017 | 96,825 | | 07/21/2017 - 09/26/2017 | 96,826 | | 09/26/2017...",
+      "score": 0.9984269,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2025-12.zip, 1.8 MB, 2026-01-02T10:44:36.000Z ; BTCUSDT-1m-2025-11.zip.CHECKSUM, 0.1 kB, 2025-12-02T09:35:27.000Z ; BTCUSDT-1m-2025-11.zip, 1.8 MB",
+      "score": 0.99771273,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "2018-01-25 11349.96 11794.05 10950.21 11175.27 20839.954183 2018-01-25 23:59:59.999 236081364.97365227 221040 10201.386919 2018-01-26 11184.7 11643.0 10311.15 11089.0 33056.87196 2018-01-26 23:59:59.999 360482470.17375433 314720 15330.789553 2018-01-27 11089.0 11650.0 10842.69 11491.0 18860.768345 2018-01-27 23:59:59.999 212663199.53348225 207478 9208.937963 2018-01-28 11499.98 12244.0 11408.0 11879.95 16887.339524 2018-01-28 23:59:59.999 200211582.9434541 206247 7342.786997 2018-01-29 11879.95 11975.02 11139.55 11251.0 14170.377538 2018-01-29 23:59:59.999 162110154.87880376 169199 6016.496871 2018-01-30 11250.11 11308.42 9900.0 10237.51 25554.372946 2018-01-30 23:59:59.999 268978329.50861526 259212 11388.096419 [...] 2018-02-06 6939.63 7878.0 6000.01 7652.14 100201.500307 2018-02-06 23:59:59.999 684364276.3666689 785996 49565.020794 2018-02-07 7655.02 8476.0 7150.01 7599.0 60778.460497 2018-02-07 23:59:59.999 477935038.8117769 514893 30084.836266 2018-02-08 7599.0 7844.0 7572.09 7784.02 1521.537318 2018-02-08 00:28:14.788 11770168.04386595 12417 844.258813 2018-02-09 7789.9 8738.0 7789.9 8683.92 20482.910825 2018-02-09 23:59:59.999 173348469.81187892 273091 10404.040792 2018-02...",
+      "score": 0.99750805,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/266",
+      "content": "Timezone Information: All timestamps are in UTC (Coordinated Universal Time) Open time format: YYYY-MM-DD HH:MM:SS.ffffff UTC Close time format: YYYY-MM-DD HH:MM:SS.ffffff UTC Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: [...] 2025-10-05| Label | Count | --- | | 0.00 - 17922401.06 | 183,769 | | 17922401.06 - 35844802.12 | 47,828 | | 35844802.12 - 53767203.17 | 19,289 | | 53767203.17 - 71689604.23 | 8,791 | | 71689604.23 - 89612005.29 | 4,539 | | 89612005.29 - 107534406.35 | 2,571 | | 107534406.35 - 125456807.41 | 1,516 | | 125456807.41 - 143379208.46 | 996 | | 143379208.46 - 161301609.52 | 635 | | 161301609.52 - 179224010.58 | 453 | | 179224010.58 - 197146411.64 | 281 | | 197146411.64 - 215068812.70 | 201 | | 215068812.70 - 232991213.75 | 162 | | 232991213.75 - 250913614.81 | 145 | | 250913614.81 - 268836015.87 | 95 | | 268836015.87 - 286758416.93 | 58 | | 286758416.93 - 304680817.99 | 67 | | 304680817.99 - 322603219.04 | 43 | | 322603219.04 - 340525620.10 |...",
+      "score": 0.9968273,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Historical Prices Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/aski1140/btc-usdt-1h-binance-api/data",
+      "content": "calendar_view_week BTCUSDT-1h-2019-09.csv calendar_view_week BTCUSDT-1h-2019-10.csv calendar_view_week BTCUSDT-1h-2019-11.csv calendar_view_week BTCUSDT-1h-2019-12.csv calendar_view_week BTCUSDT-1h-2020-01.csv calendar_view_week BTCUSDT-1h-2020-02.csv calendar_view_week BTCUSDT-1h-2020-03.csv calendar_view_week BTCUSDT-1h-2020-04.csv calendar_view_week BTCUSDT-1h-2020-05.csv calendar_view_week BTCUSDT-1h-2020-06.csv calendar_view_week BTCUSDT-1h-2020-07.csv calendar_view_week BTCUSDT-1h-2020-08.csv calendar_view_week BTCUSDT-1h-2020-09.csv calendar_view_week BTCUSDT-1h-2020-10.csv calendar_view_week BTCUSDT-1h-2020-11.csv calendar_view_week BTCUSDT-1h-2020-12.csv [...] 1567299600000 9617.06000000 9642.58000000 9612.08000000 9614.99000000 453.10515200 1567303199999 4362497.50940951 5789 258.76408200 1567303200000 9614.99000000 9616.00000000 9595.76000000 9605.78000000 458.00451700 1567306799999 4400750.73006903 5485 321.35563000 1567306800000 9606.12000000 9624.01000000 9605.78000000 9623.02000000 633.58874900 1567310399999 6092023.87200838 5500 446.85354200 1567310400000 9623.02000000 9630.21000000 9605.60000000 9614.46000000 542.26089600 1567313999999 5216075.54876638 5536 368....",
+      "score": 0.9964342,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] ## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] Change Log Intr...",
+      "score": 0.99346113,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/spot/monthly/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2026-02.zip, 1.9 MB, 2026-03-02T07:22:17.000Z ; BTCUSDT-1m-2026-01.zip.CHECKSUM, 0.1 kB, 2026-02-02T07:46:14.000Z ; BTCUSDT-1m-2026-01.zip, 2.0 MB",
+      "score": 0.99293363,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "BTC/USDT (Binance) – Price today, Live Order Book, Trades & Alerts",
+      "url": "https://www.cryptometer.io/data/binance/btc/usdt",
+      "content": "| 109.674 BTC | 9,031,332 USD | SELL | Coinbase Advanced | 21 Nov 2025 | | 109.274 BTC | 7,600,039 USD | BUY | Coinbase Advanced | 09 Feb 2026 | | 108.505 BTC | 9,405,459 USD | BUY | Coinbase Advanced | 26 Jan 2026 | | 106.491 BTC | 9,617,573 USD | SELL | Coinbase Advanced | 20 Jan 2026 | | 104.168 BTC | 8,540,202 USD | BUY | Coinbase Advanced | 21 Nov 2025 | | 102.812 BTC | 7,135,118 USD | SELL | Coinbase Advanced | 14 Feb 2026 | | 100.746 BTC | 7,562,598 USD | SELL | Coinbase Advanced | 03 Feb 2026 | | 100.0000 BTC | 8,000,000 USDT | SELL | Binance | 31 Jan 2026 | | 99.9756 BTC | 8,322,966 USD | BUY | Coinbase Advanced | 31 Jan 2026 | [...] 1 Minute Trades | BOUGHT: | SOLD: | ... | ... ##### Bitcoin - 24 Hours History This table shows the last 24 hours of buy and sell volume for major crypto assets, helping traders analyze market activity and trends. [...] BTC-USDT # BTC-USDT (Binance) - Price, Live Order Book ##### 70,473 | | | --- | | 24h Change -- | Volume 1,942,410,367 | | 24h Low 68,978 | 24h High 71,321 | | 24h Buy Worth -- | 24h Sell Worth -- | | Market Buy 5.82% | Market Sell -2.78% | | Total Supply 21M | Circulating Supply 19.9M | | All Time High 126,200 | Down from A...",
+      "score": 0.9920002,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price History and Historical Data | CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/bitcoin/historical-data/",
+      "content": "| Oct 30, 2025 | $110,059.20 | $111,612.35 | $106,376.69 | $108,305.55 | $69,673,964,814 | $2,159,806,960,808 | | Oct 29, 2025 | $112,921.33 | $113,642.72 | $109,368.72 | $110,055.30 | $62,192,043,469 | $2,194,776,069,999 | | Oct 28, 2025 | $114,129.09 | $116,078.99 | $112,291.68 | $112,956.17 | $64,528,066,504 | $2,251,805,068,453 | | Oct 27, 2025 | $114,479.85 | $116,273.31 | $113,882.29 | $114,119.32 | $61,761,358,733 | $2,275,835,954,529 | | Oct 26, 2025 | $111,639.05 | $115,260.91 | $111,268.49 | $114,472.44 | $41,708,524,143 | $2,282,777,872,259 | | Oct 25, 2025 | $111,032.61 | $111,947.70 | $110,704.41 | $111,641.73 | $24,707,667,305 | $2,226,078,132,793 | | Oct 24, 2025 | $110,069.35 | $111,842.53 | $109,770.15 | $111,033.92 | $48,160,816,980 | $2,213,928,828,746 | [...] | Oct 16, 2025 | $110,782.17 | $111,990.81 | $107,537.03 | $108,186.04 | $87,306,423,067 | $2,156,578,744,338 | | Oct 15, 2025 | $113,113.97 | $113,622.38 | $110,235.84 | $110,783.17 | $72,574,132,855 | $2,208,376,792,809 | | Oct 14, 2025 | $115,264.88 | $115,502.88 | $110,029.49 | $113,118.67 | $92,212,917,403 | $2,254,859,843,996 | | Oct 13, 2025 | $115,161.68 | $116,020.49 | $113,821.19 | $115,271.08...",
+      "score": 0.9890131,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "binance-spot-api-docs/CHANGELOG.md at master - GitHub",
+      "url": "https://github.com/binance/binance-spot-api-docs/blob/master/CHANGELOG.md",
+      "content": "| `GET /api/v3/account` `account.status` | 10 | 20 | | `GET /api/v3/rateLimit/order` `account.rateLimits.orders` | 20 | 40 | | `GET /api/v3/exchangeInfo` `exchangeInfo` | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1-100 | 1 | 2 | | `GET /api/v3/depth` `depth` - Limit 101-500 | 5 | 10 | | `GET /api/v3/depth` `depth` - Limit 501-1000 | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1001-5000 | 50 | 100 | | `GET /api/v3/aggTrades` `trades.aggregate` | 1 | 2 | | `GET /api/v3/trades` `trades.recent` | 1 | 2 | | `GET /api/v3/historicalTrades` `trades.historical` | 5 | 10 | | `GET /api/v3/klines` `klines` | 1 | 2 | | `GET /api/v3/uiKlines` `uiKlines` | 1 | 2 | | `GET /api/v3/ticker/bookTicker` `ticker.book` - With `symbol` | 1 | 2 | [...] ``` \"code\" -2026 \"msg\"\"Order was canceled or expired with no executed qty over 90 days ago and has been archived.\" \" \" ``` Behavior for API requests with `startTime` and `endTime`: + Previously some requests failed if the `startTime` == `endTime`. + Now, all API requests that accept `startTime` and `endTime` allow the parameters to be equal. This applies to the following requests: - Rest API `GET /api/v3/aggTrades` `GET /api/v3/klines` `GET /api...",
+      "score": 0.98445636,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.04008 12:01:02 71,720.49 0.06834 12:01:02 71,719.38 0.00008 12:01:02 USDC USDT U USD1 USD BNB BTC ALTS FIAT Zones Margin Grid Pair Last Price / 24h Chg 0G/USDT 5x 0.522 -0.19% 1000CAT/USDT 5x 0.00174 +0.00% 1000CHEEMS/USDT 5x 0.000505 +7.22% [...] Open Orders(0) Order History Trade History Holdings Bots Log In or Register Now to trade Connecting Quick Preview NIGHT/USDT -9.03% 0.04391BNB/USDT +1.61% 648.94BTC/USDT +0.84% 71,711.17ETH/USDT +1.05% 2,187.87SOL/USDT +1.38% 93.01TAO/USDT +17.41% 361.4XRP/USDT +0.56% 1.4296DOGE/USDT +3.09% 0.09702PEPE/USDT +4.11% 0.00000355LINK/USDT +1.95% 9.42TRX/USDT -0.16% 0.3099ROBO/USDT +4.59% 0.02436FET/USDT +13.61% 0.2604LTC/USDT +1.38% 56.45AGLD/USDT +1.23% 0.247SCR/USDT -3.53% 0.04560NE...",
+      "score": 0.98102194,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Historical Market Data",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and service interruption and change resulting from such maintenance, (e) any damages incurred by other users’ actions, omissions or violations Binance.US’ Terms of Use, (f) any damage caused by illegal actions of other third parties or actions without authorization by Binance.US; and (g) other exemptions mentioned in disclaimers and platform rules issued by Binance.US. [...] last\\_trade\\_id Last trade ID transact\\_time Transaction time in Unix time format is\\_buyer\\_maker Whether trade was buyer or maker How To Download Programmatically # download a single file curl -s \" -o BNBUSDT-12h-2023-01-01.zip OR wget \" Put the URL into your browser to check all your historical market data files. We will expand this section with more methods in the future. Each zip file ha...",
+      "score": 0.9658996,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "Historical Data",
+      "url": "https://www.cryptodatadownload.com/data/",
+      "content": "Data & Coding Applications We have extensive Plus+ Content and coding examples using both Python and R programming languages that demonstrate data capture, data analysis, and model development. Top Plus+ Content- Download Binance Data in \\RESTRICTED\\ Regions - Binance Trade Print Data for ANY Date - Stream Realtime Trade Data from Binance - Calc Implied BTC Price Movement via Options - Fetch All Historical Trade Ticks from Gemini API - Connecting to Kraken API via Websockets - Coinbase OHLCV Data for Any Timeframe - Developing a GARCH volatility model for Bitcoin - Full Option Greeks Calculator in Python #### Backtest Vault+ #### Data Quality Alert: Gaps Ruin Analysis",
+      "score": 0.96485513,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "search_index": 3
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D 1W Last Price Original Trading View Depth Order Book 0.1 Price (USDT) Size(BTC) Sum(BTC) 71,047.5 71,051.1 Trades Top Movers Price (USDT) Amount(BTC) Time 71,047.5 0.006 20:40:48 Positions(0) Open Orders(0) Order History Trade History Transaction History Position History Bots Assets [...] Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide servic...",
+      "score": 0.8449215,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance APIs",
+      "url": "https://www.binance.com/en/binance-api",
+      "content": "Trading Connectivity We offer access to Spot, Margin, Futures, and Options API trading for over 300 digital and fiat currencies. API trading provides a testing environment, API documentation, and sample code in multiple programming languages. Suitable for all your trading needs. Create/Manage API Key Deploy API Binance Ecosystem Spot Trading SpotMarginConvertSpot Algo Derivatives Trading USDⓈ-MCOIN-MVanilla OptionsFutures Algo Market Data Market Data at your fingertips with Binance API and Websocket Services Market DataWebsocket Investment & Services Manage and grow your digital wealth all in one place. WalletSimple EarnMiningC2CFiatETH StakingCrypto Loan VIP & Institutional [...] Yes. Binance API is compatible with multiple programming languages, such as Python, Java, Node.js, DotNET, Ruby, and more. However, all third-party libraries not listed in our API library are unofficial and not affiliated with Binance and we are not responsible for any loss or damage arising out of or in connection with such uses. 5. Where can I find more information? For more information, please refer to our articles in the Support Center or Terms & Conditions. [...] Rebate on Volume Link Client Made...",
+      "score": 0.70089483,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt",
+      "content": "| 55930.27 - 58438.40 | 88,260 | | 58438.40 - 60946.54 | 85,624 | | 60946.54 - 63454.67 | 95,619 | | 63454.67 - 65962.80 | 80,955 | | 65962.80 - 68470.94 | 108,299 | | 68470.94 - 70979.07 | 68,904 | | 70979.07 - 73487.20 | 20,323 | | 73487.20 - 75995.34 | 5,168 | | 75995.34 - 78503.47 | 9,163 | | 78503.47 - 81011.60 | 7,580 | | 81011.60 - 83519.74 | 23,076 | | 83519.74 - 86027.87 | 38,966 | | 86027.87 - 88536.00 | 48,939 | | 88536.00 - 91044.14 | 44,610 | | 91044.14 - 93552.27 | 38,345 | | 93552.27 - 96060.40 | 57,922 | | 96060.40 - 98568.53 | 57,875 | | 98568.53 - 101076.67 | 21,316 | | 101076.67 - 103584.80 | 37,078 | | 103584.80 - 106092.93 | 52,290 | | 106092.93 - 108601.07 | 39,543 | | 108601.07 - 111109.20 | 42,824 | | 111109.20 - 113617.33 | 33,762 | [...] | 55981.25 - 58491.64 | 88,960 | | 58491.64 - 61002.02 | 86,501 | | 61002.02 - 63512.40 | 95,072 | | 63512.40 - 66022.79 | 80,756 | | 66022.79 - 68533.17 | 108,807 | | 68533.17 - 71043.56 | 68,370 | | 71043.56 - 73553.94 | 19,923 | | 73553.94 - 76064.32 | 5,330 | | 76064.32 - 78574.71 | 8,957 | | 78574.71 - 81085.09 | 7,633 | | 81085.09 - 83595.48 | 23,401 | | 83595.48 - 86105.86 | 38,885 | | 86105.86 - 88616.24 | 49,23...",
+      "score": 0.6562404,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt/versions/5",
+      "content": "Date : date of observation Open : Opening price on the given minute High: Highest price on the given minute Low : Lowest price on the given minute Close : Closing price on the given minute Volume : Volume of transactions on the given minute ## Acknowledgements This data is taken from Binance and it is free to use the data. ## Usability info 10.00 ## License CC0: Public Domain ## Expected update frequency Weekly ## Tags Currencies and Foreign Exchange ## Bitcoin_BTCUSDT.csv(136.86 MB) get_app fullscreen chevron_right Detail Compact Column 6 of 6 columns keyboard_arrow_down About this file [...] 68.8k| Label | Count | --- | | 3157.67 - 4474.52 | 187,585 | | 4474.52 - 5791.36 | 69,707 | | 5791.36 - 7108.21 | 274,292 | | 7108.21 - 8425.06 | 280,204 | | 8425.06 - 9741.90 | 313,392 | | 9741.90 - 11058.75 | 201,022 | | 11058.75 - 12375.60 | 122,027 | | 12375.60 - 13692.44 | 27,076 | | 13692.44 - 15009.29 | 16,982 | | 15009.29 - 16326.14 | 17,245 | | 16326.14 - 17642.98 | 8,964 | | 17642.98 - 18959.83 | 21,800 | | 18959.83 - 20276.68 | 15,736 | | 20276.68 - 21593.52 | 676 | | 21593.52 - 22910.37 | 3,123 | | 22910.37 - 24227.22 | 9,240 | | 24227.22 - 25544.06 | 1,479 | | 25544.06 - 26860...",
+      "score": 0.5996498,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "BTC/USDT (Binance) – Price today, Live Order Book, Trades & Alerts",
+      "url": "https://www.cryptometer.io/data/binance/btc/usdt",
+      "content": "| BUY | | 17 (18%) | 519 (47%) | 263 (46%) | 167 (44%) | 278 (43%) | 441 (39%) | 1.1K (56%) | 946 (51%) | 846 (46%) | 1.1K (50%) | 1.3K (50%) | 510 (49%) | 537 (60%) | 568 (55%) | 480 (51%) | 340 (51%) | 664 (57%) | 261 (67%) | 392 (52%) | 454 (60%) | 556 (50%) | 971 (60%) | 555 (59%) | 338 (46%) | | SELL | | 77 (82%) | 578 (53%) | 312 (54%) | 216 (56%) | 365 (57%) | 692 (61%) | 933 (44%) | 891 (49%) | 998 (54%) | 1.1K (50%) | 1.3K (50%) | 535 (51%) | 361 (40%) | 459 (45%) | 458 (49%) | 332 (49%) | 506 (43%) | 130 (33%) | 365 (48%) | 304 (40%) | 556 (50%) | 640 (40%) | 391 (41%) | 390 (54%) | [...] | 109.674 BTC | 9,031,332 USD | SELL | Coinbase Advanced | 21 Nov 2025 | | 109.274 BTC | 7,600,039 USD | BUY | Coinbase Advanced | 09 Feb 2026 | | 108.505 BTC | 9,405,459 USD | BUY | Coinbase Advanced | 26 Jan 2026 | | 106.491 BTC | 9,617,573 USD | SELL | Coinbase Advanced | 20 Jan 2026 | | 104.168 BTC | 8,540,202 USD | BUY | Coinbase Advanced | 21 Nov 2025 | | 102.812 BTC | 7,135,118 USD | SELL | Coinbase Advanced | 14 Feb 2026 | | 100.746 BTC | 7,562,598 USD | SELL | Coinbase Advanced | 03 Feb 2026 | | 100.0000 BTC | 8,000,000 USDT | SELL | Binance | 31 Jan 2026 | | 99.9756 BTC | 8,...",
+      "score": 0.5760895,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19 -13.16% PullbackROBO/USDT 12:00:19 -6.86% PullbackBAT/BTC 12:00:18 -7.93% PullbackBAT/USDT 12:00:18 -5.67% PullbackONT/USDT 12:00:18 +14.65% RallyONT/BTC 12:00:18 +9.63% RallyAPT/BTC 12:00:18 -6.01% PullbackHOOK/USDT 12:00:18 +10.47% Rally Open Orders(0) Order History Trade History [...] 0.13100 9.39K 71,726.07 0.00023 16.496996 71,725.38 0.00008 5.738030 71,724.87 0.00008 5.737989 71,722.58 0.00008 5.737806 71,722.54 0.00007 5.020577 71,722.20 0.00818 586.687596 71,722.19 0.00008 5.737775 71,721.77 0.00232 166.394506 71,721.31 0.00048 34.426228 71,721.30 0.01640 1.17K 71,711.17 $ 71,711.17 71,721.29 3.27321 234.75K 71,721.28 0.00016 11.475404 71,721.00 0.00300 215.163000 71,720.98 0.46037 33.01K 71,72...",
+      "score": 0.5758033,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Today | BTC to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/bitcoin",
+      "content": "Binance ADGM entities are regulated by the Financial Services Regulatory Authority (FSRA) of the Abu Dhabi Global Markets (ADGM) as follows: (1) Nest Exchange Limited is recognised as a Recognised Investment Exchange (Derivatives), with a stipulation to Operate a Multi-Lateral Trading Facility; (2) Nest Clearing and Custody Limited is recognised as a, with a stipulation to Provide Custody and operating a Central Securities Depository; (3) Nest Trading Limited is authorised to carry out the following Regulated Activities: (i) Dealing in Investments as Principal; (ii) Dealing in Investments as Agent; (iii) Arranging Deals in Investments; (iv) Managing Assets; (v) Providing Money Services; and (vi) Arranging Custody. [...] Cryptocurrency prices are subject to high market risk and price volatility. You should only invest in products that you are familiar with and where you understand the associated risks. The content expressed on this page is not intended to be and shall not be construed as an endorsement by Binance about the reliability or accuracy of such content. You should carefully consider your investment experience, financial situation, investment objectives and risk toleranc...",
+      "score": 0.43467787,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "71,279 BTC/USDT Binance Live Price Chart - Coinalyze",
+      "url": "https://coinalyze.net/bitcoin/usdt/binance/price-chart-live/",
+      "content": "| 69969.00 | 0.00014000 | 06:01:09 | | 69968.99 | 0.00008000 | 06:01:09 | | 69969.00 | 0.00016000 | 06:01:09 | | 69969.08 | 0.00156000 | 06:01:09 | | 69969.44 | 0.00032000 | 06:01:09 | | 69969.45 | 0.00016000 | 06:01:09 | | 69969.63 | 0.00016000 | 06:01:09 | | 69970.00 | 0.00080000 | 06:01:09 | | 69970.02 | 0.00040000 | 06:01:09 | | 69970.03 | 0.00008000 | 06:01:09 | | 69970.49 | 0.00008000 | 06:01:09 | | 69970.50 | 0.00008000 | 06:01:09 | | 69970.65 | 0.00300000 | 06:01:09 | | 69970.80 | 0.00015000 | 06:01:09 | | 69970.82 | 0.00008000 | 06:01:09 | | 69971.34 | 0.00300000 | 06:01:09 | | 69971.60 | 0.00008000 | 06:01:09 | | 69971.75 | 0.00008000 | 06:01:09 | | 69971.85 | 0.00025000 | 06:01:09 | | 69971.86 | 0.00008000 | 06:01:09 | [...] | 69958.23 | 0.00714000 | 06:01:15 | | 69958.23 | 0.00059000 | 06:01:15 | | 69958.23 | 0.00514000 | 06:01:15 | | 69958.23 | 0.00285000 | 06:01:15 | | 69958.23 | 0.25000000 | 06:01:14 | | 69958.23 | 0.00049000 | 06:01:14 | | 69958.23 | 0.00016000 | 06:01:13 | | 69958.41 | 0.00456000 | 06:01:13 | | 69958.53 | 0.00016000 | 06:01:13 | | 69958.54 | 0.00008000 | 06:01:13 | | 69959.19 | 0.00300000 | 06:01:13 | | 69959.27 | 0.00008000 | 06:01:13 | | 69959...",
+      "score": 0.41734326,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price: BTC Live Price Chart, Market Cap & News Today",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "| # | Exchange | | Pair | Price | Spread | +2% Depth | -2% Depth | 24h Volume | Volume % | Last Updated | --- --- --- --- --- | | | 1 | Image 54: Binance Binance | CEX | BTC/USDT | $70,824.57 | 0.01% | $14,873,697 | $18,250,552 | $1,374,060,852 | 3.44% | Recently | | 2 | Image 55: Gate Gate | CEX | BTC/USDT | $70,764.75 | 0.01% | $10,349,267 | $9,088,611 | $811,918,099 | 2.03% | Recently | | 3 | Image 56: Bybit Bybit | CEX | BTC/USDT | $70,786.12 | 0.01% | $1,715,877 | $1,286,775 | $850,436,495 | 2.13% | Recently | | 5 | Image 57: Coinbase Exchange Coinbase Exchange | CEX | BTC/USD | $70,744.11 | 0.01% | $17,106,174 | $16,874,421 | $562,232,083 | 1.41% | Recently | [...] | 4 | Image 58: OKX OKX | CEX | BTC/USDT | $70,815.68 | 0.01% | $1,439,800 | $2,637,120 | $454,830,953 | 1.14% | Recently | | 6 | Image 59: Kraken Kraken | CEX | BTC/USD | $70,764.97 | 0.01% | $21,445,122 | $20,651,096 | $136,840,549 | 0.34% | Recently | | 7 | Image 60: Bitget Bitget | CEX | BTC/USDT | $70,760.76 | 0.01% | $5,125,887 | $765,986 | $188,196,105 | 0.47% | Recently | | 8 | Image 61: Bullish Bullish | CEX | BTC/USDC | $70,769.56 | 0.01% | $18,669,281 | $16,599,959 | $587,192,028 | 1.47% | Recently |...",
+      "score": 0.4023222,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and service interruption and change resulting from such maintenance, (e) any damages incurred by other users’ actions, omissions or violations Binance.US’ Terms of Use, (f) any damage caused by illegal actions of other third parties or actions without authorization by Binance.US; and (g) other exemptions mentioned in disclaimers and platform rules issued by Binance.US. [...] Data Disclaimer Historical Market Data is provided for general informational purposes only and should NOT be: (1) considered an individualized recommendation, endorsement, or offer of any digital asset or services discussed herein; or (2) relied upon for any investment activities. All information is provided on an as-is basis and is subject to change without notice. While we strive to keep th...",
+      "score": 0.3957184,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2024-10.zip.CHECKSUM | 0.1 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-10.zip | 37.4 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-09.zip.CHECKSUM | 0.1 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-09.zip | 36.4 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-08.zip.CHECKSUM | 0.1 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-08.zip | 37.8 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-07.zip.CHECKSUM | 0.1 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-07.zip | 37.8 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-06.zip.CHECKSUM | 0.1 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-06.zip | 35.9 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-05.zip.CHECKSUM | 0.1 kB | 2024-06-17T13:42:53.000Z | [...] | BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-11.zip | 37.7 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-10.zip.CHECKS...",
+      "score": 0.31447196,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). [...] Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (includ...",
+      "score": 0.31147972,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "search_index": 2
+    },
+    {
+      "title": "#Update | Binance Co-CEO Richard Teng expressed confidence in ...",
+      "url": "https://www.facebook.com/EntAsiaPacific/posts/update-binance-co-ceo-richard-teng-expressed-confidence-in-the-long-term-outlook/1498976685568728/",
+      "content": "“At the macro level, there remains uncertainty around interest rate movements and ongoing geopolitical developments, which weigh on risk assets such as crypto,” Teng said. “For those who have been involved in crypto for a long period of time, you know that crypto moves through cycles.” Read more: #Binance #RichardTeng #Cryptocurrency #DigitalAssets #Bitcoin #CryptoMarkets #InstitutionalInvestors #Blockchain May be an image of money and text that says 'E វ្នលិ RiC HeadofR Binance Bulletin BINANCE Co-CEO RICHARD TENG: [...] ## Entrepreneur Asia Pacific's Post ### Entrepreneur Asia Pacific February 26 at 8:30 PM · #Update | Binance Co-CEO Richard Teng expressed confidence in the long-term outlook for digital assets, emphasizing sustained institutional engagement despite recent market volatility, during a fireside chat at Consensus Hong Kong 2026. Since peaking in October 2025, cryptocurrency markets have experienced a significant correction, with approximately $2 trillion in value erased and Bitcoin trading below $70,000 at recent lows. While some market participants have raised concerns about a prolonged downturn, Teng underscored the cyclical nature of digital asset markets.",
+      "score": 0.00685048,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance API BTCUSDT 1m klines October 27 to November 2 00:00 ET 23:59 ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance BTC/USDT 1m historical high Oct 27 Nov 2 118000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "download Binance BTCUSDT 1 minute OHLC historical data Oct 27-Nov 2",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

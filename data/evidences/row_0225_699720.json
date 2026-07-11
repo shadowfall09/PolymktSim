@@ -1,0 +1,297 @@
+{
+  "row_index": 225,
+  "market_id": "699720",
+  "slug": "will-bitcoin-reach-96k-november-24-30",
+  "question": "Will Bitcoin reach $96,000 November 24-30?",
+  "event_title": "What price will Bitcoin hit November 24-30?",
+  "end_date_limit": "2025-12-01",
+  "row_end_date_raw": "2025-12-01",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+    "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+    "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 29
+  },
+  "evidences": [
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] # Binance API credentials 'your_api_key' 'your_api_secret' # Define the symbol for BTC/USDT pair 'BTCUSDT' # Define custom start and end time 2024 3 15 0 0 0 2024 6 15 0 0 0 str str # Convert the data into a pandas dataframe for easier manipulation 'Open Time' 'Open' 'High' 'Low' 'Close' 'Volume' 'Close Time' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote A...",
+      "score": 0.9999263,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "Optimus Prime's user avatar ## 1 Answer 1 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: `binance.vision` Here's a sample bash script that downloads and unpacks the raw data for the whole month: `#!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: `.csv` [...] `.csv` | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line `BTCUSDT-1s-2023-07-01.csv` `1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0` enab...",
+      "score": 0.99987364,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Get historical klines from binance api - GitHub",
+      "url": "https://github.com/maxgfr/binance-historical",
+      "content": "## Installation ### Via Homebrew (macOS/Linux) ``` brew install maxgfr/tap/binance-historical ``` ### Via npm ``` npm install -g binance-historical ``` ### Download binary Download the latest binary for your platform from the releases page. ## Usage ### CLI #### Interactive mode ``` binance-historical download ``` #### Non-interactive mode Pass all options as arguments: ``` binance-historical download \\ --pair BTCUSDT \\ --interval 4h \\ --start 2024-01-01 \\ --end 2024-12-31 \\ --output ./data/ \\ --format json ``` Export as CSV: ``` binance-historical download \\ --pair ETHUSDT \\ --interval 1h \\ --start 2024-01-01 \\ --end 2024-01-31 \\ --output ./data/ \\ --format csv ``` #### CLI Options [...] #### CLI Options | Option | Alias | Description | --- | `--pair` | `-p` | Trading pair (e.g., BTCUSDT, ETHUSDT) | | `--interval` | `-i` | Kline interval (1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w) | | `--start` | `-s` | Start date (YYYY-MM-DD or ISO 8601) | | `--end` | `-e` | End date (YYYY-MM-DD or ISO 8601) | | `--output` | `-o` | Output directory path (filename is auto-generated) | | `--format` | `-f` | Output format (json or csv, default: json) | | `--help` | `-h` | Display...",
+      "score": 0.999015,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"}...",
+      "score": 0.99854493,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2023-11.zip.CHECKSUM | 0.1 kB | 2024-01-08T08:33:32.000Z | | BTCUSDT-1h-2023-11.zip | 35.8 kB | 2024-01-08T08:33:32.000Z | | BTCUSDT-1h-2023-10.zip.CHECKSUM | 0.1 kB | 2024-01-08T08:25:28.000Z | | BTCUSDT-1h-2023-10.zip | 36.8 kB | 2024-01-08T08:25:28.000Z | | BTCUSDT-1h-2023-09.zip.CHECKSUM | 0.1 kB | 2024-01-08T08:19:57.000Z | | BTCUSDT-1h-2023-09.zip | 35.1 kB | 2024-01-08T08:19:57.000Z | | BTCUSDT-1h-2023-08.zip.CHECKSUM | 0.1 kB | 2024-01-08T07:47:41.000Z | | BTCUSDT-1h-2023-08.zip | 36.4 kB | 2024-01-08T07:47:41.000Z | | BTCUSDT-1h-2023-07.zip.CHECKSUM | 0.1 kB | 2024-01-08T07:28:22.000Z | | BTCUSDT-1h-2023-07.zip | 36.7 kB | 2024-01-08T07:28:22.000Z | | BTCUSDT-1h-2023-06.zip.CHECKSUM | 0.1 kB | 2023-07-02T16:46:25.000Z | [...] | BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-11.zip | 37.7 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-10.zip.CHECKS...",
+      "score": 0.9984988,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "#python #nautilus-trader #backtest #data #future #binance ...",
+      "url": "https://gist.github.com/seongs1024/237ed08e9dae5b55bdd5c7a320c9c477",
+      "content": "| Copy the link to the browser and download the data. The link would expire after the expirationTime (usually 24 hours). | | - A message reminding you to re-run the code and download the data hours later. | | Sample output will be like the following: {'link': 'Link is preparing; please request later. Notice: when date range is very large (across months), we may need hours to generate.'} | | \"\"\" | | | | timestamp = str( | | int(1000 \\ time.time()) | | ) # current timestamp which serves as an input for the params variable | | paramsToObtainDownloadID = { | | \"symbol\": symbol, | | \"startTime\": startTime, | | \"endTime\": endTime, | | \"dataType\": dataType, | | \"timestamp\": timestamp, | | } | | | [...] | from urllib.parse import urlencode | | | | | | start\\_date = \"01/Apr/2022:00:00:00 UTC +0000\" | | end\\_date = \"30/Apr/2022:23:59:59 UTC +0000\" | | ts\\_start = datetime.strptime(start\\_date, '%d/%b/%Y:%H:%M:%S %Z %z').timestamp() \\ 1000 | | ts\\_end = datetime.strptime(end\\_date, '%d/%b/%Y:%H:%M:%S %Z %z').timestamp() \\ 1000 | | | | S\\_URL\\_V1 = \" | | | | # Specify the api\\_key and secret\\_key with your API Key and secret\\_key | | api\\_key = os.getenv(\"BINANCE\\_FUTURES\\_API\\_KEY\") | | se...",
+      "score": 0.9980276,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "2018-02-18 11039.55 11274.0 10080.0 10383.43 61137.380728 2018-02-18 23:59:59.999 649423311.3100228 537534 29593.863774 2018-02-19 10375.01 11250.0 10270.33 11153.0 40831.417131 2018-02-19 23:59:59.999 443766562.68306607 366882 20619.877129 [...] 2018-02-06 6939.63 7878.0 6000.01 7652.14 100201.500307 2018-02-06 23:59:59.999 684364276.3666689 785996 49565.020794 2018-02-07 7655.02 8476.0 7150.01 7599.0 60778.460497 2018-02-07 23:59:59.999 477935038.8117769 514893 30084.836266 2018-02-08 7599.0 7844.0 7572.09 7784.02 1521.537318 2018-02-08 00:28:14.788 11770168.04386595 12417 844.258813 2018-02-09 7789.9 8738.0 7789.9 8683.92 20482.910825 2018-02-09 23:59:59.999 173348469.81187892 273091 10404.040792 2018-02-10 8683.93 9065.78 8120.0 8533.98 49381.512653 2018-02-10 23:59:59.999 423411421.93098 537578 24506.723294 2018-02-11 8533.99 8549.0 7726.53 8063.88 45025.187952 2018-02-11 23:59:59.999 366966437.2498885 524626 23180.34192 [...] 2018-01-01 13715.65 13818.55 12750.0 13380.0 8609.915844 2018-01-01 23:59:59.999 114799747.44197056 105595 3961.938946 2018-01-02 13382.16 15473.49 12890.02 14675.11 20078.092111 2018-01-02 23:59:59.999 279717107.4337192 177728 11346.326739 2018-01-03...",
+      "score": 0.9979652,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`uiKlines` return modified kline data, optimized for presentation of candlestick charts. `uiKlines` Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | See `klines` | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | `klines` `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: [...] | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] Notes: `startTime` `endT...",
+      "score": 0.99657035,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/openOrders\" data ={\"symbol\": \"BTCUSDT\", \"timestamp\": 1499827319559} get_open_order_result = binanceus_request(uri_path, data, api_key, secret_key) [...] | Security Type | Description | --- | | NONE | Endpoint can be accessed freely | | TRADE | Endpoint requires sending a valid API-Key and signature | | USER\\_DATA | Endpoint requires sending a valid API-Key and signature | | USER\\_STREAM | Endpoint requires sending a valid API-Key | | MARKET\\_DATA | Endpoint requires sending a valid API-Key | ## Authentication Timing ``` if(timestamp<(serverTime + 1000) &&(serverTime - timestamp)<= recvWindow){// process request} else{// reject request} ```",
+      "score": 0.99293363,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "How to Get Trading Data via the Binance API?",
+      "url": "https://www.binance.com/en/academy/articles/how-to-get-trading-data-via-the-binance-api",
+      "content": "``` import logging from binance_sdk_spot.spot import Spot logging.basicConfig(level=logging.INFO) client = Spot() def agg_trades(): try: agg_trades_response = client.rest_api.agg_trades( symbol=\"BNBUSDT\", start_time=1760950800000, # October 20, 2025 9:00:00 AM ) data = agg_trades_response.data() first_trade_id = data.f historical_trades_response = client.rest_api.historical_trades( symbol=\"BNBUSDT\", from_id=first_trade_id, limit=100, ) logging.info(f\"Historical trades: {historical_trades_response.data()}\") except Exception as e: logging.error(f\"agg_trades() error: {e}\") if __name__ == \"__main__\": agg_trades() ``` ### Real time events [...] ## Public Trades Data ### Historical trades Binance Data Collection lets you easily download public market data from Binance for all trading pairs. The data is organized into daily and monthly files to help users track market activity over time. Daily files are updated and available the day after trading happens, while monthly files are compiled and released on the first Monday of each month. Both the daily and monthly directories include files for trades and aggTrades, with each file containing all the trades that occurred during that specifi...",
+      "score": 0.9888419,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin (BTC) Surpasses 96000 USDT with a 5.23% Increase in 24 ...",
+      "url": "https://www.binance.com/en/square/post/35048459466690",
+      "content": "According to Binance Market Data, Bitcoin (BTC) crossed the 96,000 USDT benchmark and is now trading at 96,030.21875 USDT, with 5.23% increase",
+      "score": 0.8106142,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin(BTC) Surpasses 96000 USDT with a 3.52% Increase in 24 ...",
+      "url": "https://www.binance.com/en/square/post/35077514406058",
+      "content": "According to Binance Market Data, Bitcoin has crossed the 96,000 USDT benchmark and is now trading at 96,027.96875 USDT, with a narrowed 3.52%",
+      "score": 0.8066246,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin USD (BTC-USD) Price History & Historical Data - Yahoo ...",
+      "url": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "content": "| Nov 27, 2025 | 90,517.77 | 91,897.58 | 90,089.52 | 91,285.38 | 91,285.38 | 57,040,622,845 | | Nov 26, 2025 | 87,345.59 | 90,581.16 | 86,316.90 | 90,518.37 | 90,518.37 | 66,496,301,869 | | Nov 25, 2025 | 88,269.96 | 88,457.34 | 86,131.43 | 87,341.89 | 87,341.89 | 64,837,343,545 | | Nov 24, 2025 | 86,798.77 | 89,206.34 | 85,272.20 | 88,270.56 | 88,270.56 | 74,433,896,110 | | Nov 23, 2025 | 84,648.61 | 88,038.47 | 84,641.77 | 86,805.01 | 86,805.01 | 58,083,435,576 | | Nov 22, 2025 | 85,098.56 | 85,503.01 | 83,490.90 | 84,648.36 | 84,648.36 | 40,793,099,246 | | Nov 21, 2025 | 86,528.77 | 87,380.80 | 80,659.81 | 85,090.69 | 85,090.69 | 129,157,506,112 | | Nov 20, 2025 | 91,459.35 | 93,025.07 | 86,040.80 | 86,631.90 | 86,631.90 | 97,970,645,638 | [...] | Dec 5, 2025 | 92,133.65 | 92,702.64 | 88,152.14 | 89,387.76 | 89,387.76 | 63,256,398,633 | | Dec 4, 2025 | 93,454.26 | 94,038.24 | 90,976.10 | 92,141.63 | 92,141.63 | 64,538,402,681 | | Dec 3, 2025 | 91,345.09 | 94,060.77 | 91,056.39 | 93,527.80 | 93,527.80 | 77,650,204,986 | | Dec 2, 2025 | 86,322.54 | 92,316.63 | 86,202.20 | 91,350.20 | 91,350.20 | 78,546,798,211 | | Dec 1, 2025 | 90,389.11 | 90,398.16 | 83,862.25 | 86,321.57 | 86...",
+      "score": 0.7813477,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt/versions/5",
+      "content": "| 32033.65 - 33346.26 | 24,770 | | 33346.26 - 34658.87 | 32,605 | | 34658.87 - 35971.48 | 27,875 | | 35971.48 - 37284.09 | 31,937 | | 37284.09 - 38596.70 | 41,865 | | 38596.70 - 39909.31 | 50,353 | | 39909.31 - 41221.92 | 31,779 | | 41221.92 - 42534.52 | 41,073 | | 42534.52 - 43847.13 | 36,185 | | 43847.13 - 45159.74 | 26,015 | | 45159.74 - 46472.35 | 28,533 | | 46472.35 - 47784.96 | 50,014 | | 47784.96 - 49097.57 | 40,934 | | 49097.57 - 50410.18 | 26,396 | | 50410.18 - 51722.79 | 17,188 | | 51722.79 - 53035.39 | 6,687 | | 53035.39 - 54348.00 | 12,445 | | 54348.00 - 55660.61 | 22,633 | | 55660.61 - 56973.22 | 27,318 | | 56973.22 - 58285.83 | 31,084 | | 58285.83 - 59598.44 | 21,023 | | 59598.44 - 60911.05 | 16,219 | | 60911.05 - 62223.66 | 17,982 | | 62223.66 - 63536.26 | 11,401 | [...] | 32128.30 - 33445.14 | 25,167 | | 33445.14 - 34761.99 | 32,929 | | 34761.99 - 36078.83 | 28,095 | | 36078.83 - 37395.68 | 31,485 | | 37395.68 - 38712.53 | 44,096 | | 38712.53 - 40029.37 | 49,068 | | 40029.37 - 41346.22 | 31,573 | | 41346.22 - 42663.07 | 42,043 | | 42663.07 - 43979.91 | 35,645 | | 43979.91 - 45296.76 | 25,040 | | 45296.76 - 46613.61 | 30,117 | | 46613.61 - 47930.45 | 50,753 | | 47...",
+      "score": 0.6188962,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Binance BTCUSDT Candlestick - Kaggle",
+      "url": "https://www.kaggle.com/datasets/arezazare/binance-btcusdt-candlestick",
+      "content": "## Expected update frequency Not specified ## Tags InvestingData VisualizationCurrencies and Foreign ExchangeTime Series AnalysisRegressionSeaborn ## binance_btcusdt_candlestick.csv(546.1 kB) get_app fullscreen chevron_right Detail Compact Column 10 of 10 columns keyboard_arrow_down grid_3x3 kline_ot sort grid_3x3 open_price sort grid_3x3 high_price sort grid_3x3 low_price sort grid_3x3 close_price sort grid_3x3 volume sort grid_3x3 kline_ct sort grid_3x3 quote_volume sort grid_3x3 num_trades sort grid_3x3 base_volume sort [...] 1730275200000 72227.99 72542.2 72211.59 72241.35 766.37279 1730278799999 55481311.9623147 105598 370.17973 1730278800000 72241.35 72588.0 72224.31 72576.01 669.47116 1730282399999 48491291.5796305 127465 388.77519 1730282400000 72576.02 72604.97 72369.0 72378.02 806.77509 1730285999999 58463721.3024694 113346 490.5137 1730286000000 72378.02 72378.02 71926.82 71983.99 1006.6085 1730289599999 72648536.7667017 150042 420.51395 1730289600000 71984.0 72140.34 71750.04 71862.17 1946.32423 1730293199999 140039427.8096451 286642 922.90568 1730293200000 71862.17 72100.0 71436.0 71966.0 2218.00998 1730296799999 159143258.1892359 398289 1166.28419 1730296800000 719...",
+      "score": 0.60358196,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "BTC/USDT Perpetual Binance Live Price Chart - Coinalyze",
+      "url": "https://coinalyze.net/bitcoin/usdt/binance/btcusdt_perp/price-chart-live/",
+      "content": "| | | --- | | 24 Hours | | | Change -1.60% | Volume 167,541 | | High 71,999.90 | Low 69,815.40 | | 7 Days | | | Change -1.77% | Volume 1,299,833 | | High 71,999.90 | Low 67,300.00 | | 30 Days | | | Change +8.22% | Volume 6,367,227 | | High 75,998.90 | Low 62,401.70 | `/ignore nick1` `/unignore nick1` `/ignorelist` [...] | 69945.70 | 0.00200000 | 06:04:52 | | 69945.90 | 0.00200000 | 06:04:52 | | 69946.00 | 0.19100000 | 06:04:52 | | 69946.10 | 0.17100000 | 06:04:51 | | 69946.10 | 0.00200000 | 06:04:51 | | 69946.20 | 0.00200000 | 06:04:51 | | 69946.30 | 0.00200000 | 06:04:51 | | 69946.50 | 0.00300000 | 06:04:51 | | 69946.70 | 0.00400000 | 06:04:51 | | 69947.10 | 0.00500000 | 06:04:51 | | 69947.20 | 0.00200000 | 06:04:51 | | 69947.40 | 0.01000000 | 06:04:51 | | 69947.50 | 0.00300000 | 06:04:51 | | 69947.90 | 0.00400000 | 06:04:51 | | 69948.00 | 0.00600000 | 06:04:51 | | 69948.20 | 0.00400000 | 06:04:51 | | 69948.40 | 0.00100000 | 06:04:51 | | 69948.50 | 0.00200000 | 06:04:51 | | 69948.70 | 0.00300000 | 06:04:51 | | 69948.90 | 0.00200000 | 06:04:51 | | 69949.20 | 0.00100000 | 06:04:51 | [...] Logo",
+      "score": 0.5735118,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.13100 9.39K 71,726.07 0.00023 16.496996 71,725.38 0.00008 5.738030 71,724.87 0.00008 5.737989 71,722.58 0.00008 5.737806 71,722.54 0.00007 5.020577 71,722.20 0.00818 586.687596 71,722.19 0.00008 5.737775 71,721.77 0.00232 166.394506 71,721.31 0.00048 34.426228 71,721.30 0.01640 1.17K 71,711.17 $ 71,711.17 71,721.29 3.27321 234.75K 71,721.28 0.00016 11.475404 71,721.00 0.00300 215.163000 71,720.98 0.46037 33.01K 71,720.97 0.00285 204.404764 71,720.61 0.39189 28.10K 71,720.54 0.00007 5.020437 71,720.49 1.43582 102.97K 71,720.48 0.74288 53.27K 71,720.32 0.01016 728.678451 71,720.31 0.05310 3.80K 71,720.25 1.13080 81.10K 71,720.06 0.00009 6.454805 71,719.97 0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 [...] 1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/US...",
+      "score": 0.5694942,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, // Trade ID of the first trade in the interval \"lastId\": 3220849281, // Trade ID of the last trade in the interval \"count\": 697727 // Number of trades in the interval }` [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", \"priceChangePercent\": \"-0.317\", \"weightedAvgPrice\": \"26234.58803036\", \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", \"quoteVolume\": \"485217905.04210480\", \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, \"lastId\": 3220849281, \"count\": 697727 }, { \"symbol\":...",
+      "score": 0.5689194,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "def _get_symbols(self) -> List[str]: params = dict() endpoint = \"/fapi/v1/exchangeInfo\" if self.futures else \"/api/v3/exchangeInfo\" data = self._make_request(endpoint, params) symbols = [x[\"symbol\"] for x in data[\"symbols\"]] return symbols def get_historical_data(self, symbol: str, interval: Optional[str] = \"1m\", start_time: Optional[int] = None, end_time: Optional[int] = None, limit: Optional[int] = 1500): params = dict() params[\"symbol\"] = symbol params[\"interval\"] = interval params[\"limit\"] = limit if start_time is not None: params[\"startTime\"] = start_time if end_time is not None: params[\"endTime\"] = end_time endpoint = \"/fapi/v1/klines\" if self.futures else \"/api/v3/klines\" raw_candles = self._make_request(endpoint, params) candles = [] if raw_candles is not None: [...] df = df.reindex(columns=column_names) return df def GetHistoricalData(client, symbol, start_time, end_time, limit=1500): collection = [] while start_time < end_time: data = client.get_historical_data(symbol, start_time=start_time, end_time=end_time, limit=limit) print(client.exchange + \" \" + symbol + \" : Collected \" + str(len(data)) + \" initial data from \"+ str(ms_to_dt_local(data)) +\" to \" + str(ms_to_dt_lo...",
+      "score": 0.51325434,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2024-10.zip.CHECKSUM | 0.1 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-10.zip | 37.4 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-09.zip.CHECKSUM | 0.1 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-09.zip | 36.4 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-08.zip.CHECKSUM | 0.1 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-08.zip | 37.8 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-07.zip.CHECKSUM | 0.1 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-07.zip | 37.8 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-06.zip.CHECKSUM | 0.1 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-06.zip | 35.9 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-05.zip.CHECKSUM | 0.1 kB | 2024-06-17T13:42:53.000Z | [...] | Item | Size | Last Modified | --- | ../ | | | | BTCUSDT-1h-2026-02.zip.CHECKSUM | 0.1 kB | 2026-03-02T09:14:26.000Z | | BTCUSDT-1h-2026-02.zip | 34.3 kB | 2026-03-02T09:14:25.000Z | | BTCUSDT-1h-2026-01.zip.CHECKSUM | 0.1 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2026-01.zip | 37.3 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2025-12.zip.CHECKSUM | 0.1 kB | 2026-01-02T10:44:36.000Z | | BTCUSDT-1h-2025-12.zip | 37.3 kB | 2026-01-02...",
+      "score": 0.5106191,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "#### 30/11/2022 !bookTicker removed. + Please use Individual Book Ticker streams (@bookTicker) instead. + Multiple streams can be subscribed to over one connection. (E.g. wss://stream.binance.us:9443/stream?streams=btcusdt@bookTicker/bnbbtc@bookTicker) REST API [...] Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, bookTickers for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get 24h Price Change Statistics > Example ``` # Example A, symbol param provided -X \"GET\"\" Example B, no symbol provided -X \"GET\"\" ``` ``` # Example A, symbol param provided import requests resp = requests. get(' print(resp. json())# Example B, no symbol provided import requests resp = requests. get(' print(resp. json()) ``` > Response A [...] Data Source: Memory ### Get Candlestick Data > Example ``` -X \"GET\"\" ``` ``` import requests resp = requests. get(' print(resp. json()) ``` > Response ``` ``` `GET /api/v3/klines...",
+      "score": 0.5069581,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "Details on how to get Binance public data - GitHub",
+      "url": "https://github.com/binance/binance-public-data",
+      "content": "| Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1735689600000000 | 4.15070000 | 4.15870000 | 4.15060000 | 4.15540000 | 539.23000000 | 1735693199999999 | 2240.39860900 | 13 | 401.82000000 | 1669.98121300 | 0 | All kline intervals are supported: `1s`, `1m`, `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `1d`, `3d`, `1w`, `1mo`. `1mo` is used instead of `1M` to supprt non-case sensitive file systems. #### Trades The `trades` files' data is obtained from `/api/v3/historicalTrades` API endpoint: [...] | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1499040000000 | 0.01634790 | 0.80000000 | 0.01575800 | 0.01577100 | 148976.11427815 | 1499644799999 | 2434.19055334 | 308 | 1756.87402397 | 28.46694368 | 17928899.62484339 | COIN-M Futures `klines` files' data is from `/dapi/v1/klines` API endpoint: | Open time | Open | High | Low | Close | Volume | Close time | Base asse...",
+      "score": 0.47212428,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Data - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "We track and produce files for over 1100+ assets in the spot/physical markets for Daily, Hourly, and Minute(!) time intervals. These are all provided for free. Each data set is easily downloadable in CSV format and can be consumed automatically by Python scripts or other automated processes. In each file, you will find the below/following fields. This OHLC (Open/High/Low/Close) pricing data is updated at the end of each day from the respective exchange. Please reach out if you find discrepancies or errors in the data that need to be addressed - Unix Timestamp - This is the unix timestamp or also known as \"Epoch Time\". Use this to convert to your local timezone - Date - This timestamp is in UTC datetime - Symbol - The symbol for which the timeseries data refers [...] - Symbol - The symbol for which the timeseries data refers - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in th...",
+      "score": 0.45522344,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "5 Easy Steps to Export CSV from Binance - Crypto Accountants",
+      "url": "https://cryptoaccountants.live/5-easy-steps-to-export-csv-from-binance/",
+      "content": "# 5 Easy Steps to Export CSV from Binance To export a CSV file from Binance, you simply need to log in, go to your transaction or trade history, select your desired dates, and download the file. That’s it. Whether you’re a casual investor, a full-time trader, or a business dealing in crypto, exporting a CSV file from Binance is a vital step for tracking your activity. Most importantly, it’s often required for accounting, tax filing, and financial analysis. ## Why Would You Want to Export a CSV from Binance? Data is stored in rows and columns in a basic text file called a CSV (Comma-Separated Values) file. Binance uses it to help users export their trade history, withdrawals, deposits, and conversions in a format that can be used in Excel, Google Sheets, or accounting software. [...] ## 3. Set Your Date Range You can choose from a particular range of dates on Binance. This is important if you need transaction data for a certain tax year or financial quarter. You can typically export up to 1 year of data at a time. However, due to system limits, large accounts may need to break it down into 3-month segments. You would set the date between April 6, 2024, and April 5, 2025, if you w...",
+      "score": 0.4395795,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] Parameters: : symbol (str) – required countdownTime (int) – required recvWindow (int) – optional - the number of milliseconds the request is valid for Returns: : API response { : “symbol”: “BTCUSDT”, “countdownTime”: “100000” } futures\\_coin\\_create\\_order(\\\\params)(_modules/binance/client.html#Client.futures_coin_create_order) : Send in a new order. futures\\_coin\\_exchange\\_info()(_modules/binance/clien...",
+      "score": 0.40161797,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2025-09.zip, 1.7 MB, 2025-10-02T09:11:51.000Z ; BTCUSDT-1m-2025-08.zip.CHECKSUM, 0.1 kB, 2025-09-02T11:16:31.000Z ; BTCUSDT-1m-2025-08.zip, 1.8 MB",
+      "score": 0.38943097,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "I need to some how get the tick data for BTCUSDT for specific days. This is the raw tick data, the ( Last Price ) I will attach an image of a chart from TV and the price that shows on the right that moves up and down every second, I need that price but I need it for 1 month. I have tried the following sites to obtain it but I am probably missing something or just dont know how to get the BTCUSDT 1 second raw tick data for 1 month. Binance Data Collection enter image description here enter image description here I just need to know how to obtain Binance BTCUSDT 1 second raw tick data (last price) for the month of July would be great. Optimus Prime's user avatar ## 1 Answer 1 [...] Optimus Prime's user avatar ## 1 Answer 1 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: `binance.vision` Here's a sample bash script that downloads and unpacks the raw data for the whole month: `#!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extr...",
+      "score": 0.3574335,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "search_index": 3
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and service interruption and change resulting from such maintenance, (e) any damages incurred by other users’ actions, omissions or violations Binance.US’ Terms of Use, (f) any damage caused by illegal actions of other third parties or actions without authorization by Binance.US; and (g) other exemptions mentioned in disclaimers and platform rules issued by Binance.US. [...] Data Disclaimer Historical Market Data is provided for general informational purposes only and should NOT be: (1) considered an individualized recommendation, endorsement, or offer of any digital asset or services discussed herein; or (2) relied upon for any investment activities. All information is provided on an as-is basis and is subject to change without notice. While we strive to keep th...",
+      "score": 0.35716435,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "Long by Ratner 2525 Bitcoin - Bulls Pushing Toward 80K?Market Overview Bitcoin has recently delivered a strong technical development by closing above the previous daily high, a level that previously acted as resistance. This breakout signals a potential continuation of the broader bullish structure that has been developing over the past weeks. The move Long by TehThomas 3434 See all ideas ## Technicals﻿ ﻿ Summarizing what the indicators are suggesting. Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy [...] Long by MasterAnanda 9494 Bitcoin - Strong bear flag will send the price down (Sell now!)On the chart we can see a strong downtrend that started in October 2025, and the price has been moving in the descending parallel channel. As long as the price is in this channel, we are in a downtrend, and as long as the price prints bearish flags, we have to be cautious. From a clean technical poi Short by Xanrox 142142 Bitcoin | We Are Offi...",
+      "score": 0.2312151,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m historical high >= 96000 Nov 24-30",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API klines BTCUSDT 1m Nov 24 00:00 ET to Nov 30 23:59 ET download",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "how to get Binance BTCUSDT 1m candle high prices Nov 24-30 Eastern Time CSV",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

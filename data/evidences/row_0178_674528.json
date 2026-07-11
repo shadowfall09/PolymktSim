@@ -1,0 +1,305 @@
+{
+  "row_index": 178,
+  "market_id": "674528",
+  "slug": "will-the-price-of-ethereum-be-between-3100-3200-on-november-17",
+  "question": "Will the price of Ethereum be between $3,100 and $3,200 on November 17?",
+  "event_title": "Ethereum price on November 17?",
+  "end_date_limit": "2025-11-17",
+  "row_end_date_raw": "2025-11-17",
+  "expanded_queries": [
+    "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+    "ETHUSDT 1m klines Nov 17 close price Binance API",
+    "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "Binance API for Historical Crypto Prices | by Zachary Raicik",
+      "url": "https://medium.com/@raicik.zach/binance-api-for-historical-crypto-prices-bd09f183c09d",
+      "content": "parser.add_argument( \"--symbol\", default=\"ETHUSDT\", help=\"The symbol of the cryptocurrency to retrieve price data for (e.g. 'ETHUSDT')\", ) parser.add_argument( \"--interval\", default=\"1d\", help=\"The interval at which to retrieve price data (e.g. '1d' for daily data)\", ) parser.add_argument( \"--start_date\", type=dt.datetime.fromisoformat, help=\"The start date for the price data to retrieve, in YYYY-MM-DD format\", ) parser.add_argument( \"--end_date\", type=dt.datetime.fromisoformat, help=\"The end date for the price data to retrieve, in YYYY-MM-DD format\", ) args = parser.parse_args() response = get_historical_prices( args.symbol, args.interval, args.start_date, [...] symbol: The crypto symbol of the asset (e.g. ETHUSDT) interval: The interval at which we want the request to return prices (e.g. 1d, 12h) start\\_date: The day at which you want the request to start returning prices end\\_date: The last day at which you want the request to start returning prices The function’s s signature will look like this: ``` def get_historical_prices( symbol: str, interval: str, start_date: dt.datetime, end_date: dt.datetime,) def get_historical_prices symbol interval start_date end_date ``` The next...",
+      "score": 0.99953806,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] usecols=['open', 'high', 'low', 'close', 'volume'] data = data[usecols] data = data.astype('float') return data api_key = 'хххх...xxx' # use your api-key symbol = 'ETHUSDT' eth = get_binance_data(api_key, symbol) eth.head()` [...] column_names = [\"Date\", \"Time\", \"Open\", \"High\", \"Low\", \"Close\", \"Volume\"] dftmp.reset_index(drop=True, inplace=True) dftmp = dftmp.reindex(columns=column_names) string_dt = str(dftmp['Date...",
+      "score": 0.99939287,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "Get historical klines from binance api - GitHub",
+      "url": "https://github.com/maxgfr/binance-historical",
+      "content": "### Library ``` import{getKline, Kline} from'binance-historical'; const result Array< Kline> = await getKline('ETHUSDT', '4h', new Date('01-09-2020'), new Date('01-12-2021'),); console. log(result);// [// ...,// {// openTime: 1579953600000,// open: '159.30000000',// high: '161.00000000',// low: '158.70000000',// close: '160.41000000',// volume: '25015.67605000',// closeTime: 1579967999999,// quoteAssetVolume: '4001959.95527980',// trades: 14330,// takerBaseAssetVolume: '13000.12296000',// takerQuoteAssetVolume: '2079824.44045350',// ignored: '0'// },// ...// ] ``` ## About Get historical klines from binance api ### Topics [...] #### CLI Options | Option | Alias | Description | --- | `--pair` | `-p` | Trading pair (e.g., BTCUSDT, ETHUSDT) | | `--interval` | `-i` | Kline interval (1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w) | | `--start` | `-s` | Start date (YYYY-MM-DD or ISO 8601) | | `--end` | `-e` | End date (YYYY-MM-DD or ISO 8601) | | `--output` | `-o` | Output directory path (filename is auto-generated) | | `--format` | `-f` | Output format (json or csv, default: json) | | `--help` | `-h` | Display help | | `--version` | `-V` | Display version | #### Hybrid mo...",
+      "score": 0.99827254,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "ET to UTC Converter - Savvy Time World Clock",
+      "url": "https://savvytime.com/converter/et-to-utc",
+      "content": "| ET | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:00 | 9:00 | | 6:00 | 10:00 | | 7:00 | 11:00 | | 8:00 | 12:00 | | 9:00 | 13:00 | | 10:00 | 14:00 | | 11:00 | 15:00 | | 12:00 | 16:00 | | 13:00 | 17:00 | | 14:00 | 18:00 | | 15:00 | 19:00 | | 16:00 | 20:00 | | 17:00 | 21:00 | | 18:00 | 22:00 | | 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | [...] | 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | | 23:00 | 3:00 | [...] savvy time logo ##### Savvy Time World Clock Home Converter ET to UTC | # ET to UTC Converter Swap Order to UTC to ET Share Converter ET/EDT Eastern Time GMT -4 UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 12:30 am00:30 in EDT is 4:30 am04:...",
+      "score": 0.9967013,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC Converter - Time.now",
+      "url": "https://time.now/tool/et-to-utc-converter/",
+      "content": "### Let it calculate or press the button By default, it will convert automatically every time you change the input. You can uncheck “Auto Convert” if you want to make multiple changes before hitting “Convert Time” manually. ### Adjust for daylight saving with one click ET switches between EST (UTC-5) and EDT (UTC-4), depending on the time of year. If you leave “Daylight Saving Aware” checked, the tool will figure that out for you based on the date you enter. You can uncheck it if you're working off fixed offsets instead. ### Understand the results instantly Your results appear in the UTC panel (or ET panel if you’ve swapped). You’ll see: [...] EDT 9:00 AM → UTC 1:00 PM EDT 5:00 PM → UTC 9:00 PM 4-hour difference during summer International Coordination EST Midnight → UTC 5:00 AM EDT Midnight → UTC 4:00 AM UTC used for global scheduling Technical Applications Server logs → UTC timestamps API calls → UTC standards UTC preferred for technical systems #### Conversion Tips & Best Practices • Add 5 hours to EST (winter) or 4 hours to EDT (summer) to get UTC • UTC is the preferred standard for international business, aviation, and technical applications • UTC is also known as \"Zulu Tim...",
+      "score": 0.9957684,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "ETH-USDT (Binance Futures) - Price, Live Order Book - CryptoMeter",
+      "url": "https://www.cryptometer.io/data/binance_futures/eth/usdt",
+      "content": "| LONGS | | 2.6M (50%) | 4.9M (53%) | 2M (53%) | 1M (49%) | 4M (52%) | 2.7M (51%) | 2.2M (50%) | 3M (50%) | 3.1M (51%) | 1.9M (48%) | 1M (50%) | 2.4M (49%) | 2.8M (50%) | 4.2M (51%) | 3.3M (50%) | 3.6M (51%) | 3.4M (50%) | 3.2M (50%) | 2.8M (50%) | 2.7M (51%) | 4.4M (52%) | 2.6M (48%) | 3.2M (49%) | 1M (50%) | 1M (51%) | 2.3M (50%) | 2M (48%) | 2.5M (51%) | 2.2M (50%) | 2M (50%) | | SHORTS | | 2.6M (50%) | 4.2M (47%) | 1.8M (47%) | 1M (51%) | 3.7M (48%) | 2.6M (49%) | 2.2M (50%) | 2.9M (50%) | 3M (49%) | 2.1M (52%) | 1M (50%) | 2.4M (51%) | 2.8M (50%) | 4M (49%) | 3.3M (50%) | 3.5M (49%) | 3.3M (50%) | 3.2M (50%) | 2.9M (50%) | 2.5M (49%) | 4M (48%) | 2.8M (52%) | 3.3M (51%) | 1M (50%) | 949.3K (49%) | 2.3M (50%) | 2.1M (52%) | 2.4M (49%) | 2.1M (50%) | 2.1M (50%) | [...] | LONGS | | 39.3K (54%) | 58.8K (48%) | 49.4K (45%) | 69.8K (49%) | 101.9K (50%) | 228.1K (50%) | 134.1K (49%) | 184.2K (50%) | 95.3K (51%) | 101.5K (54%) | 89.4K (54%) | 125.2K (48%) | 79.2K (46%) | 98K (54%) | 98.5K (51%) | 82K (46%) | 208.4K (49%) | 274.1K (49%) | 83.7K (48%) | 154.8K (49%) | 252.6K (56%) | 137.7K (46%) | 150.8K (49%) | 218.6K (56%) | | SHORTS | | 33.9K (46%) | 63.8K (52%) | 60.1K (55%) | 73...",
+      "score": 0.99553156,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "$ETH This is a 1-day (1D) candlestick chart of ETH/USDT - Binance",
+      "url": "https://www.binance.com/en/square/post/23308075208817",
+      "content": "The current price is now well above both the MA(7) and MA(25), which is generally a bullish signal in the short term. 2. Trend Analysis: Long-term trend is still bearish, indicated by the downward slope of the MA(99). The gap between the price and MA(99) remains large, suggesting strong overhead resistance in the longer term. 3. Volume Spike: The rise in price is supported by high volume, lending strength to the move. 4. Support & Resistance: Support levels: $1,667 (MA25), $1,646 (MA7), and local bottom at $1,385. Resistance levels: Short-term resistance at $1,830 (24h high), medium-term resistance near $2,220–$2,690 (previous consolidation zones and MA99 proximity). Conclusion: Short-term sentiment: Bullish with strong upward momentum. [...] # $ETH 🔥 This is a 1-day (1D) candlestick chart of ETH/USDT | TRADE FUEL on Binance Square Image 1: Binance Square Login Sign Up HomeTrending ArticlesNotificationProfileNewsBookmarksChatsHistoryCreator CenterSettings Post Image 2 TRADE FUEL Image 3 Apr 23, 2025 Follow View Hidden Replies Report Block User # $ETH 🔥 This is a 1-day (1D) candlestick chart of ETH/USDT from Binance. Here's a breakdown and analysis: Key Details: Current Price: $1...",
+      "score": 0.9951325,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "ETH/USDT Binance Live Price Chart - Coinalyze",
+      "url": "https://coinalyze.net/ethereum/usdt/binance/price-chart-live/",
+      "content": "| 2127.59 | 0.01400000 | 05:48:36 | | 2127.59 | 0.01400000 | 05:48:36 | | 2127.59 | 0.00990000 | 05:48:36 | | 2127.60 | 0.00480000 | 05:48:36 | | 2127.67 | 0.01200000 | 05:48:36 | | 2127.68 | 0.02810000 | 05:48:36 | | 2127.69 | 0.00480000 | 05:48:36 | | 2127.70 | 0.02880000 | 05:48:36 | | 2127.72 | 0.04710000 | 05:48:36 | | 2127.73 | 0.18410000 | 05:48:36 | | 2127.74 | 0.15260000 | 05:48:36 | | 2127.73 | 0.01580000 | 05:48:36 | | 2127.73 | 0.03200000 | 05:48:36 | | 2127.73 | 0.03160000 | 05:48:36 | | 2127.73 | 0.02350000 | 05:48:36 | | 2127.73 | 0.04700000 | 05:48:35 | | 2127.74 | 0.01400000 | 05:48:35 | [...] | ETH / USDT Binance🗗 2,127.56 -2.10% Chart Trades WL Stats News Chat | [...] | 2127.73 | 0.00290000 | 05:48:47 | | 2127.74 | 0.04050000 | 05:48:47 | | 2127.75 | 0.01920000 | 05:48:47 | | 2127.76 | 0.07400000 | 05:48:47 | | 2127.76 | 0.02320000 | 05:48:47 | | 2127.77 | 0.02010000 | 05:48:47 | | 2127.76 | 0.00930000 | 05:48:47 | | 2127.77 | 0.45710000 | 05:48:47 | | 2127.77 | 0.04690000 | 05:48:47 | | 2127.76 | 0.62370000 | 05:48:45 | | 2127.77 | 0.38320000 | 05:48:44 | | 2127.77 | 0.01400000 | 05:48:42 | | 2127.77 | 0.01400000 | 05:48:42 | | 2127.77 | 0.01400000 | 05:48:42...",
+      "score": 0.9949397,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "2169.05 Ethereum (ETH) to USDT Spot Trading - Binance.US",
+      "url": "https://www.binance.us/spot-trade/eth_usdt",
+      "content": "# 2155.69 Ethereum (ETH) to USDT Spot Trading | Ethereum Candlestick Charts | Binance.US Amount (ETH) Total 2171.79 0.0428 92.95261 2169.66 0.1037 224.99374 2167.43 0.0231 50.06763 2166.53 23.0837 50,011.52856 2165.59 1.8400 3,984.68560 2164.94 3.5818 7,754.38209 2164.89 4.1424 8,967.84034 2164.36 3.4688 7,507.73197 2164.17 23.1088 50,011.37170 2162.94 6.0260 13,033.87644 2161.98 2.0770 4,490.43246 2160.26 3.6447 7,873.49962 2159.25 4.6323 10,002.29378 2159.24 0.3237 698.94599 2157.98 0.0054 11.65309 2157.27 1.8336 3,955.57027 2157.19 1.1591 2,500.39893 2157.04 0.2493 537.75007 2,155.69 $2,155.69 System Status: Operational 2156.51 1.1595 2,500.47335 2156.26 2.4803 5,348.17168 2156.06 1.0000 2,156.06000 2155.95 0.2584 [...] 0.0019000 13:09:00 2,156.65 0.1037000 13:08:49 2,157.24 0.0428000 13:08:48 2,157.27 0.2366000 13:08:47 2,163.35 0.0102000 13:06:05 2,163.35 0.0699000 13:06:04 2,161.80 0.0018000 13:04:50 2,161.48 0.0025000 13:04:34 2,164.88 0.0012000 13:02:55 2,163.77 0.0081000 13:02:08 2,162.90 0.2377000 13:01:39 2,163.09 0.0924000 12:59:34 0.01 0.1 1 10 50 100 1m 3m 5m 15m 30m 1H 2H 4H 6H 8H 12H 1D 3D Trading RulesFAQ Stop-Limit Trailing Stop OCO VOL MA EMA MACD RSI BOLL KDJ...",
+      "score": 0.9946568,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Get historical Klines for multiple pair combination with a base (USDT)",
+      "url": "https://stackoverflow.com/questions/69300571/get-historical-klines-for-multiple-pair-combination-with-a-base-usdt",
+      "content": "`import binance import time # tqdm not necessary, is only used for showing progress during klines iteration from tqdm import tqdm def multiple_klines(quote_currency: str) -> dict: klines = {} # You don't need API key/secret for this type of requets client = binance.Client() # Extract trading pairs from exchange information exchange_info = client.get_exchange_info() symbols = [x['symbol'] for x in exchange_info['symbols']] # Filter list selected_symbols = list(filter(lambda x: x.endswith(quote_currency), symbols)) # Iterate over filtered list of trading pairs for symbol in tqdm(selected_symbols): klines[symbol] = client.get_historical_klines( symbol, client.KLINE_INTERVAL_12HOUR, \"1 Jan, 2019\", \"18 Sep, 2021\" ) # Prevent exceeding rate limit: [...] ) # Prevent exceeding rate limit: if int(client.response.headers['x-mbx-used-weight-1m']) > 1_000: print('Pausing for 30 seconds...') time.sleep(30) return klines klines_dict = multiple_klines('USDT')` [...] At the moment I have a a very manual process for returning a single pair of historical candlestick data from Binance e.g AVAXUSDT I would like to be able to get candlestick data from Binance for multiple pair combinations with USDT...",
+      "score": 0.99361163,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "https://api.binance.com/api/v3/klines?symbol=ETHUS...",
+      "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=1m",
+      "content": "No information is available for this page. · Learn why",
+      "score": 0.98975134,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] ``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Cr...",
+      "score": 0.9888419,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum / Tether Price Chart — ETHUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/ETHUSDT/",
+      "content": "The safest choice when buying ETHis to go to a well-known crypto exchange. Some of the popular names are Binance, Coinbase, Kraken. But you'll have to find a reliable broker and create an account first. You can trade ETHright from TradingView charts — just choose a broker and connect to your account. [...] Crypto markets are famous for their volatility, so one should study all the available stats before adding crypto assets to their portfolio. Very often it's technical analysis that comes in handy. We prepared technical ratings for Ethereum / TetherUS (ETH): today its technical analysis shows the neutral signal, and according to the 1 week rating ETH shows the sell signal. And you'd better dig deeper and study 1 month rating too — it's sell. Find inspiration in Ethereum / TetherUS trading ideas and keep track of what's moving crypto markets with our crypto news feed. [...] Long by SwallowAcademy 1111 ETHUSDT - A hunt for liquidity ahead of a potential rise to 3000BINANCE:ETHUSDT is stagnating after hitting a new high of 2,385; the altcoin looks quite promising, but the market may undergo a correction before any potential rise Bitcoin is slowing down after hitting a new intermedi...",
+      "score": 0.98803884,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] futures\\_coin\\_premium\\_index\\_klines(\\\\params)(_modules/binance/client.html#Client.futures_coin_premium_index_klines) : Kline/candlestick bars for the index price of a pair.. futures\\_coin\\_recent\\_trades(\\\\params)(_modules/binance/client.html#Client.futures_coin_recent_trades) : Get recent trades (up to last 500). futures\\_coin\\_stream\\_close(listenKey)(_modules/binance/client.html#Client.futures_coin...",
+      "score": 0.97520185,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, prices for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get Average Price > Example ``` -X \"GET\"\" ``` ``` import requests resp = requests. get(' print(resp. json()) ``` > Response ``` {\" mins \": 5, \" price \": \"0.00378906 \"} ``` `GET /api/v3/avgPrice` Use this endpoint to get the current average price for a symbol. Weight: 1 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Data Source: Memory [...] ## Price Data ### Get Live Ticker Price > Example ``` # Example A, symbol param provided -X \"GET\"\" Example B, no symbol provided -X \"GET\"\" ``` ``` # Example A, symbol param provided import requests resp = requests. get(' print(resp. json())# Example B, no symbol provided import requests resp = requests. get(' print(resp. json()) ``` > Response A ``` {\" symbol \": \" LTCBTC \", \" price \": \"0.00378800 \"} ``` > Re...",
+      "score": 0.9740426,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "2166.49 | ETH USDT | Ethereum to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/ETH_USDT",
+      "content": "0.000615 +21.30% AAVE/USDT5x 105.55 -2.40% ACE/USDT5x 0.127 -7.97% ACH/USDT5x 0.00650 -2.11% ACM/USDT5x 0.403 -1.23% ACT/USDT5x 0.0132 -3.65% ACX/USDT5x 0.0420 -0.47% Top MoversFAQ All Change New High/Low Fluctuation Volume FIO/USDT 05:02:08 -24.54% New 7day LowFIO/USDT 05:02:08 -29.95% New 30day LowGTC/USDT 05:02:08 -9.10% New 24hr LowAXS/BTC 05:02:07 -5.26% New 24hr LowPHA/USDT 05:01:07 -5.99% New 24hr LowSEI/BTC 05:00:17 -7.53% New 7day LowPOL/USDT 05:00:17 -10.41% New 7day LowIDEX/USDT 05:00:16 -9.04% PullbackBARD/USDT 05:00:16 -8.98% PullbackC98/USDT 05:00:16 -6.40% New 24hr Low Quick Preview ETH/USDT -2.00% 2,043.67 BTC/USDT -0.71% 68,334.00ETH/USDT -2.00% 2,043.67SOL/USDT -1.75% 85.76BNB/USDT -0.83% [...] 5.10855 2,043.41 1.1663 2.38K B 93.61% 6.38% S Chart Info Trading Data Square ai-insight Time 1s 15m 1H 4H 1D 1W Original Trading View Depth 2026/03/22Open2,053.90High2,072.33Low2,023.04Close2,043.59CHANGE-0.50%Range2.39% MA(7)2,141.02MA(25)2,071.66MA(99)2,523.98 Vol(ETH)126.445KVol(USDT)259.165M334.985K388.41K img # ETH/USDT Ethereum Price 2,043.67 $ 2,043.67 24h Chg -41.66 -2.00% 24h High 2,092.63 24h Low 2,023.04 24h Vol(ETH) 268,956.56 24h Vol(USDT) 553,295,732.62 Ne...",
+      "score": 0.97068775,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance.US API Documentation",
+      "url": "https://docs.binance.us/developer-guides/rest-api",
+      "content": "## Price Data ### Get Live Ticker Price > Example ``` # Example A, symbol param provided -X \"GET\"\" Example B, no symbol provided -X \"GET\"\" ``` ``` # Example A, symbol param provided import requests resp = requests. get(' print(resp. json())# Example B, no symbol provided import requests resp = requests. get(' print(resp. json()) ``` > Response A ``` {\" symbol \": \" LTCBTC \", \" price \": \"0.00378800 \"} ``` > Response B ``` [{\" symbol \": \" BTCUSD \", \" price \": \"59705.0700 \"},{\" symbol \": \" ETHUSD \", \" price \": \"4178.7200 \"}] ``` `GET /api/v3/ticker/price` Use this endpoint to get the live ticker price. Weight(IP): | Parameter | Symbols Provided | Weight | --- | symbol | 1 | 1 | | symbol parameter is omitted | 2 | | symbols | Any | 2 | Parameters: [...] Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, prices for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get Average Price > Example ``` -X \"GE...",
+      "score": 0.97046465,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​",
+      "score": 0.96641046,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "search_index": 2
+    },
+    {
+      "title": "ETH USD Binance Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/eth-usd-historical-data",
+      "content": "| | 1,851.66 | 1,857.51 | 1,869.40 | 1,802.68 | 438.05K | -0.27% | | | 1,856.74 | 1,958.18 | 1,958.33 | 1,838.72 | 547.33K | -5.16% | | | 1,957.82 | 1,973.35 | 1,983.04 | 1,935.56 | 155.32K | -0.83% | | | 1,974.19 | 1,968.87 | 1,995.30 | 1,956.20 | 179.19K | +0.26% | | | 1,969.12 | 1,948.85 | 1,981.12 | 1,924.06 | 386.23K | +1.04% | | | 1,948.81 | 1,956.10 | 1,986.59 | 1,907.79 | 300.27K | -0.39% | | | 1,956.41 | 1,991.83 | 2,037.11 | 1,924.61 | 393.63K | -1.75% | [...] | | 1,969.32 | 1,979.32 | 1,996.03 | 1,950.26 | 184.45K | -0.46% | | | 1,978.48 | 2,073.26 | 2,092.80 | 1,956.63 | 411.57K | -4.55% | | | 2,072.86 | 2,126.62 | 2,161.62 | 2,055.21 | 432.23K | -2.65% | | | 2,129.38 | 1,982.06 | 2,198.19 | 1,945.32 | 737.56K | +7.39% | | | 1,982.81 | 2,027.86 | 2,040.14 | 1,932.95 | 509.41K | -2.16% | | | 2,026.63 | 1,939.74 | 2,081.43 | 1,922.30 | 577.33K | +4.50% | | | 1,939.35 | 1,964.51 | 2,051.99 | 1,907.81 | 529.19K | -1.30% | | | 1,964.89 | 1,929.20 | 1,980.46 | 1,837.09 | 461.81K | +1.79% | | | 1,930.32 | 2,027.20 | 2,062.90 | 1,890.25 | 428.42K | -4.80% | | | 2,027.58 | 2,057.41 | 2,082.76 | 1,976.34 | 439.96K | -1.40% | | | 2,056.40 | 1,851.94 | 2,140.49 | 1,846.75 | 682....",
+      "score": 0.9600627,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "ET to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/eastern/utc",
+      "content": "Quickly and easily compare or convert ET time to UTC time, or the other way around, with the help of this time converter. Below, you can see the complete table of the conversions between ET and UTC. World Clock Time Zone Map Europe Time Map Australia Time Map US Time Map Canada Time Map World Time Directory World Map Free Clocks Contact Us Copyright © 2005 - 2026 24TimeZones.com. All rights reserved. What time is it right now? :) [...] Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in ET vs UTC ET --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ = UTC --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ Coordinated Universal Time is 4:00 hours ahead of Eastern Time ## ET to UTC converter i Drag the handle or click on a cell to convert time - ET - UTC - Current time --:-- --:-- --:-- ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ [...] ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤ...",
+      "score": 0.9390248,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "ETH USD Binance Candlestick Chart - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/eth-usd-candlestick",
+      "content": "| | Upside Gap Three Methods | 1M | | 51 | Dec 21 | | | Evening Doji Star | 5H | | 51 | Mar 09, 2026 05:00PM | | | Doji Star Bearish | 5H | | 52 | Mar 09, 2026 12:00PM | | | Bullish doji Star | 1W | | 54 | Mar 02, 2025 | | | Three Outside Down | 1H | | 55 | Mar 18, 2026 01:00AM | | | Harami Bullish | 1D | | 56 | Jan 23, 2026 | | | Harami Cross | 1D | | 56 | Jan 23, 2026 | | | Engulfing Bearish | 1H | | 56 | Mar 18, 2026 12:00AM | | | Upside Gap Three Methods | 1H | | 56 | Mar 18, 2026 12:00AM | | | Bullish Engulfing | 5H | | 57 | Mar 08, 2026 11:00AM | | | Doji Star Bearish | 1M | | 58 | May 21 | | | Shooting Star | 1M | | 61 | Feb 21 | | | Harami Bullish | 1W | | 61 | Jan 12, 2025 | | | Harami Cross | 1W | | 61 | Jan 12, 2025 | [...] | | Symbol | Exchange | Currency | | --- --- | | ETH/USD | Binance | USD | Real-time | | | ETH/USD | Investing.com | USD | Real-time | | | ETH | Derived | USD | Real-time | | | HTEc1 | CME | USD | Delayed | | | HTEc2 | CME | USD | Delayed | | | HTEc3 | CME | USD | Delayed | | | ETH/USD | Binance Futures | USD | Real-time | | | ETHA | NASDAQ | USD | Real-time | | | ETHW | NYSE | USD | Real-time | | | ETHV | NYSE | USD | Real-time | | | QETH | NYSE |...",
+      "score": 0.9284088,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "EST to UTC Converter",
+      "url": "https://www.freeconvert.com/time/est-to-utc",
+      "content": "FreeConvert.com can convert UTC to these other time zones: PST to UTC CDT to UTC WET to UTC ACST to UTC AEST to UTC NZST to UTC SAST to UTC SST to UTC CST to UTC PST to UTC AKST to UTC WIB to UTC NDT to UTC ADT to UTC HDT to UTC WIT to UTC MST to UTC CST to UTC MSK to UTC HST to UTC GMT to UTC EST to UTC BST to UTC CET to UTC KST to UTC MDT to UTC NZDT to UTC IST to UTC AKDT to UTC CAT to UTC EET to UTC MEST to UTC EDT to UTC NST to UTC IDT to UTC AWST to UTC MET to UTC IST to UTC PDT to UTC CDT to UTC WAT to UTC AST to UTC ACDT to UTC EAT to UTC IST to UTC HKT to UTC WEST to UTC JST to UTC CEST to UTC WITA to UTC EEST to UTC PKT to UTC ChST to UTC AEDT to UTC CST to UTC ## Your Data, Our Priority [...] FreeConvert.com can convert EST to these other time zones: EST to PST EST to CDT EST to WET EST to ACST EST to AEST EST to NZST EST to SAST EST to SST EST to CST EST to PST EST to AKST EST to WIB EST to NDT EST to ADT EST to HDT EST to WIT EST to MST EST to CST EST to MSK EST to HST EST to GMT EST to BST EST to CET EST to KST EST to MDT EST to NZDT EST to IST EST to AKDT EST to CAT EST to EET EST to MEST EST to EDT EST to NST EST to IDT EST to AWST EST to MET EST to IST EST to PD...",
+      "score": 0.87914675,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter",
+      "url": "https://savvytime.com/converter/est-to-utc",
+      "content": "| EDT | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:00 | 9:00 | | 6:00 | 10:00 | | 7:00 | 11:00 | | 8:00 | 12:00 | | 9:00 | 13:00 | | 10:00 | 14:00 | | 11:00 | 15:00 | | 12:00 | 16:00 | | 13:00 | 17:00 | | 14:00 | 18:00 | | 15:00 | 19:00 | | 16:00 | 20:00 | | 17:00 | 21:00 | | 18:00 | 22:00 | | 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | [...] | 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | | 23:00 | 3:00 | [...] savvy time logo ##### Savvy Time World Clock Home Converter EST to UTC | # EST to UTC Converter Swap Order to UTC to EST Share Converter EDT/EST Eastern Daylight Time GMT -4 EST automatically adjusted to EDT time zone, that is in use UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4...",
+      "score": 0.85195273,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "ETHUSDT 1-Minute Chart: Unveiling the M-Signal Indicator Strategy!",
+      "url": "https://www.binance.com/en/square/post/24963941247714",
+      "content": "Article # 🚀 ETHUSDT 1-Minute Chart: Unveiling the M-Signal Indicator Strategy! 📈 Pampa1 May 30, 2025 Follow View Hidden Replies Report Block User $ETH ETH ETH 2,153.97 -0.28% ETH ETHUSDT Perp 2,152.63 -0.30% Hey Binance Square Family! 👋 Ready to level up your trading game? Let's dive into the ETHUSDT 1-minute chart and explore the powerful M-Signal Indicator strategy that's been making waves in the crypto community. Whether you're a seasoned trader or just starting out, this guide will help you harness the power of technical analysis for smarter trades. 💡 🔍 What Is the M-Signal Indicator? [...] Remember, the key is to monitor the price's behavior around these critical levels. A sustained move above support levels could indicate bullish momentum, while a failure to hold these levels might suggest a bearish reversal. ⚙️ Integrating with Other Indicators For enhanced accuracy, consider combining the M-Signal Indicator with other technical tools: Stochastic RSI: Use the 20-point level as a confirmation for buy signals. EMA Crossovers: Look for crossovers of the 13 and 26-period EMAs to validate trend direction. By aligning signals from multiple indicators, you can increase the relia...",
+      "score": 0.81047887,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "EST to UTC - Online Converter",
+      "url": "https://www.onlineconverter.com/est-to-utc",
+      "content": "OnlineConverter.com # EST to UTC Eastern Standard Time (EST) Date Time ## Calculation Results | | | --- | | Time Zone | Coordinated Universal Time (UTC) | | Time | ## Introduction This free tool can help you convert Eastern Standard Time (EST) to Coordinated Universal Time (UTC). You just need to select the data and time of the source time zone and the tool will calculate the date and time for the destination time zone. ## How To Use Select a date by using the \"Date\" option. Select a time by using the \"Time\" option. Click button \"Convert\" to calculate. The calculation results will be displayed in table. ## Remarks [...] Converter supports daylight saving time (DST) or summer time, if the target location is currently using DST time zone, converter will automatically calculate and display local summer time. [...] Based International Air Transport Association (IATA) timezone codes. Time zones use hours and minutes offset from Coordinated Universal Time (UTC), most a whole number of hours, a few are offset by 30 or 45 minutes. Eastern Standard Time (EST) is UTC-5:00, and Eastern Daylight Time (EDT) is UTC-4:00, this time zone is called Eastern Time Zone (ET) in the United States, pa...",
+      "score": 0.7676898,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum Price Today | ETH to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/ethereum",
+      "content": "may not get back the amount you invested. You are solely responsible for your investment decisions. Binance is not responsible for any losses you may incur. For more information, please refer to our Terms of Use and Risk Warning. Please also note that data relating to the above-mentioned cryptocurrency presented here (such as its current live price) are based on third-party sources. They are presented to you on an “as is” basis and for informational purposes only, without representation or warranty of any kind. Links provided to third-party sites are also not under Binance's control. Binance is not responsible for the reliability and accuracy of such third-party sites and their contents. [...] Cryptocurrency prices are subject to high market risk and price volatility. You should only invest in products that you are familiar with and where you understand the associated risks. The content expressed on this page is not intended to be and shall not be construed as an endorsement by Binance about the reliability or accuracy of such content. You should carefully consider your investment experience, financial situation, investment objectives and risk tolerance and consult an independen...",
+      "score": 0.75635755,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "search_index": 1
+    },
+    {
+      "title": "UTC to EST Time Converter",
+      "url": "https://www.utctime.net/utc-to-est-converter",
+      "content": "UTC to EST in 12-hour (AM/PM) time format. | UTC Time | EST Time | --- | | 12:00 AM | 07:00 PM | | 01:00 AM | 08:00 PM | | 02:00 AM | 09:00 PM | | 03:00 AM | 10:00 PM | | 04:00 AM | 11:00 PM | | 05:00 AM | 12:00 AM | | 06:00 AM | 01:00 AM | | 07:00 AM | 02:00 AM | | 08:00 AM | 03:00 AM | | 09:00 AM | 04:00 AM | | 10:00 AM | 05:00 AM | | 11:00 AM | 06:00 AM | | 12:00 PM | 07:00 AM | | 01:00 PM | 08:00 AM | | 02:00 PM | 09:00 AM | | 03:00 PM | 10:00 AM | | 04:00 PM | 11:00 AM | | 05:00 PM | 12:00 PM | | 06:00 PM | 01:00 PM | | 07:00 PM | 02:00 PM | | 08:00 PM | 03:00 PM | | 09:00 PM | 04:00 PM | | 10:00 PM | 05:00 PM | | 11:00 PM | 06:00 PM | UTC to EST in 24-hour time format. [...] UTC to EST in 24-hour time format. | UTC Time | EST Time | --- | | 00:00 | 19:00 | | 01:00 | 20:00 | | 02:00 | 21:00 | | 03:00 | 22:00 | | 04:00 | 23:00 | | 05:00 | 00:00 | | 06:00 | 01:00 | | 07:00 | 02:00 | | 08:00 | 03:00 | | 09:00 | 04:00 | | 10:00 | 05:00 | | 11:00 | 06:00 | | 12:00 | 07:00 | | 13:00 | 08:00 | | 14:00 | 09:00 | | 15:00 | 10:00 | | 16:00 | 11:00 | | 17:00 | 12:00 | | 18:00 | 13:00 | | 19:00 | 14:00 | | 20:00 | 15:00 | | 21:00 | 16:00 | | 22:00 | 17:00 | | 23:00 | 18:00 | [...] 15:1...",
+      "score": 0.61693585,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "Timestamp Converter",
+      "url": "https://www.timestamp-converter.com/",
+      "content": "## UTC Date ​ Time Second Timestamp 1774095469 Timestamp in milliseconds 1774095469849 ISO 8601 2026-03-21T12:17:49.849Z Date Time (UTC)Mar 21, 2026, 12:17:49 PM Date Time (your time zone)Mar 21, 2026, 12:17:49 PM ## Your Time Zone Date ​ Time Second Timestamp 1774095469 Timestamp in milliseconds 1774095469849 ISO 8601 2026-03-21T12:17:49.849Z Date Time (UTC)Mar 21, 2026, 12:17:49 PM Date Time (your time zone)Mar 21, 2026, 12:17:49 PM ## Time Reference | Time | In Seconds | --- | | 1 hour | 3600 seconds | | 1 day | 86400 seconds | | 1 week | 604800 seconds | ## Resources ### Unix time - Wikipedia [...] ### UTC - Wikipedia Coordinated Universal Time (French: Temps universel coordonné), abbreviated to UTC or CUT, is the primary time standard by which the world regulates clocks and time. It is within about 1 second of mean solar time at 0° longitude; it does not observe daylight saving time. It is one of several closely related successors to Greenwich Mean Time (Utc). For most purposes, UTC is considered interchangeable with Utc, but Utc is no longer precisely defined by the scientific community. ## Terms of Use Version 1.0 The Timestamp Converter website located at is a copyrighte...",
+      "score": 0.22000709,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - World Time Buddy",
+      "url": "https://www.worldtimebuddy.com/est-to-utc-converter",
+      "content": "Privacy • Terms of Service [...] # EST to UTC Converter World Clock & Time Converter Features Widgets World Clock WidgetEvent Widget Mobile App Sign In Sign in with FacebookSign in with Email am pm Link to this view Settings Show Timezones Mark Weekends Calendars... Loading ... 14 Mar 15 16 17 18 19 20 Outlook / iCal Google Calendar Clipboard \"Copy meeting times to clipboard.\") Gmail Link to this selection Event DST = EDT)\">+0 EDT/EST Eastern Daylight Time (US) ▶Corrected from EST 12:37a Sun, Mar 15 -12:37a Sun, Mar 15 Sun Mar15 1 am EST 2 am EST 3 am EST 4 am EST 5 am EST 6 am EST 7 am EST 8 am EST 9 am EST 10 am EST 11 am EST 12 pm EST 1 pm EST 2 pm EST 3 pm EST 4 pm EST 5 pm EST 6 pm EST 7 pm EST 8 pm EST 9 pm EST 10 pm EST 11 pm EST Mon [...] | | | | --- | Converting EST to UTC This time zone converter lets you visually and very quickly convert EST to UTC and vice-versa. Simply mouse over the colored hour-tiles and glance at the hours selected by the column... and done! EST stands for Eastern Standard Time. UTC is known as Universal Time. UTC is 4 hours ahead of EST. So, when it is it will be Other conversions: EST to Hong Kong Time, EST to Melbourne Time, EST to Copenhagen...",
+      "score": 0.19682619,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    },
+    {
+      "title": "UTC to EST Converter",
+      "url": "https://www.worldtimebuddy.com/utc-to-est-converter",
+      "content": "+0 UTC Coordinated Universal Time 11:15 a Sun, Mar 8 -11:15 a Sun, Mar 8 Sun Mar_8_ 1am _UTC_ 2am _UTC_ 3am _UTC_ 4am _UTC_ 5am _UTC_ 6am _UTC_ 7am _UTC_ 8am _UTC_ 9am _UTC_ 10am _UTC_ 11am _UTC_ 12pm _UTC_ 1pm _UTC_ 2pm _UTC_ 3pm _UTC_ 4pm _UTC_ 5pm _UTC_ 6pm _UTC_ 7pm _UTC_ 8pm _UTC_ 9pm _UTC_ 10pm _UTC_ 11pm _UTC_ Mon Mar_9_ -4 EDT/EST Eastern Daylight Time (US) ▶Corrected from EST 7:15 a Sun, Mar 8 -7:15 a Sun, Mar 8 [...] 7:15 a Sun, Mar 8 -7:15 a Sun, Mar 8 7pm _EST_ 8pm _EST_ 9pm _EST_ 10pm _EST_ 11pm _EST_ Sun Mar_8_ 1am _EST_ 3am _EST_ 4am _EST_ 5am _EST_ 6am _EST_ 7am _EST_ 8am _EST_ 9am _EST_ 10am _EST_ 11am _EST_ 12pm _EST_ 1pm _EST_ 2pm _EST_ 3pm _EST_ 4pm _EST_ 5pm _EST_ 6pm _EST_ 7pm _EST_ 8pm _EST_ +0 LondonGMT United Kingdom, England 11:15 a Sun, Mar 8 -11:15 a Sun, Mar 8 Sun Mar_8_ 1am 2am 3am 4am 5am 6am 7am 8am 9am 10am 11am 12pm 1pm 2pm 3pm 4pm 5pm 6pm 7pm 8pm 9pm 10pm 11pm Mon Mar_9_ Converting UTC to EST",
+      "score": 0.020645931,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "search_index": 3
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETH/USDT 1m candle close Nov 17 12:00 ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "ETHUSDT 1m klines Nov 17 close price Binance API",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Convert Nov 17 12:00 ET to UTC timestamp for 1m candle (ET to UTC)",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

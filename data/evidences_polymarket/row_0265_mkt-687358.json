@@ -1,0 +1,395 @@
+{
+  "row_index": 265,
+  "market_id": "mkt_687358",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $88,000 on November 24?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $88,000 on November 24?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-24",
+  "evidence_cutoff_date": "2025-11-23",
+  "end_date_limit": "2025-11-23",
+  "row_end_date_raw": "2025-11-24",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+    "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+    "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+    "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+    "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 5,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 35,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 15,
+    "llm_kept_count": 35,
+    "llm_kept_leak_no_count": 35,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.82048416,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Zero BTC Fees: A Quick Liquidity Update - Binance",
+      "url": "https://www.binance.com/en/blog/markets/1176270749506750722",
+      "content": "Image 1: Binance Buy Crypto Markets Trade Futures Earn Square More Log InSign Up Image 2 Scan to Download App iOS & Android More Download Options BlogMarkets Zero BTC Fees: A Quick Liquidity Update # Zero BTC Fees: A Quick Liquidity Update 2022-09-29 ## Main Takeaways Binance continues to offer zero-fee trading on a selection of the most popular BTC trading pairs on its spot exchange. Binance’s BTC/USDT pair has improved its market depth by roughly 50% since the beginning of this promotion and now has improved liquidity. Trading fees aren’t the only costs when using an exchange, and users must be aware of the hidden costs arising from poor liquidity on order books. [...] If we now take a look at the BTC/USDT pair (which accounts for 70% of trading volume across the thirteen pairs available at the time), there has been an improvement of 53% since the campaign’s start. For anyone trading BTC for USDT and vice versa, this can mean faster filling of orders and a reduction in price slippage compared to before the fee removal. _Comparing the daily average from 10 June - 7 July (4 weeks) before the fee removal’s effective date and from 9 July - 9 Sep (10 weeks) after the effective date...",
+      "score": 0.75723875,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "``` 1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0 ``` enables you to calculate this: From millisecond timestamp `1688169600000` (July 1st, 2023 0:00:00 UTC) To millisecond timestamp `1688169600999` (July 1st, 2023 0:00:00.999 UTC) Full candle + Open price `30471.99` USDT for 1 BTC + Close price `30472.00` USDT for 1 BTC + Close is higher than open => candle is green Knots + Lowest price `30471.99` USDT for 1 BTC - Same as open price of green candle => no knot below + Highest price `30472.00` USDT for 1 BTC - Same as close price of green candle => no knot above Share Improve this answer answered Aug 21, 2023 at 21:45 Petr Hejda's user avatar Petr Hejda [...] ``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time...",
+      "score": 0.7366474,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Exploring Calendar Effects in Bitcoin Returns",
+      "url": "http://www.scienpress.com/Upload/JAFB%2FVol%2014_4_3.pdf",
+      "content": "performed for investigating Monday through Friday effects. However, unlike traditional stocks and commodities, the Bitcoin market is not traded at a regulated time period. The Bitcoin market is open to trade 24/7. Therefore, the calendar effect analysis is modified. Bitcoin data (including time, high, low, close price, volume information) were downloaded from Two sets of data were gathered: dataset_1, daily data (2241 entries in total) between 2015/10/08 and 2021/11/25; and dataset_2, hourly data (53769 entries in total) between 2015/10/08/13:00 and 2021/11/26/00:00. The dataset_1 is used for examining the day-of-the-week (Monday through Sunday) effect, while dataset_2 is used to examine if there are abnormal returns intraday. Figure 1 presents the time series of Bitcoin prices between [...] no anomaly is detected on the other days of the week. This research goes a step further by analyzing intraday effects on Bitcoin prices. This is particularly novel as most studies generally focus on longer-term anomalies. For the intraday effect, some positive intraday anomalies are found at 10:00-12:00, 14:00-16:00, and 20:00-22:00. The findings on specific time intervals exhibiting calenda...",
+      "score": 0.7166357,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "BTC USDT | Bitcoin to USDT",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "22:23:24 63,360.00 0.01196 22:23:23 63,360.00 0.00039 22:23:22 63,359.99 0.00440 22:23:22 63,360.00 0.03156 22:23:21 63,359.99 0.00010 22:23:20 63,359.99 0.00315 22:23:19 63,360.00 0.00008 22:23:18 63,360.00 0.00187 22:23:18 63,359.99 0.00355 22:23:15 63,359.99 0.00140 22:23:15 63,359.99 0.00010 22:23:14 63,359.99 0.00008 22:23:14 All New bStocks Hot tCommodities Solana RWA Layer 1 / Layer 2 AI MEME Monitoring Seed DeFi Storage NFT Gaming Fan Token Megadrop Launchpool Infrastructure BSC Payments Launchpad Margin Grid USDC USDT U USD1 USD BNB BTC ALTS FIAT Name Last Price / 24h Chg 0G/USDC 5x 0.197 +5.91% 1000CAT/USDC 5x 0.00134 +0.00% 1000CHEEMS/USDC 0.000466 +0.22% 1000SATS/USDC 5x 0.00000940 +0.86% [...] Image 1: Binance Buy Crypto Markets Trade Futures Earn Square More Log InSign Up Image 2 Scan to Download App iOS & Android More Download Options Order Book 0.01 Price (USDT) Amount (BTC) Total 63,362.72 0.00009 5.702644 63,362.47 0.13656 8.65K 63,362.46 0.00009 5.702621 63,362.39 0.00252 159.673222 63,362.05 0.06058 3.83K 63,362.04 0.08179 5.18K 63,362.03 0.00018 11.405165 63,362.00 0.02009 1.27K 63,361.99 0.00018 11.405158 63,361.78 0.00023 14.573209 63,361.60 0.00009 5.7025...",
+      "score": 0.71113056,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"}...",
+      "score": 0.7101667,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance trade volume and market listings | CoinMarketCap",
+      "url": "https://coinmarketcap.com/exchanges/binance",
+      "content": "## How Much Are Binance Fees? Binance offers a competitive, tiered fee structure for both spot and futures trading. For regular users, spot trading fees start at 0.1% for both maker and taker. Users can receive additional discounts by paying fees in BNB or increasing their trading volume to qualify for VIP levels. Binance also offers zero-fee trading on select BTC and FDUSD spot pairs. For the most accurate and up-to-date fee schedule, see the official Binance Fee Structure page. ## Is It Possible To Use Leverage or Margin Trading on Binance? [...] Indicators Image 31Fear and Greed IndexImage 32Altcoin Season IndexImage 33Market Cycle IndicatorsImage 34Bitcoin DominanceImage 35CoinMarketCap 20 IndexImage 36CoinMarketCap 100 Index ETF Flows Image 37Crypto ETFsImage 38Bitcoin ETFsImage 39Ethereum ETFs Technical analysis Image 40RSIImage 41MACD Derivatives Image 42OverviewImage 43LiquidationsImage 44Funding Rates DexScan Image 45Signals NewImage 46TrendingImage 47NewImage 48GainersImage 49Meme ExplorerImage 50Top Traders More Showing 3 of 7 items. 4 items are hidden. Portfolio Watchlist Search / Log In Image 51 Image 52: Binance # Binance Spot Trading Volume(24h) $6,408,360,769.37...",
+      "score": 0.7050753,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing timestamp in UTC Quote asset volume: Volume in quote asset (USDT) Number of trades: Number of trades during period Taker buy base asset volume: Volume of taker buy orders Taker buy quote asset volume: Volume of taker buy orders in quote asset Ignore: Unused field [...] menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bi...",
+      "score": 0.67140645,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Overnight Seasonality in Bitcoin",
+      "url": "https://quantpedia.com/strategies/intraday-seasonality-in-bitcoin",
+      "content": "Abstract: This study revisits calendar anomalies in cryptocurrency markets using hourly data for four actively traded cryptocurrencies (Bitcoin, Ethereum, Tether USDt, and BNB) and eight less active cryptocurrencies. While prior studies based on daily returns provide mixed evidence on day-of-the-week (DoW) effects, we show that these patterns are not persistent daily phenomena. Instead, they are driven by a limited number of intraday intervals and do not reflect broad daily behavior.We further document that these effects are localized, asset-specific, and more pronounced among actively traded cryptocurrencies, while largely absent among less active ones.Overall, the findings indicate that cryptocurrency markets exhibit limited and short-lived inefficiencies rather than persistent [...] Abstract: The cryptocurrency market is not negligible nor minor anymore. With the continuous development of the crypto market, researchers aimed to analyze novel cryptocurrencies thoroughly. An excellent starting point might be in other recognized effects from the developed asset classes. This research examines seasonality effects such as when the major NYSE opened or closed and their intraday, ov...",
+      "score": 0.6615081,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Crypto Trading: Binance Fees Explained & Tricks to Reduce Them (Beginners' Guide) - Unger Academy EN",
+      "url": "https://ungeracademy.com/blog/crypto-trading-binance-fees-explained-and-tricks-to-reduce-them-beginners-guide",
+      "content": "Of course, the market is much less liquid right now in terms of trading BUSD, and that’s why, in my opinion, it remains more convenient to trade pairs on USDT, even if the fees are almost double than on BUSD. The costs go from 0.02% to 0.012% for maker orders, and from 0.04% to 0.03% for taker orders. Final Thoughts In summary, commission costs are pretty high but still very competitive. Speaking of Spot trading, if we were to use USDT-based crosses, the liquidity would be really very high. So, you’d be less likely to get a considerable slippage. Because let’s not forget that slippage is one of the main costs for systematic traders like us. So even with very high commission costs, this 0.1%, it would still be much cheaper compared to other trading approaches. [...] On the \"Trading Fees\" page, you’ll find an overview of all the trading costs. In particular, now we will just refer to Spot trading, which is what most investors are generally interested in. Because as you probably know, there are some countries where people can only use Spot trading, while Coin futures or USD futures can’t be used. But we’ll go and see those costs later as well. As far as spot trading is concerned, a...",
+      "score": 0.6533265,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Exploring Calendar Anomalies and Volatility Dynamics in ...",
+      "url": "https://www.mdpi.com/1911-8074/17/8/351",
+      "content": "Kinateder and Papavassiliou (2021) investigated seasonality and calendar effects in cryptocurrencies, specifically focusing on how the day of the week influences returns and volatility. Their study utilized daily data from major cryptocurrencies to identify patterns and anomalies that could impact trading strategies. Aharon and Qadan (2019) provide empirical evidence of the day-of-the-week effect, highlighting distinct patterns in price movements and volatility on certain days. They analyze the daily returns of Bitcoin and Ethereum, showing that Mondays and Fridays exhibit higher volatility than other days. Dangi (2020) explored the implications of these calendar effects and offered insights into the unique behaviors of cryptocurrency markets. This study examines a broad range of [...] 25. Idrees, Muhammad Abdullah, and Saima Akhtar. 2023. An Investigative Analysis of Volatility in the Cryptocurrency Market. International Journal of Trends and Innovations in Business & Social Sciences 1: 80–86. [Google Scholar] 26. İmre, Süreyya, and Olcay Ölçen. 2022. The Day of the Week Effect in Euro and Bitcoin: Evidence from Volatility Models. International Journal of Entrepreneurship and M...",
+      "score": 0.6222074,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, // Trade ID of the first trade in the interval \"lastId\": 3220849281, // Trade ID of the last trade in the interval \"count\": 697727 // Number of trades in the interval }` [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-154.13000000\", // Absolute price change \"priceChangePercent\": \"-0.740\", // Relative price change in percent \"weightedAvgPrice\": \"20677.46305250\", // QuoteVolume / Volume \"openPrice\": \"20825.27000000\", \"highPrice\": \"20972.46000000\", \"lowPrice\": \"20327.92000000\", \"lastPrice\": \"20671.14000000\", \"volume\": \"72.65112300\", \"quoteVolume\": \"1502240.91155513\", // Sum of (price volume) for all trades \"openTime...",
+      "score": 0.6147415,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Is November the New October? Here's What Bitcoin Price ...",
+      "url": "https://www.coindesk.com/markets/2025/11/01/is-november-the-new-october-analyst-says-it-s-bitcoin-s-strongest-month-here-s-the-data",
+      "content": "Search / LinkedInFacebookEmail Make preferred on Image 1: BTC 24-hour price and volume chart from CoinDesk Data Intraday swings frame the seasonality debate; direction still needs confirmation. (CoinDesk Data) Summary Show The average 42.5% price gain in November is a mean that includes 2013’s +449% rally in prices, skewing the results while in reality, the median is around 8.8%. November outcomes vary widely, including double-digit gains and losses; treat seasonality as context, not a trading signal. [...] Bitcoin's price performance in November has a significant reputation among traders, as some market narratives suggest that it is the best month for the largest digital asset. So much so that some even named it \"Moonvember: a meme on bullish seasonality of the month's historical price action. And who can blame them? Based on historical data, from 2013 to 2025, Bitcoin's average (mean) gain was nearly 42%, the largest gain among all other months, according to CoinGlass Bitcoin Monthly Returns heat map. This is even bigger gain than October (or \"uptover\" if talking seasonality memes): a month that is also supposed to have big gains for the crypto sector. Image 2: Bitcoin's month...",
+      "score": 0.6055431,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Volatility seasonality of Bitcoin prices",
+      "url": "https://informaconnect.com/volatility-seasonality-of-bitcoin-prices",
+      "content": "JE de Vries and Aalborg (2017) made another attempt to discover seasonality patterns of Bitcoin prices, analysing the daily traded volume, the daily transaction volume and Google trends (which reflect the number of searches for the word \"bitcoin\"). Additionally, the author inspected seasonality in the unique account addresses used to complete transactions. All of the measurements demonstrated no particular periodicity. An in-depth exploration of the intraday scale described in the seminal work Eross et al. (2017) gave more affirmative answer on the existence of intraday seasonality of Bitcoin prices. They investigated Bitcoin returns, volume, realized volatility and bid-ask spreads to reveal several intraday stylized facts. Significant negative relationship was found between returns and [...] Figure 1 Figure 1 Figure 1 shows weekly volatility seasonality of Bitcoin/USD and EUR/USD. Notably shifted fluctuations, less pronounced intraday activity, and slightly decreased volatility over weekends - these are clear differences which could be seen by the naked eye. Figure 2 Figure 2 [...] To extend the set of existing literature on this attractive topic we analysed weekly volatility s...",
+      "score": 0.58721006,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bitcoin (BTC/USDT) price data from Binance exchange with the following specifications: Timezone Information: All timestamps are in UTC (Coordinated Universal Time) Open time format: YYYY-MM-DD HH:MM:SS.ffffff UTC Close time format: YYYY-MM-DD HH:MM:SS.ffffff UTC [...] Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing tim...",
+      "score": 0.5860734,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "search_index": 2
+    },
+    {
+      "title": "binance cryptocurrency exchange - CCXT",
+      "url": "https://docs.ccxt.com/docs/exchanges/binance",
+      "content": "Kind: instance method of `binance` Returns: `Array<Array<int>>` - A list of candles ordered as timestamp, open, high, low, close, volume `binance` `Array<Array<int>>` See | Param | Type | Required | Description | --- --- | | symbol | `string` | Yes | unified symbol of the market to fetch OHLCV data for | | timeframe | `string` | Yes | the length of time each candle represents | | since | `int` | No | timestamp in ms of the earliest candle to fetch | | limit | `int` | No | the maximum amount of candles to fetch | | params | `object` | No | extra parameters specific to the exchange API endpoint | | params.timezone | `object` | No | if provided, kline intervals are interpreted in that timezone instead of UTC, example '+08:00' | [...] See | Param | Type | Required | Description | --- --- | | symbol | `string` | Yes | unified symbol of the market to fetch OHLCV data for | | timeframe | `string` | Yes | the length of time each candle represents | | since | `int` | No | timestamp in ms of the earliest candle to fetch | | limit | `int` | No | the maximum amount of candles to fetch | | params | `object` | No | extra parameters specific to the exchange API endpoint | | params.price | `str...",
+      "score": 0.5835125,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "The Seasonality of Bitcoin",
+      "url": "https://quantpedia.com/the-seasonality-of-bitcoin",
+      "content": "Seasonality effects, one of the most fascinating phenomena in the world of finance, have captured the attention of investors and researchers worldwide. Since these anomalies are often driven by factors other than general market trends, they usually don’t correlate strongly with market movements, which can help reduce the portfolio’s overall risk. Following the theme of our previous article Are There Seasonal Intraday or Overnight Anomalies in Bitcoin?, we decided to extend the data and conduct a more in-depth analysis of our earlier findings. This article explores potential seasonal patterns related to Bitcoin, focusing on whether these patterns are influenced by factors such as current market trends or the level of volatility in the market. [...] In our analysis’s third part, we calculated the 10, 20, 50, and 200-day moving averages. Following this calculation, we identified Uptrend and Downtrend days, observing that returns at 22:00 and 23:00 tend to be higher during periods of uptrends. Finally, we have examined the relationship between significant trading hours and historical volatility levels, categorizing periods as ‘High Volatility’ or ‘Low Volatility’. According to our f...",
+      "score": 0.575517,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "candlestick start and end dates - what is the time zone? #51",
+      "url": "https://github.com/sonvister/Binance/issues/51",
+      "content": "Copy link Assignees pavlexander Labels question ## Description @pavlexander pavlexander opened on Feb 8, 2018 Issue body actions Short question - what is the datetime zone for candlesticks? I was thinking that it's in UTC, however, after calling the API a couple of times - I am feeling lost. At the moment of writing current UTC time is: 2/8/2018 12:06:11 PM Latest candle close dateime from API is: 2/8/2018 12:28:14 AM Which is 12 hours difference. This does not make any sense. It feels like that new candles are either added by binance with some delay, or candle timezone is -12 (average?? not exact) hours from UTC. Therefore following clarifications are necessary: [...] Therefore following clarifications are necessary: 1. What is the datetime zone for candles (open/close DT) returned from API? Is it in UTC? 2. How often does binance update/add new candles? Is there such info? P.s. in my tests I was using 5 minute interval. Thanks in advance, Aleksandrs Reactions are currently unavailable ## Metadata ## Metadata ### Assignees @pavlexander pavlexander ### Labels question No projects No milestone None yet No branches or pull requests ## Issue actions You can’t perform that action at...",
+      "score": 0.5717911,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Seasonality in Bitcoin Intraday Trend Trading",
+      "url": "https://concretumgroup.com/seasonality-in-bitcoin-intraday-trend-trading",
+      "content": "Over the 2018–2025 period, this benchmark produced compelling results, achieving a gross-of-fees Sharpe ratio of approximately 1.6. For comparison, a volatility-targeted long-only Bitcoin portfolio (20% target volatility) delivered a Sharpe ratio just below 0.8, roughly half that of the actively managed trend-following approach. Given that Bitcoin trades continuously, without a formal market open or close, we next examined whether the performance of our high-frequency trend benchmark displays intraweek seasonality, and whether such patterns may be linked to the operating hours of major global financial centers. [...] When splitting the sample into pre- and post-mid-2020 periods, the “Monday Asia Open Effect” becomes substantially more pronounced in the latter subsample. This timing coincides with the well-documented entry of larger institutional participants into the cryptocurrency ecosystem, further supporting the interpretation that capital reallocation and execution dynamics play a central role. Image 4 _Figure 2 – Bitcoin high-frequency trend benchmark intraweek seasonality by sample period: 2018-2020H1 (blue) versus 2020H2-2025 (red). Black dashed lines mark US equity open/...",
+      "score": 0.57006866,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Cryptocurrency Trading Fees | Low-Cost Crypto Exchange | Binance.US | Binance.US Platform",
+      "url": "https://www.binance.us/fees",
+      "content": "# Binance.US Cryptocurrency Trading Fees Enjoy 0% maker fees on Tier 0 pairs, with no subscription fees or trading volume requirements. Binance.US is the only major U.S. exchange to offer 0% maker fees and 0.01% taker fees for all new and existing customers, with no subscription fees or trading volume requirements. Trading fees are determined by your 30-day trading volume\\, calculated on a rolling basis every day at 8 p.m. EDT. \\Excludes self-trading and Tier 0 trading pairs Get a 5% discount on Advanced Trading (Spot Trading) fees when you pay with BNB. Check the table below to see how fees vary by tier. [...] Fees are calculated and displayed on the “Preview Purchase” screen for your review before you approve the transaction. Fee calculations differ based on factors such as the digital asset itself, transaction type, payment method, and market conditions such as liquidity and volatility. To lock in prices during the “Preview Purchase” screen, Binance.US includes a spread when you buy, sell or convert crypto. No spread applies to Advanced Trading as you interact directly with our open order book. Crypto deposits are free, though fees may apply when you withdraw crypto. Fees may...",
+      "score": 0.5608546,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin (BTCUSDT) - Technical Analysis - Complete report",
+      "url": "https://www.investtech.com/main/market.php?CompanyID=99400001&product=241",
+      "content": "Read the research report here ### Volume Image 57 Theory: Rising prices on high volume and falling prices on low volume indicate strength in a stock. Volume can confirm a rising trend or signal that a falling trend is ending. Psychology/economy: When investors very much want to buy a stock, they have to increase the price to find new sellers. Rising price on high volume shows that some investors are so aggressive that they push the price up to be able to buy the stock. Investtech’s Volume Balance tool measures the relation between price rise and volume and measures investor aggression at rising and falling prices. Read more [...] ### Trend Image 55: Rising trend Theory: Stocks in rising trends will continue to rise. Psychology/economy: Rising trends indicate that the company experiences positive development and increasing buy interest among investors. Read more Research: Stocks in rising trend channels in Investtech’s medium long term charts have been followed by an annualized excess return of 7.8 percentage points compared to average benchmark development. This is shown by Investtech’s research into 34,880 cases of stocks in rising trends on the Nordic Stock Exchanges in the pe...",
+      "score": 0.54245186,
+      "query": "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis",
+      "search_index": 5
+    },
+    {
+      "title": "Spot Trading Fee Rate - Binance",
+      "url": "https://www.binance.com/en/fee",
+      "content": "| VIP 9 | ≥ 4,000,000,000 USD | and | ≥ 5,500 BNB | 0.011% / 0.023% | 0.00825% / 0.01725% | Standard / 0.018% | Standard / 0.01350% | [...] The 30-day trading volume is calculated...Learn more | and/or | BNB Balance | Maker / Taker Makers add liquidity by placing orders on the book; takers remove liquidity by matching existing orders immediately.Learn More. | Maker / Taker BNB 25% off | USDC Maker / Taker | USDC Maker / Taker BNB 25% off | --- --- --- --- | | | | | | | | | | | Regular User | < 1,000,000 USD | or | ≥ 0 BNB | 0.100% / 0.100% | 0.07500% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | | VIP 1 | ≥ 1,000,000 USD | and | ≥ 5 BNB | 0.090% / 0.100% | 0.06750% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | | VIP 2 | ≥ 5,000,000 USD | and | ≥ 25 BNB | 0.080% / 0.100% | 0.06000% / 0.07500% | Standard / 0.095% | Standard / 0.07125% | [...] | VIP 3 | ≥ 20,000,000 USD | and | ≥ 100 BNB | 0.040% / 0.060% | 0.03000% / 0.04500% | Standard / 0.055% | Standard / 0.04125% | | VIP 4 | ≥ 75,000,000 USD | and | ≥ 500 BNB | 0.040% / 0.052% | 0.03000% / 0.03900% | Standard / 0.047% | Standard / 0.03525% | | VIP 5 | ≥ 150,000,000 USD | and | ≥ 1,000 BNB | 0.025% / 0.031% |...",
+      "score": 0.5411427,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Fees Breakdown: A Detailed Guide for 2026",
+      "url": "https://www.bitdegree.org/crypto/tutorials/binance-fees",
+      "content": "With all those factors in mind, let’s take a closer look at the Binance fee structure for each trading category. #### Spot Trading Fees Binance Spot fees are set at a standard rate of 0.1% for regular users, which applies to both makers and takers. However, if you’re trading USDC, there’s a slight difference: while makers still pay the standard rate, takers benefit from a reduced rate of 0.095%. As mentioned earlier, you can lower these fees even further. If you increase your trading volume over 30 days and hold a significant amount of BNB in your account, you could see your Binance maker-taker fees drop to as low as 0.00825% and 0.01725%, respectively. Take a look at this table for a more detailed breakdown: [...] ### Binance Trading Fees Like most crypto exchanges, Binance trading fees are calculated on a per-transaction basis, typically as a percentage of the trade’s total value. The fees differ across trading categories - spot, margin, futures, options, NFT, P2P, and fiat trading - each with a distinct fee structure. Despite these differences, certain factors like trading volume, promotions, and whether you’re a market maker or taker will generally influence your Binance tra...",
+      "score": 0.5404151,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "💰 A comprehensive and accurate explanation of everything related to fees and commissions on the Binance platform in SPOT trading",
+      "url": "https://www.binance.com/en-AE/square/post/32261735789961",
+      "content": "1. 💼 Trading volume over the last 30 days: The higher your trading volume, the higher your account moves to a higher VIP level with lower fees. 2. 🪙 Use BNB to pay fees: When the option to pay with BNB is activated, you receive a 25% discount on spot trading fees. 3. 🔁 Order type: Market orders execute immediately and are considered Taker, while Limit orders are considered Maker and are often less costly. 4. ⚖️ Trading pair: Some currency pairs have slightly different fees depending on market liquidity. 5. 🌐 The type of network when transferring or withdrawing: Fees vary among networks like ERC20 or TRC20 which affects the final cost. ### 4️⃣ 🧮 Details of spot trading fees 👤 Regular user (without VIP): Maker = 0.1% Taker = 0.1% [...] The transaction here is real and not derivatives, meaning you actually own the digital asset after purchase. Each sell or buy order is executed immediately or added to the order book. ### 2️⃣ 💸 The basic commission for spot trading Binance's spot trading fees start at 0.1% for both Maker and Taker. ✅ Maker: When you place an order that is not executed immediately (like Limit Order). ✅ Taker: When you execute an order immediately (Market Order) and t...",
+      "score": 0.53400564,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Seasonality in Bitcoin: Examining Almost A Decade of Price Data",
+      "url": "https://medium.com/interdax/seasonality-in-bitcoin-examining-almost-a-decade-of-price-data-abf47b1421cb",
+      "content": "Looking at both calendar heatmaps together, it’s clear that BTC-USD usually experiences heightened volatility in summer (June, July, August) and winter (December, January, February) months. Let’s look at the seasonal trends in bitcoin differently by plotting the distribution of monthly returns. ## The Distribution of Monthly Returns _How do bitcoin returns vary by month?_ The distribution of monthly returns are plotted in the chart below and excludes outliers. Press enter or click to view image in full size Image 9 Returns by month — outliers excluded. Source: CoinMetrics, daily bitcoin price data for 18/07/2010 to 31/01/2020. [...] The 30-day returns are usually negative around the time of tax deadlines in many countries such as the US and the UK (late March-early April). During this period, investors may engage in tax loss harvesting— selling digital currency to incur losses and reduce their tax burden. Another explanation could be the sale of digital assets by investors to pay their capital gains tax or other tax liabilities. Out of nine years, the 30-day return was negative seven times during this period. ## Volatility _Are there any seasonal trends in the price volatility o...",
+      "score": 0.5246632,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Bitcoin / TetherUS Trade Ideas - BTCUSDT",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/ideas?sort=recent&video=yes",
+      "content": "BitcoinHello Traders! 👋 What are your thoughts on Bitcoin? Bitcoin is currently trading inside a bearish market structure after failing to hold above key intraday resistance. Following the recent rejection from the higher supply zone, sellers regained control and pushed price back toward an important support area. Although buyers have managed to trigger a short-term rebound, the recovery still appears weak and lacks the momentum needed to confirm a bullish trend reversal on the other hand, if buyers manage to reclaim and hold above the resistance zone with strong volume, the bearish outlook would weaken, opening the door for a larger recovery toward the next liquidity area. Support our work by liking, sharing, and following us for more accurate market insights and trading analysis. [...] Key Support Test & Why I'm Favoring the Green PathHello traders! Here is my latest technical outlook for Bitcoin (BTCUSDT) on the 4-hour timeframe. ### 📊 Market Overview Bitcoin is currently consolidating around the $61,800 area after breaking below the ascending trendline. Looking closely at the current market structure, I have mapped out three potential trajectories based on key liquidity and...",
+      "score": 0.5221784,
+      "query": "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Price Predictions 2026: Analysts Forecast $60K to $250K",
+      "url": "https://www.coingecko.com/learn/bitcoin-price-predictions-expert-forecasts",
+      "content": "### Distinguishing Analysis Types Quantitative Models: Frameworks using mathematical inputs like Stock-to-Flow, cycle analysis, or on-chain metrics. These provide probabilistic ranges, not certainties. Fundamental Analysis: Examination of adoption trends, regulatory developments, and macroeconomic factors, which are useful for understanding long-term value drivers. Technical Analysis: Chart-based analysis using patterns, indicators, and market behavior, mainly used for timing and trend identification. Speculation: Predictions without disclosed methodology, based on gut feeling or attention-seeking. ### Managing Risk Around Uncertainty [...] ### Cycle-Based Predictions: History Repeating Bitcoin has historically followed a 4-year cycle tied to halvings: accumulation after the previous cycle, breakout following the halving, exponential rally, blow-off top, then bear market. Past peaks occurred around 12-18 months post-halving, which aligns with late 2025 for the current cycle. The catch: each cycle shows diminishing returns. 2013 delivered 50x gains, 2017 closer to 20x, 2021 around 7x. If the pattern continues, we may be looking at smaller percentage gains this cycle — but still a...",
+      "score": 0.5199851,
+      "query": "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis",
+      "search_index": 5
+    },
+    {
+      "title": "Binance Fees 2025: Trading, Deposit & Withdrawal Costs - Coinspot.io",
+      "url": "https://coinspot.io/en/analysis/binance-fees-2025-the-ultimate-guide",
+      "content": "Makers, who post limit orders that add liquidity, often pay less than takers, whose orders execute immediately and remove liquidity . Fee tiers are determined by rolling 30-day turnover. Increasing volume can move a user into higher VIP levels, usually reducing maker/taker rates. Promotions may temporarily lower costs through discounts or cashback programs. Holding BNB can also reduce some fees in eligible categories. Use the next sections to map fee components across each product and compare likely costs for different trading styles. ## Binance Spot Trading Fees For regular accounts, spot maker and taker rates start at 0.1%. If trading USDC pairs, makers remain at the standard rate while takers can be slightly lower at 0.095%. [...] To use it, keep some BNB in the Spot wallet and enable the BNB deduction feature. The settings can be toggled in two places: Option One: On the Spot Trading page, open Fee Level and switch the BNB/USDT deduction on or off. Option Two: In the Fees & Transactions Overview, toggle the BNB Discount setting on or off. After activation, Binance draws fees from the BNB balance whenever eligible, so discounted rates apply automatically when conditions are m...",
+      "score": 0.51369345,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026, 2027, 2030 & Beyond - Binance",
+      "url": "https://www.binance.com/en/price-prediction/bitcoin",
+      "content": "### 2 What would be Bitcoin's value in 2027? Based on the qualitative indicators from Technical analysis for BTC, the BTC forecast for the year 2027 would be $82,859.63. ### 3 How much will BTC be worth in 10 years? Similar to the stock market, the crypto market moves in cycles. Based on technical analysis, Bitcoin is expected to reach $57,575.03. ### 4 Is BTC a good buy in 2026? Based on multiple technical quantitative indicators, the current forecast for BTC in 2026 is Very bearish. This could be an indication that BTC is a bad buy in 2026. However, it's important to consider both technical factors (price history) and fundamental factors (on-chain activity and development) before deciding to buy BTC or not. ### 5 What's the long-term outlook for BTC? [...] ### 5 What's the long-term outlook for BTC? While Bitcoin's future value depends on various factors, our technical analysis sheds some light on how BTC would perform in the years 2030 & 2050. Bitcoin's future value: 1. In 2030 - $74,431.43 2. In 2050 - $18,243.43 ### 6 What could Bitcoin be worth in 2030? The future price of Bitcoin (BTC) will depend on market conditions, demand, liquidity, regulation, and how the project's...",
+      "score": 0.5084226,
+      "query": "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis",
+      "search_index": 5
+    },
+    {
+      "title": "Binance Market Data - Amberdata",
+      "url": "https://www.amberdata.io/binance-market-data",
+      "content": "Tickers: Tickers represent the best bids/asks from an order book. The bid price represents the maximum price that a buyer is willing to pay for an asset. The ask price represents the minimum price that a seller is willing to take for that same asset. ## Binance Historical Trade Data Our Binance trade datasets consist of all tick-by-tick trade data, timestamped, and with the trade direction normalized from the taker side. We have Binance spot data from 2017-08-17 and Binance.US spot data from 2019-09-17. We provide historical trade data via our REST API and real-time trade data via WebSockets for every single asset on Binance. We collect trade data by connecting to Binance’s REST API’s. We poll their market data REST API made publicly available in our API documentation. [...] Our spot data for Binance goes back to 2017-08-17 and for Binance futures to 2019-09-08. We do not cover Binance US. For the OHLCV values, the price is always in quote and the volume unit is always in base. For example, if the pair was BTC-USD, then the price values returned are in USD and the volume value is in BTC. Our OHLCV endpoints are available via REST API for historical (time series) data as well as...",
+      "score": 0.46949652,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "search_index": 2
+    },
+    {
+      "title": "[PDF] On the Intraday Behavior of Bitcoin - Ledger",
+      "url": "https://ledgerjournal.org/ojs/ledger/article/download/213/212/1232",
+      "content": "towards this direction, especially if we pair this piece of information with Figure 6, which shows the intraday seasonality pattern for Bitcoin volume (UTC times). The coefﬁcients are calculated with the same technique used for the daily ones. Volume is considerably higher during the day than at night, with the intraday peak being located around the time in which both European and US markets are open (the New York Stock Exchange opens at 2.30 PM UTC), consistently with previous ﬁndings.2,3 Low volume during night UTC hours is probably also inﬂuenced by the fact that most of Bitstamp clients are located in Europe and in the US, while Asian traders tend to prefer other, often local, alternatives. Trading hours in Europe and the Americas coincide with daylight in those continents, so it is [...] The volume decline is closely linked to the decline in volatility. A large body of literature has focused on the role of traded volume in predicting movement in stock returns and volatility.33 In the case of Bitcoin, correlation between daily volume and hourly intraday volatility is substantial, with the 95% conﬁdence interval of the Pearson correlation coefﬁcient being [0.66, 0.72]. The r2...",
+      "score": 0.46104163,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "We will expand this section with more methods in the future. CHECKSUM Each zip file has a checksum file together in the same folder to verify data integrity. To check: # download a single file curl -s \" -o BNBUSDT-12h-2023-01-01.zip.CHECKSUM OR wget \" #From Linux,sha256sum -c <zip_file_name.CHECKSUM> sha256sum -c BNBUSDT-12h-2023-01-01.zip #From MacOS shasum -a 256 -c BNBUSDT-12h-2023-01-01.zip.CHECKSUM Data Disclaimer [...] Field Name Description id Trade ID price Price qty Base quantity quote_qty Quote quantity time Time in Unix time format is_buyer_maker Whether trade was buyer or maker Aggregated Trades Combines the aggregate total volume of orders filled at a given price at daily or monthly intervals. Download Field Name Description agg_trade_id Aggregated trade ID price Price quantity Quantity first_trade_id First trade ID last_trade_id Last trade ID transact_time Transaction time in Unix time format is_buyer_maker Whether trade was buyer or maker How To Download Programmatically # download a single file curl -s \" -o BNBUSDT-12h-2023-01-01.zip OR wget \" Put the URL your browser to check all your historical market data files. [...] All use of Historical Market Data is subje...",
+      "score": 0.44463772,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin - Seasonality",
+      "url": "https://terminal.forecaster.biz/instrument/crypto/btcusd/seasonality",
+      "content": "| Year | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec | --- --- --- --- --- --- | Probability % | 50% | 70% | 60% | 70% | 50% | 60% | 78% | 67% | 67% | 78% | 56% | 67% | | Average return % | +3.32% | +8.82% | +1.64% | +11.95% | +8.02% | -4.14% | +10.83% | +3.08% | -3.20% | +18.14% | +5.28% | +6.41% | | 2026 | -9.82% | -14.37% | +1.87% | +13.06% | -3.30% | -19.95% | +7.29% -- -- | 2025 | +9.70% | -17.69% | -2.09% | +14.15% | +11.07% | +2.42% | +8.01% | -6.49% | +5.38% | -3.96% | -17.51% | -3.24% | | 2024 | +0.61% | +43.79% | +16.53% | -14.96% | +11.30% | -7.12% | +3.10% | -8.73% | +7.35% | +10.89% | +37.42% | -3.23% | | 2023 | +39.92% | +0.07% | +23.02% | +2.71% | -6.92% | +11.92% | -4.06% | -11.28% | +3.97% | +28.54% | +8.88% | +12.07% | [...] | 2022 | -16.70% | +12.21% | +5.41% | -17.32% | -15.57% | -37.12% | +16.62% | -13.98% | -3.10% | +5.48% | -16.22% | -3.71% | | 2021 | +14.31% | +36.50% | +30.00% | -1.70% | -35.50% | -5.95% | +18.35% | +13.54% | -6.98% | +39.98% | -7.10% | -18.91% | | 2020 | +30.27% | -8.68% | -24.64% | +34.24% | +9.53% | -3.29% | +24.25% | +2.67% | -7.51% | +28.06% | +42.80% | +47.05% | | 2019 | -7.59% | +11.16% | +7.99% | +28.71%...",
+      "score": 0.41819844,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "search_index": 4
+    },
+    {
+      "title": "Free Historical Crypto Trade/Tick data from Binance - YouTube",
+      "url": "https://www.youtube.com/watch?v=ApdjC9aylnw",
+      "content": "this was one trade and looks like about 0.04 ethos traded Chad from the future here the fourth column is just the quote quantity so in this case it's the quantity that's been traded it in the quote asset so that's going to be usdt for ethusdt if the pair was eighth BDC it would be the quantity that was traded in BTC hope that's clear I accidentally skipped over this column in the video this value is just a timestamp so this is just how computers measure time I believe this is in milliseconds so if you just grab this you can put that in ebook converter.com and it should tell you what time that was so you can see Friday the 30th of September 2022 at midnight in UTC time which is basically what all crypto exchanges run on so that's just the time then this value here tells you whether the [...] then best price here you can always refer to the schema on the binance docs if you're unsure which is which you coming back here try running this again there we go we've preserved our first column here which is lovely the next thing that you'll more than likely want to do with this data when you're processing it is of course to change the timestamp unit to be a dance time format so that you c...",
+      "score": 0.40952834,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "binance Share Improve this question edited Aug 19, 2023 at 17:02 asked Aug 19, 2023 at 6:54 Optimus Prime's user avatar Optimus Prime 6344 silver badges1414 bronze badges 0 Add a comment | ## 1 Answer 1 Reset to default 3 +50 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: Here's a sample bash script that downloads and unpacks the raw data for the whole month: [...] ``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line",
+      "score": 0.4011956,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m candles official API docs close price timestamp UTC ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance BTC/USDT historical 1-minute candle data November 24 prior years noon ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance exchange BTC USDT trading pair official page spot market structure fee liquidity",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Bitcoin price seasonality November 24 noon ET intraday volatility calendar effects",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Bitcoin market outlook analyst report BTC USDT price levels 88000 technical analysis",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

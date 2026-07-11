@@ -1,0 +1,443 @@
+{
+  "row_index": 50,
+  "market_id": "mkt_651869",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $110,000 on November 3?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $110,000 on November 3?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-03",
+  "evidence_cutoff_date": "2025-11-02",
+  "end_date_limit": "2025-11-02",
+  "row_end_date_raw": "2025-11-03",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+    "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+    "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+    "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+    "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 47,
+    "hard_quarantined_late_date_count": 3,
+    "llm_filter_input_count": 47,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 41,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 6,
+    "llm_kept_count": 41,
+    "llm_kept_leak_no_count": 41,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"057deb3a-2990-41d1-b58b-98ea0f09e1b4\", \"status\": 200, \"result\": [ { \"symbol\": \"BNBBTC\", \"bidPrice\": \"0.01358000\", \"bidQty\": \"12.53400000\", \"askPrice\": \"0.01358100\", \"askQty\": \"17.83700000\" }, { \"symbol\": \"BTCUSDT\", \"bidPrice\": \"23980.49000000\", \"bidQty\": \"0.01000000\", \"askPrice\": \"23981.31000000\", \"askQty\": \"0.01512000\" } ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 1200, \"count\": 2 } ] } ``` ## Trading requests ### Place new order (WebSocket) > Example [....",
+      "score": 0.82288796,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] > > > > > > }, { > > > > > > > “symbol”: “BTCUSDT”, “orderId”: 12569138902, “orderListId”: 1274512, “clientOrderId”: “jLnZpj5enfMXTuhKB1d0us”, “transactTime”: 1660801720215, “price”: “23416.10000000”, “origQty”: “0.00847000”, “executedQty”: “0.00000000”, “cummulativeQuoteQty”: “0.00000000”, “status”: “CANCELED”, “timeInForce”: “GTC”, “type”: “LIMIT\\_MAKER”, “side”: “SELL”, “selfTradePreventionMode”: “NONE” > > > > > > } > > > > ] > > }, “rateLimits”:...",
+      "score": 0.7707586,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "| Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-154.13000000\", // Absolute price change \"priceChangePercent\": \"-0.740\", // Relative price change in percent \"weightedAvgPrice\": \"20677.46305250\", // QuoteVolume / Volume \"openPrice\": \"20825.27000000\", \"highPrice\": \"20972.46000000\", \"lowPrice\": \"20327.92000000\", \"lastPrice\": \"20671.14000000\", \"volume\": \"72.65112300\", \"quoteVolume\": \"1502240.91155513\", // Sum of (price volume) for all trades \"openTime\": 1655432400000, // Open time for ticker window \"closeTime\": 1655446835460, // Close time for ticker window \"firstI...",
+      "score": 0.7382357,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Binance spot trading volume news highlights within 24",
+      "url": "https://www.binance.com/en/square/post/33132672742114",
+      "content": "Image 1: Binance Square DiscoverNewsNotificationProfileBookmarksChatsHistoryCreator CenterSettings Post Image 2 Image 3 paodun -- Binance spot trading volume news highlights within 24 hours On December 1, Binance's spot market trading volume rebounded under pressure, reaching $25 billion within 24 hours, a decline of 15.2% compared to the previous day, but the BTC/USDT pair accounted for $760 million, 30.4% of the total, followed by ETH/USDT and SOL/USDT, with trading volumes of $1.27 billion and $580 million, respectively. The total global crypto spot volume holds at $140 billion, with Binance's market share steady at 41.1%, and reserves exceeding $170 billion, supporting liquidity. [...] CREAM/USDT surged 65%, PNT/USDT rose 45%, and altcoin rotation intensified. The Central Bank of Brazil approved Binance's 21st license, expanding spot services in Latin America. This round of adjustment may be a bottom reshuffle, with signs of institutional bottom-fishing emerging. Players need to guard against volatility risks, closely monitor new listings and stablecoin inflows, to position themselves at the trough. Binance spot trading is not just trading; it is an ecological engine, and a...",
+      "score": 0.7206637,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "63199.99 | BTCUSDT | Binance Spot",
+      "url": "https://www.binance.com/en-GB/trade/BTC_USDT",
+      "content": "MA MA(7):63152.75 MA(25):62419.72 MA(99):70892.90 MA(0):NaN MA(0):NaN MA(0):NaN MA(0):NaN MA(0):NaN MA(0):NaN MA(0):NaN Vol(BTC):6.855K Vol(USDT)428.396M 13.729K 16.309K # BTC/USDT Bitcoin Price Payments ᱾ Vol ᱾ Trading Competition 62,995.99 $62,995.99 24h Chg 855.30 +1.38% 24h High 63,283.26 24h Low 61,544.56 24h Vol(BTC) 17,022.95 24h Vol(USDT) 1,059,225,096.93 Spot Tutorial Spot Guidance Buy Sell Spot Cross 5x Isolated Grid Limit Market Stop-limit Avbl - USDT Price USDT Amount BTC 0% Log In or Register Now Avbl - BTC Price USDT Amount BTC 0% Log In or Register Now Market Trades My Trades Price(USDT) Amount(BTC) Time 62,995.99 0.00159 09:36:35 62,995.99 0.00012 09:36:35 62,995.99 0.00300 09:36:35 62,996.00 [...] +0.15% 0.01362 WLDUSDT +3.89% 0.3842 ETHFIUSDT +6.15% 0.414 Square Announcements Cookie Preference Download Online Support Audio 1Audio 2 Image 1: Company Logo ## Privacy Preference Center [...] 0.00012 09:36:35 62,995.99 0.00300 09:36:35 62,996.00 0.00300 09:36:34 62,995.99 0.00979 09:36:34 62,995.99 0.00037 09:36:34 62,995.99 0.00300 09:36:34 62,996.00 0.00300 09:36:34 62,995.99 0.00516 09:36:34 62,996.00 0.00038 09:36:34 62,995.99 0.00300 09:36:33 62,996.00 0.00300...",
+      "score": 0.6864757,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "binance-spot-api-docs/web-socket-streams.md at master · binance/binance-spot-api-docs · GitHub",
+      "url": "https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md",
+      "content": "Payload: ``` {\"e\" \"kline\",// Event type \"E\" 1672515782136,// Event time \"s\" \"BNBBTC\",// Symbol \"k\"{\"t\" 1672515780000,// Kline start time \"T\" 1672515839999,// Kline close time \"s\" \"BNBBTC\",// Symbol \"i\" \"1m\",// Interval \"f\" 100,// First trade ID \"L\" 200,// Last trade ID \"o\"\"0.0010\",// Open price \"c\"\"0.0020\",// Close price \"h\"\"0.0025\",// High price \"l\"\"0.0015\",// Low price \"v\" \"1000\",// Base asset volume \"n\" 100,// Number of trades \"x\" false,// Is this kline closed? \"q\"\"1.0000\",// Quote asset volume \"V\" \"500\",// Taker buy base asset volume \"Q\"\"0.500\",// Taker buy quote asset volume \"B\" \"123456\"// Ignore}} ``` ## Kline/Candlestick Streams with timezone offset The Kline/Candlestick Stream push updates to the current klines/candlestick every second in `UTC+8` timezone [...] Payload: ``` {\"e\" \"kline\",// Event type \"E\" 1672515782136,// Event time \"s\" \"BNBBTC\",// Symbol \"k\"{\"t\" 1672515780000,// Kline start time \"T\" 1672515839999,// Kline close time \"s\" \"BNBBTC\",// Symbol \"i\" \"1m\",// Interval \"f\" 100,// First trade ID \"L\" 200,// Last trade ID \"o\"\"0.0010\",// Open price \"c\"\"0.0020\",// Close price \"h\"\"0.0025\",// High price \"l\"\"0.0015\",// Low price \"v\" \"1000\",// Base asset volume \"n\" 100,//...",
+      "score": 0.6796259,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026–2030: Expert Forecasts & Analysis",
+      "url": "https://phemex.com/blogs/bitcoin-price-prediction-2026-2030",
+      "content": "## Long-Term Forecast (2027–2030) Long-term Bitcoin price predictions vary widely, reflecting different assumptions about institutional adoption, regulatory trajectories, and macroeconomic regimes. | Year | Conservative | Moderate | Aggressive | --- --- | | 2027 | $120,000 | $170,000–$250,000 | $330,000+ | | 2028 | $150,000 | $200,000–$350,000 | $450,000+ | | 2029 | $200,000 | $275,000–$500,000 | $640,000+ | | 2030 | $300,000 | $380,000–$650,000 | $900,000+ | Key assumptions driving the bullish case: [...] Open Interest:~$2.96 Billion on Phemex BTCUSDT Perp, reflecting substantial positioning around the $69K–$71K range. ## Price History & Performance Overview Bitcoin's price trajectory from late 2024 through early 2026 tells a dramatic story of euphoria, correction, and emerging stabilization. ### The Post-Halving Rally (Q3 2024 – Q4 2025) Following the April 2024 halving, BTC entered a sustained markup phase fueled by: Spot Bitcoin ETF inflowsdriving institutional demand throughout 2024–2025 Macroeconomic tailwindsas the Federal Reserve shifted toward rate cuts Growing adoptionof Bitcoin as a corporate treasury asset BTC surged from ~$60,000 in April 2024 to its all-time high o...",
+      "score": 0.6742441,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin USD Price: Quote, Market Cap, Forecast & News (BTCUSD)",
+      "url": "https://www.perplexity.ai/finance/BTCUSD",
+      "content": "0.14% Bitcoin is trading essentially flat near $64,000, holding above key support after a sharp intraday swing from $63,784 to $65,469. The primary narrative centers on a meaningful deceleration in spot ETF outflows — weekly redemptions fell roughly 87% from early June peaks — signaling the heaviest phase of institutional selling may be passing. Strategy added another 520 BTC for ~$35 million, bringing its total to 847,363 BTC, reinforcing corporate accumulation at these levels. Macro headwinds persist as Fed Chair Warsh's hawkish stance has pushed rate-hike odds for 2026 to ~85%, while DXY near 101 and 10-year yields around 4.5% keep liquidity tight. The CLARITY Act's Senate path remains uncertain, with bipartisan ethics provisions stalling progress ahead of the August recess. [...] Bitcoin is trading nearly 2% higher, rebounding toward $62,600 as May CPI data came in largely in line with expectations — headline inflation rising 4.2% year-over-year with core CPI below forecast at 2.9% — offering modest relief to risk assets after weeks of macro-driven selling pressure. The in-line reading tempered fears of an imminent Fed rate hike ahead of the June 17 meeting, though persisten...",
+      "score": 0.6711479,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Price Forecast & Predictions for 2026, 2027, 2028–2030 and ...",
+      "url": "https://www.litefinance.org/blog/analysts-opinions/bitcoin-price-prediction-forecast",
+      "content": "## Analysts' BTC Price Projections for 2030 The outlook for 2030 is favorable. Increased institutional demand and the possibility of BTC being recognized as a reserve asset may strengthen its position in the market. Although volatility is expected to persist, forecasts generally range from $173,585.95 to $209,555.19, with the potential for a rise to $297,128.80. ### CoinCodex _Price range: $153,552–$210,238._ CoinCodex suggests the average price may reach $164,876 in Q1. A correction is likely in Q2 and Q3. Subsequently, the asset is expected to continue rising, with the average price settling at $174,842 by December. QuarterMinimum, $Average, $Maximum, $ Q1 161,960 164,876 210,238 Q2 172,378 182,979 196,498 Q3 154,675 158,422 181,256 Q4 153,552 174,842 178,798 ### DigitalCoinPrice [...] ## Analysts' BTC Price Projections for 2028 The outlook for 2028 is largely positive. The next Bitcoin halving could provide additional momentum for BTC, while growing cryptocurrency adoption in high-inflation economies may further support demand. Analysts expect Bitcoin to trade between $137,291.90 and $138,590, although more conservative forecasts place the year-end price closer to $102,698.20...",
+      "score": 0.65173227,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "This code fetches historical BTC/USD data from Binance ...",
+      "url": "https://gist.github.com/kbagher/ec960cca454ec752887245cf4562d15f",
+      "content": "| | | --- | | | import textwrap | | | import pandas as pd | | | import numpy as np | | | import matplotlib.pyplot as plt | | | import matplotlib.dates as mdates | | | from mplfinance.original\\_flavor import candlestick\\_ohlc | | | import requests | | | import ta | | | from reportlab.pdfgen import canvas | | | | | | | | | def get\\_data(): | | | # Fetch historical BTC/USD data from Binance API | | | symbol = 'BTCUSDT' # Binance uses USDT instead of USD | | | interval = '1d' # 1-day candlestick data | | | url = f' | | | response = requests.get(url) | | | data = pd.DataFrame(response.json(), | | | columns=['Open\\_time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close\\_time', | | | 'Quote\\_asset\\_volume', | [...] | | cross\\_direction = 'above' if sma50\\_above\\_sma100 else 'below' | | | | | | # MACD | | | macd\\_above\\_signal = data['MACD'][-1] > data['Signal'][-1] | | | macd\\_cross\\_signal = data['MACD'][-2] < data['Signal'][-2] and macd\\_above\\_signal | | | signal\\_direction = 'above' if macd\\_above\\_signal else 'below' | | | # RSI | | | rsi = data['RSI'][-1] | | | # MFI | | | mfi = data['MFI'][-1] | | | window = 20 | | | data['Middle\\_Band'] = data['Close'].rolling(window=window).m...",
+      "score": 0.6461259,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Is Recovering After a Selloff. Here Come the Bullish Price Forecasts.",
+      "url": "https://www.investopedia.com/bitcoin-is-recovering-after-a-selloff-here-come-the-bullish-price-forecasts-11846868",
+      "content": "The price of the world's most well-known cryptocurrency may soon return to previous highs, Wall Street analysts say. Their 2025 outlooks for bitcoin (BTCUSD) range from about $120,000 to $200,000, a gap that reflects uncertainty about the near-term outlook but also expresses the belief that the worst of the recent sell-off is behind us. There isn’t, however, unanimity about what could drive prices higher. Some crypto watchers have said that the possibility that the U.S. government shutdown could come to an end is bullish for bitcoin and other risk assets. Others have suggested that more reasons for investor caution could push investors back toward bitcoin as a hedge against uncertainty. ### WHY THIS MATTERS TO YOU",
+      "score": 0.6439794,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin On The Cusp Of New Price Discovery Rally: Analyst Forecasts Mid-November Peak — TradingView News",
+      "url": "https://www.tradingview.com/news/newsbtc:d400eca2b094b:0-bitcoin-on-the-cusp-of-new-price-discovery-rally-analyst-forecasts-mid-november-peak",
+      "content": "Amid its bullish performance, analyst Rekt Capital highlighted that Bitcoin was able to secure a daily close above this level, skipping a retest of the recently reclaimed $117,000 mark. He explained that a daily close above $120,000, followed by a successful post-breakout retest, has historically preceded a move to the $123,00 resistance, with a nearly identical daily performance leading to the mid-August all-time high (ATH) of $124,474. Meanwhile, market watcher Ted Pillows noted that if BTC successfully holds the $120,000-$121,000 zone, it will reach highs soon. On the contrary, he warned that losing this area could lead to a retest of the $117,000 as support. [...] NewsBTC NewsBTC # Bitcoin On The Cusp Of New Price Discovery Rally: Analyst Forecasts Mid-November Peak As the market recovers, Bitcoin (BTC) is kicking off the weekend on a positive note by reclaiming another crucial support level. Some analysts suggest that the cryptocurrency is setting the stage for a new price discovery rally, which could start sooner than expected. Bitcoin Eyes Third Price Discovery Uptrend On Friday, Bitcoin jumped nearly 3% to hit a two-month high of $123,894. The flagship crypto has seen a...",
+      "score": 0.6172364,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "node-binance-api - NPM",
+      "url": "https://www.npmjs.com/package/node-binance-api",
+      "content": "``` { '1517557800000': { open: '0.00100090', high: '0.00100650', low: '0.00099810', close: '0.00100370', volume: '1161.52000000' }, '1517557860000': { open: '0.00100360', high: '0.00101010', low: '0.00100000', close: '0.00100310', volume: '1977.68000000' }, '1517557920000': { open: '0.00100100', high: '0.00101130', low: '0.00100080', close: '0.00100670', volume: '2002.00000000' }, '1517557980000': { open: '0.00100660', high: '0.00101400', low: '0.00100200', close: '0.00100640', volume: '3896.40000000' }, '1517558040000': { open: '0.00100630', high: '0.00101390', low: '0.00100350', close: '0.00100470', volume: '1675.48000000' }, '1517558100000': [...] volume: '1675.48000000' }, '1517558100000': { open: '0.00100860', high: '0.00101450', low: '0.00100100', close: '0.00100270', volume: '1918.46000000' }, '1517558160000': { open: '0.00100460', high: '0.00101480', low: '0.00100310', close: '0.00100670', volume: '2464.12000000' }, '1517558220000': { open: '0.00100510', high: '0.00100660', low: '0.00100110', close: '0.00100250', volume: '1484.59000000' } } // (..many more entries not shown) ///BNBBTC last price: 0.00100250 [...] ``` #### Get Candlestick Updates via WebSocket ``` // Peri...",
+      "score": 0.61196244,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "How to pull REALTIME Cryptocurrency Prices with Python [FOR ...",
+      "url": "https://www.youtube.com/watch?v=P_SIZDsI3Ro",
+      "content": "one and you need to add at Kline which is the Candlestick stream or the Kline stream and the time interval so the correct way this should look like would be this one here Bitcoin USD at Kine 1 minute so with that you are subscribing to the Candlestick one minute chart and then we are getting live prices for that one minute Kline chart or not chart but for that one minute data coming from the binance API so we need to transform this list so that it is looking like this just using a simple list comprehension here so opening up a list here and then coin. lower so because this is capitalized here I want to have it as a lowercase letters and then I'm just adding what I wrote here so add Kine one minute for coin in assets so this is just looping over those names and then adds this string and [...] just looping over those names and then adds this string and also transform the strings to lowercase letters here so I'm just reassigning that to assets so assets list is looking like this so that is exactly how we need to post that to the API so it is understanding what we want from it now we cannot provide a list here but we can only provide a string to the API so to subscribe to multiple s...",
+      "score": 0.60750073,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", \"priceChangePercent\": \"-0.317\", \"weightedAvgPrice\": \"26234.58803036\", \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", \"quoteVolume\": \"485217905.04210480\", \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, \"lastId\": 3220849281, \"count\": 697727 }, { \"symbol\": \"BNBUSDT\", \"priceChange\": \"2.60000000\", \"priceChangePercent\": \"1.238\", \"weightedAvgPrice\": \"211.92276958\", \"openPrice\": \"210.00000000\", \"highPrice\": \"213.70000000\", \"lowPrice\": \"209.70000000\", \"lastPrice\": \"212.60000000\", \"volume\": \"280709.58900000\", [...] Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote as...",
+      "score": 0.58664185,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Cryptocurrency markets microstructure - UNITesi",
+      "url": "https://unitesi.unive.it/retrieve/eed2f223-f3d3-459e-b4a6-25f233437bde/893488-1286715.pdf",
+      "content": "the y-coordinate based on your data ax = 130, ay = -90, borderpad = 8, 10 Cryptocurrency markets microstructure, with a machine learning application to the Binance bitcoin market 102 text='Binance announce they will stop <br>0-fee trading (commission␣ ↪trading resumes)<sup></sup>', showarrow=True, arrowhead=3, arrowcolor='black', bgcolor='orange', bordercolor = 'black', opacity=0.8, font=dict(size=12) ).add_annotation( x='2023-07-01 00:00', y=0, # Adjust the y-coordinate based on your data xshift = -140, yshift = -50, borderpad = 8, text='<sup></sup>BTC/USDT will keep trading at 0-fees, however␣ ↪adding fees to <br>other pairs made users flee the exchange, resulting in␣ ↪trading volume drainage.', showarrow=False, arrowhead=3, arrowcolor='black', bgcolor='rgba(0,0,0,0)', align = 'left', [...] ↪DataFrame(data['prices'], columns= ['Timestamp', curr+'USD']) df['Timestamp'+curr+'USD'] = pd.to_datetime(df['Timestamp'+curr+'USD'],␣ ↪unit = 'ms') Getting data from Binance (BTC/USDT) [ ]: start = int(time.mktime(datetime.datetime(2020,1,1).timetuple()))1000 end = int(time.mktime(datetime.datetime.now().timetuple()))1000 lines_BTC = client.get_historical_klines(\"BTCUSDT\", start_str = sta...",
+      "score": 0.5829428,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "``` [[ [ [ 1499040000000, // Open time 1499040000000, // Open time \"0.01634790\", // Open \"0.01634790\", // Open \"0.80000000\", // High \"0.80000000\", // High \"0.01575800\", // Low \"0.01575800\", // Low \"0.01577100\", // Close \"0.01577100\", // Close \"148976.11427815\", // Volume \"148976.11427815\", // Volume 1499644799999, // Close time 1499644799999, // Close time \"2434.19055334\", // Quote asset volume \"2434.19055334\", // Quote asset volume 308, // Number of trades 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. \"17928899.62484339\" // Ignore. ] ] ] ] ``` [...] ⚠️ You are viewing the legacy Binance API documentation. The new documentation is now the default and is actively maintained. Switch to the new docs. # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. ## HTTP Request​ GET `/fapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000...",
+      "score": 0.5818027,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Prediction: Why BTC Price Is Rallying and Forecasts for 2025-2030",
+      "url": "https://www.financemagnates.com/trending/bitcoin-price-prediction-why-btc-price-is-rallying-and-forecasts-for-2025-2030",
+      "content": "### Will we see Bitcoin reach new all-time highs soon? Many analysts believe we will see Bitcoin establish a new all-time high before 2025 ends. Technical analysis suggests Bitcoin has entered a consolidation phase rather than a full bear market, with Tom Lee's models indicating BTC could reach 250,000 by year-end under favorable conditions. Cathie Wood of ARK Invest foresees Bitcoin continuing its upward trajectory driven by scarcity, network effects and expanding institutional adoption across the cryptocurrency market. ### What about Ethereum and altcoin predictions? [...] ### Will we see Bitcoin reach new all-time highs soon? Many analysts believe we will see Bitcoin establish a new all-time high before 2025 ends. Technical analysis suggests Bitcoin has entered a consolidation phase rather than a full bear market, with Tom Lee's models indicating BTC could reach 250,000 by year-end under favorable conditions. Cathie Wood of ARK Invest foresees Bitcoin continuing its upward trajectory driven by scarcity, network effects and expanding institutional adoption across the cryptocurrency market. ### What about Ethereum and altcoin predictions? [...] BTC could consolidate any gains a...",
+      "score": 0.575517,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Binance trade volume and market listings | CoinMarketCap",
+      "url": "https://coinmarketcap.com/exchanges/binance",
+      "content": "Indicators Image 31Fear and Greed IndexImage 32Altcoin Season IndexImage 33Market Cycle IndicatorsImage 34Bitcoin DominanceImage 35CoinMarketCap 20 IndexImage 36CoinMarketCap 100 Index ETF Flows Image 37Crypto ETFsImage 38Bitcoin ETFsImage 39Ethereum ETFs Technical analysis Image 40RSIImage 41MACD Derivatives Image 42OverviewImage 43LiquidationsImage 44Funding Rates DexScan Image 45Signals NewImage 46TrendingImage 47NewImage 48GainersImage 49Meme ExplorerImage 50Top Traders More Showing 3 of 7 items. 4 items are hidden. Portfolio Watchlist Search / Log In Image 51 Image 52: Binance # Binance Spot Trading Volume(24h) $6,408,360,769.37 100,348 BTC Total assets $137,618,507,940.62 Fees Chat @binance Register Now Do you work for Binance? [...] | Token | Balance | Price | Value | --- --- | | Image 53Image 54 USDT 0xf977...41acec | 16,900,000,000 | $0.9992 | $16,886,768,753.72 | | Image 55Image 56 BTC 34xp4v...4Twseo | 248,597.59 | $63,858.38 | $15,875,041,311.06 | | Image 57Image 58 BTC 3M219K...DjxRP6 | 181,321.15 | $63,858.38 | $11,578,876,315 | | Image 59Image 60 BNB 0xBE0e...4d33E8 | 17,195,730.37 | $574.42 | $9,877,604,824.07 | | Image 61Image 62 USDT 0x8356...bB0007 | 5,352,392...",
+      "score": 0.5712171,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line [...] ``` 1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0 ``` enables you to calculate this: From millisecond timestamp `1688169600000` (July 1st, 2023 0:00:00 UTC) To millisecond timestamp `1688169600999` (July 1st, 2023 0:00:00.999 UTC) Full candle + Open price `30471.99` USDT for 1 BTC + Close price `30472.00` USDT for 1 BTC + Close is higher than open => candle is green Knots + Lowest price `...",
+      "score": 0.5694942,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin (BTC) News, Analysis and Forecast - FXStreet",
+      "url": "https://www.fxstreet.com/cryptocurrencies/bitcoin",
+      "content": "### Bitcoin struggles despite renewed ETF inflows as Strategy sale impact fades Bitcoin falls below $64,000 on Tuesday, erasing part of the recent gains following six consecutive days of price rises. Institutional demand shows signs of recovery, with spot ETFs recording a second day of inflows through Monday after weeks of outflows. Crypto Today: Bitcoin, Ethereum, XRP struggle to build momentum despite returning ETF inflows ### Crypto Today: Bitcoin, Ethereum, XRP struggle to build momentum despite returning ETF inflows The cryptocurrency market continues to struggle with dominant headwinds, with Bitcoin (BTC) hovering around the short-term $63,000 support, Ethereum (ETH) holding below $1,800 and Ripple (XRP) testing the demand area at $1.13. [...] From 2015 to 2017, Bitcoin surged to $19,600 but eventually lost 83% of its value in the following year. While prices were range-bound in 2019, Bitcoin began a rally post-pandemic, increasing by 1,600% to a high of $68,900 in November 2021. Similarly to previous years, Bitcoin crashed to $16,000 in November 2022, picking up pace again in 2023 and eventually skyrocketing to $108,353 in November 2024 following the election of United St...",
+      "score": 0.568632,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Reading and Plotting Historical Crypto Data using Binance API with ...",
+      "url": "https://medium.com/@mijanr/reading-and-plotting-historical-crypto-data-using-binance-api-with-python-c02a436c0307",
+      "content": "Now that we’ve defined our timeframe, we can send a request to the Binance API to retrieve the data. In this example, we’ll retrieve 15-minute interval data for the BTC/USDT trading pair: import requests import json # Define the Binance API endpoint for K-line data endpoint = ' # Define the parameters for the API request symbol = 'BTCUSDT' interval = '15m' limit = 1000 params = {'symbol': symbol, 'interval': interval, 'startTime': start_timestamp, 'endTime': end_timestamp, 'limit': limit} # Send the API request and store the response data in a list data = [] while True: response = requests.get(endpoint, params=params) klines = json.loads(response.text) data += klines if len(klines) < limit: break params['startTime'] = int(klines[-1]) + 1 [...] Now that we have the data in a pandas dataframe, we can use the \"`mplfinance\"` library to plot the data as a candlestick chart. The following code creates a candlestick chart of the last 50 data points: import mplfinance as mpf # Define the style for the plot style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size': 8}) # Create the OHLC plot mpf.plot(df[-50:], type='candle', style=style, title='BTC/USDT OHLC', ylabel='Price ($...",
+      "score": 0.5634506,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "BTC/USDT Spot CVD Chart Reveals Critical Market ...",
+      "url": "https://www.binance.com/en/square/post/313330034279810",
+      "content": "Understanding the BTC/USDT Spot CVD Chart Structure The BTC/USDT spot CVD chart represents a sophisticated analytical tool that tracks order book dynamics for the world’s most liquid cryptocurrency trading pair. Market professionals utilize this visualization to identify institutional activity, retail participation patterns, and potential support and resistance zones. The chart’s dual-section design separates volume distribution analysis from cumulative order flow tracking, providing traders with complementary perspectives on market structure. [...] Heatmap Pattern Visual Characteristics Market Interpretation Horizontal Bright Band Extended bright area at specific price Strong support/resistance zone Vertical Bright Streak Narrow vertical bright line High-momentum price movement Diffuse Background Even, moderate coloring Normal distribution trading Multiple Concentrated Nodes Several bright spots at different prices Layered liquidity structure Cumulative Volume Delta Indicator: Tracking Order Flow [...] Market analysts worldwide are scrutinizing the latest BTC/USDT spot CVD chart as of 12:00 a.m. UTC, revealing crucial insights into Bitcoin’s current market structure and potenti...",
+      "score": 0.55912215,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing timestamp in UTC Quote asset volume: Volume in quote asset (USDT) Number of trades: Number of trades during period Taker buy base asset volume: Volume of taker buy orders Taker buy quote asset volume: Volume of taker buy orders in quote asset Ignore: Unused field [...] menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bi...",
+      "score": 0.55478466,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin (BTC) Price Prediction 2026 2027 2028 - 2040",
+      "url": "https://changelly.com/blog/bitcoin-price-prediction",
+      "content": "• 2019, Consolidation Year: $3,700 → $7,200Bitcoin traded mostly sideways with a mid-year spike above $13,000 following Facebook’s Libra announcement. The year closed near $7,200 as infrastructure quietly improved. • 2020, Institutional Awakening: $7,000 → $29,000After crashing to $3,800 during the COVID-19 liquidity panic in March, Bitcoin rebounded sharply. MicroStrategy, Square, and PayPal integrated or purchased BTC. Bitcoin closed the year near $29,000, signaling the beginning of the institutional era. • 2021, Institutional Peak: $29,000 → $69,000Tesla added $1.5 billion in BTC to its treasury. El Salvador adopted Bitcoin as legal tender. In November, BTC reached nearly $69,000—its second major all-time high.",
+      "score": 0.55275756,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "search_index": 5
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "``` 1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0 ``` enables you to calculate this: From millisecond timestamp `1688169600000` (July 1st, 2023 0:00:00 UTC) To millisecond timestamp `1688169600999` (July 1st, 2023 0:00:00.999 UTC) Full candle + Open price `30471.99` USDT for 1 BTC + Close price `30472.00` USDT for 1 BTC + Close is higher than open => candle is green Knots + Lowest price `30471.99` USDT for 1 BTC - Same as open price of green candle => no knot below + Highest price `30472.00` USDT for 1 BTC - Same as close price of green candle => no knot above Share Improve this answer answered Aug 21, 2023 at 21:45 Petr Hejda's user avatar Petr Hejda [...] ``` #!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done ``` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: | Open time...",
+      "score": 0.5515985,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "Binance (Futures) Statistics: Markets, Trading Volume & Trust Score",
+      "url": "https://www.coingecko.com/en/exchanges/binance_futures",
+      "content": "Cayman Islands ### Fees Fiat Deposit AED AMD ARS AUD AZN BGN BHD BRL CAD CHF CLP COP CRC CZK DKK DOP ETB EUR GBP GEL BTQ HKD HNL HUF IDR ILS INR ISK JPY KES KWD KYD KZT MNT MXN NZD OMR PAB PEN PHP PLN PYG QAR RON SAR SEK SLE SOS TJS TRY TWD USD UGX UYU UZS VND XAF ZAR Margin Trading No Market With Fees No ## Binance (Futures) Statistics ### Volume by Market Pair BTCUSDT27.8% ETHUSDT17.9% BTCUSDC6.0% SOLUSDT3.4% ETHUSDC3.4% SNDKUSDT2.3% SPCXUSDT2.0% SKHYNIXUSDT1.9% Others29.7% ### Volume by Currency USDT81.9% USDC10.1% USD2.5% ### Exchange Open Interest 24H 7D 14D 1M 3M 1Y ### Exchange Trade Volume 24H 7D 14D 1M 3M 1Y ### Liquidity Reported Trading Volume - Average Bid-Ask Spread 0.061% Trading Pair Total Trust Score [...] ## About Binance (Futures) ### What is Binance (Futures)? Binance (Futures) is a derivative cryptocurrency exchange established in 2019. Currently, there are 735 trading pairs available on the exchange. Binance (Futures) 24h trading volume is reported to be at $56,209,058,395.38, a change of 97.76% in the last 24 hours, and the 24h open interest is $23,446,914,823.91, a change of -1.19% as compared to the previous day. Exchange Reserves data is currently unavai...",
+      "score": 0.529045,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "BTC USDT | Bitcoin to USDT",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "MA(7)63,204.75 MA(25)62,434.28 MA(99)70,896.57 Vol(BTC)16.258K Vol(USDT)1.02B 15.072K 16.98K Image 4: img # BTC/USDT Bitcoin Price 63,359.99 $ 63,359.99 24h Chg 1,126.00 +1.81% 24h High 63,500.00 24h Low 61,705.29 24h Vol(BTC) 16,606.95 24h Vol(USDT) 1,041,913,602.24 Networks BTC (5) Token Tags Payments Vol Hot Trading Competition Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount BTC TP/SL Avbl - USDT Max Buy -- BTC Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 63,360.00 0.00030 22:23:27 63,359.99 0.00355 22:23:27 63,359.99 0.00111 22:23:24 63,360.00 0.01196 22:23:23 63,360.00 0.00039 [...] BTC/USDT +1.81% 63,359.99ETH/USDT +0.68% 1,750.05SOL/USDT +1.18% 78.20BNB/USDT +0.60% 570.51ZEC/USDT +4.47% 485.19SENT/USDT +27.65% 0.01745XRP/USDT +0.60% 1.0978GRAM/USDT +1.70% 1.618EPIC/USDT +12.50% 0.360SPCXB/USDT +1.99% 152.42ARB/USDT +14.99% 0.0882SYN/USDT +4.38% 0.37776DEXE/USDT -8.39% 26.582TRX/USDT +0.79% 0.3325DOGE/USDT +1.19% 0.07331LTC/USDT +1.17% 44.00OPN/USDT +5.28% 0.0618SKL/USDT +17.63% 0.00407AGLD/USDT -2.18% 0.1480SCR/USDT +2.23% 0.02703COINB/USDT -0.15% 15...",
+      "score": 0.49831602,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "$BTC BTC/USDT Weekly Market Structure Analysis Market - Binance",
+      "url": "https://www.binance.com/en/square/post/328475315902577",
+      "content": "Conclusion The chart currently reflects a Lower High → Lower Low continuation pattern, indicating that the broader trend remains bearish. As long as BTC stays below the most recent lower-high region around 82k–84k, downside pressure is likely to continue, with 70k being the next major support area to watch. 🚨📉 #crypto#btc#bitcoin#BitcoinETFs#BitcoinDunyamiz Image 3: BTC BTCUSDT Perp 64,101.1 +2.76% Image 4 Disclaimer: Includes third-party opinions. No advice. Binance AI may be used without guarantee.See T&Cs. BTC+2.70% 280 Reply Replies 0 Most relevant Most relevant Most recent Most popular Looking forward to your replies Reply Now Join global crypto users on Binance Square ⚡️ Get latest and useful information about crypto. [...] Image 1: Binance Square Login Sign Up DiscoverNewsNotificationProfileBookmarksChatsHistoryCreator CenterSettings Post Image 2 cryptobreakout_trader May 29 Bullish Follow Report Block User $BTC BTC/USDT Weekly Market Structure Analysis Market Bias: Bearish 📉 The chart clearly shows a transition from an uptrend into a downtrend through a series of Lower Highs (LH) after forming a major swing high. Key Observations 🔹 Major High Formed BTC reached a peak ne...",
+      "score": 0.47329262,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "Binance Market Data - Amberdata",
+      "url": "https://www.amberdata.io/binance-market-data",
+      "content": "We collect Order Book Snapshots via Binance’s REST API: the snapshot is a one minute snapshot. Every minute we get the full order book, full depth, as much as Binance provides. We offer real-time streaming order book data via Websocket subscriptions for all four order book types; spot, options, futures and swaps. We also offer FIX protocol. We get our order book data directly from Binance. Our Order Book endpoints are available via REST API for latest and historical (time series) data as well as WebSockets for real-time data and AWS S3 for futures. Here is a sample file. ### Binance Order Books API Endpoints #### Spot /market/spot/order-book-events/{pair}/historical /market/spot/order-book-snapshots/{pair}/historical /market/spot/order-book-snapshots/information #### Futures [...] We offer: Our Data: Trades: Our trade datasets consist of all tick-by-tick trade data, timestamped, and with the trade direction normalized from the taker side. Our Trade endpoints provide historical (time series) trade data for the specified pair or instrument. Order books: Order Book Snapshots, we collect via the exchanges REST API and the snapshot is a one-minute snapshot. Every minute we get the fu...",
+      "score": 0.45856747,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "search_index": 2
+    },
+    {
+      "title": "A dive into liquidity demographics for crypto asset trading | S&P Global",
+      "url": "https://www.spglobal.com/en/research-insights/special-reports/liquidity-demographics-for-crypto-asset-trading",
+      "content": "Figure 17 shows the market depth on Binance for the asset pair EUR-USDT in euros for the 1% and 10% band (up and down) from the midpoint of the bid-ask price. Of note is the shallow market of less than €5 million for the 1% band and less than €8 million for the cumulative 10% band. This is not surprising as stablecoins have more utility on-chain than off-chain. By contrast, on Binance, USDT liquidity is much greater against other digital assets such as ETH and BTC than against fiat markets.Figure 18 shows a much higher market depth for BTC-USDT and ETH-USDT for the 1% band around the mid-price of USDT 15 million and USDT 30 million, respectively. [...] Trading volume is a transaction-based metric that indicates the level of activity and liquidity for an asset by combining the number of trades and the execution price of each trade in a certain time interval. In the subsequent graphs, volume includes the US dollar volume for all markets on a given exchange, fiat or otherwise. For example, on Binance, the US dollar value of the daily volumes for all markets with fiat currencies and crypto assets paired with BTC will be counted towards the total daily volume for BTC. As of this anal...",
+      "score": 0.4018996,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "#btcusdt Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/btcusdt",
+      "content": "#Bitcoin#BTCUSDT#BTC#CryptoTrading #Binance #Crypto #TechnicalAnalysis #Bullish #TradingSignals #Cryptocurrency View More Image 3 BTC+1.28% 1 202 Image 4 Image 5 Bit_Guru · 15h Follow Report Block User Bitcoin Breaks Above Range — Bulls Regain Short-Term Control Trading Setup: Entry: 62,300–62,400 TP: 62,800 / 63,600 SL: 61,900 #BTCUSDT $BTC {spot}(BTCUSDT) Bitcoin Breaks Above Range — Bulls Regain Short-Term Control Trading Setup: Entry: 62,300–62,400 TP: 62,800 / 63,600 SL: 61,900 #BTCUSDT$BTC View More Image 6 BTC+1.28% 2 533 Image 7 ASHYNX · 23h Follow Report Block User [...] setup favors a bullish continuation if BTC breaks above the recent highs near $63,286. Enter long around current levels or on a pullback to $62,500 support zone. Take Profit Targets: TP1: $64,800 TP2: $66,500 TP3: $68,000+ (extended move) Stop Loss: $61,200 (below recent swing low and EMA cluster for protection). Risk management is key — use proper position sizing (1-2% risk per trade). The market structure suggests potential for a strong push higher in the short-to-medium term as selling pressure eases. Whether you're scalping the bounce or holding for the next leg up, this is a high-probability setup...",
+      "score": 0.4018996,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "search_index": 4
+    },
+    {
+      "title": "Details on how to get Binance public data - GitHub",
+      "url": "https://github.com/binance/binance-public-data",
+      "content": "| Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1735689600000000 | 4.15070000 | 4.15870000 | 4.15060000 | 4.15540000 | 539.23000000 | 1735693199999999 | 2240.39860900 | 13 | 401.82000000 | 1669.98121300 | 0 | All kline intervals are supported: `1s`, `1m`, `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `1d`, `3d`, `1w`, `1mo`. `1mo` is used instead of `1M` to supprt non-case sensitive file systems. #### Trades The `trades` files' data is obtained from `/api/v3/historicalTrades` API endpoint: [...] | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1499040000000 | 0.01634790 | 0.80000000 | 0.01575800 | 0.01577100 | 148976.11427815 | 1499644799999 | 2434.19055334 | 308 | 1756.87402397 | 28.46694368 | 17928899.62484339 | COIN-M Futures `klines` files' data is from `/dapi/v1/klines` API endpoint: | Open time | Open | High | Low | Close | Volume | Close time | Base asse...",
+      "score": 0.36663565,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bitcoin (BTC/USDT) price data from Binance exchange with the following specifications: Timezone Information: All timestamps are in UTC (Coordinated Universal Time) Open time format: YYYY-MM-DD HH:MM:SS.ffffff UTC Close time format: YYYY-MM-DD HH:MM:SS.ffffff UTC [...] Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing tim...",
+      "score": 0.35053307,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin to US Dollar (BTC/USD) - Historical data, historical prices",
+      "url": "https://twelvedata.com/markets/499377/crypto/coinbase-pro/btc-usd/historical-data",
+      "content": "Apple Inc AAPL Common stock NASDAQTesla Inc TSLA Common stock NASDAQPublic Joint-Stock Company Territorial Generation Company No.2 TGKB Common stock MOEXSynergia Energy Ltd SYN Common stock LSECoroWare, Inc. COWI Common stock OTCClover Power Public Company Limited CV Common stock SETYes Bank Limited YESBANK Common stock NSEZorlu Enerji Elektrik Üretim A.S. ZOREN Common stock BISTBosera CM Shekou Industrial Park REIT 0P0001MJE3 Mutual fund SZSETR Property Investment Trust TRPIF Mutual fund LSEBaillie Gifford Shin Nippon Mutual Fund SNPVF Closed-end fund OTCAlkhabeer Capital - Diversified Income ETF 4700 Mutual fund TadawulFidelity Asian Values PLC FAV Mutual fund LSEMirae Asset Asia Pacific Real Estate Fund 094800 Closed-end fund KRXUBS Property Fund Direct Real Estate DRPF Closed-end fund [...] Zloty BTC/PLN Crypto BitBayEthereum Euro ETH/EUR Crypto Coinbase proKomodo US Dollar KMD/USD Crypto SyntheticAkash Network Ethereum AKT/ETH Crypto Gate.ioFrax Share US Dollar FXS/USD Crypto BinanceBitcoin Ethereum BTC/ETH Crypto SyntheticSPDR S&P 500 ETF Trust SPY ETF NYSEYuanta Daily Taiwan 50 Bear -1X ETF 00632R ETF TWSEDirexion Daily Semiconductor Bear 3X Shares SOXS ETF NYSEProShares...",
+      "score": 0.34554735,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price: BTC/USD Live Price Chart, Market Cap ...",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "| # | Exchange | | Pair | Price | Spread | +2% Depth | -2% Depth | 24h Volume | Volume % | Last Updated | --- --- --- --- --- | | | 1 | Image 57: Pionex Pionex | CEX | BTC/USDT | $62,225.87 | 0.01% | $20,200,137 | $19,172,891 | $2,067,083,694 | 0.0% | Recently | | 2 | Image 58: BTCC BTCC | CEX | BTC/USDT | $62,159.94 | 0.01% | $10,260,503 | $16,083,211 | $1,934,837,023 | 0.0% | Recently | | 3 | Image 59: CoinUp.io CoinUp.io | CEX | BTC/USDT | $62,225.86 | 0.01% | $20,563,628 | $32,138,645 | $1,343,931,698 | 0.0% | Recently | | 4 | Image 60: Binance Binance | CEX | BTC/USDT | $62,225.86 | 0.01% | $19,119,620 | $19,881,221 | $1,133,993,237 | 0.0% | Recently | [...] | 5 | Image 61: KCEX KCEX | CEX | BTC/USDT | $62,227.53 | 0.01% | $17,001,267 | $13,371,622 | $1,106,471,521 | 0.0% | Recently | | 6 | Image 62: Ourbit Ourbit | CEX | BTC/USDT | $62,233.74 | 0.01% | $12,159,120 | $12,744,266 | $964,574,707 | 0.0% | Recently | | 7 | Image 63: Azbit Azbit | CEX | BTC/USDT | $61,886.95 | 0.01% | $13,145,573 | $14,416,551 | $940,388,638 | 0.0% | Recently Anomaly - Trading price or volume is an outlier against the average | | 8 | Image 64: Toobit Toobit | CEX | BTC/USDT | $62,227.53 | 0.01%...",
+      "score": 0.33875546,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "BTC USDT | Bitcoin to USDT",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "Order History Trade History Holdings Bots Log In or Register Now to trade Connecting Quick Preview BTC/USDT +1.81% 63,359.99ETH/USDT +0.68% 1,750.05SOL/USDT +1.18% 78.20BNB/USDT +0.60% 570.51ZEC/USDT +4.47% 485.19SENT/USDT +27.65% 0.01745XRP/USDT +0.60% 1.0978GRAM/USDT +1.70% 1.618EPIC/USDT +12.50% 0.360SPCXB/USDT +1.99% 152.42ARB/USDT +14.99% 0.0882SYN/USDT +4.38% 0.37776DEXE/USDT -8.39% 26.582TRX/USDT +0.79% 0.3325DOGE/USDT +1.19% 0.07331LTC/USDT +1.17% 44.00OPN/USDT +5.28% 0.0618SKL/USDT +17.63% 0.00407AGLD/USDT -2.18% 0.1480SCR/USDT +2.23% 0.02703COINB/USDT -0.15% 159.48NEAR/USDT +1.90% 1.927AUDIO/USDT +0.52% 0.01359WLD/USDT -1.33% 0.3846ETHFI/USDT +2.86% 0.396 [...] Image 1: Binance Buy Crypto Markets Trade Futures Earn Square More Log InSign Up Image 2 Scan to Download App iOS & Android More Download Options Order Book 0.01 Price (USDT) Amount (BTC) Total 63,362.72 0.00009 5.702644 63,362.47 0.13656 8.65K 63,362.46 0.00009 5.702621 63,362.39 0.00252 159.673222 63,362.05 0.06058 3.83K 63,362.04 0.08179 5.18K 63,362.03 0.00018 11.405165 63,362.00 0.02009 1.27K 63,361.99 0.00018 11.405158 63,361.78 0.00023 14.573209 63,361.60 0.00009 5.702544 63,361.40 0.00032 20.275648 63,36...",
+      "score": 0.33196434,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/bitcoin/historical-data",
+      "content": "Market Movers Most Active Gainers %Losers % | Name | Last | Chg. % | Vol. | | --- --- | NVDA | 204.14 | +3.66% | 124.39M | | | INTC | 110.33 | -0.05% | 95.31M | | | MU | 948.80 | +1.11% | 40.58M | | | AAPL | 313.39 | +0.88% | 38.51M | | | TSLA | 394.06 | -2.19% | 32.77M | | | AMD | 517.51 | +0.27% | 21.25M | | | SNDK | 1,729.25 | +6.90% | 11.19M | | | Name | Last | Chg. % | Vol. | | --- --- | NBIS | 216.75 | +11.05% | 17.09M | | | AKAM | 126.57 | +10.67% | 6.90M | | | ANET | 181.05 | +8.76% | 10.40M | | | CRWV | 90.00 | +7.75% | 23.01M | | | SMCI | 28.17 | +7.31% | 35.66M | | | SNDK | 1,729.25 | +6.90% | 11.19M | | | VLO | 282.86 | +6.25% | 3.80M | | [...] Highest: 67,276.4 Change %: -1.8 Average: 62,604.3 Difference: 9,444.0 Lowest: 57,832.5 Advertisement ## FAQ ### What Is the Bitcoin (BTC) Price Today? The Bitcoin price today is 62,225.8, with a previous close of 63,415.1. ### How Has Bitcoin (BTC) Performed Over the Last Year? Over the past 12 months, the Bitcoin price has changed by -44.1%, reflecting its overall trend and historical movement. ### What Is the 52-Week Range for Bitcoin (BTC)? The Bitcoin 52-week range spans from 57,832.5 to 126,186.0 ### What Is the Daily Tr...",
+      "score": 0.30127,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "Free Historical Crypto Trade/Tick data from Binance - YouTube",
+      "url": "https://www.youtube.com/watch?v=ApdjC9aylnw",
+      "content": "this was one trade and looks like about 0.04 ethos traded Chad from the future here the fourth column is just the quote quantity so in this case it's the quantity that's been traded it in the quote asset so that's going to be usdt for ethusdt if the pair was eighth BDC it would be the quantity that was traded in BTC hope that's clear I accidentally skipped over this column in the video this value is just a timestamp so this is just how computers measure time I believe this is in milliseconds so if you just grab this you can put that in ebook converter.com and it should tell you what time that was so you can see Friday the 30th of September 2022 at midnight in UTC time which is basically what all crypto exchanges run on so that's just the time then this value here tells you whether the [...] then best price here you can always refer to the schema on the binance docs if you're unsure which is which you coming back here try running this again there we go we've preserved our first column here which is lovely the next thing that you'll more than likely want to do with this data when you're processing it is of course to change the timestamp unit to be a dance time format so that you c...",
+      "score": 0.2654618,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    },
+    {
+      "title": "Prediction of Cryptocurrency Prices through a Path Dependent Monte Carlo Simulation",
+      "url": "https://arxiv.org/html/2405.12988v1",
+      "content": "| | | | | | | --- --- --- | | S.No. | Name of Feature | Description | Mean | Standard Deviation | Delay | | 1111 | open | Price of BTCUSDT pair at the start of the hour. | 29487.5429487.5429487.5429487.54 | 16703.1816703.1816703.1816703.18 | 00 | | 2222 | close | Price of BTCUSDT pair at the end of the previous hour. | 29487.5329487.5329487.5329487.53 | 16703.1816703.1816703.1816703.18 | 1111 | | 3333 | high | Highest price of BTCUSDT pair in the previous hour. | 29649.2629649.2629649.2629649.26 | 16802.3716802.3716802.3716802.37 | 1111 | | 4444 | low | Lowest price of BTCUSDT pair in the previous hour. | 29315.0729315.0729315.0729315.07 | 16598.6416598.6416598.6416598.64 | 1111 | [...] | 5555 | volume | Volume of BTCUSDT pair traded in the previous hour. | 4165.864165.864165.864165.86 | 4762.7764762.7764762.7764762.776 | 1111 | | 6666 | quote\\_volume | Quote Volume of BTCUSDT pair in the previous hour. | 1.05425×1081.05425superscript1081.05425\\times 10^{8}1.05425 × 10 start\\_POSTSUPERSCRIPT 8 end\\_POSTSUPERSCRIPT | 1.08626×1081.08626superscript1081.08626\\times 10^{8}1.08626 × 10 start\\_POSTSUPERSCRIPT 8 end\\_POSTSUPERSCRIPT | 1111 | | 7777 | count | Number of trades in BTCUSDT...",
+      "score": 0.25941545,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Market Data - Amberdata",
+      "url": "https://www.amberdata.io/binance-market-data",
+      "content": "## Binance Historical OLHCV Data OHLCV is an aggregated form of market data standing for Open, High, Low, Close and Volume. OHLCV data includes 5 data points: the Open and Close represent the first and the last price level during a specified interval; High and Low represent the highest and lowest reached price during that interval; Volume is the total amount traded during that period. This data is most frequently represented in a candlestick chart, which allows traders to perform technical analysis on intraday values. Binance computes its daily candles at 00:00:00. [...] OHLCV: OHLCV is an aggregated form of market data standing for Open, High, Low, Close and Volume. OHLCV data includes 5 data points: the Open and Close represent the first and the last price level during a specified interval; High and Low represent the highest and lowest reached price during that interval; Volume is the total amount traded during that period. This data is most frequently represented in a candlestick chart, which allows traders to perform technical analysis on intraday values. VWAP: The volume-weighted average price (VWAP) is a measurement that shows the average price of an asset, adjusted for it...",
+      "score": 0.21026355,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m candles official documentation close price ET timezone",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin BTCUSDT Binance candle data API 1 minute close price documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Bitcoin price historical November 3 comparable cases Binance BTCUSDT 12:00 ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Binance BTCUSDT market structure liquidity volume official announcements BTC spot",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Bitcoin price outlook November 3 BTCUSDT analysis institutional forecasts trading desk",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "row_index": 261,
+  "market_id": "651863",
+  "slug": "bitcoin-above-108k-on-november-3",
+  "question": "Will the price of Bitcoin be above $108,000 on November 3?",
+  "event_title": "Bitcoin above ___ on November 3?",
+  "end_date_limit": "2025-11-03",
+  "row_end_date_raw": "2025-11-03",
+  "expanded_queries": [
+    "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+    "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+    "BTCUSDT 1m candle close November 3 12:00 ET TradingView"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] df = df.reindex(columns=column_names) return df def GetHistoricalData(client, symbol, start_time, end_time, limit=1500): collection = [] while start_time < end_time: data = client.get_historical_data(symbol, start_time=start_time, end_time=end_time, limit=limit) print(client.exchange + \" \" + symbol + \" : Collected \" + str(len(data)) + \" initial data from \"+ str(ms_to_dt_local(data)) +\" to \" + str(ms_to_dt_local(data...",
+      "score": 0.99983,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Analysis of a 1-Minute BTC/USDT Candle Chart ...",
+      "url": "https://www.binance.com/en/square/post/16101593279274",
+      "content": "Each candlestick represents one minute of trading activity, displaying the open, high, low, and close prices for BTC against USDT. Key Data",
+      "score": 0.9997017,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "[{\" symbol \": \" BTCUSDT \", \" priceChange \": \" -154.13000000 \", \" priceChangePercent \": \" -0.740 \", \" weightedAvgPrice \": \"20677.46305250 \", \" openPrice \": \"20825.27000000 \", \" highPrice \": \"20972.46000000 \", \" lowPrice \": \"20327.92000000 \", \" lastPrice \": \"20671.14000000 \", \" volume \": \"72.65112300 \", \" quoteVolume \": \"1502240.91155513 \", \" openTime \": 1655432400000, \" closeTime \": 1655446835460, \" firstId \": 11147809, \" lastId \": 11149775, \" count \": 1967},{\" symbol \": \" BNBBTC \", \" priceChange \": \"0.00008530 \", \" priceChangePercent \": \"0.823 \", \" weightedAvgPrice \": \"0.01043129 \", \" openPrice \": \"0.01036170 \", \" highPrice \": \"0.01049850 \", \" lowPrice \": \"0.01033870 \", \" lastPrice \": \"0.01044700 \", \" volume \": \"166.67000000 \", \" quoteVolume \": \"1.73858301 \", \" openTime \": 1655432400000, [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H...",
+      "score": 0.99948466,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/daily/klines/BTCUSDT/1m/",
+      "content": "BTCUSDT-1m-2026-02-03.zip, 62.8 kB, 2026-02-04T09:33:01.000Z ; BTCUSDT-1m-2026-02-02.zip.CHECKSUM, 0.1 kB, 2026-02-03T09:02:59.000Z ; BTCUSDT-1m-2026-02-02.zip",
+      "score": 0.99915075,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Historical Prices Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/aski1140/btc-usdt-1h-binance-api/data",
+      "content": "open_time: Kline Open time in unix time format open: Open Price high: High Price low: Low Price close: Close Price volume: Volume close_time: Kline Close time in unix time format quote_volume: Quote Asset Volume count: Number of Trades taker_buy_volume: Taker buy quote asset volume during this period taker_buy_quote_volume: Taker buy base asset volume during this period ignore : Ignore(you can drop this feature) ## Usability info 10.00 ## License Apache 2.0 ## Expected update frequency Never ## Tags FinanceInvestingCurrencies and Foreign Exchange ## BTCUSDT-1h-2019-09.csv(112.08 kB) get_app fullscreen chevron_right Detail Compact Column 10 of 12 columns keyboard_arrow_down About this file [...] calendar_view_week BTCUSDT-1h-2019-09.csv calendar_view_week BTCUSDT-1h-2019-10.csv calendar_view_week BTCUSDT-1h-2019-11.csv calendar_view_week BTCUSDT-1h-2019-12.csv calendar_view_week BTCUSDT-1h-2020-01.csv calendar_view_week BTCUSDT-1h-2020-02.csv calendar_view_week BTCUSDT-1h-2020-03.csv calendar_view_week BTCUSDT-1h-2020-04.csv calendar_view_week BTCUSDT-1h-2020-05.csv calendar_view_week BTCUSDT-1h-2020-06.csv calendar_view_week BTCUSDT-1h-2020-07.csv calendar_view_week BTCUSDT-1h-2...",
+      "score": 0.99884856,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Fetch Candlestick/Kline data from Binance API using Python ...",
+      "url": "https://stackoverflow.com/questions/51358147/fetch-candlestick-kline-data-from-binance-api-using-python-preferably-requests",
+      "content": "import requests import datetime import pandas as pd import numpy as np def gget_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00'): \"\"\" interval: str tick interval - 4h/1h/1d ... \"\"\" columns = ['open_time','open', 'high', 'low', 'close', 'volume','close_time', 'qav','num_trades','taker_base_vol','taker_quote_vol', 'ignore'] usecols=['open', 'high', 'low', 'close', 'volume', 'qav','num_trades','taker_base_vol','taker_quote_vol'] start = int(datetime.datetime.timestamp(pd.to_datetime(start))1000) end_u = int(datetime.datetime.timestamp(pd.to_datetime(end))1000) df = pd.DataFrame() print(f'Downloading {interval} {ticker} ohlc-data ...', end=' ') while True: url = f' data = pd.DataFrame(requests.get(url, headers={'Cache-Control': [...] = pd.DataFrame(requests.get(url, headers={'Cache-Control': 'no-cache', \"Pragma\": \"no-cache\"}).json(), columns=columns, dtype=np.float64) start = int(data.open_time.tolist()[-1])+1 data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] data = data[usecols] df = pd.concat([df, data], axis=0) if end in data.index.tolist(): break print('Done.') df.ind...",
+      "score": 0.9986436,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "| Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-154.13000000\", // Absolute price change \"priceChangePercent\": \"-0.740\", // Relative price change in percent \"weightedAvgPrice\": \"20677.46305250\", // QuoteVolume / Volume \"openPrice\": \"20825.27000000\", \"highPrice\": \"20972.46000000\", \"lowPrice\": \"20327.92000000\", \"lastPrice\": \"20671.14000000\", \"volume\": \"72.65112300\", \"quoteVolume\": \"1502240.91155513\", // Sum of (price volume) for all trades \"openTime\": 1655432400000, // Open time for ticker window \"closeTime\": 1655446835460, // Close time for ticker window \"firstI...",
+      "score": 0.9980276,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] Change Log Intr...",
+      "score": 0.99482024,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "Changelog | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs",
+      "content": "| `GET /api/v3/account` `account.status` | 10 | 20 | | `GET /api/v3/rateLimit/order` `account.rateLimits.orders` | 20 | 40 | | `GET /api/v3/exchangeInfo` `exchangeInfo` | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1-100 | 1 | 2 | | `GET /api/v3/depth` `depth` - Limit 101-500 | 5 | 10 | | `GET /api/v3/depth` `depth` - Limit 501-1000 | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1001-5000 | 50 | 100 | | `GET /api/v3/aggTrades` `trades.aggregate` | 1 | 2 | | `GET /api/v3/trades` `trades.recent` | 1 | 2 | | `GET /api/v3/historicalTrades` `trades.historical` | 5 | 10 | | `GET /api/v3/klines` `klines` | 1 | 2 | | `GET /api/v3/uiKlines` `uiKlines` | 1 | 2 | | `GET /api/v3/ticker/bookTicker` `ticker.book` - With `symbol` | 1 | 2 | [...] `GET /api/v1/ping` `GET /api/v1/time` `POST /api/v1/userDataStream` `PUT /api/v1/userDataStream` `GET /api/v1/ticker/bookTicker` `GET /api/v1/ticker/price` `GET /api/v1/klines` `GET /api/v1/historicalTrades` `GET /api/v1/depth` `GET /api/v1/aggTrades` `GET /api/v1/ticker/24hr` `GET /api/v1/userDataStream` `DELETE /api/v1/userDataStream` `GET /api/v1/trades` `newOrderRespAck` `newOrderRespType=ACK` `newOrderRespType=RESULT` `newOrderRespType=FULL...",
+      "score": 0.9805807,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "#giggleusdt Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-BH/square/hashtag/giggleusdt",
+      "content": "A brief recovery to $29 by 12:00 faded quickly. Then at 15:00, a massive 120k volume candle the single largest bar of the entire chart crashed price from $28.80",
+      "score": 0.97684664,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D 1W Last Price Original Trading View Depth Order Book 0.1 Price (USDT) Size(BTC) Sum(BTC) 71,047.5 71,051.1 Trades Top Movers Price (USDT) Amount(BTC) Time 71,047.5 0.006 20:40:48 Positions(0) Open Orders(0) Order History Trade History Transaction History Position History Bots Assets [...] Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide servic...",
+      "score": 0.9324533,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "BTCUSDT Markets: Exchanges & Key Data - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/markets/",
+      "content": "| BTCUSDTBTC/USDT TETHER | CoinW | 71,719.85 USDT | +1.65% | 1.56 B | −18.53% | 71,758.04 USDT | 70,414.06 USDT | 8.89 K | Buy | | BTCUSDTBITCOIN/TETHER USDT | Bitrue | 71,728.44 USDT | +2.65% | 1.45 B | −3.31% | 71,751.37 USDT | 68,928.67 USDT | 15.51 K | Buy | | BTCUSDTBitcoin / TetherUS | Binance | 71,722.23 USDT | +1.65% | 1.44 B | −8.59% | 71,765.65 USDT | 70,408.00 USDT | 7.81 K | Buy | | BTCUSDT.PBTCUSDT Perpetual Contract | Zoomex | 71,650.8 USDT | +1.61% | 1.2 B | +11.04% | 71,720.5 USDT | 70,372.5 USDT | 6.6 K | Buy | | BTCUSDTBTCUSDT SPOT | Bybit | 71,657.6 USDT | +1.55% | 912.99 M | +6.72% | 71,769.4 USDT | 70,416.0 USDT | 4.43 K | Buy | | BTCUSDTBitcoin / USDT | MEXC | 71,724.49 USDT | +1.66% | 896.15 M | −2.51% | 71,750.00 USDT | 70,403.01 USDT | 5.21 K | Buy | [...] | BTCEURBitcoin / Euro | WhiteBIT | 61,782.93 EUR | +1.70% | 13.99 M | −39.12% | 61,811.62 EUR | 60,609.18 EUR | 55 | Neutral | | BTCUSDC.PBITCOIN/USDC PERPETUAL SWAP CONTRACT | BloFin | 71,681.1 USDC | +1.67% | 13.15 M | +44.11% | 71,711.6 USDC | 70,357.7 USDC | 1.81 M | Buy | | BTCUSDT.5LBTC5xLong/Tether | Gate | 0.009010 USDT | +8.03% | 11.8 M | +10.62% | 0.009039 USDT | 0.008270 USDT | 533.05 M | N...",
+      "score": 0.74229145,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Binance APIs",
+      "url": "https://www.binance.com/en/binance-api",
+      "content": "Trading Connectivity We offer access to Spot, Margin, Futures, and Options API trading for over 300 digital and fiat currencies. API trading provides a testing environment, API documentation, and sample code in multiple programming languages. Suitable for all your trading needs. Create/Manage API Key Deploy API Binance Ecosystem Spot Trading SpotMarginConvertSpot Algo Derivatives Trading USDⓈ-MCOIN-MVanilla OptionsFutures Algo Market Data Market Data at your fingertips with Binance API and Websocket Services Market DataWebsocket Investment & Services Manage and grow your digital wealth all in one place. WalletSimple EarnMiningC2CFiatETH StakingCrypto Loan VIP & Institutional [...] Yes. Binance API is compatible with multiple programming languages, such as Python, Java, Node.js, DotNET, Ruby, and more. However, all third-party libraries not listed in our API library are unofficial and not affiliated with Binance and we are not responsible for any loss or damage arising out of or in connection with such uses. 5. Where can I find more information? For more information, please refer to our articles in the Support Center or Terms & Conditions. [...] Rebate on Volume Link Client Made...",
+      "score": 0.67405045,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "search_index": 2
+    },
+    {
+      "title": "BINANCE:BTCUSDT.P - Bitcoin - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT.P/ideas/?sort=recent&video=yes",
+      "content": "will be: 71,000, 70,500 and 70,000. Bullish targets: 71,700, 72,200, 72,700, 73,200, 73,700 and 74,200. [...] BTCUSDT – Short Setup at HTF ResistancePrice pushed into a key resistance zone around 71.5k – 72k and is showing signs of exhaustion. At the same time, we’re seeing a clear increase in Open Interest, which suggests that late leveraged longs are entering the market. The problem? Spot is not supporting this move. Key Idea This is a classic acceptance vs rejection setup. - If price accepts above 71.8k → opens upside towards 73k – 73.5k - If price rejects here → high probability of a move lower to fill inefficiencies. Why I’m Short? - Price at HTF resistance - OI rising → crowded longs - Weak spot demand - Lots of liquidity below. Markets tend to rebalance inefficiencies before continuation. Trade Setup - Entry: 71.4k – 71.8k - Invalidation: Clean acceptance above 72.5k Targets: - TP1: 70.5k [...] Short by origami\\_capital33 #BTC Key Support/Resistance Levels📊#BTC Key Support/Resistance Levels⚠️ From a structural perspective, we are currently in the resistance zone around 72,000.The cost - effectiveness of chasing the rise here is not high. We can look for some bullish signa...",
+      "score": 0.657033,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "Long by Ratner 2525 Bitcoin - Bulls Pushing Toward 80K?Market Overview Bitcoin has recently delivered a strong technical development by closing above the previous daily high, a level that previously acted as resistance. This breakout signals a potential continuation of the broader bullish structure that has been developing over the past weeks. The move Long by TehThomas 3434 See all ideas ## Technicals﻿ ﻿ Summarizing what the indicators are suggesting. Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy [...] Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Moving Averages Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Moving Averages Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy ## Seasonals﻿ ﻿ Displays a symbol's price movements over previous years to identify recurr...",
+      "score": 0.6530611,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin / TetherUS Trade Ideas - BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/ideas/page-31/",
+      "content": "BITCOIN - Retest of resistance at 70500 within the downtrend BINANCE:BTCUSDT.P is consolidating within a global downtrend. The market has not reached its technical bottom (58,900 - 52,600). The liquidity zone (resistance conglomerate) of 70,500 - 71,500 may stop the initial retest and trigger a downward pullback. Bitcoin is in a global downtrend. The local trend is neutral (flat). However, consolidation against the backdrop of a downtrend may be directed towards a continuation of the main movement. The target is 55-50K. However, there are intermediate signals indicating purchases, which is logical in general (consolidation after a sharp decline): Bitcoin is not falling against the backdrop of a sharp decline in the S&P 500, which indicates a more cautious game. In addition, monitoring [...] cycles. With liquidity resting above and structure turning constructive, the probability favors continued upside in the coming days. As long as support holds and momentum remains intact, expectations lean toward Bitcoin pushing higher in the near term. ------------------------------- Thanks for your support. - Make sure to follow me so you don't miss out on the next analysis! - Drop a like an...",
+      "score": 0.6407488,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "BTC / USDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT_5840B7.USD/ideas/?asset=base&sort=recent&video=yes",
+      "content": "Bullish continuation: Price holds support and moves upward toward $72K+. Pullback then rally: Price dips into the imbalance or demand zones, then bounces higher. Deeper correction first: Price drops to the lower demand zone before making a stronger upward move. [...] CRYPTO:BTCUSDShort by TradingShot BTCUSD update First target hit successfully at $71,500 ✅ Momentum remains strong, and price action continues to favor the upside. Next Target: 🎯 $72,000 Market structure is still bullish, and as long as momentum holds, continuation toward the next target is expected. After TP2, we’ll reassess and look for the next entry based on market wave and structure. Bias: Bullish 🟢 Stay patient and let the market deliver. OANDA:BTCUSD by ephraimiykk [...] upward → confirms trend shift. 📐 Price Action & Concept Break of short-term bearish structure Formation of higher low + trendline support Price likely to retest imbalance (FVG) before continuation Liquidity resting above equal highs near 73K 🎯 Trade Idea (Bullish Scenario) Entry: Pullback to trendline / 70,200–70,500 zone Target: 73,300 (FVG fill) Extended Target: 76,000 Invalidation: Break below 69,000 support / trendline",
+      "score": 0.62906903,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Technical Analysis of Bitcoin / TetherUS (BINANCE:BTCUSDT)",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/technicals/",
+      "content": "Sell0 Neutral0 Buy0 Oscillators | Name | Value | Action | --- | Relative Strength Index (14) | — | — | | Stochastic %K (14, 3, 3) | — | — | | Commodity Channel Index (20) | — | — | | Average Directional Index (14) | — | — | | Awesome Oscillator | — | — | | Momentum (10) | — | — | | MACD Level (12, 26) | — | — | | Stochastic RSI Fast (3, 3, 14, 14) | — | — | | Williams Percent Range (14) | — | — | | Bull Bear Power | — | — | | Ultimate Oscillator (7, 14, 28) | — | — | Moving Averages [...] Pivots | Pivot | Classic | Fibonacci | Camarilla | Woodie | DM | --- --- --- | | R3 | — | — | — | — | — | | R2 | — | — | — | — | — | | R1 | — | — | — | — | — | | P | — | — | — | — | — | | S1 | — | — | — | — | — | | S2 | — | — | — | — | — | | S3 | — | — | — | — | — | Be warned This info isn't a recommendation for what you should personally do, so please don't take the data as investment advice. As with any trade, always look first, then leap.Read more in the Terms of Use. ## Frequently Asked Questions ﻿ [...] Moving Averages | Name | Value | Action | --- | Exponential Moving Average (10) | — | — | | Simple Moving Average (10) | — | — | | Exponential Moving Average (20) | — | — | | Simple Moving...",
+      "score": 0.585789,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "BTCUSDT.P Charts and Quotes - Bitcoin - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT.P/",
+      "content": "Summary Neutral Sell Buy Strong sell Strong buy Strong sell Sell Neutral Buy Strong buy Summary Neutral Sell Buy Strong sell Strong buy Strong sell Sell Neutral Buy Strong buy Summary Neutral Sell Buy Strong sell Strong buy Strong sell Sell Neutral Buy Strong buy Moving Averages Neutral Sell Buy Strong sell Strong buy Strong sell Sell Neutral Buy Strong buy Moving Averages Neutral Sell Buy Strong sell Strong buy Strong sell Sell Neutral Buy Strong buy ## Seasonals Displays a symbol's price movements over previous years to identify recurring trends. []( []( [...] # BTCUSDT.P Charts and Quotes — TradingView Skip to main content Full chart ‪27.17 K‬ BTC Previous close 70,865.9 USDT Open 70,866.0 USDT Day's range 70,075.5— 71,080.0 USDT ## Community forum Image 16 MakeMoneyWithAi Image 17Image 18BTCUSDT did you miss me? I know you did 🤑. Since the admins do not allow me to criticize Image 19Image 20BTCUSDT, I will refer to it as «a great success» 😎. Analyzing the price action shows that Image 21Image 22BTCUSDT should continue «only up from here» 🥰 4 24 24 Image 23 Calistheneks [...] 7 11 11 Image 32 vahid_061 Image 33Image 34BTCUSDT Market was supposed to go up with or without Trump...",
+      "score": 0.5310884,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Prix et Graphique du Bitcoin - BTC en USD - TradingView",
+      "url": "https://fr.tradingview.com/scripts/btcusd/",
+      "content": "= ta.atr(vwma\\_length) Next, dynamic volatility bands are constructed by adding and subtracting ATR-based buffers from the VWMA baseline, creating adaptive boundaries that expand during volatile conditions and contract during calm periods: upper\\_band = vwma\\_basis + atr\\_value \\ atr\\_multiplier lower\\_band = vwma\\_basis - atr\\_value \\ atr\\_multiplier The trend state is then determined through breakout logic that requires price to exceed these volatility-adjusted boundaries: if close > upper\\_band trend\\_direction := 1 else if close < lower\\_band trend\\_direction := -1 Finally, trend change detection identifies transitions between bullish and bearish states: trend\\_turned\\_bullish = trend\\_direction == 1 and trend\\_direction != 1 trend\\_turned\\_bearish = trend\\_direction == -1 and [...] Below equilibrium → discount zone (buy interest) Above equilibrium → premium zone (sell interest) Professional insight: Smart money prefers buying discounts and selling premiums, not chasing price. 🔹 3. Market Structure Shift (MSS) Instead of frequent BOS labels, the script detects true directional shifts. Bullish MSS: Price closes above previous HTF high Bearish MSS: Price closes below previous...",
+      "score": 0.52627033,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price: BTC Live Price Chart, Market Cap & News Today",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "| # | Exchange | | Pair | Price | Spread | +2% Depth | -2% Depth | 24h Volume | Volume % | Last Updated | --- --- --- --- --- | | | 1 | Image 54: Binance Binance | CEX | BTC/USDT | $70,824.57 | 0.01% | $14,873,697 | $18,250,552 | $1,374,060,852 | 3.44% | Recently | | 2 | Image 55: Gate Gate | CEX | BTC/USDT | $70,764.75 | 0.01% | $10,349,267 | $9,088,611 | $811,918,099 | 2.03% | Recently | | 3 | Image 56: Bybit Bybit | CEX | BTC/USDT | $70,786.12 | 0.01% | $1,715,877 | $1,286,775 | $850,436,495 | 2.13% | Recently | | 5 | Image 57: Coinbase Exchange Coinbase Exchange | CEX | BTC/USD | $70,744.11 | 0.01% | $17,106,174 | $16,874,421 | $562,232,083 | 1.41% | Recently | [...] Chart by TradingView 24H 7D 1M 3M YTD 1Y Max Use log scale View in full screen Download as PNG Download as SVG Download as JPEG Download as PDF Compare with: - [x] BTC - [x] ETH Need more data? Explore our API | 1h | 24h | 7d | 14d | 30d | 1y | --- --- --- | | 0.7% | 2.4% | 0.7% | 0.3% | 7.9% | 19.3% | ## BTC Converter BTC USD Bitcoin Statistics | Market Cap Market Cap = Current Price x Circulating Supply Refers to the total market value of a cryptocurrency’s circulating supply. It is similar to the stock market...",
+      "score": 0.4948006,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "BTCUSDT.P_OI Charts and Quotes - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT.P_OI/",
+      "content": "# BTCUSDT.P_OI Charts and Quotes — TradingView Skip to main content Full chart — Previous close 86,871.721 BTC Open 86,868.164 BTC Day's range 86,727.110— 87,692.609 BTC ## Seasonals Displays a symbol's price movements over previous years to identify recurring trends. []( []( English English Select market data provided by ICE Data Services. Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved. SEC fillings and other documents provided by Quartr.© 2026 TradingView, Inc. More than a product Supercharts Screeners Stocks ETFs Bonds Crypto coins CEX pairs DEX pairs Pine [...] Growth opportunities Advertising Brokerage integration Partner program Education program Image 10: Look FirstImage 11: Look First Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more Show more",
+      "score": 0.47943115,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "search_index": 3
+    },
+    {
+      "title": "#listingday Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/listingday",
+      "content": "After Day 1 If AKE builds a multi‑day base and reclaims the first‑day high on volume, a slower swing opens up. Use a 4h/daily “Close → Retest → Hold” trigger. Trail with last 10–20 session low; trim at prior supply zones. Copy/Paste Trade Card (fill before go‑live) Setup: Break‑and‑Park / Edge Fade ORH: __ | ORL: __ | VWAP: __ Entry trigger: Close → Retest → Hold at __ Stop: __ (structure) Size: __ (≤0.5% risk) TP1: __ | TP2: __ | Trail: HL/LH structure Abort if: Funding spike vs price, two failed retests, or BTC/ETH volatility spike breaks structure. $BTC {spot}(BTCUSDT) $ETH {spot}(ETHUSDT) $BNB {spot}(BNBUSDT) [...] 🔶👉 Binance Will List Cow Protocol (COW) and Cetus Protocol (CETUS) with Seed Tag Applied 🚨📢 Dear Binancians, Binance will list Cow Protocol (COW), Cetus Protocol(CETUS) and open trading for the following spot trading pairs at 2024-11-06 12:00 (UTC). New Spot Trading Pairs: COW/USDT, CETUS/USDT, users can start depositing COW, CETUS in preparation for trading. Withdrawals will open at 2024-11-07 12:00 (UTC). Listing Fee: 0 BNB. COW Smart Contract Address (Ethereum) : 0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB CETUS Smart Contract Address (Sui) : 0x6864a6f9218048609...",
+      "score": 0.27669054,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "#binanceturns7 Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/binanceturns7",
+      "content": "#Follow\\_Like\\_Comment {spot}(SOLUSDT) {spot}(BTCUSDT) {spot}(ETHUSDT) [...] $STPT $SOL $PROS {spot}(SOLUSDT) {spot}(BTCUSDT) {spot}(TRXUSDT) [...] #PEPE #BTC #BinanceTurns7 #Write2Earn $BTC {spot}(BTCUSDT) {spot}(PEPEUSDT)",
+      "score": 0.18952107,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Btc AI trader's Profile",
+      "url": "https://www.binance.com/en-NG/square/profile/btcaitraderelite",
+      "content": "Strategy: Instead of watching the 1-minute chart and panicking, look at the Yearly Support. As long as Bitcoin maintains this \"Higher Low",
+      "score": 0.006438102,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Phantomas's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/kateryna",
+      "content": "It is the overlap between Europe and the USA that traditionally provides the highest liquidity and the strongest movements in the same $BTC or $ETH market.",
+      "score": 0.004166256,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "aste Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-JP/square/hashtag/aste",
+      "content": "Aster ($ASTER) has climbed above $1.00, supported by a strong crypto market as Bitcoin trades over $109K and Ethereum surpasses $3,800.",
+      "score": 0.0023504829,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031: Yearly Forecast & ...",
+      "url": "https://www.binance.com/en-IN/price-prediction/bitcoin",
+      "content": "Our Bitcoin price prediction helps you forecast BTC price targets in 2026 & over the next four years based on a fixed interest rate and the consensus rating",
+      "score": 0.0022783307,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "#apro-fællesskabsindsigt og markedsstemning",
+      "url": "https://www.binance.com/da-DK/square/hashtag/apro",
+      "content": "Udforsk, hvad #apro-fællesskabet taler om på Binance Square. Deltag i samtaler med førende kryptoinfluencere om de aktuelle kryptotrends og Web3-tendenser.",
+      "score": 0.0007539328,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "#launchpool Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/launchpool%E2%80%AC",
+      "content": "Explore what the #launchpool community is talking about on Binance Square. Join top crypto influencers in discussions driving today's crypto and Web3",
+      "score": 0.0005838325,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "site:binance.com BTC/USDT 1m Candles November 3 12:00 ET close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API BTCUSDT klines 1m November 3 12:00 ET close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BTCUSDT 1m candle close November 3 12:00 ET TradingView",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

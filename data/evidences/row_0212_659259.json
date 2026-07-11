@@ -1,0 +1,297 @@
+{
+  "row_index": 212,
+  "market_id": "659259",
+  "slug": "will-ethereum-reach-4800-in-november-2025",
+  "question": "Will Ethereum reach $4,800 in November?",
+  "event_title": "What price will Ethereum hit in November?",
+  "end_date_limit": "2025-12-01",
+  "row_end_date_raw": "2025-12-01",
+  "expanded_queries": [
+    "Binance ETH/USDT 1m historical data November 4800 high",
+    "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+    "Binance API klines ETHUSDT 1m download November 1 to November 30"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 29
+  },
+  "evidences": [
+    {
+      "title": "Fetch Candlestick/Kline data from Binance API using Python ...",
+      "url": "https://stackoverflow.com/questions/51358147/fetch-candlestick-kline-data-from-binance-api-using-python-preferably-requests",
+      "content": "= pd.DataFrame(requests.get(url, headers={'Cache-Control': 'no-cache', \"Pragma\": \"no-cache\"}).json(), columns=columns, dtype=np.float64) start = int(data.open_time.tolist()[-1])+1 data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] data = data[usecols] df = pd.concat([df, data], axis=0) if end in data.index.tolist(): break print('Done.') df.index = pd.to_datetime(df.index) df = df.loc[:end] return df eth = get_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00') eth [...] import requests import datetime import pandas as pd import numpy as np def gget_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00'): \"\"\" interval: str tick interval - 4h/1h/1d ... \"\"\" columns = ['open_time','open', 'high', 'low', 'close', 'volume','close_time', 'qav','num_trades','taker_base_vol','taker_quote_vol', 'ignore'] usecols=['open', 'high', 'low', 'close', 'volume', 'qav','num_trades','taker_base_vol','taker_quote_vol'] start = int(datetime.datetime.timestamp(pd.to_datetime(start))1000) end_u = int(datetime.datetime.timestamp(pd.to_date...",
+      "score": 0.9998634,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Building an Asynchronous OHLCV Data Downloader for Binance ...",
+      "url": "https://medium.com/@danielbriano/building-an-asynchronous-ohlcv-data-downloader-for-binance-with-python-3b59f24095ce",
+      "content": "``` async def main(): client = BinanceClient() symbols = [\"BTCUSDT\", \"ETHUSDT\", \"BNBUSDT\", \"XRPUSDT\", \"XLMUSDT\"] interval = \"15m\" start = int(time() 1000) - 5 365 24 60 60 1000 # 5 years ago end = int(time() 1000) st = time() data = await client.download_ohlcv_data(symbols, interval, start, end) et = int((time() - st) 1000) no_of_klines = sum(len(v) for v in data.values()) print(f\"got {no_of_klines} klines in {et}ms\") for symbol, ohlcv in data.items(): print(f\"{symbol}: {len(ohlcv)} candles downloaded\")if __name__ == \"__main__\": asyncio.run(main()) async def main \"BTCUSDT\" \"ETHUSDT\" \"BNBUSDT\" \"XRPUSDT\" \"XLMUSDT\" \"15m\" int 1000 5 365 24 60 60 1000 [...] creates concurrent tasks to fetch OHLCV data for each symbol in the provided list, over the specified time range and interval. Parameters: ----------- symbols : List[str] A list of trading pair symbols (e.g., ['BTCUSDT', 'ETHUSDT']). interval : str The candlestick interval (e.g., '1m', '1h', '1d'). start : int The start time in milliseconds since the Unix epoch. end : int The end time in milliseconds since the Unix epoch. Returns: -------- Dict[str, List[List[Any]]] A dictionary where each key is a symbol and the corresponding val...",
+      "score": 0.99973875,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "https://api.binance.com/api/v3/klines?symbol=ETHUS...",
+      "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=1m",
+      "content": "No information is available for this page.",
+      "score": 0.997917,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "Scheduled changes: The All Book Tickers stream (!bookTicker) is set to be removed in late November 2022. Please use the Individual Book Ticker Streams instead. (@bookTicker). Multiple @bookTicker streams can be subscribed to over one connection. For example: wss://stream.binance.us:9443/stream?streams=btcusdt@bookTicker/bnbbtc@bookTicker Market Data: Added a new optional parameter type in two endpoints: GET /api/v3/ticker and GET /api/v3/ticker/24hr. Also removed Individual Symbol Ticker Streams as it duplicates with Ticker Order Book Stream, supported new candlestick chart interval: 1s. Get Asset Distribution History endpoint: Updated this endpoint to also query the rebate distribution record. [...] | Security Type | Description | --- | | NONE | Endpoint can be accessed freely | | TRADE | Endpoint requires sending a valid API-Key and signature | | USER\\_DATA | Endpoint requires sending a valid API-Key and signature | | USER\\_STREAM | Endpoint requires sending a valid API-Key | | MARKET\\_DATA | Endpoint requires sending a valid API-Key | ## Authentication Timing ``` if(timestamp<(serverTime + 1000) &&(serverTime - timestamp)<= recvWindow){// process request} else{// reject reque...",
+      "score": 0.9937588,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] ## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] Change Log Intr...",
+      "score": 0.9884919,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "How to get ALL (or multiple) pair's historical klines from ...",
+      "url": "https://stackoverflow.com/questions/63515267/how-to-get-all-or-multiple-pairs-historical-klines-from-binance-api-in-one-re",
+      "content": "`import asyncio import websockets async def candle_stick_data(): url = \"wss://stream.binance.com:9443/ws/\" #steam address first_pair = 'btcusdt@kline_15m' #first pair async for sock in websockets.connect(url+first_pair): try: pairs = '{\"method\": \"SUBSCRIBE\", \"params:[\"ethusdt@kline_15m\",\"algousdt@kline_15m\",\"nearusdt@kline_15m\",\"atomusdt@kline_15m\"], \"id\": 1}' #other pairs await sock.send(pairs) print(f\"> {pairs}\") while True: resp = await sock.recv() print(f\"< {resp}\") except websockets.ConnectionClosed: continue asyncio.run(candle_stick_data())` hakan b's user avatar ## Comments Add a comment ## Your Answer Thanks for contributing an answer to Stack Overflow! But avoid … To learn more, see our tips on writing great answers. ### Sign up or log in ### Post as a guest [...] After recieve data you only must to specify when candle was closed, you can do it from timestamps that are in json data ('t' and 'T'). ( You must install websockets library. `pip install websockets` And here is some sample code how it can work. `import asyncio import websockets async def candle_stick_data(): url = \"wss://stream.binance.com:9443/ws/\" #steam address first_pair = 'bnbbtc@kline_1m' #first pair asy...",
+      "score": 0.9879462,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "binance-connector - PyPI",
+      "url": "https://pypi.org/project/binance-connector/",
+      "content": "``` ## Documentation ## RESTful APIs Usage examples: ``` from binance.spot import Spot client = Spot() # Get server timestamp print(client.time()) # Get klines of BTCUSDT at 1m interval print(client.klines(\"BTCUSDT\", \"1m\")) # Get last 10 klines of BNBUSDT at 1h interval print(client.klines(\"BNBUSDT\", \"1h\", limit=10)) # API key/secret are required for user data endpoints client = Spot(api_key='<api_key>', api_secret='<api_secret>') # Get account and balance information print(client.account()) # Post a new order params = { 'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': 0.002, 'price': 9500 } response = client.new_order(params) print(response) ``` Please find `examples` folder to check for more endpoints. [...] # Combine selected streams ws_client.instant_subscribe( stream=['bnbusdt@bookTicker', 'ethusdt@bookTicker'], callback=message_handler, ) ws_client.stop() ``` ### Heartbeat Once connected, the websocket server sends a ping frame every 3 minutes and requires a response pong frame back within a 10 minutes period. This package handles the pong responses automatically. ### Testnet ``` from binance.websocket.spot.websocket_client import Spo...",
+      "score": 0.98625773,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "``` {{ \"e\": \"kline\", // Event type \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"k\": { \"k\": { \"t\": 1638747660000, // Kline start time \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"o\": \"0.0010\", [...] // Open price \"c\": \"0.0020\", // Close price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote...",
+      "score": 0.98571813,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Manual · ccxt/ccxt Wiki - GitHub",
+      "url": "https://github.com/ccxt/ccxt/wiki/manual",
+      "content": "``` // DO THIS INSTEAD: const binance = new ccxt. binance() while(true){const result = await Promise. all([binance. fetchOrderBook('BTC/USDT'), binance. fetchOrderBook('ETH/USDT'), binance. fetchOrderBook('ETH/BTC'),]) console. log(result)} ``` [...] ``` // DO NOT DO THIS! async function tick(){const exchange = new ccxt. binance() const response = await exchange. fetchOrderBook('BTC/USDT')// ... some processing here ... return response} while(true){const result = await tick() console. log(result)} ``` Do not break this rule unless you really understand the inner workings of the rate-limiter and you are 100% sure you know what you're doing. In order to stay safe always reuse the exchange instance throughout your functions and methods callchain like shown below: ``` // DO THIS INSTEAD: async function tick(exchange){const response = await exchange. fetchOrderBook('BTC/USDT')// ... some processing here ... return response} const exchange = new ccxt. binance() while(true){const result = await tick(exchange) console. log(result)} ``` [...] #### Python ``` ex = ccxt binance def my_overload symbol params = # your codes go here ex fetch_ticker = my_overload print ex fetch_ticker'BTC/USDT...",
+      "score": 0.97068775,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum(ETH) Surpasses 4800 USDT with a 0.10% Increase in 24 ...",
+      "url": "https://www.binance.com/en/square/post/08-24-2025-ethereum-eth-surpasses-4-800-usdt-with-a-0-10-increase-in-24-hours-28767396909681",
+      "content": "# Ethereum(ETH) Surpasses 4,800 USDT with a 0.10% Increase in 24 Hours Follow View Hidden Replies Report Block User On Aug 24, 2025, 23:18 PM(UTC). According to Binance Market Data, Ethereum has crossed the 4,800 USDT benchmark and is now trading at 4,800 USDT, with a narrowed 0.10% increase in 24 hours. #ETH Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content. See T&Cs. ETH-3.41% 0 5 12k Related Posts Crypto慕白 · Mar 21 Bearish [...] $ETH /USDT PERP PULLBACK IN PLAY ⚡ Price: $2,146.36 Mark Price: $2,146.35 24H Change: +0.61% 24H High: $2,168.00 24H Low: $2,116.28 Volume: 2.09M ETH | 4.49B USDT ETH showed a strong push toward $2,168 but faced rejection at the top, triggering a sharp pullback. The market is now forming a short-term bearish structure with consecutive lower candles, signaling selling pressure in the near term 📉 After the drop, price is attempting a minor bounce, but momentum still looks weak as sellers continue to dominate the structure. This could turn into a continuation move if recovery lacks strength ⚠️ Volatility remains active, and the market is reacting quickly to resistance rejection — traders should stay sharp 👀 Let...",
+      "score": 0.78532547,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "Binance APIs",
+      "url": "https://www.binance.com/en/binance-api",
+      "content": "Trading Connectivity We offer access to Spot, Margin, Futures, and Options API trading for over 300 digital and fiat currencies. API trading provides a testing environment, API documentation, and sample code in multiple programming languages. Suitable for all your trading needs. Create/Manage API Key Deploy API Binance Ecosystem Spot Trading SpotMarginConvertSpot Algo Derivatives Trading USDⓈ-MCOIN-MVanilla OptionsFutures Algo Market Data Market Data at your fingertips with Binance API and Websocket Services Market DataWebsocket Investment & Services Manage and grow your digital wealth all in one place. WalletSimple EarnMiningC2CFiatETH StakingCrypto Loan VIP & Institutional [...] Yes. Binance API is compatible with multiple programming languages, such as Python, Java, Node.js, DotNET, Ruby, and more. However, all third-party libraries not listed in our API library are unofficial and not affiliated with Binance and we are not responsible for any loss or damage arising out of or in connection with such uses. 5. Where can I find more information? For more information, please refer to our articles in the Support Center or Terms & Conditions. [...] Rebate on Volume Link Client Made...",
+      "score": 0.7759446,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum Rockets Past $4,900: Why ETH Is the Altcoin King in 2025",
+      "url": "https://www.binance.com/en/square/post/28759633814978",
+      "content": "Follow Report Block User #ETH#USDT On August 24, 2025, Ethereum (ETH) smashed through the $4,900 USDT barrier, reaching $4,902.23 with a 3.26% surge in just 24 hours, according to Binance Market Data. This electrifying climb underscores Ethereum’s dominance as the second-largest cryptocurrency by market cap, now sitting at a staggering $592.15 billion. But what’s fueling this rally, and can ETH sustain its throne as the altcoin king? Let’s dive into the catalysts, technicals, and future outlook driving Ethereum’s meteoric rise. The Perfect Storm: Catalysts Behind ETH’s Surge Ethereum’s latest price spike isn’t a fluke—it’s the result of a confluence of powerful drivers: [...] Technical Analysis: A Bullish Breakout Ethereum’s price action is painting a compelling picture for traders. On August 24, ETH broke through the $4,800 resistance zone, a level that capped its price for years. The four-hour chart shows a bullish trend, with the 50-day moving average sloping upward and the 200-day moving average rising since August 20, 2025. This suggests a robust short- and long-term trend. A sustained break above $4,800 could propel ETH toward $5,500–$6,000 by month-end, with analysts eyei...",
+      "score": 0.76701033,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum USD (ETH-USD) Price History & Historical Data",
+      "url": "https://finance.yahoo.com/quote/ETH-USD/history/",
+      "content": "| Nov 7, 2025 | 3,312.03 | 3,471.80 | 3,195.90 | 3,435.30 | 3,435.30 | 42,609,994,022 | | Nov 6, 2025 | 3,425.36 | 3,454.34 | 3,245.28 | 3,312.26 | 3,312.26 | 36,731,850,433 | | Nov 5, 2025 | 3,292.15 | 3,479.81 | 3,170.51 | 3,425.17 | 3,425.17 | 46,955,882,330 | | Nov 4, 2025 | 3,602.04 | 3,652.69 | 3,063.09 | 3,292.57 | 3,292.57 | 76,827,517,773 | | Nov 3, 2025 | 3,911.75 | 3,912.63 | 3,560.26 | 3,602.31 | 3,602.31 | 53,091,469,560 | | Nov 2, 2025 | 3,873.89 | 3,914.88 | 3,840.00 | 3,911.06 | 3,911.06 | 20,479,611,654 | | Nov 1, 2025 | 3,847.17 | 3,906.78 | 3,832.63 | 3,874.19 | 3,874.19 | 17,490,279,524 | | Oct 31, 2025 | 3,805.08 | 3,900.58 | 3,797.67 | 3,847.08 | 3,847.08 | 37,800,100,395 | | Oct 30, 2025 | 3,903.32 | 3,948.22 | 3,681.91 | 3,804.38 | 3,804.38 | 39,981,939,289 | [...] | Nov 16, 2025 | 3,166.79 | 3,244.84 | 3,007.07 | 3,092.85 | 3,092.85 | 30,987,886,524 | | Nov 15, 2025 | 3,104.23 | 3,227.69 | 3,104.23 | 3,166.63 | 3,166.63 | 19,932,940,649 | | Nov 14, 2025 | 3,232.30 | 3,252.66 | 3,071.97 | 3,103.79 | 3,103.79 | 47,003,809,463 | | Nov 13, 2025 | 3,412.99 | 3,561.86 | 3,156.03 | 3,232.76 | 3,232.76 | 50,283,416,669 | | Nov 12, 2025 | 3,415.80 | 3,586.01 | 3,...",
+      "score": 0.7539928,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "ETH USD Binance Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/eth-usd-historical-data",
+      "content": "| | | | | | | | --- --- --- | | 2,203.38 | 2,317.55 | 2,348.22 | 2,155.14 | 488.05K | -4.93% | | | 2,317.74 | 2,348.30 | 2,374.00 | 2,297.89 | 493.82K | -1.49% | | | 2,352.79 | 2,180.91 | 2,384.90 | 2,165.36 | 845.89K | +8.01% | | | 2,178.29 | 2,096.62 | 2,200.68 | 2,083.36 | 280.83K | +3.92% | | | 2,096.15 | 2,090.44 | 2,105.61 | 2,062.80 | 152.50K | +0.17% | | | 2,092.61 | 2,073.51 | 2,206.32 | 2,071.09 | 599.66K | +0.95% | | | 2,073.02 | 2,052.85 | 2,093.39 | 2,018.21 | 400.49K | +1.03% | | | 2,051.97 | 2,035.80 | 2,085.57 | 2,007.83 | 350.04K | +0.75% | | | 2,036.72 | 1,992.25 | 2,087.93 | 1,991.29 | 463.45K | +2.14% | | | 1,994.04 | 1,937.87 | 2,051.69 | 1,932.02 | 550.76K | +2.94% | | | 1,937.11 | 1,969.92 | 1,979.33 | 1,918.23 | 391.19K | -1.64% | [...] | | 1,969.32 | 1,979.32 | 1,996.03 | 1,950.26 | 184.45K | -0.46% | | | 1,978.48 | 2,073.26 | 2,092.80 | 1,956.63 | 411.57K | -4.55% | | | 2,072.86 | 2,126.62 | 2,161.62 | 2,055.21 | 432.23K | -2.65% | | | 2,129.38 | 1,982.06 | 2,198.19 | 1,945.32 | 737.56K | +7.39% | | | 1,982.81 | 2,027.86 | 2,040.14 | 1,932.95 | 509.41K | -2.16% | | | 2,026.63 | 1,939.74 | 2,081.43 | 1,922.30 | 577.33K | +4.50% | | | 1,939.35 | 1,964.51...",
+      "score": 0.68798697,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "ETH/USDT - Ethereum BINANCE exchange charts 1 month",
+      "url": "https://bitinfocharts.com/markets/binance/eth-usdt-1m.html",
+      "content": "SENT/USDT AVAX/USDC AVAX/TRY KITE/USDC STRK/USDT TRX/USDC POL/USDT EIGEN/USDT ENA/USDC SEI/USDC HUMA/TRY PHA/TRY KITE/TRY SXP/USDT LDO/USDT MANTRA/TRY PAXG/USDC FLOKI/USDT OP/USDT PAXG/TRY ALGO/USDT XPL/USDC GALA/USDT RUNE/USDT MORPHO/USDT BROCCOLI714/USDT AIXBT/USDT FORM/USDT NEAR/USDC BIO/USDT WBETH/USDT GIGGLE/USDT BABY/TRY BANANAS31/USDC SPK/USDT BTC/IDR JASMY/USDT TIA/USDT XRP/EUR ENSO/USDT EURI/USDT USDT/MXN BARD/TRY ATOM/USDT PENGU/USDC FOGO/USDT ROSE/USDT LTC/USDC INJ/USDT ETC/USDT LINEA/USDT SKY/USDT BERA/USDT ALICE/USDT JUP/USDT USDT/ARS GUN/USDT PEOPLE/USDT SIGN/TRY AAVE/USDC NEIRO/USDT RUNE/USDC HOOK/USDT ZEN/USDT KERNEL/TRY SLP/USDT XRP/ETH PNUT/USDT ASTER/USDC SNX/TRY PENDLE/USDT KAITO/USDT BCH/USDC BANANA/USDT WBETH/ETH AXS/USDT COW/USDT MASK/USDT ALCX/USDT TRX/TRY [...] ADA/TRY USDT/PLN MANA/USDT MORPHO/USDC PORTAL/TRY XTZ/USDT METIS/USDT MASK/TRY NEXO/USDT GPS/TRY PROM/USDT ARB/TRY FUN/USDT COMP/USDT USDT/ZAR AUDIO/USDT AGLD/USDT IMX/USDT HUMA/USDC MUBARAK/TRY BNB/TRY PYR/USDT UMA/TRY HOT/TRY PEOPLE/TRY INIT/USDT TIA/TRY AXL/USDT CRV/USDC EDEN/USDT FARM/USDT FRAX/USDT BIO/USDC AI/USDT THETA/USDT MANTA/USDT KSM/USDT VIC/USDT FIDA/USDT XRP/RLUSD BIO/TRY MOVR/USDT...",
+      "score": 0.6664756,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "What price will Ethereum hit October 27-November 2? - Polymarket",
+      "url": "https://polymarket.com/zh-hant/event/what-price-will-ethereum-hit-october-27-november-2/will-ethereum-reach-4300-october-27-november-2",
+      "content": "瀏覽 最新 熱門 熱門 流動性足 即將封盤 競爭度 話題 即時加密貨幣 即時加密貨幣 政治 政治 中東 中東 加密貨幣 加密貨幣 體育 體育 流行文化 流行文化 科技 科技 人工智慧 人工智慧 Market icon # What price will Ethereum hit October 27-November 2? Market icon # What price will Ethereum hit October 27-November 2? Ended: Nov 3, 2025 12AM Mar 30 Ended: Nov 3, 2025 12AM Mar 30 $726,086 交易量 ↑ 4,900 $110,914 交易量 No ↑ 4,800 $60,593 交易量 No ↑ 4,700 $39,676 交易量 No ↑ 4,600 $36,055 交易量 No ↑ 4,500 $33,136 交易量 No ↑ 4,400 $39,094 交易量 No ↑ 4,300 $136,681 交易量 No ↓ 4,100 $6,251 交易量 Yes ↓ 4,000 $13,580 交易量 Yes ↓ 3,900 $22,505 交易量 Yes ↓ 3,800 $37,489 交易量 Yes ↓ 3,700 $33,618 交易量 Yes ↓ 3,600 $107,825 交易量 No ↓ 3,500 $48,670 交易量 No $726,086 交易量 ↑ 4,900 No ↑ 4,800 No ↑ 4,700 No ↑ 4,600 No ↑ 4,500 No ↑ 4,400 No [...] No ↑ 4,700 No ↑ 4,600 No ↑ 4,500 No ↑ 4,400 No ↑ 4,300 No ↓ 4,100 Yes ↓ 4,000 Yes ↓ 3,900 Yes ↓ 3,800 Yes ↓ 3,700 Yes ↓ 3,600 No ↓ 3,500 No ## 規則 ## 盤口背景 市場開放時間： Oct 27, 2025, 12:00 AM ET Resolver 已提議結果: No 無爭議 最終結果: No ## 盤口背景 Resolver ## 評論 (80) ## 頂級持倉者 ## 持倉 ## 動態 警惕外部連結哦。 警惕外部連結哦。 ## Frequently Asked Questions ### What is the \"What price will Ethereum hit October 27-November 2?\" prediction market? ### How much trading activity has \"What price will Ethereum hit October 2...",
+      "score": 0.6391287,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum (ETH) Price Analysis for November 11",
+      "url": "https://www.binance.com/en/square/post/32251549045362",
+      "content": "Ethereum is trading at $3,498 at press time. #ETH. Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content",
+      "score": 0.5951402,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "ETH-USDT (Binance Futures) - Price, Live Order Book - CryptoMeter",
+      "url": "https://www.cryptometer.io/data/binance_futures/eth/usdt",
+      "content": "| LONGS | | 2.6M (50%) | 4.9M (53%) | 2M (53%) | 1M (49%) | 4M (52%) | 2.7M (51%) | 2.2M (50%) | 3M (50%) | 3.1M (51%) | 1.9M (48%) | 1M (50%) | 2.4M (49%) | 2.8M (50%) | 4.2M (51%) | 3.3M (50%) | 3.6M (51%) | 3.4M (50%) | 3.2M (50%) | 2.8M (50%) | 2.7M (51%) | 4.4M (52%) | 2.6M (48%) | 3.2M (49%) | 1M (50%) | 1M (51%) | 2.3M (50%) | 2M (48%) | 2.5M (51%) | 2.2M (50%) | 2M (50%) | | SHORTS | | 2.6M (50%) | 4.2M (47%) | 1.8M (47%) | 1M (51%) | 3.7M (48%) | 2.6M (49%) | 2.2M (50%) | 2.9M (50%) | 3M (49%) | 2.1M (52%) | 1M (50%) | 2.4M (51%) | 2.8M (50%) | 4M (49%) | 3.3M (50%) | 3.5M (49%) | 3.3M (50%) | 3.2M (50%) | 2.9M (50%) | 2.5M (49%) | 4M (48%) | 2.8M (52%) | 3.3M (51%) | 1M (50%) | 949.3K (49%) | 2.3M (50%) | 2.1M (52%) | 2.4M (49%) | 2.1M (50%) | 2.1M (50%) | [...] | LONGS | | 39.3K (54%) | 58.8K (48%) | 49.4K (45%) | 69.8K (49%) | 101.9K (50%) | 228.1K (50%) | 134.1K (49%) | 184.2K (50%) | 95.3K (51%) | 101.5K (54%) | 89.4K (54%) | 125.2K (48%) | 79.2K (46%) | 98K (54%) | 98.5K (51%) | 82K (46%) | 208.4K (49%) | 274.1K (49%) | 83.7K (48%) | 154.8K (49%) | 252.6K (56%) | 137.7K (46%) | 150.8K (49%) | 218.6K (56%) | | SHORTS | | 33.9K (46%) | 63.8K (52%) | 60.1K (55%) | 73...",
+      "score": 0.5769478,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum to US Dollar (ETH/USD) - Historical data ...",
+      "url": "https://twelvedata.com/markets/679245/crypto/binance/eth-usd/historical-data",
+      "content": "Apple Inc AAPL Common stock NASDAQTesla Inc TSLA Common stock NASDAQPublic Joint-Stock Company Territorial Generation Company No.2 TGKB Common stock MOEXSynergia Energy Ltd SYN Common stock LSECoroWare, Inc. COWI Common stock OTCClover Power Public Company Limited CV Common stock SETYes Bank Limited YESBANK Common stock NSEZorlu Enerji Elektrik Üretim A.S. ZOREN Common stock BISTBosera CM Shekou Industrial Park REIT 0P0001MJE3 Mutual fund SZSETR Property Investment Trust TRPIF Mutual fund LSEBaillie Gifford Shin Nippon Mutual Fund SNPVF Closed-end fund OTCAlkhabeer Capital - Diversified Income ETF 4700 Mutual fund TadawulFidelity Asian Values PLC FAV Mutual fund LSEMirae Asset Asia Pacific Real Estate Fund 094800 Closed-end fund KRXUBS Property Fund Direct Real Estate DRPF Closed-end fund [...] 005930182,900.00-3.23% 0700504.00-0.30% 23301,865.00 1.08% ASML1,211.60 0.83% AZN14,062.00 1.82% ETH/USD2,165.20-0.18% EUR/USD1.16 0.02% MC462.35 0.35% NESN76.78 0.39% USD/JPY159.48 0.00% XPT/USD1,003.20 0.33% 005930182,900.00-3.23% 0700504.00-0.30% 23301,865.00 1.08% ASML1,211.60 0.83% AZN14,062.00 1.82% ETH/USD2,165.20-0.18% EUR/USD1.16 0.02% MC462.35 0.35% NESN76.78 0.39% USD/JPY159.48...",
+      "score": 0.5709301,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum (ETH) Price USD Today, News, Charts, Market Cap",
+      "url": "https://www.coinbase.com/price/ethereum",
+      "content": "󰌲 87.58% ### Buyers 16K 󰌲 87.84% ### Sellers 8.3K 󰌲 86.43% ### Searched 4.3K ## Market Stats ### Market Cap $261.46B 󰌾 0.36% ### FDV $261.46B ### Circ. Supply 121M ETH ### Max Supply Not enough data ### Total Supply 121M ETH ### Diluted Valuation $261.48B ## Performance ### Popularity #2 ### Dominance 11.02% ### Volume (24H) $17.10B 󰌲 6.84% ### Volume (7D) $131.18B ### Volume (30D) $386.24B ### All time high $4.95K ### Price Change (1Y) Not enough data 󰌾 7.75% ### Additional details ## Market details ETH vs markets ↗ 24.92% ETH vs BTC ↗ 31.35% Tags pos smart-contracts layer-1 ftx-bankruptcy-estate us-strategic-crypto-reserve binance-listing sec-cftc-token-taxonomy sec-cftc-digital-commodities +4 ## Network & Addresses [...] 󰐰 Adding to the momentum has been the growing crop of public companies that have begun purchasing ETH for their balance sheets. Two publicly traded companies, Sharplink and Bitmine, both own more than $1 billion in ETH, and BitMine has set an explicit goal of accumulating 5% of the token’s overall supply. So far, around 59 public companies have added more than $9 billion worth of ETH to their balance sheets, with that number almost certainly set to rise in th...",
+      "score": 0.48235655,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "1m - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/spot/monthly/klines/ETHUSDT/1m/",
+      "content": "Market Data. Home / data / spot / monthly / klines / ETHUSDT / 1m /. Item, Size, Last Modified ../ · ETHUSDT-1m-2026-01. ... ETHUSDT-1m-2026-01.zip, 2.0 MB, 2026-",
+      "score": 0.47943115,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "ETHUSD pulled back after failing to break its previous high, but it's ...",
+      "url": "https://www.facebook.com/exness/posts/ethusd-pulled-back-after-failing-to-break-its-previous-high-but-its-still-tradin/1214065620754582/",
+      "content": "## Exness's Post Online status indicator Active ### Exness October 9, 2025 · ETHUSD pulled back after failing to break its previous high, but it’s still trading above key bullish EMAs — keeping the uptrend intact. A breakout above 4800 could open the door to a new record high near 5000, with room for further upside. If ETHUSD stays below 4800, expect consolidation between 4200–4800 before the next potential move higher. No photo description available. [...] '/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 .101.101h1.7953c.992 0 1.7232.9273 1.4917 1.892l-.4572 1.9047a2.301 2.301 0 0 1-2.2374 1.764H6.9185a.5752.5752 0 0 1-.5752-.5752V7.7384c0-.4168.097-.8278.2834-1.2005l.2856-.5712a3.6878 3.6878 0 0 0 .3893-1.6509l-.0002-.4496ZM4.367 7a.767.7...",
+      "score": 0.47343868,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "1m - Binance Data",
+      "url": "https://data.binance.vision/?prefix=data/spot/daily/klines/ETHUSDT/1m/",
+      "content": "ETHUSDT-1m-2026-01-25.zip, 64.8 kB, 2026-01-26T02:50:06.000Z ; ETHUSDT-1m-2026-01-24.zip.CHECKSUM, 0.1 kB, 2026-01-25T02:41:49.000Z ; ETHUSDT-1m-2026-01-24.zip",
+      "score": 0.47300056,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-prediction/ethereum",
+      "content": "| Month | Min Price | Average Price | Max Price | ROI | --- --- | | | | | | | Jan 1, 2030 | $2,032.6 | $2,803.6 | $3,574.61 | +64.63% | | Feb 1, 2030 | $2,029.51 | $2,800.51 | $3,571.51 | +64.49% | | Mar 1, 2030 | $2,026.41 | $2,797.41 | $3,568.42 | +64.35% | | Apr 1, 2030 | $2,023.32 | $2,794.32 | $3,565.32 | +64.2% | | May 1, 2030 | $2,020.22 | $2,791.22 | $3,562.23 | +64.06% | | Jun 1, 2030 | $2,017.13 | $2,788.13 | $3,559.13 | +63.92% | | Jul 1, 2030 | $2,014.03 | $2,785.03 | $3,556.04 | +63.78% | | Aug 1, 2030 | $2,010.94 | $2,781.94 | $3,552.94 | +63.63% | | Sep 1, 2030 | $2,007.84 | $2,778.84 | $3,549.85 | +63.49% | | Oct 1, 2030 | $2,004.75 | $2,775.75 | $3,546.75 | +63.35% | | Nov 1, 2030 | $2,001.65 | $2,772.65 | $3,543.66 | +63.21% | [...] | Month | Min Price | Average Price | Max Price | ROI | --- --- | | | | | | | Jan 1, 2050 | $1,289.82 | $2,060.83 | $2,831.83 | +30.42% | | Feb 1, 2050 | $1,286.73 | $2,057.73 | $2,828.73 | +30.28% | | Mar 1, 2050 | $1,283.63 | $2,054.64 | $2,825.64 | +30.14% | | Apr 1, 2050 | $1,280.54 | $2,051.54 | $2,822.54 | +29.99% | | May 1, 2050 | $1,277.44 | $2,048.45 | $2,819.45 | +29.85% | | Jun 1, 2050 | $1,274.35 | $2,045.35 | $2,816.35...",
+      "score": 0.4119392,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "ETH USDT | Ethereum to USDT",
+      "url": "https://www.binance.com/en/trade/ETH_USDT",
+      "content": "2,043.58 0.2804 06:00:08 2,043.58 0.0472 06:00:08 2,043.59 0.0151 06:00:08 2,043.60 0.0272 06:00:08 2,043.61 0.0052 06:00:08 2,043.62 0.0759 06:00:08 2,043.63 0.0178 06:00:08 2,043.64 0.9079 06:00:08 2,043.65 0.0229 06:00:06 2,043.66 0.0876 06:00:06 2,043.67 0.7340 06:00:06 2,043.67 0.0105 06:00:05 2,043.67 0.0040 06:00:05 2,043.67 0.0122 06:00:04 New USDC USDT U USD1 USD BNB BTC ALTS FIAT Zones Margin Grid Pair Last Price / 24h Chg 0G/USDT5x 0.517 +0.19% 1000CAT/USDT5x 0.00167 +3.73% 1000CHEEMS/USDT5x 0.000437 -3.32% 1000SATS/USDT5x 0.00001056 -2.76% 1INCH/USDT5x 0.0905 -1.84% 1MBABYDOGE/USDT5x 0.0003995 -0.62% 2Z/USDT5x 0.07215 -2.37% A2Z/USDT5x 0.000615 +21.30% AAVE/USDT5x 105.55 -2.40% ACE/USDT5x [...] 0.000615 +21.30% AAVE/USDT5x 105.55 -2.40% ACE/USDT5x 0.127 -7.97% ACH/USDT5x 0.00650 -2.11% ACM/USDT5x 0.403 -1.23% ACT/USDT5x 0.0132 -3.65% ACX/USDT5x 0.0420 -0.47% Top MoversFAQ All Change New High/Low Fluctuation Volume FIO/USDT 05:02:08 -24.54% New 7day LowFIO/USDT 05:02:08 -29.95% New 30day LowGTC/USDT 05:02:08 -9.10% New 24hr LowAXS/BTC 05:02:07 -5.26% New 24hr LowPHA/USDT 05:01:07 -5.99% New 24hr LowSEI/BTC 05:00:17 -7.53% New 7day LowPOL/USDT 05:00:17 -10.41% New 7day...",
+      "score": 0.4013364,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum / Tether Price Chart — ETHUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/ETHUSDT/",
+      "content": "Ethereum / TetherUSprice has fallen by −8.89% over the last week, its month performance shows a 8.64% increase, and as for the last year, Ethereum / TetherUShas increased by 4.57%. See more dynamics on ETH price chart. Keep track of coins' changes with our Crypto Coins Heatmap. Ethereum / TetherUS(ETH) reached its highest price on Aug 24, 2025— it amounted to 4,956.78 USDT. Find more insights on the ETH price chart. See the list of crypto gainers and choose what best fits your strategy. Ethereum / TetherUS(ETH) reached the lowest price of 81.79 USDTon Dec 15, 2018. View more Ethereum / TetherUSdynamics on the price chart. See the list of crypto losers to find unexpected opportunities. [...] Crypto markets are famous for their volatility, so one should study all the available stats before adding crypto assets to their portfolio. Very often it's technical analysis that comes in handy. We prepared technical ratings for Ethereum / TetherUS (ETH): today its technical analysis shows the neutral signal, and according to the 1 week rating ETH shows the sell signal. And you'd better dig deeper and study 1 month rating too — it's sell. Find inspiration in Ethereum / TetherUS trading ideas...",
+      "score": 0.3648686,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Price Today | ETH to USD Live Price, Market ...",
+      "url": "https://www.binance.com/en/price/ethereum",
+      "content": "Cryptocurrency prices are subject to high market risk and price volatility. You should only invest in products that you are familiar with and where you understand the associated risks. The content expressed on this page is not intended to be and shall not be construed as an endorsement by Binance about the reliability or accuracy of such content. You should carefully consider your investment experience, financial situation, investment objectives and risk tolerance and consult an independent financial adviser prior to making any investment. This material should not be construed as financial advice. Past performance is not a reliable indicator of future performance. The value of your investment can go down as well as up, and you may not get back the amount you invested. You are solely [...] 24h Low & High Low: $2.1K High: $2.2K The highest and lowest price paid for this asset in 24 hours. All Time High $5K The highest price paid for this asset since it was launched or listed. Price Change (1h) -0.04% The percentage change in price for this asset compared to 1 hour ago. Price Change (24h) -0.29% The percentage change in price for this asset compared to 24 hours ago. Price Change (7...",
+      "score": 0.334177,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum to US Dollar (ETH/USD) - Historical data ...",
+      "url": "https://twelvedata.com/markets/679245/crypto/binance/eth-usd/historical-data",
+      "content": "Zloty BTC/PLN Crypto BitBayEthereum Euro ETH/EUR Crypto Coinbase proKomodo US Dollar KMD/USD Crypto SyntheticAkash Network Ethereum AKT/ETH Crypto Gate.ioFrax Share US Dollar FXS/USD Crypto BinanceBitcoin Ethereum BTC/ETH Crypto SyntheticSPDR S&P 500 ETF Trust SPY ETF NYSEYuanta Daily Taiwan 50 Bear -1X ETF 00632R ETF TWSEDirexion Daily Semiconductor Bear 3X Shares SOXS ETF NYSEProShares UltraPro Short QQQ SQQQ ETF NASDAQNEXT FUNDS Nikkei 225 Leveraged Index Exchange Traded Fund 1570 ETF JPXMirae Asset Global Invest MAHKTECH ETF NSEBetaPro Natural Gas 2x Daily Bull ETF HNU ETF TSXETFS Ultra Short Nasdaq 100 Hedge Fund SNAS ETF CXACPSE ETF CPSEETF ETF NSEGraniteShares 1.5x COIN Daily ETF CONL ETF NASDAQHTPB CSI 2000 ETF 563300 ETF SSEChina AMC SSE50 ETF 510050 ETF SSEE Fund ChiNext Index [...] Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 OK Symbols Exchanges All Stocks Forex Crypto ETFs Mutual Funds Commodities [...] 005930182,900.00-3.23% 070050...",
+      "score": 0.28486982,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum Historical Data",
+      "url": "https://www.investing.com/crypto/ethereum/historical-data",
+      "content": "125.56 -0.09 -0.07% 10-2 Yield Spread 31.32 +4.15 +15.27% AAPL 251.64 +0.15 +0.06% NVDA 175.20 -0.44 -0.25% GOOGL 290.44 -11.62 -3.85% TSLA 383.03 +2.18 +0.57% AMZN 207.24 -2.90 -1.38% NFLX 90.92 -2.46 -2.63% META 592.92 -11.14 -1.84% ## Leading Cryptocurrencies BTC 71,112.50 Bitcoin -173.9(-0.24%) USDT 0.9997 Tether -0.0001(-0.01%) BNB 644.50 BNB +6.70(1.05%) XRP 1.4211 XRP -0.0096(-0.67%) USDC 1.0002 USD Coin -0.00(-0.00%) Top Brokers | Broker | Traded Assets | Min Deposit | Review | --- --- | | Image 5: Plus500 4.9 ★★★★★ | 2,800+ | $100 | Read Review | | Image 6: eToro 4.8 ★★★★★ | 6,000+ | $100 | Read Review | Market Movers Most Active Gainers %Losers % [...] Fusion Mediawould like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriate for trading purposes.Fusion Mediaand any provider of the data contained in this website will not accept liability for any loss or damag...",
+      "score": 0.27615628,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETH/USDT 1m historical data November 4800 high",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Did Ethereum (ETH/USDT) reach $4,800 on Binance in November",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance API klines ETHUSDT 1m download November 1 to November 30",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

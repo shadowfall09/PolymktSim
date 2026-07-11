@@ -1,0 +1,305 @@
+{
+  "row_index": 294,
+  "market_id": "574583",
+  "slug": "will-bitcoin-reach-125000-by-december-31-2025",
+  "question": "Will Bitcoin reach $125,000 by December 31, 2025?",
+  "event_title": "What price will Bitcoin hit in 2025?",
+  "end_date_limit": "",
+  "row_end_date_raw": "",
+  "expanded_queries": [
+    "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+    "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+    "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Creates datetime object for specified start and end times. ### 4. Fetching Historical Klines Data Now, we use the `get_historical_klines` main function to extract historical candlestick data for our custom time range. ``` klines = client.get_historical_klines( symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time)) str str ``` [...] from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbo...",
+      "score": 0.99995995,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] df = df.reindex(columns=column_names) return df def GetHistoricalData(client, symbol, start_time, end_time, limit=1500): collection = [] while start_time < end_time: data = client.get_historical_data(symbol, start_time=start_time, end_time=end_time, limit=limit) print(client.exchange + \" \" + symbol + \" : Collected \" + str(len(data)) + \" initial data from \"+ str(ms_to_dt_local(data)) +\" to \" + str(ms_to_dt_local(data...",
+      "score": 0.9997428,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Get historical klines from binance api - GitHub",
+      "url": "https://github.com/maxgfr/binance-historical",
+      "content": "## Installation ### Via Homebrew (macOS/Linux) ``` brew install maxgfr/tap/binance-historical ``` ### Via npm ``` npm install -g binance-historical ``` ### Download binary Download the latest binary for your platform from the releases page. ## Usage ### CLI #### Interactive mode ``` binance-historical download ``` #### Non-interactive mode Pass all options as arguments: ``` binance-historical download \\ --pair BTCUSDT \\ --interval 4h \\ --start 2024-01-01 \\ --end 2024-12-31 \\ --output ./data/ \\ --format json ``` Export as CSV: ``` binance-historical download \\ --pair ETHUSDT \\ --interval 1h \\ --start 2024-01-01 \\ --end 2024-01-31 \\ --output ./data/ \\ --format csv ``` #### CLI Options [...] ### Library ``` import{getKline, Kline} from'binance-historical'; const result Array< Kline> = await getKline('ETHUSDT', '4h', new Date('01-09-2020'), new Date('01-12-2021'),); console. log(result);// [// ...,// {// openTime: 1579953600000,// open: '159.30000000',// high: '161.00000000',// low: '158.70000000',// close: '160.41000000',// volume: '25015.67605000',// closeTime: 1579967999999,// quoteAssetVolume: '4001959.95527980',// trades: 14330,// takerBaseAssetVolume: '13000.12296000',// taker...",
+      "score": 0.99911696,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "How can I get Binance historical data for different time intervals?",
+      "url": "https://stackoverflow.com/questions/68694235/how-can-i-get-binance-historical-data-for-different-time-intervals",
+      "content": "`candles = client.get_klines( symbol = \"BTCUSDT\", interval = '1m', limit = 1000) df = pd.DataFrame(candles, columns=[ \"timestamp\", \"open\", \"high\", \"low\", \"close\", \"volume\", \"close_time\", \"quote_asset_volume\", \"trades\", \"taker_buy_base_asset_volume\", \"taker_buy_quote_asset_volume\", \"ignore\"]) keys = list(df.keys()) for k in keys: if type(df[k]) == str and k not in ['timestamp']: df[k] = df[k].astype(float) df[\"timestamp\"] = pd.to_datetime(df[\"timestamp\"], unit='ms') df[\"close_time\"] = pd.to_datetime(df[\"close_time\"], unit='ms')` Then use this function below: `def ConsolidateTF(tf2chg, datacandles): \"\"\" Parameters tf2chg: String see GroupsN... Ex.: '7m' - using '7m' will aggregate '1m' candles datacandles : DataFrame source of data candles. Returns [...] super(clientProvider.binanceWebClient()); } @Override public Mono<Candle[]> engulfingCandles(String symbol, Timeframe tf) { return fetchOHLC(symbol, tf, Optional.empty()); } @Override public Mono<Candle[]> MACandles(String symbol, Timeframe speed, int longestPeriod) { return fetchOHLC(symbol, speed, Optional.of(longestPeriod)); } private Mono<Candle[]> fetchOHLC(String symbol, Timeframe speed, Optional<Integer> period) { return cl...",
+      "score": 0.9990226,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt",
+      "content": "| 03/07/2024 - 05/13/2024 | 96,825 | | 05/13/2024 - 07/19/2024 | 96,826 | | 07/19/2024 - 09/25/2024 | 96,826 | | 09/25/2024 - 12/01/2024 | 96,825 | | 12/01/2024 - 02/06/2025 | 96,826 | | 02/06/2025 - 04/14/2025 | 95,665 | | 04/14/2025 - 06/21/2025 | 96,826 | | 06/21/2025 - 08/27/2025 | 96,826 | | 08/27/2025 - 11/02/2025 | 96,825 | | 11/02/2025 - 01/08/2026 | 96,826 | | 01/08/2026 - 03/17/2026 | 96,826 | [...] 126k| Label | Count | --- | | 752.81 - 3263.19 | 319,464 | | 3263.19 - 5773.58 | 366,313 | | 5773.58 - 8283.96 | 570,537 | | 8283.96 - 10794.35 | 521,462 | | 10794.35 - 13304.73 | 179,158 | | 13304.73 - 15815.11 | 55,705 | | 15815.11 - 18325.50 | 130,603 | | 18325.50 - 20835.88 | 167,729 | | 20835.88 - 23346.26 | 125,540 | | 23346.26 - 25856.65 | 76,115 | | 25856.65 - 28367.03 | 181,250 | | 28367.03 - 30877.42 | 171,490 | | 30877.42 - 33387.80 | 51,604 | | 33387.80 - 35898.18 | 80,863 | | 35898.18 - 38408.57 | 98,468 | | 38408.57 - 40918.95 | 96,504 | | 40918.95 - 43429.33 | 129,458 | | 43429.33 - 45939.72 | 77,515 | | 45939.72 - 48450.10 | 93,924 | | 48450.10 - 50960.49 | 61,142 | | 50960.49 - 53470.87 | 34,829 | | 53470.87 - 55981.25 | 46,043 | | 55981.25 - 58491.64 | 88,...",
+      "score": 0.9989434,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "### Klines​ `{ \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"method\": \"klines\", \"params\": { \"symbol\": \"BNBBTC\", \"interval\": \"1h\", \"startTime\": 1655969280000, \"limit\": 1 } }` Get klines (candlestick bars). Klines are uniquely identified by their open & close time. If you need access to real-time kline updates, please consider using WebSocket Streams: `<symbol>@kline_<interval>` If you need historical kline data, please consider using data.binance.vision. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | `symbol` | STRING | YES | | | `interval` | ENUM | YES | | | `startTime` | LONG | NO | | | `endTime` | LONG | NO | | | `timeZone` | STRING | NO | Default: 0 (UTC) | | `limit` | INT | NO | Default: 500; Maximum: 1000 | [...] ### UI Klines​ `{ \"id\": \"b137468a-fb20-4c06-bd6b-625148eec958\", \"method\": \"uiKlines\", \"params\": { \"symbol\": \"BNBBTC\", \"interval\": \"1h\", \"startTime\": 1655969280000, \"limit\": 1 } }` Get klines (candlestick bars) optimized for presentation. This request is similar to `klines`, having the same parameters and response. `uiKlines` return modified kline data, optimized for presentation of candlestick charts. `klines` `uiKlines` Weight: 2 Para...",
+      "score": 0.99857855,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin-BTCUSDT-Historical-Minutes - Kaggle",
+      "url": "https://www.kaggle.com/datasets/youneseloiarm/bitcoin-btcusdt/versions/5",
+      "content": "| 62415.77 - 63732.61 | 10,590 | | 63732.61 - 65049.46 | 7,239 | | 65049.46 - 66366.31 | 3,553 | | 66366.31 - 67683.15 | 2,133 | | 67683.15 - 69000.00 | 927 | [...] | 62415.77 - 63732.62 | 10,591 | | 63732.62 - 65049.46 | 7,241 | | 65049.46 - 66366.31 | 3,552 | | 66366.31 - 67683.15 | 2,134 | | 67683.15 - 69000.00 | 927 | [...] | 62223.66 - 63536.26 | 11,401 | | 63536.26 - 64848.87 | 7,236 | | 64848.87 - 66161.48 | 4,075 | | 66161.48 - 67474.09 | 2,086 | | 67474.09 - 68786.70 | 1,180 |",
+      "score": 0.998147,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/5/data",
+      "content": "## Dataset Overview This dataset contains historical price data for Bitcoin (BTC/USDT) from January 1, 2018, to December 10, 2024. The data was sourced using both the Binance API and Yahoo Finance, providing granular candlestick data in three timeframes: 1-hour (1H) 4-hour (4H) 1-day (1D) 14-minutes (15M) This dataset includes the following fields for each timeframe: [...] | 10/11/2020 - 11/30/2020 | 4,864 | | 11/30/2020 - 01/20/2021 | 4,847 | | 01/20/2021 - 03/12/2021 | 4,856 | | 03/12/2021 - 05/01/2021 | 4,839 | | 05/01/2021 - 06/21/2021 | 4,867 | | 06/21/2021 - 08/11/2021 | 4,868 | | 08/11/2021 - 09/30/2021 | 4,841 | | 09/30/2021 - 11/20/2021 | 4,867 | | 11/20/2021 - 01/10/2022 | 4,867 | | 01/10/2022 - 03/02/2022 | 4,868 | | 03/02/2022 - 04/21/2022 | 4,867 | | 04/21/2022 - 06/11/2022 | 4,867 | | 06/11/2022 - 08/01/2022 | 4,867 | | 08/01/2022 - 09/20/2022 | 4,868 | | 09/20/2022 - 11/10/2022 | 4,867 | | 11/10/2022 - 12/31/2022 | 4,867 | | 12/31/2022 - 02/19/2023 | 4,867 | | 02/19/2023 - 04/11/2023 | 4,863 | | 04/11/2023 - 06/01/2023 | 4,867 | | 06/01/2023 - 07/22/2023 | 4,867 | | 07/22/2023 - 09/10/2023 | 4,867 | | 09/10/2023 - 10/31/2023 | 4,868 | [...] | 10/11/2020 - 11/30/20...",
+      "score": 0.997917,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`uiKlines` return modified kline data, optimized for presentation of candlestick charts. `uiKlines` Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | See `klines` | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | `klines` `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: [...] | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] ### Kline/Candlestick da...",
+      "score": 0.9978002,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2025-04.zip | 36.5 kB | 2025-05-17T13:45:38.000Z | | BTCUSDT-1h-2025-03.zip.CHECKSUM | 0.1 kB | 2025-04-17T13:41:56.000Z | | BTCUSDT-1h-2025-03.zip | 37.8 kB | 2025-04-17T13:41:56.000Z | | BTCUSDT-1h-2025-02.zip.CHECKSUM | 0.1 kB | 2025-03-17T13:35:18.000Z | | BTCUSDT-1h-2025-02.zip | 34.0 kB | 2025-03-17T13:35:18.000Z | | BTCUSDT-1h-2025-01.zip.CHECKSUM | 0.1 kB | 2025-02-17T13:27:55.000Z | | BTCUSDT-1h-2025-01.zip | 38.0 kB | 2025-02-17T13:27:55.000Z | | BTCUSDT-1h-2024-12.zip.CHECKSUM | 0.1 kB | 2025-01-17T13:29:11.000Z | | BTCUSDT-1h-2024-12.zip | 38.0 kB | 2025-01-17T13:29:11.000Z | | BTCUSDT-1h-2024-11.zip.CHECKSUM | 0.1 kB | 2024-12-17T13:51:49.000Z | | BTCUSDT-1h-2024-11.zip | 36.9 kB | 2024-12-17T13:51:49.000Z | [...] | BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-11.zip | 37.7 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-10.zip.CHECKSUM | 0.1...",
+      "score": 0.99736834,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "2018-01-07 17069.79 17099.96 15610.0 16150.03 12493.125558 2018-01-07 23:59:59.999 206194706.37068355 120269 6779.320508 2018-01-08 16218.85 16322.3 12812.0 14902.54 26600.609912 2018-01-08 23:59:59.999 396569997.15746266 208642 13756.844389 2018-01-09 14902.54 15500.0 14011.05 14400.0 14315.004253 2018-01-09 23:59:59.999 210630187.45766863 156656 6841.233287 2018-01-10 14401.0 14955.66 13131.31 14907.09 17411.001655 2018-01-10 23:59:59.999 244011366.763028 161476 8529.554675 2018-01-11 14940.0 14968.68 11400.0 13238.78 33554.723751 2018-01-11 23:59:59.999 446587594.6937379 239416 16422.01998 2018-01-12 13238.76 14109.78 12500.0 13740.01 16417.162137 2018-01-12 23:59:59.999 222516076.27145907 134452 8117.312075 [...] ## Dataset Overview This dataset contains historical price data for Bitcoin (BTC/USDT) from January 1, 2018, to the present. The data is sourced using the Binance API, providing granular candlestick data in four timeframes: 15-minute (15M) 1-hour (1H) 4-hour (4H) 1-day (1D) This dataset includes the following fields for each timeframe: [...] 2018-02-18 11039.55 11274.0 10080.0 10383.43 61137.380728 2018-02-18 23:59:59.999 649423311.3100228 537534 29593.863774 2018-0...",
+      "score": 0.9962346,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] Parameters: : startTime (int) – required - Start timestamp in ms endTime (int) – required - End timestamp in ms Returns: : API response ``` {\"avgCostTimestampOfLast30d\": 7241837, # Average time taken for data download in the past 30 days \"downloadId\": \"546975389218332672\"} ``` Note: : Request Limitation is 5 times per month, shared by front end download page and rest api The time between startTime and end...",
+      "score": 0.99608517,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] ## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance.",
+      "score": 0.9933589,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin(BTC) Surpasses 125000 USDT to Set a New All-Time High",
+      "url": "https://www.binance.com/en/square/post/30591242886481",
+      "content": "# Bitcoin(BTC) Surpasses 125,000 USDT to Set a New All-Time High | Binance News on Binance Square Image 1: Binance Square Login Sign Up HomeTrending ArticlesNotificationProfileNewsBookmarksChatsHistoryCreator CenterSettings Article # Bitcoin(BTC) Surpasses 125,000 USDT to Set a New All-Time High Image 2 Image 3 Binance News Oct 5, 2025・Verified Binance official account Follow View Hidden Replies Report Block User According to Binance Market Data, Bitcoin has crossed 125,000 USDT, reaching a high of 125,877.30 USDT and marking a new all-time high. #BTC Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content.See T&Cs. BTC-1.38% 6 57 52.5k Reply Related Posts Replies 8 Explore the latest crypto news [...] #### Functional Cookies - [x] Functional Cookies These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly. Cookies Details‎ #### Targeting Cookies - [x] Targeting Cookies [...] Image 4: Company Logo ## Privacy Preference Center...",
+      "score": 0.9931496,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "How to Get Trading Data via the Binance API?",
+      "url": "https://www.binance.com/en/academy/articles/how-to-get-trading-data-via-the-binance-api",
+      "content": "``` import logging from binance_sdk_spot.spot import Spot logging.basicConfig(level=logging.INFO) client = Spot() def agg_trades(): try: agg_trades_response = client.rest_api.agg_trades( symbol=\"BNBUSDT\", start_time=1760950800000, # October 20, 2025 9:00:00 AM ) data = agg_trades_response.data() first_trade_id = data.f historical_trades_response = client.rest_api.historical_trades( symbol=\"BNBUSDT\", from_id=first_trade_id, limit=100, ) logging.info(f\"Historical trades: {historical_trades_response.data()}\") except Exception as e: logging.error(f\"agg_trades() error: {e}\") if __name__ == \"__main__\": agg_trades() ``` ### Real time events [...] ## My Trades Data ### Historical trades The /api/v3/myTrades endpoint enables retrieval of a user’s trade history with flexible filtering options. Depending on the parameters provided, the query can be tailored to return trades within specific time frames, starting from certain trade IDs, or related to particular orders. The following parameter combinations are supported: symbol symbol + orderId symbol + startTime symbol + endTime symbol + fromId symbol + startTime + endTime symbol + orderId + fromId If fromId is specified, trades with IDs gre...",
+      "score": 0.992597,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "[$BTC](/trade/BTC_USDT?contentId=27253246316369)",
+      "url": "https://www.binance.com/en/square/post/27253246316369",
+      "content": "Current price (~$117,872) is nearing upper resistance of this long-term trend channel. 📊 Support/Resistance Levels $120K & $125K: Horizontal resistance zones. $57,959: Major historical support (former resistance). $30K–$40K: Bear market bottom zone based on history and trendline confluence. ⏳ Cycle Timing Historical cycles span about 4 years: Peak → bottom → new peak = ~1,300–1,400 days. This cycle’s timing aligns almost perfectly: Nov 2021 → Jul 2025 = 1,300+ days (same as past cycles). Suggests potential top is in or near. 📌 Summary & Outlook Phase Estimate Current Price ~$117,872 Projected Top ~$120K–$125K (likely topped 14 Jul 2025) Next Major Drop -70% to -75% (target: $30K–$40K) Next Cycle Low Mid 2026 (May–July 2026) Strong Support Zone $30K–$40K (orange box) [...] Post Crypto\\_Insider\\_007 Jul 21, 2025 Follow View Hidden Replies Report Block User # $BTC 🔍 Key Highlights from the Chart 🟢 Bull Market Peaks 10 Nov 2021: Previous cycle top around ~$69,000. 14 Jul 2025 (Projected): Potential new bull market top (approx. $120K–$125K zone based on red trend line projection). 🔴 Bear Market Drops 2021–2022 Crash: Drop of -78.75% from the 2021 top. Lasted 52 bars (364 days). Next...",
+      "score": 0.9916842,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin USD (BTC-USD) Price History & Historical Data - Yahoo ...",
+      "url": "https://finance.yahoo.com/quote/BTC-USD/history/",
+      "content": "| Dec 29, 2025 | 87,835.79 | 90,299.16 | 86,717.91 | 87,138.14 | 87,138.14 | 48,411,625,849 | | Dec 28, 2025 | 87,799.34 | 87,986.89 | 87,394.95 | 87,835.84 | 87,835.84 | 15,156,557,929 | | Dec 27, 2025 | 87,301.43 | 87,874.78 | 87,182.98 | 87,802.16 | 87,802.16 | 13,741,199,310 | | Dec 26, 2025 | 87,235.51 | 89,459.43 | 86,628.14 | 87,301.43 | 87,301.43 | 42,455,674,908 | | Dec 25, 2025 | 87,608.32 | 88,501.79 | 86,949.26 | 87,234.74 | 87,234.74 | 19,953,216,347 | | Dec 24, 2025 | 87,404.32 | 87,956.88 | 86,411.80 | 87,611.96 | 87,611.96 | 25,550,297,986 | | Dec 23, 2025 | 88,490.03 | 88,898.38 | 86,606.98 | 87,414.00 | 87,414.00 | 43,683,011,533 | | Dec 22, 2025 | 88,621.40 | 90,501.93 | 87,908.07 | 88,490.02 | 88,490.02 | 38,047,472,118 | [...] | Dec 21, 2025 | 88,344.70 | 89,027.95 | 87,613.20 | 88,621.75 | 88,621.75 | 19,845,522,660 | | Dec 20, 2025 | 88,101.67 | 88,497.20 | 87,924.88 | 88,344.00 | 88,344.00 | 14,688,196,659 | | Dec 19, 2025 | 85,476.13 | 89,339.12 | 85,107.66 | 88,103.38 | 88,103.38 | 46,733,310,561 | | Dec 18, 2025 | 86,144.37 | 89,412.66 | 84,436.31 | 85,462.51 | 85,462.51 | 52,667,115,348 | | Dec 17, 2025 | 87,847.62 | 90,264.57 | 85,316.27 | 86,143.76...",
+      "score": 0.99101454,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Changelog | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs",
+      "content": "| `GET /api/v3/account` `account.status` | 10 | 20 | | `GET /api/v3/rateLimit/order` `account.rateLimits.orders` | 20 | 40 | | `GET /api/v3/exchangeInfo` `exchangeInfo` | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1-100 | 1 | 2 | | `GET /api/v3/depth` `depth` - Limit 101-500 | 5 | 10 | | `GET /api/v3/depth` `depth` - Limit 501-1000 | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1001-5000 | 50 | 100 | | `GET /api/v3/aggTrades` `trades.aggregate` | 1 | 2 | | `GET /api/v3/trades` `trades.recent` | 1 | 2 | | `GET /api/v3/historicalTrades` `trades.historical` | 5 | 10 | | `GET /api/v3/klines` `klines` | 1 | 2 | | `GET /api/v3/uiKlines` `uiKlines` | 1 | 2 | | `GET /api/v3/ticker/bookTicker` `ticker.book` - With `symbol` | 1 | 2 | [...] `depth` `GET /api/v3/depth` `depth` `GET /api/v3/aggTrades` `trades.aggregate` `GET /api/v3/trades` `trades.recent` `GET /api/v3/historicalTrades` `trades.historical` `GET /api/v3/klines` `klines` `GET /api/v3/uiKlines` `uiKlines` `GET /api/v3/ticker/bookTicker` `ticker.book` `symbol` `GET /api/v3/ticker/bookTicker` `ticker.book` `symbol` `symbols` `GET /api/v3/ticker/price` `ticker.price` `symbol` `GET /api/v3/ticker/price` `ticker.price` `symb...",
+      "score": 0.98959166,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin(BTC) Drops Below 87000 USDT with a 2.64% Decrease in ...",
+      "url": "https://www.binance.com/en/square/post/34392613403985",
+      "content": "# Bitcoin(BTC) Drops Below 87,000 USDT with a 2.64% Decrease in 24 Hours Follow View Hidden Replies Report Block User On Dec 30, 2025, 03:11 AM(UTC). According to Binance Market Data, Bitcoin has dropped below 87,000 USDT and is now trading at 86,985 USDT, with a narrowed 2.64% decrease in 24 hours. #BTC#USDT Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content. See T&Cs. BTC-0.77% 2 6 5.5k Related Posts cnchina crypto · 5h [...] If you find the analysis enlightening, clicking on the trading options below 👇👇👇 is the greatest recognition and support for me. Looking forward to meeting you at the peak of wealth! 👇👇👇 Go long $BTC {future}(BTCUSDT) [...] 🔬 \\\\$BTC In-Depth Analysis | 2026/03/25\\\\ ━━━━━━━━━━━ 📌 \\\\Today's Key Price Characteristics\\\\ The current price of Bitcoin is $70,926.88, with a slight decrease of 0.51% over the past 24 hours, showing typical characteristics of high-level consolidation. The price encountered resistance and retreated near the intraday high of $71,368.61, but remains firmly above the key support level of $69,000, indicating strong bullish defense willingness. 📈 \\\\Technical Analysis: Based on Highs and Lows of $...",
+      "score": 0.98934746,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin price history Feb 23, 2026 - Statista",
+      "url": "https://www.statista.com/statistics/326707/bitcoin-price-index/?srsltid=AfmBOorikdK7eylay7cOkfisujEUItFbbfiXnEpPjlVrMbjga-Y9PVBo",
+      "content": "| Dec 26, 2024 | 99,344.95 | | Dec 25, 2024 | 98,695.71 | | Dec 24, 2024 | 94,644.91 | | Dec 23, 2024 | 95,094.27 | | Dec 22, 2024 | 97,202.82 | | Dec 21, 2024 | 97,691.43 | | Dec 20, 2024 | 97,851.35 | | Dec 19, 2024 | 100,355.58 | | Dec 18, 2024 | 106,034.91 | | Dec 17, 2024 | 106,074.11 | | Dec 16, 2024 | 104,721.5 | | Dec 15, 2024 | 101,367.01 | | Dec 14, 2024 | 101,352.23 | | Dec 13, 2024 | 100,000.81 | | Dec 12, 2024 | 101,123.62 | | Dec 11, 2024 | 96,649.71 | | Dec 10, 2024 | 97,353.95 | | Dec 9, 2024 | 101,235.37 | | Dec 8, 2024 | 99,781.83 | | Dec 7, 2024 | 99,973.85 | | Dec 6, 2024 | 97,201.5 | | Dec 5, 2024 | 98,881.47 | | Dec 4, 2024 | 96,031.63 | | Dec 3, 2024 | 95,833.14 | | Dec 2, 2024 | 97,311.71 | | Dec 1, 2024 | 96,513.14 | | Nov 30, 2024 | 97,453.25 | [...] | Dec 12, 2025 | 92,494.18 | | Dec 11, 2025 | 92,005.14 | | Dec 10, 2025 | 92,723.21 | | Dec 9, 2025 | 90,618.05 | | Dec 8, 2025 | 90,162.91 | | Dec 7, 2025 | 89,244.76 | | Dec 6, 2025 | 89,307.09 | | Dec 5, 2025 | 92,140.7 | | Dec 4, 2025 | 93,619.44 | | Dec 3, 2025 | 91,344.73 | | Dec 2, 2025 | 86,281.5 | | Dec 1, 2025 | 90,406.28 | | Nov 30, 2025 | 90,841.45 | | Nov 29, 2025 | 90,950.38 | | Nov 28, 2025...",
+      "score": 0.9465967,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 0.00767 550.091172 71,719.71 0.00008 5.737576 B 96.13% 3.86% S Chart Info Trading Data Square Image 3: ai-insight Time 1s 15m 1H 4H 1D 1W Original Trading View Depth 2026/03/25 Open 70,556.74 High 72,026.09 Low 70,408.00 Close 71,726.07 CHANGE 1.65%Range 2.29% Image 4: img # BTC/USDT Bitcoin Price 71,711.17 $ 71,711.17 24h Chg 597.86 +0.84% 24h High 72,026.09 24h Low 68,923.07 24h Vol(BTC) 20,935.17 24h Vol(USDT) 1,474,832,511.37 Networks BTC (5) Token Tags POW Payments Vol Hot Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount BTC TP/SL Avbl - USDT Max Buy -- BTC Log In Price USDT BBO Amount BTC TP/SL Avbl [...] Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.04008 12:01:02 71,720...",
+      "score": 0.94539934,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin's Rainbow Chart Just Predicted the Next Bull Run! Here’s Why You Should Pay Attention… | Flux Bro on Binance Square",
+      "url": "https://www.binance.com/en/square/post/14803317764282",
+      "content": "# Bitcoin's Rainbow Chart Just Predicted the Next Bull Run! The **Bitcoin Rainbow Chart** you've shared is a legendary tool in the crypto community. It provides **historical price movement** over time and helps **forecast future trends** by segmenting Bitcoin’s price into distinct bands. The chart consists of **coloured bands**, which correspond to **different sentiment zones** in the market:. * This zone suggests that Bitcoin’s price is **overheated** and could be in **bubble territory**. Historically, when BTC enters this zone, it tends to experience a **sharp correction** soon after. * These zones indicate that Bitcoin is **expensive** but not quite in bubble territory. It’s considered a **healthy bull market** here, with strong **buy pressure** but less risk than the orange/red zones. * This is where Bitcoin has historically been **under-priced** and **undervalued**. If BTC ever reaches this zone again, it’s historically a **no-brainer buy**. Halving is critical to **Bitcoin's supply mechanics** and has historically triggered **massive price increases** in the subsequent 12-18 months. * **Historical Pattern**: After each halving, Bitcoin has entered a **bull run** in the nex...",
+      "score": 0.91730267,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "\"Bitcoin to $200K?! Analysing the Halving Chart That Predicts BTC’s Explosive Growth!\" | Flux Bro on Binance Square",
+      "url": "https://www.binance.com/en/square/post/14619819894737",
+      "content": "Analysing the Halving Chart That Predicts BTC’s Explosive Growth!\". Bitcoin’s historical price behaviour around halving events is a hot topic, and this chart provides a powerful visual of BTC’s price performance during different halving cycles. ### Understanding the Chart: **Bitcoin Halving Eras** Explained. This chart shows the **price multiple** (current price/cycle low price) of Bitcoin for four halving eras over time. * **Era 1**: Blue line (2012 Halving). * **Era 2**: Green line (2016 Halving). * **Era 3**: Orange line (2020 Halving). * **Era 4**: Red line (2024 Halving). 1. **Early Explosions**: Era 1 and Era 2 show early and sharp price movements following halving, but the gains eventually plateau. 2. **Era 3 Peaks**: Era 3 (the 2020 halving) exhibits slower growth initially but eventually surpasses previous eras in terms of price appreciation. * **Major Support**: Looking at the previous eras, BTC’s support typically forms around 2x-3x the cycle’s low. * **Key Resistance**: Historically, BTC faces resistance between 15x-20x the cycle low (based on Era 1 and Era 2). For Era 4, this would project a potential price of around **$150K-$200K** post-halving if similar patterns...",
+      "score": 0.69925445,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "✅️ Historical Altcoin Seasons🚀🚀🚀 The chart highlights | Šīmtum on Binance Square",
+      "url": "https://www.binance.com/en/square/post/19692119738778",
+      "content": "The highlighted February 2025 zone suggests that, if the pattern repeats, another altcoin season could be approaching. ✅️ Current Positioning: The market appears to be at a low point similar to previous pre-altseason levels. If the pattern holds, altcoins may enter a strong uptrend soon. Is Alt Season Confirmed⁉️ Not yet confirmed, but the pattern suggests a possible upcoming alt season in 2025 if historical trends repeat. To confirm, watch for:⚠️ Altcoin dominance increasing (OTHERS/BTC chart rising). Bitcoin stabilizing or entering a cooling phase. Increased capital flow into altcoins. Image 3 Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content.See T&Cs. BTC+0.31% 2 5 1.4k Reply View 2 replies [...] BTC+0.31% 2 5 1.4k Reply View 2 replies Join global crypto users on Binance Square ⚡️ Get latest and useful information about crypto. 💬 Trusted by the world’s largest crypto exchange. 👍 Discover real insights from verified creators. Email / Phone number Sign up to earn rewards Login SitemapCookie PreferencesPlatform T&Cs Sitemap Platform T&Cs Cookie Preferences Image 4: Company Logo ## Privacy Preference Center [...] Cookie Policy Allow All...",
+      "score": 0.5292634,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "\"The 12-Year Bitcoin RSI Trend That Predicts Market Tops—Next Peak 2025?\" | Flux Bro on Binance Square",
+      "url": "https://www.binance.com/en/square/post/14906797814970",
+      "content": "# \"The 12-Year Bitcoin RSI Trend That Predicts Market Tops—Next Peak 2025?\". This isn’t just a simple RSI indicator—it provides **macro-cycle trends** that can help **predict major tops and bottoms** in the market. This **12-month RSI chart** captures **macro-level market cycles**—clearly showing how **bull runs** and **bear cycles** align with specific RSI zones. * **Signal**: When RSI reached above 90, it marked the **peak of the cycle**. **Pattern**: After a parabolic rise, **RSI fell below 50**, signalling the **start of a bear market**. * After the bull peak in **2013**, RSI dropped into the **oversold zone**. * **Signal**: Whenever RSI hit the **red zone (~40)**, it represented the **end of the bear market**—a **prime buying opportunity**. * **RSI Peak**: ~98 in 2017. * A **consistently high RSI** above 70 suggests strong momentum and **institutional accumulation**. * The peak RSI (~98) in **December 2017** marked the **top of the bull cycle**. * **Signal**: Multiple RSI peaks suggest that traders **should exit positions early**—the market gave warning signs before the final peak. * Bitcoin entered a **deep bear cycle** after peaking in 2021, and the **RSI fell to extreme...",
+      "score": 0.07807816,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "The 12-Year Bitcoin RSI Forecast – Is the Next Bull Peak Set for 2025? 📅 Date: October 15, 2024 P | Niela James on Binance Square",
+      "url": "https://www.binance.com/en/square/post/14908367141049",
+      "content": "# The 12-Year Bitcoin RSI Forecast – Is the Next Bull Peak Set for 2025? The 12-Year Bitcoin RSI Forecast – Is the Next Bull Peak Set for 2025? Red (<40 RSI): Oversold zones, often preceding a market bottom or accumulation phase. Green (>80 RSI): Overbought regions, commonly marking the peak of bull markets and warning of potential corrections. Summary: After Bitcoin’s 2013 bull run, the RSI slipped into the red zone (~40), marking the end of the frenzy and the beginning of a bear cycle. Opportunity: Historically, red-zone RSI has indicated a market bottom—an excellent opportunity to accumulate. Trend: The RSI hovered above 70 for months, showing sustained market strength and institutional accumulation. The peak RSI of 98 marked the bull cycle's top in December 2017. Observation: This period saw Bitcoin trading sideways, with dips into the 40-50 RSI range—classic signs of accumulation. The RSI gave early signs of exhaustion by peaking in April, warning traders of a potential slowdown before the November rally. Summary: The market entered a deep bear phase, and Bitcoin’s RSI hit extreme lows. RSI in the 80-90 Range: Historically, peaks in this zone signal the final stages of a bu...",
+      "score": 0.05749328,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "Convert 1 btc_usdt to USDT | Converter | Binance",
+      "url": "https://www.binance.com/en-BH/convert/btc_usdt/USDT",
+      "content": "Binance Convert btc_usdt to USDT. Swap your to other currencies easily in one go! ### Community. ### Products. ### Business. ### Service. ### Support. ### Learn. Binance Bahrain B.S.C. (c) (Binance Bahrain) is licensed by the Central Bank of Bahrain (the CBB) as a category 4 Crypto-Asset Service Provider to operate a crypto-asset exchange (defined below as the \"Exchange\") in relation to Crypto Assets). The Central Bank of Bahrain has neither reviewed nor approved the listed crypto-assets.",
+      "score": 0.023153413,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "Dogecoin Price Above $10: Historical Data Shows How High DOGE Will Go This Bull Cycle | Crypto Breaking en Binance Square",
+      "url": "https://www.binance.com/es-MX/square/post/17889607296410",
+      "content": "# Dogecoin Price Above $10: Historical Data Shows How High DOGE Will Go This Bull Cycle. Crypto analyst Dima James has again raised the possibility of the Dogecoin price rallying above $10 in this market cycle. The crypto analyst alluded to historical data to show how high DOGE could go in this bull cycle. How High Dogecoin Price Could Go In This Market Cycle. In an X post, Dima James shared a chart that showed that the Dogecoin price could reach as high as $80 in this market cycle. The analyst also predicted that the cycle top for Dogecoin could happen sometime between February 11th and May 7th, 2025. The analyst alluded to historical data to explain why he is confident that Dogecoin could reach this target. Analyzing the daily chart, the crypto analyst explained that year 4 is typically the final year of each cycle, which is when the Dogecoin price has peaked every single time. In line with this, the analyst predicts that the cycle top for Dogecoin will happen sometime between February 11th and May 7th. Meanwhile, discussing the four-year cycle more, Dima James noted that the Dogecoin price had an impressive performance in this cycle’s year 3 (2024) compared to the year 3s of...",
+      "score": 0.012194132,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "AI predicts BNB price for end of 2024 | Kri on Binance Square",
+      "url": "https://www.binance.com/en/square/post/5751630217169",
+      "content": "# AI predicts BNB price for end of 2024. ## **BNB price prediction 2024**. In particular, one of these AI algorithms, which relies on historical BNB price trends, technical analysis (**TA**) indicators, various **chart patterns**, and influential events, has projected the token to hit **$838.12** by December 31, 2024, suggesting a possible 54.10% increase from its current price. *BNB price prediction 1-year chart. At the same time, the machine learning prediction platform *CoinPriceForecast*has **set** the BNB to USD price at **$1,416** (+160.35%) by the year’s end, with BNB price prediction 2025 figures projecting it to reach $1,500 by mid-year and $1,336 by the end of that year. Meanwhile, the fourth model of the **OpenAI** breakthrough invention **ChatGPT**, called GPT-4, has offered a BNB price prediction 2024 target **above $550**, rallying further beyond its price at press time “based on the synthesis of available data and considering the current **bullish** trend.”. > “Considering the current price of BNB is $549.63, which is already above some of the predictions for the end of 2024, and combining this with the optimistic market sentiment, we can infer that Binance Coin h...",
+      "score": 0.009196552,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    },
+    {
+      "title": "NEAR Protocol (NEAR) Coin Analysis on February 15, 2025, 12:24 PM GMT | Crypto Ways on Binance Square",
+      "url": "https://www.binance.com/en/square/post/20342493634746",
+      "content": "# NEAR Protocol (NEAR) Coin Analysis on February 15, 2025, 12:24 PM GMT. NEAR Protocol (NEAR) Coin Analysis on February 15, 2025, 12:24 PM GMT. $NEAR At this time, NEAR is trading at $3.52. The daily chart of NEAR shows slight price fluctuations, with a trading range of $3.47 to $3.62 during the day. NEAR reached its all-time high price of $20.42 on January 16, 2022. The coin recorded its lowest price of $0.526 on November 4, 2020. The circumstances surrounding these two prices:. • All-time high: The result of increased interest in blockchain-based projects and the expansion of the NEAR ecosystem. • Historical low: This occurred in the period after the launch of the currency, when it was in the stage of introducing and building trust with investors. With the NEAR price remaining relatively stable, it could indicate a period of accumulation before a potential major price movement. Investors are advised to follow news and developments related to the project, as partnerships or technical updates could impact the price. Tips for buyers and sellers:. • For buyers: It may be appropriate to buy at the mentioned support levels, taking into account risk management. • For sellers: It is a...",
+      "score": 0.001034247,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance API klines BTCUSDT 1m historical 2024-12-30 20:00 ET to 2025-12-31 23:59 ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:binance.com BTC_USDT 1m chart historical data 2024-12-30 2025-12-31",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance BTCUSDT 1-minute candles historical high 125000 Dec 30 2024 Dec 31 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

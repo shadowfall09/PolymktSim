@@ -1,0 +1,860 @@
+{
+  "row_index": 38,
+  "market_id": "forecastbench_2026_06_21_bba364700698cca8b4a6a6d62b8df14c812b2d741aee1e7f09afeeafba4b7504",
+  "slug": "",
+  "question": "Will there be more than ten times as many 'Protests' in Croatia for the 30 days before 2026-06-28 compared to one plus the 30-day average of 'Protests' over the 360 days preceding 2026-06-21? e.g. If the forecast due date is 2024-01-01 and we have the following data: Date,'Protests' 2023-11-11,1 2023-10-10,2 to calculate one plus the 30-day average of 'Protests' over the preceding 360 days, we’d have: 1+(1+2)/12=1.25. In this example, for the question to resolve positively, 13 (10 x 1.25) or more 'Protests' would need to occur in the 30 days leading up to the resolution. Resolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published. Background: ACLED classifies events into six distinct categories: 1. Battles: violent interactions between two organized armed groups at a particular time and location; 2. Protests: in-person public demonstrations of three or more participants in which the participants do not engage in violence, though violence may be used against them; 3. Riots: violent events where demonstrators or mobs of three or more engage in violent or destructive acts, including but not limited to physical fights, rock throwing, property destruction, etc.; 4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature, are at range and widely destructive; 5. Violence against civilians: violent events where an organized armed group inflicts violence upon unarmed non-combatants; and 6. Strategic developments: contextually important information regarding incidents and activities of groups that are not recorded as any of the other event types, yet may trigger future events or contribute to political dynamics within and across states. Detailed information about the categories can be found at: https://acleddata.com/knowledge-base/codebook/#acled-events",
+  "event_title": "Will there be more than ten times as many 'Protests' in Croatia for the 30 days before 2026-06-28 compared to one plus the 30-day average of 'Protests' over the 360 days preceding 2026-06-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,'Protests'\n2023-11-11,1\n2023-10-10,2\nto calculate one plus the 30-day average of 'Protests' over the preceding 360 days, we’d have: 1+(1+2)/12=1.25.\n\nIn this example, for the question to resolve positively, 13 (10 x 1.25) or more 'Protests' would need to occur in the 30 days leading up to the resolution.\n\nResolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published.\n\nBackground: ACLED classifies events into six distinct categories:\n\n1. Battles: violent interactions between two organized armed groups at a particular time and\n   location;\n2. Protests: in-person public demonstrations of three or more participants in which the participants\n   do not engage in violence, though violence may be used against them;\n3. Riots: violent events where demonstrators or mobs of three or more engage in violent or\n   destructive acts, including but not limited to physical fights, rock throwing, property\n   destruction, etc.;\n4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature,\n   are at range and widely destructive;\n5. Violence against civilians: violent events where an organized armed group inflicts violence upon\n   unarmed non-combatants; and\n6. Strategic developments: contextually important information regarding incidents and activities of\n   groups that are not recorded as any of the other event types, yet may trigger future events or\n   contribute to political dynamics within and across states.\n\nDetailed information about the categories can be found at:\nhttps://acleddata.com/knowledge-base/codebook/#acled-events",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
+  "end_date_limit": "2026-06-27",
+  "row_end_date_raw": "2026-06-28",
+  "expanded_queries": [
+    "ACLED codebook protests event definition Croatia official methodology",
+    "Croatia protests ACLED historical trend 30-day 360-day dataset",
+    "Croatia protest actors institutions government unions parties ACLED",
+    "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+    "Croatia protest analysis ACLED experts political violence country brief"
+  ],
+  "supplemental_query": null,
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 45,
+    "hard_quarantined_late_date_count": 1,
+    "llm_filter_input_count": 45,
+    "supplemental_search_triggered": false,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 33,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 12,
+    "llm_kept_count": 33,
+    "llm_kept_leak_no_count": 33,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "### Protests A Protests event is defined as an in-person public demonstration of three or more participants in which the participants do not engage in violence, though violence may be used against them. Events include individuals and groups who peacefully demonstrate against a political entity, government institution, policy, group, tradition, business, or other private institution. The following are not recorded as Protests events: symbolic public acts such as displays of flags or public prayers (unless they are accompanied by a demonstration); legislative protests, such as parliamentary walkouts or members of parliaments staying silent; strikes (unless they are accompanied by a demonstration); and individual acts such as self-harm actions like individual immolations or hunger strikes. [...] ### Violence against civilians ACLED defines Violence against civilians as violent events where an organized armed group inflicts violence upon unarmed non-combatants. By definition, civilians are unarmed and cannot engage in political violence. Therefore, the violence is understood to be asymmetric as the perpetrator is assumed to be the only actor capable of using violence in the event. T...",
+      "score": 0.82895297,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "content": "Armed clash This sub-event type is used when armed, organized groups engage in a battle, and no reports indicate a significant change in territorial control (as described above). Possible ‘Interaction’ codes include: 11, 12, 13, 14, 18, 22, 23, 24, 28, 33, 34, 38, 44, 48, and 88. ACLED Codebook 13 THE ARMED CONFLICT LOCATION & EVENT DATA PROJECT www.acleddata.com | admin@acleddata.com Protests A ‘Protests’ event is defined as an in-person public demonstration of three or more participants in which the participants do not engage in violence, though violence may be used against them. Events include individuals and groups who peacefully demonstrate against a political entity, government institution, policy, group, tradition, business, or other private institution. The following are not [...] or other private institution. The following are not recorded as ‘Protests’ events: symbolic public acts such as displays of flags or public prayers (unless they are accompanied by a demonstration); legislative protests, such as parliamentary walkouts or members of parliaments staying silent; strikes (unless they are accompanied by a demonstration); and individual acts such as self-harm actions...",
+      "score": 0.7933146,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "The Balkans - Europe Data Release - ACLED",
+      "url": "https://acleddata.com/press/balkans-europe-data-release",
+      "content": "ACLED has recorded over 2,000 political violence and protest events in the Balkans — defined as Croatia, Bosnia and Herzegovina, Montenegro, Kosovo, and Serbia — since January 2018. Across all five countries, the most common event type is protests, the majority of which have been peaceful with no intervention. Swells of anti-government protests — mostly expressing dissatisfaction with policies addressing poor socio-economic conditions — occurred across multiple countries in the Balkans throughout 2018 and early 2019. In Serbia, the country with the highest event count, anti-government protests have surged and spread, especially through February 2019. There have also been high levels of anti-police protests in Bosnia and Herzegovina, especially in late 2018, after the alleged cover-up of [...] Main navigation User account menu User account menu Main navigation (drawer) # The Balkans - Europe Data Release ACLED records political violence and protests in the Balkans, with widespread peaceful protests. 29 March 2019 ### Melissa Pavlik ### Lennart Landman Director of Data lennart-landman-",
+      "score": 0.74785584,
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "content": "an event, as protesters are by definition, non-violent. In the event that rioters target civilians, the event is coded as “Violence against civilians”. 2.2.5 Violence against civilians “Violence against civilians” is defined as deliberate violent acts perpetrated by an organized political group such as a rebel, militia or government force against unarmed non-combatants. These conflict events harm or kill civilians, and are the sole act in which civilians are an actor. There is no minimum number of victims needed to qualify as an ACLED event. Although the victims can be combatants in a different context, during acts of violence against civilians, they are UNARMED and NOT ABLE to defend themselves or engage in violence. “Violence against civilians” also includes inflicting significant harm [...] engagement with another force. Non-violent actions include recruitment, looting, destruction of property, etc. 2.2.4 Riots/Protests Riots/Protests is a combined category that includes two discrete types of events: The first type of event includes demonstrations against a (typically) political entity, such as a government institution, although this may also include some demonstrations again...",
+      "score": 0.72559077,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "content": "but allows users to determine how to aggregate as they see fit. Access ACLED’s codebook for a full explanation of our methodology. Definitions of Political Disorder and Event Types Political violence is the use of force by a group with a political purpose or motivation. ACLED defines political violence through its constituent events, the intent of which is to produce a comprehensive overview of all forms of political conflict within and across states. A politically violent event is a single altercation where force is often used by one or more groups to a political end, although some instances – including protests and non-violent activity – are included in the dataset to capture the potential pre-cursors or critical junctures in a period of disorder. ACLED has six event types and 25 [...] 1 ACLED Definitions of Political Violence and Protest ACLED aims to capture how disorder occurs in states. Disorder encompasses a range of activity from severe political violence, such as targeted attacks on civilians and battles, to spontaneous demonstrations, mass arrests and property destruction. Many of these actions can occur simultaneously in unstable countries. ACLED has devised a system...",
+      "score": 0.6914979,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Armed Conflict Location & Event Data Project (ACLED)",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2019/04/ACLED_User-Guide-for-Media_2019FINAL.pdf",
+      "content": "contexts. This short guide provides an introduction to the structure of the dataset, key terminology used, potential uses by humanitarian and development practitioners, and answers to frequently asked questions. Supporting documentation, including the project Codebook (detailing the data collection and recording process), a general user guide, and working papers which explore sources and methodology in greater detail are are all available online available online here. Terminology: Political violence refers to any act involving force or aggression, carried out with the purpose of pursuing a political agenda. Events refer to the individual incidents which make up periods of instability and war: discrete battles, attacks on civilians, riots and protests are coded individually to provide [...] • Protests – A public demonstration against a political entity, government institution, policy or group in which the participants are not violent. • Peaceful protest: demonstrators are engaged in a protest while not engaging in violence or other forms of rioting behaviour and are not faced with any sort of force or engagement Data Analysis: Data analysis allows users to collapse or group categ...",
+      "score": 0.68318754,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project (ACLED) Codebook",
+      "url": "https://reliefweb.int/report/world/armed-conflict-location-event-data-project-acled-codebook-version-8-2017",
+      "content": "Collecting information on rioting and protesting; and Non-violent ‘strategic developments’ representing crucial junctures in periods of political violence (e.g. rallies, recruitment drives, peace talks, high-level arrests). [...] Introduction and Brief Description The ACLED project codes reported information on the type, agents, exact location, date, and other characteristics of political violence events, demonstrations and select politically relevant non-violent events. ACLED focuses on tracking a range of violent and non-violent actions by political agents, including governments, rebels, militias, communal groups, political parties, external actors, rioters, protesters and civilians. Data contain specific information on the date, location, group names, interaction type, event type, reported fatalities and contextual notes. ACLED concentrates on the following events: [...] Tracking rebel, militia and government activity over time and space; Recording violent acts between and across non-state groups, including political and communal militias; Recording political violence by unnamed agents, as violent groups may remain unnamed for strategic reasons Recording attacks on civilians...",
+      "score": 0.6533265,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "Political violence and demonstrations increased by 13% across all regions of ACLED coverage in 2019, driven by a surge in protest activity. Conflict rates declined overall, but political violence increased in more countries than it decreased. ACLED records 91,448 total political violence events in 2019, a 2% decrease from 93,642 in 2018. Despite the overall decline, however, political violence was reported in 96% of all countries covered by ACLED, and the number of events actually increased in more countries than it decreased. ACLED records violent activity in over 23,000 locations last year, including nearly 9,000 new locations where events were reported in 2019 but not in 2018. Political violence increased most substantially in Ukraine, India, Libya, Myanmar, and Burkina Faso. [...] - 4 -Introduction to ACLED The Armed Conflict Location & Event Data Project (ACLED) is a disaggregated data collection, analysis, and crisis mapping project that tracks political violence and demonstrations across much of the world. ACLED currently covers Africa; the Middle East; South Asia; Southeast Asia; Central Asia and the Caucasus; and Southeastern and Eastern Europe and the Balkans.1 In ACLE...",
+      "score": 0.6501347,
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "search_index": 5
+    },
+    {
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "content": "device seriously injured five civilians. ! Grenade: A hand grenade was thrown at a restaurant in Sibenik, Croatia, causing material damage. Violence against civilians involves violent attacks on unarmed civilians. These acts comprise a third of the collected data. ! Sexual violence: A soldier from the Security Belt Forces was reportedly arrested after he kidnapped a girl and subsequently attempted to rape her in Al Maalla district of Aden port city, southwestern Yemen. 3 ! Sexual violence: AFP reported that a Ukrainian activist was tortured by masked men and subject to sexual violence by Russian police in a detention centre in Sevastopol, Crimea. The man was put in jail for ten days for a social media post in connection to a case against a local anarchist. ! Attack: 8 people were killed [...] 1 ACLED Definitions of Political Violence and Protest ACLED aims to capture how disorder occurs in states. Disorder encompasses a range of activity from severe political violence, such as targeted attacks on civilians and battles, to spontaneous demonstrations, mass arrests and property destruction. Many of these actions can occur simultaneously in unstable countries. ACLED has devised a sy...",
+      "score": 0.6219319,
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "search_index": 5
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "content": "You logged out of HDX Thank you for using HDX ! small logo Armed Conflict Location & Event Data Project (ACLED) Share Visit Website # Armed Conflict Location & Event Data Project (ACLED) Get Notified Unsubscribe 5 Members 539 Followers Visit Website Member since 9 January 2015 The Armed Conflict Location & Event Data Project (ACLED)\") is a disaggregated data collection, analysis, and crisis mapping project. ACLED collects the dates, actors, locations, fatalities, and types of all reported political violence and protest events in more than 200 countries and territories in real time. The ACLED team conducts analysis to describe, explore, and test conflict scenarios, and makes both data and analysis open for free use by the public. [...] ACLED is a registered non-profit organization with 501(c)(3) status in the United States. By using ACLED data you agree to abide by the Terms of Use & Attribution Policy. For questions or comments, please contact: admin@acleddata.com Resources Available on the ACLED Website: The full disaggregated event-based dataset is available for download through ACLED’s Data Export Tool and API with an open access account. Explore our latest data through our i...",
+      "score": 0.54564947,
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "search_index": 5
+    },
+    {
+      "title": "Anti-Government Protests in Croatia: Changing Politics – Socialist Project",
+      "url": "https://socialistproject.ca/2011/04/b485",
+      "content": "The protests are not organized by the political parties or unions, the latter already fully discredited by their politics of “social dialogue”; they are simply lead by all who participate. The decisions are made directly at the protests, and all attempts of various aspirants and wannabe politicians to take over the leadership or act as spokespersons have been instantly disqualified and discredited by prompt reactions of the majority of protesters. Protests are organized as a march across the city centre directed at seats of various fractions of the political and economic elites ruling the country – political parties, the ruling coalition as well as the opposition, private and public media, Croatian Central Bank (Hrvatska Narodna Banka), corporations, trade unions and state and public [...] Banka), corporations, trade unions and state and public institutions. [...] major parties – Croatian Democratic Union (center right), currently in power, and the Socialist Democratic Party (center left). The ideological field thus formed treated the liberal option as the radical left and hence prevented any political articulation of the detrimental effects of the capitalist restoration in Croa...",
+      "score": 0.5142789,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "Actors and institutions in Croatia | Eurofound",
+      "url": "https://www.eurofound.europa.eu/en/countries/croatia/actors-and-institutions",
+      "content": "# Actors and institutions in Croatia Trade unions, employer organisations and public institutions play a key role in the governance of the employment relationship, working conditions and industrial relations structures. They are interlocking parts in a multilevel system of governance that includes European, national, sectoral, regional (provincial or local) and company levels. This section looks at the key players and institutions and their role in Croatia. ## Public authorities involved in regulating working life [...] According to the Labour Act, trade unions are the only actors entitled to conclude collective agreements in the Republic of Croatia on behalf of workers, whereas, on the employer side, a party to a collective agreement can be an individual employer or an employer association. Works councils also have the right to make certain agreements with the employer, but those agreements must not regulate matters related to wages, the duration of working time or other issues that the Labour Act stipulates may be regulated by a collective agreement. In that way, apart from the freedom of association and activity, trade unions are ensured collective bargaining monopoly. Works...",
+      "score": 0.50915486,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "content": "© 2026 ACLED all rights reserved. [...] 15 June 2026 ### Is a foreign luxury resort sparking Albania’s biggest protest wave in years? ACLED’s Eastern Europe, Caucasus, and Central Asia Research Manager Magda Anastasijevic comments on surge of nationwide protests in Albania over Jared Kushner’s planned luxury coastal resort 12 June 2026 ### Is Israel redrawing the Syrian border under the guise of security? ACLED’s Middle East Research Manager Muaz Al Abdullah comments on the strategic implications of Israel’s military road construction in Quneitra’s buffer zone. 11 June 2026 ### Q&A: As South China Sea confrontations ramp up, what’s the risk of open conflict? Gray zone operations in the disputed waters are more frequent, testing the status quo for the US-China rivalry and allies in the region. 11 June 2026 [...] Scroll forward ## Recent analysis Monthly regional updates Every month, we publish short reports that analyze the latest ACLED data and highlight important patterns in political violence and protests around the world. Image 2: Residents and members of the new self-defense group known as 'El Machete' stand next to a burnt truck as others look for members of drug gangs and...",
+      "score": 0.46964246,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "content": "ACLED is a registered non-profit organization with 501(c)(3) status in the United States. By using ACLED data you agree to abide by the Terms of Use & Attribution Policy. For questions or comments, please contact: admin@acleddata.com Resources Available on the ACLED Website: The full disaggregated event-based dataset is available for download through ACLED’s Data Export Tool and API with an open access account. Explore our latest data through our interactive global dashboard and check in for weekly data updates and analysis tracking key political violence and protest trends around the world, as well as special projects like our Early Warning Research Hub. Additional guides and methodology documents can be found in the ACLED Resource Library. [...] You logged out of HDX Thank you for using HDX ! small logo Armed Conflict Location & Event Data Project (ACLED) Share Visit Website # Armed Conflict Location & Event Data Project (ACLED) Get Notified Unsubscribe 5 Members 539 Followers Visit Website Member since 9 January 2015 The Armed Conflict Location & Event Data Project (ACLED)\") is a disaggregated data collection, analysis, and crisis mapping project. ACLED collects the dates, ac...",
+      "score": 0.43338245,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "search_index": 2
+    },
+    {
+      "title": "Croatia Rallies in Support of Education Reform - Open Society Foundations",
+      "url": "https://www.opensocietyfoundations.org/voices/croatia-rallies-support-education-reform",
+      "content": "The current protest, sparked by the threat of stalling education reforms, brought together diverse parts of Croatian society: over 300 groups including civil society organizations, unions, sports clubs, and local parents’ organizations gathered under the slogan Hrvatska može bolje! (Croatia can do better!). For the first time in the country’s history, the protest was decentralized: people in 13 towns and cities across the country mobilized, and the Croatian diaspora from London to Budapest also got involved.",
+      "score": 0.40938663,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "content": "# Conflict data ACLED is the highest-quality and most widely used near-real-time source on political violence and protest data worldwide. ## Register with us to access data Create your myACLED account to download our data and unlock even more features. Register now ## Knowledge Base The latest information and guides to best understand and use ACLED data. FAQs A selection of questions frequently asked by users of ACLED data. Methodology Documentation on ACLED’s methodology, including how ACLED sources and codes information on political violence and protest. Use and access guides General guides on how to use and access the latest ACLED data. Update log A running log of the latest changes in the ACLED dataset. Restricted page: CAST | Conflict Alert System",
+      "score": 0.4013364,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "ACLED allows users to filter data based on the type of event, type of actor, type of interaction, actors, location, or time period. ACLED does not dictate nor frame aggregations of conflict events, but allows users to determine how to define and explore frames. In this way, the dataset is designed to provide a comprehensive overview of political disorder around the world. ### Event types and sub-event types [...] | Event type | Sub-event type | Disorder type | --- | Battles | Government regains territory | Political violence | | Non-state actor overtakes territory | | Armed clash | | Protests | Excessive force against protesters | Political violence; Demonstrations | | Protest with intervention | Demonstrations | | Peaceful protest | | Riots | Violent demonstration | | Mob violence | Political violence | | Explosions/Remote violence | Chemical weapon | | Air/drone strike | | Suicide bomb | | Shelling/artillery/missile attack | | Remote explosive/landmine/IED | | Grenade | | Violence against civilians | Sexual violence | | Attack | | Abduction/forced disappearance | | Strategic developments | Agreement | Strategic developments | | Arrests | | Change to group/activity | | Disrupte...",
+      "score": 0.40049198,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "search_index": 2
+    },
+    {
+      "title": "Croatia to face increased protests ahead of elections | Euractiv",
+      "url": "https://www.euractiv.com/news/croatia-to-face-increased-protests-ahead-of-elections",
+      "content": "Politicians and union leaders are no longer hiding their dissatisfaction regarding the current leadership in the country, with calls for protest expected to increase exponentially as the country gears up for a “super election year”. The protests are taking place in a year when there are three elections – for the European Parliament and the Sabor (parliament), as well as for the head of state. Although few are willing to publicly admit that the protests are linked to the “super-election” year, when the government is also more likely to meet (at least some of) the protesters’ demands, there is little doubt that the imminent turnout at the polls is fuelling public expressions of discontent. [...] Log in You're logged out. Log in Lights off- [x] # Croatia to face increased protests ahead of elections Politicians and union leaders are no longer hiding their dissatisfaction regarding the current leadership in the country, with calls for protest expected to increase exponentially as the country gears up for a “super election year”. Politics Adriano MilovanEURACTIV.hr Image 2: Education workers in Zagreb demand higher wages The protests are taking place in a year when there are three el...",
+      "score": 0.3934788,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Academic Calendar - Faculty of Croatian Studies",
+      "url": "https://www.fhs.unizg.hr/en/academic-calendar",
+      "content": "| 23 February 2026 (Monday) – 5 June 2026 (Friday) | Teaching | Beginning and end of classes in the summer semester of the academic year 2025/2026. | | 3 April 2026 (Friday) | Non-teaching day | Good Friday (non-working and non-teaching day) | | 5 April 2026 (Sunday) | Holiday | Easter | | 6 April 2026 (Monday) | Holiday | Easter Monday | | 1 May 2026 (Friday) | Holiday | Labour Day | | 30 May 2026 (Saturday) | Holiday | Statehood Day | | 4 June 2026 (Thursday) | Holiday | Corpus Christi | | 8 June 2026 (Monday) – 10 July 2026 (Friday) | Examination period | Regular summer examination period | | 18 June 2026 (Thursday) | Event | Thanksgiving Mass (Te Deum) | | 22 June 2026 (Monday) | Holiday | Anti-Fascist Struggle Day | [...] | 18 November 2026 (Wednesday) | Holiday | Remembrance Day for the Victims of the Homeland War and Remembrance Day for the Victims of Vukovar and Škabrnja | | 9 December 2026 (Wednesday) | Non-teaching day | Observance of the Day of the Faculty of Croatian Studies (no classes) | | 10 December 2026 (Thursday) | Event | Day of the Faculty of Croatian Studies | | 24 December 2026 (Thursday) – 5 January 2027 (Tuesday) | Non-teaching day | Christmas and New Yea...",
+      "score": 0.38408068,
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "ACLED 2020: THE YEAR IN REVIEW",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/08/ACLED_Annual-Report-2020_Upd2021.pdf",
+      "content": "The Armed Conflict Location & Event Data Project (ACLED) is a disaggregated data collection, analysis, and crisis mapping project that tracks political violence and demonstrations around the world. ACLED currently covers Africa; Latin America and the Caribbean; the Middle East; South Asia; Southeast Asia; East Asia; Central Asia and the Caucasus; Europe; and the United States.1 In ACLED 2020: The Year in Review, we analyze the past year of data on political violence and demonstrations across these regions of coverage. ACLED is an event-based data project, meaning that each engagement is recorded by date and location. Along with this information, ACLED records the actors, types of violence, and fatalities associated with each event — allowing for a multitude of ways to explore disorder [...] — started an anti-government protest movement focusing on inflation. For more on demonstrations in Pakistan, see this spotlight infographic from ACLED’s COVID-19 Disorder Tracker.",
+      "score": 0.38241872,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "content": "does not categorize clusters or campaigns of events into categories of ‘state’, ‘non-state’, ‘terrorism’, ‘insurgency’; etc. This is because political violence, protest, conflict and disorder are, in reality, aggregations of multiple actors, attacks, goals, etc. To classify events into parts of a ‘civil war’, ‘livelihood’, ‘religious’ or ‘election’ conflict (to name a few common versions) is often a reductive choice, leaving out the complex ways in which conflict creates multiple scales of violence and intended outcomes within a territory. ACLED allows users to select on the type of event, type of actor, type of interaction, named actors, location or time period. ACLED does not dictate nor frame a series of conflict events for researchers, but allows users to determine how to aggregate as [...] 1 ACLED Definitions of Political Violence and Protest ACLED aims to capture how disorder occurs in states. Disorder encompasses a range of activity from severe political violence, such as targeted attacks on civilians and battles, to spontaneous demonstrations, mass arrests and property destruction. Many of these actions can occur simultaneously in unstable countries. ACLED has devised a...",
+      "score": 0.38207284,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED Expands Coverage to All of Europe",
+      "url": "https://acleddata.com/press/acled-expands-coverage-all-europe",
+      "content": "The expansion allows for new data-driven analysis of a range of key disorder trends across Europe, from Yellow Vest demonstrations in France and protests over abortion restrictions in Poland, to prison unrest in Italy and climate-change strikes in Sweden, to far-right activity in Germany and separatist movements in Spain. Full analysis of these trends will be presented in an upcoming special report. Find the latest analysis and an interactive dashboard mapping the data on our new Europe Resources page. ## Political Violence and Protest in Europe: 2020 From January to December 2020, ACLED records more than 46,000 political violence and demonstration events across the region: [...] A US-based 501(c)(3) non-profit organization established in 2014, ACLED is the highest quality and most widely used real-time data and analysis source on political violence and protest around the world. If you would like to use ACLED data and analysis, please review our Terms of Use & Attribution Policy. For more information about ACLED methodology, please check our Knowledge Base. For interview requests and press inquiries, please contact:Sam Jones, Communications Manager © 2021 Armed Conflict Location...",
+      "score": 0.37497434,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "search_index": 2
+    },
+    {
+      "title": "Monthly regional updates",
+      "url": "https://acleddata.com/series/monthly-regional-updates",
+      "content": "5 June 2026 ### Middle East Overview: June 2026 Israel stepped up pressure on Hamas in Gaza, and Iran continued targeting the Gulf while an agreement with the US stalls 5 June 2026 ### Europe and Central Asia Overview: June 2026 Russia and Ukraine exchanged air attacks, while drones veering off course into Eastern Europe tested air defenses, and anti-migration violence spread across the Netherlands. 5 June 2026 ### Latin America and the Caribbean Overview: June 2026 Deadly clashes broke out ahead of the presidential elections in Colombia, demonstrations over worsening humanitarian conditions took place in Cuba, and organized crime violence escalated in Honduras. 5 June 2026 #### Pagination ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu [...] Main navigation User account menu User account menu Main navigation (drawer) Residents and members of the new self-defense group known as 'El Machete' stand next to a burnt truck as others look for members of drug gangs and municipal authorities during a protest against the growing violence in the area, in Pantelho, in Chiapas state, Mexico 27 July, 2021. REUTERS/Jacob Garcia # Monthly regional updates Every month, we publ...",
+      "score": 0.36148077,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Demonstration Alert: U.S. Embassy (Zagreb, Croatia) April 17, 2026 - U.S. Embassy in Croatia",
+      "url": "https://hr.usembassy.gov/demonstration-alert-u-s-embassy-zagreb-croatia-april-17-2026",
+      "content": "Event: Demonstrations are expected to take place on April 18, 2026 beginning at 11:00 a.m. Union groups intend to protest in support of higher salaries and pensions. Participants will gather at the Croatian National Theater at 11:00 a.m. and begin marching at 12:00 p.m. along Frankopanska Street and Ilica Street to Ban Jelačić Square. The demonstration is expected to draw approximately 5,000–10,000 participants. Expect traffic congestion, enhanced police presence, and increased security measures in the vicinity of the demonstration. Actions to Take: Avoid demonstrations Monitor local media for updates. Be aware of your surroundings. Assistance: [...] :host { --color-primary: #3474da; --color-primary-dark: hsl(216, 69%, 42%); --color-primary-light: hsl(216, 69%, 97%); --color-primary-alpha: rgba(52, 116, 218, 0.250000); --color-primary-contrast: #FFFFFF; --color-secondary: #364959; --color-secondary-dark: hsl(207, 24%, 23%); --color-secondary-contrast: #FFFFFF; --color-secondary-alpha: rgba(54, 73, 89, 0.250000); --color-secondary-light: hsl(207, 24%, 52%); --color-success: #90BE6D; --color-success-dark: hsl(94, 38%, 47%); --color-success-light: hsl(94, 38%, 77%); --color-error:...",
+      "score": 0.34979975,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED Regional Overview Europe & Central Asia: January 2026 - Ukraine | ReliefWeb",
+      "url": "https://reliefweb.int/report/ukraine/acled-regional-overview-europe-central-asia-january-2026",
+      "content": "The protesters also demanded a new round of snap parliamentary elections, with emphasis on greater transparency and fairness in the voting process. If held, these elections would be the eighth round of elections since 2021 in a country marred by polarization and entrenched high-level corruption. ### Europe: Farmers protest corruption, the cost of doing business, and free trade Discontent over sanitary measures, the European Union-Mercosur trade agreement, and EU agricultural subsidies fueled mobilization among European farmers in December, including during the Christmas holidays. ACLED records more than 1,100 farmer-led demonstrations in December, over half occurring in Greece and a third in France. [...] The publication of a draft national budget for 2026, proposing an income tax increase, prompted thousands of Bulgarians, mostly young, to take to the streets of the capital, Sofia, and over 30 towns and cities across the country on almost 100 occasions in December. The protests remained predominantly peaceful, although an isolated group of masked demonstrators split from the protest to target a former office of the governing Citizens for European Development of Bulgaria (GERB)...",
+      "score": 0.32447132,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Elections in Croatia - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Croatia",
+      "content": "Regular elections in Croatia are mandated by the Constitution and legislation enacted by Parliament. The presidency, Parliament, county prefects and assemblies, city and town mayors, and city and municipal councils are all elective offices. Since 1990, seven presidential elections have been held. During the same period, ten parliamentary elections (with two for the upper house when the parliament was bicameral) were also held. In addition, there were nine nationwide local elections. Croatia has also held three elections to elect members of the European Parliament following its accession to the EU on 1 July 2013. [...] ## External links [edit] | v t e Croatia Elections and referendums in Croatia | | Parliamentary elections | 1990 1992 1995 2000 2003 2007 2011 2015 2016 2020 2024 Next | | Presidential elections | 1992 1997 2000 2005 2009–10 2014–15 2019–20 2024–25 | | European elections | 2013 2014 2019 2024 | | Chamber of Counties elections | 1993 1997 | | Local elections | 1990\") 1993 1997 2001 2005 2009 2013 2017 2021 2025 | | Minorities elections | 2003 2007\") 2011\") 2015 2019 2023 | | Referendums | 1991 1996 2012 2013 | | See also: Elections in Austria-Hungary Yugoslavia Zagr...",
+      "score": 0.31254882,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    },
+    {
+      "title": "ACLED",
+      "url": "https://acleddata.com",
+      "content": "myACLED default banner The ACLED Conflict Index is a global assessment of how and where conflicts in every country and territory in the world vary according to four indicators — deadliness, danger to civilians, geographic diffusion, and the number of armed groups. Updates on the conflict unfolding in Iran and the wider region. Thumbnail The ACLED Explorer allows you to filter and summarize data from the past year. Country profiles show data at the subnational level, as well as trends based on number of events, fatalities, and civilians exposed to violence. A static image of the fatalities data from the ACLED Explorer platform ACLED is the highest-quality and most widely used near-real-time source on political violence and protest data worldwide. Data visualization platforms [...] Main navigation User account menu User account menu Main navigation (drawer) # Clarity in Crisis ACLED is an independent, impartial conflict monitor providing real-time data and analysis on violent conflict and protest in all countries and territories across the world. A data map showing ACLED data Stream our latest episode: ‘The Sudan war explained: Siege, drones, and regional power struggles.' 6 July...",
+      "score": 0.30991113,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "search_index": 2
+    },
+    {
+      "title": "BTI 2026 Croatia Country Report",
+      "url": "https://bti-project.org/en/reports/country-report/HRV",
+      "content": "Political and societal cleavages in Croatia are primarily cultural, rather than economic or related to the form of government. These divisions revolve around deeply rooted historical and identity-based issues. One of the most significant sources of tension is the role of the Catholic Church in society, and its influence on national identity and public institutions. Another contentious issue is how citizens remember and assess the quality of democracy in the 1990s and the legacy of the War of Independence. Additionally, competing narratives about the nature of the Yugoslav communist regime and Croatia’s experience during World War II – particularly regarding crimes committed during and immediately after the war – deepen the divide. Ethnic minority rights, the use of minority languages and [...] In 2024, changes to the criminal code made it illegal to leak details from ongoing anti-corruption probes to the press, unless journalists could argue a specific public interest. This change was heavily criticized by the media and opposition, who viewed it as a step backward in governmental transparency. In addition, the appointment of the new chief state attorney, Ivan Turudić, prompted l...",
+      "score": 0.3040835,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "The Balkans - Europe Data Release",
+      "url": "https://acleddata.com/press/balkans-europe-data-release",
+      "content": "## Related content 2 April 2019 Europe-Overall.png 30 October 2025 Serbia: One year since the Novi Sad tragedy, the government’s response to protests is sustaining the movement — Expert comment 3 October 2025 Europe and Central Asia Overview: October 2025 5 September 2025 Map - Europe and Central Asia Overview: September 2025 ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu Social media profiles Clarity in Crisis Footer bottom [...] ACLED has recorded over 2,000 political violence and protest events in the Balkans — defined as Croatia, Bosnia and Herzegovina, Montenegro, Kosovo, and Serbia — since January 2018. Across all five countries, the most common event type is protests, the majority of which have been peaceful with no intervention. Swells of anti-government protests — mostly expressing dissatisfaction with policies addressing poor socio-economic conditions — occurred across multiple countries in the Balkans throughout 2018 and early 2019. In Serbia, the country with the highest event count, anti-government protests have surged and spread, especially through February 2019. There have also been high levels of anti-police protests in Bosnia and Herzegovina,...",
+      "score": 0.29994574,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Escalating unrest, polarisation, economic woes set stage for ...",
+      "url": "https://www.maplecroft.com/solutions/consulting/political-risk/insights/escalating-unrest-polarisation-economic-woes-set-stage-for-disruptive-2026",
+      "content": "#### All regions globally exposed to rising civil unrest risk The first nine months of 2025 passed without events on a similar scale to those seen in Chile in 2019, the US in 2020, South Africa in 2021, France in 2023, and New Caledonia in 2024, which all saw over USD1 billion in insured losses. But the risk of another wave of damaging unrest is rising. Our civil unrest data shows that based on the frequency and intensity of protests over the last 12 months, civil unrest globally is expected to be more disruptive in 2026 than in 2025. The underlying factors creating the conditions for unrest include economic volatility, income inequality, the conduct of security forces, and corruption.",
+      "score": 0.29313174,
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Elections in Croatia | Organization for Security and Co-operation in Europe",
+      "url": "https://www.osce.org/odihr/elections/croatia",
+      "content": "OSCE - Organization for Security and Co-operation in Europe Our work Countries Structures and institutions About us Elections # Elections in Croatia Election missions Election assessment mission ## Early Parliamentary Elections, 17 April 2024 Croatia Election assessment mission ## Parliamentary Elections, 5 July 2020 Croatia Needs assessment mission ## Presidential Election, 22 December 2019 Croatia Election assessment mission ## Parliamentary Elections, 8 November 2015 Croatia Election observation mission ## Parliamentary Elections, 4 December 2011 Croatia Election reports and related documents Report [...] Croatia Election reports and related documents Report ## Croatia: Legal Opinion on the Law on the Election of the President of the Republic of Croatia, on the Croatian Parliamentary Elections Law and on the Law on the Election of Members from the Republic of Croatia to the European Parliament Organization for Security and Co-operation in Europe Report ## Croatia: Opinion on the Proposed Changes to the Legal Framework Governing Campaign and Political Finance Organization for Security and Co-operation in Europe Report ## Croatia, Early Parliamentary Elections, 17 April 2024: F...",
+      "score": 0.26903963,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    },
+    {
+      "title": "United States: Scope and coverage in ACLED data",
+      "url": "https://acleddata.com/methodology/united-states-scope-and-coverage-acled-data",
+      "content": "ACLED works with a unique network of international and local partners around the world. Through partnerships with local organizations and conflict observatories, ACLED is able to collect information in hard-to-access contexts and integrate thematic, regional, and country-level expertise into the data collection program. Partners benefit from ACLED training in data management, visualization, and/or analysis — building local monitoring capacity and enhancing ACLED’s global crisis mapping network. Partner contributions are invaluable to ensuring ACLED is able to produce the highest quality real-time data on political violence and protest around the world. The United States is no exception. ACLED seeks US-based local partners to improve our coverage on an ongoing basis. If you are an [...] ## How do you capture demonstrations that last multiple days? ACLED is an event-based dataset, as outlined above. Each day of a multi-day demonstration is therefore treated as a distinct event given the difference in date. This means, for example, that a demonstration about the same topic involving the same protesters in the same city, lasting an entire week, would be coded as seven distinct event...",
+      "score": 0.26457372,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "search_index": 2
+    },
+    {
+      "title": "Protests erupt over virus rules in Austria, Italy, Croatia | PBS News Weekend",
+      "url": "https://www.pbs.org/newshour/world/protests-erupt-over-virus-rules-in-austria-italy-croatia",
+      "content": "In neighboring Switzerland, 2,000 people protested an upcoming referendum on whether to approve the government's COVID-19 restrictions law, claiming it was discriminatory, public broadcaster SRF reported. A day after the Rotterdam rioting, thousands gathered on Amsterdam's central Dam Square, despite organizers calling off the protest. They walked peacefully through the streets, closely monitored by police. \"This policy (anti coronavirus measures) makes a lot of conflicts between the people,\" Hugo Gietelink from Amsterdam told The Associated Press. \"I think it is very important that the vaccinated and non-vaccinated have to make a friendship again.\" [...] Demonstrations against virus restrictions also took place in Switzerland, Croatia, Italy, Northern Ireland and the Netherlands on Saturday, a day after Dutch police opened fire on protestersand seven people were injured in rioting that erupted in Rotterdam. Protesters rallied against coronavirus restrictions and mandatory COVID-19 passes needed in many European countries to enter restaurants, Christmas markets or sports events, as well as mandatory vaccinations. [...] Politics Arts Nation World Economy Science Health Education...",
+      "score": 0.25942954,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    },
+    {
+      "title": "[PDF] List of national public holidays of Croatia in 2026",
+      "url": "https://www.cropex.hr/images/List_of_national_public_holidays_in_2026.pdf",
+      "content": "List of national public holidays of Croatia in 2026 Date Holiday Day 1.1.2026 New Year's Day Thursday 6.1.2026 Three Kings Day (Epiphany) Tuesday 5.4.2026 Easter Sunday 6.4.2026 Easter Monday Monday 1.5.2025 International Workers' Day Friday 30.5.2026 Statehood Day Saturday 4.6.2026 Corpus Christi Thursday 22.6.2026 Anti-Fascist Struggle Day Monday 5.8.2026 Victory and Homeland Thanksgiving Day Wednesday 15.8.2026 Assumption of Mary Saturday 1.11.2026 All Saints Day Sunday 18.11.2026 Remembrance Day for Homeland War Victims Wednesday 25.12.2026 Christmas Day Friday 26.12.2026 St Stephens Day Saturday",
+      "score": 0.25029883,
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "Labour law and regulation in Croatia | CMS Expert Guides",
+      "url": "https://cms.law/en/int/expert-guides/cms-expert-guide-to-labour-law-in-central-eastern-europe/croatia",
+      "content": "right to initiate the election process, to propose a list of candidates and, in case of illegality or irregularity of the elections, to demand that the court annul the elections; in the absence of a workers’ council: certain rights that are otherwise given to the workers’ council; dismissal or exclusion of workers’ council members: right to demand a judicial review of such a decision; extension of the scope of a collective agreement by decree of the Labour Minister: right to comment; lock-out: right to challenge such a measure before the courts and claim damages; inspection by the labour inspectorate: right to initiate such inspections; strike: right to initiate a strike; and trade unions are parties to the collective agreements in which they represent the interests of employees. | [...] | Collective agreements | Apart from these statutory rights the influence of trade unions is partly reflected in collective agreements. | | Strikes | Globally speaking, the Republic of Croatia does not suffer from major social unrest, strikes or other forms of interference in company operations by workers, trade unions and workers’ councils, unless such operations jeopardise the employees' right...",
+      "score": 0.19985436,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    },
+    {
+      "title": "Croatia Country Report 2026",
+      "url": "https://bti-project.org/en/reports/country-report/HRV",
+      "content": "Public sector workers tend to be more unionized than those working for private businesses. In 2024, the government significantly increased salaries in the public sector. However, teachers’ unions still present a potential for collective grievances, including strikes. According to ILO data, the collective bargaining coverage rate was 46.7%, including both the private and public sectors. Collective bargaining is well established, and includes collective agreements on working conditions, pay increases and regulation of some prices such as gasoline, driven by inflationary pressures caused by COVID-19, the adoption of the euro in 2023 and the war in Ukraine since 2022. Interest groups [...] Following the COVID-19 pandemic, the country faced labor shortages as young workers emigrated to Western Europe. At the same time, it received an influx of workers from South and Southeast Asia. At the beginning of 2025, there were about 100,000 third-country workers in the country. Since Russia’s invasion of Ukraine in 2022, Croatia has accepted about 25,000 Ukrainian refugees.",
+      "score": 0.1539179,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    },
+    {
+      "title": "Croatia: Freedom in the World 2024 Country Report | Freedom House",
+      "url": "https://freedomhouse.org/country/croatia/freedom-world/2024",
+      "content": "## A Electoral Process A1 1.00-4.00 pts0-4 pts | | | --- | | Was the current head of government or other chief national authority elected through free and fair elections? | 4.004 4.004 | The president, who is head of state, is elected by popular vote for a maximum of two five-year terms. Former Social Democratic Party (SDP) prime minister Zoran Milanović defeated incumbent Kolinda Grabar-Kitarović in the second round of the country’s presidential election in January 2020, winning 52.7 percent of the vote. Polling was peaceful, with voter turnout at 55 percent, and domestic and international stakeholders accepted the result. [...] ## header2 Key Developments in 2023 In June, the Paris-based international Financial Action Task Force (FATF) added Croatia to its grey list of countries under increased monitoring for money laundering and other related financial crimes, making the country the only European Union (EU) state on the list. The rise of strategic lawsuits against public participation (SLAPPs), and the proposal of a draft law that would allow editors to withhold articles without explanation and permit authorities to pressure journalists to reveal their sources, prompted incre...",
+      "score": 0.12426638,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "search_index": 4
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "ACLED codebook protests event definition Croatia official methodology",
+    "Croatia protests ACLED historical trend 30-day 360-day dataset",
+    "Croatia protest actors institutions government unions parties ACLED",
+    "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+    "Croatia protest analysis ACLED experts political violence country brief"
+  ],
+  "refilter_queries": [],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Defines exactly what ACLED counts as a 'Protests' event, which is directly relevant to interpreting the resolution criteria. No post-cutoff publication/update or completed outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "ACLED codebook PDF provides the formal definition of 'Protests' used for coding, directly relevant to how the question resolves. Safe background with no explicit post-cutoff publication/update."
+    },
+    {
+      "stage": "cached",
+      "title": "The Balkans - Europe Data Release - ACLED",
+      "url": "https://acleddata.com/press/balkans-europe-data-release",
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Provides historical Balkans/Croatia-region context that protests are a common ACLED event type, which is useful supporting background. It is retrospective but not a post-cutoff report about the target window, and contains no explicit post-cutoff publication marker."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Older ACLED codebook background helps clarify event taxonomy and distinctions from riots/violence, which can support interpretation of counts. No leakage indicators."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "ACLED definitions document directly explains protest classification and related event types, which is important for forecasting the eventual ACLED protest count. No explicit post-cutoff publication/update."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location & Event Data Project (ACLED)",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2019/04/ACLED_User-Guide-for-Media_2019FINAL.pdf",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "General ACLED user guide gives supporting context on dataset structure and protest terminology. Useful but less direct than the codebook; no leakage signs."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) Codebook",
+      "url": "https://reliefweb.int/report/world/armed-conflict-location-event-data-project-acled-codebook-version-8-2017",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Another ACLED methodology/codebook source that helps interpret what gets coded as protests versus other event types. Safe and methodologically relevant."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General historical ACLED annual report about global protest trends is only tangentially useful for this Croatia-specific forecast, but it is safe background without post-cutoff leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "ACLED definitions document includes examples and taxonomy distinctions, which can help understand coding boundaries relevant to protest counts. No explicit post-cutoff publication/update."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "HDX organization page confirms ACLED's scope and real-time event collection, offering supporting context on the source dataset. Not directly predictive, but safe and relevant background."
+    },
+    {
+      "stage": "cached",
+      "title": "Understanding Disorder in Central Asia - ACLED",
+      "url": "https://acleddata.com/report/understanding-disorder-central-asia",
+      "query": "Croatia protest analysis ACLED experts political violence country brief",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Generic ACLED methodology/background about Central Asia; not informative for forecasting protest counts in Croatia, and offers no Croatia-specific or contemporaneous signal."
+    },
+    {
+      "stage": "cached",
+      "title": "Anti-Government Protests in Croatia: Changing Politics – Socialist Project",
+      "url": "https://socialistproject.ca/2011/04/b485",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical background on anti-government protests in Croatia. Safe pre-cutoff contextual information; although old and not directly predictive, it provides background on protest traditions and mobilization patterns."
+    },
+    {
+      "stage": "cached",
+      "title": "Actors and institutions in Croatia | Eurofound",
+      "url": "https://www.eurofound.europa.eu/en/countries/croatia/actors-and-institutions",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General background on Croatian trade unions and institutions. Safe and potentially relevant as structural context for protest mobilization, though only tangentially useful."
+    },
+    {
+      "stage": "cached",
+      "title": "United States: Scope and coverage in ACLED data",
+      "url": "https://acleddata.com/methodology/united-states-scope-and-coverage-acled-data",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "ACLED methodology page for the United States. Generic and not Croatia-specific; does not materially inform the forecast beyond broad coding rules already provided in the question."
+    },
+    {
+      "stage": "cached",
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Published before the cutoff (15 June 2026) and contemporaneous regional analysis noting a surge of nationwide protests in nearby Albania. This is safe prospective context and may indicate broader regional protest dynamics, though it is indirect for Croatia."
+    },
+    {
+      "stage": "cached",
+      "title": "Protest Event Data from Geolocated Social Media Content",
+      "url": "https://preprints.apsanet.org/engage/api-gateway/apsa/assets/orp/resource/item/5f594a6b1d75ae001b0fab90/original/protest-event-data-from-geolocated-social-media-content.pdf",
+      "query": "ACLED codebook protests event definition Croatia official methodology",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Academic methodology paper on protest event data from social media. Generic and not specific to Croatia or the forecast window; little value for estimating ACLED protest counts here."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background on ACLED data availability, weekly updates, and access. Useful supporting context for understanding the source and update cadence of the resolving dataset, though not directly predictive of Croatia protests."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Historical 2019 ACLED annual report. Very generic global background with no Croatia-specific or current forecasting signal."
+    },
+    {
+      "stage": "cached",
+      "title": "Croatia Rallies in Support of Education Reform - Open Society Foundations",
+      "url": "https://www.opensocietyfoundations.org/voices/croatia-rallies-support-education-reform",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical example of large Croatian protest mobilization around education reform. Safe background that may modestly inform baseline protest capacity, though dated and not directly tied to the 2026 window."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff ACLED source page describing the dataset as near-real-time and linking methodology/update resources. Useful supporting context about the resolving data source, though not a direct indicator of Croatia protest likelihood."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff methodological background directly relevant to how ACLED defines and classifies 'Protests,' which matters for interpreting the resolution source."
+    },
+    {
+      "stage": "cached",
+      "title": "Croatia to face increased protests ahead of elections | Euractiv",
+      "url": "https://www.euractiv.com/news/croatia-to-face-increased-protests-ahead-of-elections",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Prospective/contextual reporting about increased protests ahead of elections in Croatia. No explicit post-cutoff publication marker or completed post-cutoff outcome in the snippet."
+    },
+    {
+      "stage": "cached",
+      "title": "Academic Calendar - Faculty of Croatian Studies",
+      "url": "https://www.fhs.unizg.hr/en/academic-calendar",
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe calendar background listing holidays and exam periods in Croatia around the target window; could marginally inform protest timing but is only weakly relevant."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED 2020: THE YEAR IN REVIEW",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/08/ACLED_Annual-Report-2020_Upd2021.pdf",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED background on dataset scope and event-based methodology. No leakage, but only generic context for this forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Definitions of Political Violence and Protest",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/11/ACLED_Event-Definitions_v1_April-2019.pdf",
+      "query": "Croatia protest actors institutions government unions parties ACLED",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe definitional background on ACLED political violence and protest categories, relevant to understanding what counts as a protest in the resolution data."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Expands Coverage to All of Europe",
+      "url": "https://acleddata.com/press/acled-expands-coverage-all-europe",
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe background on ACLED Europe coverage and analysis capabilities. Relevant only indirectly to the dataset source, not to Croatia protest likelihood."
+    },
+    {
+      "stage": "cached",
+      "title": "Monthly regional updates",
+      "url": "https://acleddata.com/series/monthly-regional-updates",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Published before the cutoff (5 June 2026) and provides contemporaneous ACLED regional context. It does not explicitly give post-cutoff outcomes for Croatia, though relevance is limited."
+    },
+    {
+      "stage": "cached",
+      "title": "Demonstration Alert: U.S. Embassy (Zagreb, Croatia) April 17, 2026 - U.S. Embassy in Croatia",
+      "url": "https://hr.usembassy.gov/demonstration-alert-u-s-embassy-zagreb-croatia-april-17-2026",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Directly relevant pre-cutoff prospective evidence: an official alert announcing an expected protest in Zagreb on April 18, 2026 with estimated turnout. This informs recent protest activity and mobilization patterns without post-cutoff leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Regional Overview Europe & Central Asia: January 2026 - Ukraine | ReliefWeb",
+      "url": "https://reliefweb.int/report/ukraine/acled-regional-overview-europe-central-asia-january-2026",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Retrospective regional analysis for January 2026 appears pre-cutoff and contains general Europe protest context, but nothing clearly specific to Croatia or the target window."
+    },
+    {
+      "stage": "cached",
+      "title": "Elections in Croatia - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Elections_in_Croatia",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe generic background on Croatia's election system and election cadence. Could weakly support protest-cycle context but is only tangentially useful."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED",
+      "url": "https://acleddata.com",
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background on ACLED as the source and methodology platform for protest data; directly relevant to how the question resolves. No explicit post-cutoff publication or outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "BTI 2026 Croatia Country Report",
+      "url": "https://bti-project.org/en/reports/country-report/HRV",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Country background on Croatian political and social cleavages and recent legal changes that could affect protest propensity. No explicit post-cutoff publication/update date or completed post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Balkans - Europe Data Release",
+      "url": "https://acleddata.com/press/balkans-europe-data-release",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Historical ACLED regional background on protest patterns in the Balkans, including Croatia. The visible page date is 2 April 2019, which is safely pre-cutoff; later related-content links do not make this page itself post-cutoff. Useful contextual evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Escalating unrest, polarisation, economic woes set stage for ...",
+      "url": "https://www.maplecroft.com/solutions/consulting/political-risk/insights/escalating-unrest-polarisation-economic-woes-set-stage-for-disruptive-2026",
+      "query": "Croatia protests historical frequency ACLED analysis election unrest labor demonstrations Balkans odds forecast \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Prospective risk analysis stating civil unrest is expected to be more disruptive in 2026 than in 2025. This is forward-looking and potentially informative for protest likelihood, with no explicit post-cutoff publication marker in the snippet."
+    },
+    {
+      "stage": "cached",
+      "title": "Elections in Croatia | Organization for Security and Co-operation in Europe",
+      "url": "https://www.osce.org/odihr/elections/croatia",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff institutional context on Croatia's election history from OSCE. Elections can be a driver of protest activity, though this is indirect. No explicit post-cutoff publication or completed post-cutoff event state."
+    },
+    {
+      "stage": "cached",
+      "title": "United States: Scope and coverage in ACLED data",
+      "url": "https://acleddata.com/methodology/united-states-scope-and-coverage-acled-data",
+      "query": "Croatia protests ACLED historical trend 30-day 360-day dataset",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Methodological background from ACLED on scope/coverage and event coding, useful for interpreting how protests are counted even though it is US-focused. No leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Protests erupt over virus rules in Austria, Italy, Croatia | PBS News Weekend",
+      "url": "https://www.pbs.org/newshour/world/protests-erupt-over-virus-rules-in-austria-italy-croatia",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical example of protests in Croatia; safe because it is clearly about past events well before the cutoff. Only tangentially useful for forecasting 2026 protest counts."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] List of national public holidays of Croatia in 2026",
+      "url": "https://www.cropex.hr/images/List_of_national_public_holidays_in_2026.pdf",
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Calendar information on Croatian public holidays in 2026, including 22 June 2026 within the target window, which could affect protest timing or mobilization. This is a schedule/plan, not a post-cutoff result."
+    },
+    {
+      "stage": "cached",
+      "title": "Labour law and regulation in Croatia | CMS Expert Guides",
+      "url": "https://cms.law/en/int/expert-guides/cms-expert-guide-to-labour-law-in-central-eastern-europe/croatia",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Background on Croatian labor law, unions, and strike rights, which can inform protest potential. No explicit post-cutoff publication/update or completed outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "Croatia Country Report 2026",
+      "url": "https://bti-project.org/en/reports/country-report/HRV",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Country background noting teachers’ unions and collective grievances as potential sources of strikes/protests. Useful supporting context and no explicit post-cutoff publication or outcome leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Croatia: Freedom in the World 2024 Country Report | Freedom House",
+      "url": "https://freedomhouse.org/country/croatia/freedom-world/2024",
+      "query": "Croatia protest calendar elections labor strikes permits demonstrations upcoming",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff background on Croatia's political and civil-liberties environment. No explicit post-cutoff publication/update or completed post-cutoff outcome. Only tangentially useful for forecasting protest counts."
+    },
+    {
+      "stage": "cached",
+      "title": "Festival: Spring Break Europe 2026 4.-6.6.2026. - Papaya club",
+      "url": "https://papaya.com.hr/events/festival/309-spring-break-europe-2025-0",
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Contains a concrete post-cutoff event page state for June 2026 ('Spring Break Europe 2026 04.-06.06.2026' with schedule details). Under the rule, pages explicitly presenting post-cutoff release/event state should be dropped; also not meaningfully informative about protests."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Smart and resilient agriculture - Safety for future generations",
+      "url": "https://sa.fazos.hr/wp-content/uploads/2026/02/SA2026_2nd_announcement.pdf",
+      "query": "Croatia protest June 2026 schedule union strike rally march Zagreb Split site:.hr \"2026-06-04\" OR \"before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "URL explicitly shows a post-cutoff publication file path ('/2026/02/...'), indicating the document was released after the 2026-06-20 cutoff. Also unrelated to forecasting protests in Croatia."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 37,
+    "dropped": 6,
+    "relevance": {
+      "high": 5,
+      "medium": 20,
+      "low": 18
+    },
+    "supplemental_for_relevance": false
+  }
+}

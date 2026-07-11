@@ -1,0 +1,305 @@
+{
+  "row_index": 330,
+  "market_id": "671494",
+  "slug": "solana-above-200-on-november-12",
+  "question": "Will the price of Solana be above $200 on November 12?",
+  "event_title": "Solana above ___ on November 12?",
+  "end_date_limit": "2025-11-12",
+  "row_end_date_raw": "2025-11-12",
+  "expanded_queries": [
+    "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+    "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+    "convert 12:00 PM ET to UTC November 12"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Parameters: : startTime (int) – required - Start timestamp in ms endTime (int) – required - End timestamp in ms Returns: : API response ``` {\"avgCostTimestampOfLast30d\": 7241837, # Average time taken for data download in the past 30 days \"downloadId\": \"546975389218332672\"} ``` Note: : Request Limitation is 5 times per month, shared by front end download page and rest api The time between startTime and endTime can not be longer than 1 year Raises: : BinanceRequestException, BinanceAPIException [...] Returns: : API response ``` {\"avgCostTimestampOfLast30d\": 7241837, # Average time taken for data download in the past 30 days \"downloadId\": \"546975389218332672\"} ``` Note: : Request Limitation is 10 times per month, shared by front end download page and rest api The time between startTime and endTime can not be longer than 1 year Raises: : BinanceRequestException, BinanceAPIException futures\\_coin\\_account\\_trade\\_history\\_download(\\\\params)(_modules/binance/client.html#Client.futures_coin_account_trade_history_download) : Get Download Id For Futures Trade History (USER\\_DATA) [...] futures\\_coin\\_premium\\_index\\_klines(\\\\params)(_modules/binance/client.html#Client.futures_coin_premi...",
+      "score": 0.9995728,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Fetch Candlestick/Kline data from Binance API using Python ...",
+      "url": "https://stackoverflow.com/questions/51358147/fetch-candlestick-kline-data-from-binance-api-using-python-preferably-requests",
+      "content": "import requests import datetime import pandas as pd import numpy as np def gget_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00'): \"\"\" interval: str tick interval - 4h/1h/1d ... \"\"\" columns = ['open_time','open', 'high', 'low', 'close', 'volume','close_time', 'qav','num_trades','taker_base_vol','taker_quote_vol', 'ignore'] usecols=['open', 'high', 'low', 'close', 'volume', 'qav','num_trades','taker_base_vol','taker_quote_vol'] start = int(datetime.datetime.timestamp(pd.to_datetime(start))1000) end_u = int(datetime.datetime.timestamp(pd.to_datetime(end))1000) df = pd.DataFrame() print(f'Downloading {interval} {ticker} ohlc-data ...', end=' ') while True: url = f' data = pd.DataFrame(requests.get(url, headers={'Cache-Control': [...] = pd.DataFrame(requests.get(url, headers={'Cache-Control': 'no-cache', \"Pragma\": \"no-cache\"}).json(), columns=columns, dtype=np.float64) start = int(data.open_time.tolist()[-1])+1 data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] data = data[usecols] df = pd.concat([df, data], axis=0) if end in data.index.tolist(): break print('Done.') df.ind...",
+      "score": 0.9988305,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "``` {{ \"e\": \"kline\", // Event type \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"k\": { \"k\": { \"t\": 1638747660000, // Kline start time \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"o\": \"0.0010\", [...] // Open price \"c\": \"0.0020\", // Close price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote...",
+      "score": 0.9987356,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Klines | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/alpha/market-data/rest-api/klines",
+      "content": "## Full URL Example​ ## Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | e.g., \"ALPHA\\_175USDT\" – use token ID from Token List | | interval | STRING | YES | e.g., \"1h\" – supported intervals: 1s, 15s, 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M | | limit | INT | NO | default 500, max 1500 – number of klines to return | | startTime | LONG | NO | start timestamp in milliseconds | | endTime | LONG | NO | end timestamp in milliseconds | ## Response Structure​ `code` `message` `messageDetail` `success` `data` ## Response Example​ [...] ## Response Example​ `{ \"code\": \"000000\", \"message\": \"\", \"messageDetail\": \"\", \"success\": true, \"data\": [ [ \"1752642000000\", \"0.00171473\", \"0.00172515\", \"0.00171473\", \"0.00172515\", \"1771.86000000\", \"1752645599999\", \"3.05093481\", \"2\", \"1771.86000000\", \"3.05093481\", 0 ] ] }` [...] Binance Logo Binance Logo # Klines (Candlestick Data) ## API Description​ Fetches Kline/candlestick bars for a symbol, which include open/high/low/close prices and volume over intervals. Useful for charting and analysis. ## HTTP Request​ GET `/bapi/defi/v1/public/alpha-trade/klines` `/bapi/defi/v1/public/alpha-trade/kline...",
+      "score": 0.99722075,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation",
+      "url": "https://docs.binance.us/developer-guides/rest-api",
+      "content": "| Security Type | Description | --- | | NONE | Endpoint can be accessed freely | | TRADE | Endpoint requires sending a valid API-Key and signature | | USER\\_DATA | Endpoint requires sending a valid API-Key and signature | | USER\\_STREAM | Endpoint requires sending a valid API-Key | | MARKET\\_DATA | Endpoint requires sending a valid API-Key | ## Authentication Timing ``` if(timestamp<(serverTime + 1000) &&(serverTime - timestamp)<= recvWindow){// process request} else{// reject request} ``` [...] =< your_secret_key> uri_path =\"/sapi/v1/system/status\" data ={\"timestamp\": int(round(time. time() 1000)),} result = binanceus_request(uri_path, data, api_key, secret_key) print(\"GET {}: {}\". format(uri_path, result)) [...] > Response ``` [{\" a \": 874844, \" p \": \"0.00379700 \", \" q \": \"0.05000000 \", \" f \": 981493, \" l \": 981493, \" T \": 1637128220041, \" m \": true, \" M \": true}] ``` `GET /api/v3/aggTrades` Use this endpoint to get compressed, aggregate trades. Trades that fill at the same time, from the same order, with the same price, will have the quantity aggregated. Please note the maximum limit is 1,000 trades. Weight: 1 Parameters: | Name | Type | Mandatory | Description | --- --- | |...",
+      "score": 0.99620515,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`uiKlines` return modified kline data, optimized for presentation of candlestick charts. `uiKlines` Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | See `klines` | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | `klines` `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: [...] Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters a...",
+      "score": 0.9957353,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "`startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", // Taker buy base asset volume \"0\" // Ignore. ] ]` [...] Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. |",
+      "score": 0.9951703,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] Change Log Intr...",
+      "score": 0.9947391,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "Index Price Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1591256400000, // Open time \"9653.69440000\", // Open \"9653.69640000\", // High \"9651.38600000\", // Low \"9651.55200000\", // Close (or latest price) \"0 \", // Ignore 1591256459999, // Close time \"0\", // Ignore 60, // Number of bisic data \"0\", // Ignore \"0\", // Ignore \"0\" // Ignore ]]` Previous Continuous Contract Kline Candlestick DataNext Mark Price Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] > The difference between `startTime` and `endTime` can only be up to 200 days > Between `startTime` and `endTime`, the most recent `limit` data from `endTime` will be returned: > If `startTime` and `endTime` are not sent, current timestamp will be set as `endTime`, and the most recent data will be returned. > If `startTime` is sent only, the timestamp of 200 days after `startTime` will be set as `endTime`(up to the current time) > If `endTime` is sent only, the timestamp of 200 days before `endTime` will be set as `startTime` ## Response Example​ [...] Trade Websocket Market Streams User Data Streams Account Portfolio Margin Endpoints Error Code Portfolio Margin Portfolio Margin...",
+      "score": 0.994089,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "General API Information | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api",
+      "content": "All time and timestamp related fields in the JSON responses are in milliseconds by default. To receive the information in microseconds, please add the header `X-MBX-TIME-UNIT:MICROSECOND` or `X-MBX-TIME-UNIT:microsecond`. We support HMAC, RSA, and Ed25519 keys. For more information, please see API Key types. Timestamp parameters (e.g. `startTime`, `endTime`, `timestamp`) can be passed in milliseconds or microseconds. For APIs that only send public market data, please use the base endpoint Please refer to Market Data Only page. If there are enums or terms you want clarification on, please see the SPOT Glossary for more information. [...] With both, behaves like `startTime` but does not exceed `endTime`. [...] should give better performance but have less stability. Responses are in JSON by default. To receive responses in SBE, refer to the SBE FAQ page. If your request contains a symbol name containing non-ASCII characters, then the response may contain non-ASCII characters encoded in UTF-8. Some endpoints may return asset and/or symbol names containing non-ASCII characters encoded in UTF-8 even if the request did not contain non-ASCII characters. Data is returned in chronological...",
+      "score": 0.990732,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "search_index": 2
+    },
+    {
+      "title": "89.6 SOL/USDT Perpetual Binance Live Price Chart - Coinalyze",
+      "url": "https://coinalyze.net/solana/usdt/binance/solusdt_perp/price-chart-live/",
+      "content": "88.3100 1.89 000000 17:35:06 88.3000 0.8 0000000 17:35:05 88.3000 1.2 0000000 17:35:05 88.3100 10.0 0000000 17:35:05 88.3000 98.64 000000 17:35:05 88.2900 0.3 0000000 17:35:05 88.2900 0.25 000000 17:35:05 88.3000 69.46 000000 17:35:05 88.2900 44.26 000000 17:35:05 88.2800 0.53 000000 17:35:05 88.2900 61.76 000000 17:35:05 88.2800 0.12 000000 17:35:05 88.2900 1.71 000000 17:35:04 88.2800 0.25 000000 17:35:04 88.2900 66.92 000000 17:35:04 88.2900 20.82 000000 17:35:04 88.2800 0.38 000000 17:35:04 88.2900 13.71 000000 17:35:04 88.2800 0.53 000000 17:35:04 88.2800 105.48 000000 17:35:04 88.2900 4.21 000000 17:35:04 88.2800 0.19 000000 17:35:04 88.2900 5.0 0000000 17:35:04 88.2800 0.23 000000 17:35:04 88.2800 0.22 000000 17:35:04 88.2900 0.11 000000 17:35:03 [...] 88.3100 9.37 000000 17:35:10 88.3100 9.3 0000000 17:35:09 88.3000 2.67 000000 17:35:09 88.3000 0.53 000000 17:35:09 88.3100 0.15 000000 17:35:09 88.3100 6.0 0000000 17:35:09 88.3000 0.13 000000 17:35:09 88.3100 56.42 000000 17:35:09 88.3000 19.66 000000 17:35:09 88.3100 5.61 000000 17:35:09 88.3100 153.31 000000 17:35:08 88.3000 35.13 000000 17:35:08 88.3100 2.41 000000 17:35:08 88.3100 3.0 0000000 17:35:07 88.3100 40.0 000...",
+      "score": 0.7474137,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "Crypto Solana / Tether SOL/USDT Chart 1 Minute - Finviz",
+      "url": "https://finviz.com/crypto_charts.ashx?t=SOLUSDT&p=i1&r=d1&c=USDT",
+      "content": "| 08:09AM | Fidelity Introduces FSOL ETF, Bringing Major Wall Street Name to Solana Funds (CoinDesk) | | Nov-13-25 09:56PM | Why Bitcoin, XRP, Solana, and Ether Slide as Gold and Silver Soar? (CoinDesk) | | 03:27PM | Solana Slides 5% to $145 as Technical Breakdown Overshadows ETF Momentum (CoinDesk) | | 11:31AM | Solana-Focused Upexi Approves $50M Share Buyback as Digital Asset Treasuries Turn to Repurchases (CoinDesk) | | Nov-12-25 12:37PM | Solana Drops 4.9% Breaking Below Key Support as Alameda Unlocks Continue (CoinDesk) | | 11:18AM | Pantera-Backed Solana Company to Tokenize Its Shares With Superstate's Opening Bell (CoinDesk) | | Nov-11-25 06:02AM | Solana Drops Below Key $165 Level as Technical Support Cracks (CoinDesk) | [...] | Dec-03-25 11:52PM | BTC at $100K Back on Table as Volatility Shatters Uptrend, Ether Bulls Grow Bolder (CoinDesk) | | 05:29PM | Here’s what happened in crypto today (Cointelegraph) | | 03:01PM | Solana Mobile to Launch SKR Token in January With 10B Supply (CoinDesk) | | 05:34AM | 50 secret wallets fueled PIPPIN’s 556% rally — and $3B in derivatives volume may explain why (CryptoSlate) | | Dec-02-25 11:11AM | SOL Bulls Take a Breather After Pumpin...",
+      "score": 0.7101667,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "90.99 | SOL USDT | Solana to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/SOL_USDT",
+      "content": "12.413 15:30:29 91.76 0.600 15:30:29 91.76 0.157 15:30:28 91.76 0.600 15:30:28 91.76 0.600 15:30:27 91.77 5.251 15:30:26 91.77 1.372 15:30:26 91.77 6.972 15:30:26 91.76 0.600 15:30:26 91.77 0.855 15:30:26 New USDC USDT U USD1 USD BNB BTC ALTS FIAT Zones Margin Grid Pair Last Price / 24h Chg 0G/USDT5x 0.521 +0.19% 1000CAT/USDT5x 0.00175 +4.17% 1000CHEEMS/USDT5x 0.000488 +2.95% 1000SATS/USDT5x 0.00001155 +0.79% 1INCH/USDT5x 0.0965 +3.10% 1MBABYDOGE/USDT5x 0.0004201 +2.54% 2Z/USDT5x 0.07644 +1.80% A2Z/USDT 0.000353 +1.44% AAVE/USDT5x 112.67 +3.36% ACE/USDT5x 0.129 +0.78% ACH/USDT5x 0.00669 -0.30% ACM/USDT5x 0.419 +1.95% ACT/USDT5x 0.0138 +0.00% ACX/USDT5x 0.0425 +0.24% Top MoversFAQ All Change [...] ACX/USDT5x 0.0425 +0.24% Top MoversFAQ All Change New High/Low Fluctuation Volume AVNT/USDT 15:01:08 +5.10% New 24hr HighZKC/USDT 15:00:17 +8.98% New 24hr HighLRC/USDT 15:00:16 -8.67% PullbackRDNT/USDT 15:00:16 -10.09% PullbackNTRN/USDT 15:00:16 +11.90% RallyHUMA/USDT 15:00:16 -11.47% PullbackC/USDT 15:00:16 -17.80% PullbackMANTRA/USDT 15:00:16 -5.95% PullbackCHR/USDT 15:00:15 -5.00% PullbackDEGO/USDT 15:00:15 -9.95% Pullback Quick Preview SOL/USDT +3.29% 91.75+2.54% BTC/USDT +2.18% 70,...",
+      "score": 0.69249696,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "SOL/USDT (Binance) – Price today, Live Order Book, Trades & Alerts",
+      "url": "https://www.cryptometer.io/data/binance/sol/usdt",
+      "content": "| 23,504 SOL | 1,880,319 USDT | SELL | Binance | 05 Feb 2026 | | 23,066 SOL | 3,632,852 USD | SELL | Coinbase Advanced | 06 Nov 2025 | | 22,768 SOL | 2,002,884 USD | SELL | Coinbase Advanced | 27 Feb 2026 | | 22,018 SOL | 2,598,159 USDT | BUY | Binance | 25 Jan 2026 | | 21,929 SOL | 2,942,591 USD | BUY | Coinbase Advanced | 20 Nov 2025 | | 21,645 SOL | 3,004,068 USD | BUY | Coinbase Advanced | 14 Nov 2025 | | 21,441 SOL | 3,948,405 USD | BUY | Coinbase Advanced | 22 Oct 2025 | | 20,934 SOL | 2,622,194 USD | SELL | Coinbase Advanced | 01 Dec 2025 | | 20,839 SOL | 4,897,104 USD | BUY | Coinbase Advanced | 12 Sep 2025 | | 20,744 SOL | 4,043,707 USD | SELL | Coinbase Advanced | 16 Oct 2025 | [...] | BUY | | 615.6K (49%) | 2.4M (50%) | 1.5M (52%) | 1.6M (52%) | 1.8M (50%) | 1.8M (51%) | 1M (50%) | 717K (49%) | 1.4M (46%) | 1.8M (49%) | 3.2M (51%) | 2M (50%) | 2.5M (50%) | 2.1M (48%) | 2.3M (49%) | 1.6M (48%) | 1.6M (50%) | 2.9M (53%) | 1.7M (50%) | 2.5M (50%) | 884.3K (49%) | 853.6K (48%) | 1.7M (48%) | 1.4M (51%) | 1.5M (49%) | 1.3M (50%) | 1.8M (51%) | 1.8M (48%) | 1.3M (51%) | 1.6M (49%) | [...] | SELL | | 630.9K (51%) | 2.4M (50%) | 1.3M (48%) | 1.5M (48%) | 1.8M (50%) | 1.7M (49...",
+      "score": 0.6826801,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "$SOL This is a daily candlestick chart of SOL/USDT (Solana - Binance",
+      "url": "https://www.binance.com/en/square/post/23867635979090",
+      "content": "⸻ 3. Volume • Volume is displayed as green/red bars. • Current daily volume: ~413.9 million SOL • Volume MA(5): ~1.54 billion • Volume MA(10): ~2.11 billion • Volume is low, suggesting weakening momentum. ⸻ 4. MACD (Moving Average Convergence Divergence) • DIF (MACD Line): 3.90 • DEA (Signal Line): 4.67 • MACD Histogram: -0.76 • Bearish crossover as histogram is negative and MACD line is below the signal line, indicating downside momentum. ⸻ 5. RSI (Relative Strength Index) • RSI(8): 49.91 • RSI(13): 53.99 • RSI(21): 52.97 • All RSI values are near 50, indicating neutral momentum—neither overbought nor oversold. ⸻ 6. Trend Summary • Price peaked at $157, faced resistance, and is now pulling back. [...] • Still in a possible uptrend unless it breaks below key supports (MA25 and MA50). • Momentum indicators (MACD & RSI) are neutral to slightly bearish. ⸻ Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content. See T&Cs. SOL-4.01% 0 1 598 Replies 0 Most relevant Most relevant Most recent Most popular Looking forward to your replies Reply Now Join global crypto users on Binance Square ⚡️ Get latest and useful information about crypto. 💬 Trusted...",
+      "score": 0.67243975,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "SOL USD Binance Candlestick Chart - Investing.com",
+      "url": "https://www.investing.com/crypto/solana/sol-usd-candlestick",
+      "content": "Condition Price;) Change;) Frequency Delivery Method Status Create;) Manage my alerts Back;) Add to/Remove from Watchlist Add to Watchlist;) Add to Watchlist Add Position Position added successfully to: + Add another position) Close;) 92.730 +0.950 +1.04% 07:16:55 - Real-time Data. Type: Currency Group: Minor Base: Solana Second: US Dollar Volume: 3,366,492 Bid/Ask: 92.730 / 92.740 Day's Range: 88.420 - 92.960 SOL/USD 92.730 +0.950 +1.04% General + Overview + Historical Data + Related Instruments + Currency Converter Chart + Streaming Chart + Interactive Chart News & Analysis + News + Analysis & Opinion Forum + Discussions + Recent Sentiments + User Rankings Technical [...] | Pattern | | Timeframe | Reliability | Candles Ago | Candle Time | --- --- --- | | Completed Patterns | | | | | | | | Doji Star Bearish | 1W | | 1 | Mar 15, 2026 | | | Three Outside Down | 1M | | 4 | Nov 25 | | | Advance Block Bearish | 30 | | 4 | Mar 25, 2026 05:00AM | | | Deliberation Bearish | 30 | | 4 | Mar 25, 2026 05:00AM | | | Doji Star Bearish | 30 | | 4 | Mar 25, 2026 05:00AM | | | Engulfing Bearish | 1M | | 5 | Oct 25 | | | Bullish doji Star | 1W | | 6 | Feb 08, 2026 | | | Bullish Engulfing | 15 |...",
+      "score": 0.6496014,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "Solana price on November 30? - Polymarket",
+      "url": "https://polymarket.com/pt/event/solana-price-on-november-30",
+      "content": "This market will resolve according to the final \"Close\" price of the Binance 1 minute candle for SOL/USDT 12:00 in the ET timezone (noon) on the date",
+      "score": 0.61779,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "Solana Price Today | SOL to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/solana",
+      "content": "$SOL just pulled a clean escape act. $9.41M net inflow hit fast, large buyers took control, and price pushed 4.58% above key EMAs like resistance was just a suggestion. Now shorts are sweating too with 86.5% of short whales underwater, a move above $91 can keep the squeeze alive toward $92.50. The funny part? Momentum still looks strong, but RSI is already screaming “bro, relax” at 87. So yes, bulls are partying, but don’t be shocked if SOL takes a breather near $93 before the next move. What keeps sentiment alive is bigger money still showing up. Weekly inflows around $17M plus MoonPay’s SOL support for AI wallet activity gives this run more fuel than just a quick hype candle. For now, $89 support matters. Lose that, and the meme gets less funny. [...] $638.49 +1.46% Image 84: Dogecoin PriceDogecoin DOGE $0.095171 +4.98% Image 85: XRP PriceXRP XRP $1.439939 +3.85% Image 86: Pepe PricePepe PEPE $0.000004 +6.75% Image 87: Banana For Scale PriceBanana For Scale BANANAS31 $0.014932 +9.01% Image 88: Cardano PriceCardano ADA $0.261424 +3.29% ## Top 3 Gainers Image 89: Jito PriceJito JTO $0.33887 +19.83% Image 90: Huma Finance PriceHuma Finance HUMA $0.017346 +17.01% Image 91: Arweave...",
+      "score": 0.6055431,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "ET to UTC Converter",
+      "url": "https://time.now/tool/et-to-utc-converter/",
+      "content": "Time Difference: UTC is 5 hours ahead of EST (winter) and 4 hours ahead of EDT (summer). The difference changes twice yearly with daylight saving transitions. #### Daylight Saving Time Impact Winter Period (EST): From first Sunday in November to second Sunday in March, ET is UTC-5, making UTC 5 hours ahead Summer Period (EDT): From second Sunday in March to first Sunday in November, ET is UTC-4, making UTC 4 hours ahead UTC Stability: UTC never changes and remains constant year-round, making it ideal for international coordination and technical applications #### Common Conversion Examples Business Hours (Winter) EST 9:00 AM → UTC 2:00 PM EST 5:00 PM → UTC 10:00 PM 5-hour difference during winter Business Hours (Summer) EDT 9:00 AM → UTC 1:00 PM EDT 5:00 PM → UTC 9:00 PM [...] EDT 9:00 AM → UTC 1:00 PM EDT 5:00 PM → UTC 9:00 PM 4-hour difference during summer International Coordination EST Midnight → UTC 5:00 AM EDT Midnight → UTC 4:00 AM UTC used for global scheduling Technical Applications Server logs → UTC timestamps API calls → UTC standards UTC preferred for technical systems #### Conversion Tips & Best Practices • Add 5 hours to EST (winter) or 4 hours to EDT (summer) to ge...",
+      "score": 0.58976424,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "SOLUSDT Chart — Solana to Tether Price - TradingView",
+      "url": "https://www.tradingview.com/symbols/SOLUSDT/",
+      "content": "Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Moving Averages Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Moving Averages Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy ## Seasonals﻿ ﻿ Displays a symbol's price movements over previous years to identify recurring trends. ## Frequently asked questions ﻿ The current price of SOL / TetherUS(SOL) is 87.45 USDT— it has risen 0.36% in the past 24 hours. Try placing this info into the context by checking out what coins are also gaining and losing at the moment and seeing SOL price chart. [...] by MagmaAPlusElite 55 SOL 8H – Channel Compression Below Upper BoundarySolana continues to trade inside a well-defined ascending channel on the 8H timeframe. After sweeping the lower boundary near the 75–78 zone, price completed a full rotation toward the upper channel resistance around 92–94. Now SOL is compressing just below that upper boundary. Structure Context: by BKVIP 22 See all ideas ## Technicals﻿ ﻿ Summarizing what the indicators are suggesting. Oscillators Neutral...",
+      "score": 0.5163278,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "91.14 Solana (SOL) to USDT Spot Trading - Binance.US",
+      "url": "https://www.binance.us/spot-trade/sol_usdt",
+      "content": "Trade and convert Solana (SOL) to USDT with advanced trading charts and tools. Binance.US makes it easy to buy, sell, & convert over 135 cryptocurrencies.",
+      "score": 0.5151571,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "search_index": 1
+    },
+    {
+      "title": "ET to UTC Converter - Savvy Time World Clock",
+      "url": "https://savvytime.com/converter/et-to-utc",
+      "content": "| ET | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:00 | 9:00 | | 6:00 | 10:00 | | 7:00 | 11:00 | | 8:00 | 12:00 | | 9:00 | 13:00 | | 10:00 | 14:00 | | 11:00 | 15:00 | | 12:00 | 16:00 | | 13:00 | 17:00 | | 14:00 | 18:00 | | 15:00 | 19:00 | | 16:00 | 20:00 | | 17:00 | 21:00 | | 18:00 | 22:00 | | 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | | 22:00 | 2:00 | [...] savvy time logo ##### Savvy Time World Clock Home Converter ET to UTC | # ET to UTC Converter Swap Order to UTC to ET Share Converter ET/EDT Eastern Time GMT -4 UTC Universal Time Coordinated GMT +0 ## Time Difference Eastern Daylight Time is 4 hours behind Universal Time Coordinated 12:30 am00:30 in EDT is 4:30 am04:30 in UTC EDT to UTC call time Best time for a conference call or a meetin...",
+      "score": 0.43482184,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "ET to UTC conversion",
+      "url": "https://24timezones.com/difference/eastern/utc",
+      "content": "ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ Google Apple Outlook Yahoo ICS Other ## Announce an event across time zones [...] Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in ET vs UTC ET --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ = UTC --:-- :-- ㅤㅤ ㅤㅤㅤㅤㅤ ㅤㅤㅤㅤㅤ Coordinated Universal Time is 4:00 hours ahead of Eastern Time ## ET...",
+      "score": 0.38796914,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - Savvy Time",
+      "url": "https://savvytime.com/converter/est-to-utc",
+      "content": "| EDT | UTC | --- | | 12am (midnight) | 4am | | 1am | 5am | | 2am | 6am | | 3am | 7am | | 4am | 8am | | 5am | 9am | | 6am | 10am | | 7am | 11am | | 8am | 12pm (noon) | | 9am | 1pm | | 10am | 2pm | | 11am | 3pm | | 12pm (noon) | 4pm | | 1pm | 5pm | | 2pm | 6pm | | 3pm | 7pm | | 4pm | 8pm | | 5pm | 9pm | | 6pm | 10pm | | 7pm | 11pm | | 8pm | 12am (midnight) | | 9pm | 1am | | 10pm | 2am | | 11pm | 3am | | 0:00 | 4:00 | | 1:00 | 5:00 | | 2:00 | 6:00 | | 3:00 | 7:00 | | 4:00 | 8:00 | | 5:00 | 9:00 | | 6:00 | 10:00 | | 7:00 | 11:00 | | 8:00 | 12:00 | | 9:00 | 13:00 | | 10:00 | 14:00 | | 11:00 | 15:00 | | 12:00 | 16:00 | | 13:00 | 17:00 | | 14:00 | 18:00 | | 15:00 | 19:00 | | 16:00 | 20:00 | | 17:00 | 21:00 | | 18:00 | 22:00 | | 19:00 | 23:00 | | 20:00 | 0:00 | | 21:00 | 1:00 | [...] Time zones with the GMT -5 offset: CDT - Central Daylight Time EST - Eastern Standard Time ET - Eastern Time COT - Colombia Time CST - Cuba Standard Time EASST - Easter Island Summer Time ECT - Ecuador Time PET - Peru Time R - Romeo Time Zone ## Universal Time Coordinated Offset: UTC is 0 hours ahead Greenwich Mean Time (GMT) and is used in Universal Coordinated Universal Time (UTC) is the world time stand...",
+      "score": 0.33352545,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC",
+      "url": "https://www.onlineconverter.com/est-to-utc",
+      "content": "Based International Air Transport Association (IATA) timezone codes. Time zones use hours and minutes offset from Coordinated Universal Time (UTC), most a whole number of hours, a few are offset by 30 or 45 minutes. Eastern Standard Time (EST) is UTC-5:00, and Eastern Daylight Time (EDT) is UTC-4:00, this time zone is called Eastern Time Zone (ET) in the United States, parts of eastern Canada, Mexico, Panama and the Caribbean Islands. Coordinated Universal Time (UTC) is the primary time standard now, time zones around the world are expressed using offsets from UTC, UTC offset is the difference in hours and minutes from UTC, a time zone can be determined by adding or subtracting the number of UTC offset. [...] OnlineConverter.com # EST to UTC Eastern Standard Time (EST) Date Time ## Calculation Results | | | --- | | Time Zone | Coordinated Universal Time (UTC) | | Time | ## Introduction This free tool can help you convert Eastern Standard Time (EST) to Coordinated Universal Time (UTC). You just need to select the data and time of the source time zone and the tool will calculate the date and time for the destination time zone. ## How To Use Select a date by using the \"Date\" option...",
+      "score": 0.304828,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC conversion - World Clock",
+      "url": "https://24timezones.com/difference/est/utc",
+      "content": "## EST to UTC converter i Drag the handle or click on a cell to convert time - EST - UTC - Current time --:-- --:-- --:-- ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ ㅤㅤㅤㅤ [...] Widgets for websites and blogs Analog clock widgetDigital clock widgetText clock widget About Us Why 24timezones About UsContact Us Announce event! am pm) 24) ES - Español PT - Português FR - Français DE - Deutsch RU - Русский NL - Nederlands DA - Dansk UK - Українська IT - Italiano PL - Polski ZH - 中文 JA - 日本語 EN - English) # Time in EST vs UTC You’re comparing Eastern Standard Time (EST) and Coordinated Universal Time (UTC)! Most locations are observing Eastern D...",
+      "score": 0.28980413,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "UTC to EST Time Converter",
+      "url": "https://www.utctime.net/utc-to-est-converter",
+      "content": "UTC to EST in 12-hour (AM/PM) time format. | UTC Time | EST Time | --- | | 12:00 AM | 07:00 PM | | 01:00 AM | 08:00 PM | | 02:00 AM | 09:00 PM | | 03:00 AM | 10:00 PM | | 04:00 AM | 11:00 PM | | 05:00 AM | 12:00 AM | | 06:00 AM | 01:00 AM | | 07:00 AM | 02:00 AM | | 08:00 AM | 03:00 AM | | 09:00 AM | 04:00 AM | | 10:00 AM | 05:00 AM | | 11:00 AM | 06:00 AM | | 12:00 PM | 07:00 AM | | 01:00 PM | 08:00 AM | | 02:00 PM | 09:00 AM | | 03:00 PM | 10:00 AM | | 04:00 PM | 11:00 AM | | 05:00 PM | 12:00 PM | | 06:00 PM | 01:00 PM | | 07:00 PM | 02:00 PM | | 08:00 PM | 03:00 PM | | 09:00 PM | 04:00 PM | | 10:00 PM | 05:00 PM | | 11:00 PM | 06:00 PM | UTC to EST in 24-hour time format. [...] UTC to EST in 24-hour time format. | UTC Time | EST Time | --- | | 00:00 | 19:00 | | 01:00 | 20:00 | | 02:00 | 21:00 | | 03:00 | 22:00 | | 04:00 | 23:00 | | 05:00 | 00:00 | | 06:00 | 01:00 | | 07:00 | 02:00 | | 08:00 | 03:00 | | 09:00 | 04:00 | | 10:00 | 05:00 | | 11:00 | 06:00 | | 12:00 | 07:00 | | 13:00 | 08:00 | | 14:00 | 09:00 | | 15:00 | 10:00 | | 16:00 | 11:00 | | 17:00 | 12:00 | | 18:00 | 13:00 | | 19:00 | 14:00 | | 20:00 | 15:00 | | 21:00 | 16:00 | | 22:00 | 17:00 | | 23:00 | 18:00 | [...] 15:1...",
+      "score": 0.27446848,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - World Time Buddy",
+      "url": "https://www.worldtimebuddy.com/est-to-utc-converter",
+      "content": "# EST to UTC Converter World Clock & Time Converter Features Widgets World Clock WidgetEvent Widget Mobile App Sign In Sign in with FacebookSign in with Email am pm Link to this view Settings Show Timezones Mark Weekends Calendars... Loading ... 14 Mar 15 16 17 18 19 20 Outlook / iCal Google Calendar Clipboard \"Copy meeting times to clipboard.\") Gmail Link to this selection Event DST = EDT)\">+0 EDT/EST Eastern Daylight Time (US) ▶Corrected from EST 12:37a Sun, Mar 15 -12:37a Sun, Mar 15 Sun Mar15 1 am EST 2 am EST 3 am EST 4 am EST 5 am EST 6 am EST 7 am EST 8 am EST 9 am EST 10 am EST 11 am EST 12 pm EST 1 pm EST 2 pm EST 3 pm EST 4 pm EST 5 pm EST 6 pm EST 7 pm EST 8 pm EST 9 pm EST 10 pm EST 11 pm EST Mon [...] Privacy • Terms of Service [...] | | | | --- | Converting EST to UTC This time zone converter lets you visually and very quickly convert EST to UTC and vice-versa. Simply mouse over the colored hour-tiles and glance at the hours selected by the column... and done! EST stands for Eastern Standard Time. UTC is known as Universal Time. UTC is 4 hours ahead of EST. So, when it is it will be Other conversions: EST to Hong Kong Time, EST to Melbourne Time, EST to Copenhagen...",
+      "score": 0.27250937,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - Current Time UTC",
+      "url": "https://currenttimeutc.com/est-to-utc/",
+      "content": "### What are the national holidays in the EST time zone? National holidays: New Year's Day: Celebrated on January 1st, marking the start of the new year. Independence Day: Observed on July 4th, with parades, fireworks, and celebrations throughout the region. Labor Day: Celebrated on the first Monday in September, honoring American workers and their contributions. Thanksgiving Day: Observed on the fourth Thursday in November, a major holiday for family gatherings and feasting. Christmas Day: Celebrated on December 25th, marked by family gatherings, feasts, and festive celebrations. ### What is some local trivia or geography about the EST region? [...] ### What are some major industries in the EST time zone? Major industries: Finance: New York City is a global financial hub, home to the New York Stock Exchange and Wall Street. Healthcare: The healthcare and pharmaceutical industries are significant, with major medical institutions like the Mayo Clinic in Rochester. Technology: The zone includes major tech hubs, such as Boston and Washington, D.C., with a focus on biotechnology, software development, and IT services. Manufacturing: The region includes advanced manufacturing industr...",
+      "score": 0.26344585,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    },
+    {
+      "title": "EST to UTC Converter - FreeConvert.com",
+      "url": "https://www.freeconvert.com/time/est-to-utc",
+      "content": "Others ▼ Unit Converter Time Converter Archive Converter Compress ▼ Video & Audio ▼ Video Compressor MP3 Compressor WAV Compressor Image ▼ Image Compressor JPEG Compressor PNG Compressor PDF & Documents ▼ PDF Compressor GIF ▼ GIF Compressor Tools ▼ Video Tools ▼ Crop Video Trim Video Image Tools ▼ GIF Maker Resize Image Crop Image Color Picker Rotate Image Flip Image Image Enlarger PDF Tools ▼ PDF Merge PDF Split Flatten PDF Resize PDF Unlock PDF Rotate PDF Protect PDF Crop PDF Organize PDF Extract image from PDF PDF page remover Extract Pages from PDF API ▼ Documentation ▼ API Job Builder API Documentation Conversion APIs ▼ [...] FreeConvert.com can convert UTC to these other time zones: PST to UTC CDT to UTC WET to UTC ACST to UTC AEST to UTC NZST to UTC SAST to UTC SST to UTC CST to UTC PST to UTC AKST to UTC WIB to UTC NDT to UTC ADT to UTC HDT to UTC WIT to UTC MST to UTC CST to UTC MSK to UTC HST to UTC GMT to UTC EST to UTC BST to UTC CET to UTC KST to UTC MDT to UTC NZDT to UTC IST to UTC AKDT to UTC CAT to UTC EET to UTC MEST to UTC EDT to UTC NST to UTC IDT to UTC AWST to UTC MET to UTC IST to UTC PDT to UTC CDT to UTC WAT to UTC AST to UTC ACDT to UTC EAT to UTC IST t...",
+      "score": 0.23535475,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "search_index": 3
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "SOL/USDT 1m candle November 12 12:00 PM ET Binance close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API klines SOLUSDT 1m timestamp November 12 12:00 PM ET",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "convert 12:00 PM ET to UTC November 12",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

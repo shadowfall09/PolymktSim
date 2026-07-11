@@ -1,0 +1,305 @@
+{
+  "row_index": 104,
+  "market_id": "676561",
+  "slug": "bitcoin-above-94k-on-november-18",
+  "question": "Will the price of Bitcoin be above $94,000 on November 18?",
+  "event_title": "Bitcoin above ___ on November 18?",
+  "end_date_limit": "2025-11-18",
+  "row_end_date_raw": "2025-11-18",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+    "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+    "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] `def get_binance_data(api_key, pair, countdown='open', interval='4h', start='1 Jan 2018', end=None): client = Client(api_key=api_key) intervals = { '15m': Client.KLINE_INTERVAL_15MINUTE, '1h': Client.KLINE_INTERVAL_1HOUR, '4h': Client.KLINE_INTERVAL_4HOUR, '1d': Client.KLINE_INTERVAL_1DAY } interval = intervals.get(interval, '4h') print(f'Historical interval {interval}') klines = client.get_historical_klines(symbol=...",
+      "score": 0.9998074,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] # Binance API credentials 'your_api_key' 'your_api_secret' # Define the symbol for BTC/USDT pair 'BTCUSDT' # Define custom start and end time 2024 3 15 0 0 0 2024 6 15 0 0 0 str str # Convert the data into a pandas dataframe for easier manipulation 'Open Time' 'Open' 'High' 'Low' 'Close' 'Volume' 'Close Time' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote A...",
+      "score": 0.9996923,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"1.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"}...",
+      "score": 0.99909604,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "API Documentation: Introduction",
+      "url": "https://doc.chart-img.com/",
+      "content": "| Name | API v1/v2 | Example | --- | Binance | ✔️ | `BINANCE:BTCUSDT` | | Binance US | ✔️ | `BINANCEUS:BTCUSD` | | BingX | ✔️ | `BINGX:BTCUSDT` | | Biswap (BNB chain) | ✔️ | `BISWAP:BFGUSDT_E06259` | | Bitfinex | ✔️ | `BITFINEX:BTCUSD` | | bitFlyer | ✔️ | `BITFLYER:BTCJPY` | | Bitget | ✔️ | `BITGET:BTCUSDT.P` | | Bithumb | ✔️ | `BITHUMB:BTCKRW` | | BITKUB | ✔️ | `BITKUB:KUBTHB` | | Bitmart | ✔️ | `BITMART:BTCUSDT` | | BitMEX | ✔️ | `BITMEX:XBTUSD` | | Bitrue | ✔️ | `BITRUE:FLRUSDT` | | Bitstamp | ✔️ | `BITSTAMP:BTCUSD` | | Bittrex | ✔️ | `BITTREX:DOGEUSD` | | Blofin | ✔️ | `BLOFIN:BTCUSDT.P` | | Brave New Coin | ✔️ | `BNC:BLX` | | BTSE | ✔️ | `BTSE:BTCUSD.P` | | Bybit | ✔️ | `BYBIT:BTCUSDT.P` | | Coinbase | ✔️ | `COINBASE:BTCUSD` | | CoinEx | ✔️ | `COINEX:BTCUSDT` | [...] | Parameter | Type | Default | Description | --- --- | | symbol | String | `BINANCE:BTCUSDT` | set tradingview symbol | | interval | String | `1M` | set tradingview chart interval [`1D`, `1M`, `3M`, `1Y`, `5Y`, `ALL`] | | theme | String | `dark` | set tradingview chart theme color [`light`, `dark`] | | width | Integer | `350` | set chart image width in pixels (Min: `320`) | | height | Integer | `220` | set char...",
+      "score": 0.9979493,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | NO | Parameter symbol and symbols cannot be used in combination. If neither parameter is sent, prices for all symbols will be returned in an array | | symbols | STRING | NO | Exaples of accepted format for the symbols parameter: [\"BTCUSDT\", \"BNBUSDT\"] or %5B%22BTCUSDT%22, %22BNBUSDT%22%5D | Data Source: Memory ### Get Average Price > Example ``` -X \"GET\"\" ``` ``` import requests resp = requests. get(' print(resp. json()) ``` > Response ``` {\" mins \": 5, \" price \": \"0.00378906 \"} ``` `GET /api/v3/avgPrice` Use this endpoint to get the current average price for a symbol. Weight: 1 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Data Source: Memory [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =...",
+      "score": 0.9978173,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "| Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] Response - MINI: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, // Trade ID of the first trade in the interval \"lastId\": 3220849281, // Trade ID of the last trade in the interval \"count\": 697727 // Number of trades in the interval }` With `symbols`: [...]...",
+      "score": 0.9977482,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "This code fetches historical BTC/USD data from Binance API ...",
+      "url": "https://gist.github.com/kbagher/ec960cca454ec752887245cf4562d15f",
+      "content": "| import textwrap | | import pandas as pd | | import numpy as np | | import matplotlib.pyplot as plt | | import matplotlib.dates as mdates | | from mplfinance.original\\_flavor import candlestick\\_ohlc | | import requests | | import ta | | from reportlab.pdfgen import canvas | | | | | | def get\\_data(): | | # Fetch historical BTC/USD data from Binance API | | symbol = 'BTCUSDT' # Binance uses USDT instead of USD | | interval = '1d' # 1-day candlestick data | | url = f' | | response = requests.get(url) | | data = pd.DataFrame(response.json(), | | columns=['Open\\_time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close\\_time', | | 'Quote\\_asset\\_volume', | | 'Number\\_of\\_trades', 'Taker\\_buy\\_base\\_asset\\_volume', 'Taker\\_buy\\_quote\\_asset\\_volume', | | 'Ignore']) | [...] | plot\\_data(token\\_data) | | rec = create\\_recommendations(token\\_data) | | save\\_pdf(rec) | [...] Sign up for free to join this conversation on GitHub. Already have an account? Sign in to comment You can’t perform that action at this time.",
+      "score": 0.99611557,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] Change Log Intr...",
+      "score": 0.9933072,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "How to Get Trading Data via the Binance API?",
+      "url": "https://www.binance.com/en/academy/articles/how-to-get-trading-data-via-the-binance-api",
+      "content": "``` import logging from binance_sdk_spot.spot import Spot logging.basicConfig(level=logging.INFO) client = Spot() def agg_trades(): try: agg_trades_response = client.rest_api.agg_trades( symbol=\"BNBUSDT\", start_time=1760950800000, # October 20, 2025 9:00:00 AM ) data = agg_trades_response.data() first_trade_id = data.f historical_trades_response = client.rest_api.historical_trades( symbol=\"BNBUSDT\", from_id=first_trade_id, limit=100, ) logging.info(f\"Historical trades: {historical_trades_response.data()}\") except Exception as e: logging.error(f\"agg_trades() error: {e}\") if __name__ == \"__main__\": agg_trades() ``` ### Real time events [...] Disclaimer: This article is for educational purposes only. This content is presented to you on an “as is” basis for general information and educational purposes only, without representation or warranty of any kind. It should not be construed as financial, legal or other professional advice, nor is it intended to recommend the purchase of any specific product or service. You should seek your own advice from appropriate professional advisors. Products mentioned in this article may not be available in your region. Where the article is contributed...",
+      "score": 0.9811669,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "binance-spot-api-docs/CHANGELOG.md at master - GitHub",
+      "url": "https://github.com/binance/binance-spot-api-docs/blob/master/CHANGELOG.md",
+      "content": "| `GET /api/v3/account` `account.status` | 10 | 20 | | `GET /api/v3/rateLimit/order` `account.rateLimits.orders` | 20 | 40 | | `GET /api/v3/exchangeInfo` `exchangeInfo` | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1-100 | 1 | 2 | | `GET /api/v3/depth` `depth` - Limit 101-500 | 5 | 10 | | `GET /api/v3/depth` `depth` - Limit 501-1000 | 10 | 20 | | `GET /api/v3/depth` `depth` - Limit 1001-5000 | 50 | 100 | | `GET /api/v3/aggTrades` `trades.aggregate` | 1 | 2 | | `GET /api/v3/trades` `trades.recent` | 1 | 2 | | `GET /api/v3/historicalTrades` `trades.historical` | 5 | 10 | | `GET /api/v3/klines` `klines` | 1 | 2 | | `GET /api/v3/uiKlines` `uiKlines` | 1 | 2 | | `GET /api/v3/ticker/bookTicker` `ticker.book` - With `symbol` | 1 | 2 | [...] ### 2024-07-22 General changes: Fixed a bug where klines had incorrect timestamps. + REST API: `GET /api/v3/klines` and `GET /api/v3/uiKlines` with `timeZone` parameter + WebSocket API: `klines` and `uiKlines` with `timeZone` parameter + WebSocket Streams: `@kline_@+08:00` streams ### 2024-06-11 [...] ### 2024-06-06 This will be available by June 6, 11:59 UTC. REST API `orderRateLimitExceededMode` has been added to `POST /api/v3/order/cancelRepl...",
+      "score": 0.9807288,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "search_index": 2
+    },
+    {
+      "title": "64848.12 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=25035197813073",
+      "content": "Title: 64848.12 | BTC USDT | Bitcoin to USDT – Binance Spot 0G/USDT 5x 0.625 -2.95%. 1000CAT/USDT 5x 0.00169 -2.31%. 1000CHEEMS/USDT 5x 0.000442 -7.72%. 1000SATS/USDT 5x 0.00001054 -2.41%. 1INCH/USDT 5x 0.0889 -2.31%. 1MBABYDOGE/USDT 5x 0.0003705 -1.31%. 2Z/USDT 5x 0.06804 -2.88%. A2Z/USDT 5x 0.000832 -3.82%. AAVE/USDT 5x 114.96 -2.27%. ACE/USDT 5x 0.150 -3.23%. ACH/USDT 5x 0.00720 -2.04%. ACM/USDT 5x 0.441 -2.43%. ACT/USDT 5x 0.0136 -3.55%. ACX/USDT 5x 0.0325 -3.85%. IOTX/USDT 00:00:18 -5.41% Pullback[LPT/BTC 00:00:18 +8.52% [Mid] 5min Rise](https://www.binance.com/en/trade/LPT_BTC)[LPT/USDT 00:00:18 +8.78% [Mid] 5min Rise](https://www.binance.com/en/trade/LPT_USDT)PUNDIX/USDT 00:00:18 -20.00% PullbackIDEX/USDT 00:00:18 -9.42% PullbackFIDA/USDT 00:00:18 -9.72% PullbackJASMY/USDT 00:00:18 -6.27% Pullback[LPT/BTC 00:00:18 +8.52% [Small] Price up with High Vol](https://www.binance.com/en/trade/LPT_BTC)[LPT/USDT 00:00:18 +8.83% [Small] Price up with High Vol](https://www.binance.com/en/trade/LPT_USDT)LPT/BTC 00:00:18 +10.14% New 24hr High. When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. Because we respect your right t...",
+      "score": 0.82391036,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19 -13.16% PullbackROBO/USDT 12:00:19 -6.86% PullbackBAT/BTC 12:00:18 -7.93% PullbackBAT/USDT 12:00:18 -5.67% PullbackONT/USDT 12:00:18 +14.65% RallyONT/BTC 12:00:18 +9.63% RallyAPT/BTC 12:00:18 -6.01% PullbackHOOK/USDT 12:00:18 +10.47% Rally Open Orders(0) Order History Trade History [...] 0.13100 9.39K 71,726.07 0.00023 16.496996 71,725.38 0.00008 5.738030 71,724.87 0.00008 5.737989 71,722.58 0.00008 5.737806 71,722.54 0.00007 5.020577 71,722.20 0.00818 586.687596 71,722.19 0.00008 5.737775 71,721.77 0.00232 166.394506 71,721.31 0.00048 34.426228 71,721.30 0.01640 1.17K 71,711.17 $ 71,711.17 71,721.29 3.27321 234.75K 71,721.28 0.00016 11.475404 71,721.00 0.00300 215.163000 71,720.98 0.46037 33.01K 71,72...",
+      "score": 0.81875163,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Binance BTCUSDT Candlestick - Kaggle",
+      "url": "https://www.kaggle.com/datasets/arezazare/binance-btcusdt-candlestick",
+      "content": "1730275200000 72227.99 72542.2 72211.59 72241.35 766.37279 1730278799999 55481311.9623147 105598 370.17973 1730278800000 72241.35 72588.0 72224.31 72576.01 669.47116 1730282399999 48491291.5796305 127465 388.77519 1730282400000 72576.02 72604.97 72369.0 72378.02 806.77509 1730285999999 58463721.3024694 113346 490.5137 1730286000000 72378.02 72378.02 71926.82 71983.99 1006.6085 1730289599999 72648536.7667017 150042 420.51395 1730289600000 71984.0 72140.34 71750.04 71862.17 1946.32423 1730293199999 140039427.8096451 286642 922.90568 1730293200000 71862.17 72100.0 71436.0 71966.0 2218.00998 1730296799999 159143258.1892359 398289 1166.28419 1730296800000 71966.0 72470.0 71932.0 72411.79 2024.37063 1730300399999 146186630.3232995 427458 1173.05137 [...] 1730426400000 69402.0 69600.0 68830.0 69579.89 2802.10218 1730429999999 193886130.0005369 339028 1208.73572 1730430000000 69579.89 69714.45 69334.0 69369.99 921.81357 1730433599999 64092513.9991033 131279 382.0723 1730433600000 69369.99 69623.99 69342.01 69592.0 670.4087 1730437199999 46585588.5202855 97446 347.24402 1730437200000 69592.0 69670.9 69526.0 69609.29 441.90421 1730440799999 30758807.6457664 69954 203.49295 1730440800000 6...",
+      "score": 0.8029425,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "67376.55 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=23079044836578",
+      "content": "Title: 67376.55 | BTC USDT | Bitcoin to USDT – Binance Spot 67376.55 | BTC USDT | Bitcoin to USDT – Binance Spot. Log In[Sign Up](https://accounts.binance.com/en/register? 0G/USDT 5x 0.655 -0.91%. 1000CAT/USDT 5x 0.00172 -6.52%. 1000CHEEMS/USDT 5x 0.000437 -6.82%. 1000SATS/USDT 5x 0.00001094 -6.09%. 1INCH/USDT 5x 0.0944 -3.87%. 1MBABYDOGE/USDT 5x 0.0003923 -6.64%. 2Z/USDT 5x 0.07734 +0.18%. A2Z/USDT 5x 0.000855 -5.52%. AAVE/USDT 5x 114.24 -6.86%. ACE/USDT 5x 0.150 -5.06%. ACH/USDT 5x 0.00706 -4.85%. ACM/USDT 5x 0.438 -3.52%. ACT/USDT 5x 0.0140 -3.45%. ACX/USDT 5x 0.0342 -0.87%. When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. Because we respect your right to privacy, you can choose not to allow some types of cookies. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. #### Strictly Necessary Cookies. These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or...",
+      "score": 0.8025714,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "77692.34 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=27312550931393",
+      "content": "0G/USDT 5x 0.630 -10.00%. 1000CAT/USDT 5x 0.00209 -2.79%. 1000CHEEMS/USDT 5x 0.000645 +2.06%. 1000SATS/USDT 5x 0.00001250 -2.80%. 1INCH/USDT 5x 0.1147 +3.71%. 1MBABYDOGE/USDT 5x 0.0004657 -3.76%. 2Z/USDT 5x 0.10886 -2.51%. A2Z/USDT 5x 0.001096 -3.86%. AAVE/USDT 5x 126.63 -0.81%. ACA/USDT 5x 0.0049 -9.26%. ACE/USDT 5x 0.202 -6.05%. ACH/USDT 5x 0.00814 -4.12%. ACM/USDT 5x 0.450 -2.39%. ACT/USDT 5x 0.0155 -2.52%. When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. Because we respect your right to privacy, you can choose not to allow some types of cookies. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. #### Strictly Necessary Cookies. These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your brow...",
+      "score": 0.7568076,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| BTCUSDT-1h-2024-10.zip.CHECKSUM | 0.1 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-10.zip | 37.4 kB | 2024-11-21T21:56:40.000Z | | BTCUSDT-1h-2024-09.zip.CHECKSUM | 0.1 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-09.zip | 36.4 kB | 2024-10-17T15:47:40.000Z | | BTCUSDT-1h-2024-08.zip.CHECKSUM | 0.1 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-08.zip | 37.8 kB | 2024-09-17T13:56:10.000Z | | BTCUSDT-1h-2024-07.zip.CHECKSUM | 0.1 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-07.zip | 37.8 kB | 2024-08-17T13:29:19.000Z | | BTCUSDT-1h-2024-06.zip.CHECKSUM | 0.1 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-06.zip | 35.9 kB | 2024-07-17T14:15:02.000Z | | BTCUSDT-1h-2024-05.zip.CHECKSUM | 0.1 kB | 2024-06-17T13:42:53.000Z | [...] | BTCUSDT-1h-2022-01.zip.CHECKSUM | 0.1 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2022-01.zip | 39.0 kB | 2023-12-18T13:44:21.000Z | | BTCUSDT-1h-2021-12.zip.CHECKSUM | 0.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-12.zip | 39.1 kB | 2022-01-07T16:18:06.000Z | | BTCUSDT-1h-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-11.zip | 37.7 kB | 2021-12-01T11:49:51.000Z | | BTCUSDT-1h-2021-10.zip.CHECKS...",
+      "score": 0.7371019,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "91317.09 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=26338288243426",
+      "content": "When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. Because we respect your right to privacy, you can choose not to allow some types of cookies. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. #### Strictly Necessary Cookies. These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information. #### Functional Cookies. These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or...",
+      "score": 0.6461259,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "67890.17 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT",
+      "content": "Ramadan Market Masters 2026: Trade Spot to Share $50,000 in ACE, OPEN, & STRAX Rewards! 0G/USDT 5x 0.661 -3.08%. 1000CAT/USDT 5x 0.00180 -2.70%. 1000CHEEMS/USDT 5x 0.000498 +0.20%. 1000SATS/USDT 5x 0.00001109 -1.33%. 1INCH/USDT 5x 0.0928 -0.85%. 1MBABYDOGE/USDT 5x 0.0003889 -2.58%. 2Z/USDT 5x 0.07249 -3.81%. A2Z/USDT 5x 0.000909 -1.84%. AAVE/USDT 5x 120.15 +4.24%. ACE/USDT 5x 0.158 -1.86%. ACH/USDT 5x 0.00745 -1.32%. ACM/USDT 5x 0.468 +2.18%. ACT/USDT 5x 0.0142 -3.40%. ACX/USDT 5x 0.0357 -1.92%. When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. Because we respect your right to privacy, you can choose not to allow some types of cookies. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. #### Strictly Necessary Cookies. These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookie...",
+      "score": 0.63397753,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "100799.00 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=19951289806233",
+      "content": "We’d like to set additional cookies to understand site usage, make site improvements, to remember your settings and to assist in our marketing efforts. Accept Cookies & Continue Reject Additional Cookies We use cookies to collect data which improves your experience while you navigate through the website. Because we respect your right to privacy, you can choose not to allow some types of cookies. The information does not usually directly identify you but it might be about you, your preferences or your device and is mostly used to improve the site making the site work as you expect it to whilst giving you a personalised experience. The cookies that are categorized as \"Strictly Necessary\" are on by default and are stored on your browser as they are essential for the working of basic functionalities and security of the website. You can choose to enable or disable some or all of the additional cookies if they are present, but disabling some of them may affect your browsing experience. ### Manage Consent Preferences #### Strictly Necessary Cookies These cookies are necessary for the website to function and cannot be switched off in our systems. You can set your browser to block or ale...",
+      "score": 0.6083387,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Bitcoin historical price trends: Market and candlestick chart ...",
+      "url": "https://www.lbank.com/price/binance-bitcoin/historical-data",
+      "content": "By design, the total supply of BTCB will reach 65K. As of now, the circulating supply of BTCB is approximately --. All prices shown on this page come from trusted data provider LBank. When reviewing your investments, it is recommended not to rely on a single data source, as values may differ between providers. Our historical Bitcoin price dataset includes 1-minute, 1-day, 1-week, and 1-month data (open/high/low/close/volume). These datasets have been rigorously tested to ensure consistency, integrity, and accuracy. The design is specifically for trading simulations and backtesting, available for free download and updated in real time. ## BTCB historical data examples Here are some uses of BTCB historical data in BTCB trading Technical analysis: [...] How to analyze BTCB candlestick chart data BTCB candlestick charts display time on the horizontal axis and price data on the vertical axis, similar to line and bar charts. A candlestick may have two different colors: green or red. A green candle indicates a price increase during the considered period, while a red candle indicates a price decrease. The simple structure of candlestick charts can provide users with a wealth of informat...",
+      "score": 0.5637388,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "... 3.28k 108k| Label | Count | --- | | 3156.26 - 13372.78 | 1,029 | | 13372.78 - 23589.31 | 325 | | 23589.31 - 33805.83 | 343 | | 33805.83 - 44022.35 | 293 | | 44022.35 - 54238.88 | 177 | | 54238.88 - 64455.40 | 228 | | 64455.40 - 74671.92 | 108 | | 74671.92 - 84888.44 | 4 | | 84888.44 - 95104.97 | 39 | | 95104.97 - 105321.49 | 49 | ... 3.16k 105k| Label | Count | --- | | 3211.72 - 13504.93 | 1,020 | | 13504.93 - 23798.14 | 323 | | 23798.14 - 34091.35 | 332 | | 34091.35 - 44384.56 | 298 | | 44384.56 - 54677.77 | 169 | | 54677.77 - 64970.98 | 239 | | 64970.98 - 75264.19 | 120 | | 75264.19 - 85557.40 | 5 | | 85557.40 - 95850.61 | 31 | | 95850.61 - 106143.82 | 58 | ... 3.21k [...] ... 3.21k 106k| Label | Count | --- | | 1521.54 - 77439.92 | 1,989 | | 77439.92 - 153358.30 | 352 | | 153358.30 - 229276.68 | 109 | | 229276.68 - 305195.07 | 70 | | 305195.07 - 381113.45 | 39 | | 381113.45 - 457031.83 | 24 | | 457031.83 - 532950.22 | 3 | | 532950.22 - 608868.60 | 3 | | 608868.60 - 684786.98 | 2 | | 684786.98 - 760705.36 | 4 | ... 1.52k 761k| DateTime | Count | --- | | 01/01/2018 - 09/18/2018 | 260 | | 09/18/2018 - 06/04/2019 | 259 | | 06/04/2019 - 02/19/2020 | 260 | | 02/19/2020 - 11/04/...",
+      "score": 0.55449516,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Live Dashboard",
+      "url": "https://newhedge.io/bitcoin",
+      "content": "| Price Target | Probability | Volume (Total) | Volume (24h) | Liquidity | --- --- | ↑ $150,000 | 0.1% | $23,741,804 | $1,165,998 | $2,447,413 | | ↑ $110,000 | 0.2% | $2,972,968 | $349,863 | $572,608 | | ↑ $105,000 | 0.2% | $1,651,038 | $170,858 | $619,977 | | ↑ $100,000 | 0.3% | $2,815,537 | $100,785 | $640,870 | | ↑ $95,000 | 0.3% | $2,793,042 | $60,533 | $471,476 | | ↑ $90,000 | 0.5% | $4,308,716 | $86,186 | $278,495 | | ↑ $85,000 | 2.1% | $3,335,215 | $212,477 | $382,044 | | ↑ $80,000 | 6.5% | $5,144,826 | $206,315 | $157,274 | | ↓ $65,000 | 15.3% | $7,897,710 | $186,096 | $117,026 | | ↓ $60,000 | 3.3% | $4,276,368 | $185,384 | $127,095 | | ↓ $55,000 | 1.4% | $5,326,160 | $118,107 | $163,101 | | ↓ $50,000 | 0.5% | $3,307,777 | $105,528 | $127,467 | [...] Get instant access to full data Sign Up | Exchange | Pair | 24h | --- | Binance | USDT/COP | $3.88B | | Crypto.com | BTC/USD | $1.43B | | Binance | BTC/USDT | $1.39B | | Binance | NBTBIDR | $1.35B | | Binance | USDC/USDT | $1.24B | | Binance | AXSBIDR | $1.19B | | Gate | BTC/USDT | $1.14B | | Binance | BTC/USD1 | $976.11M | | Binance | BNB/USD1 | $924.84M | | Binance | ETH/USDT | $891.35M | | Mexc | BTC/USDT | $888.81M | | B...",
+      "score": 0.5142789,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "86895.59 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=27230418353377",
+      "content": "Binance Futures Will Launch USDⓈ-Margined RLSUSDT Perpetual Contract (2025-12-02)India Blockchain Week Exclusive: Invite Friends & Share $5,000 in USDT Rewards! (12-02)Binance Square: Take Your Stance on #BTCvsGold to Unlock a Share of 1,000 USDC. 2025/12/01Open86,286.01High87,350.00Low86,184.39Close86,895.53CHANGE0.70%Range1.35%. Vol(BTC)6.949KVol(USDT)602.785M16.559K24.167K. # BTC/USDT. ## Privacy Preference Center. When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. ### Manage Consent Preferences. #### Strictly Necessary Cookies. These cookies are necessary for the website to funct...",
+      "score": 0.5104727,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "Long by Ratner 2525 Bitcoin - Bulls Pushing Toward 80K?Market Overview Bitcoin has recently delivered a strong technical development by closing above the previous daily high, a level that previously acted as resistance. This breakout signals a potential continuation of the broader bullish structure that has been developing over the past weeks. The move Long by TehThomas 3434 See all ideas ## Technicals﻿ ﻿ Summarizing what the indicators are suggesting. Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Oscillators Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy Strong sellSellNeutralBuyStrong buy Summary Neutral SellBuy Strong sellStrong buy [...] Short by SwallowAcademy 4040 Bitcoin - Fake-out and now moving lower?Bitcoin is currently trading around $71,000 after a strong recovery from the February lows. However, price is now showing signs of weakness as it approaches a key resistance trendline. The recent rejection suggests that the market may be transitioning from a bullish correction into a more cautious o Short by Youriverse 3939 BTC BEAR FLAGBTC / USDT BTC is still sh...",
+      "score": 0.47431523,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/bitcoin/historical-data",
+      "content": "+0.99% US 500\") 6,617.40 +61.1 +0.93% Dow Jones 46,124.06 -84.41 -0.18% S&P 500\") 6,556.37 -24.63 -0.37% Nasdaq 21,761.89 -184.87 -0.84% S&P 500 VIX\") 25.48 -1.47 -5.45% Dollar Index\") 99.055 -0.187 -0.19% Crude Oil WTI Futures\") 87.85 -4.50 -4.87% Brent Oil Futures\") 94.89 -5.34 -5.33% Natural Gas Futures\") 2.862 -0.050 -1.72% Gold Futures\") 4,600.87 +166.77 +3.76% Silver Futures\") 73.09 +3.521 +5.06% Copper Futures\") 5.5367 +0.0817 +1.50% US Soybeans Futures\") 1,159.13 +5.13 +0.44% U.S. 10Y 4.326 -0.068 -1.55% U.S. 30Y 4.88 -0.061 -1.23% U.S. 5Y 3.943 -0.087 -2.16% U.S. 3M 3.704 -0.011 -0.30% US 10Y T-Note Futures 111.05 +0.63 +0.57% Euro Bund Futures\") 126.05 +0.39 +0.31% 10-2 Yield Spread 31.32 +4.15 [...] 126.05 +0.39 +0.31% 10-2 Yield Spread 31.32 +4.15 +15.27% AAPL 251.64 +0.15 +0.06% NVDA 175.20 -0.44 -0.25% GOOGL 290.44 -11.62 -3.85% TSLA 383.03 +2.18 +0.57% AMZN 207.24 -2.90 -1.38% NFLX 90.92 -2.46 -2.63% META 592.92 -11.14 -1.84% ## Leading Cryptocurrencies ETH 2,190.32 Ethereum +27.50(1.27%) USDT 0.9999 Tether +0.0001(0.01%) BNB 649.60 BNB +12.00(1.88%) XRP 1.4241 XRP +0.0076(0.54%) USDC 1.0001 USD Coin -0.0001(-0.01%) Top Brokers | Broker | Traded Assets | Min Depos...",
+      "score": 0.43539792,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Price Today | BTC to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/bitcoin",
+      "content": "Price Change (1h) +0.36% The percentage change in price for this asset compared to 1 hour ago. Price Change (24h) +1.08% The percentage change in price for this asset compared to 24 hours ago. Price Change (7d) -1.55% The percentage change in price for this asset compared to 7 days ago. 24h Low & High The highest and lowest price paid for this asset in 24 hours. Low: $68.9K High: $72K All Time High The highest price paid for this asset since it was launched or listed. $126.2K Price Change (1h) The percentage change in price for this asset compared to 1 hour ago. +0.36% Price Change (24h) The percentage change in price for this asset compared to 24 hours ago. +1.08% Price Change (7d) The percentage change in price for this asset compared to 7 days ago. -1.55% [...] Image 24: COP COP Image 25: CZK CZK Image 26: DKK DKK Image 27: EGP EGP Image 28: EUR EUR Image 29: GBP GBP Image 30: HKD HKD Image 31: HRK HRK Image 32: HUF HUF Image 33: IDR IDR Image 34: INR INR Image 35: JPY JPY Image 36: KES KES Image 37: KWD KWD Image 38: KZT KZT Image 39: MAD MAD Image 40: MNT MNT Image 41: MXN MXN Image 42: NZD NZD Image 43: OMR OMR Image 44: PEN PEN Image 45: PHP PHP Image 46: PKR PKR Image 47...",
+      "score": 0.41805586,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Historical Market Data",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "All use of Historical Market Data is subject toBinance.US’ Terms of Use. You hereby understand and agree that Binance.US will not be liable for any losses or damages arising out of or relating to: (a) any inaccuracy, defect, or omission of digital assets price data, (b) any error or delay in the transmission of such data, (c) interruption in any such data, (d) regular or unscheduled maintenance carried out by Binance.US and service interruption and change resulting from such maintenance, (e) any damages incurred by other users’ actions, omissions or violations Binance.US’ Terms of Use, (f) any damage caused by illegal actions of other third parties or actions without authorization by Binance.US; and (g) other exemptions mentioned in disclaimers and platform rules issued by Binance.US. [...] Data Disclaimer Historical Market Data is provided for general informational purposes only and should NOT be: (1) considered an individualized recommendation, endorsement, or offer of any digital asset or services discussed herein; or (2) relied upon for any investment activities. All information is provided on an as-is basis and is subject to change without notice. While we strive to keep th...",
+      "score": 0.38373423,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "search_index": 3
+    },
+    {
+      "title": "89,364.00 | BTC USDT | Bitcoin to USDT - Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=27107786867538",
+      "content": "Binance #BitcoinButton is Back: Hit the Button, Countdown to 00:00 and Win 1 BTC! Yei Finance Trading Competition: Trade Yei Finance (CLO) and Share $200K Worth of Rewards. (01-23)Binance Futures Will Launch USDⓈ-Margined SPACEUSDT and FIGHTUSDT Perpetual Contracts (2026-01-23). 2026/01/23Open89,600.26High89,957.39Low89,162.08Close89,363.99CHANGE-0.26%Range0.88%. MA(7)90,387.20MA(25)91,741.90MA(99)94,914.27. Vol(BTC)3.516KVol(USDT)314.993M13.153K14.056K. # BTC/USDT. New 24hr Low[WCT/USDT. [Small] 5min Fall](/en/trade/WCT_USDT)ATM/USDT. 888.33ETH/USDT-0.84%-1.46%WCT/USDT. Draw horizontal line on 0.00.",
+      "score": 0.34773698,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "77674.76 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=25969750343394",
+      "content": "Notice of Removal of Spot Trading Pairs - 2026-02-03Binance Will Delist ACA, CHESS, DATA, DF, GHST, NKN on 2026-02-13. (02-02)Complete Your Sharia Earn Subscription to Share 20,000 USDT Token Vouchers. 2026/02/01Open76,968.22High78,231.26Low74,604.00Close77,699.99CHANGE0.95%Range4.71%. MA(7)82,981.41MA(25)89,223.37MA(99)92,553.01. Vol(BTC)24.591KVol(USDT)1.873B26.08K20.453K. # BTC/USDT. -6.02%AUCTION/USDTAGLD/USDT. Draw horizontal line on 0.00.",
+      "score": 0.2568138,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    },
+    {
+      "title": "77692.35 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/trade/BTC_USDT?contentId=24509237575050",
+      "content": "Notice of Removal of Spot Trading Pairs - 2026-02-03Binance Will Delist ACA, CHESS, DATA, DF, GHST, NKN on 2026-02-13. (02-02)Complete Your Sharia Earn Subscription to Share 20,000 USDT Token Vouchers. 2026/02/01Open76,968.22High78,231.26Low74,604.00Close77,720.00CHANGE0.97%Range4.71%. MA(7)82,984.27MA(25)89,224.17MA(99)92,553.21. Vol(BTC)24.876KVol(USDT)1.896B26.121K20.474K. # BTC/USDT. Draw horizontal line on 0.00.",
+      "score": 0.25670895,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m candle close 12:00 ET Nov 18 site:binance.com/trade/BTC_USDT",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Binance API klines BTCUSDT 1m Nov 18 12:00 ET close price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BTC/USDT 1-minute candlestick close November 18 12:00 PM ET Binance historical data",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

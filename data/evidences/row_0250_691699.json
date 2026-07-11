@@ -1,0 +1,305 @@
+{
+  "row_index": 250,
+  "market_id": "691699",
+  "slug": "bitcoin-above-92k-on-november-26",
+  "question": "Will the price of Bitcoin be above $92,000 on November 26?",
+  "event_title": "Bitcoin above ___ on November 26?",
+  "end_date_limit": "2025-11-26",
+  "row_end_date_raw": "2025-11-26",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+    "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+    "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] `import pandas as pd from datetime import datetime, timezone, timedelta import calendar def get_klines_iter(symbol, interval, start, end = None, limit=1000): # start and end must be isoformat YYYY-MM-DD # We are using utc time zone # the maximum records is 1000 per each Binance API call df = pd.DataFrame() if start is None: print('start time must not be None') return start = calendar.timegm(datetime.fromisoformat(st...",
+      "score": 0.9998416,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] ``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Cr...",
+      "score": 0.99983656,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Get historical Klines from Binance - gist no Github",
+      "url": "https://gist.github.com/sammchardy/0c740c40276e8f05b6390ce304476605",
+      "content": "| # uses the date\\_to\\_milliseconds and interval\\_to\\_milliseconds functions | | # | | # | | | | from binance.client import Client | | import time | | | | def get\\_historical\\_klines(symbol, interval, start\\_str, end\\_str=None): | | \"\"\"Get Historical Klines from Binance | | | See dateparse docs for valid start and end string formats | | | If using offset strings for dates add \"UTC\" to date string e.g. \"now UTC\", \"11 hours ago UTC\" | | | :param symbol: Name of symbol pair e.g BNBBTC | | :type symbol: str | | :param interval: Biannce Kline interval | | :type interval: str | | :param start\\_str: Start date string in UTC format | | :type start\\_str: str | | :param end\\_str: optional - end date string in UTC format | | :type end\\_str: str | | | :return: list of OHLCV values | | | \"\"\" | [...] | | :return: list of OHLCV values | | | \"\"\" | | # create the Binance client, no need for api key | | client = Client(\"\", \"\") | | | | # init our list | | output\\_data = [] | | | | # setup the max limit | | limit = 500 | | | | # convert interval to useful value in seconds | | timeframe = interval\\_to\\_milliseconds(interval) | | | | # convert our date strings to milliseconds | | start\\_ts = date\\_to...",
+      "score": 0.9996018,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Save Historical data from Binance",
+      "url": "https://sammchardy.github.io/historical-data-download-binance/",
+      "content": "We are mostly interested in the open time, open, high, low, close and volume values. But why not save all the info while we have it. ### Binance Intervals The `interval` is a string which the API understands, but for our purposes we will need to convert it to a millisecond representation to help with our loop. We will ignore “M” or month in this case as it’s tricky to determine how long a month is and given that we will fetch 500 results and Binance has only been running for a year we can fetch all “1M” results in one request. With this function we can pass any of the Binance interval values and receive the corresponding value in milliseconds. [...] ``` frombinance.client import Client # fetch 1 minute klines for the last day up until now klines = get_historical_klines(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\") # fetch 30 minute klines for the last month of 2017 klines = get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") # fetch weekly klines since it listed klines = get_historical_klines(\"NEOBTC\", KLINE_INTERVAL_1WEEK,\"1 Jan, 2017\") ``` The full code can be found in the examples folder of the python-binance package. ###...",
+      "score": 0.99941623,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Binance BTCUSDT Candlestick",
+      "url": "https://www.kaggle.com/datasets/arezazare/binance-btcusdt-candlestick",
+      "content": "1730451600000 69376.1 69588.0 69324.0 69534.9 486.09866 1730455199999 33772831.9287709 71524 275.83452 [...] 1730275200000 72227.99 72542.2 72211.59 72241.35 766.37279 1730278799999 55481311.9623147 105598 370.17973 1730278800000 72241.35 72588.0 72224.31 72576.01 669.47116 1730282399999 48491291.5796305 127465 388.77519 1730282400000 72576.02 72604.97 72369.0 72378.02 806.77509 1730285999999 58463721.3024694 113346 490.5137 1730286000000 72378.02 72378.02 71926.82 71983.99 1006.6085 1730289599999 72648536.7667017 150042 420.51395 1730289600000 71984.0 72140.34 71750.04 71862.17 1946.32423 1730293199999 140039427.8096451 286642 922.90568 1730293200000 71862.17 72100.0 71436.0 71966.0 2218.00998 1730296799999 159143258.1892359 398289 1166.28419 1730296800000 71966.0 72470.0 71932.0 72411.79 2024.37063 1730300399999 146186630.3232995 427458 1173.05137 [...] 1730426400000 69402.0 69600.0 68830.0 69579.89 2802.10218 1730429999999 193886130.0005369 339028 1208.73572 1730430000000 69579.89 69714.45 69334.0 69369.99 921.81357 1730433599999 64092513.9991033 131279 382.0723 1730433600000 69369.99 69623.99 69342.01 69592.0 670.4087 1730437199999 46585588.5202855 97446 347.24402 1730437200...",
+      "score": 0.9990073,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "``` {{ \"e\": \"kline\", // Event type \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"k\": { \"k\": { \"t\": 1638747660000, // Kline start time \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"o\": \"0.0010\", [...] // Open price \"c\": \"0.0020\", // Close price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote...",
+      "score": 0.9986853,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Data",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "- Symbol - The symbol for which the timeseries data refers - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period [...] - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period You can read more about the differences on Binance's website. [...] - High - This is the highest price of the tick period - Low...",
+      "score": 0.9984022,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Response - MINI: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\": 1695772799999, \"firstId\": 3220151555, // Trade ID of the first trade in the interval \"lastId\": 3220849281, // Trade ID of the last trade in the interval \"count\": 697727 // Number of trades in the interval }` With `symbols`: [...] `uiKlines` return modified kline data, optimized for presentation of candlestick charts. `uiKlines` Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | See `klines` | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | `klines` `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a...",
+      "score": 0.9983897,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Index Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Index-Kline-Candlestick-Streams",
+      "content": "User Data Streams Account Portfolio Margin Endpoints Error Code Portfolio Margin Portfolio Margin Pro Options Trading []( COIN-M Futures Websocket Market Streams Index Kline Candlestick Streams On this page # Index Kline/Candlestick Streams ## Stream Description​ Index Kline/Candlestick Streams Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M ## Stream Name​ `<pair>@indexPriceKline_<interval>` e.g. \"btcusd@indexPriceKline_1m\" ## Update Speed​ 250ms ## Response Example​ [...] ## Update Speed​ 250ms ## Response Example​ `{ \"e\":\"indexPrice_kline\", // Event Name \"E\":1591267070033, // Event Time \"ps\":\"BTCUSD\", // Pair \"k\":{ \"t\":1591267020000, // Kline start time \"T\":1591267079999, // Kline close time \"s\":\"0\", // ignore \"i\":\"1m\", // Interval \"f\":1591267020000, // ignore \"L\":1591267070000, // ignore \"o\":\"9542.21900000\", // Open price \"c\":\"9542.50440000\", // Close price \"h\":\"9542.71640000\", // High price \"l\":\"9542.21040000\", // Low price \"v\":\"0\", // ignore \"n\":51, // Number of basic data \"x\":false, // Is this kline closed? \"q\":\"0\", // ignore \"V\":\"0\", // ignore \"Q\":\"0\", // ignore \"B\":\"0\" // ign...",
+      "score": 0.9979652,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "## Update Speed​ 250ms ## Response Example​ `{ \"e\":\"kline\", // Event type \"E\":1591261542539, // Event time \"s\":\"BTCUSD_200626\", // Symbol \"k\":{ \"t\":1591261500000, // Kline start time \"T\":1591261559999, // Kline close time \"s\":\"BTCUSD_200626\", // Symbol \"i\":\"1m\", // Interval \"f\":606400, // First trade ID \"L\":606430, // Last trade ID \"o\":\"9638.9\", // Open price \"c\":\"9639.8\", // Close price \"h\":\"9639.8\", // High price \"l\":\"9638.6\", // Low price \"v\":\"156\", // volume \"n\":31, // Number of trades \"x\":false, // Is this kline closed? \"q\":\"1.61836886\", // Base asset volume \"V\":\"73\", // Taker buy volume \"Q\":\"0.75731156\", // Taker buy base asset volume \"B\":\"0\" // Ignore }}` [...] User Data Streams Account Portfolio Margin Endpoints Error Code Portfolio Margin Portfolio Margin Pro Options Trading . Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M ## Stream Name​ `<symbol>@kline_<interval>` e.g. \"btcusd_200626@kline_1m\" ## Update Speed​ 250ms ## Response Example​ [...] Previous Mark Price StreamNext Continuous Contract Kline Candlestick Streams Stream Description Stream Name Update Speed Response Ex...",
+      "score": 0.9972638,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/order\" data ={\"symbol\": \"BTCUSDT\", \"side\": \"BUY\", \"type\": \"LIMIT\", \"timeInForce\": \"GTC\", \"quantity\": 1, \"price\":0.1, \"timestamp\": int(round(time. time() 1000))} binanceus_request(uri_path, data, api_key, secret_key) [...] secret_key = \"NhqPtmdSJYdKjVHjA7PZj4Mge3R5YNiP1e3UZjInClVN65XAbvqqM6A7H5fATj0j\" uri_path =\"/api/v3/openOrders\" data ={\"symbol\": \"BTCUSDT\", \"timestamp\": 1499827319559} get_open_order_result = binanceus_request(uri_path, data, api_key, secret_key) [...] Scheduled changes: The All Book Tickers stream (!bookTicker) is set to be removed in late November 2022. Please use the Individual Book Ticker Streams instead. (@bookTicker). Multiple @bookTicker streams can be subscribed to over one connection. For example: wss://stream.binance.us:9443/stream?streams=btcusdt@bookTicker/bnbbtc@bookTicker Market Data: Added a new optional parameter type in two endpoints: GET /api/v3/ticker and GET /api/v3/ticker/24hr. Also removed Individual Symbol Ticker Streams as it duplicates with Ticker Order Book Stream, supported new candlestick chart interval: 1s. Get Asset Distribution Histor...",
+      "score": 0.9969957,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "71,279 BTC/USDT Binance Live Price Chart - Coinalyze",
+      "url": "https://coinalyze.net/bitcoin/usdt/binance/price-chart-live/",
+      "content": "| 70002.34 | 0.00099000 | 06:13:30 | | 70002.34 | 0.00106000 | 06:13:30 | | 70002.34 | 0.02400000 | 06:13:30 | | 70002.34 | 0.00014000 | 06:13:29 | | 70002.34 | 0.02400000 | 06:13:27 | | 70002.35 | 0.00122000 | 06:13:27 | | 70002.35 | 0.05557000 | 06:13:27 | | 70002.35 | 0.04862000 | 06:13:26 | | 70002.34 | 0.00008000 | 06:13:26 | | 70001.75 | 0.00300000 | 06:13:26 | | 70001.60 | 0.00008000 | 06:13:26 | | 70001.59 | 0.00026000 | 06:13:26 | | 70001.22 | 0.00008000 | 06:13:26 | | 70000.57 | 0.00867000 | 06:13:26 | | 70000.56 | 0.08608000 | 06:13:26 | | 70000.55 | 0.00016000 | 06:13:26 | | 70000.52 | 0.00008000 | 06:13:26 | | 70000.00 | 0.01499000 | 06:13:26 | | 69999.99 | 0.00016000 | 06:13:26 | | 69999.96 | 0.04676000 | 06:13:26 | | 69999.95 | 0.00016000 | 06:13:26 | [...] | 69999.95 | 0.00016000 | 06:13:26 | | 69999.60 | 0.00300000 | 06:13:26 | | 69999.34 | 0.00064000 | 06:13:26 | | 69999.33 | 0.65765000 | 06:13:26 | | 69999.33 | 0.00398000 | 06:13:26 | | 69999.33 | 0.10000000 | 06:13:26 | | 69999.33 | 0.00016000 | 06:13:25 | | 69999.33 | 0.00945000 | 06:13:25 | | 69999.32 | 0.02400000 | 06:13:25 | | 69999.33 | 0.00021000 | 06:13:24 | | 69999.33 | 0.00096000 | 06:13:24 | | 69999...",
+      "score": 0.99482024,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", // Taker buy base asset volume \"0\" // Ignore. ] ]`",
+      "score": 0.99448806,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "search_index": 3
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19 -13.16% PullbackROBO/USDT 12:00:19 -6.86% PullbackBAT/BTC 12:00:18 -7.93% PullbackBAT/USDT 12:00:18 -5.67% PullbackONT/USDT 12:00:18 +14.65% RallyONT/BTC 12:00:18 +9.63% RallyAPT/BTC 12:00:18 -6.01% PullbackHOOK/USDT 12:00:18 +10.47% Rally Open Orders(0) Order History Trade History [...] Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01...",
+      "score": 0.99356186,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price: BTC Live Price Chart, Market Cap & News Today",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "content": "| # | Exchange | | Pair | Price | Spread | +2% Depth | -2% Depth | 24h Volume | Volume % | Last Updated | --- --- --- --- --- | | | 1 | Image 54: Binance Binance | CEX | BTC/USDT | $70,824.57 | 0.01% | $14,873,697 | $18,250,552 | $1,374,060,852 | 3.44% | Recently | | 2 | Image 55: Gate Gate | CEX | BTC/USDT | $70,764.75 | 0.01% | $10,349,267 | $9,088,611 | $811,918,099 | 2.03% | Recently | | 3 | Image 56: Bybit Bybit | CEX | BTC/USDT | $70,786.12 | 0.01% | $1,715,877 | $1,286,775 | $850,436,495 | 2.13% | Recently | | 5 | Image 57: Coinbase Exchange Coinbase Exchange | CEX | BTC/USD | $70,744.11 | 0.01% | $17,106,174 | $16,874,421 | $562,232,083 | 1.41% | Recently | [...] | 4 | Image 58: OKX OKX | CEX | BTC/USDT | $70,815.68 | 0.01% | $1,439,800 | $2,637,120 | $454,830,953 | 1.14% | Recently | | 6 | Image 59: Kraken Kraken | CEX | BTC/USD | $70,764.97 | 0.01% | $21,445,122 | $20,651,096 | $136,840,549 | 0.34% | Recently | | 7 | Image 60: Bitget Bitget | CEX | BTC/USDT | $70,760.76 | 0.01% | $5,125,887 | $765,986 | $188,196,105 | 0.47% | Recently | | 8 | Image 61: Bullish Bullish | CEX | BTC/USDC | $70,769.56 | 0.01% | $18,669,281 | $16,599,959 | $587,192,028 | 1.47% | Recently |...",
+      "score": 0.9900636,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "The safest choice when buying BTCis to go to a well-known crypto exchange. Some of the popular names are Binance, Coinbase, Kraken. But you'll have to find a reliable broker and create an account first. You can trade BTCright from TradingView charts — just choose a broker and connect to your account. [...] Short by Babenski 2626 BTCUSDT Ascending Channel Holds - Bulls in ControlHello traders! Here’s my technical outlook based on the current BTCUSDT (3H) chart structure. BTC previously traded inside a range before breaking above it, confirming a shift to bullish momentum. After the breakout, price formed an ascending channel with higher highs and higher lows, respecting bot Long by LegionQ8 3131 If a Monk Traded the Markets...I had this thought… What would trading look like if the person behind the screen was a monk? 1️⃣ He wouldn’t feel the need to trade That’s the first thing. He’d just watch the market… and wait. And if nothing is clear? He does nothing. 2️⃣ He wouldn’t take losses personally A losing trade wo Education by TheSignalyst 5656 [...] See all minds ## News﻿ ﻿ Keep reading ## Ideas﻿ ﻿ Bitcoin looks good —Name Your Altcoin (Top Altcoin Choice)Bitcoin has been struggl...",
+      "score": 0.9795115,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT USDS-Margined Perpetual Chart | Binance Futures",
+      "url": "https://www.binance.com/en/futures/BTCUSDT",
+      "content": "homelogo Display Margin Mode & Leverage Adjustment Button Show plus/minus Price tick size Market Stop Limit Avbl- USDT USDT BBO BTC # BTCUSDT Perp 71,047.5 -2,511.3 -3.41% Mark 71,051.1 Index 71,088.1 Funding (8h) / Countdown -0.00112% / 07:19:11 24h High 74,633.0 24h Low 70,456.0 24h Vol(BTC) 224,566.819 24h Vol(USDT) 16,215,065,209.51 Open Interest(USDT) 0 BTCUSDT -3.41% Chart Info Trading Data Time 1s 15m 1H 4H 1D 1W Last Price Original Trading View Depth Order Book 0.1 Price (USDT) Size(BTC) Sum(BTC) 71,047.5 71,051.1 Trades Top Movers Price (USDT) Amount(BTC) Time 71,047.5 0.006 20:40:48 Positions(0) Open Orders(0) Order History Trade History Transaction History Position History Bots Assets [...] More Settings Remove Drawings Remove Indicators Time Tools Chart Settings [...] Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted countries (including IP addresses). Unfortunately, we are unable to provide services to users from restricted co...",
+      "score": 0.96295285,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Historical Market Data We've made Candlestick, Trade, and AggTrade data for all pairs available for download. What Data Is Available We provide data at daily and monthly intervals. Data for a day is uploaded the following day, and we begin to upload data for a month at the beginning of the following month. Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Field Name Description open\\_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close\\_time Candlestick close time in Unix time format quote\\_volume Quote asset volume count Number of trades [...] Trading services that make use of Binance.US quotes or market bulletin board information; Data feeding or streaming services that make use of any market data of Binance.US; or Any other websites/apps/services that charge for or otherwise profit from (including through advertising or referral fees) market data obtained from Binance.US. [...] Data Disclaimer Historical Market Data is provided for general informational purposes onl...",
+      "score": 0.93195957,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "NOEL 4CRYPTO's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/noelforcrypto",
+      "content": "Drop your prediction for this week's $BTC closing price in the comments of this post ... The campaign's outcome will be based on the BTCUSDT price at 2025-01-26",
+      "score": 0.9241418,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Today | BTC to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/bitcoin",
+      "content": "may not get back the amount you invested. You are solely responsible for your investment decisions. Binance is not responsible for any losses you may incur. For more information, please refer to our Terms of Use and Risk Warning. Please also note that data relating to the above-mentioned cryptocurrency presented here (such as its current live price) are based on third-party sources. They are presented to you on an “as is” basis and for informational purposes only, without representation or warranty of any kind. Links provided to third-party sites are also not under Binance's control. Binance is not responsible for the reliability and accuracy of such third-party sites and their contents. [...] Cryptocurrency prices are subject to high market risk and price volatility. You should only invest in products that you are familiar with and where you understand the associated risks. The content expressed on this page is not intended to be and shall not be construed as an endorsement by Binance about the reliability or accuracy of such content. You should carefully consider your investment experience, financial situation, investment objectives and risk tolerance and consult an independen...",
+      "score": 0.37937838,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "utc Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/utc",
+      "content": "18,216 views 70 Discussing Binance Market Update: Crypto Market Trends | September 17, 2025 The global cryptocurrency market cap has reached $4.03 trillion, reflecting a 0.55% increase in the past 24 hours, according to Coin Market Cap data. Bitcoin (BTC) traded in the range of $114,737 to $117,287 over the last day. As (UTC), BTC is priced at $116,768, marking a 1.01% gain. Overall, major crypto currencies by market capitalization showed mixed performance. Among the top gainers, TST surged 78%, THE jumped 27%, and MUBARAK advanced 15%, standing out as today’s market leaders. #bitcoin #utc #Ethereum #USDT $BTC $ETH $BNB [...] Binance Market Update: Crypto Market Trends | September 17, 2025 The global cryptocurrency market cap has reached $4.03 trillion, reflecting a 0.55% increase in the past 24 hours, according to Coin Market Cap data. Bitcoin (BTC) traded in the range of $114,737 to $117,287 over the last day. As (UTC), BTC is priced at $116,768, marking a 1.01% gain. Overall, major crypto currencies by market capitalization showed mixed performance. Among the top gainers, TST surged 78%, THE jumped 27%, and MUBARAK advanced 15%, standing out as today’s market leaders. #bitcoi...",
+      "score": 0.29421496,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "#curve Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/curve",
+      "content": "$BTC {spot}(BTCUSDT) $SPK](/en/square/post/25742312844226) [...] 🚨 $CRV /USDT – Exploding +17%! DeFi Comeback or Just a Dead Cat Bounce? 💥🔄 #CurveDAO ($CRV ) just ripped to $0.6544 (+17.21%), hitting a 24h high of $0.6572! With DeFi heating up, can CRV reclaim $0.70—or will sellers dump into the strength? 📊 Market Overview 📍 Current Price: $0.6544 📈 24h High: $0.6572 ❄️ 24h Low: $0.5583 📊 Parabolic SAR: $0.6150 (Uptrend firmly active) 📉 MACD Momentum: DIF: 0.0312 (Momentum rising fast) DEA: 0.0126 MACD: 0.0373 (Clear bullish crossover confirmed) 📈 CRV Trade Setup – Key Levels to Watch 🔹 Bullish Scenario (If CRV Holds Above $0.64): Entry: Above $0.66 Targets: $0.70, $0.74, $0.80 Stop-Loss: $0.615 🔹 Bearish Scenario (If CRv Breaks Below $0.615): Entry: Below $0.612 [...] · Mar 24, 2025 See original Follow Report Block User 🩸🩸 Is this reasonable? Do you believe what has been published? 🩸 Founder #Curve is selling tokens #CRV at a huge loss. 🩸 Founder of Curve, Mikhail Egorov, recently sold 468,769 CRV tokens at a price of $0.508 each, receiving 238,171 USDC in return. This transaction occurred about nine hours ago. 🩸 Previously, between December 17 and 18, 2023, Egorov bought 1.226...",
+      "score": 0.047425874,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin above ___ on November 3?",
+      "url": "https://polymarket.com/event/bitcoin-above-on-november-3",
+      "content": "Browse New Trending Popular Liquid Ending Soon Competitive Topics Live Crypto Live Crypto Politics Politics Middle East Middle East Crypto Crypto Sports Sports Pop Culture Pop Culture Tech Tech AI AI Market icon # Bitcoin above \\_\\_\\_ on November 3? Market icon # Bitcoin above \\_\\_\\_ on November 3? Ended: Nov 3, 2025 12PM 12PM Mar 27 12PM Mar 28 12PM Mar 29 More Ended: Nov 3, 2025 12PM 12PM Mar 27 12PM Mar 28 12PM Mar 29 More $2,534,503 Vol. 104,000 $462,712 Vol. Yes 106,000 $608,497 Vol. Yes 108,000 $420,786 Vol. No 110,000 $237,771 Vol. No 112,000 $289,116 Vol. No 114,000 $148,056 Vol. No 116,000 $69,709 Vol. No 118,000 $117,635 Vol. No 120,000 $41,874 Vol. No 122,000 $49,785 Vol. No 124,000 $88,561 Vol. No [...] No 122,000 $49,785 Vol. No 124,000 $88,561 Vol. No $2,534,503 Vol. 104,000 Yes 106,000 Yes 108,000 No 110,000 No 112,000 No 114,000 No 116,000 No 118,000 No 120,000 No 122,000 No 124,000 No ## Rules ## Market Context Market Opened: Oct 27, 2025, 12:00 PM ET Resolver Outcome proposed: Yes No dispute Final outcome: Yes ## Market Context Resolver ### Related Market icon Bitcoin all time high by December 31, 2026? Market icon Ethereum all time high by December 31, 2026? #...",
+      "score": 0.032713126,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "search_index": 1
+    },
+    {
+      "title": "Convert 1 btc_usdt to USDT | Converter | Binance",
+      "url": "https://www.binance.com/en-BH/convert/btc_usdt/USDT",
+      "content": "Binance Convert btc_usdt to USDT. Swap your to other currencies easily in one go! ### Community. ### Products. ### Business. ### Service. ### Support. ### Learn. Binance Bahrain B.S.C. (c) (Binance Bahrain) is licensed by the Central Bank of Bahrain (the CBB) as a category 4 Crypto-Asset Service Provider to operate a crypto-asset exchange (defined below as the \"Exchange\") in relation to Crypto Assets). The Central Bank of Bahrain has neither reviewed nor approved the listed crypto-assets.",
+      "score": 0.031618766,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Wealth Management Arena: Enjoy up to 29% annualized return, don't miss the new limited-time events every week (2025-11-26) | Binance Announcement on Binance Square",
+      "url": "https://www.binance.com/en/square/post/32897444404850",
+      "content": "# Binance Wealth Management Arena: Enjoy up to 29% annualized return, don't miss the new limited-time events every week (2025-11-26). Please stay tuned for more activities in the “Binance Wealth Management Arena” to earn profits through Binance's principal-protected cryptocurrency, ETH staking, SOL staking, dual currency investment, and more. * + **From November 21, 2025, 08:00 to November 28, 2025, 07:59 (UTC+8), eligible users who hold no less than 0.01 USDe for at least 24 hours,** **can enjoy an annualized return of 6%****.**. + **From November 24, 2025, 08:00 to December 9, 2025, 07:59 (UTC+8),** eligible users **who subscribe to** **ALLO Fixed Products****,** **BANK Fixed Products****,** **KITE Fixed Products****, and/or** **MET Fixed Products** **can enjoy a 200% exclusive annualized return for 7 days;**. + **From November 13, 2025, 18:00 to February 12, 2026, 07:59 (UTC+8), subscribe to** **XTZ Fixed Products** **to enjoy** up to 29% annualized return**;**. + **From November 3, 2025, 12:30 to December 2, 2025, 07:59 (UTC+8), eligible users** holding BFUSD **can enjoy the basic annual interest rate + an additional 5% annualized return reward.**. + **Starting from Septembe...",
+      "score": 0.025371313,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Binance Announcement's Profile",
+      "url": "https://www.binance.com/en-IN/square/profile/binance_announcement",
+      "content": "PNUTUSDT, HBARUSDT, AIXBTUSDT, AI16ZUSDT, WLDUSDT and NEIROUSDTParticipants must meet the minimum aforementioned trading volumes to unlock a spin in each respective challenge.Each challenge can only be completed once by each participant every 24 hours. After each completion of the specific challenge, it will be refreshed again every 24 hours for the user to re-attempt by clicking the “Do it” button. The specific refreshing time is based on the challenge completion. For example, if a user’s qualified transaction is completed at 2025-01-22 10:00 (UTC), then it will refresh after 2025-01-23 10:00 (UTC). Rewards distribution: All token voucher rewards will be distributed within a few hours after the spin, except for SHIB. Users will be able to log in and click on “History” below the spin [...] PNUTUSDT, HBARUSDT, AIXBTUSDT, AI16ZUSDT, WLDUSDT and NEIROUSDTParticipants must meet the minimum aforementioned trading volumes to unlock a spin in each respective challenge.Each challenge can only be completed once by each participant every 24 hours. After each completion of the specific challenge, it will be refreshed again every 24 hours for the user to re-attempt by clicking the “Do it” b...",
+      "score": 0.008610767,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Binance will delist FLM, KDA, PERP (2025-11-12)",
+      "url": "https://www.binance.com/en/square/post/31649624816297",
+      "content": "Cookie Policy Allow All ### Manage Consent Preferences #### Strictly Necessary Cookies Always Active These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information. Cookies Details‎ #### Functional Cookies - [x] Functional Cookies [...] ## Binance Funding Rate Arbitrage Bot Starting from November 4, 2025, at 17:00 (UTC+8), the Binance funding rate arbitrage bot will close all arbitrage strategies for the above token trading pairs and perform automatic settlement. These trading pairs will no longer be available for opening new arbitrage strategies after delisting. ## Binance Earn Tokens Binance principal protection Earn Tokens will be delisted for the above tokens on November 5, 2025, at 11:00 (UTC+8). Users can choose to redeem the above tokens from the Earn flexible and fixed products in adva...",
+      "score": 0.008511303,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Binance will delist FLM, KDA, PERP (2025-11-12) | Binance Announcement on Binance Square",
+      "url": "https://www.binance.com/en-IN/square/post/31649624816297",
+      "content": "Based on the above factors, we have decided to stop trading and delist the following tokens on November 12, 2025, at 11:00 (UTC+8): Flamingo (FLM) Kadena (KDA) Perpetual Protocol (PERP) Note: The delisting schedule may or may not apply to the following products, depending on their relevance to the delisted tokens; There may be differences between the English original announcement and the translated version. If there are any discrepancies, please refer to the English original for the latest or most accurate information. ## Spot [...] ## Binance Payment Binance Payment will delist the above tokens on November 4, 2025, at 11:00 (UTC+8). Thank you for your long-term support and love for Binance. We will continue to build a blockchain ecosystem in an open, transparent, and sustainable manner. Thank you for your support of Binance! Binance Team October 29, 2025 Note: This announcement has been updated on October 29, 2025, modifying the delisting date for Binance Instant Exchange. Disclaimer: Includes third-party opinions. No financial advice. May include sponsored content. See T&Cs. 23 304 114.3k View 40 replies [...] ## Binance Funding Rate Arbitrage Bot Starting from November 4, 202...",
+      "score": 0.0035936027,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "Hadiqa Crypto Master's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/square-creator-70bb68e06bf7",
+      "content": "Discover the latest opinions posted by Hadiqa Crypto Master. View their full profile on Binance Square (formerly Binance Feed).",
+      "score": 0.0008710656,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    },
+    {
+      "title": "yassine aghoulid 's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/square-creator-6b3b988fc461",
+      "content": "It reviews its current price of $0.98 and its recent low, as well as highlighting market volatility and the importance of conducting thorough research before",
+      "score": 0.00051829213,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m candle November 26 12:00 ET close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:binance.com BTC_USDT 1m Candles November 26 17:00 UTC close",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance API klines BTCUSDT interval=1m November 26 17:00 UTC close price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

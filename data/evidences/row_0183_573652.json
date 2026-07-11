@@ -1,0 +1,305 @@
+{
+  "row_index": 183,
+  "market_id": "573652",
+  "slug": "will-bitcoin-hit-150k-by-september-30",
+  "question": "Will Bitcoin hit $150k by September 30?",
+  "event_title": "When will Bitcoin hit $150k?",
+  "end_date_limit": "2025-10-01",
+  "row_end_date_raw": "2025-10-01",
+  "expanded_queries": [
+    "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+    "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+    "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] `import os from binance.client import Client import pandas as pd import datetime, time def GetHistoricalData(self, howLong): self.howLong = howLong # Calculate the timestamps for the binance api function self.untilThisDate = datetime.datetime.now() self.sinceThisDate = self.untilThisDate - datetime.timedelta(days = self.howLong) # Execute the query from binance - timestamps must be converted to strings ! self.candle...",
+      "score": 0.9996898,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "BINANCE:BTCUSDT.P - Bitcoin - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT.P/ideas/?sort=recent&video=yes",
+      "content": "will be: 71,000, 70,500 and 70,000. Bullish targets: 71,700, 72,200, 72,700, 73,200, 73,700 and 74,200. [...] by Mike-BTD [...] by Ninja\\_Muto",
+      "score": 0.99967504,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "BTCUSD UM Futures Contract (Sep 2026) Trade Ideas - TradingView",
+      "url": "https://www.tradingview.com/symbols/OKX-BTCUSDUSD1%21/ideas/?contract=BTCUSDUSD25U2026",
+      "content": "a potential institutional \"re-test\" of the breakout zone. My view is that the market is baiting retail to go long at the top; I prefer to see a confirmed \"SFP\" (Swing Failure Pattern) or a successful back-test of the $71,500 level before committing to the next leg of price discovery. My Trade Plan 🎯 Bias: Bullish (with extreme patience). Entry Protocol: I am looking for a Value Area Flip. Specifically, a H4 candle close above $73,500 followed by a \"retest and reject\" of the former resistance (now support) at $73,000. Alternatively, if the market rejects here, I will wait for a mean-reversion entry at the VWAP/POC confluence near $68,500 to catch the bounce from the value floor. [...] reveals a dense High Volume Node (HVN) and the Point of Control (POC) centered around $67,285 📉. This \"Value\" area is where the market has found its most significant agreement. The current price action is oscillating just above this level, using the VWAP as a dynamic support floor. As long as we hold acceptance above this $67k value cluster, the auction remains skewed toward the buyers. We are currently trading in the upper quadrant of the immediate weekly range, testing the resolve of the $70,000 p...",
+      "score": 0.9995592,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "# Binance API credentials 'your_api_key' 'your_api_secret' # Define the symbol for BTC/USDT pair 'BTCUSDT' # Define custom start and end time 2024 3 15 0 0 0 2024 6 15 0 0 0 str str # Convert the data into a pandas dataframe for easier manipulation 'Open Time' 'Open' 'High' 'Low' 'Close' 'Volume' 'Close Time' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote Asset Volume' 'Ignore' 'Open' 'High' 'Low' 'Close' 'Volume' 'Quote Asset Volume' 'Number of Trades' 'Taker Buy Base Asset Volume' 'Taker Buy Quote Asset Volume' for in float ``` [...] from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, column...",
+      "score": 0.99954873,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT09F2026 Markets: Exchanges & Key Data - TradingView",
+      "url": "https://www.tradingview.com/symbols/HTX-BTCUSDT1!/markets/?contract=BTCUSDT09F2026",
+      "content": "| BTCUSDT27H2026\")Bitcoin / TetherUS (Mar 2026)\") | Binance | 70,406.2 USDT | −1.38% | 18.5 M | +14.37% | 71,479.1 USDT | 70,246.7 USDT | 46 | Sell | | BTCUSDCBitcoin / USD Coin | KuCoin | 70,332.3 USDC | −1.38% | 17.67 M | −30.92% | 71,410.0 USDC | 70,185.3 USDC | 34 | Sell | | BTCUSDT.5SBTC5xShort/Tether | Gate | 3.638 USDT | +7.19% | 15.59 M | −11.32% | 3.670 USDT | 3.365 USDT | 790.85 K | Sell | | BTCUSDTBITCOIN / TETHER | CoinEx | 70,345 USDT | −1.38% | 15.46 M | −7.65% | 71,413 USDT | 70,200 USDT | 27 | Sell | | BTCUSDBitcoin / U.S. Dollar | Gemini | 70,301.41 USD | −1.40% | 15.12 M | −8.83% | 71,407.40 USD | 70,171.92 USD | 42 | Sell | | BTCRLUSDBTCRL / U.S. Dollar | Gemini | 70,301.410000 USD | −1.40% | 15.12 M | −8.11% | 71,407.400000 USD | 70,171.920000 USD | 42 | Sell | [...] | Symbol | Exchange | Price | Change % | Volume 24h | Vol Change % 24h | High | Low | Volume | Tech Rating | --- --- --- --- --- | | BTCUSD.PBitcoin / U.S. dollar INVERSE FUTURES CONTRACT | BITUNIX | 70,299.8 USD | −1.37% | 9.35 T | −15.15% | 71,386.0 USD | 70,134.6 USD | 11.27 M | Sell | | BTCUSDT.PBitcoin / TetherUS PERPETUAL CONTRACT | Binance | 70,306.7 USDT | −1.39% | 11.48 B | −18.75% | 71,...",
+      "score": 0.99937373,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API - Kaggle",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024/versions/20",
+      "content": "2018-02-18 11039.55 11274.0 10080.0 10383.43 61137.380728 2018-02-18 23:59:59.999 649423311.3100228 537534 29593.863774 2018-02-19 10375.01 11250.0 10270.33 11153.0 40831.417131 2018-02-19 23:59:59.999 443766562.68306607 366882 20619.877129 [...] Open time: The timestamp for when the interval began. Open: The price of Bitcoin at the beginning of the interval. High: The highest price during the interval. Low: The lowest price during the interval. Close: The price of Bitcoin at the end of the interval. Volume: The trading volume during the interval. Close time: The timestamp for when the interval closed. Quote asset volume: The total quote asset volume traded during the interval. Number of trades: The number of trades executed within the interval. Taker buy base asset volume: The volume of the base asset bought by takers. Taker buy quote asset volume: The volume of the quote asset spent by takers. Ignore: A placeholder column from Binance API, not used in analysis. ## Data Sources [...] ## Dataset Overview This dataset contains historical price data for Bitcoin (BTC/USDT) from January 1, 2018, to the present. The data is sourced using the Binance API, providing granular candlestic...",
+      "score": 0.9992848,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "Retrieving Full Historical Data for Every Cryptocurrency on Binance ...",
+      "url": "https://betterprogramming.pub/easiest-way-to-use-the-bitmex-api-with-python-fbf66dc38633",
+      "content": "I’ve recently been investigating the relationship between data science and the cryptocurrency market for a pretty long article I’m writing. During the process, I needed to retrieve price history and other data, so I decided to write a supplementary piece about how I accomplished that. I hope you find it useful. Make sure to follow me if you enjoy this piece and want to see more! ## TL;DR To retrieve Bitcoin prices and data (1m klines): 1. Sign-up on Binance and/or BitMex to get API access. 2. Import the functions I’ve created for easy-of-use and add your API details. 3. a. Call the function: get\\_all\\_binance(“BTCUSDT”, “1m”, save = True) b. Call the function: get\\_all\\_bitmex(“XBTUSD”, “1m”, save = True) ### Example use: Press enter or click to view image in full size",
+      "score": 0.99899167,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT Markets: Exchanges & Key Data - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/markets/",
+      "content": "| BTCUSDT26M2026\")Bitcoin / TetherUS (Jun 2026)\") | Binance | 72,055.9 USDT | +1.55% | 15.55 M | −10.62% | 72,109.5 USDT | 70,820.0 USDT | 121 | Buy | | BTCUSD24J2026\")BTC Futures Contract (Apr 2026)\") | Deribit | 71,802.5 USD | +1.12% | 15.09 M | +37.40% | 71,802.5 USD | 70,875.0 USD | 4.41 M | Buy | | BTCRLUSDBTCRL / U.S. Dollar | Gemini | 71,706.500000 USD | +1.68% | 14.96 M | −17.53% | 71,719.770000 USD | 70,382.180000 USD | 72 | Buy | | BTCUSDBitcoin / U.S. Dollar | Gemini | 71,687.96 USD | +1.65% | 14.96 M | −17.54% | 71,719.77 USD | 70,382.18 USD | 72 | Buy | | BTCUSDCBTCU / SDC | Gemini | 71,687.960000 USDC | +1.65% | 14.96 M | −17.54% | 71,719.770000 USDC | 70,382.180000 USDC | 72 | Buy | [...] | BTCUSDT.3SBTC3xShort/Tether | Gate | 0.09057 USDT | −4.95% | 9.73 M | +20.43% | 0.09578 USDT | 0.09057 USDT | 43.46 M | Sell | | BTCUSD26M2026\")BTCUSD CM Futures Contract (Jun 2026)\") | OKX | 72,072.0 USD | +1.59% | 9.08 M | +17.99% | 72,087.9 USD | 70,789.2 USD | 4.28 M | Buy | | BTCUSDCBTC / USDC Spot Trading Pair | Phemex | 71,698.72 USDC | +1.62% | 8.91 M | −11.09% | 71,751.21 USDC | 70,367.06 USDC | 44 | Buy | | BTCTHBBitcoin | Bitkub | 2,336,876.44 THB | +3.00% | 8.8 M |...",
+      "score": 0.9988213,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "Binance Historical Tick Data (1 second) for a specific date range and ...",
+      "url": "https://stackoverflow.com/questions/76933927/binance-historical-tick-data-1-second-for-a-specific-date-range-and-symbol",
+      "content": "Optimus Prime's user avatar ## 1 Answer 1 Binance provides some of its historical trading data on the `binance.vision` domain. Specifically, the 1 second klines for BTCUSDT pair can be found here: `binance.vision` Here's a sample bash script that downloads and unpacks the raw data for the whole month: `#!/bin/bash for i in $(seq -f \"%02g\" 1 31) # zero-padded days 01, 02, 03, ... 31 do # month of july 2023, day number is the `i` variable archiveName=\"BTCUSDT-1s-2023-07-${i}.zip\" # download the .zip, extract it (saves .csv), and remove the .zip wget \" && unzip \"./${archiveName}\" && rm \"./${archiveName}\" done` As mentioned in their GitHub readme, each of the the `.csv` lines contains the following field values: `.csv` [...] `.csv` | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | So for example, the file `BTCUSDT-1s-2023-07-01.csv` containing this first line `BTCUSDT-1s-2023-07-01.csv` `1688169600000,30471.99000000,30472.00000000,30471.99000000,30472.00000000,0.54114000,1688169600999,16489.61790060,31,0.52320000,15942.95040000,0` enab...",
+      "score": 0.99832565,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "Get historical klines from binance api - GitHub",
+      "url": "https://github.com/maxgfr/binance-historical",
+      "content": "### Library ``` import{getKline, Kline} from'binance-historical'; const result Array< Kline> = await getKline('ETHUSDT', '4h', new Date('01-09-2020'), new Date('01-12-2021'),); console. log(result);// [// ...,// {// openTime: 1579953600000,// open: '159.30000000',// high: '161.00000000',// low: '158.70000000',// close: '160.41000000',// volume: '25015.67605000',// closeTime: 1579967999999,// quoteAssetVolume: '4001959.95527980',// trades: 14330,// takerBaseAssetVolume: '13000.12296000',// takerQuoteAssetVolume: '2079824.44045350',// ignored: '0'// },// ...// ] ``` ## About Get historical klines from binance api ### Topics [...] #### CLI Options | Option | Alias | Description | --- | `--pair` | `-p` | Trading pair (e.g., BTCUSDT, ETHUSDT) | | `--interval` | `-i` | Kline interval (1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w) | | `--start` | `-s` | Start date (YYYY-MM-DD or ISO 8601) | | `--end` | `-e` | End date (YYYY-MM-DD or ISO 8601) | | `--output` | `-o` | Output directory path (filename is auto-generated) | | `--format` | `-f` | Output format (json or csv, default: json) | | `--help` | `-h` | Display help | | `--version` | `-V` | Display version | #### Hybrid mo...",
+      "score": 0.998259,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "This code fetches historical BTC/USD data from Binance API ...",
+      "url": "https://gist.github.com/kbagher/ec960cca454ec752887245cf4562d15f",
+      "content": "| import textwrap | | import pandas as pd | | import numpy as np | | import matplotlib.pyplot as plt | | import matplotlib.dates as mdates | | from mplfinance.original\\_flavor import candlestick\\_ohlc | | import requests | | import ta | | from reportlab.pdfgen import canvas | | | | | | def get\\_data(): | | # Fetch historical BTC/USD data from Binance API | | symbol = 'BTCUSDT' # Binance uses USDT instead of USD | | interval = '1d' # 1-day candlestick data | | url = f' | | response = requests.get(url) | | data = pd.DataFrame(response.json(), | | columns=['Open\\_time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close\\_time', | | 'Quote\\_asset\\_volume', | | 'Number\\_of\\_trades', 'Taker\\_buy\\_base\\_asset\\_volume', 'Taker\\_buy\\_quote\\_asset\\_volume', | | 'Ignore']) | [...] | plot\\_data(token\\_data) | | rec = create\\_recommendations(token\\_data) | | save\\_pdf(rec) | [...] Sign up for free to join this conversation on GitHub. Already have an account? Sign in to comment You can’t perform that action at this time.",
+      "score": 0.9973061,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin's Historical September Low May Already Be Priced In",
+      "url": "https://www.coindesk.com/markets/2025/09/12/bitcoin-s-historical-september-low-may-already-be-priced-in",
+      "content": "# Bitcoin's Historical September Low May Already Be Priced In ## Historical monthly patterns suggest early September could mark the bottom before Q4 momentum builds. Google BTCUSDT (TradingView) #### What to know: Historical data suggests that bitcoin BTC$70,509.66 has likely put in its September 2025 low, around $107,000 on the first of the month. Looking back to July 2024, a consistent pattern emerges where bitcoin tends to form a bottom for the month within the first 10 days of each month. The notable exceptions were February, June and August 2025, when the lows came later in the month, but even then, the market experienced a correction within those first 10 days before resuming its broader trend.",
+      "score": 0.9965166,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​",
+      "score": 0.99648935,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "1h - Binance Data Collection",
+      "url": "https://data.binance.vision/?prefix=data/futures/um/monthly/klines/BTCUSDT/1h/",
+      "content": "| Item | Size | Last Modified | --- | ../ | | | | BTCUSDT-1h-2026-02.zip.CHECKSUM | 0.1 kB | 2026-03-02T09:14:26.000Z | | BTCUSDT-1h-2026-02.zip | 34.3 kB | 2026-03-02T09:14:25.000Z | | BTCUSDT-1h-2026-01.zip.CHECKSUM | 0.1 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2026-01.zip | 37.3 kB | 2026-02-02T10:20:24.000Z | | BTCUSDT-1h-2025-12.zip.CHECKSUM | 0.1 kB | 2026-01-02T10:44:36.000Z | | BTCUSDT-1h-2025-12.zip | 37.3 kB | 2026-01-02T10:44:36.000Z | | BTCUSDT-1h-2025-11.zip.CHECKSUM | 0.1 kB | 2025-12-02T09:35:27.000Z | | BTCUSDT-1h-2025-11.zip | 36.7 kB | 2025-12-02T09:35:27.000Z | | BTCUSDT-1h-2025-10.zip.CHECKSUM | 0.1 kB | 2025-11-02T09:50:43.000Z | | BTCUSDT-1h-2025-10.zip | 38.0 kB | 2025-11-02T09:50:43.000Z | [...] | BTCUSDT-1h-2025-09.zip.CHECKSUM | 0.1 kB | 2025-10-02T09:11:51.000Z | | BTCUSDT-1h-2025-09.zip | 36.2 kB | 2025-10-02T09:11:51.000Z | | BTCUSDT-1h-2025-08.zip.CHECKSUM | 0.1 kB | 2025-09-02T11:16:31.000Z | | BTCUSDT-1h-2025-08.zip | 37.7 kB | 2025-09-02T11:16:31.000Z | | BTCUSDT-1h-2025-07.zip.CHECKSUM | 0.1 kB | 2025-08-02T08:58:24.000Z | | BTCUSDT-1h-2025-07.zip | 37.5 kB | 2025-08-02T08:58:24.000Z | | BTCUSDT-1h-2025-06.zip.CHECKSUM | 0.1 kB | 2025-07-17...",
+      "score": 0.99553156,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Data - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "- Symbol - The symbol for which the timeseries data refers - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is the closing price of the time period - Volume (Crypto) - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Volume Base Ccy - This is the volume in the base/converted ccy. Ie. For BTC/USDT, this is in USDT amount - Trade Count - This is the unique number of trades for the given time period [...] - High - This is the highest price of the tick period - Low - This is the lowest price of the tick period - Close - This is the closing price of the tick period (last transaction) - Volume - This is the volume in the transacted Ccy. Ie. For BTC/USDT, this is in BTC amount - Dollar Volume - This is the volume in USD(T) - Tick Size - Tick count of the OHLC window ETHUSDT Tick Sizes - SAMPLES: 610 1500 4500 Upgrade to access full resource files [...] - Open - This is the opening price of the time period - High - This is the highest price of the time period - Low - This is the lowest price of the time period - Close - This is...",
+      "score": 0.9954261,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "search_index": 1
+    },
+    {
+      "title": "BTCUSDT.P Charts and Quotes - Bitcoin - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT.P/",
+      "content": "Loss and $44 Billion Plans Image 87 U.Today Bitcoin's Rally to $71,000 Validates Cramer's 'Bulls Rule' Call Amid $801 Million Crypto Liquidations Image 88 Invezz Bitcoin surges past $71K as President Trump pauses Iran strikes [...] # BTCUSDT.P Charts and Quotes — TradingView Skip to main content Full chart ‪27.17 K‬ BTC Previous close 70,865.9 USDT Open 70,866.0 USDT Day's range 70,075.5— 71,080.0 USDT ## Community forum Image 16 MakeMoneyWithAi Image 17Image 18BTCUSDT did you miss me? I know you did 🤑. Since the admins do not allow me to criticize Image 19Image 20BTCUSDT, I will refer to it as «a great success» 😎. Analyzing the price action shows that Image 21Image 22BTCUSDT should continue «only up from here» 🥰 4 24 24 Image 23 Calistheneks [...] Image 53 Image 54 NewsBTC Strategy Discloses $42 Billion Fundraising Plan To Hit 1 Million Bitcoin Target By End Of 2026 Image 55 The Block Digital asset manager ParaFi raises $125 million for new venture fund: Bloomberg Image 56 NewsBTC Bitcoin HODLers Quietly Add 332,000 BTC Amid Market Chaos Image 57 NewsBTC Bitcoin Price Bounce Weakens, Recovery at Risk of Fading Again Image 58 NewsBTC Bitcoin At $76,000 Was A Fluke: Here’s What T...",
+      "score": 0.9953904,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "#btcprediction Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-IN/square/hashtag/btcprediction",
+      "content": "$BTC ​BTC/USDT Technical Snapshot ​Current Price: $73,799.99, maintaining a strong daily gain of +3.39%. ​The Trend: Bitcoin is in a constructive consolidation phase on the 15-minute chart. After a temporary pullback from the high of $74,451.03, it is currently re-testing this upper resistance level. ​Support: It has solid support established at $71,263.99 (the 24h Low) and the crucial psychological level of $70,000, where the MA(99) line is currently providing dynamic support. ​Analysis: The Road to 80k ​The path to $80,000 for Bitcoin looks increasingly plausible if specific conditions are met: ​Immediate Resistance: The first goal is a clean breakout above the previous high of $74,451. Flipping this resistance area into support is essential for sustainable growth. [...] $BTC ​BTC/USDT Technical Snapshot ​Current Price: $73,799.99, maintaining a strong daily gain of +3.39%. ​The Trend: Bitcoin is in a constructive consolidation phase on the 15-minute chart. After a temporary pullback from the high of $74,451.03, it is currently re-testing this upper resistance level. ​Support: It has solid support established at $71,263.99 (the 24h Low) and the crucial psychological level of $...",
+      "score": 0.9953544,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "BTCUSDT26M2026 Markets: Exchanges & Key Data",
+      "url": "https://www.tradingview.com/symbols/XTCOM-BTCUSDT1!/markets/",
+      "content": "| Symbol | Exchange | Price | Change % | Volume 24h | Vol Change % 24h | High | Low | Volume | Tech Rating | --- --- --- --- --- | | BTCUSD.PBitcoin / U.S. dollar INVERSE FUTURES CONTRACT | BITUNIX | 70,676.3 USD | −0.84% | 9.29 T | −14.86% | 71,386.0 USD | 70,616.1 USD | 7.67 M | Neutral | | BTCUSDT.PBitcoin / TetherUS PERPETUAL CONTRACT | Binance | 70,717.0 USDT | −0.81% | 11.43 B | −18.00% | 71,408.1 USDT | 70,640.0 USDT | 18.15 K | Neutral | | BTCUSDT.PBTC/USD PERPETUAL SWAP CONTRACT | CoinW | 70,717.1 USDT | −0.81% | 7.89 B | −11.11% | 71,404.4 USDT | 70,642.3 USDT | 14.5 K | Neutral | | BTCUSDT.PBTCUSDT Perpetual Swap Contract | OKX | 70,724.5 USDT | −0.82% | 6.74 B | −13.46% | 71,416.7 USDT | 70,650.0 USDT | 815 M | Neutral | [...] | BTCUSDT26M2026\")Bitcoin / TetherUS (Jun 2026)\") | Binance | 71,050.5 USDT | −0.86% | 22.43 M | +85.57% | 71,793.6 USDT | 70,974.9 USDT | 41 | Neutral | | BTCUSDBitcoin / Dollar | Bitfinex | 70,726.0 USD | −0.82% | 21.94 M | −79.97% | 71,415.0 USD | 70,598.0 USD | 104 | Neutral | | BTCEURBitcoin / Euro | Binance | 61,124.83 EUR | −0.91% | 21.47 M | −22.57% | 61,794.97 EUR | 61,091.33 EUR | 27 | Neutral | | BTCUSDBitcoin/USD | OKX | 70,758.3 US...",
+      "score": 0.9946568,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "71280.04 | BTC USDT | Bitcoin to USDT – Binance Spot",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 0.00767 550.091172 71,719.71 0.00008 5.737576 B 96.13% 3.86% S Chart Info Trading Data Square Image 3: ai-insight Time 1s 15m 1H 4H 1D 1W Original Trading View Depth 2026/03/25 Open 70,556.74 High 72,026.09 Low 70,408.00 Close 71,726.07 CHANGE 1.65%Range 2.29% Image 4: img # BTC/USDT Bitcoin Price 71,711.17 $ 71,711.17 24h Chg 597.86 +0.84% 24h High 72,026.09 24h Low 68,923.07 24h Vol(BTC) 20,935.17 24h Vol(USDT) 1,474,832,511.37 Networks BTC (5) Token Tags POW Payments Vol Hot Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount BTC TP/SL Avbl - USDT Max Buy -- BTC Log In Price USDT BBO Amount BTC TP/SL Avbl [...] Log In Price USDT BBO Amount BTC TP/SL Avbl - BTC Max Sell -- USDT Log In Market Trades My Trades Price (USDT) Amount (BTC) Time 71,721.29 0.00018 12:01:02 71,720.55 0.00117 12:01:02 71,720.55 0.00015 12:01:02 71,720.50 0.00085 12:01:02 71,720.49 0.00328 12:01:02 71,720.49 0.00990 12:01:02 71,720.49 0.08030 12:01:02 71,720.50 0.00035 12:01:02 71,720.49 0.00068 12:01:02 71,720.49 0.00102 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.00103 12:01:02 71,720.49 0.04008 12:01:02 71,720...",
+      "score": 0.99453074,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "BTC USD — Bitcoin Price and Chart - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSD/",
+      "content": "Image 45: BINANCE:BTCUSD NewsBTC Analyst Who Predicted Bitcoin $125,000 Top Reveals What To Expect Next Image 46: BINANCE:BTCUSD Invezz BTC holds near $71K: are there signs of a breakthrough ahead? Image 47: BINANCE:BTCUSD Cointelegraph Bitcoin pinned under $72K as four network metrics show 'weaker demand' Image 48: BINANCE:BTCUSD Coinpedia Bitcoin Stabilizes Around $70K — What Will It Take for the BTC Price to Break Out? Image 49: BINANCE:BTCUSD Dow Jones Newswires Sign in to read exclusive news Image 50: BINANCE:BTCUSD Coinpedia Bitcoin Price Drops Despite Low Miner Selling, Demand Crisis Deepens Image 51: BINANCE:BTCUSD The Block Bitcoin consolidation points to potential market bottom as selling pressure wanes, K33 says Image 52: BINANCE:BTCUSD NewsBTC Bitcoin Distribution Mechanism [...] Back $71,000 As US-Iran Truce Talks Shake Markets Image 67: BINANCE:BTCUSD Invezz How Irish police unlocked 500 Bitcoins once thought lost forever Image 68: BINANCE:BTCUSD NewsBTC Bitcoin Is Officially In A Bear Market And Is Headed Below $30,000, Analyst Warns Image 69: BINANCE:BTCUSD U.Today Bitcoin Should Be $280,000: Real Estate Mogul Grant Cardone Image 70: BINANCE:BTCUSD Invezz Bitcoin...",
+      "score": 0.99444515,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "BTC USDT | Bitcoin to USDT",
+      "url": "https://www.binance.com/en/trade/BTC_USDT",
+      "content": "0.01016 728.674895 71,719.96 0.01401 1.00K 71,719.84 0.00767 550.091172 71,719.71 0.00008 5.737576 B 96.13% 3.86% S Chart Info Trading Data Square Image 3: ai-insight Time 1s 15m 1H 4H 1D 1W Original Trading View Depth 2026/03/25 Open 70,556.74 High 72,026.09 Low 70,408.00 Close 71,726.07 CHANGE 1.65%Range 2.29% Image 4: img # BTC/USDT Bitcoin Price 71,711.17 $ 71,711.17 24h Chg 597.86 +0.84% 24h High 72,026.09 24h Low 68,923.07 24h Vol(BTC) 20,935.17 24h Vol(USDT) 1,474,832,511.37 Networks BTC (5) Token Tags POW Payments Vol Hot Price Protection Spot Cross Isolated Grid Limit Market Stop Limit Price USDT BBO Amount BTC TP/SL Avbl - USDT Max Buy -- BTC Log In Price USDT BBO Amount BTC TP/SL Avbl [...] 1000CHEEMS/USDT 5x 0.000505 +7.22% 1000SATS/USDT 5x 0.00001152 +1.86% 1INCH/USDT 5x 0.0974 +2.31% 1MBABYDOGE/USDT 5x 0.0004215 +1.62% 2Z/USDT 5x 0.07598 +0.34% A2Z/USDT 0.000344 -23.04% AAVE/USDT 5x 115.59 +4.54% ACE/USDT 5x 0.130 +1.56% ACH/USDT 5x 0.00675 -0.74% ACM/USDT 5x 0.414 -0.24% ACT/USDT 5x 0.0138 +0.00% ACX/USDT 5x 0.0426 +1.91% Top MoversFAQ All Change New High/Low Fluctuation Volume NTRN/USDT 12:00:19 +11.90% RallyBANANAS31/USDT 12:00:19 -8.87% PullbackC/USDT 12:00:19...",
+      "score": 0.9916196,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "#helpcryptonight Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-NG/square/hashtag/helpcryptonight",
+      "content": "BTC/USDT – هل يستعد البيتكوين لاختراق $87,000؟. $BTC 84,521.00 USDT (-0.98%) منطقة الدخول: $83,500 - $84,800",
+      "score": 0.9912209,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin / Tether Price Chart — BTCUSDT - TradingView",
+      "url": "https://www.tradingview.com/symbols/BTCUSDT/",
+      "content": "The safest choice when buying BTCis to go to a well-known crypto exchange. Some of the popular names are Binance, Coinbase, Kraken. But you'll have to find a reliable broker and create an account first. You can trade BTCright from TradingView charts — just choose a broker and connect to your account. [...] Crypto markets are famous for their volatility, so one should study all the available stats before adding crypto assets to their portfolio. Very often it's technical analysis that comes in handy. We prepared technical ratings for Bitcoin / TetherUS (BTC): today its technical analysis shows the neutral signal, and according to the 1 week rating BTC shows the sell signal. And you'd better dig deeper and study 1 month rating too — it's neutral. Find inspiration in Bitcoin / TetherUS trading ideas and keep track of what's moving crypto markets with our crypto news feed. [...] Bitcoin / TetherUSprice has fallen by −6.59% over the last week, its month performance shows a 2.91% increase, and as for the last year, Bitcoin / TetherUShas decreased by −19.32%. See more dynamics on BTC price chart. Keep track of coins' changes with our Crypto Coins Heatmap. Bitcoin / TetherUS(BTC) reached...",
+      "score": 0.99066,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "search_index": 3
+    },
+    {
+      "title": "#btcminingdifficultydrop Community Insights & Market ...",
+      "url": "https://www.binance.com/en/square/hashtag/BTCMiningDifficultyDrop",
+      "content": "$BTC $66,988 may recover from its ongoing slump and reach $150,000 by the year's end, according to a recent Bernstein outlook. ... September -",
+      "score": 0.98087597,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "#bitcointo150k Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-NG/square/hashtag/bitcointo150k",
+      "content": "BITCOIN to $150,000 CONFIRMED?! Read This: After a clean 8% leverage flush, Bitcoin is now anchoring in what analysts call a new “high value",
+      "score": 0.937669,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "#btcpriceprediction Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en-IN/square/hashtag/btcpriceprediction",
+      "content": "Conclusion Bitcoin’s 22% rebound from $60K lows demonstrates how institutional ETF inflows and strong support levels influence price direction. If BTC maintains momentum and breaks $74K resistance with high volume, $79K could become the next major milestone. Investors should monitor support/resistance levels, volume trends, and market sentiment for potential opportunities #CryptoInvesting #CryptoMarket #CryptoNews #Binance #BTCPricePrediction $BTC {spot}(BTCUSDT) [...] 86,663 views 216 Discussing 🚨 BTC Bull Trap! $74K → $29K Next Week? The chart nailed the $BTC bull trap at $74,000. Now, a major drop to $29K could be coming soon. Are you ready to protect your crypto or profit from this move? 💸 #BTC #Bitcoin #CryptoAlert #BTCPricePrediction #BinanceSquare $DOGE {spot}(DOGEUSDT) {spot}(BTCUSDT) $XRP {spot}(XRPUSDT) 🚨 BTC Bull Trap! $74K → $29K Next Week? The chart nailed the $BTC bull trap at $74,000. Now, a major drop to $29K could be coming soon. Are you ready to protect your crypto or profit from this move? 💸 #BTC#Bitcoin#CryptoAlert#BTCPricePrediction #BinanceSquare $DOGE $XRP View More BTC+0.05%DOGE-1.08%XRP-0.75% Itachi-\\_-Uchiha · 16 Mar Follow Report Block User [...] If BT...",
+      "score": 0.8539127,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "#cryptonews2026 Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/CryptoNews2026",
+      "content": "The Data Perspective Understanding the 68k doller Support Currently, Bitcoin is sitting on a \"Critical Support\" zone. Technical analysts point to the 200-day Moving Average, which is hovering right around 67,500. As long as Bitcoin stays above this mark, the \"Bull Market\" structure remains intact. The \"falling\" sensation users feel is actually a Healthy Correction. In every previous cycle, Bitcoin has retraced 20-30% before making a new all-time high. Where Will Bitcoin Be by December 2026? The million-dollar question: Is the dream of 100k dead? Absolutely not. Here are two likely scenarios for the end of the year: Scenario A: The Bullish Recovery (110,000 - 135,000) [...] The Data Perspective Understanding the 68k doller Support Currently, Bitcoin is sitting on a \"Critical Support\" zone. Technical analysts point to the 200-day Moving Average, which is hovering right around 67,500. As long as Bitcoin stays above this mark, the \"Bull Market\" structure remains intact. The \"falling\" sensation users feel is actually a Healthy Correction. In every previous cycle, Bitcoin has retraced 20-30% before making a new all-time high. Where Will Bitcoin Be by December 2026? The million-dollar...",
+      "score": 0.7185944,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "#cpi_btc_watch Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/CPI_BTC_Watch",
+      "content": "Attention all crypto traders! Don’t miss this incredible opportunity to capitalize on $EIGEN /USDT, $DOGE /USDT, and $XRP /USDT—three coins with high potential for massive profits in just a few days! These tokens are currently exhibiting strong market momentum and significant volatility, setting the stage for a major breakout or recovery. • EIGEN is trading at $4.349, showing impressive growth over the last month with nearly 38% gains. It’s approaching critical levels that could lead to sharp upward movements. • DOGE, currently at $0.38807, has gained 4% in the past hour alone. Despite a recent dip, its 90-day performance of 278% highlights its bullish potential. [...] Attention all crypto traders! Don’t miss this incredible opportunity to capitalize on $EIGEN /USDT, $DOGE /USDT, and $XRP /USDT—three coins with high potential for massive profits in just a few days! These tokens are currently exhibiting strong market momentum and significant volatility, setting the stage for a major breakout or recovery. • EIGEN is trading at $4.349, showing impressive growth over the last month with nearly 38% gains. It’s approaching critical levels that could lead to sharp upward movements. • D...",
+      "score": 0.677474,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-predicti%256f%256e/bit%2563oi%256e",
+      "content": "| Month | Min Price | Average Price | Max Price | ROI | | | | | | | | Jan 1, 2028 | $111,779.53 | $131,216.35 | $150,653.17 | +112.94% | | Feb 1, 2028 | $113,051.17 | $132,487.99 | $151,924.81 | +114.73% | | Mar 1, 2028 | $114,322.81 | $133,759.63 | $153,196.45 | +116.53% | | Apr 1, 2028 | $115,594.45 | $135,031.27 | $154,468.09 | +118.33% | | May 1, 2028 | $116,866.09 | $136,302.91 | $155,739.73 | +120.13% | | Jun 1, 2028 | $118,137.72 | $137,574.55 | $157,011.37 | +121.92% | | Jul 1, 2028 | $119,409.36 | $138,846.18 | $158,283 | +123.72% | | Aug 1, 2028 | $120,681 | $140,117.82 | $159,554.64 | +125.52% | | Sep 1, 2028 | $121,952.64 | $141,389.46 | $160,826.28 | +127.32% | | Oct 1, 2028 | $123,224.28 | $142,661.1 | $162,097.92 | +129.11% | [...] | Nov 1, 2035 | $231,313.58 | $250,750.4 | $270,187.22 | +281.89% | | Dec 1, 2035 | $232,585.22 | $252,022.04 | $271,458.86 | +283.69% | [...] | Month | Min Price | Average Price | Max Price | ROI | | | | | | | | Jan 1, 2040 | $294,895.53 | $314,332.35 | $333,769.17 | +371.76% | | Feb 1, 2040 | $296,167.16 | $315,603.98 | $335,040.81 | +373.56% | | Mar 1, 2040 | $297,438.8 | $316,875.62 | $336,312.44 | +375.35% | | Apr 1, 2040 | $298,71...",
+      "score": 0.57367843,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price | BTC Price Index, Live Chart and GBP ...",
+      "url": "https://www.binance.com/en-GB/price/bitcoin/BRL",
+      "content": "The live price of Bitcoin is $ 69,518.37 per (BTC / USD) with a current market cap of $ 1,390.58B USD. 24-hour trading volume is $ 36.44B USD.",
+      "score": 0.076407686,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance API BTCUSDT 1m klines historical Sep 30 2026 high 150000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:binance.com BTC_USDT 1m chart high 150000 Sep 30 2026",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "TradingView BTCUSDT (BINANCE) 1m historical price 150000 Sep 30 2026",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

@@ -1,0 +1,894 @@
+{
+  "row_index": 27,
+  "market_id": "forecastbench_2026_06_21_a10b6b87b12bcc7b63079a0f034a3eae7d8e871950571599a202b0029bc23355",
+  "slug": "",
+  "question": "Will there be more fatalities in New Zealand for the 30 days before 2026-06-28 compared to the 30-day average of fatalities over the 360 days preceding 2026-06-21? e.g. If the forecast due date is 2024-01-01 and we have the following data: Date,fatalities 2023-11-11,1 2023-10-10,2 to calculate the 30-day average of fatalities over the preceding 360 days, we’d have: (1+2)/12=0.25. In this example, for the question to resolve positively, 1 or more fatalities would need to occur in the 30 days leading up to the resolution. Resolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published. Background: ACLED classifies events into six distinct categories: 1. Battles: violent interactions between two organized armed groups at a particular time and location; 2. Protests: in-person public demonstrations of three or more participants in which the participants do not engage in violence, though violence may be used against them; 3. Riots: violent events where demonstrators or mobs of three or more engage in violent or destructive acts, including but not limited to physical fights, rock throwing, property destruction, etc.; 4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature, are at range and widely destructive; 5. Violence against civilians: violent events where an organized armed group inflicts violence upon unarmed non-combatants; and 6. Strategic developments: contextually important information regarding incidents and activities of groups that are not recorded as any of the other event types, yet may trigger future events or contribute to political dynamics within and across states. Detailed information about the categories can be found at: https://acleddata.com/knowledge-base/codebook/#acled-events",
+  "event_title": "Will there be more fatalities in New Zealand for the 30 days before 2026-06-28 compared to the 30-day average of fatalities over the 360 days preceding 2026-06-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,fatalities\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of fatalities over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more fatalities would need to occur in the 30 days leading up to the resolution.\n\nResolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published.\n\nBackground: ACLED classifies events into six distinct categories:\n\n1. Battles: violent interactions between two organized armed groups at a particular time and\n   location;\n2. Protests: in-person public demonstrations of three or more participants in which the participants\n   do not engage in violence, though violence may be used against them;\n3. Riots: violent events where demonstrators or mobs of three or more engage in violent or\n   destructive acts, including but not limited to physical fights, rock throwing, property\n   destruction, etc.;\n4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature,\n   are at range and widely destructive;\n5. Violence against civilians: violent events where an organized armed group inflicts violence upon\n   unarmed non-combatants; and\n6. Strategic developments: contextually important information regarding incidents and activities of\n   groups that are not recorded as any of the other event types, yet may trigger future events or\n   contribute to political dynamics within and across states.\n\nDetailed information about the categories can be found at:\nhttps://acleddata.com/knowledge-base/codebook/#acled-events",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
+  "end_date_limit": "2026-06-27",
+  "row_end_date_raw": "2026-06-28",
+  "expanded_queries": [
+    "ACLED codebook fatalities event type New Zealand official data methodology",
+    "ACLED New Zealand fatalities historical dataset comparable prior periods",
+    "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+    "ACLED New Zealand publication schedule data lag fatality count update cadence",
+    "ACLED New Zealand conflict fatalities expert analysis dataset methodology"
+  ],
+  "supplemental_query": null,
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 44,
+    "hard_quarantined_late_date_count": 2,
+    "llm_filter_input_count": 44,
+    "supplemental_search_triggered": false,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 35,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 9,
+    "llm_kept_count": 35,
+    "llm_kept_leak_no_count": 34,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "Main navigation User account menu User account menu Main navigation (drawer) # Fatalities Exploration of ACLED's methodology and considerations regarding fatality data in conflict contexts. Uses and limitations of ACLED data Published on: 27 February 2023 | Last updated:7 May 2024 Q. Does ACLED have a minimum fatality criterion for events? A. No – ACLED does not have a fatality threshold for an event’s inclusion in the dataset. This means that political violence and demonstration events in ACLED do not need to produce any fatalities in order to be included as valid events. No arbitrary number of deaths is used to define a conflict. Q. How does ACLED code fatalities? [...] ACLED analysis draws on a variety of different measures to understand conflict patterns. We use event types, locations of activity, changes in rates of violence and its volatility, new targets of violence and interactions, actor types and changes in modality of conflict, rates of conflict against the state and civilians, infighting amongst groups, etc. We encourage our users to take advantage of the full range of conflict metrics and patterns that can be discerned from the ACLED dataset using our curated datase...",
+      "score": 0.7938904,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "Armed Conflict Location & Event Data Project (ACLED) Codebook",
+      "url": "https://reliefweb.int/report/world/armed-conflict-location-event-data-project-acled-codebook-version-8-2017",
+      "content": "Introduction and Brief Description The ACLED project codes reported information on the type, agents, exact location, date, and other characteristics of political violence events, demonstrations and select politically relevant non-violent events. ACLED focuses on tracking a range of violent and non-violent actions by political agents, including governments, rebels, militias, communal groups, political parties, external actors, rioters, protesters and civilians. Data contain specific information on the date, location, group names, interaction type, event type, reported fatalities and contextual notes. ACLED concentrates on the following events: [...] Collecting information on rioting and protesting; and Non-violent ‘strategic developments’ representing crucial junctures in periods of political violence (e.g. rallies, recruitment drives, peace talks, high-level arrests). [...] Tracking rebel, militia and government activity over time and space; Recording violent acts between and across non-state groups, including political and communal militias; Recording political violence by unnamed agents, as violent groups may remain unnamed for strategic reasons Recording attacks on civilians...",
+      "score": 0.7440808,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "content": "ACLED Codebook 19 THE ARMED CONFLICT LOCATION & EVENT DATA PROJECT www.acleddata.com | admin@acleddata.com Strategic developments This event type captures contextually important information regarding incidents and activities of groups that are not recorded as ‘Political violence’ or ‘Demonstrations’ events, yet may trigger future events or contribute to political dynamics within and across states. The inclusion of such events is limited, as their purpose is to capture pivotal events within the broader political landscape. They typically include a disparate range of events, such as recruitment drives, looting, and incursions, as well as the location and date of peace talks and the arrests of high-ranking officials or large groups. While it is rare for fatalities to be reported as a result [...] Attack This sub-event type is used when civilians are targeted with violence by an organized armed actor outside the context of other forms of violence coded higher in the ACLED event type hierarchy. Attacks of a sexual nature are recorded as ‘Sexual violence’ (see above). Violence by law enforcement that constitutes severe government overreach is also recorded as an ‘Attack’ event. Abduct...",
+      "score": 0.7166357,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "content": "violent events in unstable and warring states. ACLED focuses on tracking a range of violent and non-violent actions by political agents, including governments, rebels, militias, communal groups, political parties, rioters, protesters and civilians. Data contain specific information on the date, location, group names, interaction type, event type, reported fatalities and contextual notes. ACLED differs from typical conflict event data by concentrating on the following events, which are human coded:  Tracking rebel, militia and government activity over time and space;  Recording violent acts between and across non-state groups, including political and communal militias;  Recording attacks on civilians by all politically violent agents;  Distinguishing between territorial transfers of [...] Events occur between designated actors – e.g. a named rebel group, a militia or a government.4 They occur at a specific named location (identified by name and geographic coordinates) and on a specific day. Coders work to ensure that the most specific location and time possible are recorded. ACLED currently codes for nine types of events, both violent and non-violent, that may occur during a...",
+      "score": 0.70944256,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "search_index": 1
+    },
+    {
+      "title": "Civilians in Conflict (Data) - Blog",
+      "url": "https://www.ecoi.net/en/blog/civilians-in-conflict-data",
+      "content": "No matter what conflict dataset you are working with, whether it is ACLED or UCDP’s Georeferenced Event Dataset(GED) or any other, it is important to be aware that data collection methodologies vary and thus lead to different outcomes. ACLED and UCDP, for instance, seemingly measure the same, i.e. conflict-related incidents, yet their figures on incidents and casualties consistently differ (Raleigh et al., 2023; Eck, 2012). Data collection practices, resulting datasets and their reliability and validity are significantly shaped by various decisions made by their creators (including decisions regarding conceptual, coding, and sourcing variations) (Raleigh et al., 2023, pp. 1-3). (More general information on how to deal with quantitative data in the context of COI research can be found in [...] In comparison, ACLED does not specifically itemise civilian deaths in its datasets, as ACLED provides only one variable in regard to fatalities, which encompasses all deaths caused by an event. On the basis of this variable alone, it is not possible to draw conclusions about the impact of an event on the lives of civilians. It is therefore necessary to make use of other variables provided b...",
+      "score": 0.6991933,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "Syria remains the most violent country covered by ACLED (see Table 2), and it is also the most dangerous country for civilians. Despite experiencing one of the greatest decreases in political violence events in 2019 (see Table 4), Syria still registered nearly 3,000 more political violence events than the next country, Ukraine. Syria is also among the deadliest countries in terms of total reported fatalities in 2019 (see Table 2). Likewise, the Syrian military is one of the top five most active armed groups, its engagements generate some of the highest fatality counts (see Table 5), and it is one of the top five actors in terms of increased activity rates (see Table 7). The QSD and JTW, two of the top five actors that geographically expanded their activity the most in 2019, are also [...] Both the term conflict and war refer to campaigns of events, rather than specific event types. The ‘war in Yemen’, for example, may include a variety of types of events — Battles, Explosions/Remote violence, and Violence against civilians. These categorizations will hence be denoted on the basis of the actors involved, the location of events (at the country or subnational level), and/or time pe...",
+      "score": 0.6914979,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "content": "# Conflict data ACLED is the highest-quality and most widely used near-real-time source on political violence and protest data worldwide. ## Register with us to access data Create your myACLED account to download our data and unlock even more features. Register now ## Knowledge Base The latest information and guides to best understand and use ACLED data. FAQs A selection of questions frequently asked by users of ACLED data. Methodology Documentation on ACLED’s methodology, including how ACLED sources and codes information on political violence and protest. Use and access guides General guides on how to use and access the latest ACLED data. Update log A running log of the latest changes in the ACLED dataset. Restricted page: CAST | Conflict Alert System [...] Restricted page: CAST | Conflict Alert System The ACLED Conflict Alert System (CAST) is a global prediction tool that forecasts the number of political violence events that will occur in each upcoming rolling-four-week period, for the next six periods, in every country around the world Restricted page: Explorer The ACLED Explorer allows you to filter and summarize data from the past year. Country profiles show data at the su...",
+      "score": 0.6889923,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "As ACLED records a wide range of constituent events for periods and areas affected by political violence and disorder, more information is collected than datasets that focus on specific forms of violence (e.g., civil war, terrorism as defined by targeting of civilians by non-state actors alone, or those with fatality thresholds for inclusion) or campaigns of violence rather than events. Please note that ACLED is a living dataset and event details are subject to change as new or better information becomes available. Results of analysis based on ACLED data may differ from analysis based on other datasets with different scopes and methodologies. [...] Events that result in fatalities have the relevant information recorded in the Fatalities column. Events recorded by ACLED do not have to meet a minimum fatality number for inclusion. ACLED only records estimated fatalities when reported by the source material. When and where possible, ACLED researchers seek out information to triangulate the fatality numbers reported by sources, but ACLED does not independently verify reported fatality estimates. Additionally, ACLED is a living dataset, so all fatality figures are revised and correct...",
+      "score": 0.6685563,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "When summarized fatalities are reported, but events occur across several days or in multiple locations simultaneously (e.g., “12 fatalities result from fighting over a span of 3 days”), the total number of reported fatalities is divided and that fraction is recorded for each day of the event (4 reported fatalities per battle day, in the example above). If an odd number of fatalities is recorded (including 1), the proportion of reported fatalities is divided by assigning the first day the additional fatality and it is then distributed as evenly as possible. The disaggregation of fatalities is recorded in the Notes column of the relevant events. ## Notes [...] Events that result in fatalities have the relevant information recorded in the Fatalities column. Events recorded by ACLED do not have to meet a minimum fatality number for inclusion. ACLED only records estimated fatalities when reported by the source material. When and where possible, ACLED researchers seek out information to triangulate the fatality numbers reported by sources, but ACLED does not independently verify reported fatality estimates. Additionally, ACLED is a living dataset, so all fatality figures are revised a...",
+      "score": 0.65861565,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "search_index": 1
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "Violence against civilians also includes attempts at inflicting harm (e.g., beating, shooting, torture, rape, mutilation, etc.) or forcibly disappearing (e.g., kidnapping and disappearances) civilian actors. Note that the Violence against civilians event type exclusively captures violence targeting civilians that does not occur concurrently with other forms of violence — such as rioting – that are coded higher in the ACLED event type hierarchy. To get a full list of events in the ACLED dataset where civilians were the main or only target of violence, users can filter on the Civilian targeting column (for more, see Civilian targeting). The following sub-event types are associated with the Violence against civilians event type: Sexual violence, Attack, and Abduction/forced disappearance. [...] 7: Civilians Civilians, in whatever number or association, are victims of violent acts within ACLED as they are — by definition — unarmed and, hence, vulnerable. They are noted as Civilians (Country). If targeted with violence in situations where they are caught unarmed, some normally armed actors may be recorded as civilians. Examples include off-duty state soldiers targeted in their homes,...",
+      "score": 0.65359193,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED's Conflict Exposure – One Measure to Describe a Conflict",
+      "url": "https://www.ecoi.net/en/blog/acled-conflict-exposure-one-measure-to-describe-a-conflict",
+      "content": "The introduction of this measure followed the addition of a new dataset variable called ‘civilian targeting’ in 2023. Both additions provide greater scope for analysing and interpreting ACLED data in terms of the impact of conflicts on civilians. As this aspect plays a central role in many COI products dealing with security-related topics, this methodological blog post is dedicated to the discussion of this new measure. This blog post is the first in a series of methodological blog posts that will generally address the question of How to best describe a conflict in the context of COI. [...] In the ACLED data, each incident is recorded with an exact geographic location. However, as the exact location is not known or reported for all incidents, the precision of geographic data in the ACLED data varies among incidents. In cases of incomplete geographic information, a town may be used to represent a region, or the provincial capital may be used when only the incident’s province is reported. ACLED records the precision level along with location data to reflect the fact that the precise location of the incident may not be known. For instance, a precision level of “3” means that the pr...",
+      "score": 0.6522641,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "content": "DATA SCIENCE & EARLY WARNING DATA SCIENCE & EARLY WARNING In 2022, ACLED will refine the Early Warning Research Hub tools by developing further assessments of specific conflicts and cases, as well as general guides to patterns of early warning. Some specific refinements include: Expanding on the impact of different conflict actors on the trajectory of violence more generally, and the populations involved. Previous research by the ACLED team has suggested that the impact of new armed, non-state actors into an ongoing conflict leads to an immediate increase in violence against civilians. This proj­ ect will further that type of inquiry by assessing things like: how many people are likely to be affected, which populations are likely targets, and how many locations will be new sites of [...] ACLED reached full global coverage in early 2022, publishing data on Canada, Oceania, Antarctica, and all remaining small states and territories. The expansion added a total of more than 30 new countries and ter­ ritories and more than 3,000 political violence and protest events to the dataset. This achievement was the culmination of over 10 years of work to expand the ACLED dataset from its ini...",
+      "score": 0.6512002,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] Conflict environments and coverage - Clingendael Institute",
+      "url": "https://www.clingendael.org/sites/default/files/2018-01/Report_Conflict_environments_and_coverage.pdf",
+      "content": "Nearly all media organisations have some element of bias in their coverage. However, ACLED’s data collection methodology is designed to mitigate the overall effect of this bias. ACLED collects information on the key facts of each event: when did an event occur, where did it occur, who was involved, and what occurred (based on our nine-event taxonomy). ACLED does not expect to be always able to obtain accurate information as to the identities of perpetrator and victim, with the exception of civilians (by virtue of their inability to defend themselves). ACLED’s focus on events of political violence and protest further means that criminal violence is excluded, with specific guidelines defined in the methodology and external codebook to differentiate between these two types of violence. [...] By contrast, ACLED constitutes the largest public collection of political violence and protest data for African countries, including Tunisia.22 The dataset includes events from 1997 to the present, and are disaggregated by type, date, the actors involved, location and the number of fatalities.23 ACLED records public and collective manifestations of protest (such as demonstrations or sit-ins) as...",
+      "score": 0.63615024,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "Armed Conflict Location and Event Data - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armed_Conflict_Location_and_Event_Data",
+      "content": "Armed Conflict Location & Event Data (abbreviated ACLED) is a non-profit organization registered in the United States that specializes in the real-time collection, analysis, and mapping of data on political violence and protest events around the world. It was founded in 2005 as a research initiative by political scientist Clionadh Raleigh. The organization codes information on events such as armed clashes, demonstrations, riots, and strategic developments, including the date, location, actors, fatalities, and event type. As of 2022, the dataset includes more than 1.3 million recorded events and offers updates through a global team of researchers and local partners. [...] ACLED provides the fields of peacebuilding, development, and humanitarian aid with data that reflects local conflict and insecurity trends. This has enabled organizations like the World Bank, NATO, the International Monetary Fund, and the World Health Organization, among others to respond to crises with objective[citation needed], unbiased[citation needed] data on political violence and disorder in near real time. Many governments and government entities use ACLED data extensively for domestic and foreign policy...",
+      "score": 0.6326168,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "To explore civilian targeting trends, this section analyzes: all events coded with event type Violence against civilians; events coded with event type Explosions/Remote violence or Riots in which civilians or unarmed protesters were the primary victim; and events coded with sub-event type Excessive force against protesters, under event type Protests. Note that while ACLED includes civilian fatalities that occur as collateral damage within the total fatality count for each event, civilian fatalities are not uniquely disaggregated in these counts. However, in events in which civilians are directly targeted, we can assume that the vast majority of fatalities stemming from such events are indeed civilian fatalities.19 OVERALL TRENDS BY EVENT TYPE ACLED records a 2% rise in civilian targeting [...] the number of fatalities stemming from mob violence rose by 22%, underscoring the importance of monitoring trends in spontaneous forms of political violence. While individual mob violence events typically result in few fatalities at a time, this overall increase in fatalities is driven by the broader increase in mob violence more generally. [...] type Violence against civilians are only on...",
+      "score": 0.63125396,
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "Additionally, ACLED’s coding and review processes mean that data are continuously updated to reflect the most recent information. For example, if a bombing results in high casualties, ACLED will record the number of fatalities reported, but will amend this in future weeks if the death toll increases as reports arise of individuals succumbing to their injuries. In this way, ACLED is a ‘living dataset.’ This differs from datasets with an annual publication schedule in which events are not regularly updated to reflect the latest information. Q. Does ACLED have processes in place for quality control over fatality estimates? [...] Main navigation User account menu User account menu Main navigation (drawer) # Fatalities Exploration of ACLED's methodology and considerations regarding fatality data in conflict contexts. Uses and limitations of ACLED data Published on: 27 February 2023 | Last updated:7 May 2024 Q. Does ACLED have a minimum fatality criterion for events? A. No – ACLED does not have a fatality threshold for an event’s inclusion in the dataset. This means that political violence and demonstration events in ACLED do not need to produce any fatalities in order to be included...",
+      "score": 0.61834323,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "search_index": 4
+    },
+    {
+      "title": "ACLED's Conflict Exposure – One Measure to Describe a Conflict",
+      "url": "https://www.ecoi.net/en/blog/acled-conflict-exposure-one-measure-to-describe-a-conflict",
+      "content": "ACLED's new measure allows exposure levels to be calculated by incident, location, time, actor and actor type, but also aggregated to monitor national and global developments over time. ACLED also provides a “best estimate” based on the default measures for the 1, 2 or 5 km radius of an event, depending on its type (5 km in case of battles, explosions/remote violence, and violence against civilians with at least one reported fatality; 2 km in case of violence against civilians with no reported fatality, and riots). The conflict exposure measure can be accessed via ACLED’s data files, where the different population columns with data on the different buffer sizes (1 km, 2 km, 5 km, best) can be added as additional variables, or online via the conflict exposure calculator available here. [...] While incident and fatality figures can be used to describe the extent and intensity of conflicts, ACLED’s conflict exposure measure has the capacity to illustrate their impact on civilians, as indicated by the estimated number of individuals exposed. To be considered exposed to the conflict, civilians need not be the actual or primary target of a security incident, nor need they be injured o...",
+      "score": 0.6152965,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "Armed Conflict Location and Event Data - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armed_Conflict_Location_and_Event_Data",
+      "content": "ACLED provides the fields of peacebuilding, development, and humanitarian aid with data that reflects local conflict and insecurity trends. This has enabled organizations like the World Bank, NATO, the International Monetary Fund, and the World Health Organization, among others to respond to crises with objective[citation needed], unbiased[citation needed] data on political violence and disorder in near real time. Many governments and government entities use ACLED data extensively for domestic and foreign policy decisions, including in the United States, the United Kingdom, Canada, nearly every European country, Australia, and New Zealand. [...] Armed Conflict Location & Event Data (abbreviated ACLED) is a non-profit organization registered in the United States that specializes in the real-time collection, analysis, and mapping of data on political violence and protest events around the world. It was founded in 2005 as a research initiative by political scientist Clionadh Raleigh. The organization codes information on events such as armed clashes, demonstrations, riots, and strategic developments, including the date, location, actors, fatalities, and event type. As of 2022, the...",
+      "score": 0.614464,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED 2020: THE YEAR IN REVIEW",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/08/ACLED_Annual-Report-2020_Upd2021.pdf",
+      "content": "observatory — has provided enhanced monitoring of these trends, and ACLED’s Conflict Pulse conflict prediction tool has forecasted increased violence against civilians by the insurgents throughout the past year (for more on the Cabo Delgado insurgency in Mozambique, see ACLED’s special report: Ten Conflicts to Worry About in 2021). [...] targeting and reported fatalities declined from 2019 to 2020, civilian targeting increased in half of all countries covered by ACLED. Certain populations faced a range of heightened and distinct risks — from the ANNUAL REPORT | ACLEDDATA.COM | 25 CONCLUSION threat of conventional war and gang violence to communal conflicts. The risk of abduction and forced disap-pearance increased for civilians, especially those in countries like Syria, Nigeria, and Yemen. [...] on the basis of the actors involved, the location of events (at the country or subnational level), and/or time periods. The distinction between the two terms (conflict and war) is one of scale: the latter is a more intense form of the former. For more on this categoriza-tion, see the latter portion of this primer. Civilian targeting refers to all violence which targets unarmed individual...",
+      "score": 0.61140573,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "Armed Conflict - Strauss Center",
+      "url": "https://www.strausscenter.org/ccaps-research-areas/armed-conflict",
+      "content": "ACLED includes data from 1999 to 2016, with real-time conflict data updated monthly for all of Africa and weekly for 30 high-risk states. Data are disaggregated by type of violence”including battles between armed actors, violence against civilians, and rioting”and a wide variety of actors”including government forces, rebel groups, militias, and civilians. All data are date-specific and geo-referenced to the town level. ACLED’s disaggregation of civil war and transnational violent events allows analysis of the local factors that drive instability in Africa . [...] . ACLED provides the tools for analysts to explore which regimes are most dangerous in Africa, who are the most active conflict groups on the continent, where are civilians most at risk, what types of violence are most prevalent, and where violent social upheaval, such as rioting, is on the increase. Despite the waning of civil wars across the developing world, ACLED shows that political violence rates have remained stable in the past fifteen years. An increase in political violence across Africa from 2007 has offset a sharp decrease from 2002 to 2006. From 1997-2016, riots, protests and violence against civilians have...",
+      "score": 0.608897,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "search_index": 3
+    },
+    {
+      "title": "Knowledge Base | ACLED",
+      "url": "https://acleddata.com/conflict-data/knowledge-base?page=%2C1",
+      "content": "Main navigation User account menu User account menu Main navigation (drawer) Data visualization illustration of different charts and abstract connection points for the data. These denote the complex information which is available in the knowledge base. # Knowledge Base Frequently asked questions about our new website and myACLED Documentation on ACLED’s methodology, including how ACLED sources and codes information on political violence and protest. General guides on how to use and access the latest ACLED data. A selection of questions frequently asked by users of ACLED data. A running log of the latest changes in the ACLED dataset. Examples of how to use the various endpoints of the API, as well as detailed information on how to construct complex queries. ## All guides [...] Detailed overview of the methodology for coding Boko Haram and ISWAP factions by ACLED. ### Coding of fatalities in Gaza since 7 October 2023 To avoid severe undercounting of fatalities in Gaza, ACLED integrates Palestinian Ministry of Health fatality figures when event-level information is unavailable. 22 November 2023 #### Pagination ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu Social...",
+      "score": 0.59824234,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "search_index": 5
+    },
+    {
+      "title": "Armed Conflict Location and Event Data Project (ACLED) - AOAV",
+      "url": "https://aoav.org.uk/2015/armed-conflict-location-and-event-data-project-acled",
+      "content": "Over 80,000 incidents had been recorded as of early 2014. The aim of the project is for data to be able to “be used for medium- and long-term analysis and mapping of political violence across developing countries through use of historical data from 1997, as well as informing humanitarian and development work in crisis and conflict-affected contexts through realtime data updates and reports.” The database can be downloaded for free by the public. The database contains fields such as date, time, event type and the number of fatalities. IED incidents are captured by the database, but the type of weapon used in an incident is not specifically noted. ACLED uses three sources: [...] # AOAV.org.uk AOAV Home / Improvised Explosive Devices research / IED / Addressing the threat posed by IEDs / Global Counter-IED Map / NGO counter-IED response ### Categories # Armed Conflict Location and Event Data Project (ACLED) Website: ACLED claims to be the “most comprehensive public collection of political violence data for developing states.” It contains information on the specific dates and locations of political violence, the type of event, the groups involved, fatalities and changes in territori...",
+      "score": 0.5608546,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "search_index": 2
+    },
+    {
+      "title": "New Zealand - Conflict Events | Humanitarian Dataset | HDX",
+      "url": "https://data.humdata.org/dataset/new-zealand-acled-conflict-data",
+      "content": "There are no showcases for this dataset. ## Activity A weekly dataset providing the total number of reported political violence events and fatalities in New Zealand broken down by month. Political violence events include ACLED’s battles, violence against civilians, and explosions/remote violence event types, as well as the mob violence sub-event type of the riots event type. A weekly dataset providing the total number of reported civilian targeting events and fatalities in New Zealand broken down by month. Civilian targeting events include violence against civilians events and explosions/remote violence events in which civilians were directly targeted. [...] Armed Conflict Location & Event Data Project (ACLED) Please review the ACLED Codebook for more information about event definitions, sub-event definitions, and coding methodology. For more information about our fatality and sourcing methodology, please review our Fatality FAQs and Sourcing FAQs. Time period coverage varies by country and region, so please consult the ACLED Coverage List. For more methodology resources, click here. By using ACLED data you agree to abide by the Terms of Use and Attribution Policy. ## Downloads...",
+      "score": 0.5035894,
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "content": "© 2026 ACLED all rights reserved. [...] 15 June 2026 ### Is a foreign luxury resort sparking Albania’s biggest protest wave in years? ACLED’s Eastern Europe, Caucasus, and Central Asia Research Manager Magda Anastasijevic comments on surge of nationwide protests in Albania over Jared Kushner’s planned luxury coastal resort 12 June 2026 ### Is Israel redrawing the Syrian border under the guise of security? ACLED’s Middle East Research Manager Muaz Al Abdullah comments on the strategic implications of Israel’s military road construction in Quneitra’s buffer zone. 11 June 2026 ### Q&A: As South China Sea confrontations ramp up, what’s the risk of open conflict? Gray zone operations in the disputed waters are more frequent, testing the status quo for the US-China rivalry and allies in the region. 11 June 2026 [...] Scroll forward ## Recent analysis Monthly regional updates Every month, we publish short reports that analyze the latest ACLED data and highlight important patterns in political violence and protests around the world. Image 2: Residents and members of the new self-defense group known as 'El Machete' stand next to a burnt truck as others look for members of drug gangs and...",
+      "score": 0.50168514,
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Peacekeepers | ACLED",
+      "url": "https://acleddata.com/methodology/peacekeepers",
+      "content": "not to introduce an artificial spike into the data with the introduction of new regions into the timeline. (Please reference ACLED’s coverage for a full list of regions and their coverage periods.) The time period from 2019 to present is easiest to compare across regions as all regions of ACLED coverage cover this period; for time periods extending back before 2019, it is important for the user to ensure they are comparing countries across periods of time that are equally covered (i.e. do not compare trends from 1997 to present between Burundi [where coverage extends back to 1997] and Syria [where coverage extends back to 2017]). [...] ### Q: How often are data updated? A: Data are updated on a weekly basis in conjunction with ACLED’s weekly data release schedule (with new data published every Monday/Tuesday covering the week prior, in addition to any supplemental or updated information). ACLED works to maintain a ‘living dataset’, meaning that in addition to weekly releases of new data covering the week prior, supplementation of historic periods is also ongoing with information from new sources, targeted research, and new partnerships being integrated. ### Q: How do I cite thes...",
+      "score": 0.5009527,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "search_index": 2
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "(40 events, 24 reported fatalities) EXPLOSIONS /REMOTE VIOLENCE Chemical weapon 0 0 N/A N/A Air/drone strike 1,283 2,438 Syria (853 events, 1,570 reported fatalities) Military forces of Syria, including air force (659 events, 1,053 reported fatalities) EXPLOSIONS/ REMOTE VIOLENCE (CONT.) Shelling/artillery/ missile attack 1,709 1,310 Syria (898 events, 631 reported fatalities) Military forces of Syria (755 events, 439 reported fatalities) Remote explosive/ landmine/IED 1,620 2,234 Syria (484 events, 764 reported fatalities) Anonymous or unidentified armed groups (323 events, 473 reported fatalities) Suicide bomb 39 657 Afghanistan (11 events, 252 reported fatalities) Anonymous or unidentified armed groups (6 events, 95 reported fatalities) Grenade 196 67 Ukraine & India (27 events each, 6 [...] 19 The sole exception here are in suicide attacks in which the perpetrator fatality is also included in the total fatality count of the event. - 42 -The multiple forms of violence targeting civilians are captured by distinct sub-event types in the ACLED dataset, as seen in Table 9. Figure 9 helps to depict the prevalence and deadliness of these different types of violence. [...] of 35%. D...",
+      "score": 0.4993414,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "search_index": 2
+    },
+    {
+      "title": "How to use ACLED's Aggregated Data",
+      "url": "https://acleddata.com/use-access/how-use-acleds-aggregated-data",
+      "content": "| | | --- | | Variable | Description | | week | Date of the Saturday marking the start of that week of aggregated data (Saturday to Friday). | | region | Broad geographic grouping (e.g. Middle East, South Asia) | | country | Country or territory | | admin 1 | The first-order administrative division (e.g. state, province, department, etc.) | | disorder\\_type | Three overarching categories: Political violence, Demonstrations, and Strategic developments. For more seeWhat is the ‘disorder type’ variable? | | event\\_type | Six categories: Battles, Explosions/remote violence, Violence against civilians, Protests, Riots, Strategic developments. For more seeACLED’s Codebook. | | sub\\_event\\_type | Most granular event type classification. For more seeACLED’s Codebook. | [...] | events | Total number of discrete events recorded for the specified week, Admin1, and sub\\_event\\_type | | fatalities | Sum of reported fatalities across the events for this row. For more see Fatalities. | | population\\_best | Best estimate of population exposed to the events, based on proximity. For analysis, do not sum these values. For more seeConflict Exposure. | | centroid\\_longitude | Geographic center point...",
+      "score": 0.49846253,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "search_index": 1
+    },
+    {
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "The total number of fatalities for each event is found in the ‘Fatalities’ column. The ‘Fatalities’ column refers to the estimated number of reported fatalities associated with a single event. ACLED does not collect data on injuries, nor are fatalities attributed to specific groups (for more, see this section below), but such information may be mentioned in the ‘Notes’ column. All fatalities recorded are ‘reported fatalities’ and, as such, are estimates only. ACLED does not independently verify details of reported fatalities; instead, it reflects the content of the source reports. [...] Additionally, ACLED’s coding and review processes mean that data are continuously updated to reflect the most recent information. For example, if a bombing results in high casualties, ACLED will record the number of fatalities reported, but will amend this in future weeks if the death toll increases as reports arise of individuals succumbing to their injuries. In this way, ACLED is a ‘living dataset.’ This differs from datasets with an annual publication schedule in which events are not regularly updated to reflect the latest information. Q. Does ACLED have processes in place for quality control...",
+      "score": 0.45289946,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "search_index": 2
+    },
+    {
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "content": "Restricted page: Trends ACLED Trends is a forward-looking conflict intelligence platform allowing decision-makers to anticipate where violence, unrest, and instability are most likely to escalate - before it happens. It helps organizations protect employees, secure assets, and adapt operations as risk rises or falls across locations. Restricted page: Conflict Exposure Calculator The Conflict Exposure Calculator integrates data from ACLED with population size estimates from WorldPop, to estimate the civilian impact by proximity to an event, event type, type of violent actor or specific armed group, location, and time. [...] Restricted page: CAST | Conflict Alert System The ACLED Conflict Alert System (CAST) is a global prediction tool that forecasts the number of political violence events that will occur in each upcoming rolling-four-week period, for the next six periods, in every country around the world Restricted page: Explorer The ACLED Explorer allows you to filter and summarize data from the past year. Country profiles show data at the subnational level, as well as trends based on number of events, fatalities, and civilians exposed to violence. Restricted page: Trends",
+      "score": 0.4517382,
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "Introducing ACLED Trends | ACLED",
+      "url": "https://acleddata.com/introducing-acled-trends",
+      "content": "## What sets ACLED Trends apart? ACLED Trends is a forward-looking conflict intelligence platform allowing decision-makers to anticipate where violence, unrest, and instability are most likely to escalate - before it happens. It helps organizations protect employees, secure assets, and adapt operations as risk rises or falls across locations. Explore further ACLED Trends - Data Platform ## Premium Access ACLED Trends is available exclusively to myACLED PARTNER and ENTERPRISE users, offering a premium visualization and analysis layer. Find out more. ## Questions about ACLED Trends? Contact our team for more information about ACLED Trends functionality or access. ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu Social media profiles Clarity in Crisis [...] Main navigation User account menu User account menu Main navigation (drawer) ACLED Trends 21 # Introducing ACLED Trends ACLED Trends is a forward-looking conflict intelligence platform allowing decision-makers to anticipate where violence, unrest, and instability are most likely to escalate - before it happens. It helps organizations protect employees, secure assets, and adapt operations as risk rises or falls a...",
+      "score": 0.42419788,
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "ACLED concentrates on: ACLED data are derived from a wide range of local, national, and international sources in over 75 languages. The information is collected by trained researchers worldwide. An updated overview of ACLED’s current country and time period coverage is available here. ACLED data are coded in real time and published on a weekly basis following a multi-stage internal review process. Data can be downloaded through the export tool, curated data files (which include regional data files and files for specific subsets like violence targeting civilians), or API with a free account. Further guides to ACLED’s methodology, coding decisions, and access system are available on the ACLED Knowledge Base. ## ACLED Data Columns at a Glance Table 1: Data Columns [...] Events that result in fatalities have the relevant information recorded in the Fatalities column. Events recorded by ACLED do not have to meet a minimum fatality number for inclusion. ACLED only records estimated fatalities when reported by the source material. When and where possible, ACLED researchers seek out information to triangulate the fatality numbers reported by sources, but ACLED does not independently ver...",
+      "score": 0.39480802,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "search_index": 4
+    },
+    {
+      "title": "Aggregated data - ACLED",
+      "url": "https://acleddata.com/conflict-data/download-data-files/aggregated-data",
+      "content": "## Data by region Download this file for event, fatality, and exposure counts of our Africa data, aggregated by week and Admin 1. The file is updated with new data every Monday. Download this file for event, fatality, and exposure counts of our Asia-Pacific data, aggregated by week and Admin 1. The file is updated with new data every Tuesday. Download this file for event, fatality, and exposure counts of our Europe & Central Asia data, aggregated by week and Admin 1. The file is updated with new data every Tuesday. Download this file for event, fatality, and exposure counts of our Latin America & the Caribbean data, aggregated by week and Admin 1. The file is updated with new data every Monday. [...] Download this file for event, fatality, and exposure counts of our Middle East data, aggregated by week and Admin 1. The file is updated with new data every Monday. Download this file for event, fatality, and exposure counts of our United States & Canada data, aggregated by week and Admin 1. The file is updated with new data every Tuesday. ## Knowledge base The latest information and guides to best understand and use ACLED data. A selection of questions frequently asked by users of...",
+      "score": 0.37634858,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "search_index": 4
+    },
+    {
+      "title": "Conflict Index & 2026 Watchlist",
+      "url": "https://acleddata.com/conflict-index-2026-watchlist",
+      "content": "ACLED’s Conflict Index offers a data-driven analysis of violence in 2025 across every country and territory in the world. The 2026 Watchlist then turns to the year ahead, highlighting 10 crisis areas where conditions are likely to shift, for better or for worse. The ACLED Conflict Index is a global assessment of how and where conflicts in every country and territory in the world vary according to four indicators — deadliness, danger to civilians, geographic diffusion, and the number of armed groups. Explore further ## Conflict Watchlist 2026 ACLED’s annual Conflict Watchlist highlights 10 countries and regions projected to face armed conflict, political unrest, and humanitarian emergencies in 2026.",
+      "score": 0.36581963,
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] A Quantitative Look at Global Conflict Trends - Pathways for Peace",
+      "url": "https://www.pathwaysforpeace.org/sites/default/files/2023-10/A%20Quantitative%20Look%20at%20Global%20Conflict%20Trends.pdf",
+      "content": "section). Fatality trends in recent years suggest that conflict-related fatalities have been generally declining globally, on aggregate (see left-hand graph of Figure 24) — though some suggest that these trends remain much higher than trends seen decades ago. Figure 24. Conflict-Related Fatalities, ACLED, 2018-2022 This trend has been driven by a decline in fatalities stemming from state-based conflict (in orange) (see right-hand graph of Figure 24).34 Meanwhile, since 2020, fatalities stemming from one-sided violence (in brown) have been steadily increasing, while fatalities stemming from interstate conflict (in tan) spiked in 2022 (see right-hand graph of Figure 24). 34 Data from UCDP suggests similar trends: that conflict-related fatalities have been generally declining in recent [...] (see Figure 27) — from nearly 1,000 conflict-related fatalities in the region in 2018, to over 29,000 in 2022. 37 Data from UCDP suggests similar trends: that conflict-related fatalities declined in 2020 before seeing a spike in 2021, driven by trends in state-based conflict deaths, in Afghanistan in particular. Pathways for Peace: Five Years On A Quantitative Look at Global Conflict Trends: Us...",
+      "score": 0.3458124,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "search_index": 2
+    },
+    {
+      "title": "Monthly regional updates",
+      "url": "https://acleddata.com/series/monthly-regional-updates",
+      "content": "5 June 2026 ### Middle East Overview: June 2026 Israel stepped up pressure on Hamas in Gaza, and Iran continued targeting the Gulf while an agreement with the US stalls 5 June 2026 ### Europe and Central Asia Overview: June 2026 Russia and Ukraine exchanged air attacks, while drones veering off course into Eastern Europe tested air defenses, and anti-migration violence spread across the Netherlands. 5 June 2026 ### Latin America and the Caribbean Overview: June 2026 Deadly clashes broke out ahead of the presidential elections in Colombia, demonstrations over worsening humanitarian conditions took place in Cuba, and organized crime violence escalated in Honduras. 5 June 2026 #### Pagination ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu [...] Main navigation User account menu User account menu Main navigation (drawer) Residents and members of the new self-defense group known as 'El Machete' stand next to a burnt truck as others look for members of drug gangs and municipal authorities during a protest against the growing violence in the area, in Pantelho, in Chiapas state, Mexico 27 July, 2021. REUTERS/Jacob Garcia # Monthly regional updates Every month, we publ...",
+      "score": 0.34521618,
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "FAQ: ACLED's new data structure, terms, and platforms",
+      "url": "https://acleddata.com/faq-codebook-tools",
+      "content": "ACLED's Aggregated Data Columns Other options are a month-country dataset providing the total number of events and fatalities broken down by country, aggregated by month (and updated weekly); and a year-country dataset providing the total number of events and fatalities broken down by country, aggregated by year. Both the month-country and year-country datasets are available at the Humanitarian Data Exchange. ### How are the weekly-admin aggregated data structured? The aggregated data files are organized by week-country-admin 1-event type. The events and fatalities numbers are respectively the sum of all events and fatalities recorded in the ACLED event dataset for that week in that admin 1 and for that sub-event type. [...] ### Who can access it? For the Research access tier, event data are available with a 12-month delay and are updated on a rolling basis. ### How are the latent data structured? [...] ### How can I use aggregated data? You can use aggregated data in the same ways as you would the local, daily event data. You can select specific event types (e.g., “Protests”) and look at rates over time, and you can compare violent and peaceful actions across geography and time...",
+      "score": 0.32823917,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "search_index": 4
+    },
+    {
+      "title": "ACLED data",
+      "url": "https://acleddata.com",
+      "content": "myACLED default banner The ACLED Conflict Index is a global assessment of how and where conflicts in every country and territory in the world vary according to four indicators — deadliness, danger to civilians, geographic diffusion, and the number of armed groups. Updates on the conflict unfolding in Iran and the wider region. Thumbnail The ACLED Explorer allows you to filter and summarize data from the past year. Country profiles show data at the subnational level, as well as trends based on number of events, fatalities, and civilians exposed to violence. A static image of the fatalities data from the ACLED Explorer platform ACLED is the highest-quality and most widely used near-real-time source on political violence and protest data worldwide. Data visualization platforms [...] Main navigation User account menu User account menu Main navigation (drawer) # Clarity in Crisis ACLED is an independent, impartial conflict monitor providing real-time data and analysis on violent conflict and protest in all countries and territories across the world. A data map showing ACLED data Stream our latest episode: ‘The Sudan war explained: Siege, drones, and regional power struggles.' 6 July...",
+      "score": 0.29652742,
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "content": "Scroll forward ## Recent analysis Monthly regional updates Every month, we publish short reports that analyze the latest ACLED data and highlight important patterns in political violence and protests around the world. Image 2: Residents and members of the new self-defense group known as 'El Machete' stand next to a burnt truck as others look for members of drug gangs and municipal authorities during a protest against the growing violence in the area, in Pantelho, in Chiapas state, Mexico 27 July, 2021 How has Sudan's drone war adapted to shifting supply lines? Despite impacts on supply chains, the SAF continues its air campaign to weaken the RSF in Darfur ahead of expected ground offensives in August. 4 June 2026 Image 3: Analysis brief_Africa.png [...] 15 June 2026 ### Is a foreign luxury resort sparking Albania’s biggest protest wave in years? ACLED’s Eastern Europe, Caucasus, and Central Asia Research Manager Magda Anastasijevic comments on surge of nationwide protests in Albania over Jared Kushner’s planned luxury coastal resort 12 June 2026 ### Is Israel redrawing the Syrian border under the guise of security? ACLED’s Middle East Research Manager Muaz Al Abdullah comments o...",
+      "score": 0.27482232,
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 2
+    },
+    {
+      "title": "ACLED",
+      "url": "",
+      "content": "ACLED provides conflict data and analysis tools, along with contact and attribution information. The site also points to recent media coverage and its Conflict Index as a global assessment of conflicts.",
+      "score": 0.2618218,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "search_index": 4
+    },
+    {
+      "title": "New Zealand protests against war on Iran, Lebanon and Gaza - World Socialist Web Site",
+      "url": "https://www.wsws.org/en/articles/2026/04/13/ujvn-a13.html",
+      "content": "Protesters marching towards parliament in Wellington, April 11, 2026 The corporate media blacked out the protests. Since the US-Israeli bombing campaign began, NZ media outlets have highlighted small pro-war demonstrations by far-right Iranian supporters of Reza Pahlavi, the son of the former US-backed Shah whose brutal regime was overthrown by the 1979 Iranian revolution. Protesters condemned the National Party-led government’s alliance with Washington and its silence on US and Israeli war crimes. Last week, Foreign Minister Winston Peters travelled to Washington to meet Secretary of State Marco Rubio—a visit which coincided with President Donald Trump’s threat that “a whole civilisation will die” unless Iran surrendered. [...] After this warm welcome, Labour MP Phil Twyford told the crowd, “The US-Israel war against Iran is an illegal war of aggression.” Green Party MP Ricardo Menéndez March said: “You simply cannot achieve freedom, peace or justice by committing genocide.” He said the Greens would push for NZ “to leave the Five Eyes,” the US-led intelligence-sharing alliance, “to hold the United States to account and to sanction Israel for its war crimes.”",
+      "score": 0.2530161,
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "ACLED codebook fatalities event type New Zealand official data methodology",
+    "ACLED New Zealand fatalities historical dataset comparable prior periods",
+    "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+    "ACLED New Zealand publication schedule data lag fatality count update cadence",
+    "ACLED New Zealand conflict fatalities expert analysis dataset methodology"
+  ],
+  "refilter_queries": [],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff methodological background. Published 2023 and last updated 2024, both before the 2026-06-20 cutoff. Helps interpret how ACLED codes fatalities, which is relevant to resolution, though it does not provide New Zealand-specific leading evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) Codebook",
+      "url": "https://reliefweb.int/report/world/armed-conflict-location-event-data-project-acled-codebook-version-8-2017",
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on ACLED scope and coding. No explicit post-cutoff publication/update and useful for understanding what events and fatalities are included in the resolving dataset, though not directly predictive for New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location & Event Data Project CODEBOOK - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2023/06/ACLED_Codebook_2023.pdf",
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff codebook PDF from 2023. Relevant for understanding ACLED event and fatality coding rules that determine resolution, but not directly informative about near-term New Zealand event risk."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Armed Conflict Location and Event Dataset (ACLED) Codebook",
+      "url": "https://www.strausscenter.org/wp-content/uploads/ACLED_Codebook_2015.pdf",
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED codebook background with no post-cutoff leakage. However, it is older and generic, so only tangentially useful compared with newer methodology sources."
+    },
+    {
+      "stage": "cached",
+      "title": "Civilians in Conflict (Data) - Blog",
+      "url": "https://www.ecoi.net/en/blog/civilians-in-conflict-data",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe general discussion of conflict datasets and ACLED methodology. No explicit post-cutoff timing or completed post-cutoff state. Only indirect relevance because it does not bear specifically on forecasting New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff annual report from 2019. Contains only generic historical ACLED context and no post-cutoff leakage, but it is not useful for forecasting this specific New Zealand question."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe generic ACLED site page describing data access and methodology resources. No explicit post-cutoff publication/update or outcome language. Minimal forecasting value beyond confirming ACLED is the source dataset."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological background page with no explicit post-cutoff publication marker. Directly relevant to how fatalities are recorded in ACLED, which matters for resolution, though not a direct predictor of New Zealand events."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological excerpt on how ACLED disaggregates fatalities across days. Relevant to exact resolution mechanics if any multi-day fatal incidents occur in the target window; no post-cutoff leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe codebook background on violence against civilians classification. No explicit post-cutoff publication/update. Only indirectly relevant because the question concerns total fatalities rather than this specific event type."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED's Conflict Exposure – One Measure to Describe a Conflict",
+      "url": "https://www.ecoi.net/en/blog/acled-conflict-exposure-one-measure-to-describe-a-conflict",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff methodological background on ACLED conflict exposure and data structure. Does not contain post-cutoff publication info or outcomes relevant to New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background from an annual report describing ACLED coverage and early warning work, including Oceania coverage. Pre-cutoff and methodological/contextual rather than outcome leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Conflict environments and coverage - Clingendael Institute",
+      "url": "https://www.clingendael.org/sites/default/files/2018-01/Report_Conflict_environments_and_coverage.pdf",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological background on ACLED/event coverage and exclusions, useful for interpreting what fatalities are counted. No explicit post-cutoff publication or completed post-cutoff state."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location and Event Data - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armed_Conflict_Location_and_Event_Data",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic background on ACLED and its fields. Safe and pre-cutoff in content, though only tangentially useful for forecasting this specific New Zealand fatalities question."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED methodology/background on civilian targeting and fatalities coding. No post-cutoff publication marker or leaked outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Directly relevant ACLED methodology page about fatalities and the living dataset, which informs how resolution data may be revised and interpreted. The snippet shows publication in 2023, safely before cutoff."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED's Conflict Exposure – One Measure to Describe a Conflict",
+      "url": "https://www.ecoi.net/en/blog/acled-conflict-exposure-one-measure-to-describe-a-conflict",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe duplicate-like methodological background on ACLED conflict exposure and use of incident/fatality figures. No leakage, but limited value for this exact forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location and Event Data - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armed_Conflict_Location_and_Event_Data",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic Wikipedia background mentioning New Zealand among ACLED users. Safe but only tangentially relevant to forecasting fatalities in New Zealand."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED 2020: THE YEAR IN REVIEW",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2021/08/ACLED_Annual-Report-2020_Upd2021.pdf",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical ACLED annual review with general discussion of fatalities and prediction tools. Safe pre-cutoff background, but not directly informative for this specific New Zealand question."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Year in Review",
+      "url": "https://acleddata.com/system/files/2026-02/ACLED_2022-Year-in-Review_Report_Jan2023.pdf",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Drop because the URL explicitly contains a post-cutoff page state ('2026-02'), indicating a file/page published after the 2026-06-20 cutoff. Even though the report concerns 2022, the page state is explicit post-cutoff evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict - Strauss Center",
+      "url": "https://www.strausscenter.org/ccaps-research-areas/armed-conflict",
+      "query": "ACLED New Zealand country coverage actors institutions conflicts violence civilians",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background on ACLED and conflict-data structure; no explicit post-cutoff publication/update or outcome leakage. Only generic methodological context, so low relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "Knowledge Base | ACLED",
+      "url": "https://acleddata.com/conflict-data/knowledge-base?page=%2C1",
+      "query": "ACLED New Zealand conflict fatalities expert analysis dataset methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe ACLED knowledge-base/methodology page with no explicit post-cutoff publication state. Useful for understanding coding, revisions, and dataset structure relevant to resolution, though not specific to New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location & Event Data Project (ACLED) | HDX",
+      "url": "https://data.humdata.org/organization/acled",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "high",
+      "disposition": "dropped",
+      "reason": "Snippet gives a concrete post-cutoff page state: dataset time period runs through 19 June 2026, indicating inclusion of data updated after the 2026-06-20 cutoff. This is explicit contemporaneous dataset coverage beyond the cutoff and must be dropped."
+    },
+    {
+      "stage": "cached",
+      "title": "Armed Conflict Location and Event Data Project (ACLED) - AOAV",
+      "url": "https://aoav.org.uk/2015/armed-conflict-location-and-event-data-project-acled",
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical descriptive background about ACLED from 2015 with no post-cutoff publication/update or completed post-cutoff outcome. Tangential to the exact New Zealand forecast, so low relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "New Zealand - Conflict Events | Humanitarian Dataset | HDX",
+      "url": "https://data.humdata.org/dataset/new-zealand-acled-conflict-data",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background page specifically about New Zealand ACLED conflict/fatality dataset. No explicit post-cutoff publication/update date or post-cutoff results shown. Directly relevant because it identifies the exact country-level data source and aggregation."
+    },
+    {
+      "stage": "cached",
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Page shows ACLED global analysis entries dated 11-15 June 2026, all before the cutoff. No explicit post-cutoff publication or New Zealand-specific outcomes. Mostly tangential context, so low relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "Peacekeepers | ACLED",
+      "url": "https://acleddata.com/methodology/peacekeepers",
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodology page explaining ACLED weekly release schedule and coverage comparability. No explicit post-cutoff publication/update or outcome. Useful for understanding when data become available and revision cadence."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical 2019 ACLED annual report PDF; no post-cutoff leakage. Only generic background on fatalities coding and examples, not directly informative for New Zealand near-term fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "How to use ACLED's Aggregated Data",
+      "url": "https://acleddata.com/use-access/how-use-acleds-aggregated-data",
+      "query": "ACLED codebook fatalities event type New Zealand official data methodology",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological documentation on aggregated data fields, including week and fatalities variables. No explicit post-cutoff publication/update or outcomes. Helpful for interpreting the resolution dataset."
+    },
+    {
+      "stage": "cached",
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe ACLED fatalities methodology page directly relevant to how fatalities are counted and revised in the resolving dataset. No explicit post-cutoff publication/update or post-cutoff event outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background about ACLED tools and forecasting products; no explicit post-cutoff publication/update or completed outcome for New Zealand. Only tangentially relevant."
+    },
+    {
+      "stage": "cached",
+      "title": "Introducing ACLED Trends | ACLED",
+      "url": "https://acleddata.com/introducing-acled-trends",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General background on ACLED Trends as a forward-looking platform. No explicit post-cutoff publication marker in the snippet and no leaked outcomes. Low direct relevance to forecasting New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Methodology page explaining ACLED coding and that fatalities are recorded/published weekly. Useful for understanding resolution mechanics and data timing; no explicit post-cutoff publication/update."
+    },
+    {
+      "stage": "cached",
+      "title": "Aggregated data - ACLED",
+      "url": "https://acleddata.com/conflict-data/download-data-files/aggregated-data",
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Describes ACLED aggregated data availability and update cadence, which is useful for understanding what contemporaneous data may exist before cutoff. No explicit post-cutoff page state or outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict Index & 2026 Watchlist",
+      "url": "https://acleddata.com/conflict-index-2026-watchlist",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Prospective 2026 watchlist language is safe background and contains no explicit post-cutoff publication date in the snippet. However it is generic and not specific to New Zealand."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict Watchlist 2026 - ACLED",
+      "url": "https://acleddata.com/series/conflict-watchlist-2026",
+      "query": "New Zealand ACLED historical fatalities trends protests riots violence analysis forecast base rate \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Snippet explicitly shows publication date '11 December 2025,' which is after the 2026-06-20 cutoff? Wait, 2025 is before cutoff, but the page is a 2026 watchlist series and not NZ-specific. However the safer fail-closed issue is that it is a dated series page with retrospective/ongoing content not directly useful. Dropping on uncertainty."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] A Quantitative Look at Global Conflict Trends - Pathways for Peace",
+      "url": "https://www.pathwaysforpeace.org/sites/default/files/2023-10/A%20Quantitative%20Look%20at%20Global%20Conflict%20Trends.pdf",
+      "query": "ACLED New Zealand fatalities historical dataset comparable prior periods",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical PDF on global conflict trends through 2022. Safe background with no post-cutoff leakage, but only weakly relevant to New Zealand fatalities in mid-2026."
+    },
+    {
+      "stage": "cached",
+      "title": "Monthly regional updates",
+      "url": "https://acleddata.com/series/monthly-regional-updates",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Snippet is dated 5 June 2026, which is before the 2026-06-20 cutoff. It is contemporaneous regional context and does not state post-cutoff outcomes for New Zealand. Low relevance because it is not NZ-specific."
+    },
+    {
+      "stage": "cached",
+      "title": "FAQ: ACLED's new data structure, terms, and platforms",
+      "url": "https://acleddata.com/faq-codebook-tools",
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Useful methodological/context page about ACLED aggregated datasets, access tiers, and update structure. Safe and pre-cutoff in snippet; helps interpret available data and delays."
+    },
+    {
+      "stage": "cached",
+      "title": "Asia-Pacific: Local officials increasingly become the target of rioters ...",
+      "url": "https://acleddata.com/report/asia-pacific-local-officials-increasingly-become-target-rioters-grievances",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Snippet includes dated related-content links such as 'Asia-Pacific Overview: June 2026 5 June 2026' and '3 June 2026' plus a page state assembled after those publications; not directly about New Zealand and uncertain whether retrospective content could leak contemporaneous outcomes. Fail-closed drop."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED data",
+      "url": "https://acleddata.com",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Primary source for resolution. Safe background/current source with no explicit post-cutoff publication or outcome language in the snippet."
+    },
+    {
+      "stage": "cached",
+      "title": "Global analysis",
+      "url": "https://acleddata.com/global-analysis",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "ACLED analysis page published before the cutoff (4 June 2026, 15 June 2026 shown). Useful supporting context on ACLED reporting cadence and contemporaneous analysis, though not directly about New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED",
+      "url": "",
+      "query": "ACLED New Zealand publication schedule data lag fatality count update cadence",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "General background on ACLED as the data provider and its tools. Safe and pre-cutoff-neutral; useful context but not directly predictive of New Zealand fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "New Zealand protests against war on Iran, Lebanon and Gaza - World Socialist Web Site",
+      "url": "https://www.wsws.org/en/articles/2026/04/13/ujvn-a13.html",
+      "query": "New Zealand political violence protest riot fatalities June 2026 ACLED OR police OR government \"2026-06-04\" \"on or before 2026-06-04\"",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff April 2026 report about protests in New Zealand. Relevant because protests can contribute to ACLED event counts and potentially fatalities, though this item does not indicate fatalities and is only indirect evidence."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 40,
+    "dropped": 4,
+    "relevance": {
+      "high": 5,
+      "medium": 17,
+      "low": 22
+    },
+    "supplemental_for_relevance": false
+  }
+}

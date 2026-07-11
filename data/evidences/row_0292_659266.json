@@ -1,0 +1,305 @@
+{
+  "row_index": 292,
+  "market_id": "659266",
+  "slug": "will-ethereum-dip-to-3400-in-november-2025",
+  "question": "Will Ethereum dip to $3,400 in November?",
+  "event_title": "What price will Ethereum hit in November?",
+  "end_date_limit": "2025-12-01",
+  "row_end_date_raw": "2025-12-01",
+  "expanded_queries": [
+    "Binance ETH/USDT 1m historical klines November low 3400",
+    "site:binance.com \"ETH_USDT\" 1m chart November low",
+    "Binance API klines ETHUSDT 1m November historical data"
+  ],
+  "stats": {
+    "search_calls": 3,
+    "raw_result_count": 30,
+    "deduped_result_count": 30
+  },
+  "evidences": [
+    {
+      "title": "How do I get all the prices history with binance API for a crypto using ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "`# import requests import json import pandas as pd import numpy as np import datetime as dt frequency = input(\"Please enter the frequency (1m/5m/30m/.../1h/6h/1d/ : \") def get_bars(symbol, interval=frequency): root_url = ' url = root_url + '?symbol=' + symbol + '&interval=' + interval data = json.loads(requests.get(url).text) df = pd.DataFrame(data) df.columns = ['open_time', 'o', 'h', 'l', 'c', 'v', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore'] df.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in df.close_time] return df btcusdt = get_bars('BTCUSDT') ethusdt = get_bars('ETHUSDT') df0=pd.DataFrame(btcusdt) df0.to_csv('_btcusdt.csv') df1=pd.DataFrame(ethusdt) df1.to_csv('_ethusdt.csv')` Can anyone help me to optimize it? [...] `def get_binance_data(api_key, pair, countdown='open', interval='4h', start='1 Jan 2018', end=None): client = Client(api_key=api_key) intervals = { '15m': Client.KLINE_INTERVAL_15MINUTE, '1h': Client.KLINE_INTERVAL_1HOUR, '4h': Client.KLINE_INTERVAL_4HOUR, '1d': Client.KLINE_INTERVAL_1DAY } interval = intervals.get(interval, '4h') print(f'Historical interval {interval}') klines = client.get_historical_klines(symbol=...",
+      "score": 0.99997115,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Get kline/candlestick data from Binance — binance_klines",
+      "url": "https://daroczig.github.io/binancer/reference/binance_klines.html",
+      "content": "# Get kline/candlestick data from Binance `binance_klines.Rd` Get kline/candlestick data from Binance `binance_klines( symbol, interval = c(\"1m\", \"3m\", \"5m\", \"15m\", \"30m\", \"1h\", \"2h\", \"4h\", \"6h\", \"8h\", \"12h\", \"1d\", \"3d\", \"1w\", \"1M\"), limit, start_time, end_time )` ## Arguments string enum optional int optional POSIX timestamp optional POSIX timestamp ## Value `data.table` with open-high-low-close values `data.table` ## Examples `if (FALSE) { binance_klines('ETHUSDT') binance_klines('ETHUSDT', interval = '1h', limit = 247) binance_klines('ETHUSDT', interval = '1h', start_time = '2018-01-01', end_time = '2018-01-08') }` ## Contents Developed by Gergely Daróczi, David Andel. Site built with pkgdown 2.0.7.",
+      "score": 0.99993134,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "from binance.client import Clientimport pandas as pdimport datetime# Binance API credentialsapi_key = 'your_api_key'api_secret = 'your_api_secret'client = Client(api_key, api_secret)# Define the symbol for BTC/USDT pairsymbol = 'BTCUSDT'# Define custom start and end timestart_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0)klines = client.get_historical_klines(symbol=symbol, interval=Client.KLINE_INTERVAL_1MINUTE, start_str=str(start_time), end_str=str(end_time))# Convert the data into a pandas dataframe for easier manipulationdf_M = pd.DataFrame(klines, columns=['Open Time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 'Taker Buy Base Asset Volume', 'Taker Buy Quote Asset Volume', [...] ``` symbol = 'BTCUSDT' 'BTCUSDT' ``` We can set a custom start and end time for our function by parsing the date to date time format. ``` # format (year, month, day, hour, minute, second)start_time = datetime.datetime(2024, 3, 15, 0, 0, 0)end_time = datetime.datetime(2024, 6, 15, 0, 0, 0) # format (year, month, day, hour, minute, second) 2024 3 15 0 0 0 2024 6 15 0 0 0 ``` `datetime.datetime`: Cr...",
+      "score": 0.9997546,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Get historical klines from binance api - GitHub",
+      "url": "https://github.com/maxgfr/binance-historical",
+      "content": "### Library ``` import{getKline, Kline} from'binance-historical'; const result Array< Kline> = await getKline('ETHUSDT', '4h', new Date('01-09-2020'), new Date('01-12-2021'),); console. log(result);// [// ...,// {// openTime: 1579953600000,// open: '159.30000000',// high: '161.00000000',// low: '158.70000000',// close: '160.41000000',// volume: '25015.67605000',// closeTime: 1579967999999,// quoteAssetVolume: '4001959.95527980',// trades: 14330,// takerBaseAssetVolume: '13000.12296000',// takerQuoteAssetVolume: '2079824.44045350',// ignored: '0'// },// ...// ] ``` ## About Get historical klines from binance api ### Topics [...] ## Installation ### Via Homebrew (macOS/Linux) ``` brew install maxgfr/tap/binance-historical ``` ### Via npm ``` npm install -g binance-historical ``` ### Download binary Download the latest binary for your platform from the releases page. ## Usage ### CLI #### Interactive mode ``` binance-historical download ``` #### Non-interactive mode Pass all options as arguments: ``` binance-historical download \\ --pair BTCUSDT \\ --interval 4h \\ --start 2024-01-01 \\ --end 2024-12-31 \\ --output ./data/ \\ --format json ``` Export as CSV: ``` binance-historical downlo...",
+      "score": 0.9994967,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "How to get ALL (or multiple) pair's historical klines from Binance API ...",
+      "url": "https://stackoverflow.com/questions/63515267/how-to-get-all-or-multiple-pairs-historical-klines-from-binance-api-in-one-re",
+      "content": "After recieve data you only must to specify when candle was closed, you can do it from timestamps that are in json data ('t' and 'T'). ( You must install websockets library. `pip install websockets` And here is some sample code how it can work. `import asyncio import websockets async def candle_stick_data(): url = \"wss://stream.binance.com:9443/ws/\" #steam address first_pair = 'bnbbtc@kline_1m' #first pair async with websockets.connect(url+first_pair) as sock: pairs = '{\"method\": \"SUBSCRIBE\", \"params\": [\"xrpbtc@kline_1m\",\"ethbtc@kline_1m\" ], \"id\": 1}' #other pairs await sock.send(pairs) print(f\"> {pairs}\") while True: resp = await sock.recv() print(f\"< {resp}\") asyncio.get_event_loop().run_until_complete(candle_stick_data())` Output: [...] `< {\"e\":\"kline\",\"E\":1599828802835,\"s\":\"XRPBTC\",\"k\":{\"t\":1599828780000,\"T\":1599828839999,\"s\":\"XRPBTC\",\"i\":\"1m\",\"f\":76140140,\"L\":76140145,\"o\":\"0.00002346\",\"c\":\"0.00002346\",\"h\":\"0.00002346\",\"l\":\"0.00002345\",\"v\":\"700.00000000\",\"n\":6,\"x\":false,\"q\":\"0.01641578\",\"V\":\"78.00000000\",\"Q\":\"0.00182988\",\"B\":\"0\"}} < {\"e\":\"kline\",\"E\":1599828804297,\"s\":\"BNBBTC\",\"k\":{\"t\":1599828780000,\"T\":1599828839999,\"s\":\"BNBBTC\",\"i\":\"1m\",\"f\":87599856,\"L\":87599935,\"o\":\"0.0022...",
+      "score": 0.99854493,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "ETH USD Binance Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/eth-usd-historical-data",
+      "content": "| | 1,969.32 | 1,979.32 | 1,996.03 | 1,950.26 | 184.45K | -0.46% | | | 1,978.48 | 2,073.26 | 2,092.80 | 1,956.63 | 411.57K | -4.55% | | | 2,072.86 | 2,126.62 | 2,161.62 | 2,055.21 | 432.23K | -2.65% | | | 2,129.38 | 1,982.06 | 2,198.19 | 1,945.32 | 737.56K | +7.39% | | | 1,982.81 | 2,027.86 | 2,040.14 | 1,932.95 | 509.41K | -2.16% | | | 2,026.63 | 1,939.74 | 2,081.43 | 1,922.30 | 577.33K | +4.50% | | | 1,939.35 | 1,964.51 | 2,051.99 | 1,907.81 | 529.19K | -1.30% | | | 1,964.89 | 1,929.20 | 1,980.46 | 1,837.09 | 461.81K | +1.79% | | | 1,930.32 | 2,027.20 | 2,062.90 | 1,890.25 | 428.42K | -4.80% | | | 2,027.58 | 2,057.41 | 2,082.76 | 1,976.34 | 439.96K | -1.40% | | | 2,056.40 | 1,851.94 | 2,140.49 | 1,846.75 | 682.87K | +11.06% | [...] © 2007-2026 - Fusion Media Limited. All Rights Reserved. [...] Fusion Media would like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriat...",
+      "score": 0.9982039,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us/",
+      "content": "Scheduled changes: The All Book Tickers stream (!bookTicker) is set to be removed in late November 2022. Please use the Individual Book Ticker Streams instead. (@bookTicker). Multiple @bookTicker streams can be subscribed to over one connection. For example: wss://stream.binance.us:9443/stream?streams=btcusdt@bookTicker/bnbbtc@bookTicker Market Data: Added a new optional parameter type in two endpoints: GET /api/v3/ticker and GET /api/v3/ticker/24hr. Also removed Individual Symbol Ticker Streams as it duplicates with Ticker Order Book Stream, supported new candlestick chart interval: 1s. Get Asset Distribution History endpoint: Updated this endpoint to also query the rebate distribution record. [...] importurllib.parse import hashlib import hmac import base64 import requests import calendar import time api_url =\" # get binanceus signature def get_binanceus_signature(data, secret): postdata = urllib. parse. urlencode(data) message = postdata. encode() byte_key = bytes(secret,'UTF-8') mac = hmac. new(byte_key, message, hashlib. sha256). hexdigest() return mac # Attaches auth headers and returns results of a POST request def binanceus_request(uri_path, data, api_key, api_sec): head...",
+      "score": 0.99732697,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "https://api.binance.com/api/v3/klines?symbol=ETHUS...",
+      "url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=1m",
+      "content": "No information is available for this page. · Learn why",
+      "score": 0.9967775,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "## Response Example​ `[ [ 1499040000000, // Open time \"0.01634790\", // Open \"0.80000000\", // High \"0.01575800\", // Low \"0.01577100\", // Close \"148976.11427815\", // Volume 1499644799999, // Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"17928899.62484339\" // Ignore. ]]` Previous Compressed Aggregate Trades ListNext Continuous Contract Kline Candlestick Data API Description HTTP Request Request Weight Request Parameters Response Example Copyright © 2026 Binance. [...] WebSocket API Trade Websocket Market Streams User Data Streams Account Convert Portfolio Margin Endpoints FAQ Error Code COIN-M Futures Portfolio Margin Portfolio Margin Pro Options Trading | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | > If startTime and endTime are not sent, the most recent klines are returned. ## Response Example​ [...] Change Log Intr...",
+      "score": 0.99580115,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`uiKlines` return modified kline data, optimized for presentation of candlestick charts. `uiKlines` Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | See `klines` | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | `klines` `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: [...] | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | | type | ENUM | NO | Supported values: FULL or MINI. If none provided, the default is FULL | [...] ### Kline/Candlestick da...",
+      "score": 0.9956346,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum USD (ETH-USD) price history and historical data",
+      "url": "https://nz.finance.yahoo.com/quote/ETH-USD/history/",
+      "content": "| 11 Nov 2025 | 3,568.47 | 3,644.53 | 3,404.86 | 3,415.28 | 3,415.28 | 39,734,688,531 | | 10 Nov 2025 | 3,583.44 | 3,656.15 | 3,508.99 | 3,568.46 | 3,568.46 | 35,638,045,619 | | 9 Nov 2025 | 3,400.10 | 3,616.44 | 3,359.72 | 3,582.62 | 3,582.62 | 28,821,543,888 | | 8 Nov 2025 | 3,435.15 | 3,482.27 | 3,357.71 | 3,400.38 | 3,400.38 | 23,613,870,398 | | 7 Nov 2025 | 3,312.03 | 3,471.80 | 3,195.90 | 3,435.30 | 3,435.30 | 42,609,994,022 | | 6 Nov 2025 | 3,425.36 | 3,454.34 | 3,245.28 | 3,312.26 | 3,312.26 | 36,731,850,433 | | 5 Nov 2025 | 3,292.15 | 3,479.81 | 3,170.51 | 3,425.17 | 3,425.17 | 46,955,882,330 | | 4 Nov 2025 | 3,602.04 | 3,652.69 | 3,063.09 | 3,292.57 | 3,292.57 | 76,827,517,773 | | 3 Nov 2025 | 3,911.75 | 3,912.63 | 3,560.26 | 3,602.31 | 3,602.31 | 53,091,469,560 | [...] | 20 Nov 2025 | 3,022.89 | 3,057.79 | 2,790.60 | 2,831.78 | 2,831.78 | 43,917,885,207 | | 19 Nov 2025 | 3,122.65 | 3,122.65 | 2,871.23 | 3,023.07 | 3,023.07 | 40,229,739,844 | | 18 Nov 2025 | 3,024.41 | 3,167.93 | 2,948.33 | 3,122.98 | 3,122.98 | 41,581,494,270 | | 17 Nov 2025 | 3,092.94 | 3,218.13 | 2,957.31 | 3,024.54 | 3,024.54 | 41,026,793,235 | | 16 Nov 2025 | 3,166.79 | 3,244.84 | 3,007.07 | 3,092...",
+      "score": 0.7750779,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum USD (ETH-USD) Price History & Historical Data - Yahoo ...",
+      "url": "https://finance.yahoo.com/quote/ETH-USD/history/",
+      "content": "| Nov 16, 2025 | 3,166.79 | 3,244.84 | 3,007.07 | 3,092.85 | 3,092.85 | 30,987,886,524 | | Nov 15, 2025 | 3,104.23 | 3,227.69 | 3,104.23 | 3,166.63 | 3,166.63 | 19,932,940,649 | | Nov 14, 2025 | 3,232.30 | 3,252.66 | 3,071.97 | 3,103.79 | 3,103.79 | 47,003,809,463 | | Nov 13, 2025 | 3,412.99 | 3,561.86 | 3,156.03 | 3,232.76 | 3,232.76 | 50,283,416,669 | | Nov 12, 2025 | 3,415.80 | 3,586.01 | 3,373.71 | 3,413.09 | 3,413.09 | 34,898,956,623 | | Nov 11, 2025 | 3,568.47 | 3,644.53 | 3,404.86 | 3,415.28 | 3,415.28 | 39,734,688,531 | | Nov 10, 2025 | 3,583.44 | 3,656.15 | 3,508.99 | 3,568.46 | 3,568.46 | 35,638,045,619 | | Nov 9, 2025 | 3,400.10 | 3,616.44 | 3,359.72 | 3,582.62 | 3,582.62 | 28,821,543,888 | | Nov 8, 2025 | 3,435.15 | 3,482.27 | 3,357.71 | 3,400.38 | 3,400.38 | 23,613,870,398 | [...] | Nov 7, 2025 | 3,312.03 | 3,471.80 | 3,195.90 | 3,435.30 | 3,435.30 | 42,609,994,022 | | Nov 6, 2025 | 3,425.36 | 3,454.34 | 3,245.28 | 3,312.26 | 3,312.26 | 36,731,850,433 | | Nov 5, 2025 | 3,292.15 | 3,479.81 | 3,170.51 | 3,425.17 | 3,425.17 | 46,955,882,330 | | Nov 4, 2025 | 3,602.04 | 3,652.69 | 3,063.09 | 3,292.57 | 3,292.57 | 76,827,517,773 | | Nov 3, 2025 | 3,911.75 | 3,912.63 | 3,...",
+      "score": 0.6954834,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "ETH USD Binance Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/eth-usd-historical-data",
+      "content": "| | | | | | | | --- --- --- | | 2,203.38 | 2,317.55 | 2,348.22 | 2,155.14 | 488.05K | -4.93% | | | 2,317.74 | 2,348.30 | 2,374.00 | 2,297.89 | 493.82K | -1.49% | | | 2,352.79 | 2,180.91 | 2,384.90 | 2,165.36 | 845.89K | +8.01% | | | 2,178.29 | 2,096.62 | 2,200.68 | 2,083.36 | 280.83K | +3.92% | | | 2,096.15 | 2,090.44 | 2,105.61 | 2,062.80 | 152.50K | +0.17% | | | 2,092.61 | 2,073.51 | 2,206.32 | 2,071.09 | 599.66K | +0.95% | | | 2,073.02 | 2,052.85 | 2,093.39 | 2,018.21 | 400.49K | +1.03% | | | 2,051.97 | 2,035.80 | 2,085.57 | 2,007.83 | 350.04K | +0.75% | | | 2,036.72 | 1,992.25 | 2,087.93 | 1,991.29 | 463.45K | +2.14% | | | 1,994.04 | 1,937.87 | 2,051.69 | 1,932.02 | 550.76K | +2.94% | | | 1,937.11 | 1,969.92 | 1,979.33 | 1,918.23 | 391.19K | -1.64% | [...] | | 1,969.32 | 1,979.32 | 1,996.03 | 1,950.26 | 184.45K | -0.46% | | | 1,978.48 | 2,073.26 | 2,092.80 | 1,956.63 | 411.57K | -4.55% | | | 2,072.86 | 2,126.62 | 2,161.62 | 2,055.21 | 432.23K | -2.65% | | | 2,129.38 | 1,982.06 | 2,198.19 | 1,945.32 | 737.56K | +7.39% | | | 1,982.81 | 2,027.86 | 2,040.14 | 1,932.95 | 509.41K | -2.16% | | | 2,026.63 | 1,939.74 | 2,081.43 | 1,922.30 | 577.33K | +4.50% | | | 1,939.35 | 1,964.51...",
+      "score": 0.6415577,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "ETH/USDT - Ethereum BINANCE exchange charts 1 month",
+      "url": "https://bitinfocharts.com/markets/binance/eth-usdt-1m.html",
+      "content": "SENT/USDT AVAX/USDC AVAX/TRY KITE/USDC STRK/USDT TRX/USDC POL/USDT EIGEN/USDT ENA/USDC SEI/USDC HUMA/TRY PHA/TRY KITE/TRY SXP/USDT LDO/USDT MANTRA/TRY PAXG/USDC FLOKI/USDT OP/USDT PAXG/TRY ALGO/USDT XPL/USDC GALA/USDT RUNE/USDT MORPHO/USDT BROCCOLI714/USDT AIXBT/USDT FORM/USDT NEAR/USDC BIO/USDT WBETH/USDT GIGGLE/USDT BABY/TRY BANANAS31/USDC SPK/USDT BTC/IDR JASMY/USDT TIA/USDT XRP/EUR ENSO/USDT EURI/USDT USDT/MXN BARD/TRY ATOM/USDT PENGU/USDC FOGO/USDT ROSE/USDT LTC/USDC INJ/USDT ETC/USDT LINEA/USDT SKY/USDT BERA/USDT ALICE/USDT JUP/USDT USDT/ARS GUN/USDT PEOPLE/USDT SIGN/TRY AAVE/USDC NEIRO/USDT RUNE/USDC HOOK/USDT ZEN/USDT KERNEL/TRY SLP/USDT XRP/ETH PNUT/USDT ASTER/USDC SNX/TRY PENDLE/USDT KAITO/USDT BCH/USDC BANANA/USDT WBETH/ETH AXS/USDT COW/USDT MASK/USDT ALCX/USDT TRX/TRY [...] ORCA/USDT ESP/TRY SOL/BRL MUBARAK/USDT ADA/EUR EIGEN/TRY 1000CAT/USDT LINK/BTC AVAX/BTC WLD/TRY LPT/USDT SHIB/TRY GALA/USDC RSR/USDT MOVE/USDT DOT/USDC ZRO/TRY TRUMP/USDC DOGE/BTC CHZ/TRY TAO/TRY SUI/USD1 WAXP/USDT CFX/USDT IO/USDT GIGGLE/TRY ZKP/USDT HOT/USDT CTK/USDT ENS/USDT BERA/TRY RAY/USDT PHB/USDT BREV/USDT DOGS/USDC UMA/USDT WIF/TRY MEME/USDT PHA/USDC LUNA/USDT USDE/USDT KERNEL/USDC RED/US...",
+      "score": 0.6257817,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "ETH-USDT (Binance Futures) - Price, Live Order Book - CryptoMeter",
+      "url": "https://www.cryptometer.io/data/binance_futures/eth/usdt",
+      "content": "| LONGS | | 2.6M (50%) | 4.9M (53%) | 2M (53%) | 1M (49%) | 4M (52%) | 2.7M (51%) | 2.2M (50%) | 3M (50%) | 3.1M (51%) | 1.9M (48%) | 1M (50%) | 2.4M (49%) | 2.8M (50%) | 4.2M (51%) | 3.3M (50%) | 3.6M (51%) | 3.4M (50%) | 3.2M (50%) | 2.8M (50%) | 2.7M (51%) | 4.4M (52%) | 2.6M (48%) | 3.2M (49%) | 1M (50%) | 1M (51%) | 2.3M (50%) | 2M (48%) | 2.5M (51%) | 2.2M (50%) | 2M (50%) | | SHORTS | | 2.6M (50%) | 4.2M (47%) | 1.8M (47%) | 1M (51%) | 3.7M (48%) | 2.6M (49%) | 2.2M (50%) | 2.9M (50%) | 3M (49%) | 2.1M (52%) | 1M (50%) | 2.4M (51%) | 2.8M (50%) | 4M (49%) | 3.3M (50%) | 3.5M (49%) | 3.3M (50%) | 3.2M (50%) | 2.9M (50%) | 2.5M (49%) | 4M (48%) | 2.8M (52%) | 3.3M (51%) | 1M (50%) | 949.3K (49%) | 2.3M (50%) | 2.1M (52%) | 2.4M (49%) | 2.1M (50%) | 2.1M (50%) | [...] | LONGS | | 39.3K (54%) | 58.8K (48%) | 49.4K (45%) | 69.8K (49%) | 101.9K (50%) | 228.1K (50%) | 134.1K (49%) | 184.2K (50%) | 95.3K (51%) | 101.5K (54%) | 89.4K (54%) | 125.2K (48%) | 79.2K (46%) | 98K (54%) | 98.5K (51%) | 82K (46%) | 208.4K (49%) | 274.1K (49%) | 83.7K (48%) | 154.8K (49%) | 252.6K (56%) | 137.7K (46%) | 150.8K (49%) | 218.6K (56%) | | SHORTS | | 33.9K (46%) | 63.8K (52%) | 60.1K (55%) | 73...",
+      "score": 0.4858686,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "ETH/USDT (Binance) – Price today, Live Order Book, Trades & Alerts",
+      "url": "https://www.cryptometer.io/data/binance/eth/usdt",
+      "content": "| 2,196.59 ETH | 6,172,413 USDT | SELL | Binance | 29 Jan 2026 | | 2,143.81 ETH | 6,439,136 USD | BUY | Coinbase Advanced | 15 Dec 2025 | | 2,127.46 ETH | 4,527,259 USDT | SELL | OKX | 05 Mar 2026 | | 2,118.87 ETH | 4,121,194 USDT | SELL | Binance | 08 Mar 2026 | | 2,112.15 ETH | 4,243,859 USDT | BUY | OKX | 03 Mar 2026 | | 2,086.65 ETH | 6,207,790 USDT | BUY | Binance | 25 Nov 2025 | | 2,073.43 ETH | 4,283,516 USDT | SELL | OKX | 10 Mar 2026 | | 2,065.50 ETH | 4,137,505 USDT | BUY | OKX | 11 Feb 2026 | | 2,050.55 ETH | 9,432,529 USD | SELL | Coinbase Advanced | 22 Aug 2025 | | 2,008.80 ETH | 4,061,114 USDT | SELL | OKX | 01 Mar 2026 | | 2,004.66 ETH | 8,694,200 USDT | SELL | OKX | 18 Aug 2025 | | 1,995.56 ETH | 4,102,867 USDT | BUY | OKX | 13 Feb 2026 | [...] | BUY | | 2.2K (62%) | 6.4K (60%) | 2.5K (50%) | 11.2K (47%) | 3K (45%) | 3K (51%) | 5.6K (55%) | 8.5K (48%) | 10.6K (40%) | 15.1K (51%) | 27.2K (51%) | 35.6K (51%) | 43K (54%) | 19.2K (60%) | 4K (36%) | 10.3K (51%) | 10.3K (60%) | 9.1K (51%) | 6.2K (51%) | 9.6K (48%) | 2.9K (41%) | 2.4K (44%) | 5.7K (48%) | 5.6K (41%) | | SELL | | 1.3K (38%) | 4.3K (40%) | 2.5K (50%) | 12.7K (53%) | 3.7K (55%) | 2.9K (49%) | 4.6K (45%) |...",
+      "score": 0.4485476,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum to US Dollar (ETH/USD) - Historical data, historical prices",
+      "url": "https://twelvedata.com/markets/679245/crypto/binance/eth-usd/historical-data",
+      "content": "| Date | Open | High | Low | Close | % Change | --- --- --- | | Mar 26, 2026 | 2.17K | 2.17K | 2.11K | 2.12K | -2.26% | | Mar 25, 2026 | 2.16K | 2.20K | 2.15K | 2.17K | 0.59% | | Mar 24, 2026 | 2.15K | 2.18K | 2.10K | 2.16K | 0.20% | | Mar 23, 2026 | 2.05K | 2.20K | 2.02K | 2.15K | 4.78% | | Mar 22, 2026 | 2.08K | 2.13K | 2.03K | 2.05K | -1.49% | | Mar 21, 2026 | 2.15K | 2.17K | 2.07K | 2.08K | -2.86% | | Mar 20, 2026 | 2.14K | 2.18K | 2.12K | 2.15K | 0.39% | | Mar 19, 2026 | 2.20K | 2.23K | 2.10K | 2.14K | -2.98% | | Mar 18, 2026 | 2.32K | 2.35K | 2.15K | 2.20K | -4.92% | | Mar 17, 2026 | 2.35K | 2.38K | 2.29K | 2.32K | -1.51% | | Mar 16, 2026 | 2.18K | 2.39K | 2.16K | 2.35K | 8.02% | | Mar 15, 2026 | 2.10K | 2.20K | 2.08K | 2.18K | 3.92% | [...] Apple Inc AAPL Common stock NASDAQTesla Inc TSLA Common stock NASDAQPublic Joint-Stock Company Territorial Generation Company No.2 TGKB Common stock MOEXSynergia Energy Ltd SYN Common stock LSECoroWare, Inc. COWI Common stock OTCClover Power Public Company Limited CV Common stock SETYes Bank Limited YESBANK Common stock NSEZorlu Enerji Elektrik Üretim A.S. ZOREN Common stock BISTBosera CM Shekou Industrial Park REIT 0P0001MJE3 Mutual f...",
+      "score": 0.44174582,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Historical Market Data We've made Candlestick, Trade, and AggTrade data for all pairs available for download. What Data Is Available We provide data at daily and monthly intervals. Data for a day is uploaded the following day, and we begin to upload data for a month at the beginning of the following month. Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Field Name Description open\\_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close\\_time Candlestick close time in Unix time format quote\\_volume Quote asset volume count Number of trades [...] Data Disclaimer Historical Market Data is provided for general informational purposes only and should NOT be: (1) considered an individualized recommendation, endorsement, or offer of any digital asset or services discussed herein; or (2) relied upon for any investment activities. All information is provided on an as-is basis and is subject to change without notice. While we strive to keep the information up to date and accurate...",
+      "score": 0.4023222,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Ethereum Historical Data | Kaggle",
+      "url": "https://www.kaggle.com/datasets/aipeli/binance-ethusdt/code",
+      "content": "​ All Your Work Shared With You Bookmarks Hotness [ ETH/USD Prediction Prophet Updated 4y ago3 comments · Binance Ethereum Historical Data]( 8 more_horiz [ ethusdt data check Notebook copied with edits from Aipe Li · Updated 4y ago1 comment · Binance Ethereum Historical Data]( 3 more_horiz",
+      "score": 0.31871885,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Data - CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/data/binance/",
+      "content": "We track and produce files for over 1100+ assets in the spot/physical markets for Daily, Hourly, and Minute(!) time intervals. These are all provided for free. Each data set is easily downloadable in CSV format and can be consumed automatically by Python scripts or other automated processes. In each file, you will find the below/following fields. This OHLC (Open/High/Low/Close) pricing data is updated at the end of each day from the respective exchange. Please reach out if you find discrepancies or errors in the data that need to be addressed - Unix Timestamp - This is the unix timestamp or also known as \"Epoch Time\". Use this to convert to your local timezone - Date - This timestamp is in UTC datetime - Symbol - The symbol for which the timeseries data refers [...] These resources arrange raw transactional data into OHLC by trade counts. This provides a deeper granularity of trade action than what typical OHLCV value conveys in its time-centered format. Tick OHLC files are timeless, as candles are only formed as transactions occur. Data is updated each day, and we offer the resources in 3 main tick sizes: 610, 1500, 4500. Custom sizes can be discussed for members Data Fields: -...",
+      "score": 0.3135884,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "search_index": 1
+    },
+    {
+      "title": "faheemjh's Profile | Binance Square",
+      "url": "https://www.binance.com/en/square/profile/faheemjh",
+      "content": "🚀 Ethereum Breaks $4,000 – What’s Next for ETH in 2025? $ETH {spot}(ETHUSDT) Ethereum (ETH) has surged past the $4,000 mark, hitting its highest point this year. Analysts suggest a potential short-term range between $3,900–$4,100, but a breakout above $4,094 could trigger a rally toward $4,868. 💡 Key Drivers: Pectra Upgrade (May 2025): Improved usability, wallet performance, and developer tools. Scalability Roadmap: EIP-4844 (blobs), zk-EVM integration, and research pushing throughput toward 10,000 TPS. Institutional Inflows: Growing interest from funds and staking activity. 📊 Current Snapshot: Price: ~$4,050 Intraday High: $4,056 Intraday Low: $3,889 Long-Term Potential: Strong, backed by tech upgrades and network adoption. [...] 🔹 TRON (TRX) Current Price: ~$0.323 2025 Forecast Range: $0.30 – $0.40 Average Target: ~$0.34 – $0.40 Bullish High: ~$0.45 Why It Matters: Tron’s strength lies in its low-fee transactions and growing stablecoin ecosystem (like USDT). Reference: CoinCodex, Changelly 🔹 Ondo (ONDO) Current Price: ~$0.886 2025 Forecast Range: $0.90 – $1.30 (could reach $3 in bullish cases) Average Target: ~$1.00 – $1.10 Why It Matters: ONDO is gaining traction through real...",
+      "score": 0.15921742,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-prediction/ethereum",
+      "content": "| Month | Min Price | Average Price | Max Price | ROI | --- --- | | | | | | | Jan 1, 2031 | $1,995.46 | $2,766.47 | $3,537.47 | +62.92% | | Feb 1, 2031 | $1,992.37 | $2,763.37 | $3,534.37 | +62.78% | | Mar 1, 2031 | $1,989.27 | $2,760.28 | $3,531.28 | +62.64% | | Apr 1, 2031 | $1,986.18 | $2,757.18 | $3,528.18 | +62.49% | | May 1, 2031 | $1,983.08 | $2,754.09 | $3,525.09 | +62.35% | | Jun 1, 2031 | $1,979.99 | $2,750.99 | $3,521.99 | +62.21% | | Jul 1, 2031 | $1,976.89 | $2,747.9 | $3,518.9 | +62.07% | | Aug 1, 2031 | $1,973.8 | $2,744.8 | $3,515.8 | +61.92% | | Sep 1, 2031 | $1,970.7 | $2,741.71 | $3,512.71 | +61.78% | | Oct 1, 2031 | $1,967.61 | $2,738.61 | $3,509.61 | +61.64% | | Nov 1, 2031 | $1,964.51 | $2,735.52 | $3,506.52 | +61.5% | [...] | Month | Min Price | Average Price | Max Price | ROI | --- --- | | | | | | | Jan 1, 2033 | $1,921.19 | $2,692.19 | $3,463.19 | +59.5% | | Feb 1, 2033 | $1,918.09 | $2,689.09 | $3,460.09 | +59.36% | | Mar 1, 2033 | $1,915 | $2,686 | $3,457 | +59.21% | | Apr 1, 2033 | $1,911.9 | $2,682.9 | $3,453.9 | +59.07% | | May 1, 2033 | $1,908.81 | $2,679.81 | $3,450.81 | +58.93% | | Jun 1, 2033 | $1,905.71 | $2,676.71 | $3,447.71 | +58.79% | | Jul...",
+      "score": 0.083291925,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-prediction/bitcoin",
+      "content": "$BTC View More Image 19 0 2 0 0 Image 20: UP_WALA_TRADER1Image 21: UP_WALA_TRADER1 UP_WALA_TRADER1 19 hours ago $BTC USDT Analysis: Pullback or Start of a Bigger Drop? Understanding the Chart (Simple View): Looking at the 15-minute chart, Bitcoin recently pushed up strongly toward the $71,200–$71,400 zone, but then things changed. The price started to struggle, forming smaller candles at the top — a sign buyers were losing strength. After that, we saw a sharp drop with multiple red candles, showing strong selling pressure. What’s Happening Now: Right now, price has fallen near the $70,000 area and is trying to bounce slightly. This looks like a short-term reaction after a fast drop, not a strong recovery yet. Key Levels to Watch: [...] ### Relative Strength Index 1. Currently the RSI is within the 30-70 neutral zone, which indicates the price is trending neutral with the price being able to keep RSI in that state for a while. ### MACD 1. On the histogram side, there is neither a bearish or bullish divergence. If there is no bearish or bullish signal divergence, there is no signal for the histogram. ## BTC Price Prediction April 2026 Forecast data for April places Bitcoin's expec...",
+      "score": 0.033336822,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "GMT to USD Live Price, Market Cap & Chart",
+      "url": "https://www.binance.com/en/price/green-metaverse-token",
+      "content": "### Community Azərbaycan български Čeština Dansk Deutsch Ελληνικά English (UAE) English (Australia) English (Bahrain) English (India) English (Japan) English (Kazakhstan) English (Nigeria) English (New Zealand) English (Türkiye) English (South Africa) Español (España) Español (Argentina) Español (Latinoamérica) Español (México) Français Français (Afrique) magyar nyelv Bahasa Indonesia Italiano 日本語 Қазақша ລາວ latviešu valoda Polski Português (Portugal) Português (Angola) Português (Brasil) Română Русский Русский (Казахстан) Русский (Украина) සිංහල Slovenčina Slovenščina svenska Українська Oʻzbekcha Tiếng Việt 简体中文 繁體中文 USD-$ USD-$ AED-د.إ ARS-ARS$ AUD-A$ AZN-₼ BDT-৳ BGN-лв BHD-.د.ب BOB-$b BRL-R$ CAD-C$ CHF-CHF CNY-¥ COP-COL$ [...] VND Image 61: ZAR ZAR Image 62: USD USD Buy GMT Binance has the lowest transaction fee rate amongst all major trading platforms. Binance 0.1% Kraken 0.26% Coinbase 1.99% Trending cryptos Image 63: Bitcoin PriceBitcoin BTC $65,814.65 -2.14% Image 64: Ethereum PriceEthereum ETH $1,927.76 -4.62% Image 65: Solana PriceSolana SOL $81.79 -4.51% Image 66: BNB PriceBNB BNB $612.68 -1.99% Image 67: Dogecoin PriceDogecoin DOGE $0.093522 -3.18% Image 68: XRP Pric...",
+      "score": 0.016215032,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "Defi App (HOME) Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en-IN/price-prediction/defi-app",
+      "content": "## Defi App (HOME) Price Prediction Till 2030, 2035 & Beyond 2029 2030 2031 2032 2033 2034 2035 2040 2050 | Month | Min Price | Average Price | Max Price | ROI | | | | | | | | 01-Jan-2029 | $0 | $0 | $0.0062 | -70.2% | | 01-Feb-2029 | $0 | $0 | $0.00547 | -73.68% | | 01-Mar-2029 | $0 | $0 | $0.00475 | -77.16% | | 01-Apr-2029 | $0 | $0 | $0.00403 | -80.63% | | 01-May-2029 | $0 | $0 | $0.0033 | -84.11% | | 01-Jun-2029 | $0 | $0 | $0.00258 | -87.59% | | 01-Jul-2029 | $0 | $0 | $0.00186 | -91.06% | | 01-Aug-2029 | $0 | $0 | $0.00114 | -94.54% | | 01-Sept-2029 | $0 | $0 | $0.00041 | -98.02% | | 01-Oct-2029 | $0 | $0 | $0 | -100% | | Month | Min Price | Average Price | Max Price | ROI | | | | | | | | Price is too low to predict | | | | | [...] Potential ROI: -47.6% | Month | Min Price | Average Price | Max Price | ROI | | | | | | | | 01-Jan-2028 | $0.00118 | $0.00803 | $0.01488 | -28.48% | | 01-Feb-2028 | $0.00046 | $0.0073 | $0.01415 | -31.96% | | 01-Mar-2028 | $0 | $0.00658 | $0.01343 | -35.43% | | 01-Apr-2028 | $0 | $0.00586 | $0.01271 | -38.91% | | 01-May-2028 | $0 | $0.00513 | $0.01198 | -42.39% | | 01-Jun-2028 | $0 | $0.00441 | $0.01126 | -45.86% | | 01-Jul-2028 | $0 | $0.00369...",
+      "score": 0.01461567,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "Trust Wallet Token Price Today | TWT to USD Live ...",
+      "url": "https://www.binance.com/en/price/trust-wallet-token",
+      "content": "Cookie Policy Allow All ### Manage Consent Preferences #### Strictly Necessary Cookies Always Active These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information. Cookies Details‎ #### Functional Cookies - [x] Functional Cookies [...] VND Image 62: ZAR ZAR Image 63: USD USD Buy TWT Binance has the lowest transaction fee rate amongst all major trading platforms. Binance 0.1% Kraken 0.26% Coinbase 1.99% #TWT 735,111 views 2,250 discussing Image 64: Elite Entry Image 65: Elite Entry Elite Entry 3 days ago $TWT recently bounced from the 0.4700–0.4850 support zone and is now trading near 0.4940. Price action shows early signs of stabilization, and if 0.4850 holds, a move toward higher resistance levels could follow. Spot TWT Entry Zone: 0.4850 – 0.5000 Stop Loss: 0.4700 TP1: 0.5150 TP2: 0.5400 TP...",
+      "score": 0.009783876,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "#tradestories Community Insights & Market Sentiment",
+      "url": "https://www.binance.com/en/square/hashtag/tradestories",
+      "content": "DOGE-3.75% 5 1 34 17.5k Log in to explore more content Join global crypto users on Binance Square ⚡️ Get latest and useful information about crypto. 💬 Trusted by the world’s largest crypto exchange. 👍 Discover real insights from verified creators. Email / Phone number ## Related Coins BNB BNB $635.36 -1.30%BTC BTC $70,111.1 -1.36%ETH ETH $2,117.13 -2.38% ## Trending Topics 1 #OilPricesDrop 678,479 views 6,464 Discussing2 #TrumpSaysIranWarHasBeenWon 600,671 views 5,501 Discussing3 539,376 views 4,555 Discussing1.5M views 12,145 Discussing5 1.4M views 11,021 Discussing6 1.4M views 11,539 Discussing1.1M views 8,621 Discussing917,202 views 6,480 Discussing2.9M views 19,713 Discussing1.9M views 13,655 Discussing [...] View More PEPE-3.09% 1 1 6 806 Web3Alert · May 7, 2025 Follow Report Block User 99% of Crypto Projects Will Disappear After Laws and ISO Regulations Occur. Government Coins Are The Chosen. We'll Have Laws and Regulations by November, No More Speculation, The Four Year Cycle is Over, and Set Prices. #ISO20022 Federal Reserve - July 14th 2025 Swift - November 22nd 2025 Don't Sell Aleast Until Global Adoption, Regulations, and Tokenization Occurs. You'll Acquire Generation...",
+      "score": 0.009055264,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "OG whales are dumping Ethereum again, with a massive ...",
+      "url": "https://www.binance.com/en/square/post/35636466423465",
+      "content": "● This interval has accumulated a massive amount of chips. According to statistics, between $2700 and $3100, approximately 17.9 million ETH has densely piled up, accounting for 22.6% of the total circulating supply of ETH; just at the $3100 level, there are 4.43 million ETH chips. These chips mainly come from two groups: first, investors who bought the dip during the period from May to July at $2600-$2700 and subsequently continued to add positions, raising their average cost to $3100; second, a new batch of dip-buying funds that entered when prices corrected to $2700-$2800 in late November. This structure has produced two important market implications: [...] Article # OG whales are dumping Ethereum again, with a massive withdrawal of billions in positions! AiCoin官方 Jan 27 Follow View Hidden Replies Report Block User As we enter 2026, the Ethereum market has not welcomed the anticipated 'good start', but instead continues to fluctuate below key price levels. From the beginning of the year until now, the ETH price has retraced all gains and turned to decline, consistently trading below the psychological threshold of $3000. [...] #BTC#ETH#NFT Disclaimer: Includes third-party opini...",
+      "score": 0.008985428,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "eCash Price Today | XEC to USD Live Price, Market Cap & ...",
+      "url": "https://www.binance.com/en/price/ecash",
+      "content": "Ontology PriceOntologyONT $0.067908 +37.22% Chainbase PriceChainbaseC $0.0627224 +29.64% Bittensor PriceBittensorTAO $351.93 +13.73% ## Top 3 Losers Arena-Z PriceArena-ZA2Z $0.0003491 -33.85% Sign PriceSignSIGN $0.042975 -15.27% Opinion PriceOpinionOPN $0.201858 -14.16% ## Newly Added Cryptos Centrifuge PriceCentrifugeCFG $0.1431183 +6.54% Espresso PriceEspressoESP $0.0936018 -4.61% Fogo PriceFogoFOGO $0.0187649 -0.35% ## Top Unlisted Cryptos siren PricesirenSIREN $2.17 +112.03% Venice Token PriceVenice TokenVVV $6.89 +22.25% [...] MNT MXN MXN NZD NZD OMR OMR PEN PEN PHP PHP PKR PKR PLN PLN QAR QAR RON RON RUB RUB SAR SAR SEK SEK THB THB TRY TRY TWD TWD UAH UAH UGX UGX UZS UZS VES VES VND VND ZAR ZAR USD USD Buy XEC Binance has the lowest transaction fee rate amongst all major trading platforms. Binance 0.1% Kraken 0.26% Coinbase 1.99% ## Trending cryptos Bitcoin PriceBitcoinBTC $71,366.85 +0.14% Ethereum PriceEthereumETH $2,185.55 +1.05% BNB PriceBNBBNB $648.54 +1.7% Solana PriceSolanaSOL $92.5 +0.55% Bittensor PriceBittensorTAO $351.93 +13.73% Dogecoin PriceDogecoinDOGE $0.0969225 +2.49% XRP PriceXRPXRP $1.42 -0.18% Ontology PriceOntologyONT $0.067908 +37.22% ## Top 3 Gainers...",
+      "score": 0.008380454,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin Price Prediction 2026-2031",
+      "url": "https://www.binance.com/en/price-predicti%256f%256e/bit%2563oi%256e",
+      "content": "### Relative Strength Index 1. Currently the RSI is within the 30-70 neutral zone, which indicates the price is trending neutral with the price being able to keep RSI in that state for a while. 2. There is currently no bearish or bullish divergence within the last 14 candles, which is no signal for price reversal from current areas. ### Moving Average [...] ### Relative Strength Index 1. Currently the RSI is within the 30-70 neutral zone, which indicates the price is trending neutral with the price being able to keep RSI in that state for a while. ### MACD 1. On the histogram side, there is neither a bearish or bullish divergence. If there is no bearish or bullish signal divergence, there is no signal for the histogram. ## BTC Price Prediction April 2026 Forecast data for April places Bitcoin's expected minimum value near $85,075.11 and the maximum at approximately $123,948.76. The average price is projected to be approximately $104,511.93. Historically, April sees a positive trend as traders look forward to the start of Q2. Potential ROI: +75.19% ## BTC Price Prediction May 2026 [...] Technical analysis is a useful tool for predicting trends on a chart. However, recently many p...",
+      "score": 0.0069576087,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETH/USDT 1m historical klines November low 3400",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:binance.com \"ETH_USDT\" 1m chart November low",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance API klines ETHUSDT 1m November historical data",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

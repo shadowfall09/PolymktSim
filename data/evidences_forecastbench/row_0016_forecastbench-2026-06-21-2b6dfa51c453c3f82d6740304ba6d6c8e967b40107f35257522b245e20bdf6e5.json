@@ -1,0 +1,746 @@
+{
+  "row_index": 16,
+  "market_id": "forecastbench_2026_06_21_2b6dfa51c453c3f82d6740304ba6d6c8e967b40107f35257522b245e20bdf6e5",
+  "slug": "",
+  "question": "Will there be more fatalities in Reunion for the 30 days before 2026-06-28 compared to the 30-day average of fatalities over the 360 days preceding 2026-06-21? e.g. If the forecast due date is 2024-01-01 and we have the following data: Date,fatalities 2023-11-11,1 2023-10-10,2 to calculate the 30-day average of fatalities over the preceding 360 days, we’d have: (1+2)/12=0.25. In this example, for the question to resolve positively, 1 or more fatalities would need to occur in the 30 days leading up to the resolution. Resolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published. Background: ACLED classifies events into six distinct categories: 1. Battles: violent interactions between two organized armed groups at a particular time and location; 2. Protests: in-person public demonstrations of three or more participants in which the participants do not engage in violence, though violence may be used against them; 3. Riots: violent events where demonstrators or mobs of three or more engage in violent or destructive acts, including but not limited to physical fights, rock throwing, property destruction, etc.; 4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature, are at range and widely destructive; 5. Violence against civilians: violent events where an organized armed group inflicts violence upon unarmed non-combatants; and 6. Strategic developments: contextually important information regarding incidents and activities of groups that are not recorded as any of the other event types, yet may trigger future events or contribute to political dynamics within and across states. Detailed information about the categories can be found at: https://acleddata.com/knowledge-base/codebook/#acled-events",
+  "event_title": "Will there be more fatalities in Reunion for the 30 days before 2026-06-28 compared to the 30-day average of fatalities over the 360 days preceding 2026-06-21?\n\ne.g. If the forecast due date is 2024-01-01 and we have the following data:\nDate,fatalities\n2023-11-11,1\n2023-10-10,2\nto calculate the 30-day average of fatalities over the preceding 360 days, we’d have: (1+2)/12=0.25.\n\nIn this example, for the question to resolve positively, 1 or more fatalities would need to occur in the 30 days leading up to the resolution.\n\nResolution criteria: Resolves to the value calculated from the ACLED dataset once the data is published.\n\nBackground: ACLED classifies events into six distinct categories:\n\n1. Battles: violent interactions between two organized armed groups at a particular time and\n   location;\n2. Protests: in-person public demonstrations of three or more participants in which the participants\n   do not engage in violence, though violence may be used against them;\n3. Riots: violent events where demonstrators or mobs of three or more engage in violent or\n   destructive acts, including but not limited to physical fights, rock throwing, property\n   destruction, etc.;\n4. Explosions/Remote violence: incidents in which one side uses weapon types that, by their nature,\n   are at range and widely destructive;\n5. Violence against civilians: violent events where an organized armed group inflicts violence upon\n   unarmed non-combatants; and\n6. Strategic developments: contextually important information regarding incidents and activities of\n   groups that are not recorded as any of the other event types, yet may trigger future events or\n   contribute to political dynamics within and across states.\n\nDetailed information about the categories can be found at:\nhttps://acleddata.com/knowledge-base/codebook/#acled-events",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
+  "end_date_limit": "2026-06-27",
+  "row_end_date_raw": "2026-06-28",
+  "expanded_queries": [
+    "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+    "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+    "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+    "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+    "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department"
+  ],
+  "supplemental_query": null,
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 42,
+    "deduped_result_count": 41,
+    "hard_quarantined_late_date_count": 2,
+    "llm_filter_input_count": 41,
+    "supplemental_search_triggered": false,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 30,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 11,
+    "llm_kept_count": 30,
+    "llm_kept_leak_no_count": 30,
+    "llm_rewrite_candidate_count": 0,
+    "llm_rewritten_kept_count": 0,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "content": "Violence against civilians also includes attempts at inflicting harm (e.g., beating, shooting, torture, rape, mutilation, etc.) or forcibly disappearing (e.g., kidnapping and disappearances) civilian actors. Note that the Violence against civilians event type exclusively captures violence targeting civilians that does not occur concurrently with other forms of violence — such as rioting – that are coded higher in the ACLED event type hierarchy. To get a full list of events in the ACLED dataset where civilians were the main or only target of violence, users can filter on the Civilian targeting column (for more, see Civilian targeting). The following sub-event types are associated with the Violence against civilians event type: Sexual violence, Attack, and Abduction/forced disappearance. [...] ### Violence against civilians ACLED defines Violence against civilians as violent events where an organized armed group inflicts violence upon unarmed non-combatants. By definition, civilians are unarmed and cannot engage in political violence. Therefore, the violence is understood to be asymmetric as the perpetrator is assumed to be the only actor capable of using violence in the event. Th...",
+      "score": 0.7463059,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "content": "type Violence against civilians are only one subset of this violence. Civilians can also be targeted in events coded with event type Explosions/Remote violence - 9 -and Riots, as can Protesters (i.e. unarmed demonstrators). Protesters can also be targeted through lethal forms of violence in events coded with sub-event type Excessive force against protesters coded under event type Protests.5 While ACLED records fatalities, it is important to remember that these are reported fatalities. Fatality numbers are frequently the most biased and poorly reported component of conflict data. They are often debated and can vary widely. Conflict actors may overstate or under-report fatalities to appear strong to the opposition or to minimize international backlash against the state involved. Fatality [...] BY EVENT TYPE ACLED records a 2% rise in civilian targeting last year, with 20,121 events reported in 2018 compared to 20,578 in 2019. At the same time, fewer fatalities were reported in connection with these events, with 28,604 fatalities in 2018 compared to 22,365 in 2019, or a 22% decrease. Civilians do not face uniform threats, meaning that not all civilians are at equal risk of targetin...",
+      "score": 0.73642004,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "content": "The interactive ACLED-Religion dashboard maps the full pilot dataset on religious repression and disorder in Bahrain, Egypt, Iran, Iraq, Israel, Palestine, and Yemen for January 2020-March 2022. Throughout 2021, ACLED worked to improve its coding processes, create new tools to support our data collec­ tion, and further refine our methodology. ACLED also produced additional publicly accessible methodology documents, guides, and other resources to help users understand how ACLED data are collected across re­ gions and to support analysis. In 2021, the Resource Library on the ACLED website was redesigned to make documentation more accessible, and ACLED published and updated methodology documents on a wide range of countries, regions, actors, and types of violence. [...] In 2021, ACLED released a comprehensive update to the country administrative divisions coded in the data. In cooperation with Mapbox, ACLED reviewed administrative boundaries, hierarchies, and naming conventions and devised a process for systematic checks and updates. While ACLED data rely on many sources, from traditional media and government reports to select new me­ dia sources, partners on the ground producing l...",
+      "score": 0.5931622,
+      "query": "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+      "search_index": 2
+    },
+    {
+      "title": "ACLED Year in Review",
+      "url": "https://acleddata.com/system/files/2026-02/ACLED_2022-Year-in-Review_Report_Jan2023.pdf",
+      "content": "Table 4. Civilian Targeting in 2022 by Sub-event Type ⁵ This sub-event type is used when an actor engages in the abduction or forced disappearance of civilians, without reports of further violence. If fatalities or serious injuries are reported as a consequence of the forced disappearance, the event is coded as ‘Attack’ instead. Therefore, by ACLED methodological definition, no fatalities occur in such events, or else they would have been coded differently (for more on ACLED coding decisions, see the ACLED Codebook). [...] 14 2022 YEAR IN REVIEW ACLED data as of 20 January 2023. NEW AND EVOLVING THREATS TO CIVILIANS The civilian burden of conflict continued to grow in 2022, with increases in political violence targeting civilians and associated fatalities.⁴ ACLED records a 12% increase in civilian targeting last year, with approximately 37,800 events recorded in 2021 and nearly 42,500 events in 2022. Moreover, reported fatalities from acts of civilian targeting grew by 16%, from approximately 41,000 fatalities in 2021 to more than 47,700 fatalities in 2022, despite the overall drop in fatalities from political violence events at large. [...] by violent events involving two or mo...",
+      "score": 0.5832277,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "Aggregated data | ACLED",
+      "url": "https://acleddata.com/conflict-data/download-data-files/aggregated-data",
+      "content": "Main navigation User account menu User account menu Main navigation (drawer) An illustration showing connections between data, graphs, and other visualizations. # Aggregated data ## Data by event type All battle, explosions/remote violence, and violence against civilians events. All battle, explosions/remote violence, and violence against civilians events. All protest and violent demonstration events (may overlap with political violence files, as they both include excessive force against protesters). All reported fatalities All reported fatalities stemming from events of direct civilian targeting All civilian targeting events, including those stemming from remote violence. ## Data by region [...] Download this file for event, fatality, and exposure counts of our Middle East data, aggregated by week and Admin 1. The file is updated with new data every Monday. Download this file for event, fatality, and exposure counts of our United States & Canada data, aggregated by week and Admin 1. The file is updated with new data every Tuesday. ## Knowledge base The latest information and guides to best understand and use ACLED data. A selection of questions frequently asked by users of ACLE...",
+      "score": 0.54303354,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "content": "The exception to this is events targeting civilians and protesters, who are by definition not engaging in violence themselves.1 Therefore, the number of fatalities reported for each event involving civilians or protesters as ‘Actor 2’ can be understood as the number of civilians or protesters killed.2 [...] Main navigation User account menu User account menu Main navigation (drawer) # Fatalities Exploration of ACLED's methodology and considerations regarding fatality data in conflict contexts. Uses and limitations of ACLED data Published on: 27 February 2023 | Last updated:7 May 2024 Q. Does ACLED have a minimum fatality criterion for events? A. No – ACLED does not have a fatality threshold for an event’s inclusion in the dataset. This means that political violence and demonstration events in ACLED do not need to produce any fatalities in order to be included as valid events. No arbitrary number of deaths is used to define a conflict. Q. How does ACLED code fatalities? [...] Regular consultations are one means of doing this. ACLED regularly commissions experts to provide feedback on data coverage for various countries/regions, sharing feedback not only on fatality counts but als...",
+      "score": 0.5417246,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "[XLS] Sheet1 - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2011/documents/DRC.xls",
+      "content": "???%????????? ???:$Percent ;Title1Title I}% <TotalMTotal %OO= Warning Text? Warning Text %XTableStyleMedium9PivotStyleLight16`XESheet1Sheet2W!Sheet3 Violence against civiliansDemocratic Republic of CongoKivuButembo#Lloyd's Information Casualty Report215 civilians killed in clashes in Butembo clashes. Battle-Rebels [...] Okapi 22 Feb 053 killed and houses burnt down.Radio Okapi 22-3 Feb 05tFAPC, camped at Ariwara, Aru, killed 2 civilians; civilians responded; MONUC restore calm. 150 militiamen surrender.Radio Okapi 25 Feb 0563 soldiers and a civilian killed on Ishasha-Goma road.Radio Okapi 12 Mar 05830 women kidnapped in Iga-Barriere, 20km north of Bunia.Radio Bukavu 23 Feb 05YMayi Mayi heading towards integration at Kalemie, looting, raping and pillaging en route. KitobongoRadio Okapi 1 Mar 05WBicycles for arms programme sets off violence between Mayi Mayi and civilians. 16 dead.KawanUnknown gunmen kill 9 Bangladeshi peacekeepers at Kafe, in the northeast district of Ituri. Later suspect FNI.LogajMONUC attack suspected murderers of 9 peacekeepers, FNI. UN [...] of a local vigilante group.\"Unidentified Armed Group (Burundi) 7Civilians (France) 7Ricky Agusa Sukaka, a 27-year-old a...",
+      "score": 0.49655825,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "New Small States Data Expand ACLED Coverage to More Than 200 ...",
+      "url": "https://acleddata.com/press/new-small-states-data-expand-acled-coverage-more-200-countries-and-territories",
+      "content": "The new data for these countries and territories also capture more than 20 instances of violence against civilians, including political violence targeting women. These include abductions/forced disappearances, sexual violence, and non-sexual attacks across the Maldives, Cape Verde, Mauritius, Comoros, East Timor, Bhutan, and São Tomé and Príncipe. In addition, armed clashes and remote violence are also recorded across Bhutan, Comoros, East Timor, and the Maldives. Overall, most events are recorded in Réunion (146), Mauritius (137), the Maldives (102), Cape Verde (98), and Mayotte (52). [...] 17 September 2021: The Armed Conflict Location & Event Data Project (ACLED) has now expanded real-time coverage to 13 small states and territories in Africa and Asia, adding over 600 new events to the dataset from the start of 2020 to the present. The expansion includes eight countries and territories in Africa — Cape Verde; Comoros; Mauritius; São Tomé and Príncipe; Seychelles; Mayotte; Réunion; and Saint Helena, Ascension, and Tristan da Cunha — and five countries in Asia — Bhutan; Brunei; Maldives; Singapore; and East Timor. In total, the new release extends ACLED coverage to more than 20...",
+      "score": 0.4718322,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "Unrest in French Overseas Territories and Corsica: Analysis of Violent Demonstration Trends From 2020 to Early 2022 | ACLED",
+      "url": "https://acleddata.com/report/unrest-french-overseas-territories-and-corsica-analysis-violent-demonstration-trends-2020",
+      "content": "following the death of an imprisoned Corsican militant nationalist. [...] Image 6 The spike in demonstrations included many rioting events, sparking fears of a return to nationalist violence on the island (The Guardian, 22 March 2022). Moreover, two National Liberation Front of Corsica (FLNC) militant splinter groups reactivated in September 2021 and have since claimed several violent incidents (Corse Matin, 15 February 2022). Since the beating of Colonna on 2 March, demonstrations in Corsica have turned violent or destructive at the highest level since the beginning of ACLED coverage in 2020, with 31% of demonstrations turning violent or destructive (see graph below). Image 7 [...] The beating of Yvan Colonna, an imprisoned Corsican militant nationalist, on 2 March 2022 sparked the highest level of demonstrations in Corsica since ACLED coverage began in 2020 (see graph below). Colonna — who was serving a life sentence for the 1998 assassination of the prefect of Corse-du-Sud department, Claude Érignac — was beaten into a coma by a fellow prisoner and died from his injuries on 21 March. Corsican activists claimed the state failed to intervene in the beating, with some reports sa...",
+      "score": 0.45231876,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "InSight Crime's 2025 Homicide Round-Up",
+      "url": "https://insightcrime.org/news/insight-crime-2025-homicide-round-up",
+      "content": "### Saint Lucia (-9.2%) While Saint Lucia’s homicide rate of 38.9 puts it among the most violent nations in the region, murders are trending downward, with 70 victims in 2025 compared to 77 in 2024. Despite the decrease, gang violence persists. Law enforcement officials said that most of the homicide victims were known by the police for their involvement in criminal activity. Homicide rates in Caribbean countries: St. Lucia ### Dominican Republic (-8.9%) [...] Homicide rates in Caribbean countries: Puerto Rico ## Murder Rates Trending Down ### Saint Kitts and Nevis (-77.1%) Saint Kitts and Nevis recorded its lowest homicide count in 23 years, with only seven victims in 2025, putting its homicide rate at 13.6. Its murder rate is inherently volatile due to its small population of only about 50,000 people. The government has responded to violence with a public health approach to crime, prioritizing social determinants like poverty, unemployment, mental health, and education, which the government has credited with reducing homicides in the nation. This model is also thought to be effective in reducing violence in other Caribbean countries, such as Trinidad and Tobago. Homicide rates...",
+      "score": 0.38525957,
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] The Costs of Crime and and Violence - IADB Publications",
+      "url": "https://publications.iadb.org/publications/english/document/The-Costs-of-Crime-and--and-Violence-Expansion-and-Update-of-Estimates-for-Latin-America-and-the-Caribbean.pdf",
+      "content": "101 The Costs of Crime and Violence TABLE 3 Model Estimation Results (1) (2) (3) (4) Homicide rate (t-1) -0.31 -0.13 -0.15 -0.03 (0.11) (0.06) (0.08) (0.04) Homicide rate (t-2) -0.02 -0.02 (0.03) (0.02) Homicide rate (t-3) -0.09 -0.12 (0.05) (0.04) Homicide rate (t-4) -0.13 -0.11 (0.07) (0.06) GDP per capita (t) 1.06 1.05 (0.19) (0.13) Inflation (t) 0.004 0.003 (0.002) (0.001) Travel alerts (t) 0.000 -0.001 (0.002) (0.002) Fixed effects by country Sí Sí Sí Sí Fixed effects per year Sí Sí Sí Sí Number of observations 435 308 358 292 Source: Authors’ elaboration. Notes: Homicide rate variables are expressed in logarithms. Robust standard errors at the country level are in parentheses. [...] 100 The Costs of Crime and Violence is negative, and in several cases is statistically significant. When other controls are added [model (4)], the direction of the coefficients is preserved and the third lag remains significant. A comparison of the results of models (2) and (4) shows that the magnitudes of the coefficients for one and three lagged homicides, respectively, are similar, suggesting that the model with one lag would be accumulating the persistence of past incidents. In any case, fr...",
+      "score": 0.38214198,
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "La Reunion, France - Destination Earth",
+      "url": "https://destination-earth.eu/case-studies/la-reunion-france",
+      "content": "The island of La Réunion is a French overseas department situated in the western Indian Ocean and home to the highest peaks in the Indian Ocean. Due to its geographical location and topography, the island experiences several natural hazards such as cyclones, landslides, and coastal and inland flooding. The island holds records for some of the most extreme rainfall events as a result of these cyclones. Some of the most damaging events included Cyclone Denise (1966), Gaméde (2007), Fakir (2018) and Berguitta (2018). During a cyclone, the low-pressure system generates extreme precipitation, storm surge and swells. Combined with its mountainous terrain and exposed coastline, the island is susceptible to flash floods in low-lying areas from both inland and coastal compartments. Floods have",
+      "score": 0.3564248,
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "search_index": 5
+    },
+    {
+      "title": "ACLED 2019: The Year in Review",
+      "url": "https://acleddata.com/report/acled-2019-year-review",
+      "content": "Download Report ### Executive Summary © 2020 Armed Conflict Location & Event Data Project (ACLED). All rights reserved. ## Related content 26 June 2026 Rwandan counter-terrorism special units and Mozambique police patrol streets in the town of Palma, Cabo Delgado, on 18 December 2023 4 June 2026 Analysis brief_Africa.png 2 June 2026 Africa Analysis brief 18 May 2026 Africa Analysis brief ACLED-Horizontal-Logo-white-01 Footer left menu Footer right menu Social media profiles Clarity in Crisis Footer bottom [...] Main navigation User account menu User account menu Main navigation (drawer) # ACLED 2019: The Year in Review ACLED’s 2019 annual report reviews data on political violence and demonstrations. 2 March 2020 ACLED_2019AnnualReport_Cover-e1583180164260.png ### Roudabeh Kishi Roudabeh Kishi headshot ### Melissa Pavlik ### Sam Jones Former head of communications ACLED’s 2019 annual report reviews the past year of data on political violence and demonstration activity across Africa, the Middle East, South Asia, Southeast Asia, Central Asia and the Caucasus, and Southeastern and Eastern Europe and the Balkans. Access the full report as well as an executive summary of key findings...",
+      "score": 0.3546794,
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "search_index": 1
+    },
+    {
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "content": "Restricted page: CAST | Conflict Alert System The ACLED Conflict Alert System (CAST) is a global prediction tool that forecasts the number of political violence events that will occur in each upcoming rolling-four-week period, for the next six periods, in every country around the world Restricted page: Explorer The ACLED Explorer allows you to filter and summarize data from the past year. Country profiles show data at the subnational level, as well as trends based on number of events, fatalities, and civilians exposed to violence. Restricted page: Trends [...] # Conflict data ACLED is the highest-quality and most widely used near-real-time source on political violence and protest data worldwide. ## Register with us to access data Create your myACLED account to download our data and unlock even more features. Register now ## Knowledge Base The latest information and guides to best understand and use ACLED data. FAQs A selection of questions frequently asked by users of ACLED data. Methodology Documentation on ACLED’s methodology, including how ACLED sources and codes information on political violence and protest. Use and access guides General guides on how to use and access the l...",
+      "score": 0.34700638,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "content": "Last year, in addition to continuing real-time data coverage, ACLED launched a variety of new expansions, spe­ cial projects, and initiatives to enable users to more closely monitor trends in political violence and protest. As a result of these projects, the ACLED dataset is more detailed, precise, and comprehensive than at any point in the organization’s history — and the latest data shed new light on key trends in global conflict and instability. [...] In 2021, ACLED set the stage to achieve global coverage in early 2022 by completing and advancing multiple expansion projects. In January, ACLED completed an expansion to Europe, and in February completed an ex­ pansion to the United States. For the United States, this included the release of historical data extending back to the beginning of 2020. In September 2021, ACLED further expanded coverage to 13 small states and territo­ ries in Africa and Asia. This expansion included eight countries and territories in Africa — Cape Verde; Comoros; Mauritius; São Tomé and Príncipe; Seychelles; Mayotte; Réunion; and Saint Helena, Ascension, and Tristan da Cunha — and five countries in Asia — Bhutan; Brunei; Maldives; Singapore; and East...",
+      "score": 0.3400692,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "content": "ACLED is a critical resource for data-driven policymaking and analysis aimed at preventing and resolving conflict around the world. In 2021, the data were used by a wide range of government agencies and intergov­ ernmental organizations and offices, including the United Nations, the European Union, the Organisation for Economic Co-operation and Development, the Government of the United States of America, the Government of Belgium, the Government of Germany, the Government of France, the Government of the United Kingdom, the Government of Canada, the Government of Ghana, the Government of Denmark, the Government of Ireland, and the Government of the Netherlands, among many others. [...] DATA SCIENCE & EARLY WARNING DATA SCIENCE & EARLY WARNING In 2022, ACLED will refine the Early Warning Research Hub tools by developing further assessments of specific conflicts and cases, as well as general guides to patterns of early warning. Some specific refinements include: Expanding on the impact of different conflict actors on the trajectory of violence more generally, and the populations involved. Previous research by the ACLED team has suggested that the impact of new armed, non-state act...",
+      "score": 0.31636977,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "search_index": 1
+    },
+    {
+      "title": "INTERNATIONAL STATISTICS on CRIME AND JUSTICE",
+      "url": "https://www.unodc.org/documents/data-and-analysis/Crime-statistics/International_Statistics_on_Crime_and_Justice.pdf",
+      "content": "offenders.\u0003 Only\u0003 35%\u0003 of\u0003 the\u0003 juvenile\u0003 offenders\u0003 (and\u0003with\u000322%\u0003even\u0003less\u0003female\u0003juveniles)\u0003will\u0003be\u0003 convicted\u0003 in\u0003 court.\u0003 Again,\u0003 the\u0003 attrition\u0003 is\u0003 somewhat\u0003 lower\u0003 in\u0003 Asia.\u0003 As\u0003 expected,\u0003 the\u0003 attrition\u0003 rate\u0003 for\u0003 homicide\u0003 offenders\u0003 is\u0003 much\u0003 lower,\u0003i.e.\u0003higher\u0003percentages\u0003for\u0003the\u0003Convictions\u0003 /\u0003Offenders\u0003quotients.\u0003The\u0003median\u0003rate\u0003is\u000371%,\u0003in\u0003 Europe\u0003the\u0003rate\u0003is\u0003the\u0003highest\u0003with\u000384%.\u0003 In\u0003 figure\u0003 1\u0003 the\u0003 trends\u0003 are\u0003 shown\u0003 for\u0003 the\u0003 convictions\u0003as\u0003percentage\u0003of\u0003the\u0003offenders\u0003found.\u0003 Due\u0003to\u0003the\u0003lack\u0003of\u0003trend\u0003data\u0003it\u0003was\u0003not\u0003useful\u0003to\u0003 give\u0003the\u0003information\u0003by\u0003continent.\u0003Also,\u0003because\u0003 the\u0003 data\u0003 used\u0003 for\u0003 the\u0003 trends\u0003 analysis\u0003 are\u0003 not\u0003 exactly\u0003 the\u0003 same\u0003 as\u0003 those\u0003 for\u0003 the\u0003 'last\u0003 year\u0003 available'\u0003 (see\u0003 Annex\u0003 B\u0003 for\u0003 an\u0003 explanation),\u0003 the\u0003 [...] was\u0003not\u0003only\u0003taken\u0003from\u0003the\u000310th\u0003UNǦCTS\u0003survey,\u0003but\u0003also\u0003from\u0003the\u00037th\u0003to\u00039th\u0003waves,\u0003with\u0003the\u0003year\u00032000\u0003 being\u0003the\u0003earliest\u0003“latest\u0003available”\u0003year\u0003covered\u0003here.\u0003For\u0003trend\u0003analysis,\u0003the\u0003preferred\u0003starting\u0003year\u0003was\u00031995,\u0003 the\u0003 first\u0003 point\u0003 in\u0003 time\u0003 in\u0003 the\u0003 6th\u0003 wave.\u0003 If\u0003 necessary,\u0003 trend\u0003 analysis\u0003 was\u0003 made\u0003 for\u0003shorter\u0003 periods\u0003 of\u0003 time\u0003 instead. [...] covered\u0003 for\u0003 1995\u0003 and\u0003 1997\u0003 in\u0003 the\u0003 6th\u0003 UNǦ CTS.\u0003 The\u0003...",
+      "score": 0.31421936,
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "Country/time-period coverage | ACLED",
+      "url": "https://acleddata.com/methodology/countrytime-period-coverage",
+      "content": "| Malawi | Eastern Africa | 1/1997-Present | | Mauritius | Eastern Africa | 1/2020-Present | | Mayotte | Eastern Africa | 1/2020-Present | | Mozambique | Eastern Africa | 1/1997-Present | | Reunion | Eastern Africa | 1/2020-Present | | Rwanda | Eastern Africa | 1/1997-Present | | Seychelles | Eastern Africa | 1/2020-Present | | Somalia | Eastern Africa | 1/1997-Present | | South Sudan | Eastern Africa | 1/2011-Present | | Tanzania | Eastern Africa | 1/1997-Present | | Uganda | Eastern Africa | 1/1997-Present | | Albania | Europe | 1/2018-Present | | Andorra | Europe | 1/2020-Present | | Austria | Europe | 1/2020-Present | | Bailiwick of Guernsey | Europe | 1/2020-Present | | Bailiwick of Jersey | Europe | 1/2020-Present | | Belarus | Europe | 1/2018-Present | [...] | Serbia | Europe | 1/2018-Present | | Slovakia | Europe | 1/2020-Present | | Slovenia | Europe | 1/2020-Present | | Spain | Europe | 1/2020-Present | | Sweden | Europe | 1/2020-Present | | Switzerland | Europe | 1/2020-Present | | Ukraine | Europe | 1/2018-Present | | United Kingdom | Europe | 1/2020-Present | | Vatican City | Europe | 1/2020-Present | | Angola | Middle Africa | 1/1997-Present | | Cameroon | Middle A...",
+      "score": 0.30056128,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] ACLED Coverage to Date",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2019/01/ACLED_Country-and-Time-Period-coverage_updSept2021.pdf",
+      "content": "Egypt 1/1997-Present Equatorial Guinea 1/1997-Present Eritrea 1/1997-Present eSwatini 1/1997-Present Ethiopia 1/1997-Present Gabon 1/1997-Present Gambia 1/1997-Present Ghana 1/1997-Present Guinea 1/1997-Present Guinea-Bissau 1/1997-Present Kenya 1/1997-Present Lesotho 1/1997-Present Liberia 1/1997-Present Libya 1/1997-Present Madagascar 1/1997-Present Malawi 1/1997-Present Mali 1/1997-Present Mauritania 1/1997-Present Mauritius 1/2020-Present Mayotte 1/2020-Present Morocco 1/1997-Present Mozambique 1/1997-Present Namibia 1/1997-Present Niger 1/1997-Present Nigeria 1/1997-Present Réunion 1/2020-Present Rwanda 1/1997-Present Saint Helena, Ascension, and Tristan da Cunha 1/2020-Present São Tomé and Príncipe 1/2020-Present Senegal 1/1997-Present Seychelles 1/2020-Present Sierra Leone [...] Russia 1/2018-Present San Marino 1/2020-Present Serbia 1/2018-Present Slovakia 1/2020-Present Slovenia 1/2020-Present Spain 1/2020-Present Sweden 1/2020-Present Switzerland 1/2020-Present Ukraine 1/2018-Present United Kingdom 1/2020-Present Vatican City 1/2020-Present Middle East Syria 1/2017-Present Iraq 1/2016-Present Turkey 1/2016-Present Iran 1/2016-Present Saudi Arabia 1/2015-Present Yemen 1/...",
+      "score": 0.27556372,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "search_index": 3
+    },
+    {
+      "title": "Fact sheet No.1: Overseas territories Enhancing sovereignty and regional integration in the Indo-Pacific | France in the Indo-Pacific | Foundation for Strategic Research | FRS",
+      "url": "https://www.frstrategie.org/en/publications/fiches-indo-pacifique/n1-overseas-territories",
+      "content": "FR version available Share . Seven of France’s thirteen overseas departments, regions and collectivities stand in the Indian Ocean (Réunion, Mayotte and the French Southern and Antarctic Territories – TAAF) and the Pacific Ocean (New Caledonia, French Polynesia, Wallis and Futuna and Clipperton). These territories play a direct role in furthering France’s influence in the Indo-Pacific, and are integrated into various regional cooperation mechanisms. [...] ### VARIOUS ADMINISTRATIVE STATUSES The overseas department and region (DROM) of Réunion and the overseas department (DOM) of Mayotte are governed by legislative identity, same as the mainland territories. The overseas collectivities (COM) of French Polynesia and Wallis and Futuna have adopted a system of legislative distinctiveness and autonomy. Despite its unique institutional organisation, the former does not enjoy political autonomy, but rather administrative autonomy. New Caledonia and the TAAF have a unique status and are _sui generis_ collectivities. [...] The Pacific Fund (PF), created in 1985, and the Indian Ocean Regional Cooperation Fund (FCR), created in 2000, aim to facilitate the regional integration of the territ...",
+      "score": 0.27091327,
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] CONFLICT TRENDS (NO. 49) REAL-TIME ANALYSIS OF AFRICAN ...",
+      "url": "https://www.acleddata.com/wp-content/uploads/2016/06/ACLED_Conflict-Trends-Report-No.49-June-2016_pdf.pdf",
+      "content": "ACLED is a publicly available database of political violence and protest across Africa, South and South-East Asia. Data are geo-referenced",
+      "score": 0.22543406,
+      "query": "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+      "search_index": 2
+    },
+    {
+      "title": "Réunion - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/R%C3%A9union",
+      "content": "## Bibliography [edit] James Rogers and Luis Simón. The Status and Location of the Military Installations of the Member States of the European Union and Their Potential Role for the European Security and Defence Policy (ESDP). Brussels: European Parliament, 2009. 25 pp. ## External links [edit] Wikimedia Commons logo Wikimedia Commons has media related to Réunion. Wikivoyage logo Wikivoyage has a travel guide for Réunion. ### Government [edit] Departmental Council website (in French) Prefecture website (in French) Regional Council website (in French) ### General information [edit] Official tourism website UNESCO World Heritage Site datasheet Wikimedia Atlas of Réunion | v t e Réunion articles | [...] | Overseas department and region of France and outermost region of the European Union | | Coat of arms of Réunion Coat of arms | | Motto: Florebo quocumque ferar (Latin for 'I will flourish wherever I am brought') | | Coordinates: 21°06′52″S 55°31′57″E﻿ / ﻿21.11444°S 55.53250°E﻿ / -21.11444; 55.53250: {{#parsoid\\u0000fragment:12}}[ 21°06′52″S 55°31′57″E﻿ / ﻿21.11444°S 55.53250°E﻿ / -21.11444; 55.53250]\"}}\" id=\"mwCg\" about=\"#mwt12\" typeof=\"mw:Extension/indicator\"> | | Country | Franc...",
+      "score": 0.2212417,
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "search_index": 4
+    },
+    {
+      "title": "ACLED Conflict Index & 2025 Watchlist",
+      "url": "https://www.youtube.com/watch?v=YGUpenAoN1M",
+      "content": "Viewpoint of how to characterize conflicts it looks at fatalities over the course of the last 12 months from political violence in the country country but then we kind of look beyond that looking at the specific danger of the conflict to civilians so among all of the political violence events that we see how many are actually specifically targeting civilians within a country and what can that tell us about the ways that the conflict is is shaping um our new groups entering the fry targeting civilians because they're an easy target trying to V for power it can tell you a lot of information about a conflict in terms of how civilians are being targeted in it then we look geographically at the diffusion of a conflict so is the conflict really focused on a really specific subsection of the [...] to approach this idea of where are the worst conflicts in the world from a slightly different lens than than is normally used so typically we see conflicts ranked by the number of events or the number of fatalities that we see but that's really only describing part of the picture we wanted to have a more holistic view of the elements of a conflict that can make it particular L thorny or parti...",
+      "score": 0.1779683,
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "search_index": 5
+    },
+    {
+      "title": "Reunion Government and Politics | CountryReports",
+      "url": "https://www.countryreports.org/country/Reunion/government",
+      "content": "CountryReports Select language EN ES ZH HI FR Government and Politics # Government and Politics of Reunion Government structure, leadership, capital, military, and national symbols of Reunion. ## Government Structure Constitutional foundations, branches, parties, and leadership. ## Capital City Seat of government and political history. ## National Symbols Flag, anthem, and other symbols of national identity. ### National Flag Flag of Reunion ### National Anthem ## About Reunion Apparel, Study Guides, Activities, Lessons, etc. ## Additional Content ## Languages In-depth country profiles for students, educators, researchers, and travelers worldwide. ### Membership ### Company ### Resources ### Other Products © 1997–2026 CountryReports.org. All rights reserved.",
+      "score": 0.16426189,
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "search_index": 4
+    },
+    {
+      "title": "Global demonstrations in response to the Middle East crisis - ACLED",
+      "url": "https://acleddata.com/infographic/global-demonstrations-response-middle-east-crisis",
+      "content": "For more information about the war in Gaza and its regional implications, see the Middle East crisis hub. For more information on how ACLED captures demonstration events, see the ACLED Codebook and FAQ in ACLED’s Knowledge Base ## Interactive map Use the interactive map below to explore trends around conflict-related demonstrations. The map displays events from 7 October 2023 to 31 October 2024. [...] coincided with the war’s first anniversary and Israel’s pivot to the north with increased strikes against Hezbollah targets and a ground offensive into southern Lebanon. [...] Although protests have occurred worldwide, most have been concentrated in the Middle East, Western Europe, North Africa, and the United States. The map provides unique insights into what has characterized protests in these regions. For a further breakdown by country and territory, scroll through the table to see the share of protests in support of Palestine and/or Lebanon, in support of Israel, or calling for a ceasefire and advocating for an end to the hostilities. Interactive map produced by Trey Billing and Danny Lord. ## Related content 3 October 2025 Infographic - Two years of global demonstrations in su...",
+      "score": 0.094719745,
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "search_index": 1
+    },
+    {
+      "title": "Jared Kushner : info, vidéos, reportages et analyses - France 24",
+      "url": "https://www.france24.com/fr/tag/jared-kushner",
+      "content": "Retrouvez toute l'actualité internationale et les décryptages Jared Kushner à lire et à revoir en replay sur France 24.",
+      "score": 0.009218843,
+      "query": "Reunion violence deaths unrest shooting homicide protest riot cyclone gang \"2026-06-04\" site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr OR site:zinfos974.com",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 2
+    },
+    {
+      "search_index": 3,
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+    "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+    "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+    "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+    "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department"
+  ],
+  "refilter_queries": [
+    "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+    "Reunion violence deaths unrest shooting homicide protest riot cyclone gang \"2026-06-04\" site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr OR site:zinfos974.com",
+    "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com"
+  ],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "ACLED Codebook",
+      "url": "https://acleddata.com/methodology/acled-codebook",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff methodological background on ACLED event coding and violence-against-civilians definitions; useful for interpreting how fatalities are counted, though not Reunion-specific."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2020/03/ACLED_AnnualReport2019_FINAL_Web.pdf",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe archival ACLED annual report with general methodology and caveats about fatality reporting; background only and not directly predictive for Reunion."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "query": "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED report about methodology improvements; generic background with limited direct value for forecasting Reunion fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Year in Review",
+      "url": "https://acleddata.com/system/files/2026-02/ACLED_2022-Year-in-Review_Report_Jan2023.pdf",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical year-in-review PDF referring to 2022/2023 data, well before cutoff; provides methodological context but little direct relevance to the specific forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Aggregated data | ACLED",
+      "url": "https://acleddata.com/conflict-data/download-data-files/aggregated-data",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe contemporaneous background on ACLED aggregated data availability and update cadence; relevant to understanding data source structure, though not directly predictive of Reunion fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "Fatalities - ACLED",
+      "url": "https://acleddata.com/methodology/fatalities",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodology page published and last updated before the 2026-06-20 cutoff; directly relevant to how ACLED records fatalities and event inclusion."
+    },
+    {
+      "stage": "cached",
+      "title": "[XLS] Sheet1 - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2011/documents/DRC.xls",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe archival spreadsheet unrelated to post-cutoff outcomes; only tangential methodological/background value and not useful for Reunion forecasting."
+    },
+    {
+      "stage": "cached",
+      "title": "New Small States Data Expand ACLED Coverage to More Than 200 ...",
+      "url": "https://acleddata.com/press/new-small-states-data-expand-acled-coverage-more-200-countries-and-territories",
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff ACLED press release specifically mentioning Reunion coverage and historical event counts there; useful background on ACLED's inclusion of Reunion, though dated and not a leading indicator for the target window."
+    },
+    {
+      "stage": "cached",
+      "title": "Unrest in French Overseas Territories and Corsica: Analysis of Violent Demonstration Trends From 2020 to Early 2022 | ACLED",
+      "url": "https://acleddata.com/report/unrest-french-overseas-territories-and-corsica-analysis-violent-demonstration-trends-2020",
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff ACLED analysis of unrest in French overseas territories and Corsica; may offer broad regional context but is not directly about Reunion fatalities in the target period."
+    },
+    {
+      "stage": "cached",
+      "title": "La Reunion, France - Destination Earth",
+      "url": "https://destination-earth.eu/case-studies/la-reunion-france",
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe background on Reunion's natural hazards and geography; tangential context only, since ACLED fatalities concern political violence/demonstration events rather than natural disasters."
+    },
+    {
+      "stage": "cached",
+      "title": "Conflict data",
+      "url": "https://acleddata.com/conflict-data",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background about ACLED data products and methodology context. It does not state any post-cutoff publication/update or completed Reunion outcome. Useful for understanding the source and possible forecasting tools, though not Reunion-specific."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical 2021 ACLED annual report PDF. Safe because it is clearly archival and pre-cutoff, with no post-cutoff results. Only generic background on ACLED capabilities, so low direct relevance to forecasting fatalities in Reunion."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Armed Conflict Location & Event Data Project - ACLED",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/2022/09/ACLED_Programs-2021-Annual-Report.pdf",
+      "query": "site:acleddata.com Reunion fatalities ACLED codebook fatalities event_type violence against civilians France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Same archival 2021 ACLED annual report content. Safe and pre-cutoff, but generic institutional background with little direct bearing on Reunion fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "Country/time-period coverage | ACLED",
+      "url": "https://acleddata.com/methodology/countrytime-period-coverage",
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe methodological coverage page showing Reunion is covered by ACLED from 1/2020-present. This directly informs whether the resolution data series exists and is comparable, though it does not indicate likely fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] ACLED Coverage to Date",
+      "url": "https://acleddata.com/sites/default/files/wp-content-archive/uploads/dlm_uploads/2019/01/ACLED_Country-and-Time-Period-coverage_updSept2021.pdf",
+      "query": "Reunion historical ACLED fatalities annual monthly violence trends site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe historical ACLED coverage document confirming Reunion coverage from 1/2020-present. Useful supporting context for the dataset basis of resolution; no post-cutoff publication or outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "Fact sheet No.1: Overseas territories Enhancing sovereignty and regional integration in the Indo-Pacific | France in the Indo-Pacific | Foundation for Strategic Research | FRS",
+      "url": "https://www.frstrategie.org/en/publications/fiches-indo-pacifique/n1-overseas-territories",
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe general background on Reunion's status as a French overseas territory. No leakage, but only tangentially relevant to forecasting short-term ACLED fatalities."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] CONFLICT TRENDS (NO. 49) REAL-TIME ANALYSIS OF AFRICAN ...",
+      "url": "https://www.acleddata.com/wp-content/uploads/2016/06/ACLED_Conflict-Trends-Report-No.49-June-2016_pdf.pdf",
+      "query": "site:acleddata.com ACLED Reunion dataset fatalities methodology event location country admin1",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe old ACLED conflict trends report from 2016. Generic background on ACLED as a database; not directly informative for Reunion in the target window."
+    },
+    {
+      "stage": "cached",
+      "title": "Réunion - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/R%C3%A9union",
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe generic encyclopedia background on Reunion. No explicit post-cutoff publication/update or outcome. Tangential context only."
+    },
+    {
+      "stage": "cached",
+      "title": "ACLED Conflict Index & 2025 Watchlist",
+      "url": "https://www.youtube.com/watch?v=YGUpenAoN1M",
+      "query": "ACLED Reunion fatalities forecast analysis expert commentary Indian Ocean France overseas department",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe general ACLED video discussing conflict index methodology and fatalities concepts. No explicit post-cutoff publication marker or Reunion-specific outcome. Limited direct relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "Reunion Government and Politics | CountryReports",
+      "url": "https://www.countryreports.org/country/Reunion/government",
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe generic government-and-politics profile for Reunion. The copyright footer includes 2026 but does not explicitly say the page was published or updated after the cutoff. Tangential background only."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] INSEE - ANNUAL REPORT 2022",
+      "url": "https://www.insee.fr/en/statistiques/fichier/4195175/insee_activity_report_2022.pdf",
+      "query": "Reunion prefecture government security incidents fatalities official reports site:reunion.gouv.fr OR site:insee.fr",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Generic 2022 INSEE annual report about staffing/organization; no direct bearing on ACLED fatalities in Reunion near the forecast window, so not useful for this question."
+    },
+    {
+      "stage": "cached",
+      "title": "Bank of France to cut growth forecasts after first-quarter dip | FMT",
+      "url": "https://www.freemalaysiatoday.com/category/business/2026/06/01/bank-of-france-to-cut-growth-forecasts-after-first-quarter-dip",
+      "query": "Reunion violence unrest protest riot homicide security incident forecast June 2026 site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Economic growth forecast for France published before cutoff, but unrelated to political violence or fatalities in Reunion and provides no meaningful signal for ACLED fatality counts."
+    },
+    {
+      "stage": "cached",
+      "title": "France: news, videos, reports and analysis - Page 5",
+      "url": "https://www.france24.com/en/tag/france/5",
+      "query": "Reunion violence unrest protest riot homicide security incident forecast June 2026 site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr \"2026-06-04\" OR \"on or before 2026-06-04\"",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Generic France24 tag page with no specific dated, Reunion-focused, or violence-related information in the snippet; too broad and not informative for forecasting fatalities in Reunion."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "ACLED 2019: The Year in Review",
+      "url": "https://acleddata.com/report/acled-2019-year-review",
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff background report (published 2020) about ACLED methodology/data context. No explicit post-cutoff publication of the item itself; related-content dates are incidental page chrome. Low direct relevance to forecasting fatalities in Reunion."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Cabo Ligado Weekly: 9 - 15 January 2023 | ACLED",
+      "url": "https://acleddata.com/update/cabo-ligado-weekly-9-15-january-2023",
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Although the core article is from 2023, the snippet explicitly shows post-cutoff page state via related content dated 17 June 2026 and other 2026 updates. Per fail-closed rule, explicit concrete post-cutoff page state means drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Cabo Ligado Weekly: 24 - 30 May | ACLED",
+      "url": "https://acleddata.com/update/cabo-ligado-weekly-24-30-may",
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Core item is from 2021, but snippet explicitly includes concrete post-cutoff page state with related content dated 17 June 2026 and other 2026 updates. Drop under fail-closed rule."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Global demonstrations in response to the Middle East crisis - ACLED",
+      "url": "https://acleddata.com/infographic/global-demonstrations-response-middle-east-crisis",
+      "query": "site:acleddata.com Reunion fatalities ACLED export codebook dashboard \"2026-06-04\" OR \"on or before 2026-06-04\" May 2026 June 2026",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Background infographic about global demonstrations and ACLED coding. No explicit post-cutoff publication/update after 2026-06-20 in title/url/snippet, and no completed outcome relevant to Reunion. Low relevance."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "US politics: news, videos, reports and analysis - France 24",
+      "url": "https://www.france24.com/en/tag/us-politics",
+      "query": "Reunion violence deaths unrest shooting homicide protest riot cyclone gang \"2026-06-04\" site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr OR site:zinfos974.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Snippet explicitly contains a post-cutoff dated page entry '01/07/2026', indicating concrete post-cutoff page state. Also unrelated to Reunion fatalities. Drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "EU invests in ocean monitoring as US cuts funding | AP News",
+      "url": "https://apnews.com/article/eu-ocean-monitoring-322dd6b8994b93d0e893f9d5c1b7e958",
+      "query": "Reunion violence deaths unrest shooting homicide protest riot cyclone gang \"2026-06-04\" site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr OR site:zinfos974.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "AP article appears contemporaneous to 2026 and includes post-cutoff dated material ('June 8, 2026', 'June 1, 2026') relative to the 2026-06-20 cutoff, plus it is about ocean monitoring rather than conflict fatalities in Reunion. Fail-closed: drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Jared Kushner : info, vidéos, reportages et analyses - France 24",
+      "url": "https://www.france24.com/fr/tag/jared-kushner",
+      "query": "Reunion violence deaths unrest shooting homicide protest riot cyclone gang \"2026-06-04\" site:reuters.com OR site:apnews.com OR site:france24.com OR site:lemonde.fr OR site:zinfos974.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic tag page with no explicit post-cutoff publication/update in the snippet and no completed-result language. Safe but not useful for forecasting Reunion fatalities."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "InSight Crime's 2025 Homicide Round-Up",
+      "url": "https://insightcrime.org/news/insight-crime-2025-homicide-round-up",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Background on 2025 homicide trends in Caribbean countries. No explicit post-cutoff publication/update date in title/url/snippet. Safe but only tangentially relevant to Reunion/ACLED fatalities."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "[PDF] The Costs of Crime and and Violence - IADB Publications",
+      "url": "https://publications.iadb.org/publications/english/document/The-Costs-of-Crime-and--and-Violence-Expansion-and-Update-of-Estimates-for-Latin-America-and-the-Caribbean.pdf",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General academic/background PDF on costs of crime and violence. No explicit post-cutoff publication/update or completed post-cutoff event state. Safe but very low relevance."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "INTERNATIONAL STATISTICS on CRIME AND JUSTICE",
+      "url": "https://www.unodc.org/documents/data-and-analysis/Crime-statistics/International_Statistics_on_Crime_and_Justice.pdf",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General UNODC crime statistics background document with no explicit post-cutoff publication/update in the snippet. Safe but not directly informative for near-term ACLED fatalities in Reunion."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "U.S. Crime Rates and Trends — Analysis of FBI Crime Statistics | Brennan Center for Justice",
+      "url": "https://www.brennancenter.org/our-work/research-reports/us-crime-rates-and-trends-analysis-fbi-crime-statistics",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Irrelevant to forecasting ACLED fatalities in Reunion; discusses U.S. FBI crime trends, not Reunion or ACLED-linked conflict/political violence."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Homicide rate - Our World in Data",
+      "url": "https://ourworldindata.org/grapher/homicide-rate-unodc",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Explicit post-cutoff evidence in snippet: 'Retrieved on March 31, 2026' is after the 2026-06-20 cutoff, and the item is generic homicide-rate data rather than Reunion-specific ACLED forecasting evidence."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "The Decade-Long Evolution of Latin America's Homicide Rates",
+      "url": "https://insightcrime.org/news/the-decade-long-evolution-of-latin-americas-homicide-rates",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Generic Latin America/Caribbean homicide trends; not specific to Reunion and not clearly informative for ACLED fatalities there."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Global Study on Homicide",
+      "url": "https://www.unodc.org/unodc/en/data-and-analysis/global-study-on-homicide.html",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "General UNODC homicide methodology/background only; not Reunion-specific and not useful for forecasting near-term ACLED fatalities in Reunion."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "50-State Violent Crime Data - CSG Justice Center",
+      "url": "https://projects.csgjusticecenter.org/tools-for-states-to-address-crime/50-state-crime-data",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Irrelevant U.S. state crime data page; not about Reunion or ACLED fatalities."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Homicide Rates Across County, Race, Ethnicity, Age, and Sex in the US",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11868975",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "U.S. homicide epidemiology study; unrelated to Reunion and not useful for this forecast."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Key Statistics | NCAI",
+      "url": "https://www.ncai.org/section/vawa/overview/key-statistics",
+      "query": "Reunion crime violence trend fatalities historical rate analysis overseas department Indian Ocean \"before 2026-06-04\" OR \"as of 2026-06-04\" site:insee.fr OR site:interieur.gouv.fr OR site:ihsmarkit.com OR site:crisis24.garda.com OR site:acleddata.com",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "General statistics on violence against American Indian and Alaska Native women and girls; unrelated to Reunion and ACLED fatalities forecasting."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 26,
+    "dropped": 14,
+    "relevance": {
+      "high": 0,
+      "medium": 7,
+      "low": 33
+    },
+    "supplemental_for_relevance": true
+  }
+}
