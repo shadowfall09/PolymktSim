@@ -1,0 +1,346 @@
+{
+  "row_index": 81,
+  "market_id": "mkt_691663",
+  "slug": "",
+  "question": "Will the price of Ethereum be above $3,100 on November 26?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/ETH_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Ethereum be above $3,100 on November 26?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/ETH_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-26",
+  "evidence_cutoff_date": "2025-11-25",
+  "end_date_limit": "2025-11-25",
+  "row_end_date_raw": "2025-11-26",
+  "expanded_queries": [
+    "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+    "Ethereum ETH price November historical baseline 2020 2024 late November seasonality daily returns 3100 comparable cases",
+    "Ethereum ETF BlackRock Fidelity Grayscale inflows SEC staking Pectra upgrade developers institutions 2025",
+    "Ethereum options max pain open interest funding rates CME futures ETF flows economic calendar November 2025 recent month",
+    "Ethereum price outlook November 2025 analyst report research note Glassnode Kaiko Coinbase Institutional JPMorgan"
+  ],
+  "supplemental_query": "site:farside.co.uk Ethereum ETF daily net flows November 2025 official issuer flow data BlackRock Fidelity Grayscale",
+  "supplemental_queries": [
+    "site:farside.co.uk Ethereum ETF daily net flows November 2025 official issuer flow data BlackRock Fidelity Grayscale",
+    "site:theblock.co OR site:coinglass.com Ethereum exchange reserves stablecoin inflows ETH perpetual funding basis November 2025 leading indicators",
+    "site:ethereum.org OR site:blog.ethereum.org Ethereum network fees blob usage burned ETH validator exits staking queue November 2025 weekly update"
+  ],
+  "stats": {
+    "search_calls": 8,
+    "raw_result_count": 72,
+    "deduped_result_count": 72,
+    "hard_quarantined_late_date_count": 16,
+    "llm_filter_input_count": 72,
+    "supplemental_search_triggered": true,
+    "supplemental_search_count": 3,
+    "supplemental_raw_result_count": 22,
+    "supplemental_deduped_result_count": 22,
+    "final_evidence_count": 23,
+    "llm_filter_batch_count": 8,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 49,
+    "llm_kept_count": 23,
+    "llm_kept_leak_no_count": 22,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.7552947,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Price Prediction in November 2025: AI-Powered Insights on ETF Flows, Liquidity, and Roadmap Catalysts from Powerdrill Bloom",
+      "url": "https://powerdrill.ai/blog/ethereum-price-prediction",
+      "content": "Leverage the institutional staking flywheel by positioning ahead of continued ETF inflows and supply constraint intensification. With 29.4% of ETH supply already staked and 826,876 ETH queued for additional staking, the supply lock mechanism creates a structural price floor. Despite yield compression from 4.2% to 2.9% , the 47% year-over-year growth in institutional staking demonstrates persistent demand. Monitor the activation queue depth as a leading indicator - sustained queues above 500,000 ETH signal continued supply tightening that historically precedes price appreciation phases. Focus on periods when institutional ETF inflows exceed $500 million daily , as this pattern has consistently driven validator queue expansion and subsequent supply scarcity. [...] Focus investment timing around the structural liquidity migration happening in 2025. The 25% growth in DEX volume while centralized exchanges declined 28% signals a permanent shift in market structure favoring Ethereum's on-chain liquidity infrastructure. With professional market makers maintaining only 2.3% concentration across $940M holdings yet providing deep liquidity across 50+ venues, and ETH maintaining ultra-tigh...",
+      "score": 0.73322314,
+      "query": "site:theblock.co OR site:coinglass.com Ethereum exchange reserves stablecoin inflows ETH perpetual funding basis November 2025 leading indicators",
+      "search_index": 7
+    },
+    {
+      "title": "Q3 2025 Charting Crypto Report with Coinbase – Glassnode",
+      "url": "https://get.glassnode.com/charting-crypto-q3-2025",
+      "content": "# The report includes: ##### Market Overview Including crypto market cap, cycle performance and correlations to other assets. ##### Bitcoin 10 slides on BTC including performance, holding patterns, and market trends. ##### Ethereum 14 slides on ETH iIncluding price trends, staking, Layer 2 activity, and more. ##### Stablecoins Insights on record-high stablecoin supply and their increasing utility in financial systems. ##### Macro View Insights on record-high stablecoin supply and their increasing utility in financial systems. ##### Exclusive Contributions From partners including Grayscale, Bitwise Asset Management and ParaFi. # Get our market outlook We are constructive for Q3 2025. New highs, improving macro, and regulatory tailwinds [...] Learn more # Ethereum marks key turning point ETH sentiment flipped in Q2 as over $1.7B flowed into ETH ETFs, reversing Q1 outflows. Over 40M ETH were at a loss at the end of Q1, dropping to under 10M by the close of Q2. Learn more # ETH Long-term holders sold into strength ETH liquid supply increased 8% in Q2, while illiquid supply fell 6%, indicating that some long-term holders used market strength as an opportunity to sell to newer entrant...",
+      "score": 0.6867278,
+      "query": "Ethereum price outlook November 2025 analyst report research note Glassnode Kaiko Coinbase Institutional JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] Fidelity Ethereum Fund Prospectus",
+      "url": "https://www.fidelity.com/bin-public/060_www_fidelity_com/documents/mutual-funds/Fidelity-Ethereum-Fund.pdf",
+      "content": "planned forks could otherwise fail to work as intended or achieve the expected benefits that proponents hope for in the short term or the long term, which could also have an adverse effect on adoption of the Ethereum network and the value of ether, and therefore the Shares. On May 7, 2025, “Pectra” which is a combination of the Prague execution layer hard fork and the Electra consensus layer upgrade, went live. Pectra, among other changes, increased the maximum amount of ether that a validator can stake from 32 to 2,048, allowing validators to manage higher balances with the goal of potentially reducing costs; introduce account abstraction, allowing externally owned accounts (EOAs) to temporarily function like smart contracts; and potentially reduce security risks and shorten the wait [...] network will include updates to material aspects of its source code. Although some of these upgrades have been successfully implemented, such as “the Merge” and the “Pectra” upgrade, which were completed in September 2022 and May 2025, respectively, there is no guarantee that there are not undiscovered flaws that will emerge in the future even in upgrades previously considered successful, and...",
+      "score": 0.6780931,
+      "query": "Ethereum ETF BlackRock Fidelity Grayscale inflows SEC staking Pectra upgrade developers institutions 2025",
+      "search_index": 3
+    },
+    {
+      "title": "How Ethereum's Pectra Upgrade Changes ETH Staking",
+      "url": "",
+      "content": "Pectra was described as a planned Ethereum upgrade aimed at changing staking by allowing up to 2048 ETH on a single validator, enabling withdrawals independent of a validator operator, and reducing the time between deposit and validator activation.",
+      "score": 0.67166495,
+      "query": "Ethereum ETF BlackRock Fidelity Grayscale inflows SEC staking Pectra upgrade developers institutions 2025",
+      "search_index": 3,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Ethereum's Pectra Upgrade: What Should Investors Know?",
+      "url": "https://www.fidelitydigitalassets.com/research-and-insights/ethereums-pectra-upgrade-what-should-investors-know",
+      "content": "April 14, 2025 • 15 min read Ethereum's upcoming Prague/Electra (Pectra) upgrade prioritizes optimization rather than a complete overhaul—a departure from the network’s often more substantial changes. With Pectra scheduled for mainnet activation in May 2025, this blog provides an overview of the most critical changes and what institutional investors should know. Pectra introduces 11 Ethereum Improvement Proposals (EIPs), with five dedicated to staking optimizations. Developers continue to refine Ethereum’s proof-of-stake design two years after the Merge, prioritizing security and minimizing trust assumptions. However, this has led the network to fall behind its competition in some key network metrics. [...] Ethereum's short-term scaling improvements are expected to support the existing L2 ecosystem and new L2 onboarding until the PeerDAS upgrade in 2026, which should further accelerate this movement. Ethereum will continue to prioritize efficiency over revenue, ensuring that fees for users remain low while accumulating significant value overall. Institutional investors should closely monitor these developments, considering both the unique strengths and potential headwinds facing...",
+      "score": 0.6693348,
+      "query": "Ethereum ETF BlackRock Fidelity Grayscale inflows SEC staking Pectra upgrade developers institutions 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"kline\", # event type \"E\": 1499404907056, # event time \"s\": \"ETHBTC\", # symbol \"k\":{\"t\": 1499404860000, # start time of this bar \"T\": 1499404919999, # end time of this bar \"s\": \"ETHBTC\", # symbol \"i\": \"1m\", # interval \"f\": 77462, # first trade id \"L\": 77465, # last trade id \"o\":\"0.10278577\", # open \"c\":\"0.10278645\", # close \"h\":\"0.10278712\", # high \"l\":\"0.10278518\", # low \"v\":\"17.47929838\", # volume \"n\": 4, # number of trades \"x\": false, # whether this bar is final \"q\":\"1.79662878\", # quote volume \"V\":\"2.34879839\", # volume of active buy \"Q\":\"0.24142166\", # quote volume of active buy \"B\":\"13279784.01349473\" # can be ignored}} ``` [...] options\\_index\\_price\\_socket()(_modules/binance/ws/streams.html#BinanceSocketManager.options_index_price_socket) : Subscribe to an options index price stream. Underlying (e.g., ETHUSDT, BTCUSDT) index stream for all symbols. Updates every 1000ms. URL PATH: /market Stream Name: !index@arr API Reference: Response is an array with index price for all underlying assets: - Event type: ‘indexPrice’ - Event time - Underlying symbol (e.g., ‘ETHUSDT’, ‘BTCUSDT’) - Index price options\\_kline\\_socket(symbol: str, interval='1m')(_mo...",
+      "score": 0.6506676,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum (ETH) Price Prediction 2025-2050 - Noone Wallet Blog",
+      "url": "https://noone.io/blog/eth-price-prediction",
+      "content": "momentum. Taking these factors into account, our ETH price prediction for the end of 2025 stands at $5,300. [...] Our price forecast is based on a combination of fundamental and technical analysis. Please note that this article is intended for informational purposes only and does not constitute financial advice. | | | | --- | Year | Price Prediction | ROI of your investment (if you buy the coin now) | | 2025 | $5,300 | 199.44% | | 2027 | $2,650 | 49.72% | | 2030 | $53,000 | 2,894.35% | | 2035 | $70,800 | 3,900.00% | | 2040 | $124,000 | 6,905.65% | | 2050 | $123,800,000 | 6,994,250.28% | 2025 [...] 13 BlocksOpen publish panel 2027 The positive momentum from the 2025 crypto boom will likely fade by 2027. As the post-halving bull run begins to cool off in late 2026 and early 2027, profit-taking will become more common. The market will start adjusting in anticipation of the next Bitcoin halving. During this time, sideways movements and increased volatility could make the crypto market risky for new investors. The inflow of fresh capital might slow down. By the end of 2027, Ethereum (ETH) could potentially decline to around $2,650, down from its 2025 highs. 2030",
+      "score": 0.63316137,
+      "query": "Ethereum price outlook November 2025 analyst report research note Glassnode Kaiko Coinbase Institutional JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "Coinbase + Glassnode: Q1 Guide to Crypto Markets",
+      "url": "https://research.glassnode.com/glassnode-coinbase-q1-2025-crypto-markets-guide",
+      "content": "Coinbase + Glassnode: Q1 Guide to Crypto Markets As we enter 2025, the crypto markets continue to gain momentum, shaped by structural shifts in liquidity, investor positioning, and on-chain activity. Institutional adoption remains a dominant theme, with spot Bitcoin ETFs attracting record inflows, Ethereum’s Layer-2s driving network growth, and stablecoins cementing their role as crypto’s financial backbone. In collaboration with Coinbase Institutional, our latest Guide to Crypto Markets provides a comprehensive, data-driven analysis of these trends. From capital flows and derivatives positioning to macro market structure, this report equips institutional investors with the insights needed to navigate the shifting landscape. 📄 Download your copy of the report here.",
+      "score": 0.599087,
+      "query": "Ethereum price outlook November 2025 analyst report research note Glassnode Kaiko Coinbase Institutional JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months 1m 3m 5m 15m 30m 1h 2h 4h 6h 8h 12h 1d 3d 1w 1M Stream Name: `@kline_` e.g. \"btcusd\\_200626@kline\\_1m\" Update Speed: 250ms ## Continues Contract Kline/Candlestick Streams > Payload: [...] + 1m + 3m + 5m + 15m + 30m + 1h + 2h + 4h + 6h + 8h + 12h + 1d + 3d + 1w + 1M ## Continues Contract Kline/Candlestick Data > Response: ``` ``` `GET /dapi/v1/continuousKlines` Kline/candlestick bars for a specific contract type. Klines are uniquely identified by their open time. Weight: based on parameter `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | Parameters: | Name | Type | Mandatory | Description | --- --- | | pair | STRING | YES | | contractType | ENUM | YES | | interval | ENUM | YES | | startTime | LONG | NO | | endTime | LONG | NO | | limit | INT | NO | Default 500; max 1500. | If startTime and endTime are not sent, the most recent klines are returned. Contract type: [...] > Payload: ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1591261542539,// Event time \"ps\": \"BTCUSD\",// Pair \"ct\": \"NEXT_QUARTER\"// Contract type \"k\":{\"t\": 159126150...",
+      "score": 0.5957048,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "What to Expect From Ethereum Price in November 2025",
+      "url": "https://finance.yahoo.com/news/expect-ethereum-price-november-2025-100000167.html",
+      "content": "Young also highlights similar key zones: > \"A break above $4,200 could open the path toward $4,500–$4,700, while rejection may simply prolong accumulation,\" he highlighted. These levels align closely with Ethereum's current structure, where $4,240 serves as a critical confirmation point. A close above it could push ETH toward $4,620, marking the upper end of its long-term channel. That level also puts the ETH price in the range projected by Young. He further explained that the broader setup still leans positive despite short-term hesitation: > \"Either way, the macro structure appears constructive — the network continues to scale, transaction demand remains robust, and staking keeps absorbing supply pressure,\" he further explained. [...] ... BeInCrypto # What to Expect From Ethereum Price in November 2025 Ananda Banerjee 4 min read ETH-USD +1.12% Ethereum Eyes Breakout as Tom Lee Predicts $5,500 to $12,000 in 2025. Photo by BeInCrypto Ethereum Eyes Breakout as Tom Lee Predicts $5,500 to $12,000 in 2025. Photo by BeInCrypto Ethereum (ETH) is entering November with cautious optimism. The Ethereum price is up 2.2% weekly but has given up nearly 3% in 24 hours, even after the Fed's r...",
+      "score": 0.57006866,
+      "query": "site:theblock.co OR site:coinglass.com Ethereum exchange reserves stablecoin inflows ETH perpetual funding basis November 2025 leading indicators",
+      "search_index": 7
+    },
+    {
+      "title": "Ethereum Historical Data - Investing.com",
+      "url": "https://www.investing.com/crypto/ethereum/historical-data",
+      "content": "| | | | | | | | --- --- --- | | 1,796.78 | 1,745.18 | 1,810.29 | 1,738.06 | 247.52K | +2.95% | | | 1,745.30 | 1,743.46 | 1,761.35 | 1,722.17 | 200.32K | +0.10% | | | 1,743.52 | 1,771.33 | 1,783.97 | 1,713.95 | 267.19K | -1.55% | | | 1,770.98 | 1,798.60 | 1,811.44 | 1,757.94 | 275.58K | -1.53% | | | 1,798.52 | 1,781.29 | 1,830.44 | 1,730.69 | 349.67K | +0.74% | | | 1,785.35 | 1,777.05 | 1,806.81 | 1,751.09 | 409.03K | +0.28% | | | 1,780.43 | 1,758.72 | 1,797.66 | 1,744.70 | 213.02K | +1.23% | | | 1,758.81 | 1,699.72 | 1,772.60 | 1,694.86 | 270.27K | +3.44% | | | 1,700.24 | 1,607.00 | 1,721.74 | 1,597.30 | 427.20K | +5.65% | | | 1,609.31 | 1,573.35 | 1,643.70 | 1,553.05 | 338.36K | +2.37% | | | 1,572.07 | 1,612.50 | 1,614.05 | 1,551.60 | 251.02K | -2.55% | [...] | | 1,711.22 | 1,750.15 | 1,762.17 | 1,671.93 | 389.51K | -2.20% | | | 1,749.68 | 1,794.49 | 1,808.63 | 1,725.83 | 454.77K | -2.38% | | | 1,792.29 | 1,795.36 | 1,838.83 | 1,758.85 | 537.09K | -0.20% | | | 1,795.88 | 1,725.10 | 1,848.68 | 1,709.35 | 622.10K | +4.10% | | | 1,725.14 | 1,679.55 | 1,728.40 | 1,654.07 | 278.53K | +2.71% | | | 1,679.55 | 1,666.06 | 1,689.22 | 1,661.95 | 200.34K | +0.81% | | | 1,666.06 | 1,673.26...",
+      "score": 0.5417246,
+      "query": "Ethereum ETH price November historical baseline 2020 2024 late November seasonality daily returns 3100 comparable cases",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum USD Price (ETH-USD) - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/ETH-USD/history",
+      "content": "| Nov 24, 2025 | 2,801.20 | 2,982.82 | 2,763.38 | 2,952.71 | 2,952.71 | 32,491,657,389 | | Nov 23, 2025 | 2,767.59 | 2,856.45 | 2,767.47 | 2,801.68 | 2,801.68 | 20,358,404,499 | | Nov 22, 2025 | 2,766.09 | 2,795.43 | 2,704.50 | 2,767.61 | 2,767.61 | 15,408,928,941 | | Nov 21, 2025 | 2,829.26 | 2,880.60 | 2,626.87 | 2,765.70 | 2,765.70 | 51,476,486,049 | | Nov 20, 2025 | 3,022.89 | 3,057.79 | 2,790.60 | 2,831.78 | 2,831.78 | 43,917,885,207 | | Nov 19, 2025 | 3,122.65 | 3,122.65 | 2,871.23 | 3,023.07 | 3,023.07 | 40,229,739,844 | | Nov 18, 2025 | 3,024.41 | 3,167.93 | 2,948.33 | 3,122.98 | 3,122.98 | 41,581,494,270 | | Nov 17, 2025 | 3,092.94 | 3,218.13 | 2,957.31 | 3,024.54 | 3,024.54 | 41,026,793,235 | [...] | Oct 29, 2025 | 3,980.76 | 4,036.35 | 3,849.54 | 3,903.35 | 3,903.35 | 35,255,876,156 | | Oct 28, 2025 | 4,120.27 | 4,173.51 | 3,940.83 | 3,982.26 | 3,982.26 | 39,684,155,177 | | Oct 27, 2025 | 4,158.01 | 4,250.67 | 4,099.57 | 4,120.12 | 4,120.12 | 40,271,333,201 | | Oct 26, 2025 | 3,953.44 | 4,177.31 | 3,923.19 | 4,157.99 | 4,157.99 | 29,120,786,315 | | Oct 25, 2025 | 3,934.49 | 3,967.65 | 3,914.64 | 3,953.47 | 3,953.47 | 15,245,229,017 | | Oct 24, 2025 | 3,856.03 | 4,002....",
+      "score": 0.5310884,
+      "query": "Ethereum ETH price November historical baseline 2020 2024 late November seasonality daily returns 3100 comparable cases",
+      "search_index": 2
+    },
+    {
+      "title": "Ethereum gas and fees: technical overview",
+      "url": "https://ethereum.org/developers/docs/gas",
+      "content": "For example, let's say Jordan has to pay Taylor 1 ETH. An ETH transfer requires 21,000 units of gas, and the base fee is 10 gwei. Jordan includes a tip of 2 gwei. The total fee would now be equal to: `units of gas used (base fee + priority fee)` where the `base fee` is a value set by the protocol and the `priority fee` is a value set by the user as a tip to the validator. e.g., `21,000 (10 + 2) = 252,000 gwei` (0.000252 ETH). When Jordan sends the money, 1.000252 ETH will be deducted from Jordan's account. Taylor will be credited 1.0000 ETH. The validator receives the tip of 0.000042 ETH. The `base fee` of 0.00021 ETH is burned. [...] ### . The protocol achieves an equilibrium average block size at the target through the process of _tâtonnement_. This means if the block size is greater than the target block size, the protocol will increase the base fee for the following block. Similarly, the protocol will decrease the base fee if the block size is less than the target block size. The amount by which the base fee is adjusted is proportional to how far the current block size is from the target. This is a linear calculation from -12.5% for an empty block, 0% at the target size, up...",
+      "score": 0.4892356,
+      "query": "site:ethereum.org OR site:blog.ethereum.org Ethereum network fees blob usage burned ETH validator exits staking queue November 2025 weekly update",
+      "search_index": 8
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minute...",
+      "score": 0.48440504,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum 2.0 Roadmap 2025: What's After Pectra? - LeveX",
+      "url": "https://levex.com/en/blog/ethereum-roadmap-2025-after-pectra",
+      "content": "### Transaction Cost Evolution Layer 2 fees could drop to negligible levels with Fusaka's blob expansion, making micro-transactions economically viable and enabling new application categories. Fee Impact Breakdown: Mainnet transactions: May become more expensive relative to L2s Layer 2 usage: Accelerated adoption for daily activities New applications: Micro-payments and frequent interactions become viable Overall trend: Ethereum becomes primarily a settlement layer ### Staking and Validation Changes Verkle trees and statelessness could dramatically improve solo staking accessibility by eliminating storage requirements. This might reduce centralization pressures from large staking services while making ETH staking more attractive to individual investors. [...] ### Massive Data Capacity Expansion The centerpiece of Fusaka is increasing blob capacity from 6 to 48 blobs per block—an 8x improvement that could drive Layer 2 transaction fees below $0.01. | Metric | Current (Post-Pectra) | Future (Post-Fusaka) | --- | Blob Capacity | 6 blobs per block | 48 blobs per block | | L2 Transaction Fees | $0.05-$0.20 | Under $0.01 | | Fee Reduction | Baseline | ~95% decrease | This expansion ad...",
+      "score": 0.44622982,
+      "query": "site:ethereum.org OR site:blog.ethereum.org Ethereum network fees blob usage burned ETH validator exits staking queue November 2025 weekly update",
+      "search_index": 8
+    },
+    {
+      "title": "node-binance-api - NPM",
+      "url": "https://www.npmjs.com/package/node-binance-api",
+      "content": "``` { '1517557800000': { open: '0.00100090', high: '0.00100650', low: '0.00099810', close: '0.00100370', volume: '1161.52000000' }, '1517557860000': { open: '0.00100360', high: '0.00101010', low: '0.00100000', close: '0.00100310', volume: '1977.68000000' }, '1517557920000': { open: '0.00100100', high: '0.00101130', low: '0.00100080', close: '0.00100670', volume: '2002.00000000' }, '1517557980000': { open: '0.00100660', high: '0.00101400', low: '0.00100200', close: '0.00100640', volume: '3896.40000000' }, '1517558040000': { open: '0.00100630', high: '0.00101390', low: '0.00100350', close: '0.00100470', volume: '1675.48000000' }, '1517558100000': [...] ``` console.info( await binance.futuresTime() ); console.info( await binance.futuresExchangeInfo() ); console.info( await binance.futuresCandles( \"TRXUSDT\", \"1m\" ) ); console.info( await binance.futuresDepth( \"ADAUSDT\" ) ); console.info( await binance.futuresQuote() ); console.info( await binance.futuresQuote( \"BCHUSDT\" ) ); console.info( await binance.futuresDaily() ); console.info( await binance.futuresOpenInterest( \"BTCUSDT\" ) ); console.info( await binance.futuresMarkPrice() ); console.info( await binance.futuresMarkPrice( \"ETHU...",
+      "score": 0.43237552,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | After CM migration, accepts both CM and UM symbols. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", //...",
+      "score": 0.39019752,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "CME's Ether Futures Record Highest Ever Open Interest of 383K ...",
+      "url": "https://finance.yahoo.com/news/cmes-ether-futures-record-highest-055409130.html",
+      "content": "The so-called open interest or the number of active bets in standard ether futures rose to a record of 7,661 contracts, equaling 383,650 ETH and $1.4 billion in notional terms, the exchange said in an email to CoinDesk. The previous peak of 7,550 contracts was set one month ago. The standard contract is sized at 50 ETH. Speaking of trading volumes, the derivatives giant witnessed 14,736 contracts change hands on Tuesday, which is three times higher than the average daily volume of 5,010 contracts seen throughout July. Tuesday was also one of the top 10 volume days for ether futures. Giovanni Vicioso, global head of cryptocurrency products at CME Group, attributed the surge in activity to the onset of spot ether ETF trading in the U.S. [...] Oops, something went wrong Skip to navigation Skip to right column # Yahoo Finance Sign in [...] 2. Tax brackets and rates 3. Child tax credit 4. Tax extension 5. Tax refund status 7. Student loans 1. Federal vs. private 2. How to apply 3. FAFSA 2026-27 4. Student loan assistance 8. Personal loans 1. Best personal loans 2. Improve credit score 3. How to get approved 8. Videos 1. Latest 2. Editor's picks 3. Trending stocks 4. Investing insight...",
+      "score": 0.37182122,
+      "query": "Ethereum options max pain open interest funding rates CME futures ETF flows economic calendar November 2025 recent month",
+      "search_index": 4
+    },
+    {
+      "title": "The Merge",
+      "url": "https://ethereum.org/roadmap/merge",
+      "content": "An important caveat here, full validator exits are rate limited by the protocol, and only so many validators may exit per epoch (every 6.4 minutes). This limit fluctuates depending on the number of active validators, but comes out to approximately 0.33% of total ETH staked can be exited from the network in a single day. This prevents a mass exodus of staked funds. Furthermore, it prevents a potential attacker with access to a large portion of the total ETH staked from committing a slashable offense and exiting/withdrawing all of the offending validator balances in the same epoch before the protocol can enforce the slashing penalty. [...] False, but staking withdrawals have since been enabled via the Shanghai/Capella upgrade. More Initially after The Merge, stakers could only access fee tips and MEV that were earned as a result of block proposals. These rewards are credited to a non-staking account controlled by the validator (known as the _fee recipient_), and are available immediately. These rewards are separate from protocol rewards for performing validator duties. Since the Shanghai/Capella network upgrade, stakers can now designate a _withdrawal address_ to start receiving a...",
+      "score": 0.3258213,
+      "query": "site:ethereum.org OR site:blog.ethereum.org Ethereum network fees blob usage burned ETH validator exits staking queue November 2025 weekly update",
+      "search_index": 8
+    },
+    {
+      "title": "Fetch Candlestick/Kline data from Binance API using ...",
+      "url": "https://stackoverflow.com/questions/51358147/fetch-candlestick-kline-data-from-binance-api-using-python-preferably-requests",
+      "content": "while True: url = f' data = pd.DataFrame(requests.get(url, headers={'Cache-Control': 'no-cache', \"Pragma\": \"no-cache\"}).json(), columns=columns, dtype=np.float64) start = int(data.open_time.tolist()[-1])+1 data.index = [pd.to_datetime(x, unit='ms').strftime('%Y-%m-%d %H:%M:%S') for x in data.open_time] data = data[usecols] df = pd.concat([df, data], axis=0) if end in data.index.tolist(): break print('Done.') df.index = pd.to_datetime(df.index) df = df.loc[:end] return df eth = get_binance_data_by_requests(ticker='ETHUSDT', interval='4h', start='2020-01-01 00:00:00', end='2023-07-01 00:00:00') eth` [...] Question Edited: The output that I am getting is: {\"code\":-1102,\"msg\":\"Mandatory parameter 'symbol' was not sent, was empty/null, or malformed.\"} Brian Tompsett - 汤莱恩's user avatar Jin Barai's user avatar `<Response >` ## 3 Answers 3 you are missing the mandatory parameters symbol and interval, the query should be like this: you need to import only requests: `import requests market = 'BTCUSDT' tick_interval = '1h' url = ' data = requests.get(url).json() print(data)` Please check the official Binance REST API documentation here: Domenico's user avatar The requests python package h...",
+      "score": 0.27598062,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Market - Spot REST API | Binance Developer Docs",
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/market",
+      "content": "Binance Developer DocsBinance Developer Docs Legacy Docs Dev ForumBinance.com",
+      "score": 0.26491585,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance Rolls Out Direct Stocks & bStocks: How Does It Work?",
+      "url": "https://www.youtube.com/watch?v=ZnCNuTyJpyI",
+      "content": "⚠️ IMPORTANT NOTES: ➡️ Availability, instruments, sessions, fractional trading, and fees vary by region, eligibility, and stock. Always follow the options and disclosures shown in‑app/on the web. ➡️ Stocks settle in USDC; supported assets in your Funding/Spot Account (e.g., BNB, USDT, U, USD1) may auto‑convert on order submission; unused amounts return to your Funding Account; sale proceeds credit in USDC. ➡️ Market orders execute only during Regular Trading Hours (9:30–16:00 ET). Limit orders can be Day or GTC (up to 90 days). Selected stocks may support Extended or 24‑hour weekday trading. ➡️ bStocks are tokenized securities; rights differ from direct stock ownership. Review the Prospectus, Exchange Rules, and Risk Warnings before trading. [...] users a way to diversify beyond crypto, but also to gain exposure to broader sectors and traditional equity markets. So, for selected stocks, fractional trading is supported. That means that you don't always need to buy a full share, which is especially useful for higher price names. So, if a stock feels expensive on a per share basis, fractional access can lower the barrier to entry for people like me and you. Now, these are direct st...",
+      "score": 0.23238894,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "search_index": 1
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETHUSDT 1m kline API timezone ET noon November 26 close price rules official documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Ethereum ETH price November historical baseline 2020 2024 late November seasonality daily returns 3100 comparable cases",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Ethereum ETF BlackRock Fidelity Grayscale inflows SEC staking Pectra upgrade developers institutions 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Ethereum options max pain open interest funding rates CME futures ETF flows economic calendar November 2025 recent month",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Ethereum price outlook November 2025 analyst report research note Glassnode Kaiko Coinbase Institutional JPMorgan",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 6,
+      "query": "site:farside.co.uk Ethereum ETF daily net flows November 2025 official issuer flow data BlackRock Fidelity Grayscale",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 2
+    },
+    {
+      "search_index": 7,
+      "query": "site:theblock.co OR site:coinglass.com Ethereum exchange reserves stablecoin inflows ETH perpetual funding basis November 2025 leading indicators",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 8,
+      "query": "site:ethereum.org OR site:blog.ethereum.org Ethereum network fees blob usage burned ETH validator exits staking queue November 2025 weekly update",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

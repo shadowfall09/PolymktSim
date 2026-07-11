@@ -2,10 +2,10 @@
   "row_index": 194,
   "market_id": "forecastbench_2026_06_21_b622a1686336779a1c33398b9760a102059ee40948b70aa5633559d1575b90fd",
   "slug": "",
-  "question": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28?\n\nResolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date.\n\nBackground: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
+  "question": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
   "event_title": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28?\n\nResolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date.\n\nBackground: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
-  "resolution_date": "2026-06-28",
-  "evidence_cutoff_date": "2026-06-27",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
   "end_date_limit": "2026-06-27",
   "row_end_date_raw": "2026-06-28",
   "expanded_queries": [
@@ -283,5 +283,221 @@
       ],
       "results_count": 10
     }
-  ]
+  ],
+  "refiltered": true,
+  "recovered_queries": [],
+  "refilter_queries": [],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "Vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vaccine",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background defining what a vaccine is; no explicit post-cutoff publication/update or outcome language. Only tangentially relevant."
+    },
+    {
+      "stage": "cached",
+      "title": "The immunobiology of myiasis infections--whatever happened to vaccination? - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25040047",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Directly relevant background on myiasis vaccine research status, explicitly discussing that vaccines against myiasis had not been developed to date and reviewing prospects. No post-cutoff publication/update indicated."
+    },
+    {
+      "stage": "cached",
+      "title": "Myiasis - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Myiasis",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on what myiasis is, useful for interpreting the disease in question. No explicit post-cutoff publication/update or completed-result leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "List of infectious diseases - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_infectious_diseases",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Directly relevant primary evidence: the cited Wikipedia list entry shows Myiasis with vaccine status 'No', which is central to forecasting the resolution source. Snippet contains no explicit post-cutoff publication/update date."
+    },
+    {
+      "stage": "cached",
+      "title": "Role of oligosaccharides in the immune response of sheep vaccinated with Lucilia cuprina larval glycoprotein, peritrophin-95 - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11403771",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Direct evidence of candidate myiasis vaccine research in animals, informative about whether a vaccine may eventually be considered developed. No explicit post-cutoff publication/update or retrospective leakage beyond historical study results."
+    },
+    {
+      "stage": "cached",
+      "title": "About Myiasis",
+      "url": "https://www.cdc.gov/myiasis/about/index.html",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe contemporaneous medical background page about myiasis from CDC. Useful supporting context, though it does not directly address vaccine development. No explicit post-cutoff publication/update shown."
+    },
+    {
+      "stage": "cached",
+      "title": "Vaccine-preventable disease - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vaccine-preventable_disease",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General background on vaccine-preventable diseases; safe and not post-cutoff, but only indirectly relevant to whether myiasis has a vaccine."
+    },
+    {
+      "stage": "cached",
+      "title": "Vaccination",
+      "url": "https://en.wikipedia.org/wiki/Vaccination",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General background on vaccination concepts; safe and non-leaky, but tangential to the specific forecasting question."
+    },
+    {
+      "stage": "cached",
+      "title": "Myiasis - WikEM",
+      "url": "https://wikem.org/wiki/Myiasis",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General clinical background on myiasis management; safe and non-leaky, but only weakly relevant to vaccine development forecasting."
+    },
+    {
+      "stage": "cached",
+      "title": "Immunization - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Immunization",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General background on immunization; safe and non-leaky, but only tangentially relevant to the specific question."
+    },
+    {
+      "stage": "cached",
+      "title": "Leishmaniasis vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leishmaniasis_vaccine",
+      "query": "According to Wikipedia, will a vaccine have been developed for Myiasis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Myiasis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immuni...",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background page about vaccine development for another parasitic disease. No explicit post-cutoff publication/update or completed post-cutoff outcome. Indirectly relevant as contextual evidence that vaccines for parasitic diseases can exist, but not specific to myiasis."
+    },
+    {
+      "stage": "cached",
+      "title": "Vaccination against ectoparasites - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17274852",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on vaccination against ectoparasites. No explicit post-cutoff publication/update. Relevant because myiasis is caused by fly larvae and this informs plausibility of anti-parasite vaccines, though not directly about a human myiasis vaccine."
+    },
+    {
+      "stage": "cached",
+      "title": "Vaccination of sheep against larvae of the sheep blowfly (Lucilia cuprina) - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9004444",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe historical study showing successful vaccination of sheep against sheep blowfly larvae, which are directly related to fly-strike/myiasis-type infestations. Strongly relevant as evidence that vaccines against myiasis-causing larvae have been developed in animals."
+    },
+    {
+      "stage": "cached",
+      "title": "Efficacy of ivermectin controlled-release capsules for the control and prevention of nasal bot infestations in sheep - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9034497",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff treatment/prevention study for nasal bot infestations in sheep. Relevant to myiasis-related parasite control context, but it is about ivermectin prophylaxis rather than vaccine development."
+    },
+    {
+      "stage": "cached",
+      "title": "The response of cattle vaccinated with hypodermin A to a natural ...",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1774122",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe historical vaccine/immunization study in cattle against Hypoderma larvae, a myiasis-causing botfly. Directly relevant because it bears on whether a vaccine has been developed for myiasis, at least in veterinary contexts."
+    },
+    {
+      "stage": "cached",
+      "title": "Comparative curative and preventive efficacies of ivermectin and ...",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9404844",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff prevention/treatment study for Oestrus ovis infestation. Useful context on control of myiasis-related parasites, but not vaccine evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Efficacy of injectable doramectin in the therapy and control of Dermatobia hominis infestations in Latin America - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8747909",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff therapeutic/control study for Dermatobia hominis infestations. Directly about a myiasis-causing species, but concerns drug treatment rather than vaccine development."
+    },
+    {
+      "stage": "cached",
+      "title": "Diagnosis of Oestrus ovis infestation in sheep by PCR and enzyme-linked immunosorbent assay - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36063580",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe diagnostic study for Oestrus ovis infestation. Relevant species context for myiasis-related disease, though not vaccine development evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Effect of activated charcoal dressings on healing outcomes of chronic wounds - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20505594",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff wound-care article with no explicit leakage, but only tangentially related to myiasis and not informative about vaccine development."
+    },
+    {
+      "stage": "cached",
+      "title": "Field efficacy of minidosed pour-on ivermectin and eprinomectin ...",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24390793",
+      "query": "site:pubmed.ncbi.nlm.nih.gov myiasis vaccine trial OR immunization OR recombinant antigen OR field study OR entomological control",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff field efficacy study for ivermectin/eprinomectin against likely myiasis-related infestations. Useful disease-control context but not direct vaccine evidence."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 20,
+    "dropped": 0,
+    "relevance": {
+      "high": 5,
+      "medium": 9,
+      "low": 6
+    },
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 5
+  }
 }

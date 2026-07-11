@@ -1,0 +1,302 @@
+{
+  "row_index": 94,
+  "market_id": "mkt_695369",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $88,000 on November 28?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $88,000 on November 28?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-28",
+  "evidence_cutoff_date": "2025-11-27",
+  "end_date_limit": "2025-11-27",
+  "row_end_date_raw": "2025-11-28",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+    "Bitcoin November price seasonality historical daily returns around Nov 28 prior years BTC USD",
+    "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF net flows MicroStrategy Bitcoin purchases CME Fed named drivers BTC price",
+    "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+    "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 10,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 23,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 27,
+    "llm_kept_count": 23,
+    "llm_kept_leak_no_count": 20,
+    "llm_rewrite_candidate_count": 3,
+    "llm_rewritten_kept_count": 3,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Top Market Events in November 2025: From FOMC to x402 Protocol ...",
+      "url": "https://www.xt.com/en/blog/post/november-2025-market-outlook-from-fomc-minutes-to-x402-protocol",
+      "content": "## November Calendar At-a-Glance ### Macro highlights | | | | --- | Date | Event | Why It Matters | | Nov 6 | Bank of England Meeting | Sets tone for UK monetary policy | | Nov 7 | U.S. Jobs Report | First full labor data after shutdown | | Nov 13–14 | U.S. CPI & PPI | Core inflation guide for Fed’s December move | | Nov 19 | FOMC Minutes | Signals how confident the Fed is about more cuts | | Nov 20 | China Loan Prime Rate | Benchmark for credit and yuan stability | | Nov 21 | Eurozone PMIs | Measure of growth recovery | | Nov 26 | Core PCE Price Index (US) | Fed’s preferred inflation gauge; shapes rate-cut expectations | | Nov 26 | UK Autumn Budget | Fiscal clues for 2026 | | Nov 30 | OPEC+ JMMC | Determines oil supply path into 2026 | ### Crypto highlights [...] ### Liquidity and Flow Factors ETF Flows: BlackRock’s IBIT remains the biggest driver of U.S. spot Bitcoin ETF inflows. Consistent inflows through November will be key to maintaining upward momentum in BTC. Derivatives Expiry: Both Deribit options and CME Bitcoin futures expire on Nov 28 at 08:00 UTC, during the U.S. Thanksgiving week. Lower liquidity could lead to sharper price swings around that date. ### Narrative W...",
+      "score": 0.8194462,
+      "query": "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.79883134,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Bitcoin - Insights and Market Trends H1 2025",
+      "url": "https://20368641.fs1.hubspotusercontent-na1.net/hubfs/20368641/Glassnode%20x%20CME%20Reports/Glassnode_CME_Market%20Trends%20Report_BTC_H1-2025.pdf",
+      "content": "Source: Glassnode Market Cap Swings 9 Bitcoin: Insights and Market Trends 2025 On-Chain Market One of the key value propositions of the Bitcoin network is its ability to operate as a medium of exchange and as a layer for settling value. Upheld by a combination of nodes and miners, any individual or entity is able to transact across borders, without the interaction of third-party intermediaries. [...] Futures Open Interest [Calendar and Perpetuals] Source: Glassnode 16 Bitcoin: Insights and Market Trends 2025 As mentioned, the Futures market continues to be the dominant driver of trade volume in digital asset markets, often surpassing both spot trading volumes and on-chain volumes by an order of magnitude. Trade volumes have remained elevated since the start of 2024, reaching cycle highs of $90B and $16.2B for perpetual and calendar contracts, respectively. However, similarly to the contraction in open interest, futures volumes for both contracts have declined during the recent market downturn to a value of $37.2B for perpetuals, and $6.2B for calendar contracts. [...] Network Settlement Volume Source: Glassnode 10 Bitcoin: Insights and Market Trends 2025 Another integral value p...",
+      "score": 0.78552294,
+      "query": "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin ETF Flows Turn Positive as BlackRock's IBIT Hits Top 1%",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-etf-flows-turn-positive-123840490.html",
+      "content": "Bloomberg ETF analyst Eric Balchunas highlighted the turnaround, noting that BlackRock's iShares Bitcoin Trust (IBIT) has pulled in $3 billion in recent flows. That figure places IBIT in the top 1% of all ETFs by flow volume. > \"Bitcoin ETFs flows are back in the high life.. every single rolling period we track is now positive, haven't seen that in months,\" Balchunas stated. SoSoValue data shows the 12 spot Bitcoin ETFs recorded $335.8 million in net inflows on April 22 alone. IBIT accounted for $246.9 million of that total. Fidelity's FBTC added $56.7 million, while Bitwise's BITB contributed $15.4 million. Bitcoin ETF Flows Bitcoin ETF Flows. Source: SoSoValue [...] ... crypto background image BeInCrypto # Bitcoin ETF Flows Turn Positive as BlackRock’s IBIT Hits Top 1% Lockridge Okoth 2 min read BTC-USD +1.54% IBIT +3.56% SOSO-USD +4.68% US spot Bitcoin (BTC) ETF flows have turned positive across every rolling period tracked by analysts. It is the first time all periods have aligned in positive territory in months. The shift signals renewed institutional appetite as BTC trades near $77,700, with cumulative lifetime net inflows sitting at $62.8 billion. ## Bitcoin ETF Flows Tur...",
+      "score": 0.7578844,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF net flows MicroStrategy Bitcoin purchases CME Fed named drivers BTC price",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin Analysis & Research - Glassnode Insights",
+      "url": "https://research.glassnode.com/tag/analyses",
+      "content": "Avenir + Glassnode: Bitcoin's Liquidity Profile ## Avenir + Glassnode: Bitcoin's Liquidity Profile Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap ## Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 ## CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 Coinbase + Glassnode: Charting Crypto Q2 2025 ## Coinbase + Glassnode: Charting Crypto Q2 2025 Supply by Investor Behavior: Understanding Who’s Behind the Market Moves ## Supply by Investor Behavior: Understanding Who’s Behind the Market Moves Is the Metaverse Dead? On-Chain Data Tells a Different Story ## Is the Metaverse Dead? On-Chain Data Tells a Different Story [...] Introducing Options Premium & Taker Flow Analytics ## Introducing Options Premium & Taker Flow Analytics Pressure Points: Liquidation Heatmaps & Market Bias ## Pressure Points: Liquidation Heatmaps & Market Bias Systematic Feature Discovery for Digital Asset Markets ## Systematic Feature Discovery for Digital Asset Markets A Practical Guide to Glassnode’s MCP Server ## A Practical Guide to Glassnode’s MCP Server Coinbase + Glassnode: Charting Crypto Q3 2025 ## Coin...",
+      "score": 0.74004334,
+      "query": "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025",
+      "search_index": 5
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of...",
+      "score": 0.7323053,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Insight and Market Trends H1 2025",
+      "url": "https://research.glassnode.com/cme-glassnode-bitcoin-insight-and-market-trends-h1-2025",
+      "content": "Download the full report. Glassnode is a trusted data provider partner to institutions in the financial world. Our expertise in on-chain analytics complements traditional price data, providing a holistic view of the digital asset markets. Contact us to explore our offerings for data, bespoke reports, and more. Subscribe for free to receive best-in-class market analysis on Bitcoin, Ethereum, and DeFi, and novel on-chain research. By subscribing, you agree to our Terms & Conditions and Privacy Notice. Thank you for subscribing. [...] Market Pulse Week On-chain Strategy Watch Partner Reports Product & Research Subscribe Log In English Español Français Italiano Polski Português Türkçe русский Ελληνικά עברית فارسی عربي 中文 日本語 Tiếng Việt Bitcoin Analysis & Research # CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 A joint publication by CME Group and Glassnode, this report delivers in-depth analysis of Bitcoin’s H1 2025 market trends - including on-chain flows, ETF activity, and derivatives data - equipping institutional investors with actionable insights for informed decision-making. Glassnode #### Glassnode • 3 min read CME + Glassnode: Bitcoin Insight and Market Trends H...",
+      "score": 0.72768575,
+      "query": "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025",
+      "search_index": 5
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "> Payload: ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1591261542539,// Event time \"ps\": \"BTCUSD\",// Pair \"ct\": \"NEXT_QUARTER\"// Contract type \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// volume \"n\": 31,// Number of trades \"x\": false,// Is this kline closed? \"q\":\"1.61836886\",// Base asset volume \"V\": \"73\",// Taker buy volume \"Q\":\"0.75731156\",// Taker buy base asset volume \"B\": \"0\"// Ignore}} ``` Contract type: PERPETUAL CURRENT\\_QUARTER NEXT\\_QUARTER Kline/Candlestick chart intervals: [...] Stream Name: `@indexPriceKline_` e.g. \"btcusd@indexPriceKline\\_1m\" Update Speed: 250ms ## Mark Price Kline/Candlestick Streams > Payload: ``` {\"e\": \"markPrice_kline\",// Event Name \"E\": 1591267398004,// Event Time \"ps\": \"BTCUSD\",// Pair \"k\":{\"t\": 1591267380000,// Kline start time \"T\": 1591267439999,// Kline close time \"s\": \"BTCUSD_200626\",// Symbol \"i\": \"1m\",// Interval \"f\": 1591267380000,// ignore \"L\": 1591267398000,// ignore \"o\":\"9539.67161333\",// Ope...",
+      "score": 0.72465646,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Spot-ETF Flow Race Dominated by Fidelity, BlackRock (FBTC, IBIT) - Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2024-01-24/fidelity-and-blackrock-are-dominating-the-bitcoin-etf-flow-race",
+      "content": "### For Customers ### Support Americas+1 212 318 2000 EMEA+44 20 7330 7500 Asia Pacific+65 6212 1000 Crypto ETFs: # Fidelity and BlackRock Are Dominating the Bitcoin-ETF Flow Race Less than two weeks after US regulators fired the starting gun for ten spot Bitcoin exchange-traded funds, it’s increasingly looking like a two-horse race for new assets. BlackRock’s iShares Bitcoin Trust (ticker IBIT) and the Fidelity Wise Origin Bitcoin Fund (FBTC) are leading the field with about $1.9 billion and $1.6 billion of inflows, respectively, according the latest available data compiled by Bloomberg. That’s roughly a combined 70% of spot Bitcoin ETF inflows so farBloomberg Terminal. [...] ### Bloomberg Connecting decision makers to a dynamic network of information, people and ideas, Bloomberg quickly and accurately delivers business and financial information, news and insight around the world ### For Customers ### Support Americas+1 212 318 2000 EMEA+44 20 7330 7500 Asia Pacific+65 6212 1000 ### Company ### Communications ### Follow ### Products ### Industry Products ### Media ### Media Services ### Company ### Communications ### Follow ### Products ### Industry Products ### Media ### Media...",
+      "score": 0.6796259,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF net flows MicroStrategy Bitcoin purchases CME Fed named drivers BTC price",
+      "search_index": 3
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "## Update Speed​ 250ms ## Response Example​ `{ \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"k\": { \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } }`",
+      "score": 0.6643884,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "How Seasonality and AI Projections Shape Bitcoin's Near-Term ...",
+      "url": "https://www.interactivebrokers.com/campus/traders-insight/securities/technical-analysis/how-seasonality-and-ai-projections-shape-bitcoins-near-term-outlook",
+      "content": "As of late September 2025, Bitcoin (BTCUSD) is showing remarkable alignment with its historical seasonality patterns. According to the Forecaster Terminal, which aggregates average performance over the last 3, 5, and 7 years, Bitcoin has historically exhibited a strong bullish bias starting in early October and accelerating toward year-end. ### Key Data Points: 3-Year Average: Correlation with current year is 84.45% 5-Year Average: Correlation at 71.00% 7-Year Average: Correlation at 70.45% This strong correlation with the 3-year average suggests that the current price action is not an anomaly but rather part of a repeating seasonal trend. In previous years, a mid-year consolidation has often been followed by an October-December rally, as is now potentially underway. [...] In the 2016 case, Bitcoin faced a brief intra-period pullback of -3.29%, followed by a recovery toward a maximum upside of +3.16%, staying within a relatively tight range. This historical episode is significant because it occurred after a multi-month rally and just before Bitcoin began a longer-term ascent in Q4 of that year. The AI-powered projection engine interprets this analogue not only for its raw return...",
+      "score": 0.6399392,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 28 prior years BTC USD",
+      "search_index": 2
+    },
+    {
+      "title": "Seasonality in Bitcoin: Examining Almost A Decade of Price Data",
+      "url": "https://medium.com/interdax/seasonality-in-bitcoin-examining-almost-a-decade-of-price-data-abf47b1421cb",
+      "content": "Green/yellow days are where the price action was highly volatile while orange/red show moderate-low volatility days. BTC-USD was more volatile during the spring/summer months during 2010–2014, with periods of high volatility during June 2011 and April-May 2013. We also saw a period of elevated volatility during November 2010 and December 2013-January 2014. Press enter or click to view image in full size Image 7 Press enter or click to view image in full size Image 8 Source: CoinMetrics, volatility of 30-day returns for bitcoin between 18/08/2010 to 31/12/2019. For the years 2015–2019, the first few months of the year have been volatile as compared to the rest of the year (with 2017 and 2019 being exceptions). [...] The distribution of daily returns are similar for each weekday, with the peak at (or close to) zero percent. The range of price changes are similar for Monday, Wednesday, and Friday, as shown by the length of each violin plot. The biggest returns have been on Saturdays, but the biggest drops have occurred on Thursdays. These two weekdays also display the highest variation in returns. Saturday’s distribution appears to have two peaks, unlike all other days, suggesting...",
+      "score": 0.63152665,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 28 prior years BTC USD",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minute...",
+      "score": 0.629889,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "Mark Price Kline Candlestick Streams",
+      "url": "https://developers.binance.com/legacy-docs/derivatives/coin-margined-futures/websocket-market-streams/Mark-Price-Kline-Candlestick-Streams",
+      "content": "## Update Speed​ 250ms ## Response Example​ `{ \"e\":\"markPrice_kline\", // Event Name \"E\":1591267398004, // Event Time \"ps\":\"BTCUSD\", // Pair \"k\":{ \"t\":1591267380000, // Kline start time \"T\":1591267439999, // Kline close time \"s\":\"BTCUSD_200626\", // Symbol \"i\":\"1m\", // Interval \"f\":1591267380000, // ignore \"L\":1591267398000, // ignore \"o\":\"9539.67161333\", // Open price \"c\":\"9540.82761333\", // Close price \"h\":\"9540.82761333\", // High price \"l\":\"9539.66961333\", // Low price \"v\":\"0\", // ignore \"n\":19, // Number of basic data \"x\":false, // Is this kline closed? \"q\":\"0\", // ignore \"V\":\"0\", // ignore \"Q\":\"0\", // ignore \"B\":\"0\" // ignore } }` [...] Binance Logo Binance Logo # Mark Price Kline/Candlestick Streams ## Stream Description​ Mark Price Kline/Candlestick Streams Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## Stream Name​ `<symbol>@markPriceKline_<interval>` `<symbol>@markPriceKline_<interval>` e.g. \"btcusd\\_200626@markPriceKline\\_1m\" ## Update Speed​ 250ms ## Response Example​",
+      "score": 0.5951402,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "binance cryptocurrency exchange - CCXT",
+      "url": "https://docs.ccxt.com/docs/exchanges/binance",
+      "content": "`binance` `Array<Array<int>>` See | Param | Type | Required | Description | --- --- | | symbolsAndTimeframes | `Array<Array<string>>` | Yes | array of arrays containing unified symbols and timeframes to fetch OHLCV data for, example | | since | `int` | No | timestamp in ms of the earliest candle to fetch | | limit | `int` | No | the maximum amount of candles to fetch | | params | `object` | No | extra parameters specific to the exchange API endpoint | | params.timezone | `object` | No | if provided, kline intervals are interpreted in that timezone instead of UTC, example '+08:00' | `Array<Array<string>>` `int` `int` `object` `object` `binance.watchOHLCVForSymbols (symbolsAndTimeframes, since?, limit?, params?)` ### unWatchOHLCVForSymbols [...] Kind: instance method of `binance` Returns: `Array<Array<int>>` - A list of candles ordered as timestamp, open, high, low, close, volume `binance` `Array<Array<int>>` See | Param | Type | Required | Description | --- --- | | symbol | `string` | Yes | unified symbol of the market to fetch OHLCV data for | | timeframe | `string` | Yes | the length of time each candle represents | | since | `int` | No | timestamp in ms of the earliest candle...",
+      "score": 0.54274267,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "The Seasonality of Bitcoin",
+      "url": "https://quantpedia.com/the-seasonality-of-bitcoin",
+      "content": "Main Analysis In the first part, applying the same methodology mentioned above, we replicated our findings using the Gemini exchange data for an extended period of 9.10.2015-30.6.2023. The first article was published in February 2022, so we have more data to work with and we can check, how the basic strategy works during the extended sample. Again, with all of our calculations for UTC +0 timezone. The data with an additional year’s worth of information confirmed our previous assumptions. There are two hours when the BTC returns are significantly higher – at 22:00 and at 23:00. [...] finding, that the hourly distribution of the daily returns is not uniform. Furthermore, there are several hours when the BTC returns are above the average. Specifically, the returns for 22:00 and 23:00 seem to be the most economically significant. On the other hand, the sample’s returns for 3:00 and 4:00 seem to be the worst. Based on the previous results, we proposed a simple seasonality strategy with a simple rule: buy Bitcoin at 21:00 (UTC +0) and sell it at 23:00 (UTC +0). The following article is divided into three distinct sections, each examining the influence of different aspects on seasonal...",
+      "score": 0.49978086,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 28 prior years BTC USD",
+      "search_index": 2
+    },
+    {
+      "title": "Getting Binance Historical Data For Specific TimeZone",
+      "url": "https://stackoverflow.com/questions/60655580/getting-binance-historical-data-for-specific-timezone",
+      "content": "d = d.replace(tzinfo=pytz.utc) # return the difference in time return int((d - epoch).total_seconds() 1000.0) def interval_to_milliseconds(interval): \"\"\"Convert a Binance interval string to milliseconds :param interval: Binance interval string 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w :type interval: str :return: None if unit not one of m, h, d or w None if string not in correct format int value of interval in milliseconds \"\"\" ms = None seconds_per_unit = { \"m\": 60, \"h\": 60 60, \"d\": 24 60 60, \"w\": 7 24 60 60 } unit = interval[-1] if unit in seconds_per_unit: try: ms = int(interval[:-1]) seconds_per_unit[unit] 1000 except ValueError: pass return ms def GetUpdateData(kline): Time = time.strftime(\"%a, %d %b %Y %H:%M:%S\", time.gmtime(kline/1000)) Open = kline [...] Open = kline High = kline Low = kline Close = kline Volume = kline Close_time = time.strftime(\"%a, %d %b %Y %H:%M:%S\", time.localtime(kline/1000)) Quote_asset_volume = kline Number_of_trades = kline Taker_buy_base_asset_volume = kline Taker_buy_quote_asset_volume = kline return Time,Open,High,Low,Close,Volume,Close_time,Quote_asset_volume,Number_of_trades,Taker_buy_base_asset_volume,Taker_buy_quote_asset_v...",
+      "score": 0.48396602,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1
+    },
+    {
+      "title": "The shutdown put jobs and inflation data on hold. Here's ... - CNBC",
+      "url": "https://www.cnbc.com/2025/11/11/when-the-government-data-will-start-rolling-out-with-the-shutdown-ending-and-what-it-is-likely-to-show.html",
+      "content": "Economists surveyed by Dow Jones had been expecting the October nonfarm payrolls report to show a loss of 60,000 jobs. While Goldman puts the decline at 50,000, the general tenor of data for the month points to a slowdown. Powell said Fed estimates put the key inflation rate at 2.8% for September, which is still considerably above the central bank's 2% target but expected to decelerate gradually through 2026. The official PCE report is scheduled to drop Nov. 26, and it is unknown whether that will be the case.",
+      "score": 0.42405477,
+      "query": "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Economic Indicators Calendar | New York Fed",
+      "url": "https://www.newyorkfed.org/research/calendars/nationalecon_cal",
+      "content": "| | 27 Advance Durable GoodsPDF (08:30) Dallas Fed Manufacturing Survey (10:30) | 28 Consumer Confidence (10:00) Richmond Fed Survey of Manufacturing Activity (10:00) Dallas Fed Texas Retail Outlook Survey (10:30) | 29 Corporate Bond Market Distress Index (CMDI) (10:00) | 30 Initial Claims (08:30) Gross Domestic Product 1st Release (08:30) Personal Income and the PCE Deflator (08:30) Weekly Economic Index (11:30) | 31 Employment Cost Index (08:30) Michigan Consumer Survey (Final) (10:00) Multivariate Core Trend Inflation (10:00) New York Fed Staff Nowcast (12:45) | | [...] | | | | | | | | --- --- --- | | Monday | Tuesday | Wednesday | Thursday | Friday | | | | | | 01 ADP National Employment Report (08:15) Labor Market Tightness Index (09:00) ConstructionPDF (10:00) ISM Manufacturing (10:00) | 02 Initial Claims (08:30) Employment Situation (08:30) Manufacturing, Shipments, and Orders (10:00) Weekly Economic Index (11:30) | 03 New York Fed Staff Nowcast (12:45) | | [...] | | 13 | 14 Consumer Price Index (08:30) | 15 Empire State Manufacturing Survey (08:30) Outlook-at-Risk (10:00) | 16 Initial Claims (08:30) Advance Retail SalesPDF (08:30) Business Leaders Survey (08:30) Philadelp...",
+      "score": 0.42190963,
+      "query": "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Economic Calendar - Investing.com",
+      "url": "https://www.investing.com/economic-calendar",
+      "content": "The highest-impact events include central bank interest rate decisions, Non-Farm Payrolls (NFP), GDP releases, the Consumer Price Index (CPI), and unemployment data. These are typically marked with three stars on the calendar because they can cause significant volatility across forex, equities, commodities, and bond markets. Filtering by high importance is a quick way to focus on the releases most likely to move prices. ### How can I filter and customize the Economic Calendar? Click the Show Filters button to access options for country selection, event category, and importance level. You can also adjust the display timezone and choose a date range using the tabs: Yesterday, Today, Tomorrow, This Week, Next Week, or Custom dates. Click Apply after making your selections. [...] | EU | EU | ECOFIN Meetings Act: - Cons: - Prev.: - | | IN | IN | Bank Loan Growth Act: 18.6% Cons: - Prev.: 17.7% | 18.6% | 17.7% | | IN | IN | Deposit Growth Act: 13.3% Cons: - Prev.: 12.0% | 13.3% | 12.0% | | IN | IN | FX Reserves, USD Act: 674.19B Cons: - Prev.: 666.93B | 674.19B | 666.93B | | BR | BR | CPI(YoY)(Jun) Act: 4.64% Cons: 4.80% Prev.: 4.72% | 4.64% | 4.80% | 4.72% | | BR | BR | Brazilian IPC...",
+      "score": 0.3608724,
+      "query": "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Glassnode: Bitcoin Market Analysis and Key Levels",
+      "url": "",
+      "content": "Spot demand is described as weak, with negative exchange spot CVD bias, while institutional futures interest is recovering but not yet enough for sustained growth. The realized profit ratio rose from 0.4 in February to 1.8 during a rally and would need to exceed 2.0 to confirm stronger buying interest. Demand for put options is increasing, suggesting downside hedging. The analysis highlights support near the 30-day average purchase price around $78,200 and the True Market Mean as an important dividing line.",
+      "score": 0.7311551,
+      "query": "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025",
+      "search_index": 5,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Bitcoin US Spot ETF Net Flows Chart - Glassnode Studio",
+      "url": "",
+      "content": "Description: Total net flow of funds for leading U.S.-traded crypto ETFs, reflecting changes in ETF holdings. Covered Bitcoin ETFs include IBIT, GBTC, BTC, FBTC, ARKB, BITB, HODL, BRRR, BTCO, EZBC, and BTCW. Technical: Calculated as the difference between one available balance data point and the previous available balance data point in native units.",
+      "score": 0.6615081,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF net flows MicroStrategy Bitcoin purchases CME Fed named drivers BTC price",
+      "search_index": 3,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "",
+      "content": "Data Source: Database. Response example for klines includes open time, open price, high price, low price, close price, volume, close time, quote asset volume, number of trades, taker buy base asset volume, taker buy quote asset volume, and an unused field. The documentation also includes UI Klines for market data requests.",
+      "score": 0.6501347,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "search_index": 1,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m kline API documentation timezone ET UTC conversion official close price rules",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 28 prior years BTC USD",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF net flows MicroStrategy Bitcoin purchases CME Fed named drivers BTC price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "economic calendar Nov 2025 CPI PCE FOMC jobs report options expiry Bitcoin ETF flow schedule leading indicators BTC November 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Bitcoin market outlook November 2025 analyst report onchain research Glassnode CoinShares Kaiko Binance Research October November 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

@@ -263,11 +263,26 @@ def anchored_queries(
     return clean
 
 
-def search_supplemental(queries: list[str], cutoff: str, client: Any, sleep_seconds: float) -> list[SearchItem]:
+def search_supplemental(
+    queries: list[str], cutoff: str, client: Any, sleep_seconds: float, stage: str, row_index: int
+) -> list[SearchItem]:
     found = []
     for search_index, query in enumerate(queries, start=1):
-        response = tavily_search(client, {"query": query, "search_depth": "advanced", "max_results": 10, "end_date": cutoff})
-        for result in response.get("results", []) or []:
+        query = normalize_ws(query)
+        if len(query) > 400:
+            print(f"[{row_index}] {stage} query {search_index}/{len(queries)} skipped: length={len(query)} > 400")
+            continue
+        print(f"[{row_index}] {stage} query {search_index}/{len(queries)} searching (length={len(query)})")
+        try:
+            response = tavily_search(
+                client, {"query": query, "search_depth": "advanced", "max_results": 10, "end_date": cutoff}
+            )
+        except TavilySearchError as exc:
+            print(f"[{row_index}] {stage} query {search_index}/{len(queries)} failed: {exc}")
+            continue
+        results = response.get("results", []) or []
+        print(f"[{row_index}] {stage} query {search_index}/{len(queries)} returned {len(results)} results")
+        for result in results:
             found.append(SearchItem(
                 title=normalize_ws(str(result.get("title") or "")), url=normalize_ws(str(result.get("url") or "")),
                 content=compact_text(str(result.get("content") or ""), 1200),
@@ -339,20 +354,36 @@ def main() -> None:
         cutoff = evidence_cutoff_date(resolution, args.cutoff_days)
         if not qid or not question or not cutoff:
             raise ValueError(f"row {index} requires qid, question, and a valid resolution_date")
+        print(f"[{index}] start: cutoff={cutoff}")
         payload_path = cache_path(args.cache_dir, index, qid)
         payload = json.loads(payload_path.read_text(encoding="utf-8")) if payload_path.exists() else {}
         retained, dropped, relevance, audit = strict_filter(
             dedupe(items_from_cache(payload)), question, cutoff, llm, args.llm_model, stage="cached"
         )
+        print(f"[{index}] cached filter complete: kept={len(retained)} high_relevance={relevance['high']}")
         # A previous --write-cache may already have replaced a too-strictly
         # filtered set. Re-run the original broad-but-pre-cutoff queries so
         # relaxing the policy can actually recover useful candidates.
-        recovered_queries = [
+        candidate_recovered_queries = [
             normalize_ws(str(query)) for query in payload.get("expanded_queries", [])
             if normalize_ws(str(query))
         ][:5]
+        skipped_long_recovered_queries = [
+            query for query in candidate_recovered_queries if len(query) > 400
+        ]
+        recovered_queries = [
+            query for query in candidate_recovered_queries if len(query) <= 400
+        ]
+        if skipped_long_recovered_queries:
+            print(
+                f"[{index}] skipped {len(skipped_long_recovered_queries)} overlong cached queries; "
+                "anchored queries will be generated if supplemental evidence is still needed"
+            )
         if len(retained) < args.minimum_evidence and recovered_queries:
-            recovered = search_supplemental(recovered_queries, cutoff, tavily, args.sleep_seconds)
+            print(f"[{index}] recovered search: {len(recovered_queries)} cached queries")
+            recovered = search_supplemental(
+                recovered_queries, cutoff, tavily, args.sleep_seconds, "recovered", index
+            )
             safe_recovered, recovered_dropped, recovered_relevance, recovered_audit = strict_filter(
                 dedupe(recovered), question, cutoff, llm, args.llm_model, stage="recovered_search"
             )
@@ -361,6 +392,7 @@ def main() -> None:
             audit.extend(recovered_audit)
             for key, value in recovered_relevance.items():
                 relevance[key] += value
+            print(f"[{index}] recovered filter complete: retained={len(retained)} high_relevance={relevance['high']}")
         queries: list[str] = []
         needs_supplemental = (
             len(retained) < args.minimum_evidence
@@ -370,7 +402,10 @@ def main() -> None:
             anchor = (date.fromisoformat(cutoff) - timedelta(days=args.anchor_days_before_cutoff)).isoformat()
             failure_path = args.cache_dir / "llm_failures" / f"row_{index:04d}_{slugify(qid, max_len=120)}_anchored_queries.json"
             queries = anchored_queries(question, cutoff, anchor, llm, args.llm_model, failure_path)
-            supplemental = search_supplemental(queries, cutoff, tavily, args.sleep_seconds)
+            print(f"[{index}] supplemental search: generated {len(queries)} anchored queries")
+            supplemental = search_supplemental(
+                queries, cutoff, tavily, args.sleep_seconds, "supplemental", index
+            )
             safe_supplemental, supplemental_dropped, supplemental_relevance, supplemental_audit = strict_filter(
                 dedupe(supplemental), question, cutoff, llm, args.llm_model, stage="supplemental_search"
             )
@@ -379,6 +414,7 @@ def main() -> None:
             audit.extend(supplemental_audit)
             for key, value in supplemental_relevance.items():
                 relevance[key] += value
+            print(f"[{index}] supplemental filter complete: retained={len(retained)} high_relevance={relevance['high']}")
         retained.sort(key=lambda item: item.score if item.score is not None else -1, reverse=True)
         enriched = dict(row)
         enriched["evidence"] = as_evidence(qid, retained, args.max_evidence)
@@ -388,9 +424,11 @@ def main() -> None:
                             "recovered_queries": recovered_queries, "refilter_queries": queries,
                             "refilter_audit": audit,
                             "refilter_stats": {"kept": len(retained), "dropped": dropped,
-                            "relevance": relevance, "supplemental_for_relevance": needs_supplemental}})
+                            "relevance": relevance, "supplemental_for_relevance": needs_supplemental,
+                            "skipped_long_recovered_queries": len(skipped_long_recovered_queries)}})
             payload_path.parent.mkdir(parents=True, exist_ok=True)
             payload_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"[{index}] cache written: {payload_path.name}")
         status = (
             f"[{index}] kept={len(retained)} high_relevance={relevance['high']} "
             f"dropped={dropped} supplemental_queries={len(queries)}"

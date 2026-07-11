@@ -1,0 +1,459 @@
+{
+  "row_index": 114,
+  "market_id": "mkt_658365",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $120,000 on November 7?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $120,000 on November 7?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-07",
+  "evidence_cutoff_date": "2025-11-06",
+  "end_date_limit": "2025-11-06",
+  "row_end_date_raw": "2025-11-07",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+    "Bitcoin historical daily price all-time highs cycle peaks drawdowns prior runs to 120000 comparable cases",
+    "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Treasury holdings Bitcoin demand 2025",
+    "October 2025 Bitcoin macro calendar FOMC CPI jobs report options expiry ETF flow leading indicators November 7",
+    "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan"
+  ],
+  "supplemental_query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+  "supplemental_queries": [
+    "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+    "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+    "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source"
+  ],
+  "stats": {
+    "search_calls": 8,
+    "raw_result_count": 80,
+    "deduped_result_count": 80,
+    "hard_quarantined_late_date_count": 22,
+    "llm_filter_input_count": 80,
+    "supplemental_search_triggered": true,
+    "supplemental_search_count": 3,
+    "supplemental_raw_result_count": 30,
+    "supplemental_deduped_result_count": 30,
+    "final_evidence_count": 37,
+    "llm_filter_batch_count": 8,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 43,
+    "llm_kept_count": 37,
+    "llm_kept_leak_no_count": 35,
+    "llm_rewrite_candidate_count": 2,
+    "llm_rewritten_kept_count": 2,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Bitcoin ETF Inflows Surge: $167.1 Million Rebound Led by ...",
+      "url": "https://cryptorank.io/news/feed/9618f-bitcoin-etf-inflows-march-2025",
+      "content": "## Conclusion The $167.1 million net inflow into U.S. spot Bitcoin ETFs on March 9, 2025, marks a definitive return to positive momentum. Led by substantial contributions from BlackRock’s IBIT and Fidelity’s FBTC, this movement counteracted a short outflow streak and reaffirmed institutional engagement. As these investment vehicles mature, their daily flow data remains a crucial barometer for mainstream cryptocurrency adoption within traditional finance. The event underscores the growing integration of digital assets into diversified investment portfolios. ## FAQs [...] Share: AI Overview March 9, 2025: U.S. spot Bitcoin ETFs saw a $167.1M net inflow; BlackRock IBIT +$109.3M, Fidelity FBTC +$60.1M (Bitwise BITB -$4.5M, ARK 21Shares ARKB -$2.7M). Combined IBIT+FBTC inflows ≈ $169.4M; cumulative spot ETF inflows > $10B (IBIT ≈ $7.5B, FBTC ≈ $4.8B), underscoring institutional adoption and fund dominance in the crypto ETF market. Flows drive on-chain BTC purchases by authorized participants, creating structural buying pressure; SEC oversight and potential product expansions support continued mainstream adoption of Bitcoin ETFs. Bullish Predictions Markets See what traders are focuse...",
+      "score": 0.8961153,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Treasury holdings Bitcoin demand 2025",
+      "search_index": 3
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.83225065,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "Inside the 13F Filings of Bitcoin ETFs Q1 2025, ...",
+      "url": "https://coinshares.com/us/insights/research-data/13f-filings-of-bitcoin-etfs-q1-2025-institutional-report",
+      "content": "Notable Investment Decreases Wisconsin Board (Pension Fund): Decreased their position from $323m to 0 Millennium Management (Hedge Fund): Decreased their position by $980m Bracebridge Capital (Investment Advisors): Decreased their position from $335m to 0 Van Eck Associates Corp (Investment Advisors): Decreased their position by $349m Jericho Capital Asset Management (Hedge Fund): Decreased their position by $380m Filers ranked by institution typeThree dominant products have come to be institutional favorites, accounting for more than 85% of all 13F filer holdings: [...] IBIT (iShares Bitcoin Trust): Remains the top institutional choice, with filers holding $12.7 billion (31.5% of its total AUM). FBTC (Fidelity Wise Origin Bitcoin Fund): Filers hold $3.6 billion, representing 25.5% of its AUM. GBTC (Grayscale Bitcoin Trust): Despite losing ground, it remains competitive with $2.2 billion from filers, or 13.1% of its AUM. ## Corporates accumulate while financial institutions strategically reposition [...] Notable Investment Increases: Blackrock, Inc (Investment Advisors): Increased their position from 0 to $217m Goldman Sachs (Investment Advisors): Increased their position by $20...",
+      "score": 0.8315952,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "## Kline/Candlestick Streams > Payload: ``` {\"e\": \"kline\",// Event type \"E\": 1591261542539,// Event time \"s\": \"BTCUSD_200626\",// Symbol \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"s\": \"BTCUSD_200626\",// Symbol \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// volume \"n\": 31,// Number of trades \"x\": false,// Is this kline closed? \"q\":\"1.61836886\",// Base asset volume \"V\": \"73\",// Taker buy volume \"Q\":\"0.75731156\",// Taker buy base asset volume \"B\": \"0\"// Ignore}} ``` The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing). [...] Stream Name: `@indexPriceKline_` e.g. \"btcusd@indexPriceKline\\_1m\" Update Speed: 250ms ## Mark Price Kline/Candlestick Streams > Payload: ``` {\"e\": \"markPrice_kline\",// Event Name \"E\": 1591267398004,// Event Time \"ps\": \"BTCUSD\",// Pair \"k\":{\"t\": 1591267380000,// Kline start time \"T\": 1591267439999,// Kline close time \"s\": \"BTCUSD_200626\",// Symbol \"i\": \"1m\",// Interval \"f\": 1591267380000,// ignore \"L\": 1591267...",
+      "score": 0.7763013,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "REST Open API v1.0.0",
+      "url": "https://www.binance.th/api-docs/en",
+      "content": "Update Speed: 2000ms Payload: `{ \"e\": \"kline\", // Event type \"E\": 123456789, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 123400000, // Kline start time \"T\": 123460000, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } }` ## Individual Symbol Mini Ticker Stream [...] `GET /api/v1/klines` `GET /api/v1/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight(IP): 1 Response ordered oldest to newest. ### Parameters | Name | In | Type | Required | Description | --- --- | symbol | query | string | true | none | | interval | query | string | true | Kline interval. Valid intervals are: `1m`, `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `1d`, `3d`, `1w`, `1M`. | | startTime | query |...",
+      "score": 0.7734393,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "## Update Speed​ 250ms ## Response Example​ `{ \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"k\": { \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } }` [...] Binance Logo Binance Logo # Kline/Candlestick Streams ## Stream Description​ The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing). Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## URL PATH​ `/market` `/market` ## Stream Name​ `<symbol>@kline_<interval>` `<symbol>@kline_<interval>` ## Update Speed​ 250ms ## Response Example​ [...] After CM migration, both `fstream` and `dstream` ma...",
+      "score": 0.756376,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "FOMC Minutes, October 28-29, 2025 - Federal Reserve",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20251029.htm",
+      "content": "Risk appetite in foreign financial markets was generally strong. On net, foreign equity indexes were moderately higher, and technology stocks outperformed in several economies, largely reflecting continued investor optimism regarding AI. Market-based policy expectations and longer-term yields declined in most major advanced foreign economies, in part because of weak economic data. By contrast, yields in Japan rose amid political developments that led to expectations for increased fiscal spending. The broad dollar index increased modestly, primarily driven by the relative strength of U.S. economic data. [...] Regarding international developments, the manager noted that the trade-weighted dollar index rose somewhat over the period. Despite its recent appreciation, the dollar remained weaker against all major currencies since the beginning of the year, and outside forecasters continued to expect that the dollar would depreciate modestly over the medium term. [...] The manager highlighted that recent changes in money market conditions indicated that the level of reserves could be approaching ample. Rates on Treasury repurchase agreements (repo) moved notably higher relative to the i...",
+      "score": 0.74563974,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "search_index": 6
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of UTC startTime and endTime are always interpreted in UTC, regardless of timeZone Returns: : API response [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of UTC startTime and endTime are always interpreted in UTC, regardless of timeZone Returns: : API response [...] Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607...",
+      "score": 0.74541736,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] united states securities and exchange commission - iShares",
+      "url": "https://www.ishares.com/us/literature/quarterly-filings/ibit-form10q-0930.pdf",
+      "content": "November 5, 2025 /s/ Bryan Bowers Bryan Bowers Director and Chief Financial Officer (Principal financial and accounting officer) The registrant is a trust and Mr. Bowers is signing in his capacity as an officer of iShares Delaware Trust Sponsor LLC, the Sponsor of the registrant. NM1125U-4969656-32/34 Exhibit 32.1 Certification Pursuant to 18 U.S.C. Section 1350, as Adopted Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002 In connection with the Quarterly Report of iShares Bitcoin Trust ETF (the “Trust”) on Form 10-Q for the period ended September 30, 2025 as filed with the Securities and Exchange Commission on the date hereof (the “Report”), I, Shannon Ghia, Chief Executive Officer of iShares Delaware Trust Sponsor LLC, the Sponsor of the Trust, certify, pursuant to 18 U.S.C. [...] XBRL Taxonomy Extension Label Linkbase Document 101.PRE Inline XBRL Taxonomy Extension Presentation Linkbase Document 104 Cover Page Interactive Data File included as Exhibit 101 (embedded within the Inline XBRL document) Filed herewith 27 NM1125U-4969656-29/34 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this...",
+      "score": 0.7077487,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Home / data / spot / monthly / klines / BTCUSDT / 1m",
+      "url": "",
+      "content": "Directory listing for Binance spot monthly historical kline data for BTCUSDT at the 1-minute interval, with downloadable zip files and checksum files.",
+      "score": 0.6760432,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Fast-Tracking Digital Asset ETFs",
+      "url": "https://www.sec.gov/comments/sr-nysearca-2025-54/srnysearca202554-645167-1930694.pdf",
+      "content": "10/22/25 12/21/25 OBTC Conversion N/A Osprey Bitcoin -- 3/17/25 3/27/25 4/2/25 5/17/25 7/1/25 9/29/25 11/28/25 Canary Staked TRX ETF N/A Canary Tron 4/18/25 5/12/25 5/22/25 5/28/25 7/12/25 8/26/25 11/24/25 1/23/26 Truth Social Bitcoin ETF N/A Truth/Yorkville Bitcoin N/A 6/3/25 6/16/25 6/20/25 8/4/25 9/18/25 12/17/25 2/15/26 Truth Social Bitcoin & Ethereum ETF N/A Truth/Yorkville Bitcoin N/A 6/24/25 7/7/25 7/10/25 8/24/25 10/8/25 1/6/26 3/7/26 Crypto ETP Generic Listing Standards N/A -- All N/A N/A 7/30/25 8/4/25 9/18/25 11/2/25 1/31/26 4/1/26 Canary Staked SEI ETF N/A Canary SEI 4/30/25 8/26/25 9/9/25 9/15/25 10/30/25 12/14/25 3/14/26 5/13/26 Canary Staked INJ ETF N/A Canary INJ 7/17/25 N/A 8/25/25 8/31/25 10/15/25 11/29/25 2/27/26 4/28/26 [...] 7 Issuer (Ticker) Ticker Company Asset Prospectu s Filing Date 19b-4 Filed Date 19b-4 SEC Date 19b-4 Federal Register First Deadine Second Deadline Third Deadline Final Deadline Hashdex Nasdaq Crypto Index NCIQ Hashdex BTC & ETH 7/24/24 6/17/24 6/26/24 7/2/24 8/16/24 9/30/24 12/29/24 2/27/25 Hashdex Nasdaq Crypto Index NCIQ Hashdex Basket 7/24/24 3/3/25 3/9/25 4/21/25 6/5/25 9/3/25 11/2/25 Franklin Crypto Index ETF EZPZ Franklin BTC & ET...",
+      "score": 0.6533265,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hours | `1h`, `2h`, `4h`, `6h`, `8h`, `12h` | | days | `1d`, `3d` | | weeks | `1w` | | months | `1M` | `interval` `1s` `1m` `3m` `5m` `15m` `30m` `1h` `2h` `4h` `6h` `8h` `12h` `1d` `3d` `1w` `1M` Notes: [...] Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trad...",
+      "score": 0.6501347,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "VanEck Mid-October 2025 Bitcoin ChainCheck",
+      "url": "https://www.vaneck.com/us/en/blogs/digital-assets/matthew-sigel-vaneck-mid-october-2025-bitcoin-chaincheck",
+      "content": "Leverage is both a driver and a consequence of Bitcoin’s monetization process. Since October 2020, nearly 73% of Bitcoin’s price variance has been explained by changes in futures open interest (t = 71), underscoring the reflexive relationship between speculative positioning and spot price. Periods of exuberant leverage have historically preceded corrections, while orderly deleveraging phases have marked attractive entry points. ### BTC Futures Open Interest (OI) Climbed 2.5x YoY Before Crashing in October BTC Futures OI Climbed 2.5x YoY Before Crashing In October BTC Futures OI Climbed 2.5x YoY Before Crashing In October Source: Glassnode as of 10/16/2025. Past performance is no guarantee of future results. Not intended as a recommendation to buy or sell any securities named herein. [...] | | | | | | --- --- | As of October 16th, 2025 | 30-day avg | 30 day change (%)1 | 365 day change(%) | Last 30 days Percentile vs all-time history (%) | | Bitcoin Price | $ 114,868 | 2 | 79 | 99 | | Daily Active Addresses | 722,857 | 2 | 2 | 64 | | Daily New Addresses | 310,903 | 0 | 6 | 57 | | Daily Transactions | 472,824 | -8 | -24 | 75 | | Daily Inscriptions | 52,908 | -21 | 167 | 38 | | Tot...",
+      "score": 0.62303346,
+      "query": "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Insight and Market Trends H1 2025",
+      "url": "https://research.glassnode.com/cme-glassnode-bitcoin-insight-and-market-trends-h1-2025",
+      "content": "Download the full report. Glassnode is a trusted data provider partner to institutions in the financial world. Our expertise in on-chain analytics complements traditional price data, providing a holistic view of the digital asset markets. Contact us to explore our offerings for data, bespoke reports, and more. Subscribe for free to receive best-in-class market analysis on Bitcoin, Ethereum, and DeFi, and novel on-chain research. By subscribing, you agree to our Terms & Conditions and Privacy Notice. Thank you for subscribing. [...] ### Discover More This edition of the CME x Glassnode Bitcoin Report goes beyond surface-level trends to deliver a comprehensive institutional view of the market. Inside, you'll find: A breakdown of investor cost basis and capital inflow behavior Real-time assessments of market liquidity and volatility regimes Derivatives market structure and CME futures dominance ETF flows, cost bases, and the role of cash-and-carry strategies Comparative cycle analysis and drawdown profiles Whether you're managing institutional portfolios or monitoring market structure, this report offers the critical insights needed to navigate the next phase of Bitcoin's cycle. Do...",
+      "score": 0.61057013,
+      "query": "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Price Drawdown from ATH Chart",
+      "url": "https://newhedge.io/bitcoin/price-drawdown",
+      "content": "### Historical Drawdowns and Current Cycle Comparisons In previous Bitcoin market cycles, the percentage drawdown has varied significantly: Cycle 1 (2010 - 2013) - Peak: December 2013 - Drawdown: 93% from ATH Cycle 2 (2014 to 2017) • Peak: December 2017 • Drawdown: ~86-87% from ATH Cycle 3 (2018 to 2021) • Peak: November 2021 • Drawdown: ~75-77% from ATH ### Spikes and Cooldown Phases: A Pattern to Watch One of the most intriguing aspects of Bitcoin’s historical drawdowns is the tendency for spikes in price recovery during the bear market before cooling off again. For instance: • In 2015, Bitcoin experienced a spike that saw the drawdown reduce to just 32% below its ATH before cooling off for several months. [...] • In 2019, Bitcoin similarly spiked, reducing the drawdown to about 34% below ATH, followed by a long cooldown period lasting up to nine months. Tracking Bitcoin’s percentage drawdown from its all-time high provides valuable context for understanding where the market stands in the broader cycle. While it isn’t a perfect predictor of future price action, it offers several key insights: Historical Context: By comparing current drawdowns with previous cycles, investors ca...",
+      "score": 0.6018984,
+      "query": "Bitcoin historical daily price all-time highs cycle peaks drawdowns prior runs to 120000 comparable cases",
+      "search_index": 2
+    },
+    {
+      "title": "Quarterly Refunding Statement of Deputy Assistant Secretary for ...",
+      "url": "",
+      "content": "The U.S. Department of the Treasury is offering $125 billion of Treasury securities to refund approximately $98.2 billion of privately-held Treasury notes maturing on November 15, 2025. This issuance will raise new cash from private investors of approximately $26.8 billion. The securities are a 3-year note in the amount of $58 billion, a 10-year note in the amount of $42 billion, and a 30-year bond in the amount of $25 billion. Treasury indicated it anticipates resuming cash management buybacks in December 2025.",
+      "score": 0.60077465,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "search_index": 6,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Crypto ETFs: November Could Be the New October for U.S. ...",
+      "url": "https://www.coindesk.com/news-analysis/2025/11/02/november-could-be-the-new-october-for-u-s-crypto-etfs-after-shutdown-delays-sec-decisions",
+      "content": "Issuers are filing updated S-1 registration statements that include “no delaying amendment” language. Under U.S. securities law, those filings automatically become effective after 20 days unless the SEC steps in to issue a stay or request changes. For the four ETFs that listed this week, the SEC didn’t act, allowing them to go live by default. That success has sparked a wave of new filings. On Thursday, Fidelity submitted an updated S-1 for its spot Solana ETF, and Canary Capital did the same for its XRP ETF. If the SEC continues to follow its current track and doesn’t block the process, the market could see its first XRP fund as soon as November 13. [...] Search / LinkedInFacebookEmail Make preferred on Image 1: (Pixabay) Summary Show October’s expected wave of crypto ETF approvals was derailed when the U.S. government shutdown paused SEC decision-making. Four crypto ETFs were listed this week through a procedural shortcut that allowed them to go live without active SEC approval. Fidelity and Canary Capital have now filed updated S-1 forms using the same method, which could bring new ETFs to market as early as November 13. [...] October was supposed to be the month when long-aw...",
+      "score": 0.58664185,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | After CM migration, accepts both CM and UM symbols. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", //...",
+      "score": 0.57894874,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "File No. SR-NASDAQ-2025-085] Self-Regulatory ...",
+      "url": "https://www.sec.gov/files/rules/sro/nasdaq/2025/34-104148.pdf",
+      "content": "As noted above, the Trust’s holdings, with the exception of OTC options, will meet the eligibility criteria in the General Listing Standards under Rule 5711(iv). In the case of the OTC options, the ability to use OTC options will allow the Trust to better meet its investment objective. Further, the Commission has previously issued orders granting approval for proposals to list Spot Bitcoin ETPs.20 In the Spot Bitcoin ETP Approval Order, the Commission found that sufficient “other means” of preventing fraud and manipulation had been demonstrated that justified dispensing with a surveillance-sharing agreement with a market of significant size. As discussed above, the Commission found that while the CME futures market for bitcoin was not [...] 13 Applicable Standard As noted above, the Trust’s holdings of bitcoin, IBIT, listed options, and FLEX options meet the eligibility criteria in the General Listing Standards under Rule 5711(iv). Further, the Commission has previously issued orders granting approval for proposals to list bitcoin-based commodity trust shares and bitcoin-based trust issued receipts (“Spot Bitcoin ETPs”).14 In the Spot Bitcoin ETP Approval Order, the Commission f...",
+      "score": 0.5622973,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Crypto Insights | October 2025",
+      "url": "https://www.cmegroup.com/newsletters/quarterly-cryptocurrencies-report/2025-october-cryptocurrency-insights.html",
+      "content": "Cryptocurrency futures and options Average daily volume: 340.3K contracts, $14.1B notional Average daily open interest: 311.3K contracts, $31.3B notional | Futures | Q3 ADV | vs. q3 2024 | q3 ADoi | vs. q3 2024 | --- --- | BTC | 12.7K | -17% | 28.5K | -3% | | ETH | 23.8K | +355% | 36.3K | +441% | | SOL | 4.3K | N/A | 9.7K | N/A | | XRP | 2.1K | N/A | 5.5K | N/A | | MBT | 66.6K | +60% | 32.6K | +4% | | MET | 208.4 | +437% | 134.5K | +214% | | MSL | 5.0K | N/A | 3.1K | N/A | | MXP | 4.7K | N/A | 2.8K | N/A | | bff | 2.4K | N/A | 826 | N/A | | QBTC | 2.2K | N/A | 2.4K | N/A | | QETH | 3.8K | N/A | 633 | N/A | Figures mentioned in the number of contracts. _Indicates a new all-time record._ More on cryptocurrency products Back to top [...] Q3 saw record-breaking activity in the crypto market, with combined Crypto futures and options volume exceeding $900B, reaching an all-time high. The quarter also closed with a record average daily open interest (ADOI) of $31.3B across our futures and options suite, culminating in a record notional open interest (OI) of $39B on September 18. This heightened activity was further emphasized by record-breaking market participation, with 1,014 large op...",
+      "score": 0.5425973,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "[PDF] Kaiko Research - Quarterly Report, Q1 2025",
+      "url": "https://marketing.kaiko.com/hubfs/Kaiko%20Research%20-%20Quarterly%20Report%2C%20Q1%202025.pdf",
+      "content": "equities. However, as crypto legislation takes shape and regulatory support builds, Bitcoin may begin to decouple from traditional assets in the months ahead. [...] solutions signals that the market is maturing beyond simple bilateral arrangements toward more robust, scalable models that better align with traditional financial risk management practices. [...] As capital markets and digital assets converge we're witnessing multiple parallel initiatives aimed at solving the fundamental challenges of clearing and collateral optimization. From ClearLoop's custody-centric approach to innovative solutions like tokenized money market funds being used as eligible collateral, the industry is rapidly developing sophisticated infrastructure to address counterparty risk and capital efficiency. This transformation is significant as firms like BlackRock seek to establish new collateral standards, demonstrating how proper collateral frameworks are essential to unlocking the next wave of institutional participation in crypto markets. The emergence of specialized clearing agents and central clearing solutions signals that the market is maturing beyond simple",
+      "score": 0.54187006,
+      "query": "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "Self-Regulatory Organizations; The Nasdaq Stock Market ...",
+      "url": "https://www.federalregister.gov/documents/2025/10/02/2025-19350/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-of-proposed-rule-change",
+      "content": "| | 10/02/2025 | Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Notice of Filing of Proposed Rule Change To List and Trade Shares of iShares Bitcoin Premium Income ETF Under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares) | [...] Back to Citation 10. For example, Cboe offers listed options on spot bitcoin ETPs. See Securities Exchange Act Release No. 101387 (October 18, 2024). Cboe also offers listed index options on the Cboe Bitcoin U.S. ETF Index and the Mini-Cboe Bitcoin U.S. ETF Index. See Back to Citation 11. For example, both Nasdaq ISE and Cboe Options offer electronic FLEX trading today. Additionally, the Commission recently approved the trading of FLEX IBIT options on Nasdaq ISE. See Securities Exchange Act Release No. 103563 (July 29, 2025), 90 FR 36242 (August 1, 2025) (SR-ISE-2025-12). Cboe also offers FLEX trading on both its bitcoin ETP index options and mini bitcoin ETP index options. See Back to Citation 12. Baskets will be offered continuously at NAV per Share for 40,000 Shares. [...] acts and practices in the specific context of the [Spot Bitcoin ETPs].",
+      "score": 0.53968745,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "[PDF] Watching the FedWatch",
+      "url": "http://www.efmaefm.org/0EFMAMEETINGS/EFMA%20ANNUAL%20MEETINGS/2025-Greece/papers/CME_FedWatch_Authors.pdf",
+      "content": "Finally, there is a 100 bps rate hike in September and a 75 bps rate hike in November with a possibility of 0.5%. In summary, from the CME FedWatch Tool calculation, there are three possible outcomes after the November FOMC meeting. A total of 125 bps rate hike with 85% probability, a 150 bps total rate hike with 14.5% probability, and a 175 bps rate hike with only 0.5% probability. IA2 [...] probabilities using the methodology outlined by the CME Group for their 6 FedWatch Tool and evaluates its accuracy. Our findings reveal that this straightforward binary tool achieves an accuracy of 88% in predicting the target rate for future FOMC meetings in 30 days. [...] The FedWatch Tool calculates unconditional probabilities for FOMC meeting outcomes using a binary probability tree, drawing on 30-day Fed funds futures (ZQ) listed by CME Group. These futures prices reflect market expectations for the average daily EFFR dur-ing their contract months, which is a transaction-volume weighted average of the previous day’s overnight unsecured loan rates between depository institutions, published daily by the Federal Reserve Bank of New York. We first begin with stating six important assumptio...",
+      "score": 0.5272928,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "search_index": 6
+    },
+    {
+      "title": "Revisiting the Bitcoin Basis: How Momentum & Sentiment Impact the ...",
+      "url": "https://www.cfbenchmarks.com/blog/revisiting-the-bitcoin-basis-how-momentum-sentiment-impact-the-structural-drivers-of-basis-activity",
+      "content": "Figure 5: Levered Funds Positioning and Front Month Basis (Source: CF Benchmarks, Bloomberg as of 9/30/2025) The participation of institutional investors in basis trades contributes to improved market efficiency and liquidity. By actively trading on price discrepancies influenced by both momentum and sentiment, these entities help narrow the gap between spot and futures prices, promote more accurate price discovery, and reduce market fragmentation. ## The Role of Price Singularity in Facilitating Arbitrage Figure 6:CME CF Bitcoin Reference Rate Liquidity Complex (Source: CF Benchmarks) [...] Figure 4: CME Open Interest and Front Month Basis (Source: CF Benchmarks, Bloomberg as of 9/30/2025) [...] Figure 3: Levered Funds Net Positioning (Source: CF Benchmarks, Bloomberg as of 9/30/2025)",
+      "score": 0.5087155,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "BinanceFutures.USDM.MarketData — Binance Futures API ...",
+      "url": "https://hexdocs.pm/binance_futures/BinanceFutures.USDM.MarketData.html",
+      "content": "Link to this function # klines(symbol, interval, start\\_time \\\\ nil, end\\_time \\\\ nil, limit \\\\ 500) View Source ## Specs ``` klines( binary(), BinanceFutures.interval(), nil | pos_integer(), nil | pos_integer(), pos_integer() ) :: {:ok, [list()]} | BinanceFutures.HTTPClient.error() ``` Gets Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. ## Example [...] View Source ## Specs ``` index_price_klines( binary(), BinanceFutures.interval(), nil | pos_integer(), nil | pos_integer(), pos_integer() ) :: {:ok, [list()]} | BinanceFutures.HTTPClient.error() ``` Gets Kline/candlestick bars for the index price of a pair. Klines are uniquely identified by their open time. ## Example ``` iex(1)> BinanceFutures.USDM.MarketData. index_price_klines(\"BTCUSDT\", \"5m\", nil, nil, 2) {:ok, [ [1616340600000, \"57366.98431599\", \"57429.73139441\", \"57284.92735200\", \"57284.92735200\", \"0\", 1616340899999, \"0\", 300, \"0\", \"0\", \"0\"], [1616340900000, \"57283.26395200\", \"57294.43035200\", \"57224.03776400\", \"57265.85639717\", \"0\", 1616341199999, \"0\", 89, \"0\", \"0\", \"0\"] ]} ``` Link to this function [...] iex(1)> BinanceFutures.USDM.MarketData. mark_price(\"BTCUSDT\") {:ok, %{ \"estim...",
+      "score": 0.49099278,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Download Field Name Description open_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close_time Candlestick close time in Unix time format quote_volume Quote asset volume count Number of trades taker_buy_base_volume Taker buy base asset volume during this period taker_buy_quote_volume Taker buy quote asset volume during this period Trades Executed transactions updated at tick level throughout daily or monthly intervals. Download Field Name Description id Trade ID price Price qty",
+      "score": 0.48952848,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "search_index": 1
+    },
+    {
+      "title": "FedWatch - CME Group",
+      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "content": "BURUNDI CAMBODIA CAMEROON CAPE VERDE CAYMAN ISLANDS CENTRAL AFRICAN REPUBLIC CHAD CHILE CHINA CHRISTMAS ISLAND COCOS KEELING ISLANDS COLOMBIA COMOROS CONGO CONGO THE DEMOCRATIC REPUBLIC OF COOK ISLANDS COSTA RICA COTE D IVOIRE CROATIA CUBA CYPRUS CZECH REPUBLIC DENMARK DJIBOUTI DOMINICA DOMINICAN REPUBLIC EAST TIMOR ECUADOR EGYPT EL SALVADOR EQUATORIAL GUINEA ERITREA ESTONIA ETHIOPIA FALKLAND ISLANDS FAROE ISLANDS FIJI FINLAND FRANCE FRANCE METROPOLITAN FRENCH GUIANA FRENCH POLYNESIA FRENCH SOUTHERN TERRITORIES GABON GAMBIA GEORGIA GERMANY GHANA GIBRALTAR GREECE GREENLAND GRENADA GUADELOUPE GUAM GUATEMALA GUERNSEY GUINEA GUINEA BISSAU GUYANA HAITI HEARD AND MC DONALD ISLANDS HOLY SEE HONDURAS HONG KONG HUNGARY ICELAND [...] First Name Last Name Business Email Location UNITED STATES OF AMERICA Please Select... UNITED STATES OF AMERICA CANADA AFGHANISTAN ALBANIA ALGERIA AMERICAN SAMOA ANDORRA ANGOLA ANGUILLA ANTARCTICA ANTIGUA AND BARBUDA ARGENTINA ARMENIA ARUBA AUSTRALIA AUSTRIA AZERBAIJAN BAHAMAS BAHRAIN BANGLADESH BARBADOS BELARUS BELGIUM BELIZE BENIN BERMUDA BHUTAN BOLIVIA BOSNIA AND HERZEGOVINA BOTSWANA BOUVET ISLAND BRAZIL BRITISH INDIAN OCEAN TERRITORY BRITISH VIRGIN ISLAND...",
+      "score": 0.47899243,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "search_index": 6
+    },
+    {
+      "title": "CFTC Commitments of Traders - Office of Financial Research (OFR)",
+      "url": "https://www.financialresearch.gov/hedge-fund-monitor/datasets/tff",
+      "content": "The TFF breaks down the reportable open interest positions in financial contracts by four trader classifications: Dealers, Asset Managers, Leveraged Funds, and Other Traders. Leveraged Funds are typically hedge funds and various types of money managers, including registered commodity trading advisors (CTAs), registered commodity pool operators (CPOs), and unregistered funds identified by CFTC. We calculate the notional dollar values of traders’ positions by multiplying the number of contracts held by their respective contract sizes. Contracts denominated in a foreign currency are converted to U.S. dollars using contemporaneous market exchange rates. [...] Office of Financial Research ### FinancialResearch.gov # Hedge Fund Monitor ## CFTC Traders in Financial Futures The Commodity Futures Trading Commission (CFTC) publishes the Commitments of Traders reports (COT), including the Traders in Financial Futures report (TFF). The COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. The COT reports are based on position data su...",
+      "score": 0.4751919,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "Commitment of Traders - CME Group",
+      "url": "https://www.cmegroup.com/tools-information/quikstrike/commitment-of-traders.html",
+      "content": "tool provides a comprehensive and highly configurable graphical representation of the CFTC's report on market open interest released each Friday afternoon based on open positions as of the preceding Tuesday. Markets are only included if 20 or more traders hold positions equal to or above the reporting levels established by the CFTC and the respective exchanges. Information is presented by client segment, categorized as follows: Physical Commodities: Producer, Swap Dealer, Managed Money and Other Reportable Financial Products: Dealer, Asset Manager, Leveraged and Other Reportable. For full definitions of these groups, please refer to the CFTC’s Explanatory notes. [...] Disclaimer:The data and output from this tool does not constitute investment advice and is not a personal recommendation from CME Group. Nothing contained herein constitutes the solicitation of the purchase or sale of any futures or options. Any investment activities undertaken using this tool will be at the sole risk of the relevant investor. CME Group expressly disclaims all liability for the use or interpretation (whether by visitor or by others) of information contained herein. Decisions based on this informati...",
+      "score": 0.47416916,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "Economic Calendar October 2025 - Equals Money",
+      "url": "https://equalsmoney.com/economic-calendar/october",
+      "content": "Interest Rate Decision (NZD) Crude Oil Inventories (USD) FOMC Meeting Minutes (USD) Click to read currency news from this day. Thu 9-Oct Eurogroup Meetings (EUR) Unemployment Claims (USD) Click to read currency news from this day. Fri 10-Oct ECONFIN Meetings (EUR) Prelim UoM Consumer Sentiment (USD) Prelim UoM Inflation Expectations (USD) Click to read currency news from this day. Sat 11-Oct No relevant event(s) on this date Click to read currency news from this day. Sun 12-Oct No relevant event(s) on this date Click to read currency news from this day. Mon 13-Oct Bank Holiday (JPY, CAD, USD) IMF Meetings (ALL) Click to read currency news from this day. Tue 14-Oct Average Earnings Index 3m/y (GBP) Claimant Count Change & Unemployment Rate (GBP) [...] Sat 25-Oct No relevant event(s) on this date Click to read currency news from this day. Sun 26-Oct No relevant event(s) on this date Click to read currency news from this day. Mon 27-Oct Bank Holiday (NZD) CBI Realized Sales (GBP) Core Durable Good Orders m/m (USD) Durable Good Orders m/m (USD) Click to read currency news from this day. Tue CB Consumer Confidence (USD) Richmond Manufacturing Index (USD) Click to read currency news f...",
+      "score": 0.4689128,
+      "query": "October 2025 Bitcoin macro calendar FOMC CPI jobs report options expiry ETF flow leading indicators November 7",
+      "search_index": 4
+    },
+    {
+      "title": "Bitcoin's Uptober Breakout: Glassnode Explains Two ... - CoinDesk",
+      "url": "https://www.coindesk.com/markets/2025/10/08/bitcoin-s-on-chain-profitability-has-surged-with-97-of-supply-now-in-profit-glassnode",
+      "content": "White Black Red Green Blue Yellow Magenta Cyan White Black Red Green Blue Yellow Magenta Cyan 100%75%50%25%0% White Black Red Green Blue Yellow Magenta Cyan 100%75%50%25%0% 0.5x 1x 1.25x 1.5x 2x Live 00:05 24:05 24:10 These accounts have apparently steadily increased their balances while larger whales have taken moderate profits, creating what the firm described as a “more organic accumulation phase.” Nearly 97% of circulating supply is now in profit, a level that typically marks late-stage bull cycles but does not yet show signs of exhaustion. The report highlighted the $117,000–$120,000 zone as a key area of on-chain support, with roughly 190,000 BTC last transacted there — a price range where new buyers may step in if markets pull back. ### Leverage adds a note of caution",
+      "score": 0.45391592,
+      "query": "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan",
+      "search_index": 5
+    },
+    {
+      "title": "SEC Approves Eleven Spot Bitcoin Exchange Traded Funds (ETFs) | Practical Law",
+      "url": "https://uk.practicallaw.thomsonreuters.com/w-041-9319?transitionType=Default&contextData=%28sc.Default%29",
+      "content": "ARK 21Shares Bitcoin (ETF under BZX Rule 14.11(e)(4) (Commodity-Based Trust Shares)). Bitwise Bitcoin ETF (under NYSE Arca Rule 8.201-E (Commodity-Based Trust Shares)). Fidelity Wise Origin Bitcoin Fund (ETF under BZX Rule 14.11(e)(4) (Commodity-Based Trust Shares)). Franklin Bitcoin ETF (ETF under BZX Rule 14.11(e)(4) (Commodity-Based Trust Shares)). Grayscale Bitcoin Trust (under NYSE Arca Rule 8.201-E (Commodity-Based Trust Shares)). Hashdex Bitcoin ETF (under NYSE Arca Rule 8.500-E (Trust Units)). iShares Bitcoin Trust (under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares)). Invesco Galaxy Bitcoin ETF (ETF under BZX Rule 14.11(e)(4) (Commodity-Based Trust Shares)). Valkyrie Bitcoin Fund (under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares)). [...] The NYSE Arca, Inc. (NYSE Arca), Nasdaq Stock Market LLC (Nasdaq), and Cboe BZX Exchange, Inc. (BZX) each filed rule change proposals with the SEC to list and trade shares of bitcoin-based commodity-based trust shares and trust units, as modified by respective amendments. The SEC order notes that the spot bitcoin ETF proposals are consistent with: [...] In the original filings of their respective proposals, Nasdaq and BZX ha...",
+      "score": 0.44927242,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "SEC Approves Bitcoin Exchange-Traded Products (ETPs)",
+      "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF12573/IF12573.1.pdf",
+      "content": "0.21% BlackRock’s iShares Bitcoin Trust IBIT Nasdaq 0.25% Bitwise Bitcoin ETF BITB NYSE 0.20% VanEck Bitcoin Trust HODL CBOE 0.25% Wisdomtree Bitcoin Fund BTCW CBOE 0.30% Invesco Galaxy Bitcoin ETF BTCO CBOE 0.39% Fidelity Wise Origin Bitcoin Trust FBTC CBOE 0.25% Valkyrie Bitcoin Fund BRRR Nasdaq 0.49% Hashdex Bitcoin ETF DEFI NYSE 0.90% Franklin Bitcoin ETF EZBC CBOE 0.29% Source: CRS using information from the SEC. Notes: Some funds offer fee waivers for initial investment periods. Although some funds self-label as ETFs, they are technically ETPs per SEC standards. For more fund-level details, click here for an Excel file from the Financial Times. CBOE = Chicago Board Options Exchange BZX Exchange. NYSE = New York Stock Exchange Arca Exchange. Nasdaq = Nasdaq Stock Market, LLC. [...] Some have questioned the economic or social value of cryptocurrencies, contending that Bitcoin has proven useful only as a vehicle for speculation and facilitator of illicit activity. In addition, Bitcoin ETP challenges as articulated in a 2018 SEC staff letter include valuation and pricing, custody, and liquidity. The S-1 filings for spot Bitcoin ETPs summarize a variety of risk factors, includi...",
+      "score": 0.44087905,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Commitments of Traders (COT) Charts - Barchart.com",
+      "url": "https://www.barchart.com/futures/commitment-of-traders",
+      "content": "## Financial Traders Reports #### Currencies US Dollar Index (DX) Bitcoin Micro (BA) Ether Micro (TA) British Pound (B6) Canadian Dollar (D6) Japanese Yen (J6) Swiss Franc (S6) Euro FX (E6) Australian Dollar (A6) Mexican Peso (M6) New Zealand Dollar (N6) South African Rand (T6) Brazilian Real (L6) #### Financials 30-Year T-Bond (ZB) Ultra T-Bond (UD) 10-Year T-Note (ZN) Ultra 10-Year T-Note (TN) 5-Year T-Note (ZF) 2-Year T-Note (ZT) 30-Day Fed Funds (ZQ) 3-Month SOFR (SQ) #### Indices S&P 500 E-Mini (ES) Nasdaq 100 E-Mini (NQ) Dow Futures E-Mini (YM) Russell 2000 E-Mini (QR) S&P Midcap E-Mini (EW) S&P 500 VIX (VI) S&P 500 Micro (ET) Nasdaq 100 Micro (NM) ### THE COMMITMENT OF TRADERS (COT) REPORT Open Interest [...] Asset Manager/Institutional These are institutional investors, including pension funds, endowments, insurance companies, mutual funds and those portfolio/investment managers whose clients are predominantly institutional. Leveraged Funds These are typically hedge funds and various types of money managers, including registered commodity trading advisors (CTAs); registered commodity pool operators (CPOs) or unregistered funds identified by CFTC. The strategies may invol...",
+      "score": 0.3924305,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "Crypto and Commodity-Based ETPs Poised to Boom Following SEC’s Approval of Generic Listing Standards | Insights & Resources | Goodwin",
+      "url": "https://www.goodwinlaw.com/en/insights/publications/2025/10/alerts-finance-dcb-crypto-and-commodity-based-etps-poised-to-boom",
+      "content": "GoodwinGoodwin October 10, 2025 # Crypto and Commodity-Based ETPs Poised to Boom Following SEC’s Approval of Generic Listing Standards Jeremy I. SenderowiczJohn ServidioGrace WillinghamJazmyne Barto View PDF On September 17, 2025, the Securities and Exchange Commission (SEC) issued an order (the order) approving new generic listing standards for certain commodity-based exchange-traded products (ETPs), including those backed by crypto assets.1 For crypto ETPs that qualify for listing under the generic standards, the order effectively removes the mechanism used by the SEC for many years to block crypto ETPs. Accordingly, following the order, crypto and commodity-based ETPs will have a clearer and faster path to market, which will maximize investor choice and foster innovation.",
+      "score": 0.37600484,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "search_index": 8
+    },
+    {
+      "title": "Bitcoin Futures Quotes",
+      "url": "https://www.cmegroup.com/markets/cryptocurrencies/bitcoin/bitcoin.quotes.html",
+      "content": "About this Report Return to top All market data contained within the CME Group website should be considered as a reference only and should not be used as validation against, nor as a complement to, real-time market data feeds. Settlement prices on instruments without open interest or volume are provided for web users only and are not published on Market Data Platform (MDP). These prices are not based on market activity. Commitment of Traders Drawn from CFTC report data, see which trader types have positions in a market you want to trade, at what size, whether they’re long or short, and chart changes over time. Pace of Roll Inform your roll strategy with daily updates and analytics on roll activity in Cryptocurrency futures. Crypto Historical Pricing Tool",
+      "score": 0.34760407,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "search_index": 7
+    },
+    {
+      "title": "Options for modernizing the FOMC's operating target interest rate",
+      "url": "https://www.dallasfed.org/research/economics/2025/0925",
+      "content": "1. Federal Open Market Committee, “Statement on Longer-Run Goals and Monetary Policy Strategy,” Aug. 22, 2025. 2. Ann-Marie Meulendyke, _U.S. Monetary Policy & Financial Markets_, New York: Federal Reserve Bank of New York, 1998. 3. Robert L. Hetzel and Ralph F. Leach, “The Treasury-Fed Accord: A New Narrative Account,” Federal Reserve Bank of Richmond _Economic Quarterly_ 87(1), 2001, pp. 33–55. 4. See also Mark Carlson and David C. Wheelock, “Near-money premiums, monetary policy, and the integration of money markets: Lessons from deregulation,”_Journal of Financial Intermediation_ 33, 2018, pp. 16–32. [...] The greater volatility of Treasury repo rates relative to fed funds arises in part from periodic large fluctuations in the amount of collateral and funding available in repo markets. These fluctuations include flows on dates when the Treasury Department settles auctions of new securities and maturities of existing ones, as well as dynamics associated with payment dates on mortgage-backed securities and with foreign banks’ management of their balance sheets around statement dates such as month-ends and fiscal year-ends. [...] Participants in dollar funding markets have widel...",
+      "score": 0.1912827,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "search_index": 6
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m kline API documentation timezone ET noon candle close price resolution rules",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin historical daily price all-time highs cycle peaks drawdowns prior runs to 120000 comparable cases",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Treasury holdings Bitcoin demand 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "October 2025 Bitcoin macro calendar FOMC CPI jobs report options expiry ETF flow leading indicators November 7",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "October 2025 Bitcoin analyst outlook 120000 target research report Glassnode CoinShares Kaiko JPMorgan",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 6,
+      "query": "CME FedWatch November 2025 FOMC probabilities US Treasury refunding Q4 2025 liquidity dollar index Bitcoin leading indicator late October 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 7,
+      "query": "CFTC Commitments of Traders CME Bitcoin futures October 2025 leveraged funds asset managers open interest basis funding rates",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 8,
+      "query": "US spot Bitcoin ETF daily holdings issuer filings SEC 19b-4 S-1 updates October to November 2025 primary source",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "row_index": 139,
+  "market_id": "mkt_656899",
+  "slug": "",
+  "question": "Will the price of Ethereum be above $4,300 on November 6?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/ETH_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Ethereum be above $4,300 on November 6?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/ETH_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance ETH/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-06",
+  "evidence_cutoff_date": "2025-11-05",
+  "end_date_limit": "2025-11-05",
+  "row_end_date_raw": "2025-11-06",
+  "expanded_queries": [
+    "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+    "Ethereum ETH price historical November daily intraday seasonality prior years 4300 comparable episodes Binance",
+    "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+    "Ethereum November 2025 macro calendar FOMC CPI payrolls options expiry ETF flow schedule crypto leading indicators October 2025",
+    "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 8,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 25,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 25,
+    "llm_kept_count": 25,
+    "llm_kept_leak_no_count": 24,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Ethereum Price Forecast: Analyst Projects $10K for ETH, but 'Not as ...",
+      "url": "https://www.coindesk.com/markets/2025/10/25/eth-usd10k-path-projected-by-analyst-as-ether-whales-and-sharks-show-signs-of-confidence",
+      "content": "Ether (ETH) hovered near $3,946 at 13:57 UTC on Oct. 25 after a high-volume rejection around $4,000 left price coiling below resistance, while analysts outlined five-digit scenarios, and on-chain data pointed to larger wallets adding. Analyst Ali Martinez projected a long-term path to $10,000, cautioning it may take longer than some expect; his weekly sketch implies a pullback into 2026 followed by a climb toward five digits around 2027–2028. Separately, The Long Investor set a $13,500 target by 2029, framing a multiyear trajectory rather than a near-term call. [...] ### Latest 24-hour and one-month chart read As of 13:57–13:58 UTC on Oct. 25, ETH was $3,946 (up 0.5% over the period). On the 24-hour chart, the session opened near $3,926, reached a high at $3,957 and a low at $3,876. In practical terms, $3,900–$3,920 acted as intraday buy zones, and $3,950–$3,960 capped rebounds ahead of the next attempt at $4,000. On the one-month chart, ETH has rebounded from the mid-October dip and is grinding back toward $4,000, still below early-month highs — a setup that supports the analyst view of a longer road higher, provided resistance gives way and reclaimed levels hold on subsequent...",
+      "score": 0.8319231,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.80405265,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum's 2025 Price Outlook: Drivers, Risks & The ...",
+      "url": "https://www.forbes.com/sites/digital-assets/article/ethereum-ether-price-prediction-2025",
+      "content": "## Expert Analyst Price Predictions for 2025 Finder’s Q1 panel of 50 crypto specialists pegs ETH at $5,770 by December 2025. CoinPedia’s upside case nudges that to $5,925, while Standard Chartered sees $8,000 by 2026, implying mid‑2025 levels near $6,000 if momentum holds. On the flip side, CoinPedia’s bearish scenario warns of a retreat to $2,917 should regulatory setbacks or developer delays dent confidence, and several bank research desks place fair‑value floors near $1,500, around where we are today. Strip out the extremes and most sell‑side houses cluster around $4,000‑4,500—a 150 % gain from today yet still below 2021’s all‑time high. ## Opportunities for Ethereum Growth in 2025 ### Increasing Adoption [...] ### Regulatory Developments Europe’s MiCA “stablecoin” framework is already in place requiring any exchange servicing EU residents obtain a CASP license. This brings licensing clarity but also higher compliance costs. In the U.S., staking’s legal status remains murky even after the ETF nod, and November’s election, where U.S. President Donald Trump has vowed to make America “the crypto capital of the planet,”could swing sentiment overnight. ### DeFi And NFT Trends Ethe...",
+      "score": 0.78749067,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Binance.US API Documentation",
+      "url": "https://docs.binance.us/developer-guides/rest-api",
+      "content": "### Candlestick Data Stream > Payload: ``` {\" e \": \" kline \",// Event type \" E \": 1672515782136,// Event time \" s \": \" BNBBTC \",// Symbol \" k \":{\" t \": 1672515780000,// Kline start time \" T \": 1672515839999,// Kline close time \" s \": \" BNBBTC \",// Symbol \" i \": \" 1m \",// Interval \" f \": 100,// First trade ID \" L \": 200,// Last trade ID \" o \": \"0.0010 \",// Open price \" c \": \"0.0020 \",// Close price \" h \": \"0.0025 \",// High price \" l \": \"0.0015 \",// Low price \" v \": \" 1000 \",// Base asset volume \" n \": 100,// Number of trades \" x \": false,// Is this kline closed? \" q \": \"1.0000 \",// Quote asset volume \" V \": \" 500 \",// Taker buy base asset volume \" Q \": \"0.500 \",// Taker buy quote asset volume \" B \": \" 123456 \"// Ignore}} ``` [...] value},{\" i \": \" GCR \",// GTC Cancellation Ratio (GCR) \" c \": 20,// Count of GTC orders \" v \":0.99,// Current GCR value \" t \":0.99// Trigger GCR value}], \" ETHUSDT \":[{\" i \": \" UFR \", \" c \": 20, \" v \":0.05, \" t \":0.995},{\" i \": \" IFER \", \" c \": 20, \" v \":0.99, \" t \":0.99},{\" i \": \" GCR \", \" c \": 20, \" v \":0.99, \" t \":0.99}]}, \" updateTime \": 1547630471725// The query result return time}} [...] {\" timezone \": \" UTC \", \" serverTime \": 1565246363776, \" rat...",
+      "score": 0.7771143,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "The Newest Ethereum Price Prediction Shows ETH Could Hit $15K ...",
+      "url": "https://www.financemagnates.com/trending/the-newest-ethereum-price-prediction-shows-eth-could-hit-15k-in-2025",
+      "content": "### How High Will ETH Go in 2025? Price predictions for 2025 vary significantly among analysts, but most serious forecasts place ETH well above current levels by year-end. Conservative estimates suggest ETH could reach $6,000 to $8,000 by December 2025. These projections assume steady but not explosive growth in institutional adoption and tokenization usage. Moderate bullish scenarios point to $10,000 to $12,000 by year-end. This range assumes continued corporate treasury adoption, successful ETF growth, and steady progress in tokenizing traditional assets Ethereum (ETH) price has surged past $3,800 amid heavy institutional buying, but the rally is drawing fierce criticism from traders who view the gains as unsustainable. [...] ### How High Will ETH Go in 2025? Price predictions for 2025 vary significantly among analysts, but most serious forecasts place ETH well above current levels by year-end. Conservative estimates suggest ETH could reach $6,000 to $8,000 by December 2025. These projections assume steady but not explosive growth in institutional adoption and tokenization usage. Moderate bullish scenarios point to $10,000 to $12,000 by year-end. This range assumes continued c...",
+      "score": 0.7244226,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "year QUARTER",
+      "url": "https://20368641.fs1.hubspotusercontent-na1.net/hubfs/20368641/Glassnode%20x%20Coinbase%20Reports/Q3%202025%20Charting%20Crypto_Glassnode%20x%20Coinbase.pdf",
+      "content": "We hope you find the publication useful as you navigate crypto markets, and we welcome your feedback and questions. David Duong, CFA Coinbase Institutional Head of Research Glassnode Analyst Team Charting Crypto Q3 2025 Edition 5 Crypto Market Views Charting Crypto Q3 2025 Edition 6 our topline market view Factors that would change our view We are constructive for 3Q25. Our outlook for 3Q25 is constructive, driven by better-than-expected economic growth, corporate crypto adoption, and regulatory clarity. While a pullback remains possible, conditions are unlikely to cause asset prices to revert to 2024’s lows, in our view. 01 Macro prospects are trending in the right direction. The specter of recession has diminished, and the US economy is showing signs of stronger economic growth. [...] 36 Source: Glassnode. Charting Crypto Q3 2025 Edition Performance Recap ETH Liquid and IIIiquid Supply Ether’s liquid supply (coins moved within three months) increased 8% in Q2, while illiquid supply (coins unmoved in more than a year) fell 6%, indicating that some long-term holders used market strength as an opportunity to sell to newer entrants. 37 Source: Glassnode. Charting Crypto Q3 2025 Ed...",
+      "score": 0.7197191,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Ethereum Staking ETFs Could Give ETH the Institutional Story It ...",
+      "url": "https://www.investing.com/analysis/ethereum-staking-etfs-could-give-eth-the-institutional-story-it-lacked-200683665",
+      "content": "## The ETF Flow Picture Is Turning, but Slowly Institutional demand through spot ETFs is the swing factor for Ethereum, and the picture is improving from a low base. Spot Ethereum ETFs logged a net inflow of $26.9 million on July 7, marking the fourth straight day of positive flows, following $29 million on July 2 led by BlackRock's ETHA. Consistent inflows during a choppy, geopolitically stressed week suggest some institutional buyers are treating dips as entry points rather than exit signals, and sustained ETF demand tends to offer a floor under spot prices over time. Since their July 2024 launch, the nine spot Ethereum ETFs have accumulated over $1.5 billion in net inflows. [...] The context, though, is that this recovery follows real damage and remains fragile. The 17-day outflow streak that ended June 9 pulled roughly $708 million out of the funds, and the year has been choppy, with small positive days following extended outflow periods rather than a clean, durable reversal. BlackRock's ETHA anchors the inflows, drawing $36.64 million on July 2 against its $4.4 billion in assets, but Grayscale's higher-fee ETHE continues to bleed, showing the same fee-driven rotation that c...",
+      "score": 0.7116118,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "Ethereum (ETH) Price Prediction 2026: Expert Forecasts ...",
+      "url": "https://www.coingecko.com/learn/ethereum-eth-price-predictions-expert-forecasts",
+      "content": "Institutional analyst targets for Ethereum in 2026 range from $3,175 (Citi) to $7,500 (Standard Chartered), with a rough midpoint around $4,000–$5,000. Fundstrat's internal research projects $4,500 by year-end 2026, while more aggressive forecasters like Tom Lee have publicly targeted $7,000–$9,000 or higher. The wide range reflects genuine uncertainty about regulatory catalysts, macro conditions, and institutional adoption pace. ### Can Ethereum reach $10,000? [...] Image 25: CoinGecko Note: VanEck bowed out of forecasting for 2026, Galaxy Digital did notrelease a dedicated ETH forecast, JP Morgan is bearish but no forecasts. ## Expert Predictions Breakdown ### Institutional Analysts Standard Chartered has revised its Ethereum outlook more than any other major institution over the past 18 months. In March 2025, analyst Geoff Kendrickcut the bank's year-end target from $10,000 to $4,000, warning of a \"structural decline\" caused by Layer 2 networks, particularly Coinbase's Base, siphoning fee revenue from the Ethereum mainnet. Kendrick estimated that Base alone had removed $50 billion from ETH's market capitalization. [...] ## Conclusion: What This Means for Investors Ethereum in...",
+      "score": 0.7060491,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "options\\_index\\_price\\_socket()(_modules/binance/ws/streams.html#BinanceSocketManager.options_index_price_socket) : Subscribe to an options index price stream. Underlying (e.g., ETHUSDT, BTCUSDT) index stream for all symbols. Updates every 1000ms. URL PATH: /market Stream Name: !index@arr API Reference: Response is an array with index price for all underlying assets: - Event type: ‘indexPrice’ - Event time - Underlying symbol (e.g., ‘ETHUSDT’, ‘BTCUSDT’) - Index price options\\_kline\\_socket(symbol: str, interval='1m')(_modules/binance/ws/streams.html#BinanceSocketManager.options_kline_socket) : Subscribe to a Kline/Candlestick data stream. [...] Message Format ``` {\"e\": \"kline\", # event type \"E\": 1499404907056, # event time \"s\": \"ETHBTC\", # symbol \"k\":{\"t\": 1499404860000, # start time of this bar \"T\": 1499404919999, # end time of this bar \"s\": \"ETHBTC\", # symbol \"i\": \"1m\", # interval \"f\": 77462, # first trade id \"L\": 77465, # last trade id \"o\":\"0.10278577\", # open \"c\":\"0.10278645\", # close \"h\":\"0.10278712\", # high \"l\":\"0.10278518\", # low \"v\":\"17.47929838\", # volume \"n\": 4, # number of trades \"x\": false, # whether this bar is final \"q\":\"1.79662878\", # quote volume \"V\":\"2.348798...",
+      "score": 0.6884899,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Price Prediction 2026, 2027, 2030 & Beyond",
+      "url": "https://www.binance.com/en/price-prediction/ethereum",
+      "content": "## ETH Price Prediction September 2026 For September, Ethereum is projected to trade between a minimum range of $1,658.75 and maximum of $3,308.57, with an average prediction of $2,483.66. Historically, September has seen neutral to slightly lower performance across cryptocurrencies, reflecting portfolio rebalancing ahead of the final quarter. Potential ROI: +88.84% ## ETH Price Prediction October 2026 October forecasts for Ethereum indicate a potential low of $1,637.32 and a high of $3,287.13, resulting in an average around $2,462.22. The figures suggest stable market expectations based on the aggregated prediction data available. Potential ROI: +87.62% ## ETH Price Prediction 2027 [...] ### 2 What would be Ethereum's value in 2027? Based on the qualitative indicators from Technical analysis for ETH, the ETH forecast for the year 2027 would be $2,280.01. ### 3 How much will ETH be worth in 10 years? Similar to the stock market, the crypto market moves in cycles. Based on technical analysis, Ethereum is expected to reach $16.87. ### 4 Is ETH a good buy in 2026? Based on multiple technical quantitative indicators, the current forecast for ETH in 2026 is Very bullish. This could b...",
+      "score": 0.68064564,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "From Powell to WLFI: Crypto Calendar September 2025 ...",
+      "url": "https://www.xt.com/en/blog/post/powell-wlfi-crypto-calendar-september-2025-key-catalysts",
+      "content": "## Crypto Catalysts: Bitcoin ETFs, Ethereum ETF Speculation, WLFI Launch, and Token Unlocks While macro and geopolitics set the backdrop, crypto has its own set of catalysts this September. These drivers are just as capable of shifting sentiment and can either amplify or counter the bigger macro story. For traders, watching ETF flows, token launches, and derivatives positioning is as important as following Powell’s comments or the next CPI print. ### Bitcoin ETF Inflows Drive Market Sentiment Bitcoin ETFs remain the most powerful influence on crypto. U.S. Spot products continue to attract record inflows, adding depth to liquidity and cushioning downside volatility. Traders now weigh these flows daily, treating them as seriously as payrolls or inflation data in setting risk bias. [...] Over $1 billion in unlocks for projects like Arbitrum, SUI, and Jupiter increase circulating supply, often creating near-term selling pressure before markets stabilize. 5. What makes the September 26 futures and options expiry important? Quarterly expiries cluster open interest, leading to sharp repositioning in BTC and ETH. Expiry weeks often reset liquidity and open tactical opportunities. 6. How...",
+      "score": 0.63234437,
+      "query": "Ethereum November 2025 macro calendar FOMC CPI payrolls options expiry ETF flow schedule crypto leading indicators October 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] ### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minute...",
+      "score": 0.6227582,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "+ 1m + 3m + 5m + 15m + 30m + 1h + 2h + 4h + 6h + 8h + 12h + 1d + 3d + 1w + 1M ## Continues Contract Kline/Candlestick Data > Response: ``` ``` `GET /dapi/v1/continuousKlines` Kline/candlestick bars for a specific contract type. Klines are uniquely identified by their open time. Weight: based on parameter `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | Parameters: | Name | Type | Mandatory | Description | --- --- | | pair | STRING | YES | | contractType | ENUM | YES | | interval | ENUM | YES | | startTime | LONG | NO | | endTime | LONG | NO | | limit | INT | NO | Default 500; max 1500. | If startTime and endTime are not sent, the most recent klines are returned. Contract type: [...] > Payload: ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1591261542539,// Event time \"ps\": \"BTCUSD\",// Pair \"ct\": \"NEXT_QUARTER\"// Contract type \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// volume \"n\": 31,//...",
+      "score": 0.60049355,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "SEC Approves Spot Ether ETFs, Uniswap Foundation Reveals Balance Sheet",
+      "url": "https://www.talos.com/insights/week-in-review-2024-05-30",
+      "content": "The US Securities and Exchange Commission (SEC) has approved the spot Ether Exchange-Traded Funds (ETFs). This approval follows the SEC's consolidation of proposals from the Nasdaq, NYSE, and CBOE exchanges, which sought amendments to existing rules to permit Ether Exchange-Traded Products (ETPs) and ETFs. On May 23, the SEC approved 19b-4 applications from VanEck, BlackRock, Fidelity, Grayscale, Franklin Templeton, ARK 21Shares, Invesco Galaxy, and Bitwise to issue spot Ether ETFs. However, these entities must wait for the SEC to greenlight their Form S-1 filings before the ETFs can commence trading. [...] Ethereum co-founder Vitalik Buterin outlined the future roadmap for the \"smart contract\" blockchain at the Ethereum Community Conference (EThCC) in Paris. Buterin discussed the \"Merge,\" which completed Ethereum’s transition from a Proof of Work to a low-energy Proof of Stake mechanism for validating transactions. He announced changes to the blockchain's monetary policy, noting that the switch from Proof of Work to Proof of Stake will reduce Ether issuance from 5 million per year to a model controlled by the amount of ether staked. If Ethereum maintains its high beta to Bitcoi...",
+      "score": 0.5806618,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "Result Page 2 for Latest Eth News & Archive",
+      "url": "https://www.ibtimes.com/crypto/crypto-assets/eth?page=2",
+      "content": "It is worth noting that on the day Buterin moved the assets, the Ethereum Foundation - the non-profit organization dedicated to supporting Ethereum and related technologies - also moved ETH worth $29.7 million to Coinbase. Nica Osorio Aug 22, 2023 ### Ethereum Futures ETF Race Sizzles As 6 New Financial Giants Join The Fray Unlike the positive impact on the price of Bitcoin when BlackRock and other financial giants filed their spot BTC ETF applications, the price of Ether remains within its usual range. Nica Osorio Aug 02, 2023 ### Binance CEO CZ Regrets Historic Miss As Ethereum Marks 8th Anniversary [...] Marvie Basilan Apr 30, 2024 ### Crypto Leaders Rally Behind Consensys In Challenge Against SEC Regulatory 'Overreach' Consensys filed litigation against the SEC following reports that the regulator was investigating the Ethereum Foundation and was requiring companies cooperating with the popular blockchain network to provide documents and financial statements related to the dealings. Marvie Basilan Apr 29, 2024 ### SEC Expected To Reject Spot ETH ETFs After Discouraging Meetings With Applicants The SEC is expected to reject spot Ether ETF applications next month, following re...",
+      "score": 0.5391051,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "Index Price Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/legacy-docs/derivatives/coin-margined-futures/market-data/rest-api/Index-Price-Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Index Price Kline/Candlestick Data ## API Description​ Kline/candlestick bars for the index price of a pair. Klines are uniquely identified by their open time. ## HTTP Request​ GET `/dapi/v1/indexPriceKlines` `/dapi/v1/indexPriceKlines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | pair | STRING | YES | After CM migration, accepts both CM and UM pair values. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591256400000, // Open time \"9653.69440000\", // Open \"9653.69640000\", // High \"9651.38600000\", // Low \"9651.55200000\", // Close (or latest price) \"0 \", // Ignore 1591256459999, // Close time \"0\", // Ignore 60, // Number of bisic data \"0\", // Ignore \"0\", // Ignore \"0\" // Ignore ] ]`",
+      "score": 0.528169,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Premium Index Kline Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Premium-Index-Kline-Data",
+      "content": "## Response Example​ `[ [ 1691603820000, // Open time \"-0.00042931\", // Open \"-0.00023641\", // High \"-0.00059406\", // Low \"-0.00043659\", // Close \"0\", // Ignore 1691603879999, // Close time \"0\", // Ignore 12, // Ignore \"0\", // Ignore \"0\", // Ignore \"0\" // Ignore ] ]` [...] Binance Logo Binance Logo # Premium index Kline Data ## API Description​ Premium index kline bars of a symbol. Klines are uniquely identified by their open time. ## HTTP Request​ GET `/fapi/v1/premiumIndexKlines` `/fapi/v1/premiumIndexKlines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | | > 1000 | 10 | ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | After CM migration, accepts both UM and CM symbols. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | ## Response Example​",
+      "score": 0.52524763,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum Historical Dataset",
+      "url": "https://www.kaggle.com/datasets/prasoonkottarathil/ethereum-historical-dataset",
+      "content": "... 2016-05-09 2020-04-16 1 unique value| Label | Count | --- | | 0.00 - 70.88 | 8,524 | | 70.88 - 141.75 | 4,465 | | 141.75 - 212.63 | 7,339 | | 212.63 - 283.51 | 4,301 | | 283.51 - 354.38 | 3,281 | | 354.38 - 425.26 | 990 | | 425.26 - 496.14 | 1,473 | | 496.14 - 567.02 | 658 | | 567.02 - 637.89 | 608 | | 637.89 - 708.77 | 662 | | 708.77 - 779.65 | 575 | | 779.65 - 850.52 | 409 | | 850.52 - 921.40 | 359 | | 921.40 - 992.28 | 260 | | 992.28 - 1063.15 | 187 | | 1063.15 - 1134.03 | 150 | | 1134.03 - 1204.91 | 103 | | 1204.91 - 1275.79 | 60 | | 1275.79 - 1346.66 | 69 | | 1346.66 - 1417.54 | 24 | ... 0 [...] ... 1.46b 1587b| DateTime | Count | --- | | 05/09/2016 - 07/20/2016 | 1,725 | | 07/20/2016 - 09/30/2016 | 1,725 | | 09/30/2016 - 12/11/2016 | 1,725 | | 12/11/2016 - 02/21/2017 | 1,725 | | 02/21/2017 - 05/03/2017 | 1,725 | | 05/03/2017 - 07/14/2017 | 1,725 | | 07/14/2017 - 09/24/2017 | 1,725 | | 09/24/2017 - 12/05/2017 | 1,725 | | 12/05/2017 - 02/15/2018 | 1,725 | | 02/15/2018 - 04/28/2018 | 1,725 | | 04/28/2018 - 07/09/2018 | 1,725 | | 07/09/2018 - 09/19/2018 | 1,725 | | 09/19/2018 - 11/29/2018 | 1,725 | | 11/29/2018 - 02/09/2019 | 1,725 | | 02/09/2019 - 04/22/2019 | 1,725 | | 0...",
+      "score": 0.45856747,
+      "query": "Ethereum ETH price historical November daily intraday seasonality prior years 4300 comparable episodes Binance",
+      "search_index": 2
+    },
+    {
+      "title": "BlackRock, Fidelity, Grayscale Dominate Crypto ETF Assets Amidst ...",
+      "url": "https://www.ai-cio.com/news/blackrock-fidelity-grayscale-dominate-crypto-etf-assets-amidst-institutional-interest",
+      "content": "BlackRock, Fidelity Investments and Grayscale Investments manage more than 85% of all crypto ETF assets under management, totaling approximately $123 billion, ISS MI reported. Fidelity offers exposure to bitcoin and ether through its Fidelity Wise Origin Bitcoin Fund and its Fidelity Ethereum Fund, and Grayscale offers exposure through four different funds. For more stories like this, sign up for the CIO Alert newsletter.  BlackRock’s iShares Bitcoin Trust and iShares Ethereum Trust account for $70 billion in assets, about half of crypto ETF AUM. [...] Chief Investment Officer Logo Chief Investment Officer Logo # BlackRock, Fidelity, Grayscale Dominate Crypto ETF Assets Amidst Institutional Interest The firms’ offerings made up 85% of all crypto AUM, while separate research found 75% of investors expect cryptocurrency to soon become part of institutional allocations. Institutional investors expect cryptocurrency to become more prevalent in institutional portfolios and expect traditional financial institutions to dramatically increase their launches of digital asset funds in the near future. [...] According to London-based Nickel Digital Asset Management Ltd., which partnered wi...",
+      "score": 0.418341,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "CF Benchmarks Newsletter - Issue 64 - CFB",
+      "url": "https://www.cfbenchmarks.com/blog/cf-benchmarks-newsletter-issue-64",
+      "content": "### Here we go again... Indeed, recent days have seen a raft of preliminary ETH ETF paperwork receiving the same treatment that the SEC dealt out to Bitcoin ETF applications for years. Déjà vu, much? SEC delays decision on Grayscale's proposal for spot Ethereum ETF again, with order to institute proceedings and seek public comment – The Block US SEC delays decision on Grayscale, BlackRock's spot Ethereum ETFs – Reuters ### About that yield Meanwhile, notions of a clear path for Ether into the ETF wrapper are also complicated by ETH’s clearest dissonance versus Bitcoin: its direct lineage to traditional assets from its facility to offer a (staking) yield. Naturally, this has been latched on to by the U.S. regulator as another criterion that should classify Ethereum as a security. [...] ## Et Tu, ETH? ### Institutions are now chomping at the bit to list spot Ether ETFs, but doing so may take longer than expected Our CME CF Ether-Dollar Reference Rate - New York Variant is the benchmark of choice for major ETH ETF applicants, like BlackRock and ARK 21Shares. ### Now let's do ETH One of the most striking turns of events post spot Bitcoin ETF launches wasn’t about Bitcoin at all. As...",
+      "score": 0.41151342,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "BlackRock, Fidelity, Grayscale Lead Crypto ETF Market Growth",
+      "url": "https://www.planadviser.com/amidst-institutional-interest-blackrock-fidelity-grayscale-dominate-crypto-etf-assets",
+      "content": "BlackRock, Fidelity Investments and Grayscale Investments manage more than 85% of all crypto ETF assets under management, totaling approximately $123 billion, ISS MI reported. Fidelity offers exposure to bitcoin and ether through its Fidelity Wise Origin Bitcoin Fund and its Fidelity Ethereum Fund, and Grayscale offers exposure through four different funds. BlackRock’s iShares Bitcoin Trust and iShares Ethereum Trust account for $70 billion in assets, about half of crypto ETF AUM. [...] Banner Logo Banner Logo About Shop Newsletters + Breaking News + Spotlight + PLANADVISER Dash Sign in / Sign up The Markets July 15, 2025 # Amidst Institutional Interest, BlackRock, Fidelity, Grayscale Dominate Crypto ETF Assets Three firms manage more than 85% of all crypto ETF assets under management, totaling approximately $123 billion. Reported by Matt Toledo []( Institutional investors expect cryptocurrency to become more prevalent in institutional portfolios and expect traditional financial institutions to dramatically increase their launches of digital asset funds in the near future.",
+      "score": 0.40161797,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "search_index": 3
+    },
+    {
+      "title": "Changelog | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs",
+      "content": "Websocket API `trades.aggregate` `klines` `allOrderList` `allOrders` `myTrades` Users connected to the websocket API will now be disconnected if their IP is banned due to violation of the IP rate limits (status `418`). The following changes will take effect approximately a week from the release date, but the rest of the documentation has been updated to reflect the future changes: Changes to Filter Evaluation: Previous behavior: `LOT_SIZE` and `MARKET_LOT_SIZE` required that (`quantity` - `minQty`) % `stepSize` == 0. New behavior: This has now been changed to (`quantity` % `stepSize`) == 0. [...] GET api/v1/depth GET api/v1/historicalTrades GET api/v1/aggTrades GET api/v1/klines GET api/v1/ticker/24hr GET api/v1/ticker/price GET api/v1/exchangeInfo POST api/v1/userDataStream PUT api/v1/userDataStream GET api/v1/ping GET api/v1/time GET api/v1/ticker/bookTicker These endpoints however, will NOT be migrated to v3. Please use the following endpoints instead moving forward. USER DATA STREAM Changes to`executionReport` event If the C field is empty, it will now properly return `null`, instead of `\"null\"`. New field Q which represents the `quoteOrderQty`. `balanceUpdate` event type ad...",
+      "score": 0.39208132,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Ethereum's Price History (2013 – 2023, $)",
+      "url": "https://www.globaldata.com/data-insights/financial-services/ethereums-price-history",
+      "content": "From 2019 to 2021, Ether once again continued to rally and reached its highest price of $4,815 on November 9, 2021. For the first half of 2022, Ether had dipped in value. Ethereum has undergone significant technological upgrades to its blockchain since its inception in 2015. Explore the latest trends and actionable insights on the NFT market to inform business strategy and pinpoint opportunities and risks Explore the latest trends and actionable insights on the NFT market to inform business strategy and pinpoint opportunities and risks Visit Report Store ### Related Data & Insights Bitcoin’s Price History (2013 – 2023, $) Bitcoin’s Market Capitalization History (2013 – 2023, $ Billion) Dogecoin’s Market Capitalization History (2013 – 2023, $ Billion) [...] 4 views left Get unlimited views with a free account Subscribe to GlobalData Explorer Explore the latest trends and actionable insights on the NFT market to inform business strategy and pinpoint opportunities and risks Visit Report Store # Ethereum’s Price History (2013 – 2023, $) Share Share on Twitter Share on LinkedIn Industry: Cards & Payments Current: Other Industry Indicators Ethereum was first conceptualized in 2013 Eth...",
+      "score": 0.35240287,
+      "query": "Ethereum ETH price historical November daily intraday seasonality prior years 4300 comparable episodes Binance",
+      "search_index": 2
+    },
+    {
+      "title": "Market - Spot REST API | Binance Developer Docs",
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/market",
+      "content": "Binance Developer DocsBinance Developer Docs Legacy Docs Dev ForumBinance.com",
+      "score": 0.3396748,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Market Data - Futures (USDS-M) REST API | Binance Developer Docs",
+      "url": "",
+      "content": "Binance Developer Docs page describing the Query Index Price Constituents endpoint for USDS-M futures. It explains the HTTP request path, request weight, required symbol parameter, and that the endpoint returns index price constituents.",
+      "score": 0.34244013,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "search_index": 1,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance ETHUSDT 1m kline close price timezone ET noon Nov 6 official API documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Ethereum ETH price historical November daily intraday seasonality prior years 4300 comparable episodes Binance",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Ethereum Foundation Vitalik Buterin BlackRock Grayscale spot Ether ETF SEC CME ETH futures institutions holdings flows",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Ethereum November 2025 macro calendar FOMC CPI payrolls options expiry ETF flow schedule crypto leading indicators October 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Ethereum price outlook analyst report October 2025 ETH onchain valuation derivatives research Glassnode Kaiko Coinbase Institutional",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

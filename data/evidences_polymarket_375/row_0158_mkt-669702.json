@@ -1,0 +1,322 @@
+{
+  "row_index": 158,
+  "market_id": "mkt_669702",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $98,000 on November 14?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $98,000 on November 14?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-11-14",
+  "evidence_cutoff_date": "2025-11-13",
+  "end_date_limit": "2025-11-13",
+  "row_end_date_raw": "2025-11-14",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+    "Bitcoin November price seasonality historical daily returns around Nov 14 all-time highs prior years BTC historical data",
+    "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin purchases Federal Reserve SEC crypto policy 2025",
+    "Bitcoin options max pain Nov 14 2025 CME futures expiry economic calendar CPI PPI FOMC leading indicators BTC volatility",
+    "October 13 2025..November 13 2025 Bitcoin market analysis analyst report resistance 98000 on-chain derivatives research"
+  ],
+  "supplemental_query": "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+  "supplemental_queries": [
+    "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+    "US CPI release date November 2025 BLS PPI initial jobless claims Treasury refunding statement dollar index DXY real yields calendar week of November 10 2025 Bitcoin risk assets",
+    "site:sec.gov OR site:cftc.gov OR site:federalreserve.gov OR site:treasury.gov cryptocurrency stablecoin enforcement rule proposal statement November 2025 Bitcoin market impact"
+  ],
+  "stats": {
+    "search_calls": 8,
+    "raw_result_count": 80,
+    "deduped_result_count": 80,
+    "hard_quarantined_late_date_count": 28,
+    "llm_filter_input_count": 80,
+    "supplemental_search_triggered": true,
+    "supplemental_search_count": 3,
+    "supplemental_raw_result_count": 30,
+    "supplemental_deduped_result_count": 30,
+    "final_evidence_count": 20,
+    "llm_filter_batch_count": 8,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 60,
+    "llm_kept_count": 20,
+    "llm_kept_leak_no_count": 19,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.7413937,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "> Payload: ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1591261542539,// Event time \"ps\": \"BTCUSD\",// Pair \"ct\": \"NEXT_QUARTER\"// Contract type \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// volume \"n\": 31,// Number of trades \"x\": false,// Is this kline closed? \"q\":\"1.61836886\",// Base asset volume \"V\": \"73\",// Taker buy volume \"Q\":\"0.75731156\",// Taker buy base asset volume \"B\": \"0\"// Ignore}} ``` Contract type: PERPETUAL CURRENT\\_QUARTER NEXT\\_QUARTER Kline/Candlestick chart intervals: [...] ## Kline/Candlestick Streams > Payload: ``` {\"e\": \"kline\",// Event type \"E\": 1591261542539,// Event time \"s\": \"BTCUSD_200626\",// Symbol \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"s\": \"BTCUSD_200626\",// Symbol \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// vol...",
+      "score": 0.72184175,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] Message Format ``` {\"e\": \"kline\", # event type \"E\": 1499404907056, # event time \"s\": \"ETHBTC\", # symbol \"k\":{\"t\": 1499404860000, # start time of this bar \"T\": 1499404919999, # end time of this bar \"s\": \"ETHBTC\", # symbol \"i\": \"1m\", # interval \"f\": 77462, # first trade id \"L\": 77465, # last trade id \"o\":\"0.10278577\", # open \"c\":\"0.10278645\", # close \"h\":\"0.10278712\", # high \"l\":\"0.10278518\", # low \"v\":\"17.47929838\", # volume \"n\": 4, # number of trades...",
+      "score": 0.6803909,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Home / data / spot / monthly / klines / BTCUSDT / 1m",
+      "url": "https://data.binance.vision?prefix=data%2Fspot%2Fmonthly%2Fklines%2FBTCUSDT%2F1m%2F",
+      "content": "| BTCUSDT-1m-2022-10.zip.CHECKSUM | 0.1 kB | 2022-11-04T02:26:34.000Z | | BTCUSDT-1m-2022-10.zip | 2.2 MB | 2022-11-03T13:56:03.000Z | | BTCUSDT-1m-2022-09.zip.CHECKSUM | 0.1 kB | 2022-10-03T05:42:34.000Z | | BTCUSDT-1m-2022-09.zip | 2.2 MB | 2022-10-03T05:42:33.000Z | | BTCUSDT-1m-2022-08.zip.CHECKSUM | 0.1 kB | 2022-09-01T05:35:05.000Z | | BTCUSDT-1m-2022-08.zip | 2.2 MB | 2022-09-01T05:35:05.000Z | | BTCUSDT-1m-2022-07.zip.CHECKSUM | 0.1 kB | 2022-08-01T08:59:14.000Z | | BTCUSDT-1m-2022-07.zip | 2.2 MB | 2022-08-01T08:59:14.000Z | | BTCUSDT-1m-2022-06.zip.CHECKSUM | 0.1 kB | 2022-07-01T04:34:45.000Z | | BTCUSDT-1m-2022-06.zip | 2.1 MB | 2022-07-01T04:34:45.000Z | | BTCUSDT-1m-2022-05.zip.CHECKSUM | 0.1 kB | 2022-06-02T05:14:05.000Z | [...] | BTCUSDT-1m-2021-11.zip.CHECKSUM | 0.1 kB | 2021-12-01T06:05:15.000Z | | BTCUSDT-1m-2021-11.zip | 2.1 MB | 2021-12-01T06:05:15.000Z | | BTCUSDT-1m-2021-10.zip.CHECKSUM | 0.1 kB | 2021-11-16T02:05:17.000Z | | BTCUSDT-1m-2021-10.zip | 2.2 MB | 2021-11-16T02:05:17.000Z | | BTCUSDT-1m-2021-09.zip.CHECKSUM | 0.1 kB | 2021-10-01T03:51:47.000Z | | BTCUSDT-1m-2021-09.zip | 2.1 MB | 2021-10-01T03:51:47.000Z | | BTCUSDT-1m-2021-08.zip.CHECKSUM | 0.1...",
+      "score": 0.6638657,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Price - History, Chart, 5 Years, 10 Years, Halving",
+      "url": "https://www.moneymetals.com/bitcoin-price",
+      "content": "## What is Bitcoin's all-time high price record? November 2021 saw Bitcoin's all-time high price record, around $69,000. This milestone captures the rising institutional interest in blockchain technology as well as their acceptance. But Bitcoin's volatility means its price might vary greatly, hence investors have to exercise great caution. The price swings of Bitcoin rely on several elements, including market mood, laws, and more general state of the economy. Investing in Bitcoin presents hazards even if it presents chances. Before investing, one should investigate carefully and get financial guidance. [...] Attracting the interest of mainstream investors, Bitcoin hit a then-all-time high in 2017 around $20,000. Its value had half by early 2018, though, which cast questions about its long-term viability. Still, Bitcoin proved tough. It exceeded past milestones in 2020 and 2021, rising beyond $60,000. Macroeconomic issues including inflation, together with institutional interest, drove its comeback. These elements let investors view Bitcoin as a reasonable inflation hedge. [...] Combining speculative bubbles, outside pressure, and legislative changes usually produces price crashe...",
+      "score": 0.5404151,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 14 all-time highs prior years BTC historical data",
+      "search_index": 2
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "",
+      "content": "Binance Open Platform documentation describing market data requests, including kline/candlestick response structure, fields such as open time, open, high, low, close, volume, close time, trade count, and rate-limit metadata, plus references to UI klines and ticker-style fields for BTCUSDT.",
+      "score": 0.52583206,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Bitcoin Price Chart and Tables | Official Data",
+      "url": "https://www.in2013dollars.com/bitcoin-price",
+      "content": "| 2016 | 11 | 729.79 | 115.81 | 18.86 | | 2016 | 10 | 613.98 | 41.68 | 7.28 | | 2016 | 9 | 572.30 | -33.97 | -5.60 | | 2016 | 8 | 606.27 | -70.02 | -10.35 | | 2016 | 7 | 676.30 | 139.38 | 25.96 | | 2016 | 6 | 536.92 | 85.04 | 18.82 | | 2016 | 5 | 451.88 | 33.92 | 8.11 | | 2016 | 4 | 417.96 | -17.16 | -3.94 | | 2016 | 3 | 435.12 | 62.07 | 16.64 | | 2016 | 2 | 373.06 | -61.28 | -14.11 | | 2016 | 1 | 434.33 | 71.85 | 19.82 | | 2015 | 12 | 362.49 | 37.06 | 11.39 | | 2015 | 11 | 325.43 | 87.88 | 37 | | 2015 | 10 | 237.55 | 9.43 | 4.13 | | 2015 | 9 | 228.12 | -53.48 | -18.99 | | 2015 | 8 | 281.60 | 22.98 | 8.89 | | 2015 | 7 | 258.62 | 35.70 | 16.01 | | 2015 | 6 | 222.93 | -9.15 | -3.94 | | 2015 | 5 | 232.08 | -15.19 | -6.14 | | 2015 | 4 | 247.27 | -12.93 | -4.97 | [...] | 2021 | 3 | 49,631.24 | 16,094.07 | 47.99 | | 2021 | 2 | 33,537.18 | 4,163.02 | 14.17 | | 2021 | 1 | 29,374.15 | 10,571.15 | 56.22 | | 2020 | 12 | 18,803 | 5,065.89 | 36.88 | | 2020 | 11 | 13,737.11 | 3,117.66 | 29.36 | | 2020 | 10 | 10,619.45 | -1,351.03 | -11.29 | | 2020 | 9 | 11,970.48 | 210.89 | 1.79 | | 2020 | 8 | 11,759.59 | 2,531.27 | 27.43 | | 2020 | 7 | 9,228.33 | -938.94 | -9.23 | | 2020 | 6 | 10,167.27 | 1,...",
+      "score": 0.5232017,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 14 all-time highs prior years BTC historical data",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hours | `1h`, `2h`, `4h`, `6h`, `8h`, `12h` | | days | `1d`, `3d` | | weeks | `1w` | | months | `1M` | `interval` `1s` `1m` `3m` `5m` `15m` `30m` `1h` `2h` `4h` `6h` `8h` `12h` `1d` `3d` `1w` `1M` Notes: [...] | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for...",
+      "score": 0.51310796,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Speech by Governor Miran on stablecoins and monetary policy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/miran20251107a.htm",
+      "content": "Money Stock and Reserve Balances Other Regulations Supervision & Enforcement Community Development Research & Analysis Resources for Consumers ## Speech November 07, 2025 ### A Global Stablecoin Glut: Implications for Monetary Policy Governor Stephen I. Miran At the BCVC Summit 2025, Harvard Club of New York City, New York, New York Thank you, I really appreciate the opportunity to speak to you today.1",
+      "score": 0.5065188,
+      "query": "site:sec.gov OR site:cftc.gov OR site:federalreserve.gov OR site:treasury.gov cryptocurrency stablecoin enforcement rule proposal statement November 2025 Bitcoin market impact",
+      "search_index": 8
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | After CM migration, accepts both CM and UM symbols. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", //...",
+      "score": 0.5027105,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Getting Historic Crypto Prices with Binance API",
+      "url": "https://medium.com/@wldnjs7188/getting-historic-crypto-prices-with-binance-api-1504feb91928",
+      "content": "## Understanding the Binance API We will use Binance’s Kline/Candlestick Data API endpoint. It takes 5 parameters and gives 12 return figures including OHLCV explained below. ### Input Parameters symbol — BNBUSDT interval —“1m” representing 1 minute startTime —UTC in ms. Will be set dynamically (ex. 1636710431000) endTime — Start from midnight yesterday and go back by 13 days each limit — 1000 for maximum efficiency Press enter or click to view image in full size Image 5 Screenshot of sample API response from Binance ### Output Returns (for BNBUSDT symbol by minute) [...] Sitemap Open in app Sign up Sign in with the Binance API. ### Why Binance? Press enter or click to view image in full size Image 3 Top Cryptocurrency Spot Exchanges Ranking from CoinMarketCap as of 2021 November 12th 09:18 UTC Binance is selected as it is currently (2021 Nov) the largest crypto exchange in the world by 24h trading volume according to CoinMarketCap. Press enter or click to view image in full size Image 4 Binance FAQ on API Limits [...] ### Output Returns (for BNBUSDT symbol by minute) Open Time & Close Time —Different by minute -1microsecond OHLC— Price information in USDT Volume — Volume in BNB...",
+      "score": 0.49318945,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin eyes $75K as $14B options expiry sets up key Friday test",
+      "url": "https://www.tradingview.com/news/invezz:ba1c801f3094b:0-bitcoin-eyes-75k-as-14b-options-expiry-sets-up-key-friday-test",
+      "content": "The reason the level matters is that large options expiries can influence short-term positioning, hedging flows and volatility expectations. Bitcoin price: What max pain levels mean Max pain is the price level at which the greatest number of options contracts expire worthless, inflicting the largest aggregate loss on options buyers. While making decisions, the traders treat it less as a forecast and more as a structural reference point. The levels become especially important when a large expiry concentrates open interest around one strike. For this Friday’s Bitcoin expiry, that strike is $75,000, according to Deribit positioning data. [...] Invezz Invezz # Bitcoin eyes $75K as $14B options expiry sets up key Friday test Bitcoin eyes $75K max pain as $14.16B options expire Friday—will price pin or break as hedging flows unwind? Bitcoin traders are heading into Friday with $75,000 in focus, as the flagship cryptocurrency continues to struggle to break decisively above the $70,000 level. The new levels are in focus as about $14.16 billion worth of Bitcoin options are due to expire on Deribit on March 28. This is one of the largest expiry events the crypto market has faced in recent...",
+      "score": 0.49084634,
+      "query": "Bitcoin options max pain Nov 14 2025 CME futures expiry economic calendar CPI PPI FOMC leading indicators BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "Digital Money",
+      "url": "https://home.treasury.gov/system/files/221/TBACCharge2Q22025.pdf",
+      "content": "transactions while assuming stablecoin velocity remains unchanged Stablecoin Supply Projections1 Regulatory Enablers Adoption Enablers Economic Enabler Merchant Integrations (Stablecoins continue to grow as a mechanism for payment, with some merchants and platforms (e.g., PayPal) offering stablecoins as an option6) Stablecoin Market Overview 1 9 USD Stablecoins Dominate the Market, Driving a Near-Term Focus on Potential Legislative Frameworks The currently proposed GENIUS Act (2025) is the latest of three former bills on US stablecoins (none have become law). Given the dominance of USD-pegged stablecoins in the market, the enactment of such a bill is likely to impact the USD stablecoin market’s future direction of travel. [...] ◼Two main potential impacts of deposits moving to stablecoins: 1. An overall increase in the demand for Treasuries — Reserve requirements outlined in proposed stablecoin legislation3 will provide an additional and growing source of demand for Treasuries 2. An overall shift to the front-end of the curve — Legislation would require stablecoin issuers to hold <93d T-bills3, driving a concentration of Treasury holdings to the front-end What are the Potential...",
+      "score": 0.4858686,
+      "query": "site:sec.gov OR site:cftc.gov OR site:federalreserve.gov OR site:treasury.gov cryptocurrency stablecoin enforcement rule proposal statement November 2025 Bitcoin market impact",
+      "search_index": 8
+    },
+    {
+      "title": "How do I get all the prices history with binance API for a ...",
+      "url": "https://stackoverflow.com/questions/66295187/how-do-i-get-all-the-prices-history-with-binance-api-for-a-crypto-using-python",
+      "content": "df = df.reindex(columns=column_names) return df def GetHistoricalData(client, symbol, start_time, end_time, limit=1500): collection = [] while start_time < end_time: data = client.get_historical_data(symbol, start_time=start_time, end_time=end_time, limit=limit) print(client.exchange + \" \" + symbol + \" : Collected \" + str(len(data)) + \" initial data from \"+ str(ms_to_dt_local(data)) +\" to \" + str(ms_to_dt_local(data[-1]))) start_time = int(data[-1] + 1000) collection +=data time.sleep(1.1) return collection client = BinanceClient(futures=False) symbol = \"BTCUSDT\" interval = \"1m\" fromDate = int(datetime.strptime('2021-11-15', '%Y-%m-%d').timestamp() 1000) toDate = int(datetime.strptime('2021-11-16', '%Y-%m-%d').timestamp() 1000) data = GetHistoricalData(client, symbol, fromDate, toDate) [...] def _get_symbols(self) -> List[str]: params = dict() endpoint = \"/fapi/v1/exchangeInfo\" if self.futures else \"/api/v3/exchangeInfo\" data = self._make_request(endpoint, params) symbols = [x[\"symbol\"] for x in data[\"symbols\"]] return symbols def get_historical_data(self, symbol: str, interval: Optional[str] = \"1m\", start_time: Optional[int] = None, end_time: Optional[int] = None, limit: Option...",
+      "score": 0.46162403,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin's price history (2009-2025) – key market events, data charts ...",
+      "url": "https://www.oanda.com/us-en/skills-and-insights/education/trading-asset-classes/crypto/bitcoin-price-history-2009-2025",
+      "content": "### 2012–2013: Building momentum After the 2011 crash, Bitcoin began climbing again. Prices and trading volume slowly picked up as more people joined the network and exchanges became easier to use. Bitcoin was no longer just for tech-savvy users as it started to reach a broader audience. By 2013, momentum had clearly shifted. Bitcoin passed $100 in April, then hit $200 in October6. In November, it reached $1,000 on Mt. Gox for the first time. Bitcoin started getting real attention. News sites covered it more often, stores and services began accepting it, and investors started treating it like more than just a novelty. It had moved beyond the idea of digital money and was emerging as a credible alternative to fiat currency and a new kind of financial asset. [...] In May 2010, Bitcoin had its first real-world use. A programmer named Laszlo Hanyecz paid 10,000 BTC for two pizzas in an event that became known as Bitcoin Pizza Day5. At the time, Bitcoin’s estimated value ranged from $25 to $41. By late 2010, Bitcoin had finally reached the open market. Prices climbed slowly but steadily, reaching between $0.10 and $0.30. For something that didn’t have an exchange rate until 2010, it...",
+      "score": 0.45696765,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 14 all-time highs prior years BTC historical data",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data Endpoints — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/market_data.html",
+      "content": "Fetch klines for any date range and interval ``` # fetch 1 minute klines for the last day up until now klines = client. get_historical_klines(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\") # fetch 30 minute klines for the last month of 2017 klines = client. get_historical_klines(\"ETHBTC\", Client. KLINE_INTERVAL_30MINUTE,\"1 Dec, 2017\",\"1 Jan, 2018\") # fetch weekly klines since it listed klines = client. get_historical_klines(\"NEOBTC\", Client. KLINE_INTERVAL_1WEEK,\"1 Jan, 2017\") ``` ## Get Historical Kline/Candlesticks using a generator Fetch klines using a generator ``` for kline in client. get_historical_klines_generator(\"BNBBTC\", Client. KLINE_INTERVAL_1MINUTE, \"1 day ago UTC\"): print(kline) # do something with the kline ``` ## Get average price for a symbol [...] ``` agg_trades = client. aggregate_trade_iter(symbol = 'ETHBTC', start_str = '30 minutes ago UTC') # iterate over the trade iterator for trade in agg_trades: print(trade) # do something with the trade data # convert the iterator to a list# note: generators can only be iterated over once so we need to call it again agg_trades = client. aggregate_trade_iter(symbol = 'ETHBTC', '30 minutes ago UTC') agg_trad...",
+      "score": 0.42935818,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] 1 Prepared Statement for SEC's Crypto Task Force March 21, 2025 ...",
+      "url": "https://www.sec.gov/files/ctf-input-reiners-2025-3-18.pdf",
+      "content": "enforcement actions. In fact, the SEC has brought over 200 crypto-related enforcement actions 13 SEC v. W.J. Howey Co., 328 U.S. 293 (1946). 14 Reves et al. v. Ernst & Young, 494 U.S. 56 (1990). [...] in section VIII, the economic reality of most crypto transactions in secondary markets supports the presence of an investment contract. V. State Enforcement Action and Court Decisions State securities regulators and Attorneys General have also pursued cryptocurrency offerings under state securities laws (often called “Blue Sky” laws). The purpose of blue-sky laws is to allow state authorities to prevent unknowing buyers from being defrauded into buying securities that appeared valuable but were in fact worthless.51 And despite the complex federal scheme regulating securities transactions, Congress, the courts, and the SEC have made explicit that federal regulation was not designed to displace state blue sky laws that regulate interstate securities [...] the crypto industry. Yet, instead of reinforcing the clarity that courts have already provided, the Commission appears to be abdicating its enforcement role. By pausing or dismissing nearly every major crypto-related enforcement act...",
+      "score": 0.39662948,
+      "query": "site:sec.gov OR site:cftc.gov OR site:federalreserve.gov OR site:treasury.gov cryptocurrency stablecoin enforcement rule proposal statement November 2025 Bitcoin market impact",
+      "search_index": 8
+    },
+    {
+      "title": "Glassnode - Digital Asset Market Intelligence",
+      "url": "https://glassnode.com",
+      "content": "Image 29: Price ### Price Robust composite prices constructed from 300+ centralised and decentralised exchanges. Image 30: Open Interest ### Open Interest Total number of outstanding contracts for futures and options across 12 exchanges, including CME. Image 31: Market Value to Realized Value ### Market Value to Realized Value Compares market capitalisation to realised capitalisation to assess the unrealised profit or loss held across the market. Image 32: Realized Profit and Loss ### Realized Profit and Loss Measures the net profit or loss realized as coins move on-chain, revealing whether holders are spending at a gain or a loss. Image 33: Liquidations ### Liquidations [...] Image 21: Liquidations ### Liquidations Tracks forced closures of leveraged futures positions across major exchanges, surfacing moments of cascading market stress. Image 22: Cost Basis Distribution ### Cost Basis Distribution Breaks down the cost basis of supply across holder cohorts to reveal the price levels where investors entered the market. Image 23: Price ### Price Robust composite prices constructed from 300+ centralised and decentralised exchanges. Image 24: Open Interest ### Open Interest Total nu...",
+      "score": 0.39096457,
+      "query": "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+      "search_index": 6
+    },
+    {
+      "title": "Mastering the MVRV Ratio",
+      "url": "https://research.glassnode.com/mastering-the-mvrv-ratio",
+      "content": "## Re-introducing MVRV MVRV is shorthand for Market Value (MV) to Realized Value (RV), and is the ratio between Price, and the Realized Price. Since the Realized Price is the average price at which every coin last moved on-chain, MVRV can be thought of as a measure of 'Unrealized Pofit' held within the supply. The chart below shows the MVRV ratio, and roughly shows the euphoric periods of extreme unrealized profit in bulls 🟩, and the painful periods of extreme unrealized loss in bears 🟥. An average profit percentage held by the market can be calculated as MVRV - 1. [...] Glassnode Research – Digital Asset Market Intelligence # Mastering the MVRV Ratio The MVRV Ratio is one of the most popular and widely used on-chain metrics, however, much of the power of MVRV is rarely put to use. In this paper, we will explore how MVRV can be supercharged to find cycle extremes, identify market trends, and get advanced warning of sell-side distribution. Checkmate Glassnode #### Checkmate, Glassnode Mastering the MVRV Ratio The MVRV Ratio is one of the most popular and widely used on-chain metrics. It was first conceived by on-chain pioneers Murad Mahmudov and David Puell, in a paper released i...",
+      "score": 0.3753864,
+      "query": "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+      "search_index": 6
+    },
+    {
+      "title": "MVRV Z-Score - Bitcoin Magazine Pro",
+      "url": "https://www.bitcoinmagazinepro.com/charts/mvrv-zscore",
+      "content": "Bitcoin Price LiveBitcoin Investor Tool: 2-Year MA MultiplierPrice Forecast Tools200 Week Moving Average HeatmapThe Puell MultipleMVRV Z-ScoreStock-to-Flow ModelBitcoin Fear And Greed IndexRHODL RatioBitcoin: Pi Cycle Top IndicatorThe Golden Ratio MultiplierBitcoin Profitable DaysNet Unrealized Profit/Loss (NUPL)Reserve RiskAASI (Active Address Sentiment Indicator) AdvAdvanced NVT Signal AdvBitcoin Active AddressesRealized PriceBitcoin Rainbow Price Chart IndicatorBitcoin Open InterestBitcoin Funding RatesAddresses Holding > X BTC by YearAddresses with Balance > 0.01 BTCAddresses with Balance > 0.1 BTCAddresses with Balance > 1 BTCAddresses with Balance > 10 BTCAddresses with Balance > 100 BTCAddresses with Balance > 1,000 BTCBitcoin HashrateHash Ribbons IndicatorAddresses with Balance > [...] Bitcoin Price LiveBitcoin Investor Tool: 2-Year MA MultiplierPrice Forecast Tools200 Week Moving Average HeatmapThe Puell MultipleMVRV Z-ScoreStock-to-Flow ModelBitcoin Fear And Greed IndexRHODL RatioBitcoin: Pi Cycle Top IndicatorThe Golden Ratio MultiplierBitcoin Profitable DaysNet Unrealized Profit/Loss (NUPL)Reserve RiskAASI (Active Address Sentiment Indicator) AdvAdvanced NVT Signal A...",
+      "score": 0.3624957,
+      "query": "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+      "search_index": 6
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m kline close price ET timezone noon Nov 14 resolution rules Binance candles API documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin November price seasonality historical daily returns around Nov 14 all-time highs prior years BTC historical data",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin purchases Federal Reserve SEC crypto policy 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Bitcoin options max pain Nov 14 2025 CME futures expiry economic calendar CPI PPI FOMC leading indicators BTC volatility",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "October 13 2025..November 13 2025 Bitcoin market analysis analyst report resistance 98000 on-chain derivatives research",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 6,
+      "query": "Bitcoin MVRV SOPR realized price exchange netflow funding rate open interest long liquidation heatmap November 2025 Glassnode CryptoQuant CoinGlass",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 7,
+      "query": "US CPI release date November 2025 BLS PPI initial jobless claims Treasury refunding statement dollar index DXY real yields calendar week of November 10 2025 Bitcoin risk assets",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 8,
+      "query": "site:sec.gov OR site:cftc.gov OR site:federalreserve.gov OR site:treasury.gov cryptocurrency stablecoin enforcement rule proposal statement November 2025 Bitcoin market impact",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

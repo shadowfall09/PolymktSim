@@ -214,6 +214,7 @@ def build_queries(
     row: Dict[str, str],
     llm_client: Optional[Any],
     llm_model: str,
+    cutoff_date: str = "",
 ) -> List[str]:
     question = normalize_ws(row.get("question", ""))
     description = normalize_ws(row.get("description", "") or row.get("event_description", ""))
@@ -236,6 +237,11 @@ def build_queries(
         "  (3) relevant named people, organizations, assets, teams, countries, or institutions; (4) schedule,\n"
         "  deadlines, constraints, incentives, market mechanics, or leading indicators; and (5) independent\n"
         "  expert, industry, academic, analyst, or domain analysis.\n"
+        "- Make the set broad: at least one query must seek recent, pre-cutoff news or developments from roughly\n"
+        "  the preceding month, while the other queries collect durable rules, historical context, primary data,\n"
+        "  and distinct decision-relevant background. Recent news is a lens, not a request for the outcome.\n"
+        "- Only seek material available on or before the evidence cutoff. When useful, put a concise date or\n"
+        "  one-month time window in the query; never search for a post-cutoff update.\n"
         "- Make each query's wording reveal its distinct lens; avoid generic catch-all queries.\n"
         "- Prefer named entities, official organizations, and stable source types over generic keywords.\n"
         "- The purpose is to collect broad supporting evidence, NOT to find the final answer.\n"
@@ -247,6 +253,7 @@ def build_queries(
         f"Question: {question}\n"
         f"Description: {description}\n"
         f"Event title: {event_title}\n"
+        f"Evidence cutoff: {cutoff_date or 'unknown'}\n"
     )
 
     try:
@@ -312,6 +319,7 @@ def build_supplemental_queries(
     existing_queries: List[str],
     llm_client: Optional[Any],
     llm_model: str,
+    cutoff_date: str = "",
 ) -> List[str]:
     """Create three additional, non-overlapping pre-resolution evidence queries."""
     question = normalize_ws(row.get("question", ""))
@@ -327,10 +335,12 @@ def build_supplemental_queries(
         "The 3 queries must be completely different from each other and from the existing queries.\n"
         "Find missing, useful pre-resolution evidence angles not already covered by the retained titles.\n"
         "Prefer primary sources, official data, historical analogues, constraints, leading indicators, or\n"
-        "domain analysis. This is broad decision-support evidence, not an answer search. Never ask whether\n"
+        "domain analysis. Include a recent-news/leading-indicator angle from roughly the month before the\n"
+        "evidence cutoff when that angle is not already covered. This is broad decision-support evidence, not an answer search. Never ask whether\n"
         "the event happened, who won, what the final result was, or whether the market resolved Yes/No.\n"
         f"Question: {question}\n"
         f"Event title: {event_title}\n"
+        f"Evidence cutoff: {cutoff_date or 'unknown'}\n"
         f"Existing queries: {json.dumps(existing_queries, ensure_ascii=False)}\n"
         f"Retained titles: {json.dumps(existing_titles, ensure_ascii=False)}"
     )
@@ -389,16 +399,22 @@ def _leak_filter_prompt(
         "You are a strict temporal-leakage reviewer for a forecasting dataset.\n"
         "Decide whether each retrieved web snippet leaks information unavailable before the evidence cutoff.\n"
         "Return strict JSON only: {\"decisions\":[{\"index\":0,\"leak\":\"yes\",\"action\":\"drop\",\"reason\":\"...\",\"rewritten_title\":\"\",\"rewritten_content\":\"\"}]}.\n"
-        "Use leak=yes when the snippet directly reveals the Yes/No outcome, reports an event after the cutoff,\n"
-        "or uses hindsight or a later retrospective/update to establish the outcome. Use leak=no for\n"
-        "background, rules, historical context, and any evidence whose timing is unknown but which does not\n"
-        "contain a confirmed post-cutoff fact or the answer.\n"
-        "The cutoff is a non-negotiable historical boundary. Treat any concrete fact, update, result,\n"
-        "publication, or page state after it as leak=yes, even if it is only indirect evidence. Dynamic\n"
-        "pages (for example, pages showing 'hours ago', 'today', or live/current data) are leak=yes only\n"
-        "when their supplied title, URL, or snippet establishes a post-cutoff fact or answer. Do not mark\n"
-        "an item as leak=yes merely because publication timing is unknown; unknown timing is safe evidence\n"
-        "for LLM reasoning unless a concrete leakage signal is present.\n"
+        "The cutoff is a non-negotiable historical boundary. Judge the title, URL, and snippet together.\n"
+        "Use leak=no for useful background and genuinely prospective pre-cutoff evidence: announcements,\n"
+        "schedules, planned airings, filings, odds, forecasts, intentions, previews, and statements that an\n"
+        "event WILL happen. A plan published before the cutoff remains safe even when its planned date is later.\n"
+        "Use leak=yes whenever title, URL, or snippet explicitly says it was published, released, updated,\n"
+        "posted, broadcast, streamed, or reported AFTER the cutoff; gives a concrete post-cutoff page state;\n"
+        "or reveals the answer directly or indirectly. Also mark leak=yes for completed/result language such as\n"
+        "'won', 'lost', 'ended', 'aired', 'was broadcast', 'was revealed', 'has happened', final score, final\n"
+        "result, current status, 'today', 'latest', 'at close', or 'after hours' when it supplies a concrete\n"
+        "value, status, or outcome. This remains true even if the item contains useful background.\n"
+        "Distinguish prospective from retrospective wording carefully: an earlier preview saying 'will air on\n"
+        "January 18' can be safe; a page marked 'Release 01/18/2026' after a 01/17/2026 cutoff, or one stating\n"
+        "the event airs/has aired, is leakage. A future date alone is not leakage. Unknown publication time alone\n"
+        "is not a reason to drop neutral background, but it never excuses an explicit completed outcome, current\n"
+        "state, or post-cutoff fact. When the supplied text is ambiguous about whether it is prospective or\n"
+        "retrospective, fail closed and use leak=yes.\n"
         "Items marked requires_temporal_rewrite=true contain an explicit post-cutoff date. They must be\n"
         "leak=yes and can only be action=rewrite or action=drop; action=keep is forbidden.\n"
         "For leak=no, action must be keep and rewritten fields must be empty. For leak=yes, choose rewrite only\n"
@@ -428,7 +444,10 @@ def _rewrite_verification_prompt(question: str, cutoff_date: str, items: List[Se
         "These snippets were rewritten after their originals leaked. Return strict JSON only: \n"
         "{\"decisions\":[{\"index\":0,\"leak\":\"no\"}]}.\n"
         "Return leak=no only when the rewritten title and content contain no outcome, no post-cutoff fact,\n"
-        "no hindsight, and no direct answer to the question. When uncertain, return leak=yes.\n"
+        "no hindsight, no completed-result language, and no concrete current page state such as 'today',\n"
+        "'latest', 'at close', or 'after hours'. A future plan may remain if it is explicitly prospective\n"
+        "rather than a later release or completed event. Treat title and content as evidence; when uncertain,\n"
+        "return leak=yes.\n"
         f"Question: {question}\nEvidence cutoff date: {cutoff_date or 'unknown'}\n"
         f"Rewritten items: {json.dumps(evidence, ensure_ascii=False)}"
     )
@@ -631,10 +650,12 @@ def collect_for_row(
     llm_model: str,
     evidence_cutoff_days: int = 1,
 ) -> Dict[str, object]:
-    queries = build_queries(row, llm_client=llm_client, llm_model=llm_model)
     row_end_date_raw = normalize_ws(row.get("endDateIso", "") or row.get("endDate", ""))
     resolution_date = normalize_end_date(row_end_date_raw)
     end_date = evidence_cutoff_date(resolution_date, evidence_cutoff_days)
+    queries = build_queries(
+        row, llm_client=llm_client, llm_model=llm_model, cutoff_date=end_date
+    )
     all_items: List[SearchItem] = []
     raw_responses: List[Dict[str, object]] = []
     query_log: List[str] = []
@@ -710,6 +731,7 @@ def collect_for_row(
             existing_queries=query_log,
             llm_client=llm_client,
             llm_model=llm_model,
+            cutoff_date=end_date,
         )
         for supplemental_query in supplemental_queries:
             supplemental_index = len(query_log) + 1

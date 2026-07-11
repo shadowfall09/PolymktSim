@@ -1,0 +1,355 @@
+{
+  "row_index": 60,
+  "market_id": "mkt_673767",
+  "slug": "",
+  "question": "Will Bitcoin dip to $92,000 November 10-16?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "event_title": "Will Bitcoin dip to $92,000 November 10-16?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "resolution_date": "2025-11-17",
+  "evidence_cutoff_date": "2025-11-16",
+  "end_date_limit": "2025-11-16",
+  "row_end_date_raw": "2025-11-17",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+    "Bitcoin intraday drawdown history 1 minute BTCUSDT Binance November weekly lows comparable prior cases 2021 2024",
+    "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF flows MicroStrategy Treasury auction CPI FOMC November 2025 bitcoin catalysts",
+    "economic calendar Nov 10-16 2025 CPI PPI retail sales Treasury auctions options expiry bitcoin market structure funding open interest liquidation heatmap",
+    "November 2025 bitcoin market outlook analyst report support levels volatility derivatives positioning site:coindesk.com OR site:theblock.co OR site:glassnode.com OR site:kaiko.com"
+  ],
+  "supplemental_query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+  "supplemental_queries": [
+    "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+    "CFTC COT CME Bitcoin futures leveraged funds asset managers November 2025 weekly report official open interest positioning",
+    "SoSoValue spot bitcoin ETF daily net inflows outflows November 2025 SEC 13F holdings recent week bitcoin leading indicator"
+  ],
+  "stats": {
+    "search_calls": 8,
+    "raw_result_count": 80,
+    "deduped_result_count": 80,
+    "hard_quarantined_late_date_count": 22,
+    "llm_filter_input_count": 80,
+    "supplemental_search_triggered": true,
+    "supplemental_search_count": 3,
+    "supplemental_raw_result_count": 30,
+    "supplemental_deduped_result_count": 30,
+    "final_evidence_count": 24,
+    "llm_filter_batch_count": 8,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 56,
+    "llm_kept_count": 24,
+    "llm_kept_leak_no_count": 22,
+    "llm_rewrite_candidate_count": 2,
+    "llm_rewritten_kept_count": 2,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 1200, [...] ``` import requests resp = requests.get(' print(resp.json()) ``` > Response ``` [ [ 1499040000000, // Open time \"0.00386200\", // Open \"0.00386200\", // High \"0.00386200\", // Low \"0.00386200\", // Close \"0.47000000\", // Volume 1499644799999, // Close time \"0.00181514\", // Quote asset volume 1, // Number of trades \"0.47000000\", // Taker buy base asset volume \"0.00181514\", // Taker buy quote asset volume \"0\" // Ignore. ] ] ``` `GET /api/v3/klines` Use this endpoint to get Kline/candlestick bars for a token symbol. Klines are uniquely identified by their open time. Please note the maximum limit is 1,00...",
+      "score": 0.7482976,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of...",
+      "score": 0.72231215,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Liquidity Stress and Policy Shocks: Inside Crypto's Early ...",
+      "url": "https://aminagroup.com/research/liquidity-stress-and-policy-shocks-inside-cryptos-early-november-correction",
+      "content": "###### Crypto Market Monitor ## Overview Between 28 October and 5 November 2025, the cryptocurrency market experienced one of the most volatile periods of the year. A sharp macro-induced downturn, coupled with heavy whale distribution and derivative liquidations, drove prices lower across the board. Bitcoin fell 11% from $114,182.80 to $101,635.30, while Ethereum dropped 20% from $4,123.21 to $3,296.74. Bitcoin’s market capitalisation contracted by 2.1%, sliding from $2.27 trillion to $2.20 trillion. Despite the scale of the drawdown, network activity and institutional developments continued to demonstrate structural resilience. [...] ## Conclusion The period between 28 October and 5 November 2025 encapsulated the interplay between macroeconomic policy, on-chain market structure, and institutional positioning. The Federal Reserve’s shift in tone catalysed a chain reaction that exposed leverage imbalances and triggered systematic liquidations across both retail and professional trading venues. However, the broader ecosystem demonstrated notable resilience. Network utilisation, mining activity, and stablecoin velocity remained robust. Institutional infrastructure continued to evol...",
+      "score": 0.6989468,
+      "query": "November 2025 bitcoin market outlook analyst report support levels volatility derivatives positioning site:coindesk.com OR site:theblock.co OR site:glassnode.com OR site:kaiko.com",
+      "search_index": 5
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\":...",
+      "score": 0.6041426,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/legacy-docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "\"symbol\": \"BTCUSDT\", \"priceChange\": \"-938.06000000\", \"priceChangePercent\": \"-3.938\", \"weightedAvgPrice\": \"23265.34432003\", \"prevClosePrice\": \"23819.17000000\", \"lastPrice\": \"22880.91000000\", \"lastQty\": \"0.00536000\", \"bidPrice\": \"22880.40000000\", \"bidQty\": \"0.00424000\", \"askPrice\": \"22880.91000000\", \"askQty\": \"0.04276000\", \"openPrice\": \"23818.97000000\", \"highPrice\": \"23933.25000000\", \"lowPrice\": \"22664.69000000\", \"volume\": \"153508.37606000\", \"quoteVolume\": \"3571425225.04441220\", \"openTime\": 1660014615977, \"closeTime\": 1660101015977, \"firstId\": 1592019902, \"lastId\": 1597301762, \"count\": 5281861 } ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 6000, [...] `symbol` `interval` `startTime` `endTime` `timeZone` `limit` Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hours | `1h`, `2h`, `4h`, `6h`, `8h`, `12h` | | days | `1d`, `3d` | | weeks | `1w` | | months | `1M` | `interval` `1s` `1m` `3m` `5m` `15m` `30m` `1h` `2h` `4h` `6h` `8h` `12h` `1d` `3d` `1w` `1M` Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `time...",
+      "score": 0.5806618,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Home / data / spot / monthly / klines / BTCUSDT / 1m",
+      "url": "https://data.binance.vision?prefix=data%2Fspot%2Fmonthly%2Fklines%2FBTCUSDT%2F1m%2F",
+      "content": "| BTCUSDT-1m-2024-03.zip | 2.1 MB | 2024-04-11T13:40:01.000Z | | BTCUSDT-1m-2024-02.zip.CHECKSUM | 0.1 kB | 2024-03-12T10:29:52.000Z | | BTCUSDT-1m-2024-02.zip | 1.9 MB | 2024-03-12T10:29:52.000Z | | BTCUSDT-1m-2024-01.zip.CHECKSUM | 0.1 kB | 2024-02-05T12:06:55.000Z | | BTCUSDT-1m-2024-01.zip | 2.1 MB | 2024-02-05T12:06:55.000Z | | BTCUSDT-1m-2023-12.zip.CHECKSUM | 0.1 kB | 2024-01-10T03:04:48.000Z | | BTCUSDT-1m-2023-12.zip | 2.0 MB | 2024-01-10T03:04:47.000Z | | BTCUSDT-1m-2023-11.zip.CHECKSUM | 0.1 kB | 2023-12-05T02:24:49.000Z | | BTCUSDT-1m-2023-11.zip | 2.0 MB | 2023-12-05T02:24:49.000Z | | BTCUSDT-1m-2023-10.zip.CHECKSUM | 0.1 kB | 2023-11-03T08:19:30.000Z | | BTCUSDT-1m-2023-10.zip | 2.0 MB | 2023-11-03T08:19:30.000Z | [...] | BTCUSDT-1m-2025-02.zip | 1.9 MB | 2025-03-04T10:35:11.000Z | | BTCUSDT-1m-2025-01.zip.CHECKSUM | 0.1 kB | 2025-02-08T12:19:52.000Z | | BTCUSDT-1m-2025-01.zip | 2.1 MB | 2025-02-08T12:19:52.000Z | | BTCUSDT-1m-2024-12.zip.CHECKSUM | 0.1 kB | 2025-01-08T00:50:27.000Z | | BTCUSDT-1m-2024-12.zip | 2.1 MB | 2025-01-08T00:50:27.000Z | | BTCUSDT-1m-2024-11.zip.CHECKSUM | 0.1 kB | 2024-12-02T18:21:12.000Z | | BTCUSDT-1m-2024-11.zip | 2.0 MB | 2024-12-02T1...",
+      "score": 0.5803764,
+      "query": "Bitcoin intraday drawdown history 1 minute BTCUSDT Binance November weekly lows comparable prior cases 2021 2024",
+      "search_index": 2
+    },
+    {
+      "title": "BlackRock and MicroStrategy seen sending Bitcoin to $200,000: Bernstein - DL News",
+      "url": "https://www.dlnews.com/articles/markets/how-blackrock-and-microstrategy-will-push-bitcoin-to-new-highs",
+      "content": "Bitcoin ETF | | Issuer | Ticker | AUM | Price | --- --- | 1 | Grayscale | GBTC | $8.13 B | $NaN | | 2 | Grayscale | BTC | $3.19 B | $NaN | | 3 | Blackrock | IBIT | $43.23 B | $NaN | | 4 | Fidelity | FBTC | $10.22 B | $NaN | | 5 | Ark/21 Shares | ARKB | $1.89 B | $NaN | | 6 | Bitwise | BITB | $2.12 B | $NaN | | 7 | Valkyrie | BRRR | $343.61 M | $NaN | | 8 | Morgan Stanley | MSBT | $296.54 M | $NaN | | 9 | Franklin Templeton | EZBC | $331.89 M | $NaN | | 10 | VanEck | HODL | $951.71 M | $NaN | | | | | | | --- --- | 1-10 of 12 | | | | | ## The halving Bernstein also singled out timing as a key factor. More specifically, 2025 will mark the one-year anniversary of the halving, a quadrennial event that slashes Bitcoin miners’ rewards for maintaining the blockchain by half. [...] stripe Of those, the launch of US-regulated ETFs was a “watershed moment,” Bernstein wrote, noting how it triggered Bitcoin’s breakout to $73,700. Bitcoin ETFs run by the likes of BlackRock have seen inflows of over $21 billion since launching earlier this year. Bernstein predicted that the assets under management by Bitcoin ETF issuers will reach about $190 billion by the end of next year, making up about 7%...",
+      "score": 0.5749443,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF flows MicroStrategy Treasury auction CPI FOMC November 2025 bitcoin catalysts",
+      "search_index": 3
+    },
+    {
+      "title": "[PDF] Tentative Auction Schedule of U.S. Treasury Securities Security ...",
+      "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ22025.pdf",
+      "content": "November 06, 2025 6-Week BILL Thursday, October 30, 2025 Tuesday, November 04, 2025 Thursday, November 06, 2025 T --denotes TIPS R --denotes reopening For additional information regarding Treasury auction announcements and results please see web address below: [...] 16, 2025 13-Week BILL Thursday, September 11, 2025 Monday, September 15, 2025 Thursday, September 18, 2025 26-Week BILL Thursday, September 11, 2025 Monday, September 15, 2025 Thursday, September 18, 2025 6-Week BILL Thursday, September 11, 2025 Tuesday, September 16, 2025 Thursday, September 18, 2025 20-Year BOND R Thursday, September 11, 2025 Tuesday, September 16, 2025 Tuesday, September 30, 2025 10-Year TIPS R T Thursday, September 11, 2025 Thursday, September 18, 2025 Tuesday, September 30, 2025 17-Week BILL Tuesday, September 16, 2025 Wednesday, September 17, 2025 Tuesday, September 23, 2025 4-Week BILL Tuesday, September 16, 2025 Thursday, September 18, 2025 Tuesday, September 23, 2025 8-Week BILL Tuesday, September 16, 2025 Thursday, September 18, 2025 Tuesday, September 23, 2025 [...] NOTE Thursday, October 23, 2025 Tuesday, October 28, 2025 Friday, October 31, 2025 2-Year FRN Thursday, October 23, 2025 Wedn...",
+      "score": 0.5128152,
+      "query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "CFTC Commitment of Traders Tracker — Crypto Futures Positioning | CryptoDataDownload",
+      "url": "https://www.cryptodatadownload.com/analytics/cftc-cot-tracker",
+      "content": "Loading... USA # What the smart money is doing. The Commodity Futures Trading Commission publishes a weekly Commitment of Traders report showing exactly how dealers, asset managers, and leveraged funds are positioned in regulated cryptocurrency futures — released every Friday, reflecting Tuesday's close. Overstretched positioning often precedes outsized moves. New to COT? Read the primer → Full historical data back to 2018 via the CDD API. ### Market-making banks & brokers. The intermediaries — large banks and broker-dealers warehousing risk to service client flow. Their positioning tends to be the inverse of the rest of the market. ### Institutional real money. [...] Open interest plus long/short positions for each of the three CFTC trader categories. Tier1 / Plus+ members can export the full history to CSV. | Market name | Report date | Open interest total | Dealer long | Dealer short | Asset manager long | Asset manager short | Leveraged long | Leveraged short | --- --- --- --- Source data for the CFTC Commitment of Traders report is published by the CFTC at cftc.gov. CryptoDataDownload aggregates and visualizes; we do not modify the published values. ## CryptoDataDownload Th...",
+      "score": 0.49113917,
+      "query": "CFTC COT CME Bitcoin futures leveraged funds asset managers November 2025 weekly report official open interest positioning",
+      "search_index": 7
+    },
+    {
+      "title": "Save Historical data from Binance - Sam McHardy",
+      "url": "https://sammchardy.github.io/historical-data-download-binance",
+      "content": "`symbol` and `limit` are straightforward, `startTime` and `endTime` we now have covered by the above `date_to_milliseconds` function. We note from this that we can get a maximum of 500 results each request, so we will need to build a loop if we are fetching over a long time period. `interval` we have a list of so these are passed easily. The get\\_klines endpoint returns an array of klines in this order ``` [1499040000000, # Open time \"0.01634790\", # Open \"0.80000000\", # High \"0.01575800\", # Low \"0.01577100\", # Close \"148976.11427815\", # Volume 1499644799999, # Close time \"2434.19055334\", # Quote asset volume 308, # Number of trades \"1756.87402397\", # Taker buy base asset volume \"28.46694368\", # Taker buy quote asset volume \"17928899.62484339\" # Ignore ] ``` [...] ``` frombinance.client import Client print(interval_to_milliseconds(Client. KLINE_INTERVAL_1MINUTE)) print(interval_to_milliseconds(Client. KLINE_INTERVAL_30MINUTE)) print(interval_to_milliseconds(KLINE_INTERVAL_1WEEK)) ``` ### Fetch the Klines already Ok enough messing around, we’re ready to build our function to fetch historical data. With this function we have a really simple way of fetching a list of klines using si...",
+      "score": 0.48528314,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Details on how to get Binance public data",
+      "url": "https://github.com/binance/binance-public-data",
+      "content": "| Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1735689600000000 | 4.15070000 | 4.15870000 | 4.15060000 | 4.15540000 | 539.23000000 | 1735693199999999 | 2240.39860900 | 13 | 401.82000000 | 1669.98121300 | 0 | All kline intervals are supported: `1s`, `1m`, `3m`, `5m`, `15m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `1d`, `3d`, `1w`, `1mo`. `1mo` is used instead of `1M` to supprt non-case sensitive file systems. #### Trades The `trades` files' data is obtained from `/api/v3/historicalTrades` API endpoint: [...] | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1499040000000 | 0.01634790 | 0.80000000 | 0.01575800 | 0.01577100 | 148976.11427815 | 1499644799999 | 2434.19055334 | 308 | 1756.87402397 | 28.46694368 | 17928899.62484339 | COIN-M Futures `klines` files' data is from `/dapi/v1/klines` API endpoint: | Open time | Open | High | Low | Close | Volume | Close time | Base asse...",
+      "score": 0.47928494,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Getting Binance Historical Data For Specific TimeZone",
+      "url": "https://stackoverflow.com/questions/60655580/getting-binance-historical-data-for-specific-timezone",
+      "content": "Open = kline High = kline Low = kline Close = kline Volume = kline Close_time = time.strftime(\"%a, %d %b %Y %H:%M:%S\", time.localtime(kline/1000)) Quote_asset_volume = kline Number_of_trades = kline Taker_buy_base_asset_volume = kline Taker_buy_quote_asset_volume = kline return Time,Open,High,Low,Close,Volume,Close_time,Quote_asset_volume,Number_of_trades,Taker_buy_base_asset_volume,Taker_buy_quote_asset_volume def get_historical_klines(symbol, interval, start_str, end_str=None): \"\"\"Get Historical Klines from Binance See dateparse docs for valid start and end string formats If using offset strings for dates add \"UTC\" to date string e.g. \"now UTC\", \"11 hours ago UTC\" :param symbol: Name of symbol pair e.g BNBBTC :type symbol: str :param interval: Biannce Kline interval :type interval: str [...] d = d.replace(tzinfo=pytz.utc) # return the difference in time return int((d - epoch).total_seconds() 1000.0) def interval_to_milliseconds(interval): \"\"\"Convert a Binance interval string to milliseconds :param interval: Binance interval string 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w :type interval: str :return: None if unit not one of m, h, d or w None if string not in co...",
+      "score": 0.47621483,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Fidelity® Wise Origin® Bitcoin Fund (FBTC) - Fidelity Institutional",
+      "url": "https://institutional.fidelity.com/advisors/investment-solutions/asset-classes/alternatives/digital-assets/fidelity-wise-origin-bitcoin-fund",
+      "content": "\\Fidelity Crypto® for Wealth Managers is a service of Fidelity Digital Assets®. Accounts for and custody and trading of digital assets are provided by Fidelity Digital Assets, National Association, which is a national trust bank. Digital assets are not insured by the Federal Deposit Insurance Corporation, protected by the Securities Investor Protection Corporation (“SIPC”), or any other government agency, and are not an obligation of any bank. [...] FBTC is not an investment company registered under the Investment Company Act of 1940 (the “1940 Act”) nor is it a commodity pool under the Commodity Exchange Act of 1936 (the “CEA”). As a result, shareholders of FBTC do not have the protections associated with ownership of shares in a registered investment company nor are shareholders afforded the protections of investing in an CEA-regulated instrument or commodity pool. FBTC must be preceded or accompanied by its prospectus. [...] © 2025 FMR LLC. All rights reserved",
+      "score": 0.47227025,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF flows MicroStrategy Treasury auction CPI FOMC November 2025 bitcoin catalysts",
+      "search_index": 3
+    },
+    {
+      "title": "Schedule of Releases for the Consumer Price Index",
+      "url": "",
+      "content": "BLS page listing the schedule format for Consumer Price Index releases, including reference month, release date, and release time.",
+      "score": 0.47212428,
+      "query": "economic calendar Nov 10-16 2025 CPI PPI retail sales Treasury auctions options expiry bitcoin market structure funding open interest liquidation heatmap",
+      "search_index": 4,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Schedule of Releases for the Producer Price Index",
+      "url": "",
+      "content": "BLS page listing the schedule format for Producer Price Index releases, including reference month, release date, and release time.",
+      "score": 0.4485476,
+      "query": "economic calendar Nov 10-16 2025 CPI PPI retail sales Treasury auctions options expiry bitcoin market structure funding open interest liquidation heatmap",
+      "search_index": 4,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "How to pull REALTIME Cryptocurrency Prices with Python ...",
+      "url": "https://www.youtube.com/watch?v=P_SIZDsI3Ro",
+      "content": "one and you need to add at Kline which is the Candlestick stream or the Kline stream and the time interval so the correct way this should look like would be this one here Bitcoin USD at Kine 1 minute so with that you are subscribing to the Candlestick one minute chart and then we are getting live prices for that one minute Kline chart or not chart but for that one minute data coming from the binance API so we need to transform this list so that it is looking like this just using a simple list comprehension here so opening up a list here and then coin. lower so because this is capitalized here I want to have it as a lowercase letters and then I'm just adding what I wrote here so add Kine one minute for coin in assets so this is just looping over those names and then adds this string and [...] the binance uh document binance API documentation so I'm going to copy paste that so this is the URL we need vsss or WSS stream binance.com something and then stream and then Define the streams you want to subscribe to now this here equals to has to be this one so we are just adding our assets to this string here so we can just use assets here and then we have our socket now we can just use...",
+      "score": 0.418341,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Economic Calendar November 2025",
+      "url": "https://equalsmoney.com/economic-calendar/november",
+      "content": "UK USA USA USA USA USA Equals Money Logo We're here to help your business make money movement simple. UK USA USA USA USA USA # Economic Calendar ## November 2025 Major dates and events to look out for during the month of November 2025. These key dates may often result in market movements which can affect FX rates. Plan ahead for your business with Equals's Economic Calendar. 🚨 = Important event Equals Logo App store button Google Play button Part of the Equals Group logo Mastercard logo",
+      "score": 0.41762826,
+      "query": "economic calendar Nov 10-16 2025 CPI PPI retail sales Treasury auctions options expiry bitcoin market structure funding open interest liquidation heatmap",
+      "search_index": 4
+    },
+    {
+      "title": "Extract Historical Data from Binance Using Python | Medium",
+      "url": "https://medium.com/@ja_x/extract-historical-data-from-binance-using-python-ec4a41ca9f4f",
+      "content": "Output: Key Functions → Main functions: `Client(), get_historical_klines()` `Client(), get_historical_klines()` Interval: `Client.KLINE_INTERVAL_1MINUTE` `Client.KLINE_INTERVAL_1MINUTE` -- -- Ja X Ja X ## Written by Ja X Jax talks on Data Help Status About Careers Press Blog Store Privacy Rules Terms Text to speech [...] ### 3. Defining the Trading Pair Symbol and Time Range Defining the trading pair symbol is the easiest part. We can set a custom start and end time for our function by parsing the date to date time format. `datetime.datetime`: Creates datetime object for specified start and end times. `datetime.datetime` ### 4. Fetching Historical Klines Data Now, we use the `get_historical_klines` main function to extract historical candlestick data for our custom time range. `get_historical_klines` `interval` `Client.KLINE_INTERVAL_1MINUTE` `Client.KLINE_INTERVAL_5MINUTE` `Client.KLINE_INTERVAL_1HOUR` [...] ### 2. Setting Up Binance API Credentials Next, you have to provide your Binance API credentials. Ensure these credentials are kept secure and not exposed in public repositories. How to generate API credentials on Binance if you do not have it yet: `Account` `API Management...",
+      "score": 0.39208132,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Commitment of Traders - CME Group",
+      "url": "https://www.cmegroup.com/tools-information/quikstrike/commitment-of-traders.html",
+      "content": "tool provides a comprehensive and highly configurable graphical representation of the CFTC's report on market open interest released each Friday afternoon based on open positions as of the preceding Tuesday. Markets are only included if 20 or more traders hold positions equal to or above the reporting levels established by the CFTC and the respective exchanges. Information is presented by client segment, categorized as follows: Physical Commodities: Producer, Swap Dealer, Managed Money and Other Reportable Financial Products: Dealer, Asset Manager, Leveraged and Other Reportable. For full definitions of these groups, please refer to the CFTC’s Explanatory notes.",
+      "score": 0.38567597,
+      "query": "CFTC COT CME Bitcoin futures leveraged funds asset managers November 2025 weekly report official open interest positioning",
+      "search_index": 7
+    },
+    {
+      "title": "Commitments of Traders | CFTC",
+      "url": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "content": "Can you notify me by email when the COT is released? You can receive such notifications by signing up for the weekly COT announcement emails, at the following location: Note: You can also use this same link to manage/update your subscriber preferences. #### 10. Report Frequency Can you release the COT Reports more than once a week? Because of resource constraints, we are currently only able to release this report once a week. #### 11. Spreading How is open interest calculated? Why, when I add up all long positions (or short), does the sum does not equal open interest? [...] Introduction and Classification Methodology : The Commodity Futures Trading Commission (Commission or CFTC) publishes the Commitments of Traders (COT) reports to help the public understand market dynamics. Specifically, the COT reports provide a breakdown of each Tuesday’s open interest for futures and options on futures markets in which 20 or more traders hold positions equal to or above the reporting levels established by the CFTC. [...] The COT Reports are typically based upon data calculated as of the close of business of Tuesday of a given week. It takes three days to process the data, and therefore the...",
+      "score": 0.37579864,
+      "query": "CFTC COT CME Bitcoin futures leveraged funds asset managers November 2025 weekly report official open interest positioning",
+      "search_index": 7
+    },
+    {
+      "title": "Research Exchange: November 2025",
+      "url": "https://bpi.com/research-exchange-november-2025",
+      "content": "Liquidity and Trading Dynamics in the Off-the-Run U.S. Treasury Market ### The Rise of Tokenized Money Market Funds [...] may be limiting its use. Additional discussion focused on how proposed leverage ratio reforms and evolving supervisory views on deposit stability are shaping banks’ demand for reserves and their capacity to intermediate in Treasury and repo markets. [...] Cyber Vulnerabilities at Large U.S. Financial Institutions and Their Third-Party Service Providers ### Liquidity and Trading Dynamics in the Off-the-Run U.S. Treasury Market",
+      "score": 0.37394494,
+      "query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "[PDF] Tentative Auction Schedule of U.S. Treasury Securities Security ...",
+      "url": "https://home.treasury.gov/system/files/221/TentativeAuctionScheduleQ42024.pdf",
+      "content": "2025 Wednesday, January 22, 2025 Friday, January 31, 2025 10-Year TIPS T Thursday, January 16, 2025 Thursday, January 23, 2025 Friday, January 31, 2025 Holiday - Monday, January 20, 2025 - Birthday of Martin Luther King, Jr. [...] Thursday, January 09, 2025 3-Year NOTE Thursday, January 02, 2025 Tuesday, January 07, 2025 Wednesday, January 15, 2025 10-Year NOTE R Thursday, January 02, 2025 Wednesday, January 08, 2025 Wednesday, January 15, 2025 30-Year BOND R Thursday, January 02, 2025 Thursday, January 09, 2025 Wednesday, January 15, 2025 Tentative Auction Schedule of U.S. Treasury Securities Security Type Announcement Date Auction Date Settlement Date 17-Week BILL Tuesday, January 07, 2025 Wednesday, January 08, 2025 Tuesday, January 14, 2025 4-Week BILL Tuesday, January 07, 2025 Thursday, January 09, 2025 Tuesday, January 14, 2025 8-Week BILL Tuesday, January 07, 2025 Thursday, January 09, 2025 Tuesday, January 14, 2025 13-Week BILL Thursday, January 09, 2025 Monday, January 13, 2025 Thursday, January 16, 2025 [...] February 04, 2025 Thursday, February 06, 2025 Tuesday, February 11, 2025 3-Year NOTE Wednesday, February 05, 2025 Tuesday, February 11, 2025 Tuesday, February 18,...",
+      "score": 0.3410561,
+      "query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "CME FedWatch Tool: Oct 2025 Probabilities | PDF",
+      "url": "https://www.scribd.com/document/931373676/Fed-Watch-Tool",
+      "content": "Scribd # CME FedWatch Tool: Oct 2025 Probabilities CME FedWatch Tool: Oct 2025 Probabilities ## Uploaded by AI-enhanced title # CME FedWatch Tool: Oct 2025 Probabilities # CME FedWatch Tool: Oct 2025 Probabilities CME FedWatch Tool: Oct 2025 Probabilities ## Uploaded by AI-enhanced title ## Share this document ## Footer menu ## About ## Support ## Legal ## Social ## Get our free apps Scribd - Download on the App Store Scribd - Get it on Google Play ## About ## Legal ## Support ## Social ## Get our free apps Scribd - Download on the App Store Scribd - Get it on Google Play",
+      "score": 0.3134308,
+      "query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "CryptoDataDownload — Free Historical Cryptocurrency Data ...",
+      "url": "https://www.cryptodatadownload.com",
+      "content": "### Maximum drawdown Peak-to-trough decline analysis with recovery-time statistics. Distinguishes assets that bounce back in weeks from those that take quarters to recover — the difference between a position you sit through and a position you shouldn't have taken. ### Know your risk before it costs you. Identify hidden portfolio risk before it impacts capital. Find the assets with the best risk-adjusted returns; avoid the ones built to devastate a quarter. ## The minute-bar tape, without the holes. [...] ## Crypto risk analytics, priced for the working analyst. Value at Risk, Expected Shortfall, GARCH volatility forecasts, drawdown analysis — institutional-grade quantitative risk metrics for 400+ cryptocurrency assets, computed daily and presented in a browser dashboard. No quant fund subscription required. ### Value at Risk Estimated worst-case daily loss at 95% and 99% confidence intervals — the standard quantitative measure of position risk, computed daily for every asset in the universe. ### Expected Shortfall Average loss in the worst `5%` of days. Goes beyond VaR by capturing the depth of tail events, not just the threshold — the metric institutional risk teams quote when...",
+      "score": 0.22283576,
+      "query": "Bitcoin intraday drawdown history 1 minute BTCUSDT Binance November weekly lows comparable prior cases 2021 2024",
+      "search_index": 2
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m kline API low price timezone ET Nov 10 2025 Nov 16 2025 official documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin intraday drawdown history 1 minute BTCUSDT Binance November weekly lows comparable prior cases 2021 2024",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF flows MicroStrategy Treasury auction CPI FOMC November 2025 bitcoin catalysts",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "economic calendar Nov 10-16 2025 CPI PPI retail sales Treasury auctions options expiry bitcoin market structure funding open interest liquidation heatmap",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "November 2025 bitcoin market outlook analyst report support levels volatility derivatives positioning site:coindesk.com OR site:theblock.co OR site:glassnode.com OR site:kaiko.com",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 6,
+      "query": "CME FedWatch November 2025 meeting probabilities US Treasury auction schedule 10-year 30-year Nov 10-16 2025 official data bitcoin risk assets",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 7,
+      "query": "CFTC COT CME Bitcoin futures leveraged funds asset managers November 2025 weekly report official open interest positioning",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 8,
+      "query": "SoSoValue spot bitcoin ETF daily net inflows outflows November 2025 SEC 13F holdings recent week bitcoin leading indicator",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

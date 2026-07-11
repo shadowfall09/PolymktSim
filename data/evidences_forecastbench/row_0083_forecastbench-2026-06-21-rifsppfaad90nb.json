@@ -288,7 +288,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly relevant primary source for the exact series. The snippet shows only pre-cutoff observations and a pre-cutoff update date (Jun 17, 2026) plus a prospective next release date (Jun 18, 2026), which is allowed as schedule information."
+      "reason": "Safe pre-cutoff primary source. Snippet shows values through 2026-06-16 and page updated Jun 17, 2026, both before the 2026-06-20 cutoff. Directly relevant because it is the exact FRED series used for resolution and includes next release timing."
     },
     {
       "stage": "cached",
@@ -298,7 +298,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Same exact FRED series as the target, with pre-cutoff observation and pre-cutoff update date. Contains useful contemporaneous level information and release schedule; no explicit post-cutoff publication or outcome."
+      "reason": "Duplicate of the exact FRED series page with pre-cutoff update date Jun 17, 2026 and observations only through 2026-06-16. Directly relevant to the forecast and safe."
     },
     {
       "stage": "cached",
@@ -308,187 +308,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Federal Reserve commercial paper release table with historical annual/monthly averages through 2026, useful background and trend context for the exact rate category. Snippet does not state a post-cutoff publication/update date or any post-cutoff realized value for the target week."
-    },
-    {
-      "stage": "cached",
-      "title": "90-Day AA Financial Commercial Paper Interest Rate - FRED",
-      "url": "https://fred.stlouisfed.org/series/RIFSPPFAAD90NB",
-      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Same exact FRED series metadata and pre-cutoff observation for the target rate. Safe and directly informative; no explicit post-cutoff publication or completed outcome."
-    },
-    {
-      "stage": "cached",
-      "title": "Commercial Paper Rates and Outstanding Summary - Volume ...",
-      "url": "http://catalog.data.gov/dataset/commercial-paper-rates-and-outstanding-summary-volume-statistics-for-commercial-paper-issu",
-      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "General dataset description for commercial paper issuance statistics from a government catalog. Safe background context about the release family, though not directly about the exact 90-day AA financial rate level movement."
-    },
-    {
-      "stage": "cached",
-      "title": "The Fed: DDP: Commercial Paper",
-      "url": "https://www.federalreserve.gov/feeds/cp.html",
-      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Federal Reserve announcements/feed page for the commercial paper release. Useful for understanding update cadence and release practices; snippet contains only historical notices and a generic prospective statement, with no explicit post-cutoff publication or realized post-cutoff data."
-    },
-    {
-      "stage": "cached",
-      "title": "The Fed: DDP: Commercial Paper - Federal Reserve",
-      "url": "https://www.federalreserve.gov/feeds/cp.html",
-      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Duplicate-type Federal Reserve feed/announcements page giving release-process context. Safe background; no explicit post-cutoff publication date tied to the cutoff window or post-cutoff outcome for the target series."
-    },
-    {
-      "stage": "cached",
-      "title": "Market Trends 2020/21: Commercial Paper",
-      "url": "https://www.mayerbrown.com/-/media/files/perspectives-events/publications/2021/04/market-trends-202021_commercial-paper.pdf",
-      "query": "industry analysis AA financial commercial paper 90-day rate outlook Fed commercial paper market",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "General 2021 market background on commercial paper structure and outlook. Safe and potentially contextual, but old and only tangentially useful for forecasting the specific week-over-week move in June 2026."
-    },
-    {
-      "stage": "cached",
-      "title": "United States Interest Rates: AA financial commercial paper - 90 days | Moody's Analytics",
-      "url": "https://www.economy.com/united-states/interest-rates-aa-financial-commercial-paper-90-days",
-      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "Generic description of U.S. interest rate data methodology from Moody's Analytics. Safe background but not specific to the exact FRED commercial paper series movement being forecast."
-    },
-    {
-      "stage": "cached",
-      "title": "90-Day AA Nonfinancial Commercial Paper Interest Rate (DCPN3M) | FRED | St. Louis Fed",
-      "url": "https://fred.stlouisfed.org/series/DCPN3M",
-      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Related FRED series for 90-day AA nonfinancial commercial paper. Not the exact target, but a closely related contemporaneous market indicator that could help infer direction; snippet is metadata only and contains no post-cutoff outcome."
-    },
-    {
-      "stage": "cached",
-      "title": "The Fed - Commercial Paper Rates and Outstanding ...",
-      "url": "https://www.federalreserve.gov/releases/cp/about.htm",
-      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Methodology/source page for the exact commercial paper release underlying the target series. It provides pre-cutoff background on what the series measures and its update cadence ('typically posted with a one-day lag'), which is directly useful for forecasting timing and interpretation. No explicit post-cutoff publication or outcome."
-    },
-    {
-      "stage": "cached",
-      "title": "[PDF] The Term Structure of Commercial Paper Rates - Federal Reserve",
-      "url": "https://www.federalreserve.gov/pubs/feds/2004/200418/200418pap.pdf",
-      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Historical Federal Reserve research on the term structure of commercial paper rates. Safe background with no post-cutoff publication/update signal in the snippet and no leaked post-cutoff outcome. Useful supporting context on behavior of 90-day AA commercial paper rates, though not current."
-    },
-    {
-      "stage": "cached",
-      "title": "Snowflake Public Data",
-      "url": "https://data-docs.snowflake.com/sources/fed",
-      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "Generic documentation for a Snowflake mirror of Federal Reserve data. Safe and not outcome-revealing, but only tangentially relevant to forecasting whether the specific rate will rise over the target week."
-    },
-    {
-      "stage": "cached",
-      "title": "The Fed - Commercial Paper Rates and Outstanding Summary",
-      "url": "https://www.federalreserve.gov/releases/cp/outstanding.htm",
-      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes concrete post-cutoff page state with values for June 24 and July 1, which are after the 2026-06-20 cutoff. This is leakage even though the page is relevant."
-    },
-    {
-      "stage": "cached",
-      "title": "The Federal Reserve's Commercial Paper Funding Facility",
-      "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr423.pdf",
-      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "Historical paper about the CPFF and commercial paper markets. Safe background with no explicit post-cutoff publication/update or leaked outcome for the target period, but only loosely relevant to the specific weekly direction question."
-    },
-    {
-      "stage": "cached",
-      "title": "The Fed - Commercial Paper Rates and Outstanding Summary",
-      "url": "https://www.federalreserve.gov/releases/cp/about.htm",
-      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Same Federal Reserve 'about' page as item 0, giving source/methodology for the commercial paper release. Directly relevant background and safe because it does not state any post-cutoff publication or realized post-cutoff values."
-    },
-    {
-      "stage": "cached",
-      "title": "Board of Governors of the Federal Reserve System - Commercial Paper Rates and Outstanding Summary - Volume Statistics for Commercial Paper Issuance",
-      "url": "http://catalog.data.gov/dataset/commercial-paper-rates-and-outstanding-summary-volume-statistics-for-commercial-paper-issu",
-      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Dataset catalog metadata describing the commercial paper issuance statistics and categories including AA financial. Safe pre-cutoff structural background; useful supporting context on the data source, though not a direct predictor of the target week's movement."
-    },
-    {
-      "stage": "cached",
-      "title": "Commercial Paper",
-      "url": "https://www.richmondfed.org/~/media/richmondfedorg/publications/research/economic_review/1981/pdf/er670202.pdf",
-      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "Old Richmond Fed article on commercial paper history. Safe and non-leaking, but very indirect for forecasting the specific 2026-06-21 to 2026-06-28 rate change."
-    },
-    {
-      "stage": "cached",
-      "title": "The Federal Reserve's response to the COVID‐19 contraction: An initial appraisal - PMC",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8250983",
-      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "General academic discussion of commercial paper and Fed facilities. No explicit post-cutoff publication/update in the snippet and no leaked target-period outcome, but only tangentially relevant."
-    },
-    {
-      "stage": "cached",
-      "title": "COMPARABLE Definition & Meaning - Merriam-Webster",
-      "url": "https://www.merriam-webster.com/dictionary/comparable",
-      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Dictionary entry unrelated to the forecasting question, and the snippet explicitly says 'Accessed 2 Jul. 2026' and 'Last Updated,' which is after the 2026-06-20 cutoff. Drop for both irrelevance and post-cutoff evidence."
-    },
-    {
-      "stage": "cached",
-      "title": "COMPARABLE Definition & Meaning | Dictionary.com",
-      "url": "https://www.dictionary.com/browse/comparable",
-      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Irrelevant dictionary entry about the word 'comparable'; provides no information about commercial paper rates, monetary policy, or factors affecting the 90-day AA Financial Commercial Paper Interest Rate."
+      "reason": "Federal Reserve commercial paper rates summary provides contemporaneous historical averages for AA financial 90-day commercial paper in 2026, useful background on trend level. Snippet does not explicitly indicate post-cutoff publication/update or completed post-cutoff state."
     },
     {
       "stage": "cached",
@@ -498,7 +318,27 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe pre-cutoff background/historical context page for the 90-Day AA Commercial Paper Rate series. The snippet shows historical chart metadata, units, frequency, release, and related rate series, with no explicit post-cutoff publication/update or completed post-cutoff outcome."
+      "reason": "Generic historical chart/background on the same rate series. No explicit post-cutoff publication/update or post-cutoff result language. Useful but secondary to primary sources."
+    },
+    {
+      "stage": "cached",
+      "title": "90-Day AA Financial Commercial Paper Interest Rate - FRED",
+      "url": "https://fred.stlouisfed.org/series/RIFSPPFAAD90NB",
+      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Another duplicate FRED series snippet for the exact resolution series, showing pre-cutoff observation 2026-06-16: 3.76. Safe and directly relevant."
+    },
+    {
+      "stage": "cached",
+      "title": "Commercial Paper Rates and Outstanding Summary - Volume ...",
+      "url": "http://catalog.data.gov/dataset/commercial-paper-rates-and-outstanding-summary-volume-statistics-for-commercial-paper-issu",
+      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Background metadata about the commercial paper dataset and issuance statistics. Not directly about the exact 90-day AA financial rate level, but safe and potentially useful context on source and methodology."
     },
     {
       "stage": "cached",
@@ -508,17 +348,148 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe background/source metadata for the exact series: identifies the U.S. AA financial commercial paper 90-day rate, unit, frequency, source, and release. No explicit post-cutoff publication/update or realized post-cutoff value is stated."
+      "reason": "Background series description for the same concept from Moody's Analytics, including source, frequency, and methodology. No explicit post-cutoff publication/update or completed post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed: DDP: Commercial Paper",
+      "url": "https://www.federalreserve.gov/feeds/cp.html",
+      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Federal Reserve feed/announcements page for commercial paper release process. Useful for understanding release cadence and possible revisions. Snippet contains historical notices only and no explicit post-cutoff publication marker."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed: DDP: Commercial Paper - Federal Reserve",
+      "url": "https://www.federalreserve.gov/feeds/cp.html",
+      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Duplicate of the Federal Reserve commercial paper feed/announcements page. Safe background on release timing and revisions; no explicit post-cutoff publication/update tied to the forecast window."
+    },
+    {
+      "stage": "cached",
+      "title": "Market Trends 2020/21: Commercial Paper",
+      "url": "https://www.mayerbrown.com/-/media/files/perspectives-events/publications/2021/04/market-trends-202021_commercial-paper.pdf",
+      "query": "industry analysis AA financial commercial paper 90-day rate outlook Fed commercial paper market",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General 2021 market background on commercial paper structure and outlook. Safe because it is clearly pre-cutoff and contains no leaked outcomes, but only tangentially useful for forecasting a one-week 2026 rate change."
+    },
+    {
+      "stage": "cached",
+      "title": "United States Interest Rates: AA financial commercial paper - 90 days | Moody's Analytics",
+      "url": "https://www.economy.com/united-states/interest-rates-aa-financial-commercial-paper-90-days",
+      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background/source description for the exact series category. No explicit post-cutoff publication/update or realized outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "90-Day AA Nonfinancial Commercial Paper Interest Rate (DCPN3M) | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/series/DCPN3M",
+      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe FRED series page for a closely related commercial paper rate. Useful contextual comparator and release metadata; snippet contains no explicit post-cutoff publication/update or outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed - Commercial Paper Rates and Outstanding ...",
+      "url": "https://www.federalreserve.gov/releases/cp/about.htm",
+      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Directly relevant methodology and timing information for the commercial paper release, including that rates are typically updated daily with a one-day lag. Prospective/background only; no explicit post-cutoff page state or completed result."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Term Structure of Commercial Paper Rates - Federal Reserve",
+      "url": "https://www.federalreserve.gov/pubs/feds/2004/200418/200418pap.pdf",
+      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical research on commercial paper term structure and year-end effects. Background only and not very predictive for this exact week-over-week question, but safe and non-leaky."
+    },
+    {
+      "stage": "cached",
+      "title": "Snowflake Public Data",
+      "url": "https://data-docs.snowflake.com/sources/fed",
+      "query": "Federal Reserve AA financial commercial paper 90-day rate institutions issuers dealers data source",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic data-platform documentation mentioning commercial paper queries. Tangential background, no explicit post-cutoff publication/update or realized outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Federal Reserve's Commercial Paper Funding Facility",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr423.pdf",
+      "query": "Federal Reserve commercial paper release publication schedule data lag market conditions AA financial commercial paper rate",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical paper on CPFF and commercial paper rates. Broad market background only; safe with no post-cutoff result leakage for the target period."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed - Commercial Paper Rates and Outstanding Summary",
+      "url": "https://www.federalreserve.gov/releases/cp/about.htm",
+      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Direct background on the Federal Reserve commercial paper release methodology and coverage for AA financial CP. Safe and useful context; no explicit post-cutoff page state."
+    },
+    {
+      "stage": "cached",
+      "title": "Board of Governors of the Federal Reserve System - Commercial Paper Rates and Outstanding Summary - Volume Statistics for Commercial Paper Issuance",
+      "url": "http://catalog.data.gov/dataset/commercial-paper-rates-and-outstanding-summary-volume-statistics-for-commercial-paper-issu",
+      "query": "Federal Reserve commercial paper release 90-day AA financial commercial paper rate methodology RIFSPPFAAD90NB",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Dataset metadata for commercial paper issuance volumes by category including AA financial. Useful supporting context about underlying market activity; no explicit post-cutoff publication/update or outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Commercial Paper",
+      "url": "https://www.richmondfed.org/~/media/richmondfedorg/publications/research/economic_review/1981/pdf/er670202.pdf",
+      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Very old historical background on commercial paper markets. Safe but only tangentially useful for forecasting the specific near-term rate change."
+    },
+    {
+      "stage": "cached",
+      "title": "The Federal Reserve's response to the COVID‐19 contraction: An initial appraisal - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8250983",
+      "query": "Federal Reserve commercial paper release historical 90-day AA financial commercial paper rate comparable episodes",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General academic discussion of commercial paper and policy response. Safe background, but only weakly relevant to the exact short-horizon forecast."
     }
   ],
   "refilter_stats": {
     "kept": 20,
-    "dropped": 3,
+    "dropped": 0,
     "relevance": {
-      "high": 7,
+      "high": 5,
       "medium": 8,
-      "low": 8
+      "low": 7
     },
-    "supplemental_for_relevance": false
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
   }
 }

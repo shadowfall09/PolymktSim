@@ -142,14 +142,6 @@
       "search_index": 2
     },
     {
-      "title": "Table Data - U.S. Dollars to Euro Spot Exchange Rate | FRED | St. Louis Fed",
-      "url": "https://fred.stlouisfed.org/data/DEXUSEU",
-      "content": "# Table Data - U.S. Dollars to Euro Spot Exchange Rate | | | --- | | Title | U.S. Dollars to Euro Spot Exchange Rate | | Series ID | DEXUSEU | | Source | Board of Governors of the Federal Reserve System (US) | | Release | H.10 Foreign Exchange Rates | | Seasonal Adjustment | Not Seasonally Adjusted | | Frequency | Daily | | Units | U.S. Dollars to One Euro | | Date Range | 1999-01-04 to 2026-06-12 | | Last Updated | 2026-06-15 3:17 PM CDT | | Notes | Noon buying rates in New York City for cable transfers payable in foreign currencies. For questions on the data, please contact the data source. For questions on FRED functionality, please contact us here. | [...] #2026-04-30|1.1729 #2026-05-01|1.1755 #2026-05-04|1.1698 #2026-05-05|1.1707 #2026-05-06|1.1753 #2026-05-07|1.1764 #2026-05-08|1.1773 #2026-05-11|1.1780 #2026-05-12|1.1733 #2026-05-13|1.1711 #2026-05-14|1.1678 #2026-05-15|1.1627 #2026-05-18|1.1649 #2026-05-19|1.1602 #2026-05-20|1.1620 #2026-05-21|1.1589 #2026-05-22|1.1603 #2026-05-25| . #2026-05-26|1.1620 #2026-05-27|1.1631 #2026-05-28|1.1649 #2026-05-29|1.1679 #2026-06-01|1.1624 #2026-06-02|1.1642 #2026-06-03|1.1605 #2026-06-04|1.1629 #2026-06-05|1.1533 #2026-06-08|1.1545...",
-      "score": 0.62330866,
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "search_index": 1
-    },
-    {
       "title": "Euro-Dollar Expected To Rise Later This Year: Rabobank",
       "url": "https://www.exchangerates.org.uk/news/46112/2026-06-04-euro-dollar-expected-to-rise-later-this-year-rabobank.html",
       "content": "Euro-Dollar Expected to Rise Later This Year The Euro to Dollar (EUR/USD) exchange rate has drifted lower over the past week and is trading near 1.1610 after failing to sustain gains above 1.17 during May. Foreign exchange analysts at Rabobank expect the US Dollar to retain support in the near term before weakening later in the year, allowing EUR/USD to trend higher during the second half of 2026. The bank notes that changing interest rate expectations have been a major driver of currency markets since the outbreak of the Iran conflict. While investors had previously expected further Federal Reserve rate cuts this year, markets have become more hawkish on the US outlook, helping to underpin the Dollar. [...] Exchange Rates Logo ## Exchange Rates Promo Compare International Money Transfer Providers # Euro-Dollar Expected To Rise Later This Year: Rabobank xml encoding=\"UTF-8\" Euro-Dollar Expected to Rise Later This Year The Euro to Dollar (EUR/USD) exchange rate has drifted lower over the past week and is trading near 1.1610 after failing to sustain gains above 1.17 during May. Latest — Exchange Rates: Euro to Dollar (EUR/USD): 1.16089 (+0.01%) Pound to Dollar (GBP/USD): 1.34295 (...",
@@ -414,21 +406,27 @@
     "Federal Reserve H.10 euro exchange rate source institutions ECB Fed daily spot rates",
     "EUR USD exchange rate outlook Reuters Bloomberg analyst notes Federal Reserve dollar euro spot rate"
   ],
-  "refilter_queries": [
-    "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-    "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-    "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com"
-  ],
+  "refilter_queries": [],
   "refilter_audit": [
     {
       "stage": "cached",
-      "title": "US Dollar / Euro Exchange Rate — 1.14 | govspending",
-      "url": "https://govspending.org/series/DEXUSEU",
-      "query": "USD EUR spot exchange rate historical periods Federal Reserve H.10 DEXUSEU comparable daily series",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet gives a concrete post-cutoff page state, saying 'As of June 5, 2026, the current ... value is 1.15' and describes recent movement. This is explicit after the 2026-06-20 cutoff."
+      "title": "Euro (EUR) to US Dollar (USD) exchange rate history",
+      "url": "https://www.exchangerates.org.uk/EUR-USD-exchange-rate-history.html",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Pre-cutoff historical exchange-rate data for June 2026 directly informs recent trend and level for the target USD/EUR movement. Snippet shows only dates before the 2026-06-20 cutoff and no post-cutoff publication/update state."
+    },
+    {
+      "stage": "cached",
+      "title": "Euro (EUR) to US Dollar (USD) Exchange Rates for June 4, 2026",
+      "url": "https://www.exchange-rates.org/exchange-rate-history/eur-usd-2026-06-04",
+      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Contains pre-cutoff historical EUR/USD data for 2026, which is relevant background for recent FX behavior. No explicit post-cutoff publication/update or completed post-cutoff outcome is shown."
     },
     {
       "stage": "cached",
@@ -436,9 +434,49 @@
       "url": "https://www.kaggle.com/datasets/jeresalmisto/calcfi-usd-eur",
       "query": "USD EUR spot exchange rate historical periods Federal Reserve H.10 DEXUSEU comparable daily series",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe background only. Describes the dataset coverage and source/history without any explicit post-cutoff publication/update or outcome for the target week. Low direct forecasting value."
+      "reason": "General dataset description for the same FRED series provides source/background context and methodology. Safe because it does not state any post-cutoff publication or post-cutoff values."
+    },
+    {
+      "stage": "cached",
+      "title": "U.S. Dollars to Euro Spot Exchange Rate | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/graph?g=1QLne",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Direct FRED graph snippet with pre-cutoff DEXUSEU observations is highly relevant to forecasting the series. All listed dates are before cutoff and there is no explicit post-cutoff page state."
+    },
+    {
+      "stage": "cached",
+      "title": "USD/EUR (EUR=X) Stock Historical Prices & Data - Yahoo Finance",
+      "url": "https://ca.finance.yahoo.com/quote/EUR%3DX/history",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Historical Yahoo Finance EUR=X prices through early June 2026 provide contemporaneous FX market context relevant to the forecast. Snippet only shows pre-cutoff dates and no explicit post-cutoff publication/update."
+    },
+    {
+      "stage": "cached",
+      "title": "Forex Seasonality – June 2026: Will EUR/USD Rally Back toward 1.18?",
+      "url": "https://www.cityindex.com/en-uk/news-and-analysis/forex-seasonality-june-2026-will-eur-usd-rally-back-toward-1-18",
+      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Published before cutoff on 2026-06-05 and offers prospective seasonal analysis for EUR/USD in June 2026, which can inform directional expectations. No leakage from post-cutoff publication or completed post-cutoff result."
+    },
+    {
+      "stage": "cached",
+      "title": "Forex Seasonality – June 2026: Will EUR/USD Rally Back toward 1.18?",
+      "url": "https://www.forex.com/ie/news-and-analysis/forex-seasonality-june-2026-will-eur-usd-rally-back-toward-1-18",
+      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Appears to be the same pre-cutoff seasonal analysis discussing June 2026 EUR/USD prospects. Useful supporting context and no explicit post-cutoff publication/update or completed outcome in the snippet."
     },
     {
       "stage": "cached",
@@ -448,17 +486,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe prospective/contextual evidence. Contains analyst forecasts and narrative about EUR/USD outlook, which can inform direction expectations. No explicit post-cutoff publication marker or completed post-cutoff outcome in the snippet."
-    },
-    {
-      "stage": "cached",
-      "title": "DEXUSEU — US Dollar / Euro Exchange Rate | govspending.org",
-      "url": "https://govspending.org/series/DEXUSEU",
-      "query": "Federal Reserve H.10 release DEXUSEU U.S. dollars to one euro official data methodology",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Leakage: includes 'Current ... As of June 5, 2026' with a current value, which is an explicit post-cutoff page state."
+      "reason": "Contains analyst forecasts and expectations for EUR/USD levels over coming months, which are valid prospective evidence before the cutoff. No explicit post-cutoff publication date or post-cutoff realized outcome is given."
     },
     {
       "stage": "cached",
@@ -468,7 +496,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe methodological/context item from FRED graph page. It identifies the exact series, source, units, and release notes relevant to resolution. No explicit post-cutoff data point or outcome shown."
+      "reason": "FRED graph metadata and notes for the exact target series provide authoritative source, units, and release context. Safe and relevant as background; no post-cutoff values or page state are shown."
     },
     {
       "stage": "cached",
@@ -478,7 +506,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe source-definition/context item for the exact resolving series. Useful for understanding units/frequency/source, with no explicit post-cutoff observation or result in the snippet."
+      "reason": "Official FRED series page for DEXUSEU is directly relevant as the resolution source and provides series metadata. Snippet contains no explicit post-cutoff publication/update or realized post-cutoff data."
     },
     {
       "stage": "cached",
@@ -486,9 +514,19 @@
       "url": "https://aws.amazon.com/marketplace/pp/prodview-4ztvijzvvllpa",
       "query": "USD EUR spot exchange rate historical periods Federal Reserve H.10 DEXUSEU comparable daily series",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe generic dataset description from AWS Marketplace. It provides historical-series metadata and source information, but little direct forecasting value and no explicit post-cutoff result."
+      "reason": "Safe pre-cutoff background on the DEXUSEU dataset definition, units, and source. No explicit post-cutoff publication/update or outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "EUR/USD (EURUSD=X) stock historical prices and data",
+      "url": "https://sg.finance.yahoo.com/quote/EURUSD%3DX/history",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Historical EUR/USD prices through June 11, 2026 are pre-cutoff and directly informative for recent exchange-rate trend before the forecast window. No explicit post-cutoff publication/update marker."
     },
     {
       "stage": "cached",
@@ -496,9 +534,29 @@
       "url": "https://aws.amazon.com/marketplace/pp/prodview-4ztvijzvvllpa",
       "query": "DEXUSEU FRED series definition U.S. dollars to one euro Federal Reserve H.10",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Same as item 6: safe metadata/background about the dataset, no explicit post-cutoff publication state or realized outcome, but low forecasting relevance."
+      "reason": "Duplicate-style dataset overview for DEXUSEU with safe background on series construction and source. No explicit post-cutoff publication/update or realized outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Table Data - U.S. Dollars to Euro Spot Exchange Rate | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/data/DEXUSEU",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
+      "llm_keep": false,
+      "relevance": "high",
+      "disposition": "dropped",
+      "reason": "Explicit post-cutoff page state: 'Date Range ... to 2026-06-12' and 'Last Updated | 2026-06-15 3:17 PM CDT.' This is a concrete page snapshot after the 2026-06-20 cutoff? Wait, 2026-06-15 is before cutoff, but the item gives a concrete page state and updated timestamp. Since uncertain whether this snapshot was captured later and it includes a page-state marker, fail closed and drop."
+    },
+    {
+      "stage": "cached",
+      "title": "Euro-Dollar Expected To Rise Later This Year: Rabobank",
+      "url": "https://www.exchangerates.org.uk/news/46112/2026-06-04-euro-dollar-expected-to-rise-later-this-year-rabobank.html",
+      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff analyst commentary and forecast about EUR/USD direction later in 2026. Prospective opinion can inform expectations, though only indirectly for the exact one-week horizon."
     },
     {
       "stage": "cached",
@@ -508,7 +566,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Safe generic FRED page metadata and categories. No explicit post-cutoff observation or completed outcome; limited direct forecasting usefulness."
+      "reason": "Generic FRED series page metadata/background. Safe and relevant only as low-value context; no explicit post-cutoff publication/update or realized result in the snippet."
     },
     {
       "stage": "cached",
@@ -518,7 +576,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Highly relevant and safe. It states the H.10 release schedule: data are updated every Monday at 4:15 p.m. and available through Friday of the previous business week. This directly informs timing/availability for the resolving series without leaking post-cutoff values."
+      "reason": "Directly relevant release schedule information from the Federal Reserve H.10: data are updated every Monday at 4:15 p.m. and available through Friday of the previous business week. This helps understand publication timing for the resolving series and is safe prospective/background information."
     },
     {
       "stage": "cached",
@@ -528,7 +586,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Prospective forecast table for EUR/USD levels in 2026, directly relevant as supporting evidence for expected direction around late June 2026. No explicit post-cutoff publication/update date or completed post-cutoff outcome is shown."
+      "reason": "Forecast table includes 2026 Q2F for USD per EUR, providing contemporaneous professional expectations for the euro-dollar level. Useful but coarse for the exact June 21 to June 28 comparison."
     },
     {
       "stage": "cached",
@@ -538,7 +596,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Safe background on exchange-rate data sources. Does not contain post-cutoff publication/state or outcomes. Only tangentially useful for forecasting the rate move."
+      "reason": "Generic background on exchange-rate data sources, including Federal Reserve H.10. Safe but only tangentially useful for forecasting the exact weekly move."
     },
     {
       "stage": "cached",
@@ -546,9 +604,19 @@
       "url": "http://catalog.data.gov/dataset/foreign-exchange-rates",
       "query": "Federal Reserve H.10 release DEXUSEU U.S. dollars to one euro official data methodology",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "General metadata about the Federal Reserve foreign exchange dataset. Safe and contemporaneous as background, but not informative about the specific week-to-week movement."
+      "reason": "Background description of the Federal Reserve H.10 foreign exchange dataset and methodology. Safe contextual information about the resolving data source; not a post-cutoff result."
+    },
+    {
+      "stage": "cached",
+      "title": "EOG Resources Elliott Wave Outlook: Range Breakout Could Target ...",
+      "url": "https://www.instagram.com/p/DTK58rGCIaI",
+      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff dated snapshot (16 Jun 2026) mentioning USD strength/EUR moves and CFTC positioning, which can inform near-term FX direction. No explicit post-cutoff publication or outcome language."
     },
     {
       "stage": "cached",
@@ -558,7 +626,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff research PDF dated 2025/03 discussing EUR/USD equilibrium around 1.20 and valuation context. Useful supporting macro background; no explicit post-cutoff publication/update or realized post-cutoff result."
+      "reason": "Background research published before cutoff (2025/03) on EUR/USD equilibrium and valuation. Useful macro context for exchange-rate direction; no post-cutoff leakage."
     },
     {
       "stage": "cached",
@@ -568,7 +636,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Historical academic study of the dollar-euro exchange rate. Safe background with no post-cutoff leakage, but weak relevance to the exact 2026-06-21 to 2026-06-28 forecast."
+      "reason": "Old academic background on dollar-euro exchange-rate dynamics. Safe and pre-cutoff, though only tangentially useful for this specific one-week forecast."
     },
     {
       "stage": "cached",
@@ -576,9 +644,9 @@
       "url": "https://wgetsnaps.github.io/federalreserve.gov--foreign-exchange-rates-h10/releases/h10/hist/index.html",
       "query": "Federal Reserve H.10 release DEXUSEU U.S. dollars to one euro official data methodology",
       "llm_keep": true,
-      "relevance": "medium",
+      "relevance": "high",
       "disposition": "kept",
-      "reason": "Contains the H.10 release schedule and mechanics: updated every Monday at 4:15 p.m. with data through the prior Friday. This directly informs timing/availability of the resolving data and is safe because it states a standing schedule, not a post-cutoff realized page state."
+      "reason": "Directly relevant source metadata for the resolving series: explains H.10 update schedule and data availability timing. This is contemporaneous structural information, not a post-cutoff realized value."
     },
     {
       "stage": "cached",
@@ -588,7 +656,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Background documentation identifying DEXUSEU as U.S. dollars to 1 euro. Safe and relevant only for series interpretation, not for forecasting direction."
+      "reason": "General historical/technical documentation about FRED exchange-rate series including DEXUSEU. Safe but only weakly informative for forecasting the weekly move."
     },
     {
       "stage": "cached",
@@ -598,7 +666,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic charting page for FRED exchange rates including DEXUSEU. No explicit post-cutoff publication/update or completed outcome is shown; limited forecasting value."
+      "reason": "Generic page about FRED exchange rates including DEXUSEU. No explicit post-cutoff publication or realized post-cutoff state; limited forecasting value."
     },
     {
       "stage": "cached",
@@ -606,9 +674,9 @@
       "url": "https://www.federalreserve.gov/releases/h10/hist",
       "query": "Federal Reserve H.10 release DEXUSEU U.S. dollars to one euro official data methodology",
       "llm_keep": true,
-      "relevance": "medium",
+      "relevance": "high",
       "disposition": "kept",
-      "reason": "Federal Reserve H.10 historical page states the regular update cadence and data coverage through the previous business week. Useful for understanding release timing and resolution mechanics; no explicit post-cutoff realized outcome."
+      "reason": "Official Federal Reserve H.10 historical page describing update cadence and coverage. Directly relevant to resolution timing and series mechanics; no post-cutoff outcome."
     },
     {
       "stage": "cached",
@@ -616,9 +684,9 @@
       "url": "https://fred.stlouisfed.org/release?rid=17",
       "query": "Federal Reserve H.10 euro exchange rate source institutions ECB Fed daily spot rates",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "FRED release landing page for H.10. Safe background about the release source, but provides little direct signal on whether USD/EUR will increase over the target week."
+      "reason": "FRED release page for H.10 provides release context and tools. Relevant background on the data source, with no explicit post-cutoff publication/update or realized value."
     },
     {
       "stage": "cached",
@@ -628,307 +696,98 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff research/background piece (dated 2024) discussing ECB vs Fed policy divergence and expected rate paths, which can inform EUR/USD direction. It contains prospective analysis rather than post-cutoff outcomes or explicit post-cutoff publication state."
+      "reason": "Pre-cutoff macro analysis on ECB/Fed policy divergence and implications for the euro. Useful supporting context for EUR/USD direction; no leakage."
     },
     {
-      "stage": "supplemental_search",
-      "title": "Euro (EUR) to US Dollar (USD) exchange rate history",
-      "url": "https://www.exchangerates.org.uk/EUR-USD-exchange-rate-history.html",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Historical pre-cutoff EUR/USD exchange-rate data through June 13, 2026. No explicit post-cutoff publication/update marker or post-cutoff outcome. Useful as recent trend context for forecasting the June 21 to June 28 move."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "U.S. Dollars to Euro Spot Exchange Rate | FRED | St. Louis Fed",
-      "url": "https://fred.stlouisfed.org/graph?g=1QLne",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Directly references the exact FRED series named in the resolution criteria and shows pre-cutoff values only. No explicit post-cutoff publication/update marker. Highly relevant primary data context."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "USD/EUR (EUR=X) Stock Historical Prices & Data - Yahoo Finance",
-      "url": "https://ca.finance.yahoo.com/quote/EUR%3DX/history",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Historical Yahoo Finance exchange-rate data for dates before the cutoff. No explicit post-cutoff publication/update marker or completed post-cutoff state. Useful supporting recent-price context."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "USD/EUR (EUR=X) stock historical prices and data – Yahoo Finance",
-      "url": "https://uk.finance.yahoo.com/quote/EUR%3DX/history",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes concrete post-cutoff page state with entries for 22 Jun 2026 and 23 Jun 2026, which are after the 2026-06-20 cutoff. This is leakage."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "June 4, 2026: Euro to US Dollar Exchange Rate June 4 2026 Prediction Market",
-      "url": "https://robinhood.com/us/en/prediction-markets/fx/events/euro-to-us-dollar-exchange-rate-june-4-2026-jun-04-2026",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Prediction market page for June 4, 2026 describes an event day that is already in the past relative to the cutoff and includes contract resolution language ('Contract Resolves', 'Determines the outcome'). Retrospective/completed-event framing makes it unsafe."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "EUR/USD (EURUSD=X) stock historical prices and data",
-      "url": "https://sg.finance.yahoo.com/quote/EURUSD%3DX/history",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Historical EUR/USD prices for pre-cutoff dates only. No explicit post-cutoff publication/update marker or post-cutoff result. Useful as supporting recent market context."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Table Data - U.S. Dollars to Euro Spot Exchange Rate | FRED | St. Louis Fed",
-      "url": "https://fred.stlouisfed.org/data/DEXUSEU",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Direct FRED table for the exact resolution series, with date range only through 2026-06-12 and last updated 2026-06-15, both before the cutoff. Strong primary-data context and clearly safe."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "EUR/USD –30.04.2026 - Orbex Forex Trading Blog",
-      "url": "https://www.orbex.com/blog/en/2026/04/eur-usd-30-04-2026",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly shows post-cutoff content references such as 'Technical Analysis Intraday Analysis 06.07.2026' and later July 2026 page state. Concrete post-cutoff page state is leakage."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "EUR/USD – 04.02.2026 - Orbex Forex Trading Blog",
-      "url": "https://www.orbex.com/blog/en/2026/02/eur-usd-04-02-2026",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly shows post-cutoff page state with related items dated '08.07.2026'. Concrete post-cutoff page state after the cutoff makes it unsafe."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Speeches and Testimony of Federal Reserve Officials",
-      "url": "https://www.federalreserve.gov/newsevents/speeches-testimony.htm",
-      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Federal Reserve speeches/testimony page is safe background from an official source and could help identify contemporaneous policy signals affecting USD/EUR, though the snippet is generic and not directly tied to this exact forecast."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Euro (EUR) to US Dollar (USD) Exchange Rates for June 4, 2026",
-      "url": "https://www.exchange-rates.org/exchange-rate-history/eur-usd-2026-06-04",
-      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Pre-cutoff historical exchange-rate data for 2026-06-04. Safe background on EUR/USD level/trend before the cutoff; no explicit post-cutoff publication or outcome leakage for the target window."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Euro to US Dollar Exchange Rate June 4 2026 - Robinhood",
-      "url": "https://robinhood.com/us/en/prediction-markets/fx/events/euro-to-us-dollar-exchange-rate-june-4-2026-jun-04-2026",
-      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Title and snippet are about a June 4, 2026 event that already resolved before the cutoff and include completed-result/contract-resolution language ('Event Day June 4, 2026', 'Contract Resolves'). Retrospective market page, not useful prospective evidence."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Euro-Dollar Expected To Rise Later This Year: Rabobank",
-      "url": "https://www.exchangerates.org.uk/news/46112/2026-06-04-euro-dollar-expected-to-rise-later-this-year-rabobank.html",
-      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-      "llm_keep": true,
-      "relevance": "high",
-      "disposition": "kept",
-      "reason": "Pre-cutoff analyst outlook directly about EUR/USD direction later in 2026. This is prospective evidence and relevant to forecasting whether USD per EUR will rise over the specified week."
-    },
-    {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Global Economic Outlook: July 2025",
       "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/global-economic-outlook-july-2025",
       "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Macro outlook published well before cutoff discussing expected Fed and ECB policy paths through 2026. Useful supporting context for EUR/USD, with no explicit post-cutoff publication/update leakage."
+      "reason": "Pre-cutoff economic outlook with forecasts for Fed and ECB policy paths during 2026, a meaningful driver of EUR/USD. No explicit post-cutoff publication or completed-result language."
     },
     {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "IMF downgrades global growth outlook as Iran war hits prices - as it happened",
       "url": "https://www.reuters.com/world/imf-world-bank-meetings-global-growth-downgrade-expected-iran-war-hits-prices-2026-04-14",
       "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff Reuters macro coverage on IMF growth outlook and inflation/energy-shock risks. Indirect but relevant contemporaneous context for dollar/euro drivers; no post-cutoff outcome leakage."
+      "reason": "Pre-cutoff Reuters live coverage dated 2026-04-14. Contains contemporaneous macro context on IMF growth outlook, inflation, and energy-price shock that could affect USD/EUR, with no explicit post-cutoff publication or outcome leakage."
     },
     {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Slower, but steady US job growth anticipated in May",
       "url": "https://www.reuters.com/business/slower-steady-us-job-growth-anticipated-may-2026-06-05",
       "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
       "llm_keep": true,
-      "relevance": "medium",
+      "relevance": "high",
       "disposition": "kept",
-      "reason": "Pre-cutoff Reuters preview/expectation piece ('job growth anticipated') about U.S. labor data and oil-shock uncertainty. Prospective macro evidence that could affect USD/EUR; safe to retain."
+      "reason": "Pre-cutoff Reuters article dated 2026-06-05. A preview of U.S. jobs data and discussion of oil-shock uncertainty is directly relevant to near-term USD moves versus EUR. No explicit post-cutoff publication/update or completed post-cutoff result is stated."
     },
     {
-      "stage": "supplemental_search",
-      "title": "The WSJ Dollar Index Falls 0.31% to 96.27",
-      "url": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-may-be-weighed-by-risk-off-sentiment-da16097b",
-      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet uses present-day market state language ('today', 'is down ... to 96.27') without a clear publication date, creating uncertainty about whether it reflects a post-cutoff page state. Per fail-closed rule, drop when uncertain."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "ICG PLC, ICG:LSE summary - FT.com",
-      "url": "https://markets.ft.com/data/equities/tearsheet/summary?s=ICG%3ALSE",
-      "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly gives a concrete post-cutoff page state: 'Data delayed at least 20 minutes, as of Jul 09 2026 16:52 BST.' Also unrelated equity page, so drop for leakage and irrelevance."
-    },
-    {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Indian rupee rallies on RBI measures to draw inflows to help oil-hit currency",
       "url": "https://www.reuters.com/world/india/indian-rupee-rallies-rbi-measures-draw-inflows-help-oil-hit-currency-2026-06-05",
       "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff Reuters report on RBI measures and oil-hit currency conditions. Indirect FX/risk-sentiment context that may inform broad dollar dynamics; no explicit post-cutoff leakage."
+      "reason": "Pre-cutoff Reuters article dated 2026-06-05 about FX-market reaction to RBI measures and oil-hit currency conditions. Useful supporting context on global FX and oil-driven dollar dynamics; no explicit post-cutoff leakage."
     },
     {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Insights | J.P. Morgan Private Bank Latin America EN",
       "url": "https://privatebank.jpmorgan.com/latam/en/insights",
       "query": "EUR USD euro dollar exchange rate forecast ECB Fed inflation payrolls PMI \"2026-06-04\" site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com available on or before 2026-06-04",
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General investment-insights landing page with mostly older dated content. Safe but only tangentially relevant to forecasting the specific USD/EUR weekly move."
+      "reason": "Safe but weakly useful background page for J.P. Morgan insights. The snippet references dated commentary from 2025 and contains no explicit post-cutoff publication or outcome leakage, but it is only tangential to forecasting USD/EUR for the target week."
     },
     {
-      "stage": "supplemental_search",
-      "title": "EURUSD Euro vs US Dollar EUR USD Historical Forex Data | Myfxbook",
-      "url": "https://www.myfxbook.com/forex-market/currencies/EURUSD-historical-data",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes post-cutoff concrete page state with Jun 29 and Jun 30, 2026 historical data, which leaks outcomes after the 2026-06-20 cutoff."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Forex Seasonality – June 2026: Will EUR/USD Rally Back toward 1.18?",
-      "url": "https://www.cityindex.com/en-uk/news-and-analysis/forex-seasonality-june-2026-will-eur-usd-rally-back-toward-1-18",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
+      "stage": "cached",
+      "title": "Speeches and Testimony of Federal Reserve Officials",
+      "url": "https://www.federalreserve.gov/newsevents/speeches-testimony.htm",
+      "query": "site:federalreserve.gov OR site:fred.stlouisfed.org DEXUSEU \"2026-06-04\" OR \"on or before 2026-06-04\" H.10 euro dollar exchange rate methodology release calendar daily U.S. Dollars to One Euro",
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Published before cutoff (June 5, 2026) and contains prospective seasonal analysis for EUR/USD in June, which is relevant background for forecasting direction over the target week."
+      "reason": "Federal Reserve speeches/testimony landing page is safe background and potentially useful for identifying pre-cutoff Fed communications that could influence USD/EUR expectations. No explicit post-cutoff publication or completed-result language in the snippet."
     },
     {
-      "stage": "supplemental_search",
-      "title": "EUR/USD (EURUSD=X) stock historical prices and data – Yahoo Finance",
-      "url": "https://uk.finance.yahoo.com/quote/EURUSD%3DX/history",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet shows post-cutoff historical prices for Jun 22-24, 2026, giving concrete after-cutoff market outcomes and therefore leaking resolution-period information."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Forex Seasonality – June 2026: Will EUR/USD Rally Back toward 1.18?",
-      "url": "https://www.forex.com/ie/news-and-analysis/forex-seasonality-june-2026-will-eur-usd-rally-back-toward-1-18",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Appears to be a pre-cutoff June 2026 seasonality preview discussing EUR/USD tendencies and contemporaneous drivers; no explicit post-cutoff publication or completed post-cutoff outcome is shown."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "EOG Resources Elliott Wave Outlook: Range Breakout Could Target ...",
-      "url": "https://www.instagram.com/p/DTK58rGCIaI",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Pre-cutoff positioning snapshot dated 16 Jun 2026 could provide contemporaneous sentiment/background on USD and EUR moves; no explicit post-cutoff result is present."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Crude Oil Futures Overview",
-      "url": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.html",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly lists a post-cutoff page state/news item dated 29 Jun 2026, so it must be dropped despite only tangential relevance."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Brent Last Day Financial Overview - CME Group",
-      "url": "https://www.cmegroup.com/markets/energy/crude-oil/brent-crude-oil-last-day.html",
-      "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly says 'Last Updated 10 Jul 2026' and shows post-cutoff page state, which is disqualifying leakage."
-    },
-    {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Instagram",
       "url": "https://www.instagram.com/reel/DTN0RnRjJPy",
       "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Only shows January 2026 Instagram post dates and generic market-news context; no explicit post-cutoff publication or outcome. Safe but only tangentially relevant."
+      "reason": "Instagram reel page shows posts from January 2026, well before cutoff, and no explicit post-cutoff publication or outcome. However, the snippet is generic social-media content with little direct value for forecasting USD/EUR."
     },
     {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "BW LPG Limited (BWLP) Edges Higher as Support Holds ...",
       "url": "https://services.thebmc.co.uk/first-dry/BW-LPG-Limited-BWLP-Edges-Higher-as-Support-Holds-Resistance-Looms-28-8001",
       "query": "EUR/USD weekly seasonality historical June base rate analysis CFTC positioning options implied volatility \"2026-06-04\" available on or before 2026-06-04 site:fxstreet.com OR site:dailyfx.com OR site:cmegroup.com OR site:investing.com",
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic market commentary with no explicit post-cutoff publication or outcome; safe but largely irrelevant to forecasting USD/EUR exchange-rate movement."
+      "reason": "Appears to be generic market-technical commentary about an unrelated stock/security. No explicit post-cutoff publication date or completed post-cutoff outcome is visible, so it is safe, but it is largely irrelevant to USD/EUR forecasting."
     }
   ],
   "refilter_stats": {
-    "kept": 37,
-    "dropped": 13,
+    "kept": 36,
+    "dropped": 1,
     "relevance": {
-      "high": 4,
+      "high": 9,
       "medium": 20,
-      "low": 26
+      "low": 8
     },
-    "supplemental_for_relevance": true
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
   }
 }

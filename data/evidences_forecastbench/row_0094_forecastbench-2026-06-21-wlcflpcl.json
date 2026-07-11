@@ -2,10 +2,10 @@
   "row_index": 94,
   "market_id": "forecastbench_2026_06_21_WLCFLPCL",
   "slug": "",
-  "question": "Will the weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve have increased by 2026-06-28 as compared to its value on 2026-06-21?\n\nResolution criteria: Resolves to the value found at https://fred.stlouisfed.org/series/WLCFLPCL once the data is published.\n\nBackground: The notes from the release: For questions on the data, please contact the data source: https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/%\r\nFor questions on FRED functionality, please contact: https://fred.stlouisfed.org/contactus/.  The notes from the series: For questions on the data, please contact the data source (https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/%). For questions on FRED functionality, please contact us here (https://fred.stlouisfed.org/contactus/)..  Additional background of the series:  1. the units of the series: Millions of U.S. Dollars.  2. the seasonal adjustments of the series:  Not Seasonally Adjusted  3. the update frequency: Weekly, As of Wednesday",
+  "question": "Will the weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve have increased by 2026-06-28 as compared to its value on 2026-06-21? Resolution criteria: Resolves to the value found at https://fred.stlouisfed.org/series/WLCFLPCL once the data is published. Background: The notes from the release: For questions on the data, please contact the data source: https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/% For questions on FRED functionality, please contact: https://fred.stlouisfed.org/contactus/. The notes from the series: For questions on the data, please contact the data source (https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/%). For questions on FRED functionality, please contact us here (https://fred.stlouisfed.org/contactus/).. Additional background of the series: 1. the units of the series: Millions of U.S. Dollars. 2. the seasonal adjustments of the series: Not Seasonally Adjusted 3. the update frequency: Weekly, As of Wednesday",
   "event_title": "Will the weekly dollar amount of loans made under the primary credit lending program by the Federal Reserve have increased by 2026-06-28 as compared to its value on 2026-06-21?\n\nResolution criteria: Resolves to the value found at https://fred.stlouisfed.org/series/WLCFLPCL once the data is published.\n\nBackground: The notes from the release: For questions on the data, please contact the data source: https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/%\r\nFor questions on FRED functionality, please contact: https://fred.stlouisfed.org/contactus/.  The notes from the series: For questions on the data, please contact the data source (https://www.federalreserve.gov/apps/ContactUs/feedback.aspx?refurl=/releases/h41/%). For questions on FRED functionality, please contact us here (https://fred.stlouisfed.org/contactus/)..  Additional background of the series:  1. the units of the series: Millions of U.S. Dollars.  2. the seasonal adjustments of the series:  Not Seasonally Adjusted  3. the update frequency: Weekly, As of Wednesday",
-  "resolution_date": "2026-06-28",
-  "evidence_cutoff_date": "2026-06-27",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
   "end_date_limit": "2026-06-27",
   "row_end_date_raw": "2026-06-28",
   "expanded_queries": [
@@ -37,6 +37,14 @@
     "llm_rewrite_verification_failed_batch_count": 0
   },
   "evidences": [
+    {
+      "title": "The Fed: DDP: Factors Affecting Reserve Balances (H.4.1)",
+      "url": "https://www.federalreserve.gov/feeds/h41.html",
+      "content": "Other Regulations Supervision & Enforcement Community Development Research & Analysis Consumer Resources ## Factors Affecting Reserve Balances (H.4.1) ### Announcements This feed provides information about factors affecting reserve balances data from the Federal Reserve Board's H.4.1 release available through the Data Download Program (DDP). April 30, 2026 February 05, 2026 December 18, 2025 October 31, 2025 [...] Consistent with generally accepted accounting principles, the assets and liabilities of TALF II LLC have been consolidated with the assets and liabilities of the FRBNY in the preparation of the statements of condition shown on the release because the FRBNY is the managing member of TALF II LLC. The net portfolio holdings of TALF II LLC appear as an asset on the statement of condition of the FRBNY (now table 6), the consolidated statement of condition of all Federal Reserve Banks (now table 5), factors affecting reserve balances of depository institutions (table 1), and information on principal accounts of credit facilities LLC (table 4). The amount provided by the U.S. Treasury as credit protection for the TALF II LLC is included in \"Treasury contributions to credit fa...",
+      "score": 0.8458536,
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "search_index": 1
+    },
     {
       "title": "The Fed - Discount Window Lending",
       "url": "https://www.federalreserve.gov/regreform/discount-window.htm",
@@ -198,18 +206,26 @@
       "search_index": 3
     },
     {
+      "title": "[PDF] A User's Guide to Reducing the Federal Reserve's Balance Sheet",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2026019pap.pdf",
+      "content": "Assets Value (Billions) Liabilities & Capital Value (Billions) U.S. Treasury Securities $4,352 Reserve Balances $3,073 Agency Securities (MBS) $2,010 Currency $2,390 Other Assets $284 Treasury General Account (TGA) $806 (incl. discount window, Foreign Reverse Repo Pool $325 SRP, and FIMA repo) Other Liabilities & Capital $52 (incl. ON RRP) Total Assets $6,646 Total Liabilities & Capital $6,646 Table 2: Federal Reserve Balance Sheet Note: This table is based on data from the Federal Reserve’s H.4.1 release for the week ending March 11, 2026. [...] Figure 2 Source: Federal Reserve Bank of St. Louis FRED, “Liabilities and Capital: Other Factors Draining Reserve Balances: Currency in Circulation: Week Average (WCURCIR)” , “Liabilities and Capital: Other Factors Draining Reserve Balances: Reserve Balances with Federal Reserve Banks: Week Average (WRESBAL)”, “Liabilities and Capital: Liabilities: Reverse Repurchase Agreements: Others: Week Average (WREPODEL)”, “Liabilities and Capital: Liabilities: De-posits with F.R. Banks, Other Than Reserve Balances: U.S. Treasury, General Account: Week Average (WTREGEN)”, “Liabilities and Capital: Liabilities: Total Liabilities (Less Eliminations...",
+      "score": 0.69697046,
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "search_index": 1
+    },
+    {
+      "title": "Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level (WLCFLPCL) | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/series/WLCFLPCL",
+      "content": "# Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level (WLCFLPCL) Observations 2026-06-10: 6,606 | Millions of U.S. Dollars, Not Seasonally Adjusted | Weekly, As of Wednesday Updated: Jun 11, 2026 3:33 PM CDT Next Release Date: Jun 18, 2026 Observations 2026-06-10: 6,606 Updated: Jun 11, 2026 3:33 PM CDT Next Release Date: Jun 18, 2026 | | | | --- | 2026-06-10: | 6,606 | | | 2026-06-03: | 6,072 | | | 2026-05-27: | 6,362 | | | 2026-05-20: | 5,599 | | | 2026-05-13: | 6,002 | | | View All | Units: Millions of U.S. Dollars, Not Seasonally Adjusted Frequency: Weekly, As of Wednesday Fullscreen Data in this graph are copyrighted. Please review the copyright information in the series notes before sharing. [...] Custom Graph Link Embed in Website Graph Image Link Add to Data List Get Email Notification ## Notes Source: Board of Governors of the Federal Reserve System (US) Release: H.4.1 Factors Affecting Reserve Balances Units: Millions of U.S. Dollars, Not Seasonally Adjusted Frequency: Weekly, As of Wednesday #### Notes: For questions on the data, please contact the data source. For questions on FRED functionality, please contact us here. #### Suggested Cita...",
+      "score": 0.6701125,
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "search_index": 3
+    },
+    {
       "title": "Loans: Primary Credit: Wednesday Level (WLCFLPCL) | FRED | St ...",
       "url": "https://fred.stlouisfed.org/series/WLCFLPCL",
       "content": "# Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level (WLCFLPCL) Observations 2026-06-10: 6,606 | Millions of U.S. Dollars, Not Seasonally Adjusted | Weekly, As of Wednesday Updated: Jun 11, 2026 3:33 PM CDT Next Release Date: Jun 18, 2026 Observations 2026-06-10: 6,606 Updated: Jun 11, 2026 3:33 PM CDT Next Release Date: Jun 18, 2026 | | | | --- | 2026-06-10: | 6,606 | | | 2026-06-03: | 6,072 | | | 2026-05-27: | 6,362 | | | 2026-05-20: | 5,599 | | | 2026-05-13: | 6,002 | | | View All | Units: Millions of U.S. Dollars, Not Seasonally Adjusted Frequency: Weekly, As of Wednesday Fullscreen Data in this graph are copyrighted. Please review the copyright information in the series notes before sharing. [...] Custom Graph Link Embed in Website Graph Image Link Add to Data List Get Email Notification ## Notes Source: Board of Governors of the Federal Reserve System (US) Release: H.4.1 Factors Affecting Reserve Balances Units: Millions of U.S. Dollars, Not Seasonally Adjusted Frequency: Weekly, As of Wednesday #### Notes: For questions on the data, please contact the data source. For questions on FRED functionality, please contact us here. #### Suggested Cita...",
       "score": 0.65940565,
-      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
-      "search_index": 2
-    },
-    {
-      "title": "H.4.1 Factors Affecting Reserve Balances | ALFRED",
-      "url": "https://alfred.stlouisfed.org/release?rid=20",
-      "content": "Millions of Dollars 2010-05-13 to 2019-08-20 2002-12-18 to 2019-08-14 Millions of U.S. Dollars 2019-08-21 to 2025-11-12 2002-12-18 to 2025-11-05 Millions of U.S. Dollars 2025-11-13 to 2026-06-25 2002-12-18 to 2026-06-24 - [x] Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level Weekly, Not Seasonally Adjusted, WLCFLPCL Units Release Dates Observation Period Millions of Dollars 2011-07-07 to 2019-08-20 2002-12-18 to 2019-08-14 Millions of U.S. Dollars 2019-08-21 to 2025-11-12 2002-12-18 to 2025-11-05 Millions of U.S. Dollars 2025-11-13 to 2026-06-25 2002-12-18 to 2026-06-24 - [x] Liabilities and Capital: Liabilities: Reverse Repurchase Agreements: Wednesday Level [...] Show More All ## Need Help? Help Email Us | Name | Release Dates | --- | | H.4.1 Factors Affecting Reserve Balances | 1997-03-06 | 2026-06-25 | | | | Link | | | | | 1997-03-06 | 2026-06-25 | | | | Source | | | | Board of Governors of the Federal Reserve System (US) | 1997-03-06 | 2026-06-25 | | | | Notes | | | | For questions on the data, please contact the data source: For questions on FRED functionality, please contact: | 1997-03-06 | 2026-06-25 | 5,223 Series Revisions - [x] Add to Gra...",
-      "score": 0.6479992,
       "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
       "search_index": 2
     },
@@ -222,12 +238,28 @@
       "search_index": 4
     },
     {
+      "title": "United States - Discount Window Primary Credit Rate - 2026 Data 2027 Forecast 2003 Historical",
+      "url": "https://tradingeconomics.com/united-states/primary-credit-rate-percent-d-na-fed-data.html",
+      "content": "##### Members ##### # United States - Discount Window Primary Credit Rate2026 Data 2027 Forecast 2003 Historical ## United States - Discount Window Primary Credit Rate was 3.75% in June of 2026, according to the United States Federal Reserve. Historically, United States - Discount Window Primary Credit Rate reached a record high of 6.25 in June of 2006 and a record low of 0.25 in March of 2020. Trading Economics provides the current actual value, an historical data chart and related indicators for United States - Discount Window Primary Credit Rate - last updated from the United States Federal Reserve on June of 2026. ## Markets ## GDP ## Labour ## Prices ## Money ## Trade ## Government ## Business ## Consumer ## Housing ## Taxes ## Energy ## Health ## Climate [...] ## Housing ## Taxes ## Energy ## Health ## Climate IOs app on Apple Android app on Google Play",
+      "score": 0.6326168,
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "search_index": 3
+    },
+    {
       "title": "USE OF THE FEDERAL RESERVE'S PRIMARY CREDIT PROGRAM IN EFFECTIVE LIQUIDITY MANAGEMENT | FDIC.gov",
       "url": "https://www.fdic.gov/news/financial-institution-letters/2003/fil0359.html",
       "content": "On January 9, 2003, the Federal Reserve replaced two of its discount window programs - adjustment credit and extended credit - with new primary and secondary credit programs. Under the new primary credit program, Reserve Banks may extend short-term credit to eligible depository institutions at a rate above the target federal funds rate. The interest rate for primary credit was set initially at a level 100 basis points above the Federal Open Market Committee's target for the federal funds rate. This spread may change in light of experience with the new program. Generally, primary credit is extended on a very short-term basis, usually overnight. [...] 9, 2003, the Federal Reserve replaced two of its discount window programs - adjustment credit and extended credit - with new primary and secondary credit programs. Under the new primary credit program, Reserve Banks may extend short-term credit to eligible depository institutions at a rate above the target federal funds rate. The interest rate for primary credit was set initially at a level 100 basis points above the Federal Open Market Committee's target for the federal funds rate. This spread may change in light of experience with...",
       "score": 0.6139086,
       "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
       "search_index": 1
+    },
+    {
+      "title": "Research Exchange: June 2026 - Bank Policy Institute",
+      "url": "https://bpi.com/research-exchange-june-2026",
+      "content": "This BPI blog examines the Fed’s historical experience, during 1982-1989, with a “demand-driven” monetary policy approach – where the central bank keeps the banking system structurally short of reserves, forcing banks to borrow from a standing facility – to draw lessons for central banks (BoE, ECB, Bank of Canada, RBA) currently adopting similar frameworks. Under this operating regime, referred to as “borrowed-reserves targeting,” the FOMC set a target for discount window borrowing. Because borrowing was positively related to the level of the fed funds rate, the approach also defined an implicit target for the fed funds rate. The relationship between borrowing and the funds rate proved unstable over time in part because of variability in banks’ reluctance to borrow. Modern demand-driven [...] The Dodd-Frank Act subjects banking organizations with more than $10 billion in total assets to enhanced regulatory oversight. This paper studies the effects of this stricter regulatory framework on banks’ small business lending activities, using data from the SBA 7(a) small business loan program. The study documents a notable change in the size distribution of banks after the implementatio...",
+      "score": 0.5951402,
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "search_index": 3
     },
     {
       "title": "[PDF] Interagency Advisory on the Use of the Federal Reserve's Primary ...",
@@ -262,12 +294,44 @@
       "search_index": 2
     },
     {
+      "title": "FOMC Introductory Statement, June 17, 2026 - YouTube",
+      "url": "https://www.youtube.com/watch?v=Y19yD0aEljs",
+      "content": "which you've heard us say before, price stability and maximum employment. And these objectives guided our business in the meeting just concluded. As you saw a few moments ago, the committee decided to maintain the target range for the Fed funds rate at 3 and 1/2 to 3 and 3/4%. In support of the Fed's dual mandate. The committee also reaffirmed its policy of maintaining ample reserves in the banking system. Economic activity is expanding at a solid pace, despite elevated uncertainty that owes in part to the conflict in the Middle East. Productivity growth and capital investment both strong. Job gains have kept pace with the workforce, and the unemployment rate has changed little. We recognize that inflation has been running well ahead of the Fed's long-stated inflation goal of 2%. That's [...] The Federal Reserve conducts the nation’s monetary policy to promote maximum employment, stable prices, and moderate long-term interest rates in the U.S. economy; promotes the stability of the financial system and seeks to minimize and contain systemic risks through active monitoring and engagement in the U.S. and abroad; promotes the safety and soundness of individual financial institution...",
+      "score": 0.46920466,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "2026 New York Fed Innovation Conference - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/research/conference/2026/nyfed-innovation",
+      "content": "- Monetary Policy Implementation Treasury Securities Agency Mortgage-Backed Securities Agency Commercial Mortgage-Backed Securities Agency Debt Securities Repos & Reverse Repos Securities Lending- Discount Window - Treasury Debt Auctions & Buybacks as Fiscal Agent - INTERNATIONAL MARKET OPERATIONS - Foreign Exchange - Foreign Reserves Management - Central Bank Swap Arrangements + ACROSS MARKETS - Statements & Operating Policies - Market Intelligence Survey of Market Expectations - Annual Reports - Counterparties Primary Dealers Standing Repo Counterparties Reverse Repo Counterparties Foreign Exchange Counterparties [...] Learn about the history of the New York Fed and central banking in the United States through articles, speeches, photos and video. Markets & Policy Implementation + Markets & Policy Implementation + - Reference Rates Effective Federal Funds Rate Overnight Bank Funding Rate Secured Overnight Financing Rate SOFR Averages & Index Broad General Collateral Rate Tri-Party General Collateral Rate- Desk Operations Treasury Securities Agency Mortgage-Backed Securities Repos Reverse Repos Securities Lending Central Bank Liquidity Swaps- System Open Market Account Holdings...",
+      "score": 0.467308,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
       "title": "[PDF] Provision of Liquidity through the Primary Credit Facility during the ...",
       "url": "https://www.newyorkfed.org/medialibrary/media/research/epr/10v16n1/1008artu.pdf",
       "content": "Actual data 0 5 10 15 20 June 2008 March 2007 March 2003 Benchmark simulation No policy change in 2003 Chart 8 Daily High Funds Rate Less Target (with No Decrease in Cost of Borrowing) Sources: Primary credit outstanding: Federal Reserve Statistical Release H.4.1; required operating balances: Federal Reserve Board; simulated series: authors’ calculations. Note: Required operating balances is the sum of required reserve balances and contractual clearing balances. 0 0.5 1.0 1.5 2.0 2.5 3.0 June 2008 March 2007 March 2003 Benchmark simulation No decrease in cost of borrowing Actual data Chart 9 Daily High Funds Rate Less Target (with No Change in Spread) Sources: Federal Reserve Bank of New York (daily high funds rate: (target: simulated series: authors’ calculations. [...] 0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8 June 2008 March 2007 March 2003 Benchmark simulation Actual data Chart 6 Primary Credit Outstanding (with Benchmark Simulation) Normalized with Required Operating Balances Sources: Primary credit outstanding: Federal Reserve Statistical Release H.4.1; required operating balances: Federal Reserve Board; simulated series: authors’ calculations. Note: Required operating balance...",
       "score": 0.4671622,
       "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
       "search_index": 2
+    },
+    {
+      "title": "Secured Overnight Financing Rate Data",
+      "url": "https://www.newyorkfed.org/markets/reference-rates/sofr",
+      "content": "The SOFR is calculated as a volume-weighted median of transaction-level tri-party repo data collected from the Bank of New York Mellon and the U.S. Department of the Treasury’s Office of Financial Research (OFR) as well as GCF Repo transaction data and data on bilateral Treasury repo transactions cleared through FICC's DVP service, which are obtained from OFR. Each business day, the New York Fed publishes the SOFR on the New York Fed website at approximately 8:00 a.m. ET. For more information on the SOFR’s publication schedule and methodology, see Additional Information about Reference Rates Administered by the New York Fed. Resources About the Reference Rates Statements and Operating Policies Additional Information about Reference Rates Administered by the New York Fed [...] # Secured Overnight Financing Rate Data The Secured Overnight Financing Rate (SOFR) is a broad measure of the cost of borrowing cash overnight collateralized by Treasury securities. The SOFR includes all trades in the Broad General Collateral Rate plus bilateral Treasury repurchase agreement (repo) transactions cleared through the Delivery-versus-Payment (DVP) service offered by the Fixed Income Clearing Co...",
+      "score": 0.46235222,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "Federal Reserve Board - Recent balance sheet trends",
+      "url": "https://www.federalreserve.gov/monetarypolicy/bst_recenttrends.htm",
+      "content": "Money Stock and Reserve Balances Other Regulations Supervision & Enforcement Community Development Research & Analysis Resources for Consumers ## Credit and Liquidity Programs and the Balance Sheet ### Recent balance sheet trends Choose one of the 5 charts. Accessible Version Source: Charts are generally updated following the publication of the H.4.1, which is typically published at 4:30 ET on Thursdays. ##### Footnotes",
+      "score": 0.4598771,
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "search_index": 1
     },
     {
       "title": "Primary Dealer Credit Facility - FEDERAL RESERVE BANK of NEW YORK",
@@ -294,6 +358,70 @@
       "search_index": 2
     },
     {
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov",
+      "content": "Household Finance Consumer Credit - G.19 Household Debt Service Ratios Mortgage Debt Outstanding Survey of Consumer Finances (SCF) Survey of Household Economics and Decisionmaking Industrial Activity Industrial Production and Capacity Utilization - G.17 Interest Rates Selected Interest Rates - H.15 Micro Data Reference Manual (MDRM) Micro and Macro Data Collections Money Stock and Reserve Balances Factors Affecting Reserve Balances - H.4.1 Money Stock Measures - H.6 Other Yield Curve Models and Data Expand sub-menuConsumers & Communities Regulations [...] Household Finance Consumer Credit - G.19 Household Debt Service Ratios Mortgage Debt Outstanding Survey of Consumer Finances (SCF) Survey of Household Economics and Decisionmaking Industrial Activity Industrial Production and Capacity Utilization - G.17 Interest Rates Selected Interest Rates - H.15 Micro Data Reference Manual (MDRM) Micro and Macro Data Collections Money Stock and Reserve Balances Factors Affecting Reserve Balances - H.4.1 Money Stock Measures - H.6 Other Yield Curve Models and Data Consumers & Communities Regulations [...] Learn More ### FAQ: Damaged Currency What should I do if I have damaged or mutilated cur...",
+      "score": 0.4272061,
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "search_index": 1
+    },
+    {
+      "title": "Federal Reserve Discount Window",
+      "url": "https://www.frbdiscountwindow.org",
+      "content": "View Archives ## FOMC Statements FOMC Statement June 17, 2026 The Federal Open Market Committee decided to maintain the target federal funds rate at 3.50 to 3.75 percent. FOMC Statement April 29, 2026 The Federal Open Market Committee decided to maintain the target federal funds rate at 3.50 to 3.75 percent. FOMC Statement March 18, 2026 The Federal Open Market Committee decided to maintain the target federal funds rate at 3.50 to 3.75 percent. View Archives Select Your District [...] Payment System Risk ##### Select Your District Atlanta (6th District) Boston (1st District) Chicago (7th District) Cleveland (4th District) Dallas (11th District) Kansas City (10th District) Minneapolis (9th District) New York (2nd District) Philadelphia (3rd District) Richmond (5th District) San Francisco (12th District) St. Louis (8th District) Federal Reserve Board # Current Interest Rates ### Primary Credit 3.75% ### Secondary Credit 4.25% ### Seasonal Credit 3.75% ### Fed Funds Target 3.50 - 3.75% ### Discount Window Direct Over 1,500 Depository Institutions have already signed-up to use Discount Window Direct -- the quick & easy way for eligible institutions to utilize the Discount Window Sig...",
+      "score": 0.4154922,
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "search_index": 3
+    },
+    {
+      "title": "Statement Regarding the Publication of Reference Rates on Friday ...",
+      "url": "https://www.newyorkfed.org/markets/opolicy/operating_policy_260618a",
+      "content": "June 18, 2026 The Securities Industry and Financial Markets Association (SIFMA) recommends a market close on Friday, July 3, 2026, which will be widely treated as a holiday in the repo market. As a result, there will be no publication of the Tri-Party General Collateral Rate (TGCR), the Broad General Collateral Rate (BGCR), the Secured Overnight Financing Rate (SOFR), or the SOFR Averages and Index on that day.1 The subsequent publication of the Treasury Repo Reference Rates will occur on the morning of Monday, July 6, 2026. The TGCR, BGCR, and SOFR will reflect overnight activity from Thursday, July 2, while the SOFR Averages and Index will have a value date of Monday, July 6. [...] Unsecured money markets remain open, and as publication of the Effective Federal Funds Rate (EFFR) and Overnight Bank Funding Rate (OBFR) follow the Federal Reserve Bank of New York’s holiday schedule, there will be no change to the scheduled publication of either rate on Friday, July 3, 2026. 1 The TGCR, BGCR, SOFR, SOFR Averages, and SOFR Index are published each business day that is not recognized as a holiday by the SIFMA calendar for secondary market trading of U.S. government securities. By co...",
+      "score": 0.4106623,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "The Fed - Monetary Policy:",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+      "content": "Voting against this action: None. Consistent with the Committee's decision to leave the target range for the federal funds rate unchanged, the Board of Governors of the Federal Reserve System voted unanimously to maintain the interest rate paid on reserve balances at 3.65 percent, effective June 18, 2026. The Board of Governors of the Federal Reserve System voted unanimously to approve the establishment of the primary credit rate at the existing level of 3.75 percent. It was agreed that the next meeting of the Committee would be held on Tuesday–Wednesday, July 28–29, 2026. The meeting adjourned at 10:30 a.m. on June 17, 2026. Notation Vote By notation vote completed on May 19, 2026, the Committee unanimously approved the minutes of the Committee meeting held on April 28–29, 2026. [...] At the conclusion of the discussion, the Committee voted to direct the Federal Reserve Bank of New York, until instructed otherwise, to execute transactions in the System Open Market Account (SOMA) in accordance with the following domestic policy directive, for release at 2:00 p.m.: \"Effective June 18, 2026, the Federal Open Market Committee directs the Desk to: The vote also encompassed approval...",
+      "score": 0.40924495,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "Federal Reserve Board - H.15 - Selected Interest Rates (Daily)",
+      "url": "https://www.federalreserve.gov/releases/h15",
+      "content": "Industrial Production and Capacity Utilization - G.17 Interest Rates Selected Interest Rates - H.15 Micro Data Reference Manual (MDRM) Micro and Macro Data Collections Money Stock and Reserve Balances Factors Affecting Reserve Balances - H.4.1 Money Stock Measures - H.6 Other Yield Curve Models and Data Consumers & Communities Regulations Community Reinvestment Act (CRA) All Regulations Supervision & Enforcement CA Letters Enforcement Actions Independent Foreclosure Review Community Development",
+      "score": 0.39894548,
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] A User's Guide to Reducing the Federal Reserve's Balance Sheet",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2026019pap.pdf",
+      "content": "Policy Option 1: Recognize Discount Window Capacity in the LCR One option is to allow banks to count pre-positioned discount window borrowing capacity secured by non-HQLA collateral (primarily loans) toward the LCR, subject to a cap. Policymakers have recently discussed such a framework (see Bessent (2026) and Hill (2026), as well as discussion in Beckworth (2026)), with industry discussions centering on a cap equal to 20% of a bank’s total HQLA. Given that LCR-subject banks currently hold approximately $4.1 trillion in HQLA, a 20% threshold would provide a theoretical maximum of $820 billion reduction in demand for reserves (Nelson, 2026b). Importantly, there is already more than double this amount in available discount window capacity (after haircuts) against loan collateral, as shown [...] Banks tend to treat the discount window as a last resort due to persistent stigma (see Carlson and Rose (2017)). This dynamic has recently been highlighted in considerations for liquidity regulation (see Bowman (2026b)). This stigma stems from multiple sources. The discount window has an above market rate, suggesting that banks would only use it if they have no other options. Further, disco...",
+      "score": 0.38428864,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "Statements and Operating Policies - Federal Reserve Bank of New York - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/markets/op_policies",
+      "content": "| | | --- | | 2026 | | | Jun 18, 2026 | Statement Regarding the Publication of Reference Rates on Friday, July 3, 2026 | | Jun 18, 2026 | Statement Regarding Open Market Desk Operations on Friday, July 3, 2026 | | Jun 18, 2026 | Statement Regarding Treasury Securities Small Value Exercise | | Jun 15, 2026 | Statement Regarding Agency Mortgage-Backed Securities Small Value Exercise | | May 29, 2026 | Statement Regarding Treasury Securities Small Value Exercise | | May 6, 2026 | Statement Regarding Repurchase Agreement and Reverse Repurchase Agreement Small Value Exercises | | Apr 17, 2026 | Statement Regarding Use of FedTrade Plus for Securities Lending Operations | | Apr 13, 2026 | Statement Regarding the Annual Report on Open Market Operations during 2025 | [...] | Apr 1, 2026 | Statement Regarding Securities Lending Small Value Exercise | | Mar 12, 2026 | Statement Regarding Use of FedTrade Plus for SOMA Treasury Outright and Treasury Buyback Operations | | Mar 12, 2026 | Statement Regarding the Publication of Reference Rates on Friday, April 3, 2026 | | Mar 12, 2026 | Statement Regarding Open Market Desk Operations on Friday, April 3, 2026 | | Mar 3, 2026 | Statement Regardin...",
+      "score": 0.37600484,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
+    },
+    {
+      "title": "US - Discount Window - Primary Credit Facilities | MacroMicro",
+      "url": "https://en.macromicro.me/charts/19266/liquidity-credit-facilities-loans-primary-credit",
+      "content": "###### D&B NEW ###### More Copyright © 2026 MacroMicro The data, analysis tools, and content on this website are for informational purposes only and do not constitute financial advice, investment recommendations, or an offer to buy or sell any financial product. While we strive for accuracy, we do not guarantee the completeness or timeliness of the information provided. Users are solely responsible for their investment decisions and assume all associated risks; this website bears no liability for any losses incurred. All website content is protected by copyright. Sharing links is permitted, but reproduction or redistribution requires prior authorization. Powered by OpenAI, MacroMicro intelligently links charts with other relevant visualizations for seamless analysis. [...] ###### ETF ###### About Us ## # #### #### AI Recommended Charts #### #### | | | | | | --- --- | | | | | | | | | | | | #### ###### Macro ###### Sectors ###### Charts & Market ###### Topics ###### Analysis ###### Tools ###### Academy & Community ###### D&B NEW ###### More Copyright © 2026 MacroMicro",
+      "score": 0.3615484,
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "search_index": 3
+    },
+    {
       "title": "Federal Reserve Credit Programs During the Meltdown",
       "url": "https://www.federalreservehistory.org/essays/fed-credit-programs",
       "content": "Prior to the financial crisis of 2007-09, when banks borrowed from the Federal Reserve, they generally paid a posted rate of interest called the primary credit rate, or \"discount rate.\" The discount rate was usually maintained at a fixed margin of 1 percentage point above the Federal Reserve's target for the federal funds rate, the market rate on interbank loans of reserve balances.2 In August 2007, when pressures emerged in certain financial markets, especially term funding markets, the Federal Reserve reduced the discount rate from 6.25 percent to 5.75 percent, a level 0.5 percentage points above the federal funds rate target at the time of 5.25 percent. [...] In March 2008, in response to liquidity pressures faced by primary dealers, the Federal Reserve established the Term Securities Lending Facility (TSLF) as a means of addressing the funding pressures faced by primary dealers. Under this program, the Federal Reserve loaned relatively liquid Treasury securities to primary dealers for one month in exchange for eligible collateral consisting of other, less liquid securities. Loans were extended for a fee and were allocated through auctions. In July 2008, the TSLF Options Prog...",
@@ -316,6 +444,14 @@
       "score": 0.30772248,
       "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
       "search_index": 4
+    },
+    {
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "content": "Frauds and Scams Mortgage and Foreclosure Resources Federal Reserve Community Development Resources 1. Home 2. News & Events 3. Press Releases ## Press Release PDF June 17, 2026 ### Federal Reserve issues FOMC statement For release at 2:00 p.m. EDT Share Office of Inspector General Budget & Performance | Audit No FEAR Act Español Website Policies | Privacy Program Accessibility ###### Stay Connected Federal Reserve Facebook PageFederal Reserve Instagram PageFederal Reserve YouTube PageFederal Reserve Flickr PageFederal Reserve LinkedIn PageFederal Reserve Threads PageLink to Federal Reserve X PageLink to Federal Reserve Bluesky PageSubscribe to RSSSubscribe to Email [...] Image 5: Link to USA.govImage 6: Link to Open.gov Board of Governors _of the_ Federal Reserve System 20th Street and Constitution Avenue N.W., Washington, DC 20551 [...] News & Events Press Releases Speeches & Testimony Calendar Videos Photo Gallery Conferences Monetary Policy Federal Open Market Committee About the FOMC Meeting calendars and information Transcripts and other historical materials FAQs Monetary Policy Principles and Practice Notes Policy Implementation Policy Normalization Policy Tools Reports M...",
+      "score": 0.27800483,
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "search_index": 2
     },
     {
       "title": "Federal Reserve Board - H41 - Data Download Program - Choose",
@@ -397,5 +533,691 @@
       ],
       "results_count": 10
     }
-  ]
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+    "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+    "Federal Reserve primary credit lending program discount window institutions access official",
+    "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+    "primary credit lending program Federal Reserve discount window analysis primary credit usage"
+  ],
+  "refilter_queries": [
+    "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+    "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+    "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21"
+  ],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "The Fed - Discount Window Lending",
+      "url": "https://www.federalreserve.gov/regreform/discount-window.htm",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background page describing the primary credit program and discount window mechanics. No explicit post-cutoff publication/update or completed post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Frequently-Asked-Questions-Discount-Window-Lending-Programs",
+      "url": "https://www.frbdiscountwindow.org/archive/frequently-asked-questions-discount-window-lending-programs",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Archive FAQ with general background on primary credit program usage and purpose. No explicit post-cutoff publication/update or leaked outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed - Discount Window Lending",
+      "url": "https://www.federalreserve.gov/regreform/discount-window.htm",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "General Federal Reserve background on discount window lending structure and rates. Safe contextual information without post-cutoff publication markers or results."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Discount window borrowing and the role of reserves and interest rates",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2025015pap.pdf",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Research paper URL indicates 2025, which is before the 2026-06-20 cutoff. Provides historical analysis of primary credit borrowing behavior; useful supporting context and not leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Interagency Advisory on the Use of the Federal Reserve's Primary ...",
+      "url": "https://www.occ.treas.gov/news-issuances/bulletins/2003/bulletin-2003-36a.pdf",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Old 2003 advisory gives institutional background on the primary credit program. Safe and non-leaky, though only tangentially useful for forecasting week-to-week loan amounts in 2026."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Adverse Selection in Central Bank Lending { An Empirical Analysis ...",
+      "url": "https://www.fdic.gov/analysis/cfr/bank-research-conference/annual-22nd/papers/beyhaghi-paper.pdf",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical empirical paper about central bank lending behavior. No post-cutoff publication signal; safe but only indirect background for the specific weekly change forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Board - Lending to depository institutions",
+      "url": "https://www.federalreserve.gov/monetarypolicy/bst_lendingdepository.htm",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Direct Federal Reserve page on lending to depository institutions, explicitly noting primary credit outstanding is reported in H.4.1. Strongly relevant structural context and no explicit post-cutoff leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Discount Window Primary Credit Rate (DPCREDIT) | FRED",
+      "url": "https://fred.stlouisfed.org/series/DPCREDIT",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "FRED series page for the primary credit rate is safe contemporaneous context and could inform borrowing incentives. No explicit post-cutoff publication/update or realized outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "The Discount Window",
+      "url": "https://www.frbdiscountwindow.org/pages/general-information/the-discount-window",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "General discount window information page with program details. Safe background, no explicit post-cutoff publication/update, and potentially useful for understanding borrowing conditions."
+    },
+    {
+      "stage": "cached",
+      "title": "Discount Window",
+      "url": "https://www.newyorkfed.org/banking/discountwindow",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "New York Fed discount window page describing rates and transaction data availability. Safe institutional context without explicit post-cutoff publication or completed-result leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Statistical Release H.4.1",
+      "url": "https://grokipedia.com/page/federal_reserve_statistical_release_h41",
+      "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background on H.4.1 release cadence and publication timing; useful for understanding when the weekly series is published, though not directly predictive of the loan amount change."
+    },
+    {
+      "stage": "cached",
+      "title": "Primary and Secondary Credit Programs",
+      "url": "https://www.frbdiscountwindow.org/pages/general-information/primary-and-secondary-credit-programs",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on the primary credit program's purpose, eligibility, and loan terms. Helps interpret drivers of usage but contains no post-cutoff outcome or publication leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "FRB: Discount Window Lending",
+      "url": "https://www.federalreserve.gov/newsevents/reform_discount_window.htm",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe Federal Reserve background on discount window lending mechanics and pricing relative to the federal funds target. Relevant context for determinants of primary credit demand; no explicit post-cutoff result."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Provision of Liquidity through the Primary Credit Facility during the ...",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/epr/10v16n1/1008artu.pdf",
+      "query": "primary credit lending program Federal Reserve discount window analysis primary credit usage",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical research paper on primary credit facility usage. Older contextual evidence only, with no post-cutoff publication state or completed outcome about the target week."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Federal Reserve Bank Discount Window & Payment System Risk We...",
+      "url": "https://fcic-static.law.stanford.edu/cdn_media/fcic-docs/0000-00-00%20FRB%20Discount%20Window%20Getting%20Started.pdf",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General educational PDF about discount window operations and primary credit. Safe background, but only tangentially useful for forecasting the specific weekly amount change."
+    },
+    {
+      "stage": "cached",
+      "title": "Five Steps to Discount Window Borrowing",
+      "url": "https://www.communitybankingconnections.org/articles/2024/fourth-release-2024/five-steps-to-discount-window-borrowing",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff background on operational access to discount window borrowing, including the 2024 portal launch and borrowing mechanics. Could inform ease of usage; no post-cutoff leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "USE OF THE FEDERAL RESERVE'S PRIMARY CREDIT PROGRAM IN EFFECTIVE LIQUIDITY MANAGEMENT | FDIC.gov",
+      "url": "https://www.fdic.gov/news/financial-institution-letters/2003/fil0359.html",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Historical FDIC guidance from 2003 on the introduction of primary credit. Safe but mostly distant background with limited value for the exact forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Statistical Release H.4.1 - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Statistical_Release_H.4.1",
+      "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic encyclopedia background on H.4.1 and its weekly release schedule. Safe and contemporaneously non-leaky, but only weakly informative."
+    },
+    {
+      "stage": "cached",
+      "title": "Discount Window - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/banking/discountwindow",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Official New York Fed page describing discount window programs, rates, and transaction data availability. Useful structural context for primary credit usage; no explicit post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Board - Discount Window",
+      "url": "https://www.federalreserve.gov/monetarypolicy/discountrate.htm",
+      "query": "Federal Reserve primary credit lending program discount window institutions access official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Official Federal Reserve overview of discount window operations, timing, and mechanics. Relevant institutional context without any post-cutoff publication or realized-result leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Loans: Primary Credit: Wednesday Level (WLCFLPCL) | FRED | St ...",
+      "url": "https://fred.stlouisfed.org/series/WLCFLPCL",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff primary data page snippet. It shows the latest observed value through 2026-06-10, says Updated Jun 11, 2026, and Next Release Date Jun 18, 2026, all before the 2026-06-20 cutoff. Directly relevant because it provides the recent level and release cadence for the exact series being forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "H.4.1 Factors Affecting Reserve Balances | ALFRED",
+      "url": "https://alfred.stlouisfed.org/release?rid=20",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Leakage. The snippet explicitly includes release dates and observation periods through 2026-06-25 and 2026-06-24, which are concrete post-cutoff page states."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed: DDP: Factors Affecting Reserve Balances (H.4.1)",
+      "url": "https://www.federalreserve.gov/feeds/h41.html",
+      "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe contemporaneous background. It describes the usual H.4.1 publication schedule ('typically published on Thursday, generally at 4:30 p.m. ET') and does not report any post-cutoff outcome. Useful for timing of when the target data becomes available."
+    },
+    {
+      "stage": "cached",
+      "title": "USE OF THE FEDERAL RESERVE'S PRIMARY CREDIT PROGRAM IN EFFECTIVE LIQUIDITY MANAGEMENT | FDIC.gov",
+      "url": "https://www.fdic.gov/news/financial-institution-letters/2003/fil0359.html",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on how the primary credit program works. No post-cutoff publication or outcome language. Moderately relevant for understanding drivers and constraints of the series, though not a direct indicator for the specific week."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Interagency Advisory on the Use of the Federal Reserve's Primary ...",
+      "url": "https://www.occ.treas.gov/news-issuances/bulletins/2003/bulletin-2003-36a.pdf",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical/background material about the primary credit program. No explicit post-cutoff publication or completed-result leakage. Relevance is low because it is generic institutional context rather than a near-term indicator."
+    },
+    {
+      "stage": "cached",
+      "title": "Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level (WLCFLPCL) | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/series/WLCFLPCL",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe series metadata/background page for the exact FRED series. The snippet shown contains no explicit post-cutoff update or observation. Useful supporting context but less informative than item 0 because it lacks recent values."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed’s Discount Window Lending - Bank Policy Institute",
+      "url": "https://bpi.com/the-feds-discount-window-lending",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical explanatory article about discount window lending mechanics. Although it uses past-tense language, it refers to an older episode rather than post-cutoff results for the forecasted period. Tangential background only."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] The Federal Reserve System's Weekly Balance Sheet since 1914",
+      "url": "https://sites.krieger.jhu.edu/iae/files/2018/07/Federal-Reserve-Systems-Weekly-Balance-Sheet-Since-1914.pdf",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical research paper on the weekly balance sheet series. No post-cutoff publication state or outcome for the target period. Only generic background, so low relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Provision of Liquidity through the Primary Credit Facility during the ...",
+      "url": "https://www.newyorkfed.org/medialibrary/media/research/epr/10v16n1/1008artu.pdf",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical paper on liquidity provision through primary credit during an earlier crisis. No post-cutoff leakage. Only indirect background for the current forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Primary Dealer Credit Facility - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/markets/primary-dealer-credit-facility",
+      "query": "Federal Reserve primary credit lending program definition H.4.1 WLCFLPCL official",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe historical page about a different facility (Primary Dealer Credit Facility) with old dated announcements. No post-cutoff leakage, but only tangentially related to the primary credit series being forecast."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Statistical Release H.4.1 - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Statistical_Release_H.4.1",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe background on what the H.4.1 release is; no explicit post-cutoff publication/update or outcome language."
+    },
+    {
+      "stage": "cached",
+      "title": "The Fed: DDP: Factors Affecting Reserve Balances (H.4.1)",
+      "url": "https://www.federalreserve.gov/feeds/h41.html",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Official H.4.1 feed/history page giving release context and program notes. Snippet shows historical dated notices from 2020-2021, all pre-cutoff, with no explicit post-cutoff release or realized value for the target week."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Credit Programs During the Meltdown",
+      "url": "https://www.federalreservehistory.org/essays/fed-credit-programs",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General historical background on Federal Reserve credit programs and primary credit mechanics. No explicit post-cutoff publication/update or completed outcome for the forecasted period."
+    },
+    {
+      "stage": "cached",
+      "title": "H.4.1 Factors Affecting Reserve Balances of Depository Institutions ...",
+      "url": "https://fraser.stlouisfed.org/title/h41-factors-affecting-reserve-balances-depository-institutions-condition-statement-federal-reserve-banks-83",
+      "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Archival FRASER landing page for H.4.1 issues. Although it mentions a date range through 2026, it does not explicitly state a post-cutoff publication/update or reveal the target week's data."
+    },
+    {
+      "stage": "cached",
+      "title": "H.4.1 Factors Affecting Reserve Balances | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/release?rid=20",
+      "query": "Federal Reserve H.4.1 release schedule weekly Wednesday primary credit lending data",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "FRED release page for H.4.1, relevant as source context for the series and release structure. Snippet contains no explicit post-cutoff publication/update or realized observation."
+    },
+    {
+      "stage": "cached",
+      "title": "Federal Reserve Board - H41 - Data Download Program - Choose",
+      "url": "https://www.federalreserve.gov/datadownload/Choose.aspx?rel=H41",
+      "query": "Federal Reserve H.4.1 primary credit lending program historical series WLCFLPCL",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Official Federal Reserve data download page for H.4.1 tables, useful source context. Snippet does not explicitly indicate a post-cutoff update date or disclose post-cutoff values/results."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "The Fed: DDP: Factors Affecting Reserve Balances (H.4.1)",
+      "url": "https://www.federalreserve.gov/feeds/h41.html",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background. It is the official H.4.1 feed/announcement page and includes contemporaneous release infrastructure relevant to when the weekly series is published. The snippet mentions April 30, 2026, which is before the 2026-06-20 cutoff, and does not state any post-cutoff publication or completed post-cutoff outcome for the target week."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "[PDF] FEDERAL RESERVE statistical release",
+      "url": "https://www.federalreserve.gov/releases/h41/current/h41.pdf",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": false,
+      "relevance": "high",
+      "disposition": "dropped",
+      "reason": "Leakage. The title/URL/snippet explicitly show a post-cutoff release: 'July 9, 2026' and current H.4.1 PDF content with realized values after the 2026-06-20 cutoff."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Factors Affecting Reserve Balances - H.4.1 - July 02, 2026",
+      "url": "https://www.federalreserve.gov/releases/h41/current",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": false,
+      "relevance": "high",
+      "disposition": "dropped",
+      "reason": "Leakage. The title explicitly says 'July 02, 2026' and the snippet gives concrete post-cutoff page state and realized primary credit values after the cutoff."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Factors Affecting Reserve Balances - H.4.1 - Release Dates",
+      "url": "https://www.federalreserve.gov/releases/h41",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Leakage. Although release schedules are generally useful, this page snippet explicitly shows 'Last Update: July 02, 2026,' which is an explicit post-cutoff update marker."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "[PDF] A User's Guide to Reducing the Federal Reserve's Balance Sheet",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2026019pap.pdf",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background. This is a 2026 paper using data through week ending March 11, 2026, which is before the cutoff. It provides context on the Fed balance sheet and H.4.1 mechanics, though it is not a direct leading indicator for the specific week-over-week primary credit change."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Board - Recent balance sheet trends",
+      "url": "https://www.federalreserve.gov/monetarypolicy/bst_recenttrends.htm",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe contemporaneous background. It describes that charts are generally updated following H.4.1 publication, which is useful for understanding timing of the target series release. No explicit post-cutoff publication/update date or realized post-cutoff outcome is shown."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Money Stock Measures - H.6 - June 23, 2026 - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/h6/current/default.htm",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Leakage. The title/snippet explicitly say 'June 23, 2026,' which is after the 2026-06-20 cutoff, even though the subject is tangential."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe but generic. It is just the Federal Reserve home page with links to H.4.1 and related data categories, with no explicit post-cutoff publication/update or realized outcome."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Board - Assets and Liabilities of Commercial Banks in the United States - H.8 - July 02, 2026",
+      "url": "https://www.federalreserve.gov/releases/h8/current/default.htm",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Leakage. The title explicitly says 'July 02, 2026,' a post-cutoff release date, and the page state is after the cutoff."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Board - H.15 - Selected Interest Rates (Daily)",
+      "url": "https://www.federalreserve.gov/releases/h15",
+      "query": "site:federalreserve.gov (H.4.1 OR \"Factors Affecting Reserve Balances\") (\"primary credit\" OR WLCFLPCL OR \"Loans to depository institutions\") (release OR table OR data) (\"2026-06-04\" OR \"June 4, 2026\") (available OR published OR as of)",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe generic background. It is the H.15 release landing page and contains no explicit post-cutoff publication/update marker or completed outcome. Relevance to forecasting primary credit lending is low."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "FOMC Introductory Statement, June 17, 2026 - YouTube",
+      "url": "https://www.youtube.com/watch?v=Y19yD0aEljs",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Pre-cutoff contemporaneous FOMC statement/video about the June 17 meeting just concluded. It provides current monetary-policy context that could indirectly affect discount window usage, and does not explicitly report post-cutoff outcomes for the target series."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "2026 New York Fed Innovation Conference - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/research/conference/2026/nyfed-innovation",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff page about a 2026 New York Fed conference. Safe but only tangentially related to primary credit lending; little direct forecasting value."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Secured Overnight Financing Rate Data",
+      "url": "https://www.newyorkfed.org/markets/reference-rates/sofr",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "General SOFR reference-rate methodology/publication page. Safe and contemporaneous background on money markets, but only weakly related to forecasting weekly primary credit loans."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Statement Regarding the Publication of Reference Rates on Friday ...",
+      "url": "https://www.newyorkfed.org/markets/opolicy/operating_policy_260618a",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Dated June 18, 2026, before the cutoff. It is a prospective operational announcement about July 3 reference-rate publication and holiday effects. Safe, though only indirectly relevant."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "The Fed - Monetary Policy:",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Pre-cutoff official Fed page for the June 17 FOMC meeting stating the Board maintained the primary credit rate at 3.75 percent. This directly informs the pricing/constraints of the primary credit program and is highly relevant."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "The Fed - Discount Window Lending - Federal Reserve",
+      "url": "https://www.federalreserve.gov/regreform/discount-window.htm",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Leakage: snippet explicitly says 'Last Update: June 30, 2026,' which is after the 2026-06-20 cutoff. Must drop despite useful background."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "[PDF] A User's Guide to Reducing the Federal Reserve's Balance Sheet",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2026019pap.pdf",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "A 2026 Fed research paper discussing discount window capacity, stigma, and liquidity regulation. Pre-cutoff background that could inform structural expectations for primary credit borrowing; no explicit post-cutoff outcome leakage."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Statements and Operating Policies - Federal Reserve Bank of New York - FEDERAL RESERVE BANK of NEW YORK",
+      "url": "https://www.newyorkfed.org/markets/op_policies",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Pre-cutoff index page listing New York Fed statements and operating policies through June 18, 2026. Safe but mostly navigational and only marginally informative for the target series."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "low",
+      "disposition": "dropped",
+      "reason": "Leakage: homepage snippet shows concrete post-cutoff page state with items dated 6/22/2026, 6/24/2026, 7/6/2026, and 7/7/2026. Must drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "query": "site:federalreserve.gov OR site:newyorkfed.org (\"discount window\" OR \"primary credit\") (usage OR borrowing OR demand OR liquidity OR reserves OR funding markets OR \"federal funds\" OR SOFR) (preview OR schedule OR statement OR speech OR minutes OR auction) (\"2026-06-04\" OR \"June 2026\") before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Official June 17, 2026 FOMC press release, clearly pre-cutoff. Useful contemporaneous policy context that may affect discount window demand; no explicit post-cutoff results for the series."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Assets: Liquidity and Credit Facilities: Loans: Primary Credit: Wednesday Level (WLCFLPCL) | FRED | St. Louis Fed",
+      "url": "https://fred.stlouisfed.org/series/WLCFLPCL",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff snapshot: snippet shows observations through 2026-06-10 and page updated Jun 11, 2026, both before the 2026-06-20 cutoff. Directly relevant because it is the exact FRED series used for resolution and provides the latest known level and release cadence."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "United States - Discount Window Primary Credit Rate - 2026 Data 2027 Forecast 2003 Historical",
+      "url": "https://tradingeconomics.com/united-states/primary-credit-rate-percent-d-na-fed-data.html",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "No explicit post-cutoff publication/update date beyond generic 'June of 2026'. Relevant supporting context because the primary credit rate can influence discount window borrowing, though it is not the target series itself."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Research Exchange: June 2026 - Bank Policy Institute",
+      "url": "https://bpi.com/research-exchange-june-2026",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Appears to be a June 2026 background piece with no explicit post-cutoff publication marker in the snippet. Useful context on discount window borrowing dynamics and reserve conditions, though indirect."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "United States Fed Funds Interest Rate - Trading Economics",
+      "url": "https://tradingeconomics.com/united-states/interest-rate",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Snippet contains retrospective post-cutoff language about June 2026 FOMC minutes ('showed') and a completed policy outcome ('The Fed kept... unchanged'), which likely reflects reporting after the cutoff. When uncertain/retrospective, drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Federal Reserve Discount Window",
+      "url": "https://www.frbdiscountwindow.org",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Contains contemporaneous pre-cutoff policy information, including the June 17, 2026 FOMC statement and current discount window rates. No explicit post-cutoff publication/update marker in the snippet. Directly relevant because discount window terms and rates affect primary credit borrowing."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Discount Window Primary Credit Rate",
+      "url": "https://fred.stlouisfed.org/series/DPCREDIT",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Explicitly post-cutoff: snippet says retrieved from FRED on July 4, 2026 and shows observations for 2026-07-01 updated Jul 2, 2026. This is leakage."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "The Fed - Discount Window Lending - Federal Reserve",
+      "url": "https://www.federalreserve.gov/regreform/discount-window.htm",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Explicitly post-cutoff page state: 'Last Update: June 30, 2026'. Even though mostly background, the page is marked updated after the cutoff, so drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "[PDF] Discount window borrowing and the role of reserves and interest rates",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2025015pap.pdf",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Background research paper with no explicit post-cutoff publication/update in the snippet; URL suggests a 2025 paper. Useful for structural understanding of drivers of primary credit borrowing, though indirect."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "Archive",
+      "url": "https://www.frbdiscountwindow.org/archive",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": false,
+      "relevance": "medium",
+      "disposition": "dropped",
+      "reason": "Archive page includes explicit post-cutoff items such as 'July 01, 2026' and concrete archive state after the cutoff. Leakage risk, so drop."
+    },
+    {
+      "stage": "supplemental_search",
+      "title": "US - Discount Window - Primary Credit Facilities | MacroMicro",
+      "url": "https://en.macromicro.me/charts/19266/liquidity-credit-facilities-loans-primary-credit",
+      "query": "(analysis OR preview OR odds OR outlook OR commentary) (\"Federal Reserve primary credit\" OR \"discount window borrowing\" OR WLCFLPCL) (weekly OR June 2026 OR \"2026-06-04\") (historical OR base rate OR seasonality OR drivers) before:2026-06-21",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic chart page with no explicit post-cutoff publication/update or completed outcome in the snippet. Only low relevance because it adds little beyond the primary source."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 53,
+    "dropped": 12,
+    "relevance": {
+      "high": 8,
+      "medium": 33,
+      "low": 25
+    },
+    "supplemental_for_relevance": true,
+    "skipped_long_recovered_queries": 0
+  }
 }

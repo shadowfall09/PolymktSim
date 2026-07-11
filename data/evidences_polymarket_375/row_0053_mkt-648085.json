@@ -1,0 +1,340 @@
+{
+  "row_index": 53,
+  "market_id": "mkt_648085",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $102,000 on October 31?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $102,000 on October 31?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-10-31",
+  "evidence_cutoff_date": "2025-10-30",
+  "end_date_limit": "2025-10-30",
+  "row_end_date_raw": "2025-10-31",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+    "Bitcoin October seasonality historical returns all-time highs around late October prior years BTC monthly performance",
+    "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+    "Bitcoin macro calendar October 2025 CPI PCE FOMC Treasury refunding ETF flow schedule options expiry month-end liquidity",
+    "October 2025 Bitcoin outlook analyst report on-chain research Glassnode CryptoQuant Coinbase Institutional Kaiko recent month"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 7,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 28,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 22,
+    "llm_kept_count": 28,
+    "llm_kept_leak_no_count": 27,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Bitcoin Heads into Historically Bullish October After Third-Best September On Record",
+      "url": "https://www.coindesk.com/markets/2025/10/01/bitcoin-heads-into-historically-bullish-october-after-third-best-september-on-record",
+      "content": "Since 2013, bitcoin has averaged 14.4% gains in October, with a median return of 10.8%. Out of 13 Octobers in that span, 10 ended in the green and only three closed lower. That track record makes October the most statistically favorable month for the asset, with gains often clustering in the second half. (CoinGlass) Such seasonality is a hallmark of financial markets, with markets tending to recede at the beginning of May before a spike in November. This is based on the belief that equity markets underperform during the summer due to lower trading volumes, reduced institutional activity, and historical returns data. [...] # Bitcoin Heads into Historically Bullish October After Third-Best September On Record ## Since 2013, bitcoin has averaged 14.4% gains in October, with a median return of 10.8%. Out of 13 Octobers in that span, 10 ended in the green and only three closed lower. Bulls Bitcoin closed September with a 5.16% gain, its third-best September on record since 2013, according to Coinglass data. The performance comes as traders turn their attention to October, which has historically been the asset’s strongest month. [...] Historically, U.S. stock markets have shown weaker...",
+      "score": 0.82391036,
+      "query": "Bitcoin October seasonality historical returns all-time highs around late October prior years BTC monthly performance",
+      "search_index": 2
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` import requests resp = requests.get(' print(resp.json()) ``` > Response ``` [ [ 1499040000000, // Open time \"0.00386200\", // Open \"0.00386200\", // High \"0.00386200\", // Low \"0.00386200\", // Close \"0.47000000\", // Volume 1499644799999, // Close time \"0.00181514\", // Quote asset volume 1, // Number of trades \"0.47000000\", // Taker buy base asset volume \"0.00181514\", // Taker buy quote asset volume \"0\" // Ignore. ] ] ``` `GET /api/v3/klines` Use this endpoint to get Kline/candlestick bars for a token symbol. Klines are uniquel...",
+      "score": 0.798077,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Source code for binance.client",
+      "url": "https://python-binance.readthedocs.io/en/latest/_modules/binance/client.html",
+      "content": "1M Notes: - If startTime/endTime not specified, returns most recent klines - Supported timeZone values: - Hours and minutes (e.g. \"-1:00\", \"05:45\") - Only hours (e.g. \"0\", \"8\", \"4\") - Accepted range is strictly [-12:00 to +14:00] inclusive - If timeZone provided, kline intervals interpreted in that timezone instead of UTC - startTime and endTime always interpreted in UTC, regardless of timeZone - For real-time updates, consider using WebSocket Streams: @kline_ - For historical data, consider using data.binance.vision Weight: 2 Data Source: Database :returns: API response .. code-block:: python { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, # Kline open time \"0.01086000\", # Open price \"0.01086600\", # High price [...] intervals: - seconds: 1s - minutes: 1m, 3m, 5m, 15m, 30m - hours: 1h, 2h, 4h, 6h, 8h, 12h - days: 1d, 3d - weeks: 1w - months: 1M Notes: - If startTime/endTime not specified, returns most recent klines - Supported timeZone values: - Hours and minutes (e.g. \"-1:00\", \"05:45\") - Only hours (e.g. \"0\", \"8\", \"4\") - Accepted range is strictly [-12:00 to +14:00] inclusive - If timeZone provided, kline intervals are interpreted in...",
+      "score": 0.78572035,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of UTC startTime and endTime are always interpreted in UTC, regardless of timeZone Returns: : API response [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of UTC startTime and endTime are always interpreted in UTC, regardless of timeZone Returns: : API response [...] Klines are uniquely identified by their open & close time. Paramete...",
+      "score": 0.76194656,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Charting Crypto Q4 2025: Navigating Uncertainty - Coinbase",
+      "url": "https://www.coinbase.com/institutional/research-insights/research/market-intelligence/charting-crypto-q4-2025",
+      "content": "October 16, 2025 Download Market Intelligence Image 7: Charting Crypto: Q4 2025 Key takeaways We have a cautiously optimistic stance for 4Q25. We believe that the crypto bull market has room to run, but we’re more cautious after the events of October 10. We still see resilient liquidity conditions, a strong macro backdrop, and supportive regulatory dynamics. While the labor market appears to be cooling, fears of a sharp contraction in the economy look overblown, in our view. Regulation is on the right track. With the signing of the GENIUS Act, we now have a clear framework for stablecoins, and we believe the CLARITY Act, which would define digital-asset classifications and establish clear jurisdictional authority, will be next. [...] The current setup looks particularly favorable for bitcoin, in our view, while positioning in altcoins calls for a more cautious approach. Written by 󰍺 David Duong, CFA - Head of Research at Coinbase Institutional & Glassnode _Charting Crypto_ is a quarterly publication from Coinbase Institutional and Glassnode that provides an in-depth view of crypto markets, including deep dives into onchain analytics and advanced metrics for bitcoin and ether. Be...",
+      "score": 0.7355091,
+      "query": "October 2025 Bitcoin outlook analyst report on-chain research Glassnode CryptoQuant Coinbase Institutional Kaiko recent month",
+      "search_index": 5
+    },
+    {
+      "title": "Home / data / spot / monthly / klines / BTCUSDT / 1m",
+      "url": "https://data.binance.vision?prefix=data%2Fspot%2Fmonthly%2Fklines%2FBTCUSDT%2F1m%2F",
+      "content": "| BTCUSDT-1m-2024-08.zip.CHECKSUM | 0.1 kB | 2024-09-10T11:16:19.000Z | | BTCUSDT-1m-2024-08.zip | 2.1 MB | 2024-09-10T11:16:19.000Z | | BTCUSDT-1m-2024-07.zip.CHECKSUM | 0.1 kB | 2024-08-08T09:34:04.000Z | | BTCUSDT-1m-2024-07.zip | 2.0 MB | 2024-08-08T09:34:04.000Z | | BTCUSDT-1m-2024-06.zip.CHECKSUM | 0.1 kB | 2024-07-09T03:58:16.000Z | | BTCUSDT-1m-2024-06.zip | 1.9 MB | 2024-07-09T03:58:16.000Z | | BTCUSDT-1m-2024-05.zip.CHECKSUM | 0.1 kB | 2024-06-06T02:54:15.000Z | | BTCUSDT-1m-2024-05.zip | 2.0 MB | 2024-06-06T02:54:15.000Z | | BTCUSDT-1m-2024-04.zip.CHECKSUM | 0.1 kB | 2024-05-11T14:46:42.000Z | | BTCUSDT-1m-2024-04.zip | 2.0 MB | 2024-05-11T14:46:42.000Z | | BTCUSDT-1m-2024-03.zip.CHECKSUM | 0.1 kB | 2024-04-11T13:40:01.000Z | [...] | BTCUSDT-1m-2023-04.zip | 2.0 MB | 2023-05-02T12:43:24.000Z | | BTCUSDT-1m-2023-03.zip.CHECKSUM | 0.1 kB | 2023-04-05T14:40:22.000Z | | BTCUSDT-1m-2023-03.zip | 2.2 MB | 2023-04-05T14:40:21.000Z | | BTCUSDT-1m-2023-02.zip.CHECKSUM | 0.1 kB | 2023-03-02T03:17:13.000Z | | BTCUSDT-1m-2023-02.zip | 2.0 MB | 2023-03-02T03:17:13.000Z | | BTCUSDT-1m-2023-01.zip.CHECKSUM | 0.1 kB | 2023-02-18T00:36:10.000Z | | BTCUSDT-1m-2023-01.zip | 2.2 MB | 202...",
+      "score": 0.7274535,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Streams | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Kline-Candlestick-Streams",
+      "content": "## Update Speed​ 250ms ## Response Example​ `{ \"e\": \"kline\", // Event type \"E\": 1638747660000, // Event time \"s\": \"BTCUSDT\", // Symbol \"k\": { \"t\": 1638747660000, // Kline start time \"T\": 1638747719999, // Kline close time \"s\": \"BTCUSDT\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } }` [...] Binance Logo Binance Logo # Kline/Candlestick Streams ## Stream Description​ The Kline/Candlestick Stream push updates to the current klines/candlestick every 250 milliseconds (if existing). Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## URL PATH​ `/market` `/market` ## Stream Name​ `<symbol>@kline_<interval>` `<symbol>@kline_<interval>` ## Update Speed​ 250ms ## Response Example​ [...] After CM migration, both `fstream` and `dstream` ma...",
+      "score": 0.72675586,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "API Client to Binance • binancer",
+      "url": "https://daroczig.github.io/binancer",
+      "content": "binancer 1.2.0 Reference # binancer An R client to the Public Rest API for Binance. API docs: Quick intro to using `binancer` by getting the most recent ~USD price of the cryptocurrencies supported on Binance: ``` library(binancer) library(binancer)binance_coins_prices() binance_coins_prices() ``` Getting data on a specific symbol pair, e.g. the most recent Bitcoin/USDT changes: ``` (klines <- binance_klines('BTCUSDT', interval = '1m'))(klines<- binance_klines('BTCUSDT' = '1m')) ``` Visualize this data, e.g. on a simple line chart: ``` library(ggplot2) library(ggplot2)ggplot(klines, aes(close_time, close)) + geom_line() ggplot(klines aes(close_time close)) + geom_line() ``` Poor man’s candle chart with some `ggplot2` tweaks: [...] library(data.table) library(data.table)klines <- rbindlist(lapply(klines<- rbindlist(lapply( c('ETHBTC', 'ARKBTC', 'NEOBTC', 'IOTABTC'), c('ETHBTC' 'ARKBTC' 'NEOBTC' 'IOTABTC') binance_klines, binance_klines interval = '15m', = '15m' limit = 424)) = 4 24))ggplot(klines, aes(open_time)) + ggplot(klines aes(open_time)) + geom_linerange(aes(ymin = open, ymax = close, color = close < open), size = 2) + geom_linerange(aes(= open = close = close< open) = 2)...",
+      "score": 0.72348577,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Analysis & Research - Glassnode Insights",
+      "url": "https://research.glassnode.com/tag/analyses",
+      "content": "Avenir + Glassnode: Bitcoin's Liquidity Profile ## Avenir + Glassnode: Bitcoin's Liquidity Profile Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap ## Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 ## CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 Coinbase + Glassnode: Charting Crypto Q2 2025 ## Coinbase + Glassnode: Charting Crypto Q2 2025 Supply by Investor Behavior: Understanding Who’s Behind the Market Moves ## Supply by Investor Behavior: Understanding Who’s Behind the Market Moves Is the Metaverse Dead? On-Chain Data Tells a Different Story ## Is the Metaverse Dead? On-Chain Data Tells a Different Story [...] Introducing Options Premium & Taker Flow Analytics ## Introducing Options Premium & Taker Flow Analytics Pressure Points: Liquidation Heatmaps & Market Bias ## Pressure Points: Liquidation Heatmaps & Market Bias Systematic Feature Discovery for Digital Asset Markets ## Systematic Feature Discovery for Digital Asset Markets A Practical Guide to Glassnode’s MCP Server ## A Practical Guide to Glassnode’s MCP Server Coinbase + Glassnode: Charting Crypto Q3 2025 ## Coin...",
+      "score": 0.7045877,
+      "query": "October 2025 Bitcoin outlook analyst report on-chain research Glassnode CryptoQuant Coinbase Institutional Kaiko recent month",
+      "search_index": 5
+    },
+    {
+      "title": "BlackRock and Grayscale among 11 firms approved for spot Bitcoin ETFs in long-awaited SEC decision",
+      "url": "https://finance.yahoo.com/news/blackrock-grayscale-among-11-firms-205037075.html",
+      "content": "Under successive administrations, the SEC rejected applications for spot Bitcoin ETFs, citing the immaturity of the market and the potential for manipulation. Even after the agency in 2021 approved a Bitcoin futures ETF, which trades derivatives on Commodity Futures Trading Commission–regulated exchanges, the SEC continued to deny applications for spot ETFs. That dynamic changed when Grayscale, a prominent crypto asset manager that runs the largest Bitcoin trust, sued the agency in 2022 for allowing futures-based ETFs but not spot vehicles. In anticipation of a victory, BlackRock filed for a spot Bitcoin ETF in June 2023—a signal to many that approval was inevitable. After Grayscale won its case in August, the timeline was set in motion. [...] ... Fortune # BlackRock and Grayscale among 11 firms approved for spot Bitcoin ETFs in long-awaited SEC decision BlackRock and Grayscale among 11 firms approved for spot Bitcoin ETFs in long-awaited SEC decision · Fortune · Drew Angerer—Getty Images Leo Schwartz 5 min read BLK +2.96% After a false start on Tuesday, the Securities and Exchange Commission on Wednesday finally approved spot Bitcoin ETFs. In a filing, the agency announced that...",
+      "score": 0.6989468,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "BlackRock and Grayscale among 11 firms approved for spot Bitcoin ETFs in long-awaited SEC decision | Fortune",
+      "url": "https://fortune.com/crypto/2024/01/10/sec-bitcoin-etfs-gary-gensler-blackrock-fidelity-hacking",
+      "content": "Under successive administrations, the SEC rejected applications for spot Bitcoin ETFs, citing the immaturity of the market and the potential for manipulation. Even after the agency in 2021 approved a Bitcoin futures ETF, which trades derivatives on Commodity Futures Trading Commission–regulated exchanges, the SEC continued to deny applications for spot ETFs. That dynamic changed when Grayscale, a prominent crypto asset manager that runs the largest Bitcoin trust, sued the agency in 2022 for allowing futures-based ETFs but not spot vehicles. In anticipation of a victory, BlackRock filed for a spot Bitcoin ETF in June 2023—a signal to many that approval was inevitable. After Grayscale won its case in August, the timeline was set in motion. [...] # BlackRock and Grayscale among 11 firms approved for spot Bitcoin ETFs in long-awaited SEC decision SEC Chair Gary Gensler has long been a critic of the crypto industry. After a false start on Tuesday, the Securities and Exchange Commission on Wednesday finally approved spot Bitcoin ETFs. In a filing, the agency announced that applications for 11 issuers, including BlackRock and Grayscale, had been approved—the culmination of a process th...",
+      "score": 0.6836946,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "### Kline/Candlestick data​ `GET /api/v3/klines` Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | timeZone | STRING | NO | Default: 0 (UTC) | | limit | INT | NO | Default: 500; Maximum: 1000. | Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hours | `1h`, `2h`, `4h`, `6h`, `8h`, `12h` | | days | `1d`, `3d` | | weeks | `1w` | | months | `1M` | `interval` `1s` `1m` `3m` `5m` `15m` `30m` `1h` `2h` `4h` `6h` `8h` `12h` `1d` `3d` `1w` `1M` Notes: [...] Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trad...",
+      "score": 0.6816637,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Grayscale Investments, LLC v. SEC: Court Finds Denial of Spot Bitcoin ETF Arbitrary and Capricious | Practical Law",
+      "url": "https://uk.practicallaw.thomsonreuters.com/w-040-5871?transitionType=Default&contextData=%28sc.Default%29",
+      "content": "According to the decision, Grayscale argued that the bitcoin futures ETF surveillance arrangements should also be satisfactory for its spot ETF because both products rely on bitcoin's underlying price. Bitcoin futures ETFs track bitcoin futures that trade on the Chicago Mercantile Exchange (CME), the chief venue for those products, regulated by the CFTC. According to the decision, the SEC has found that CME's surveillance can reasonably be relied upon to capture the effects on the CME bitcoin futures market caused by attempted manipulation of the proposed futures ETF, whether that attempt is made by directly trading on the CME bitcoin futures market or indirectly by trading outside of the CME bitcoin futures market. The SEC, however, argued that Grayscale lacks data to determine whether [...] However, the court ruled that the SEC acted arbitrarily and capriciously in rejecting Grayscale's application because it never explained why CME's ability to detect fraud would be impacted by the ETF's holding of bitcoins rather than bitcoin futures. The court explained that Grayscale showed that its proposed bitcoin ETF is materially similar to the SEC-approved bitcoin futures ETFs because...",
+      "score": 0.6410185,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "BlackRock files for bitcoin ETF in push into crypto",
+      "url": "https://www.reuters.com/business/finance/blackrock-close-filing-bitcoin-etf-coindesk-2023-06-15",
+      "content": "A spot bitcoin ETF would track bitcoin's underlying market price. Proponents say an ETF would give investors exposure to bitcoin without directly buying it. The SEC rejected Grayscale Investment LLC’s application last year to convert its flagship spot Grayscale Bitcoin Trust (GBTC.PK), opens new tab into an ETF. Grayscale sued the SEC, claiming that the regulator was acting arbitrarily in rejecting applications for spot bitcoin ETFs when it had previously approved bitcoin futures ETFs. The SEC has also rejected proposals for spot bitcoin ETFs from firms including Fidelity, Cboe Global Markets and NYDIG. Bitcoin prices closed up 2% on Thursday after the announcement. They were last at $25,506 on Friday. The largest cryptocurrency is up 54% in the year. [...] June 15 (Reuters) - BlackRock (BLK.N), opens new tab, the world's biggest asset manager, on Thursday filed for a bitcoin exchange-traded fund (ETF) that would allow investors to get exposure to the cryptocurrency, as the asset class comes under intense regulatory scrutiny. BlackRock's iShares Bitcoin Trust will use Coinbase Custody as its custodian, according to a filing with the U.S. Securities and Exchange Commission (SEC)....",
+      "score": 0.61168414,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Spot Bitcoin ETF Approval by SEC Sparks Interest",
+      "url": "https://401kspecialistmag.com/sec-approves-11-spot-bitcoin-etfs-opening-floodgates",
+      "content": "This gives the green light to financial firms including the likes of BlackRock, Fidelity Investments, Grayscale and Franklin Templeton to offer institutional and retail investors exposure to the world’s largest cryptocurrency without directly holding it. The approval could be a game-changer for bitcoin, which has seen its price rise 61% since October largely on expectations that the SEC planned to grant approval of spot ETF applications. NASDAQ had bitcoin at $46,318.20, up $799.90 or 1.76% on the day as of 5:20 p.m. ET, after breaking through the $45,000 barrier for the first time in more than a year last Tuesday. [...] Each spot bitcoin ETF is managed by a firm that issues shares of its own bitcoin holdings purchased through other holders or through an authorized cryptocurrency exchange. The shares are listed on a traditional stock exchange. Barron’s reported Monday that several potential ETF issuers published final details of their proposed funds. Grayscale Investments said it plans to cut the fee on its bitcoin trust to 1.5% from 2% if the investment vehicle converts as planned into an ETF. BlackRock said it plans to charge 0.3% for its own bitcoin fund, and 0.2% for the fir...",
+      "score": 0.60498303,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/legacy-docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "`symbol` `interval` `startTime` `endTime` `timeZone` `limit` Supported kline intervals (case-sensitive): | Interval | `interval` value | --- | | seconds | `1s` | | minutes | `1m`, `3m`, `5m`, `15m`, `30m` | | hours | `1h`, `2h`, `4h`, `6h`, `8h`, `12h` | | days | `1d`, `3d` | | weeks | `1w` | | months | `1M` | `interval` `1s` `1m` `3m` `5m` `15m` `30m` `1h` `2h` `4h` `6h` `8h` `12h` `1d` `3d` `1w` `1M` Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` Data Source: Database Response: [...] ### Klines​ `{ \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"method\": \"klines\", \"params\": { \"symbol\": \"BNBBTC\", \"interval\": \"1h\", \"startTime\": 1655969280000, \"limit\": 1 } }` Get klines (candlestick bars). Klines are uniquely identified by their open & close time. If you need access to real-time kline updates, please consider using WebSocket Streams: `<symbol>@kline_<interval>` If you need historical kline data, please consider using data.binance.vision. Weight: 2 Parameters: | Name | Type | Mandatory | Description | --- --- | | `symbol` | STRING | YES | | | `interval` | ENUM | YES | | | `startTime` | LONG | NO | | | `endTime` | LONG | NO | | |...",
+      "score": 0.5971152,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Kline Candlestick Data | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/derivatives/coin-margined-futures/market-data/rest-api/Kline-Candlestick-Data",
+      "content": "Binance Logo Binance Logo # Kline/Candlestick Data ## API Description​ Kline/candlestick bars for a symbol. Klines are uniquely identified by their open time. Kline/Candlestick chart intervals: m -> minutes; h -> hours; d -> days; w -> weeks; M -> months ## HTTP Request​ GET `/dapi/v1/klines` `/dapi/v1/klines` ## Request Weight​ based on parameter `LIMIT` `LIMIT` | LIMIT | weight | --- | | [1,100) | 1 | | [100, 500) | 2 | | [500, 1000] | 5 | 1000 | 10 ## Request Parameters​ | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | After CM migration, accepts both CM and UM symbols. | | interval | ENUM | YES | | | startTime | LONG | NO | | | endTime | LONG | NO | | | limit | INT | NO | Default 500; max 1500. | [...] `startTime` `endTime` `startTime` `endTime` `limit` `endTime` `startTime` `endTime` `endTime` `startTime` `startTime` `endTime` `endTime` `endTime` `startTime` ## Response Example​ `[ [ 1591258320000, // Open time \"9640.7\", // Open \"9642.4\", // High \"9640.6\", // Low \"9642.0\", // Close (or latest price) \"206\", // Volume 1591258379999, // Close time \"2.13660389\", // Base asset volume 48, // Number of trades \"119\", // Taker buy volume \"1.23424865\", //...",
+      "score": 0.5931622,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Examining the SEC's Treatment of Bitcoin Futures and Spot ...",
+      "url": "https://businesslawreview.uchicago.edu/online-archive/spot-difference-examining-secs-treatment-bitcoin-futures-and-spot-exchange-traded",
+      "content": "Even with the significant market test applied to spot Bitcoin ETFs, Judge Rao determined that the asset would still qualify for listing.53 He notes that the SEC required NYSE Arca to demonstrate the lead/lag relationship between futures and spot markets but did not apply this same logic to the Bitcoin futures ETFs, once again exhibiting a discrepancy between treatments of like financial instruments.54 Furthermore, although Grayscale’s assets equaled almost a quarter of the CME futures market, it owned no futures contracts, and thus could only affect the futures market through the spot market, in which it only held 3.4% of outstanding Bitcoin.55 [...] Secondly, the SEC ruled that insufficient information was provided to establish that trading of the spot Bitcoin ETF would not be the predominant influence on prices in the CME Bitcoin futures market, as GBTC’s trading volume from November 1, 2019 to August 31, 2021 was 23% of said market.47 Following the rejection of this rule change after nearly a year of deliberation, Grayscale petitioned the Court of Appeals for the District of Columbia for review of the SEC’s denial order on the grounds that its Bitcoin ETF was a similar produc...",
+      "score": 0.588062,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Grayscale wins the Securities and Exchange Commission (“SEC”) case – a spot bitcoin ETF just got a bit closer | LU | WisdomTree Europe",
+      "url": "https://www.wisdomtree.com/lu/insights/blog/grayscale-wins-the-securities-and-exchange-commission-sec-case",
+      "content": "Market expected to grow bigger over time Over the long term, the spot bitcoin ETF is likely to widen the customer base interested in crypto. The US advisory market is $30 trillion in size and the institutional market (pension funds, endowments, insurance companies) is approximately $70 trillion in size. If just 0.5% of the Advisory market were to be allocated to bitcoin, this would translate to $150 billion in investment flows over time. We believe it is possible that $20-$30 billion could flow to spot bitcoin ETF products over the shorter-term as the current GBTC, bitcoin futures, MSTR and some exchange investors move to this more cost efficient and easier to trade bitcoin product. [...] On August 29th, 2023, a US federal Court of Appeals ruled that the Securities and Exchange Commission (“SEC”)’s denial of Grayscale’s Bitcoin Trust (GBTC) to a spot bitcoin ETF was “arbitrary and capricious”. The SEC has argued that the bitcoin spot market is vulnerable to price manipulation and hence it has not approved any spot bitcoin ETFs in the US yet. In our view, this is a bit peculiar as the SEC has approved bitcoin futures and leveraged bitcoin futures products, both of which are based...",
+      "score": 0.56517935,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "FOMC Meeting October 2025: Fed Rate Cut and Crypto ...",
+      "url": "https://www.bitget.com/academy/fomc-meeting-october-28-29-2025-fed-rate-cut-crypto-rally-impact-latest-news-updates",
+      "content": "2. Inflation and Employment Data When the federal shutdown ends, a wave of delayed data—CPI, PCE, payrolls, wage growth—will flood in. These metrics will guide the Fed’s December messaging. Softer inflation and rising unemployment would support further easing and benefit crypto. But if inflation surprises to the upside, it could delay future cuts and reintroduce market volatility. 3. QT Policy and Liquidity Conditions The Fed’s balance sheet strategy remains in focus. A formal pause or end to quantitative tightening (QT) would add liquidity to the system, typically bullish for Bitcoin and other digital assets. However, if QT continues longer than expected, it could drain liquidity and tighten financial conditions, creating headwinds for crypto valuations. [...] A welcome pack worth 6200 USDT for new users! Sign up now! The crypto market is once again at a crossroads as global investors turn their attention to the U.S. Federal Reserve’s October 28-29, 2025, FOMC meeting. After more than a year of economic turbulence and monetary recalibration, the Fed’s decision on whether to lower interest rates carries implications far beyond Wall Street. For crypto investors, it could mark a p...",
+      "score": 0.5608546,
+      "query": "Bitcoin macro calendar October 2025 CPI PCE FOMC Treasury refunding ETF flow schedule options expiry month-end liquidity",
+      "search_index": 4
+    },
+    {
+      "title": "Fed Meeting 2025–2027 and the Crypto Market",
+      "url": "https://www.bleap.finance/en-us/blog/full-fed-meeting-agenda-and-the-crypto-market",
+      "content": "The next Federal Reserve meeting is on October 28–29 2025, with markets pricing in a likely rate cut of 25 bps. No meeting occurs in November. These decisions directly affect crypto liquidity, DeFi yields, and investor risk appetite worldwide. ## Key Takeaways ## Federal Reserve Meeting Schedule ### 2025 Calendar ## 🗓 2025 Federal Reserve (FOMC) Meeting Calendar [...] ## 🗓 2025 Federal Reserve (FOMC) Meeting Calendar | Month | Dates | Key Info | --- | January | 28 – 29 | Regular meeting | | March \\ | 18 – 19 | Summary of Economic Projections (SEP) | | May | 6 – 7 | Regular meeting | | June \\ | 17 – 18 | SEP + Press Conference | | July | 29 – 30 | Regular meeting | | August | 22 | Notation Vote | | September \\ | 16 – 17 | SEP + Press Conference | | October | 28 – 29 | Next meeting – possible rate cut | | December \\ | 9 – 10 | Final meeting of the year + SEP | Month Dates Key Info January 28 – 29 Regular meeting March \\ 18 – 19 Summary of Economic Projections (SEP) May 6 – 7 Regular meeting June \\ 17 – 18 SEP + Press Conference July 29 – 30 Regular meeting August 22 Notation Vote September \\ 16 – 17 SEP + Press Conference [...] September \\ 16 – 17 SEP + Press Conference October 28...",
+      "score": 0.55362654,
+      "query": "Bitcoin macro calendar October 2025 CPI PCE FOMC Treasury refunding ETF flow schedule options expiry month-end liquidity",
+      "search_index": 4
+    },
+    {
+      "title": "How Crypto ETFs Work: BlackRock, Grayscale, Fidelity and more",
+      "url": "https://info.arkm.com/research/on-chain-analysis-guide-etfs",
+      "content": "The Clarity Act, a crypto market structure bill, that is currently making its way through Congress seeks to clarify what is considered a commodity and what is considered a security in the US. Commodities are regulatedf by the CFTC whilst securities are regulated by the SEC. ## When Were Crypto ETFs Approved? The spot Bitcoin ETF was first approved on January 10th, 2024, by the US SEC. The approval was a momentous decision for the crypto industry after more than 10 years of rejection since the Winklevoss twins submitted the first filing for a Bitcoin ETF, the Winklevoss Bitcoin Trust, in 2013. Just 4 months after the initial Bitcoin ETF approval, the US SEC approved spot Ethereum ETFs through the acceptance of their 19b-4 filings. [...] The political catalyst which finally tipped the SEC towards the approval of spot crypto ETFs after years of dismissal came in Grayscale’s legal victory against the US SEC in August 2023, in which Grayscale questioned the difference in treatment of crypto futures ETFs and crypto spot ETFs. The lawsuit forced the US SEC into a corner, eventually forming the driving force for the US SEC to work with Bitcoin ETF issuers to finalize their filings, lead...",
+      "score": 0.5489884,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "SEC approves Spot Bitcoin ETP, opening new pathway to Bitcoin investment",
+      "url": "https://www.aoshearman.com/en/insights/sec-approves-spot-bitcoin-etp-opening-new-pathway-to-bitcoin-investment",
+      "content": "In the wake of Grayscale, the current SEC approval Order relies in part on correlation analysis of the relationship between prices in the CME bitcoin futures market and the spot bitcoin market, noting that the CME bitcoin futures market has been consistently highly correlated with the analyzed subset of the spot bitcoin market in the sample period. The SEC concedes that fraud or manipulation that affects prices in spot bitcoin markets would likely similarly affect CME bitcoin futures prices, such that the CME’s surveillance should assist in curbing fraudulent and manipulative acts and practices in the spot bitcoin ETP context.(#_ftn6) ## Commissioner Statements [...] Commissioner Caroline Crenshaw dissents from approval of the Order, raising concerns, among other things, about fraud and manipulation in the underlying spot bitcoin markets, concentration of ownership and lack of systemic oversight and regulation, domestically and abroad. Commissioner Crenshaw points out that the bitcoin markets are highly concentrated among a few entities that can influence the price movements and volatility in bitcoin, noting the irony of this concentration given that bitcoin was touted as the pr...",
+      "score": 0.5278769,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Open Interest of CME Bitcoin Futures by Trader Category (long)",
+      "url": "https://www.theblock.co/data/crypto-markets/cme-cots/open-interest-of-cme-bitcoin-futures-by-trader-category-weekly",
+      "content": "LiveBTCUSD$64,179.011.36% ETHUSD$1,784.412.07% SOLUSD$79.251.42% PYTHUSD$0.0442-4.21% LINKUSD$7.962.44% # Open Interest of CME Bitcoin Futures by Trader Category (long) ## About this graph The Commitment of Traders Report (COT) is published by the CFTC and provides a breakdown of each Tuesday’s open interest on futures markets that have 20 or more traders that hold positions at or above reporting levels. The report is published every Friday, submitting the final numbers from the prior Tuesday’s trading close. This chart represents the total number of open CME bitcoin futures contracts (each contract = 5 BTC of notional value) that are not closed or delivered by Tuesday's close, aggregated by CFTC categorized trader classification. Copy Embed Code",
+      "score": 0.49729064,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "search_index": 3
+    },
+    {
+      "title": "Flows Are Back: Bitcoin, ETFs, and the Fed in Focus",
+      "url": "https://www.linkedin.com/pulse/flows-back-bitcoin-etfs-fed-focus-m2-investment-u7ttf",
+      "content": "For crypto, the test is whether ETF inflows can sustain above $2B per week after the Fed. Solana’s ETF growth and Toncoin’s momentum remain in focus, alongside tokenized Treasury adoption by banks and asset managers. In traditional markets, dollar and U.S. Treasury moves will dictate whether risk appetite holds. On the regulatory front, the SEC’s October 17 roundtable and the BoE’s consultation feedback loom, while MiCA licenses continue rolling out across Europe. M2 Newsletter ### M2 Newsletter #### 15,202 followers Like Celebrate Support Love Insightful Funny To view or add a comment, sign in ## More articles by M2 ### Crypto Withstands the Shakeout Weekly Newsletter- OCT 06 - 13, 2025 Key Takeaway Despite a historic $19B+ liquidation shock on Oct 10, crypto markets… [...] ## Others also viewed ### U.S. Inflation Data Triggers Crypto Market Pullback ### Weekly Institutional Insights — Bitcoin Climbs Back to $58K, Solana ETF Excitement Might Be Next Catalyst for Another Rally ### Bitcoin Tests $80K Amid Market Volatility ### Week of June 10th ### Macro jitters steady as Trump-Xi meeting lifts sentiment while crypto consolidates near highs ### 📊 Weekly Market Report | March 9–13...",
+      "score": 0.49377534,
+      "query": "Bitcoin macro calendar October 2025 CPI PCE FOMC Treasury refunding ETF flow schedule options expiry month-end liquidity",
+      "search_index": 4
+    },
+    {
+      "title": "BTC/USDT Complete OHLCV Dataset – All Timeframes",
+      "url": "https://www.kaggle.com/datasets/alexeiebykov/binance-btcusdt",
+      "content": "menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (0)Suggestions (0) ## About Dataset The data is structured into multiple CSV files organized by timeframe containing standard Binance klines (candlestick) data. Pair: BTC/USDT # Available Timeframes: Intraday: 1m, 3m, 5m, 15m, 30m Hourly: 1h, 2h, 4h, 6h, 8h, 12h Daily & Higher: 1d, 3d, 1w, 1M Columns Description: [...] Daily & Higher: 1d, 3d, 1w, 1M Columns Description: Each CSV file contains the following columns: | Column | Description | --- | | timestamp | Open time of the candle in milliseconds (Unix timestamp) | | open | Price at the beginning of the interval | | high | Highest price during the interval | | low | Lowest price during the interval | | close | Price at the end of the interval | | volume | Total volume of BTC traded | | close_time | Close time of the candle in millisec...",
+      "score": 0.42148095,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Monthly Returns",
+      "url": "https://www.youtube.com/watch?v=l8I_ycbxsh4",
+      "content": "being a lot different a lot higher than that right I mean like look at October was 28% November was 8. 7 December was almost 12 June was almost 12 right March 23 January almost 40% so yeah I mean like 4% is great but even when you get a green September it is still relatively lackluster compared to other green months that Bitcoin has um 2016 was a great year for Bitcoin it only went up 6% in September 2015 we saw Bitcoin go up in Q4 September was only about a 2 and a half half uh percent move to the upside so you know going into this September um one of the things I was looking at actually is that a lot of the septembers that are green are preceded by Red months of August okay so like in 2023 when we had a green September we had a red August in 2016 and 2015 when we had a green September [...] like sort of a what are the probabilities of like a left translated cycle Peak and I've always been against the idea of of um of that and I I would say that it's possible right there's always a possibility of a left translated Peak um I think a lot of people when they think about a left translated Peak they think oh that means that bitcoin's going to top in you know like late 2024 or someth...",
+      "score": 0.38415,
+      "query": "Bitcoin October seasonality historical returns all-time highs around late October prior years BTC monthly performance",
+      "search_index": 2
+    },
+    {
+      "title": "Charting Crypto Q4 2025 Edition",
+      "url": "",
+      "content": "A Q4 2025 crypto market report presents survey results, market data, and onchain analytics intended to help investors assess trends shaping crypto markets, and says the authors maintain a cautiously optimistic stance for 4Q25 while outlining factors that could change that view.",
+      "score": 0.65676886,
+      "query": "October 2025 Bitcoin outlook analyst report on-chain research Glassnode CryptoQuant Coinbase Institutional Kaiko recent month",
+      "search_index": 5,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m candle close ET timezone resolution rules Binance trade page API klines documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin October seasonality historical returns all-time highs around late October prior years BTC monthly performance",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "SEC spot Bitcoin ETF filings BlackRock Fidelity Grayscale holdings flows CME Bitcoin futures open interest CFTC COT",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Bitcoin macro calendar October 2025 CPI PCE FOMC Treasury refunding ETF flow schedule options expiry month-end liquidity",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "October 2025 Bitcoin outlook analyst report on-chain research Glassnode CryptoQuant Coinbase Institutional Kaiko recent month",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "row_index": 98,
+  "market_id": "mkt_701110",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $90,000 on December 1?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $90,000 on December 1?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-12-01",
+  "evidence_cutoff_date": "2025-11-30",
+  "end_date_limit": "2025-11-30",
+  "row_end_date_raw": "2025-12-01",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+    "Bitcoin price historical December 1 seasonal returns all-time highs prior cycles 2017 2021 2024",
+    "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin holdings SEC CFTC Federal Reserve impact BTC price",
+    "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+    "November 2025 bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research BTC $90,000"
+  ],
+  "supplemental_query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+  "supplemental_queries": [
+    "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+    "site:farside.co.uk/bitcoin-etf-flow-all-data/ OR site.sosovalue.com Bitcoin ETF daily flows November 2025 month-end cumulative AUM creations redemptions primary source",
+    "site:glassnode.com OR site.cryptoquant.com OR site.coinmetrics.io November 2025 bitcoin on-chain exchange balances stablecoin supply miner selling long-term holder SOPR MVRV leading indicators"
+  ],
+  "stats": {
+    "search_calls": 8,
+    "raw_result_count": 69,
+    "deduped_result_count": 68,
+    "hard_quarantined_late_date_count": 7,
+    "llm_filter_input_count": 68,
+    "supplemental_search_triggered": true,
+    "supplemental_search_count": 3,
+    "supplemental_raw_result_count": 19,
+    "supplemental_deduped_result_count": 18,
+    "final_evidence_count": 27,
+    "llm_filter_batch_count": 8,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 41,
+    "llm_kept_count": 27,
+    "llm_kept_leak_no_count": 26,
+    "llm_rewrite_candidate_count": 2,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 1,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Gemini + Glassnode: 2025 Crypto Market Trends",
+      "url": "https://research.glassnode.com/2025-crypto-market-trends-with-gemini",
+      "content": "## Conclusion: A Market in Transition The crypto market is entering 2025 with strong institutional inflows, resurgent retail activity, and shifting regional dynamics. Spot ETFs are absorbing a growing share of Bitcoin and Ethereum’s circulating supply, while futures markets show a clear institutional long bias. At the same time, retail investors are back, with Solana seeing record engagement and surpassing Ethereum in active addresses. [...] ### Futures Open Interest Surges Institutional demand for derivatives exposure has intensified, with all major assets seeing strong growth: ### Funding Rates Indicate a Persistent Long Bias ### Institutional Arbitrage and Market Liquidity The rise of ETFs has fueled futures-based arbitrage, with institutions executing cash-and-carry trades—longing ETFs while shorting futures. This: ### Looking Ahead The expansion of institutional futures activity signals long-term confidence in digital assets, with key trends to monitor: Institutional derivatives demand is solidifying crypto’s status as a structured, tradable asset class, reinforcing its role in diversified portfolios. ## APAC Retail Growth vs. US ETF Dominance [...] In collaboration with Ge...",
+      "score": 0.7752821,
+      "query": "November 2025 bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research BTC $90,000",
+      "search_index": 5
+    },
+    {
+      "title": "Binance Spot",
+      "url": "https://docs.tardis.dev/historical-data-details/binance",
+      "content": "BTCUSDT 2019-12-01 Download sample trades BTCUSDT 2019-12-01 Download sample quotes BTCUSDT 2019-12-01 Download sample ### API Access and data format Historical data format is the same as provided by real-time Binance WebSocket API with addition of local timestamps. If you'd like to work with normalized data format instead (same format for each exchange) see downloadable CSV files or official client libs that can perform data normalization client-side. See Python client docs. See Node.js client docs. [ Example API response for Binance historical market data request See HTTP API docs. [...] Tardis.dev Documentation `⌘Ctrl``k` Supported ExchangesCSV datasetsGet Api Key For the complete documentation index, see llms.txt. This page is also available as Markdown. # Binance Spot Binance historical market data details - currency pairs, data coverage and data collection specifics Binance historical data for high caps currency pairs is available since 2019-03-30, data for all currency pairs is available since 2021-03-05. See Binance historical data coverage: available symbols, channels, date ranges and incidents ### Downloadable CSV files Historical CSV datasets for the first day of each...",
+      "score": 0.71377134,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"convertibleAssets\":[ { \"fromAsset\": \"BTC\", \"toAsset\": \"BNB\", \"availableBalance\": \"0.0001\", \"convertedAsset\": \"0.0028987\", \"usdValueConvertedAsset\": \"2.0001\", \"conversionFee\": \"0.00005797\", \"receivedAsset\": \"0.00284073\" }, { \"fromAsset\": \"USDT\", \"toAsset\": \"BNB\", \"availableBalance\": \"14.286\", \"convertedAsset\": \"0.02029026\", \"usdValueConvertedAsset\": \"14.00028\", \"conversionFee\": \"0.00040581\", \"receivedAsset\": \"0.01988445\" } ], \"totalConvertedAsset\": \"0.02318896\", \"usdValueTotalConvertedAsset\": \"16.00038\", \"totalConversionF...",
+      "score": 0.7001783,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin's Price History",
+      "url": "https://www.investopedia.com/articles/forex/121815/bitcoins-price-history.asp",
+      "content": "### Late 2024 On Nov. 7, 2024, Bitcoin's price hit another all-time high of $75,902 following Donald Trump's re-election, a 9% increase from the closing price on Nov. 5. On Nov. 10, 2024, Bitcoin reached another milestone, crossing the $80,000 threshold.1 On Nov. 11, it continued pushing boundaries, and two days later, it closed at $90,574.1 Market exuberance continued apace in the following weeks, pushing Bitcoin to remarkable highs of $99,817 on Oanda, $99,860 on Coinbase, and $99,852 on Gemini on Nov. 22, 2024, by midday.8 9 10 On Dec. 8, 2024, Bitcoin broke through $100,000 and closed at $101,237.1 [...] ## 2024 Price History In January 2024, the long fight for Bitcoin Spot ETFs came to a close after the SEC was forced by courts to review its denial of certain Bitcoin-related investment products.4 Some brokerages swarmed the market and increased their holdings, while others, like Grayscale's Bitcoin Trust (GBTC), saw significant outflows from the start.5 The outflows from certain funds slowed going into March, somewhat settling the market. The market-wide rebalancing was likely because investors had more options to choose from. ### Early 2024 Bitcoin's price climbed quickly...",
+      "score": 0.6745014,
+      "query": "Bitcoin price historical December 1 seasonal returns all-time highs prior cycles 2017 2021 2024",
+      "search_index": 2
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "{\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3999.00000000\", \"qty\":\"5.00000000\", \"commission\":\"19.99500000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3998.00000000\", \"qty\":\"2.00000000\", \"commission\":\"7.99600000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3997.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99700000\", \"commissionAsset\": \"USDT\"},{\"price\":\"3995.00000000\", \"qty\":\"1.00000000\", \"commission\":\"3.99500000\", [...] {\"symbol\": \"BTCUSDT\", \"orderId\": 28, \"clientOrderId\": \"6gCrw2kRUAF9CvJDGP16IP\", \"transactTime\": 1507725176595, \"price\":\"0.00000000\", \"origQty\":\"10.00000000\", \"executedQty\":\"10.00000000\", \"cummulativeQuoteQty\":\"10.00000000\", \"status\": \"FILLED\", \"timeInForce\": \"GTC\", \"type\": \"MARKET\", \"side\": \"SELL\", \"fills\":[{\"price\":\"4000.00000000\", \"qty\":\"1.00000000\", \"commission\":\"4.00000000\", \"commissionAsset\": \"USDT\"}...",
+      "score": 0.657033,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "BlackRock vs Fidelity: Who Controls the Future of Bitcoin ETFs",
+      "url": "",
+      "content": "The article discusses whether continued Bitcoin ETF inflows could tighten Bitcoin availability if buying persists alongside shrinking market liquidity. It compares Bitcoin ETFs in terms of fees, trading ease, and investor fit, and notes that ETF performance is largely driven by Bitcoin’s price.",
+      "score": 0.6519982,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin holdings SEC CFTC Federal Reserve impact BTC price",
+      "search_index": 3,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "[PDF] Kaiko Research - Quarterly Report, Q1 2025",
+      "url": "https://marketing.kaiko.com/hubfs/Kaiko%20Research%20-%20Quarterly%20Report%2C%20Q1%202025.pdf",
+      "content": "solutions signals that the market is maturing beyond simple bilateral arrangements toward more robust, scalable models that better align with traditional financial risk management practices. [...] equities. However, as crypto legislation takes shape and regulatory support builds, Bitcoin may begin to decouple from traditional assets in the months ahead. [...] Between April 2 and 6, Bitcoin remained steady around $82K following the announcement of the Liberation Day tariff, demonstrating resilience amid market volatility. Although it declined as the broader selloff intensified over the weekend, Bitcoin still outperformed the Nasdaq 100, as well as APAC and European equities. This performance suggests that the majority of the derisking may have already occurred. Source: Kaiko Indices. Refinitiv. Bitcoin Post Liberation Day Performance Source: Kaiko Indices.",
+      "score": 0.604703,
+      "query": "November 2025 bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research BTC $90,000",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Price Chart and Tables | Official Data",
+      "url": "https://www.in2013dollars.com/bitcoin-price",
+      "content": "| 2023 | 11 | 35,437.25 | 7,453.50 | 26.64 | | 2023 | 10 | 27,983.75 | 2,183.03 | 8.46 | | 2023 | 9 | 25,800.72 | -3,875.01 | -13.06 | | 2023 | 8 | 29,675.73 | -914.35 | -2.99 | | 2023 | 7 | 30,590.08 | 3,770.11 | 14.06 | | 2023 | 6 | 26,819.97 | -1,271.60 | -4.53 | | 2023 | 5 | 28,091.57 | -319.47 | -1.12 | | 2023 | 4 | 28,411.04 | 4,764.48 | 20.15 | | 2023 | 3 | 23,646.55 | -77.22 | -0.33 | | 2023 | 2 | 23,723.77 | 7,098.69 | 42.70 | | 2023 | 1 | 16,625.08 | -342.05 | -2.02 | | 2022 | 12 | 16,967.13 | -3,518.14 | -17.17 | | 2022 | 11 | 20,485.27 | 1,173.18 | 6.07 | | 2022 | 10 | 19,312.10 | -815.04 | -4.05 | | 2022 | 9 | 20,127.14 | -3,187.06 | -13.67 | | 2022 | 8 | 23,314.20 | 4,044.83 | 20.99 | | 2022 | 7 | 19,269.37 | -10,529.71 | -35.34 | [...] | 2019 | 10 | 8,343.28 | -1,414.69 | -14.50 | | 2019 | 9 | 9,757.97 | -641.70 | -6.17 | | 2019 | 8 | 10,399.67 | -183.47 | -1.73 | | 2019 | 7 | 10,583.13 | 2,019.12 | 23.58 | | 2019 | 6 | 8,564.02 | 3,161.32 | 58.51 | | 2019 | 5 | 5,402.70 | 1,244.51 | 29.93 | | 2019 | 4 | 4,158.18 | 298.60 | 7.74 | | 2019 | 3 | 3,859.58 | 371.64 | 10.65 | | 2019 | 2 | 3,487.95 | -355.57 | -9.25 | | 2019 | 1 | 3,843.52 | -371.15 | -8.81 | | 2018 | 1...",
+      "score": 0.60245985,
+      "query": "Bitcoin price historical December 1 seasonal returns all-time highs prior cycles 2017 2021 2024",
+      "search_index": 2
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "`tradingStatus` `-1220 SYMBOL_DOES_NOT_MATCH_STATUS` `TRADING` `HALT` `BREAK` Data Source: Memory Response - FULL: `{ \"symbol\": \"BNBBTC\", \"priceChange\": \"-94.99999800\", \"priceChangePercent\": \"-95.960\", \"weightedAvgPrice\": \"0.29628482\", \"prevClosePrice\": \"0.10002000\", \"lastPrice\": \"4.00000200\", \"lastQty\": \"200.00000000\", \"bidPrice\": \"4.00000000\", \"bidQty\": \"100.00000000\", \"askPrice\": \"4.00000200\", \"askQty\": \"100.00000000\", \"openPrice\": \"99.00000000\", \"highPrice\": \"100.00000000\", \"lowPrice\": \"0.10000000\", \"volume\": \"8913.30000000\", \"quoteVolume\": \"15.30000000\", \"openTime\": 1499783499040, \"closeTime\": 1499869899040, \"firstId\": 28385, // First tradeId \"lastId\": 28460, // Last tradeId \"count\": 76 // Trade count }` OR [...] `symbols` `[ { \"symbol\": \"BTCUSDT\", \"priceChange\": \"-154.13000000\", // Absolute price change \"priceChangePercent\": \"-0.740\", // Relative price change in percent \"weightedAvgPrice\": \"20677.46305250\", // QuoteVolume / Volume \"openPrice\": \"20825.27000000\", \"highPrice\": \"20972.46000000\", \"lowPrice\": \"20327.92000000\", \"lastPrice\": \"20671.14000000\", \"volume\": \"72.65112300\", \"quoteVolume\": \"1502240.91155513\", // Sum of (price volume) for all trades \"openTime\": 16554324000...",
+      "score": 0.5674818,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "[PDF] Financial Stability Report; November 2025 - Federal Reserve",
+      "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20251107.pdf",
+      "content": "Treasury market liquidity is particularly important because of the key role these securities play in the financial system. Amid the April volatility, Treasury market liquidity hit historically low levels. Since then, various measures of Treasury market liquidity, including two different measures of market depth in the most liquid on-the-run segment, indicated that liquidity increased back to or above previous levels across all maturities (figures 1.11 and 1.12). [...] Artificial intelligence Respondents noted that a turn in the prevailing sentiment toward AI, which has been viewed as a main driver of recent U.S. equity performance, could lead to a correction in risk assets. Participants noted that such a turn could lead to large losses in private and public markets and, if the declines were large enough, drive a further slowdown in the labor market and tighten fi nancial conditions. [...] Treasury market liquidity recovered to levels well above the lows seen in April. During that epi-sode, yields on Treasury securities exhibited considerable volatility, which, in turn, contributed to April’s deterioration in market liquidity. Equity markets rebounded from April’s volatility and...",
+      "score": 0.5504388,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "Cryptocurrencies in the Balance Sheet: Insights from (Micro)Strategy",
+      "url": "https://arxiv.org/html/2505.14655v1",
+      "content": "During the Federal Reserve’s 2022–2024 tightening cycle, BTC increasingly behaved like other speculative growth assets, particularly the so-called high-beta technology stocks . Recent data support this view. The 90-day rolling correlation between BTC and the NASDAQ-100100100100 index reached 0.460.460.460.46 in May 2024202420242024 – the highest since August 2023202320232023 – and had previously spiked above 0.800.800.800.80 in early 2022202220222022 after the Fed’s initial rate hikes . These trends challenge the traditional view of BTC as a store of value immune to macroeconomic swings. Its sharp price fluctuations, combined with the launch and rapid growth of U.S. spot BTC ETFs, have broadened its investor base and further linked its returns to overall market risk sentiment. BTC now [...] Broader trends in global investment strategies demonstrate the increasing integration of BTC into traditional financial markets. By the end of 2024202420242024, the value of globally invested assets surpassed $200currency-dollar200\\$200$ 200 trillion, with cryptocurrencies representing 1.5%percent1.51.5\\%1.5 % of the total, with approximately $3currency-dollar3\\$3$ 3 trillion . Institutional...",
+      "score": 0.54942364,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin holdings SEC CFTC Federal Reserve impact BTC price",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin's Market Cycle & Crypto Cycles Chart | Caleb & Brown",
+      "url": "https://calebandbrown.com/blog/bitcoins-market-cycle",
+      "content": "Before bitcoin reaches new highs, the amount of bitcoin held in central exchange wallets is typically low, indicating that investors may be holding their BTC and waiting for higher prices. This HODLing reduces available supply (even further in a high-demand period) and, as seen below, this can result in sharp price increases. Bitcoin All Exchange Reserves. Source: CryptoQuant ### Identifying Market Cycle Phase with New Interest in Bitcoin Peak interest in bitcoin, as measured by Google search activity, was reached in December 2017, coinciding with the bull market’s run-up to an all-time high. Since then, Google Trends shows that the search volume for 'bitcoin' hasn’t reached the same levels as the 2017 bull run, despite delivering multiple all-time highs since. [...] Historically, bitcoin has followed a four-year cycle tied to Bitcoin halving events, which happen approximately every four years. A halving event marks a 50% cut in the bitcoin reward miners receive for mining new blocks and verifying transactions. In effect, the bitcoin supply continues to increase, but at a slower rate, upholding the network’s deflationary principles. The knock-on effect has led to steep price inc...",
+      "score": 0.54855317,
+      "query": "Bitcoin price historical December 1 seasonal returns all-time highs prior cycles 2017 2021 2024",
+      "search_index": 2
+    },
+    {
+      "title": "Bitcoin options open interest for March expiry on Deribit hits record ...",
+      "url": "https://www.theblock.co/post/285041/bitcoin-options-open-interest-for-march-expiry-on-deribit-hits-record-levels",
+      "content": "Start Survey Advertisement Over $9.5 billion worth of bitcoin options open interest is set to expire this week on the Deribit cryptocurrency derivatives exchange. This makes Friday's end-of-month expiry one of the largest the leading crypto derivatives exchange has ever seen. \"This Friday marks one of the biggest expiries in Deribit's history as $9.5 billion bitcoin options open interest out of $26.3 billion will expire, or 40%,\" Deribit analysts said in a note sent to The Block. Image 7 The max pain level for Friday's end of month expiry on the Deribit derivatives exchange is $50,000. Image: Deribit. [...] ## More options than usual set to expire in-the-money According to Deribit, out of the $9.5 billion bitcoin options open interest, at a current spot price level of around $70,000, $3.9 billion will expire in-the-money, with a \"max pain\" price of $50,000. This means that if these options were to be exercised before or on Friday, they would generate a profit, suggesting a significant portion of the options contracts are currently valuable based on the current price of bitcoin. The Deribit analysts added that the present situation implies that a large number of options are profi...",
+      "score": 0.5444871,
+      "query": "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+      "search_index": 4
+    },
+    {
+      "title": "BTC Faces $13.3B Monthly Options Expiry as BTC Trades Well ...",
+      "url": "https://www.coindesk.com/markets/2025/11/25/bitcoin-faces-usd13-3b-monthly-options-expiry-as-btc-trades-well-below-max-pain",
+      "content": "24:10 0.5x 1x 1.25x 1.5x 2x Live 00:05 44:43 44:48 The max pain price sits at $102,000, 17% above the current spot price, illustrating how far BTC has drifted from the level at which option sellers would incur the least total loss. Deribit data shows $3.4 billion of contracts are currently in the money, about 26% of total exposure, while $10 billion remains out of the money, roughly 74%, highlighting how heavily traders positioned for moves outside the current range. Open interest is most concentrated at the $80,000 strike, the largest bearish cluster on the board. Calls stack up at higher strikes, especially above $120,000, but these are far from being exercised with spot deeply below those levels. [...] Search / LinkedInFacebookEmail Make preferred on Image 1: Open Interest by Strike Price (Deribit) Open Interest by Strike Price (Deribit) Summary Show Max pain for bitcoin sits at $102,000, with just 26% of contracts in the money and the largest bearish cluster concentrated at the $80,000 strike. Call open interest totals 92,692 BTC versus 61,086 BTC in puts, a put call ratio of 0.66 and $13.3 billion in notional value. Bitcoin BTC$64,135.59 heads into Friday’s monthly options...",
+      "score": 0.47636098,
+      "query": "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+      "search_index": 4
+    },
+    {
+      "title": "FOMC Minutes, October 28-29, 2025 - Federal Reserve",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20251029.htm",
+      "content": "Total consumer price inflation—as measured by the 12-month change in the price index for personal consumption expenditures (PCE)—was estimated to have been 2.8 percent in September based on data from the consumer price index. Core PCE price inflation, which excludes changes in consumer energy prices and many consumer food prices, was also estimated to have been 2.8 percent in September. These estimates implied that total PCE price inflation had risen 0.5 percentage point relative to a year ago and that core PCE inflation was unchanged from its year-earlier rate. [...] Real GDP posted a strong gain in the second quarter following a decline in the first quarter, although the average increase over the first half of the year was slower than the average pace seen over 2024. Real private domestic final purchases (PDFP)—which comprises PCE and private fixed investment and which often provides a better signal of underlying economic momentum than GDP—had risen faster than GDP over the first half but had also slowed relative to its 2024 rate of increase. PDFP growth appeared to have continued at a solid pace in the third quarter, though the government shutdown had reduced the amount of da...",
+      "score": 0.45464227,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "Nearly $5 Billion Bitcoin and Ethereum Options Expire Today Amid ...",
+      "url": "https://finance.yahoo.com/news/nearly-5-billion-bitcoin-ethereum-053148093.html",
+      "content": "... BeInCrypto # Nearly $5 Billion Bitcoin and Ethereum Options Expire Today Amid A Market on Edge Lockridge Okoth 4 min read BTC-USD -2.29% ETH-USD -2.28% Almost $5 billion in Bitcoin and Ethereum options are set to expire on November 14, 2025, at 8:00 UTC on Deribit. These options expiry could shake the prices of BTC and ETH, potentially moving them toward their respective strike prices as expiration approaches. Today's expiry is slightly lower than last week's $5.4 billion, but the stakes are higher today as the market shows weakness. Therefore, traders and investors should closely watch max pain levels and positioning, both of which could impact short-term price action. ## Bitcoin Options Market Shows Cautious Optimism [...] ## Bitcoin Options Market Shows Cautious Optimism Bitcoin options positioning highlights renewed caution after the pioneer crypto dipped to levels below $100,000 for the second time in a week. Data on Deribit shows that the maximum pain sits at $105,000, where most traders are bound to suffer the most losses as the options near expiration. Expiring Bitcoin Options Expiring Bitcoin Options. Source: Deribit Meanwhile, the Put-to-Call ratio (PCR) is 0.63, i...",
+      "score": 0.45406118,
+      "query": "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+      "search_index": 4
+    },
+    {
+      "title": "Crypto Derivatives: Analytics Report - Week 45 - Deribit Insights",
+      "url": "https://insights.deribit.com/industry/crypto-derivatives-analytics-report-week-45-2025",
+      "content": "While US risk-on equities have held steady over the past week, crypto spot prices have continued to fall lower, souring sentiment further in derivatives markets. Since Oct 10, 2025, BTC has primarily traded between $105K and $115K. Earlier today, it broke below the $105K support level – that coincided with a further drop in our Risk- Appetite Index, designed to capture market sentiment. Funding rates on perpetual swap contracts have fallen to their lowest levels (-0.005% on an eight-hourly basis) since early August 2025, while volatility smiles have skewed further towards protection against more downside price action. Meanwhile, short-tenor options for both BTC and ETH have outperformed, suggesting traders are pricing in greater volatility expectations in the near-term. For ETH, that [...] Skip to content Deribit Insights Logo Categories + Industry + Option Flows + Exchange Updates + Market Research + Education + Podcast + Out of Office Options Course Trading Tools Partners Dev Hub KB English # Crypto Derivatives: Analytics Report – Week 45 Block Scholes2025-11-05T15:55:47+00:00November 5, 2025|Industry| Weekly recap of the crypto derivatives markets by BlockScholes. Key Insights:",
+      "score": 0.4081122,
+      "query": "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+      "search_index": 4
+    },
+    {
+      "title": "Thinking Ahead",
+      "url": "https://research.glassnode.com/the-week-onchain-week-04-2025",
+      "content": "The chart shows the long-term to short-term holder supply ratio, revealing these distribution dynamics over time. A rising trend signals a dominance of accumulation and HODLing behaviour, as fewer old coins are spent and more migrate into Long-Term Holder status. Conversely, a decline in this metric indicates strong distribution by long-term holders at the present moment. The monthly rate of change in this ratio highlights two primary waves of distribution that have occurred in the 2023-25 cycle, which are comparable in scale to those in early 2021 and late 2017. [...] In each case, the market rallied for over a month after the peak sell-side, suggesting a lessening sell-side allows breathing room for the demand to push prices higher. However, each eventually reached demand exhaustion, and the market started to transition back into a HODLing dominant phase during the subsequent bear market. These metrics demonstrate the interplay between long-term holder activity and the role capital rotation has in sustaining bullish market momentum. ### Addressing a Misconception on Exchange Balances There is a widely held misconception regarding the decline in exchange balances during this cy...",
+      "score": 0.379241,
+      "query": "site:glassnode.com OR site.cryptoquant.com OR site.coinmetrics.io November 2025 bitcoin on-chain exchange balances stablecoin supply miner selling long-term holder SOPR MVRV leading indicators",
+      "search_index": 8
+    },
+    {
+      "title": "Historical Market Data - Binance.US",
+      "url": "https://www.binance.us/institutions/market-history",
+      "content": "Data Products Open API ## Frequently Asked Questions Candlestick Also known as k-line, is distinguished by its open time and supports multiple intervals for analysis and interpretation. Download Field Name Description open_time Candlestick open time in Unix time format open Open price high High price low Low price close Close price volume Volume close_time Candlestick close time in Unix time format quote_volume Quote asset volume count Number of trades taker_buy_base_volume Taker buy base asset volume during this period taker_buy_quote_volume Taker buy quote asset volume during this period Trades Executed transactions updated at tick level throughout daily or monthly intervals. Download Field Name Description id Trade ID price Price qty [...] Field Name Description id Trade ID price Price qty Base quantity quote_qty Quote quantity time Time in Unix time format is_buyer_maker Whether trade was buyer or maker Aggregated Trades Combines the aggregate total volume of orders filled at a given price at daily or monthly intervals. Download Field Name Description agg_trade_id Aggregated trade ID price Price quantity Quantity first_trade_id First trade ID last_trade_id Last trade ID tran...",
+      "score": 0.3450175,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "binance-spot-api-docs/rest-api.md at master - GitHub",
+      "url": "https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md",
+      "content": "## Latest commit ## History History History 4950 lines (4245 loc) · 177 KB / # rest-api.md Copy path ## File metadata and controls 4950 lines (4245 loc) · 177 KB Copy raw file Download raw file Outline Edit and raw actions You can’t perform that action at this time. [...] Skip to content ## Navigation Menu Sign in Appearance settings # Search code, repositories, users, issues, pull requests... Search syntax tips Sign in Sign up Appearance settings You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ### Uh oh! There was an error while loading. Please reload this page. binance / binance-spot-api-docs Public Notifications You must be signed in to change notification settings Fork 1.5k Star 4.8k ## Expand file tree / # rest-api.md Copy path More file actions More file actions ## Latest commit ## History History History",
+      "score": 0.34237418,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin's On-chain Market Cycles - Glassnode Insights",
+      "url": "https://insights.glassnode.com/bitcoin-onchain-market-cycles",
+      "content": "Puell Multiple Live Chart ## Summary The supply and demand balance of the Bitcoin market is an extremely dynamic system, despite being cyclical in nature. Whilst the programmatic halving cycles may make it seem 'obvious', it remains difficult to pinpoint which stage of the bull market we are in. On-chain metrics provide tools and insights into macro changes in spending patterns and conviction of hodlers, speculators and miners. When it comes to bull markets, there is an array of metrics and useful indicators, but a few patterns are important to pay attention to: HODLers (old coins) distributing their wealth, New speculators (young coins) increasing their positions, Miners reaching peak profitability. [...] ## On-chain Character In bear markets, interest in Bitcoin the protocol typically wanes, and by the end of it, only Bitcoiners, smart money, and miners remain standing. These are the buyers of last resort, and they all have one goal: to accumulate as much bitcoin as possible before everyone else works it out. For on-chain data, the patterns and fractals we observe during bear markets are largely driven by these low time preference accumulators. The chart below shows supply acc...",
+      "score": 0.3145667,
+      "query": "site:glassnode.com OR site.cryptoquant.com OR site.coinmetrics.io November 2025 bitcoin on-chain exchange balances stablecoin supply miner selling long-term holder SOPR MVRV leading indicators",
+      "search_index": 8
+    },
+    {
+      "title": "Finance and Economics Discussion Series (FEDS) - 2025",
+      "url": "https://www.federalreserve.gov/econres/feds/2025.htm",
+      "content": "US Flag An official website of the United States Government Expand More .gov icon Official websites use .gov A .gov website belongs to an official government organization in the United States. HTTPS icon Secure .gov websites use HTTPS A lock (LockLocked padlock icon) or means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. # Board of Governors of the Federal Reserve System The Federal Reserve, the central bank of the United States, provides the nation with a safe, flexible, and stable monetary and financial system. Federal Open Market Committee Monetary Policy Principles and Practice Policy Implementation Reports Review of Monetary Policy Strategy, Tools, and Communications Supervision Reports Reporting Forms [...] exceptionally elevated around CPI announcements during the inflation surge, and (2) higher pre-announcement attention robustly leads to stronger market reactions. Studying investor attention in the context of Employment Report releases and Federal Reserve announcements, I document a similar importance of attention allocation for market reactions. Lastly, I find that markets tend to overreact to announcements...",
+      "score": 0.31254882,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "Financial Stability Report, Spring 2025",
+      "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20250425.pdf",
+      "content": "U.S. fiscal debt sustainability Contacts noted concerns that elevated Treasury supply could crowd out private investment, raise term premia, and further challenge Treasury market liquidity. Risk asset/valuation correction Contacts cited a correction in the price of risk assets, with elevated valuations as a notable risk. Persistent inflation respondents continued to note the risk of persistent inﬂ ation, though not as frequently as in surveys over the past several years. Participants highlighted that inﬂ ation could rise from tariffs and disrup-tions to global supply chains. Several contacts specifi cally mentioned the risk that longer-term inﬂ a-tion expectations could become unanchored. [...] risks emanating from changes to global trade policy were the most cited risk. u.S. fi scal debt sus-tainability, which was the top-cited risk last fall, was slightly less noted this round. broader policy uncertainty, which was often cited in the survey last fall, remained frequently cited this cycle (fi gure b). a correction in risk assets as well as persistent inﬂ ation were also frequently cited in this round. respondents also expressed concern that Treasury market functioning could bec...",
+      "score": 0.27564052,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "FEDS Notes - 2025 - Federal Reserve",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/2025-index.htm",
+      "content": "US Flag An official website of the United States Government Expand More .gov icon Official websites use .gov A .gov website belongs to an official government organization in the United States. HTTPS icon Secure .gov websites use HTTPS A lock (LockLocked padlock icon) or means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. # Board of Governors of the Federal Reserve System The Federal Reserve, the central bank of the United States, provides the nation with a safe, flexible, and stable monetary and financial system. Federal Open Market Committee Monetary Policy Principles and Practice Policy Implementation Reports Review of Monetary Policy Strategy, Tools, and Communications Supervision Reports Reporting Forms [...] Nicolas Lewin, Jacob Orchard, and Kabir Dasgupta Following the COVID-19 pandemic, consumer sentiment was low despite historically low unemployment and high wage growth. This same period coincided with inflation rates that were the highest in a generation. DOI: ##### Crypto ETPs: An Examination of Liquidity and NAV Premium Nathan Swem and Francesca Carapella In this note we examine the secondary market liquidi...",
+      "score": 0.22040996,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "Glassnode Research – Digital Asset Market Intelligence",
+      "url": "https://research.glassnode.com",
+      "content": "Glassnode Research – Digital Asset Market Intelligence Orderbook Data Live on Glassnode ## Orderbook Data Live on Glassnode Introducing: Market Compass ## Introducing: Market Compass Glassnode on Snowflake: Digital Asset Data Delivered Directly to your Warehouse ## Glassnode on Snowflake: Digital Asset Data Delivered Directly to your Warehouse Aggregate Analysis Beyond Price: Glassnode Global Metrics ## Aggregate Analysis Beyond Price: Glassnode Global Metrics Measuring Bitcoin's Quantum-Exposed Supply ## Measuring Bitcoin's Quantum-Exposed Supply BTC Market Pulse: Week 28 ## BTC Market Pulse: Week 28 Accumulation Beneath the Surface ## Accumulation Beneath the Surface ## Subscribe for free [...] The Bitcoin Vector #60 ## The Bitcoin Vector #60 BTC Market Pulse: Week 25 ## BTC Market Pulse: Week 25 The Bitcoin Vector #59 ## The Bitcoin Vector #59 The Altcoin Vector #58 ## The Altcoin Vector #58 Finding a Floor ## Finding a Floor BTC Market Pulse: Week 24 ## BTC Market Pulse: Week 24 The Altcoin Vector #57 ## The Altcoin Vector #57 The Bitcoin Vector #58 ## The Bitcoin Vector #58 The Rally That Wasn't ## The Rally That Wasn't Subscribe for free to receive best-in-class market ana...",
+      "score": 0.13933809,
+      "query": "site:glassnode.com OR site.cryptoquant.com OR site.coinmetrics.io November 2025 bitcoin on-chain exchange balances stablecoin supply miner selling long-term holder SOPR MVRV leading indicators",
+      "search_index": 8
+    },
+    {
+      "title": "Speech by Governor Miran on stablecoins and monetary policy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/miran20251107a.htm",
+      "content": "In estimating the effect of the projected growth of stablecoin issuance on demand for Treasurys and other highly liquid dollar assets, it is helpful to make a comparison to what most researchers believe was a large factor during an era of declining interest rates that began around the turn of the millennium—what former Fed Chairman Ben Bernanke called the global saving glut.7 In measuring the global saving glut, Bernanke reported that the annual U.S. current account deficit widened by 4 percentage points of U.S. gross domestic product (GDP) from 1996 to 2004.8 [...] US Flag An official website of the United States Government Expand More .gov icon Official websites use .gov A .gov website belongs to an official government organization in the United States. HTTPS icon Secure .gov websites use HTTPS A lock (LockLocked padlock icon) or means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. # Board of Governors of the Federal Reserve System The Federal Reserve, the central bank of the United States, provides the nation with a safe, flexible, and stable monetary and financial system. Federal Open Market Committee Monetary Poli...",
+      "score": 0.11073072,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    },
+    {
+      "title": "Decoupling Dollar and Treasury Privilege",
+      "url": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1427.pdf",
+      "content": "for sovereign credit risk and global risk sentiment, and remains robust when we focus on tenor-specific Treasury supply. These findings suggest that the large increase in U.S. Treasury issuance has played a central role in the waning convenience yield of U.S. [...] -0.13 2.09 -21.86 3.11 -14.52 12.05 0.66 8.28 (1.10) (0.32) (0.95) (6.01) (4.29) (5.99) (3.71) (0.59) (2.38) For. Swap Spread - 10y 1.60 -0.33 1.18 -15.30 6.78 -8.36 6.73 -0.65 9.78 (1.16) (0.66) (1.01) (6.93) (8.75) (5.58) (3.80) (1.03) (3.07) Broad Dollar Index 1.92 1.15 1.44 -19.28 -15.17 -12.63 6.17 3.04 4.20 (0.56) (0.39) (0.37) (2.78) (3.88) (2.45) (0.92) (0.27) (0.72) Notes: This table reports the beta coefficients from regressions of changes in the U.S. Treasury convenience and its components on changes in risk measures, including the VIX index, the S&P 500 index, and investment grade bond spreads. [...] To identify periods of debt ceiling constraints, we follow the same procedure as Cassidy and Mirani (2025). A debt ceiling constraint period commences when the U.S. Treasury reaches the debt ceiling and exhausts its “extraordinary measures,” which permit the issuance of a small additional amount of debt. This...",
+      "score": 0.09322316,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "search_index": 6
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m candlestick close price API documentation timezone ET December 1 resolution source",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin price historical December 1 seasonal returns all-time highs prior cycles 2017 2021 2024",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC spot Bitcoin ETF inflows MicroStrategy Bitcoin holdings SEC CFTC Federal Reserve impact BTC price",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "Bitcoin options open interest max pain Deribit CME futures basis funding rates November 2025 month-end ETF flow calendar macro events",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "November 2025 bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research BTC $90,000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 6,
+      "query": "site:federalreserve.gov OR site.bls.gov OR site.bea.gov OR site.cmegroup.com November 2025 CPI PCE payrolls FOMC Treasury issuance dollar index liquidity conditions bitcoin risk assets",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 7,
+      "query": "site:farside.co.uk/bitcoin-etf-flow-all-data/ OR site.sosovalue.com Bitcoin ETF daily flows November 2025 month-end cumulative AUM creations redemptions primary source",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 1
+    },
+    {
+      "search_index": 8,
+      "query": "site:glassnode.com OR site.cryptoquant.com OR site.coinmetrics.io November 2025 bitcoin on-chain exchange balances stablecoin supply miner selling long-term holder SOPR MVRV leading indicators",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 8
+    }
+  ]
+}

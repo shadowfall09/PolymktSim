@@ -328,7 +328,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Safe pre-cutoff background on the exact series and methodology (90-Day Average SOFR, daily frequency, source, notes). No explicit post-cutoff publication/update or realized post-cutoff value."
+      "reason": "Safe pre-cutoff background on the exact target series (SOFR90DAYAVG), including methodology, units, and frequency. No explicit post-cutoff publication/update or realized outcome."
     },
     {
       "stage": "cached",
@@ -338,7 +338,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe methodological/contextual FRED graph content referencing SOFR average series. No explicit post-cutoff publication or outcome; somewhat less direct than item 0."
+      "reason": "Safe background mentioning the 90-day SOFR Average and related series metadata. Somewhat less direct than item 0 but still useful context; no explicit post-cutoff publication or outcome."
     },
     {
       "stage": "cached",
@@ -348,7 +348,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff policy statement describing planned publication of SOFR averages and index and their purpose/methodology. Prospective language is allowed and useful background."
+      "reason": "Historical New York Fed statement describing the launch and publication of SOFR averages and index. Useful methodology/publication context, with no post-cutoff update or completed event after the cutoff."
     },
     {
       "stage": "cached",
@@ -356,19 +356,9 @@
       "url": "https://www.newyorkfed.org/markets/opolicy/operating_policy_200212",
       "query": "Federal Reserve SOFR 90-day average FRED series SOFR90DAYAVG methodology New York Fed official documentation",
       "llm_keep": true,
-      "relevance": "high",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff New York Fed statement with directly relevant publication mechanics, including how SOFR averages are constructed for a given publication date. No post-cutoff result leakage."
-    },
-    {
-      "stage": "cached",
-      "title": "90-Day SOFR (2018-2026)",
-      "url": "https://www.macrotrends.net/3180/90-day-sofr",
-      "query": "SOFR 90-day average historical series FRED SOFR90DAYAVG comparable prior periods Treasury repo reference rates",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Explicit post-cutoff page state and realized value: '3.64% as of June 26, 2026' is after the 2026-06-20 cutoff, so this leaks outcome information."
+      "reason": "Duplicate-type historical statement about publication of SOFR averages and index, including how publication dates incorporate SOFR values. Safe background, no explicit post-cutoff page state or outcome."
     },
     {
       "stage": "cached",
@@ -378,7 +368,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Relevant contemporaneous background on SOFR publication schedule and methodology from the New York Fed. No explicit post-cutoff publication/update or completed post-cutoff result."
+      "reason": "Directly relevant source page for SOFR publication timing and methodology. Contemporaneous structural information about when SOFR is published each business day can inform expectations for the rolling average; no leakage."
     },
     {
       "stage": "cached",
@@ -388,7 +378,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff statement introducing SOFR averages/index and describing methodology, policies, and intended updates/API availability. Useful background without leakage."
+      "reason": "Historical statement introducing SOFR averages and index, with methodology and availability details. Useful supporting context and no explicit post-cutoff publication/update or realized result."
     },
     {
       "stage": "cached",
@@ -398,7 +388,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General educational background on SOFR characteristics and history. Tangential but safe; no explicit post-cutoff publication or realized post-cutoff outcome."
+      "reason": "Generic educational/background PDF about SOFR from Wells Fargo. Safe and pre-cutoff, but only tangentially useful for forecasting a one-week change in the 90-day average."
     },
     {
       "stage": "cached",
@@ -408,7 +398,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Guide explaining what published SOFR averages are and how they behave over prior periods. Useful supporting context and clearly pre-cutoff background."
+      "reason": "Guide explaining what published SOFR averages represent and how they smooth prior daily SOFR movements over 90 days. Helpful methodological context; no explicit post-cutoff publication or outcome."
     },
     {
       "stage": "cached",
@@ -418,7 +408,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly relevant methodological documentation on how SOFR averages are published and dated, which informs interpretation of the resolution series. No post-cutoff leakage."
+      "reason": "Highly relevant methodology page explaining that SOFR averages are published on their value date and how they relate to underlying SOFR timing. Directly informs interpretation of the resolution series; no leakage."
     },
     {
       "stage": "cached",
@@ -428,7 +418,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Official pre-cutoff methodological and publication-schedule background for SOFR averages; no explicit post-cutoff publication/update or realized outcome."
+      "reason": "Direct source page for SOFR averages and index data, including publication schedule and index/average description. Strongly relevant structural context and no explicit post-cutoff result or page state."
     },
     {
       "stage": "cached",
@@ -438,7 +428,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Historical regulatory background on SOFR production methodology; safe and pre-cutoff, though only tangential to forecasting the specific week-over-week move."
+      "reason": "Pre-cutoff background on SOFR/repo-rate production methodology. No explicit post-cutoff publication or completed post-cutoff outcome."
     },
     {
       "stage": "cached",
@@ -448,7 +438,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff user guide explaining how 90-day SOFR averages are constructed and used; useful background without post-cutoff leakage."
+      "reason": "Pre-cutoff explanatory guide directly about SOFR averages and how the 90-day average is calculated and used. Safe background, no post-cutoff leakage."
     },
     {
       "stage": "cached",
@@ -458,7 +448,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Published before the cutoff (2025-04-22) and discusses repo-market structure that could affect SOFR behavior; no explicit post-cutoff result leakage."
+      "reason": "Published before the cutoff (2025-04-22) and discusses a structural factor that might affect SOFR. Prospective/analytical rather than reporting a post-cutoff outcome."
     },
     {
       "stage": "cached",
@@ -468,7 +458,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official 2024 statement on SOFR methodology modifications; relevant structural context and clearly pre-cutoff."
+      "reason": "Pre-cutoff official statement on SOFR methodology modifications, which could affect the series behavior. No explicit post-cutoff publication or result leakage."
     },
     {
       "stage": "cached",
@@ -478,7 +468,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General commentary on SOFR and repo-market dynamics; safe historical background but not directly informative for the exact forecast horizon."
+      "reason": "General commentary on SOFR and repo-market behavior. Safe pre-cutoff background, though only tangentially useful for this specific week-over-week forecast."
     },
     {
       "stage": "cached",
@@ -488,7 +478,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Duplicate of the SOFR user guide; safe pre-cutoff methodological background, though redundant."
+      "reason": "Duplicate of the SOFR user guide; still safe and directly relevant to understanding the 90-day average methodology. No leakage."
     },
     {
       "stage": "cached",
@@ -498,7 +488,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff conventions document about SOFR averages and publication calendar; useful contextual information with no post-cutoff publication state."
+      "reason": "Pre-cutoff document on SOFR averages conventions and publication calendar. Useful methodological context; no explicit post-cutoff page state or completed outcome."
     },
     {
       "stage": "cached",
@@ -508,7 +498,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic explanatory/vendor page about SOFR and forward curves; safe background, but limited direct value for forecasting the specific 90-day average change."
+      "reason": "General commercial background on SOFR and forward curves. Safe pre-cutoff descriptive material, but limited value for forecasting the exact 2026-06-21 to 2026-06-28 change."
     },
     {
       "stage": "cached",
@@ -518,7 +508,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Historical research note on SOFR proxies and repo-market composition; safe and potentially contextual, but only indirectly relevant to the exact near-term forecast."
+      "reason": "Historical research note on SOFR proxies and repo-market measurement. Safe background with no post-cutoff leakage, but only indirectly relevant."
     },
     {
       "stage": "cached",
@@ -528,7 +518,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Official pre-cutoff source describing the SOFR Averages and Index methodology, publication cadence, and mechanics directly relevant to forecasting the 90-day average. Snippet contains no explicit post-cutoff publication or realized outcome."
+      "reason": "Official NY Fed reference page for SOFR averages and index, directly describing the target series and its daily publication. Safe as provided snippet contains no explicit post-cutoff update or realized value."
     },
     {
       "stage": "cached",
@@ -536,19 +526,9 @@
       "url": "https://www.newyorkfed.org/markets/reference-rates/additional-information-about-reference-rates",
       "query": "SOFR 90-day average historical series FRED SOFR90DAYAVG comparable prior periods Treasury repo reference rates",
       "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Official methodological background on how SOFR averages are derived and precision/revision details. Useful supporting context for interpreting the series; no explicit post-cutoff publication state or completed outcome."
-    },
-    {
-      "stage": "cached",
-      "title": "Reference Rates",
-      "url": "https://www.newyorkfed.org/markets/reference-rates",
-      "query": "New York Fed SOFR 90-day average institutions Market Operations Treasury repo reference rates",
-      "llm_keep": false,
       "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes post-cutoff dated page content ('Jun 18, 2026' and 'Mar 12, 2026' statements) showing a concrete page state after the 2026-06-20 cutoff, so it must be dropped despite relevance."
+      "disposition": "kept",
+      "reason": "Methodology/background from the New York Fed on how SOFR Averages and Index are calculated and revised. Safe pre-cutoff reference material with no explicit post-cutoff publication or outcome."
     },
     {
       "stage": "cached",
@@ -558,7 +538,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Provides contemporaneous background on repo market data and explicitly points users to SOFR and SOFR averages as the relevant benchmark rates. Safe background with no explicit post-cutoff publication or outcome."
+      "reason": "Provides contextual information about repo market data and identifies SOFR as the relevant administered rate family. No explicit post-cutoff publication/update or completed outcome."
     },
     {
       "stage": "cached",
@@ -568,7 +548,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General educational background on reference rates and SOFR from 2025. Tangential and not primary evidence, but safe and potentially mildly useful context; no leakage."
+      "reason": "General educational background on reference rates including SOFR. Dated before cutoff (Sep 12, 2025) and contains no post-cutoff results, but only tangentially useful for forecasting the specific week-over-week SOFR90DAYAVG move."
     },
     {
       "stage": "cached",
@@ -578,7 +558,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Federal Reserve open market operations history is relevant supporting context because policy rate settings influence overnight funding rates and thus SOFR. Snippet shows historical schedule/table content, not an explicit post-cutoff publication or realized post-cutoff outcome."
+      "reason": "Federal Reserve open market operations and target range history are relevant leading context for overnight rates and thus SOFR averages. Snippet does not explicitly indicate post-cutoff publication/update or any forbidden post-cutoff outcome for the forecast window."
     },
     {
       "stage": "cached",
@@ -588,17 +568,18 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Background on Term SOFR versus SOFR averages helps distinguish backward-looking realized SOFR averages from forward-looking benchmarks. Useful contextual evidence and no explicit post-cutoff publication or completed result."
+      "reason": "Explains Term SOFR and notes SOFR/SOFR Averages sourcing from the New York Fed. Useful contextual background on related benchmarks; no explicit post-cutoff publication date or completed post-cutoff state."
     }
   ],
   "refilter_stats": {
     "kept": 25,
-    "dropped": 2,
+    "dropped": 0,
     "relevance": {
-      "high": 8,
+      "high": 6,
       "medium": 13,
       "low": 6
     },
-    "supplemental_for_relevance": false
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
   }
 }

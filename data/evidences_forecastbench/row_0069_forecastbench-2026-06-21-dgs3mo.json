@@ -78,14 +78,6 @@
       "search_index": 1
     },
     {
-      "title": "Where is the data compiled from? - US Treasury Yield Curve",
-      "url": "https://www.ustreasuryyieldcurve.com/sources",
-      "content": "Federal Reserve Bank of New York, Overnight Reverse Repurchase Agreements Award Rate: Treasury Securities Sold by the Federal Reserve in the Temporary Open Market Operations [RRPONTSYAWARD], retrieved from FRED, Federal Reserve Bank of St. Louis; , December 25, 2023. Federal Reserve Bank of New York, Overnight Reverse Repurchase Agreements: Treasury Securities Sold by the Federal Reserve in the Temporary Open Market Operations [RRPONTSYD], retrieved from FRED, Federal Reserve Bank of St. Louis; , December 26, 2023. #### 3 Month Treasury Bills (before 1990) 1/4/1982 - 12/31/1989 (Daily) Board of Governors of the Federal Reserve System (US), 3-Month Treasury Constant Maturity Rate [DGS3MO], retrieved from FRED, Federal Reserve Bank of St. Louis; , May 4, 2019. [...] #### 2 Year Treasuries (before 1990) 6/1/1976 - 12/31/1989 (Daily, Constant Maturity) Board of Governors of the Federal Reserve System (US), 2-Year Treasury Constant Maturity Rate [DGS2], retrieved from FRED, Federal Reserve Bank of St. Louis; , April 28, 2019. #### 3 Year Treasuries (before 1990) 1/2/1962 - 12/31/1989 (Daily, Constant Maturity) Board of Governors of the Federal Reserve System (US), 3-Year Treasury Con...",
-      "score": 0.6030211,
-      "query": "Federal Reserve Treasury yield curve methodology DGS3MO data source H.15 institutions",
-      "search_index": 3
-    },
-    {
       "title": "Treasury Yield Curve Methodology | U.S. Department of the Treasury",
       "url": "https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics/treasury-yield-curve-methodology",
       "content": "The Treasury's official yield curve is a par yield curve derived using a monotone convex method. Our inputs are indicative, bid-side market price quotations (not actual transactions) for the most recently auctioned securities obtained by the Federal Reserve Bank of New York at or near 3:30 PM each trading day. The input prices are converted to yields and used to bootstrap the instantaneous forward rates at the input maturity points so that these instruments are sequentially priced without error. The initial step is followed by a monotone convex interpolation performed on forward rates midway between the input points to construct the entire interest rate curve. This fitting minimizes the price error on the initial price input points, resulting in true par rates. [...] Treasury reviews its yield curve derivation methodology on a regular basis and reserves the right to modify, adjust or improve the methodology. If Treasury determines that the methodology needs to be changed or updated, Treasury will revise the above description to reflect such changes. The monotone convex method for deriving the official Treasury yield curve replaced the previous quasi-cubic hermite spline method a...",
@@ -188,14 +180,6 @@
       "score": 0.24784677,
       "query": "FRED DGS3MO publication schedule holiday adjustment market close release timing",
       "search_index": 4
-    },
-    {
-      "title": "Global Economic Outlook: February 2026 | S&P Global",
-      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
-      "content": "Futures markets continue to discount a pause in Fed rate cuts until mid-2026 and only gradual easing through this year. ... These expectations",
-      "score": 0.23551296,
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "search_index": 2
     }
   ],
   "raw_response_meta": [
@@ -278,11 +262,7 @@
     "FRED DGS3MO publication schedule holiday adjustment market close release timing",
     "3-month Treasury yield outlook analysis Federal Reserve H.15 DGS3MO industry commentary"
   ],
-  "refilter_queries": [
-    "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-    "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-    "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:reuters.com OR site:ft.com OR site:economist.com OR site:brookings.edu OR site:piie.com OR site:nyfed.org) (analysis OR preview OR outlook OR historical) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) (next week OR one-week OR weekly change OR base rate)"
-  ],
+  "refilter_queries": [],
   "refilter_audit": [
     {
       "stage": "cached",
@@ -292,7 +272,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Official FRED graph/series page for DGS3MO, directly tied to the resolution source and provides series definition, units, frequency, and release context. Snippet contains no explicit post-cutoff publication/update or completed post-cutoff outcome."
+      "reason": "Official FRED series page/graph for DGS3MO, directly tied to the resolution source and series definition. Snippet contains methodology/source notes only and no explicit post-cutoff publication/update or realized post-cutoff value."
     },
     {
       "stage": "cached",
@@ -302,17 +282,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Background on H.15 calculation methodology and interpolation for constant maturity yields. Useful for understanding the series construction, with no explicit post-cutoff publication/update or outcome language."
-    },
-    {
-      "stage": "cached",
-      "title": "3 Month Treasury Bill Rate (Market Daily) - United States -…",
-      "url": "https://ycharts.com/indicators/3_month_t_bill",
-      "query": "3-month Treasury yield outlook analysis Federal Reserve H.15 DGS3MO industry commentary",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet gives a concrete current page state/value comparison ('is at 3.73%, compared to 3.74% the previous market day'), which is effectively a contemporaneous reported observation rather than safe background. Because the page state date is not shown and could be post-cutoff, fail-closed and drop."
+      "reason": "Background on H.15 calculation methodology and constant-maturity interpolation. Safe explanatory context with no explicit post-cutoff publication/update or outcome language."
     },
     {
       "stage": "cached",
@@ -322,7 +292,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Methodological/background description of the H.15 release and constant maturity definitions. No explicit post-cutoff publication/update or completed-result language."
+      "reason": "Describes the H.15 release, frequency, and methodology for the exact 3-month constant maturity series. Useful supporting context; no explicit post-cutoff publication/update or realized result."
     },
     {
       "stage": "cached",
@@ -332,7 +302,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic explanatory background on constant maturity. Tangential but safe; no explicit post-cutoff publication/update or outcome."
+      "reason": "Generic explanation of constant maturity yields. Tangential but safe background, with no explicit post-cutoff publication/update or completed outcome."
     },
     {
       "stage": "cached",
@@ -342,17 +312,17 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic legal-definition references to H.15 publication. Low forecasting value but safe background with no explicit post-cutoff timing or results."
+      "reason": "Generic legal-definition examples referencing H.15. Low forecasting value but safe; no explicit post-cutoff publication/update or post-cutoff page state."
     },
     {
       "stage": "cached",
       "title": "Where is the data compiled from? - US Treasury Yield Curve",
       "url": "https://www.ustreasuryyieldcurve.com/sources",
       "query": "Federal Reserve Treasury yield curve methodology DGS3MO data source H.15 institutions",
-      "llm_keep": true,
+      "llm_keep": false,
       "relevance": "low",
-      "disposition": "kept",
-      "reason": "Source-compilation/background page citing historical retrieval dates for underlying series. Those dates refer to citations, not explicit post-cutoff publication of the page's relevant content or the target event outcome. Safe but low relevance."
+      "disposition": "dropped",
+      "reason": "Snippet explicitly includes concrete retrieval dates ('December 25, 2023', 'December 26, 2023', 'May 4, 2019'), i.e. page states captured after the 2026-06-20 cutoff rule analogue for explicit retrieval/publication metadata. Under fail-closed handling, drop pages with explicit dated page-state metadata rather than contemporaneous forecasting content."
     },
     {
       "stage": "cached",
@@ -362,7 +332,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official Treasury methodology for deriving the yield curve, directly relevant to how constant maturity yields are constructed. No explicit post-cutoff publication/update or completed-result language."
+      "reason": "Official Treasury methodology page explaining how the yield curve and constant maturity inputs are derived. Useful supporting context and no explicit post-cutoff publication/update or realized post-cutoff value."
     },
     {
       "stage": "cached",
@@ -370,9 +340,9 @@
       "url": "https://home.treasury.gov/policy-issues/financing-the-government/yield-curve-methodology-change-information-sheet",
       "query": "Federal Reserve Treasury yield curve methodology DGS3MO data source H.15 institutions",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Background on methodology change effects on CMT rates. Useful context on measurement stability, though not directly predictive. No explicit post-cutoff publication/update or outcome."
+      "reason": "Official Treasury information sheet on methodology changes and their effect on CMT rates. Relevant methodological context; no explicit post-cutoff publication/update after the cutoff or completed event affecting the target week."
     },
     {
       "stage": "cached",
@@ -382,7 +352,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic indicator overview page for DGS3MO with category/source/frequency information. Safe background; no explicit post-cutoff publication/update or completed-result language."
+      "reason": "Generic TradingView page describing the DGS3MO indicator and its frequency/source. Low value but safe; no explicit post-cutoff publication/update or realized outcome."
     },
     {
       "stage": "cached",
@@ -390,19 +360,9 @@
       "url": "https://www.federalreserve.gov/pubs/feds/2006/200628/index.html",
       "query": "Federal Reserve Treasury yield curve methodology DGS3MO data source H.15 institutions",
       "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Pre-cutoff methodological background from the Federal Reserve on how the Treasury yield curve is estimated; useful context for interpreting the constant-maturity series, with no post-cutoff publication or outcome leakage."
-    },
-    {
-      "stage": "cached",
-      "title": "H15 - Data Download Program - Review",
-      "url": "https://www.federalreserve.gov/datadownload/Review.aspx?rel=H15&series=d7e27b7b09a3a7feae95b9c61781fcd8&lastobs=12&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package",
-      "query": "3-month Treasury yield outlook analysis Federal Reserve H.15 DGS3MO industry commentary",
-      "llm_keep": false,
       "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly shows coverage through 2026-06, a concrete post-cutoff page state indicating data availability after the 2026-06-20 cutoff."
+      "disposition": "kept",
+      "reason": "Historical Federal Reserve research paper on Treasury yield curve estimation methodology. Background only, but safe and not post-cutoff leakage."
     },
     {
       "stage": "cached",
@@ -410,9 +370,19 @@
       "url": "https://econforecasting.com/forecast/t03m",
       "query": "3-month Treasury yield outlook analysis Federal Reserve H.15 DGS3MO industry commentary",
       "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Prospective forecast page for 3-month Treasury bill yield; snippet describes forecast methodology and market-consensus expectations without any explicit post-cutoff publication/update timestamp or realized post-cutoff outcome."
+    },
+    {
+      "stage": "cached",
+      "title": "Report to the Secretary of the Treasury from the Treasury Borrowing Advisory Committee | U.S. Department of the Treasury",
+      "url": "https://home.treasury.gov/news/press-releases/jy2698",
+      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
+      "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Prospective forecast page for the 3-month Treasury bill yield; forecasts are allowed pre-cutoff evidence and directly relevant if accessed before cutoff. No explicit post-cutoff publication/update date or realized outcome is shown."
+      "reason": "Treasury advisory report provides background on drivers of Treasury yields and market expectations. Snippet contains historical discussion but no explicit post-cutoff publication marker or post-cutoff realized state relative to the cutoff."
     },
     {
       "stage": "cached",
@@ -420,29 +390,9 @@
       "url": "https://en.wikipedia.org/wiki/Federal_Reserve_Statistical_Release_H.15",
       "query": "Federal Reserve H.15 DGS3MO 3-month Treasury constant maturity yield official definition methodology",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Generic background on the H.15 release and publication cadence. Safe pre-cutoff contextual information, though only tangentially useful for forecasting the week-over-week move."
-    },
-    {
-      "stage": "cached",
-      "title": "Federal Reserve Board - H15 - Data Download Program - Review",
-      "url": "https://www.federalreserve.gov/datadownload/Review.aspx?rel=H15&series=d7e27b7b09a3a7feae95b9c61781fcd8&lastobs=12&filetype=csv&label=include&layout=seriescolumn&type=package",
-      "query": "Federal Reserve Treasury yield curve methodology DGS3MO data source H.15 institutions",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Same issue as item 1: snippet explicitly includes 2026-06 as available coverage, which is a concrete post-cutoff page state and therefore leakage."
-    },
-    {
-      "stage": "cached",
-      "title": "Announcements, Data & Results",
-      "url": "https://www.treasurydirect.gov/auctions/announcements-data-results",
-      "query": "historical DGS3MO 3-month Treasury yield previous increases before comparable dates FRED",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "TreasuryDirect page is explicitly 'Announcements, Data & Results' and the snippet contains completed auction results dated after the cutoff (e.g., 2026 entries), which is retrospective post-cutoff information."
+      "reason": "Background on the H.15 release that is the source for the resolving series. Safe contextual information with no explicit post-cutoff publication/update or outcome leakage."
     },
     {
       "stage": "cached",
@@ -452,7 +402,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly relevant primary-source FRED graph/series page for DGS3MO with metadata and notes. The snippet does not state any post-cutoff published value or completed post-cutoff outcome."
+      "reason": "Directly about the exact FRED series used for resolution, including source, units, and frequency. Snippet is descriptive metadata only and does not state any post-cutoff value or completed result."
     },
     {
       "stage": "cached",
@@ -462,7 +412,17 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General background about a related Treasury bill dataset and data handling. No explicit post-cutoff publication/result leakage, but only weakly relevant because the question resolves on DGS3MO specifically."
+      "reason": "General background on a related 3-month Treasury bill dataset and update cadence. Not directly the resolving series, but safe and potentially useful context; no explicit post-cutoff publication or realized post-cutoff value."
+    },
+    {
+      "stage": "cached",
+      "title": "US Treasury Bill Rates 3 Months: Your Complete 2026 Guide to ...",
+      "url": "https://primefinancelab.com/us-treasury-bill-rates-2026",
+      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Generic guide about 2026 3-month Treasury bill rates. Snippet is broad background and contains no explicit post-cutoff publication date or realized outcome."
     },
     {
       "stage": "cached",
@@ -472,7 +432,17 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Holiday/early-close schedule context can affect whether daily Treasury market data are observed around the target dates, making it useful contemporaneous background. No post-cutoff outcome leakage."
+      "reason": "Holiday/early-close schedule can inform whether Treasury markets and related data releases may occur around the target dates. Prospective schedule information is allowed and snippet has no post-cutoff result."
+    },
+    {
+      "stage": "cached",
+      "title": "Interest Rates Products - CME Group",
+      "url": "https://www.cmegroup.com/markets/interest-rates.html",
+      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "CME interest-rate products page references FedWatch, TreasuryWatch, auctions, and futures data that can serve as leading indicators for short-term Treasury yields. No explicit post-cutoff publication marker or completed outcome."
     },
     {
       "stage": "cached",
@@ -482,227 +452,28 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe descriptive page for the DGS3MO indicator with frequency/units/source metadata. Relevant supporting context and no explicit post-cutoff publication or realized value shown."
+      "reason": "Descriptive page for the exact DGS3MO indicator with source, frequency, and related indicators. Safe metadata/background with no explicit post-cutoff value or result."
     },
     {
-      "stage": "supplemental_search",
-      "title": "3 Month Treasury Rate - Real-Time & Historical Yield Trends",
-      "url": "https://ycharts.com/indicators/3_month_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly shows historical data for dates after the 2026-06-20 cutoff, including June 22-30 and July 2026, which is post-cutoff page state and leakage."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3-Month Treasury Bill Rate (1954-2026)",
-      "url": "https://www.macrotrends.net/3078/3-month-treasury-bill-rate",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Title/snippet explicitly states '3.73% as of July 7, 2026,' which is after the cutoff and therefore leaks future data."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "H.15 Selected Interest Rates | ALFRED | St. Louis Fed",
-      "url": "https://alfred.stlouisfed.org/release?rid=18",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Snippet includes release dates extending to 2026-07-08 and observation periods through 2026-07-07, an explicit post-cutoff page state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Month Treasury Bill Rate (Market Daily) - United States -…",
-      "url": "https://ycharts.com/indicators/3_month_t_bill",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet lists historical data for June 22-30 and July 2026, all after the 2026-06-20 cutoff, so it leaks the outcome path."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "US Treasury Bill Rates 3 Months: Your Complete 2026 Guide to ...",
-      "url": "https://primefinancelab.com/us-treasury-bill-rates-2026",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": true,
-      "relevance": "low",
-      "disposition": "kept",
-      "reason": "Generic background guide about 3-month Treasury bill rates and drivers; snippet contains no explicit post-cutoff publication date, release date, or post-cutoff realized values."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "6 Month Treasury Rate - Real-Time & Historical Yield Trends",
-      "url": "https://ycharts.com/indicators/6_month_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Although about 6-month rates, the snippet explicitly lists post-cutoff historical values for June 22-30 and July 2026, so it is leakage."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "10 Year Treasury Rate (Market Daily) - United States - Hist…",
-      "url": "https://ycharts.com/indicators/10_year_treasury_rate_h15",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Snippet gives current 10-year Treasury rate levels and comparisons in present tense tied to a post-cutoff page state; even though another maturity, it explicitly reflects data after the cutoff."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Year Treasury Rate (Market Daily) - United States - Histo…",
-      "url": "https://ycharts.com/indicators/3_year_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly says 'Latest Period | Jul 02 2026' and 'Last Updated | Jul 2 2026,' both after the cutoff, plus includes a related 3-month rate value from that post-cutoff state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Month Treasury Rate (Market Daily) - United States - Hist… - YCharts",
-      "url": "https://ycharts.com/indicators/3_month_treasury_rate_h15",
-      "query": "(\"2026-06-04\" OR \"as of 2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov/releases/h15 OR site:fred.stlouisfed.org/series/DGS3MO OR site:home.treasury.gov \"treasury yield curve methodology\") \"3-month constant maturity\" OR DGS3MO H.15 Treasury bill investment basis",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet states '3 Month Treasury Rate is at 3.87%, compared to 3.82% the previous market day,' an explicit post-cutoff current status for the exact series."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Month Treasury Rate - Real-Time & Historical Yield Trends - YCharts",
-      "url": "https://ycharts.com/indicators/3_month_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet includes historical data through July 09, 2026 and June 22-30, 2026, which are explicit post-cutoff realized values for the exact series."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Report to the Secretary of the Treasury from the Treasury Borrowing Advisory Committee | U.S. Department of the Treasury",
-      "url": "https://home.treasury.gov/news/press-releases/jy2698",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Safe background/context from a Treasury TBAC report discussing Treasury yields, market expectations, and Fed policy dynamics. Snippet contains retrospective language about earlier periods but no explicit post-cutoff publication/update date or post-cutoff outcome for the target week. Useful supporting context for short-rate/yield direction."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "6 Month Treasury Rate (Market Daily) - United States - Hist…",
-      "url": "https://ycharts.com/indicators/6_month_treasury_rate_h15",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet explicitly shows historical data entries after the 2026-06-20 cutoff, including June 30 and July 2026 values, which are concrete post-cutoff page state/results."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Federal Reserve Board - Home",
-      "url": "https://www.federalreserve.gov",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Leakage: homepage snippet explicitly lists items dated 6/22/2026, 6/24/2026, 7/6/2026, and 7/7/2026, showing post-cutoff page state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "What's the Outlook for Interest Rates in 2026?",
-      "url": "https://www.investopedia.com/what-s-the-outlook-for-interest-rates-in-2026-11875779",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet includes explicit post-cutoff dates such as June 22, 2026 and references to what the Fed's rate decision means, indicating post-cutoff reporting/page state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3-Month Treasury Bill Rate (1954-2026) - Macrotrends",
-      "url": "https://www.macrotrends.net/3078/3-month-treasury-bill-rate",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet states '3.73% as of July 7, 2026,' an explicit post-cutoff value for the target series family."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "Interest Rates Products - CME Group",
-      "url": "https://www.cmegroup.com/markets/interest-rates.html",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Safe contemporaneous background. CME interest-rate products page describes tools like FedWatch and TreasuryWatch without explicit post-cutoff publication/update or outcomes. Useful supporting context for rate expectations and market indicators."
-    },
-    {
-      "stage": "supplemental_search",
+      "stage": "cached",
       "title": "Global Economic Outlook: February 2026 | S&P Global",
       "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/02/global-economic-outlook-february-2026",
       "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:federalreserve.gov OR site:newyorkfed.org OR site:treasury.gov OR site:cmegroup.com OR site:wsj.com OR site:bloomberg.com) (FOMC OR \"Fed speakers\" OR CPI OR PCE OR payrolls OR auction OR bill issuance) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) preview odds expectations",
-      "llm_keep": true,
-      "relevance": "medium",
-      "disposition": "kept",
-      "reason": "Safe pre-cutoff prospective evidence. A February 2026 outlook discussing futures markets discounting Fed pauses/cuts through mid-2026 is directly relevant to expected short-term Treasury yields and contains no post-cutoff publication/update."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Month Treasury Bill Rate (Market Daily) - United States -… - YCharts",
-      "url": "https://ycharts.com/indicators/3_month_t_bill",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:reuters.com OR site:ft.com OR site:economist.com OR site:brookings.edu OR site:piie.com OR site:nyfed.org) (analysis OR preview OR outlook OR historical) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) (next week OR one-week OR weekly change OR base rate)",
       "llm_keep": false,
       "relevance": "high",
       "disposition": "dropped",
-      "reason": "Leakage: snippet explicitly includes post-cutoff historical data values for June 29-30 and July 2026 for the 3-month Treasury bill rate."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "3 Year Treasury Rate (Market Daily) - United States - Histo… - YCharts",
-      "url": "https://ycharts.com/indicators/3_year_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:reuters.com OR site:ft.com OR site:economist.com OR site:brookings.edu OR site:piie.com OR site:nyfed.org) (analysis OR preview OR outlook OR historical) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) (next week OR one-week OR weekly change OR base rate)",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet explicitly includes post-cutoff historical data values for June 25-30 and July 2026, showing concrete post-cutoff page state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "6 Month Treasury Rate - Real-Time & Historical Yield Trends - YCharts",
-      "url": "https://ycharts.com/indicators/6_month_treasury_rate",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:reuters.com OR site:ft.com OR site:economist.com OR site:brookings.edu OR site:piie.com OR site:nyfed.org) (analysis OR preview OR outlook OR historical) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) (next week OR one-week OR weekly change OR base rate)",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Leakage: snippet explicitly includes post-cutoff historical data values for June 26-30 and July 2026, showing concrete post-cutoff page state."
-    },
-    {
-      "stage": "supplemental_search",
-      "title": "6 Month Treasury Bill Rate (Market Daily) - United States -…",
-      "url": "https://ycharts.com/indicators/6_month_treasury_bill_rate",
-      "query": "(\"2026-06-04\" OR \"on or before 2026-06-04\") (site:reuters.com OR site:ft.com OR site:economist.com OR site:brookings.edu OR site:piie.com OR site:nyfed.org) (analysis OR preview OR outlook OR historical) (\"3-month Treasury yield\" OR \"3-month T-bill\" OR DGS3MO) (next week OR one-week OR weekly change OR base rate)",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes concrete post-cutoff page state and values dated after the 2026-06-20 cutoff (e.g., June 26, June 29-30, July 1-6, 2026 historical data). That is leakage. It is also only indirectly relevant because it is for the 6-month Treasury bill rate, not the target 3-month constant maturity series."
+      "reason": "Explicitly published after the cutoff: title and URL say 'February 2026', which is well after the 2026-06-20 cutoff? Wait, February 2026 is before cutoff. However the item is still pre-cutoff. Snippet is prospective macro outlook. Keep would be plausible, but because the exact publication date within February 2026 is before cutoff and no leakage is shown, this should actually be kept."
     }
   ],
   "refilter_stats": {
-    "kept": 20,
-    "dropped": 21,
+    "kept": 18,
+    "dropped": 2,
     "relevance": {
-      "high": 11,
-      "medium": 18,
-      "low": 12
+      "high": 4,
+      "medium": 9,
+      "low": 7
     },
-    "supplemental_for_relevance": true
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
   }
 }

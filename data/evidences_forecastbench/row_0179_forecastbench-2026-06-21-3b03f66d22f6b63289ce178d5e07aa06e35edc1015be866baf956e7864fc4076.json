@@ -2,10 +2,10 @@
   "row_index": 179,
   "market_id": "forecastbench_2026_06_21_3b03f66d22f6b63289ce178d5e07aa06e35edc1015be866baf956e7864fc4076",
   "slug": "",
-  "question": "According to Wikipedia, will a vaccine have been developed for Bacterial meningitis by 2026-06-28?\n\nResolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date.\n\nBackground: According to Wikipedia, Bacterial meningitis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
+  "question": "According to Wikipedia, will a vaccine have been developed for Bacterial meningitis by 2026-06-28? Resolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date. Background: According to Wikipedia, Bacterial meningitis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
   "event_title": "According to Wikipedia, will a vaccine have been developed for Bacterial meningitis by 2026-06-28?\n\nResolution criteria: Resolves to the value calculated from https://en.wikipedia.org/wiki/List_of_infectious_diseases on the resolution date.\n\nBackground: According to Wikipedia, Bacterial meningitis is the common name of an infectious disease. A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease. The safety and effectiveness of vaccines has been widely studied and verified. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins. The agent stimulates the body's immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
-  "resolution_date": "2026-06-28",
-  "evidence_cutoff_date": "2026-06-27",
+  "resolution_date": "2026-06-21",
+  "evidence_cutoff_date": "2026-06-20",
   "end_date_limit": "2026-06-27",
   "row_end_date_raw": "2026-06-28",
   "expanded_queries": [
@@ -421,5 +421,417 @@
       ],
       "results_count": 10
     }
-  ]
+  ],
+  "refiltered": true,
+  "recovered_queries": [
+    "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+    "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+    "site:who.int bacterial meningitis vaccines fact sheet",
+    "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+    "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review"
+  ],
+  "refilter_queries": [],
+  "refilter_audit": [
+    {
+      "stage": "cached",
+      "title": "NmVac4-A/C/Y/W-135 - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/NmVac4-A/C/Y/W-135",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background from Wikipedia indicating an existing vaccine against meningococcal meningitis, a bacterial meningitis cause. Directly relevant to whether Wikipedia would list a vaccine for bacterial meningitis by resolution."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningococcal_vaccine",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background page stating meningococcal vaccines exist and are effective. Strong evidence that vaccines for a bacterial meningitis cause are already developed; no explicit post-cutoff publication or completed post-cutoff event."
+    },
+    {
+      "stage": "cached",
+      "title": "Prevention of bacterial meningitis: an overview of Cochrane systematic reviews - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17706408",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe historical PubMed review discussing vaccination as prevention for acute bacterial meningitis and protective meningococcal vaccines. Useful supporting context, though less directly tied to Wikipedia resolution wording."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningitis B - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningitis_B",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background on meningitis B noting a vaccine was developed. Relevant because it supports existence of vaccines for bacterial meningitis subtypes; no explicit post-cutoff publication marker."
+    },
+    {
+      "stage": "cached",
+      "title": "Childhood immunizations in the United States - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Childhood_immunizations_in_the_United_States",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe contextual page mentioning meningococcal and Hib vaccines preventing forms of bacterial meningitis. Supports existence of developed vaccines, though indirectly."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal disease - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningococcal_disease",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background stating meningococcal disease is vaccine-preventable and that vaccines for meningitis A/C/Y/W-135 can be used. Directly relevant to whether a vaccine exists for bacterial meningitis."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningococcal_vaccine",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Duplicate-safe Wikipedia evidence that meningococcal vaccines exist. Directly relevant and no explicit post-cutoff publication/update leakage."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningitis - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningitis",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe Wikipedia background noting Haemophilus and pneumococcal vaccines reduced meningitis cases. Strong evidence that vaccines against bacterial meningitis causes have long existed."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal Meningitis | WHO | Regional Office for Africa",
+      "url": "https://www.afro.who.int/health-topics/meningococcal-meningitis",
+      "query": "site:who.int bacterial meningitis vaccines fact sheet",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe WHO background recommending MenAfriVac and describing meningococcal meningitis as a bacterial form of meningitis with successful vaccine prevention. Highly relevant and non-leaky."
+    },
+    {
+      "stage": "cached",
+      "title": "Neisseria meningitidis - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Neisseria_meningitidis",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe organism background page referencing CDC prevention and meningococcal vaccination. Supports existence of vaccines for a major bacterial meningitis pathogen, though less direct than dedicated vaccine pages."
+    },
+    {
+      "stage": "cached",
+      "title": "List of vaccine topics - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_vaccine_topics",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background from Wikipedia listing vaccine topics. Directly relevant because it shows existing vaccines associated with meningitis-causing bacteria (Hib, meningococcal), which informs whether Wikipedia may classify bacterial meningitis as having a vaccine."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningitis - World Health Organization (WHO)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/meningitis",
+      "query": "site:who.int bacterial meningitis vaccines fact sheet",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Published before cutoff (1 April 2025) and directly relevant. WHO states vaccines are the most effective protection against meningitis and discusses bacterial meningitis, providing strong contemporaneous evidence that vaccines exist for important bacterial causes."
+    },
+    {
+      "stage": "cached",
+      "title": "Cochlear Implants and Vaccine Recommendations | Pneumococcal | CDC",
+      "url": "https://www.cdc.gov/pneumococcal/vaccines/cochlear-implants.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe contemporaneous CDC guidance. Explicitly says vaccines are available in the US to help protect against Hib, meningococcal, and pneumococcal meningitis, which is highly informative for whether Wikipedia might list a vaccine for bacterial meningitis."
+    },
+    {
+      "stage": "cached",
+      "title": "Prevention and control of meningococcal disease: recommendations of the Advisory Committee on Immunization Practices (ACIP) - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23515099",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "PubMed page for ACIP recommendations and related literature is safe and pre-cutoff. Relevant supporting evidence that meningococcal vaccination is established, though less directly tied to the exact Wikipedia resolution row."
+    },
+    {
+      "stage": "cached",
+      "title": "List of infectious diseases - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_infectious_diseases",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "This is the exact resolution source. Snippet explicitly shows the Wikipedia row for 'Bacterial meningitis' with vaccine column 'No', making it the most directly relevant pre-cutoff evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Effectiveness of Meningococcal Vaccines at Reducing Invasive Meningococcal Disease and Pharyngeal Neisseria meningitidis Carriage: A Systematic Review and Meta-analysis - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33212510",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff systematic review showing meningococcal vaccines are effective. Useful supporting context about vaccines against a major bacterial meningitis cause, though not the exact resolution criterion."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningitis - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meningitis",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe Wikipedia background page. It states prevention includes vaccination, which is relevant context for meningitis generally, though less precise than the exact infectious-diseases list entry."
+    },
+    {
+      "stage": "cached",
+      "title": "NmVac4-A/C/Y/W-135 - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/NmVac4-A/C/Y/W-135",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe Wikipedia page about a meningococcal vaccine. Supports existence of vaccines against a bacterial meningitis pathogen, useful but indirect for the exact question."
+    },
+    {
+      "stage": "cached",
+      "title": "BCG vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/BCG_vaccine",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "low",
+      "disposition": "kept",
+      "reason": "Safe background. Mentions BCG efficacy against tuberculous meningitis, which is only tangentially relevant because the question is about the Wikipedia entry for bacterial meningitis generally."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Control of epidemic meningococcal disease. WHO practical ...",
+      "url": "https://www.who.int/docs/default-source/documents/publications/control-of-epidemic-meningococcal-disease.pdf",
+      "query": "site:who.int bacterial meningitis vaccines fact sheet",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe WHO PDF background discussing epidemic meningococcal disease and vaccine products, plus historical context on Hib as a common cause of bacterial meningitis. Indirect but useful supporting evidence."
+    },
+    {
+      "stage": "cached",
+      "title": "Vaccine-preventable disease - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vaccine-preventable_disease",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background. Directly relevant because it explicitly lists meningococcal meningitis as a vaccine-preventable disease, which informs whether Wikipedia may treat bacterial meningitis as having a vaccine."
+    },
+    {
+      "stage": "cached",
+      "title": "Childhood immunizations in the United States - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Childhood_immunizations_in_the_United_States",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe background with no post-cutoff publication/result language. Relevant because it notes childhood vaccines against meningococcal disease, supporting existence of vaccines for bacterial causes of meningitis."
+    },
+    {
+      "stage": "cached",
+      "title": "[PDF] Prevention and Control of Haemophilus influenzaeType b Disease",
+      "url": "https://www.cdc.gov/mmwr/pdf/rr/rr6301.pdf",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe historical CDC guidance. Highly relevant because it explicitly states Hib disease was once a leading cause of bacterial meningitis and that Hib vaccines were introduced and effective, strong evidence that bacterial meningitis has vaccine-preventable forms."
+    },
+    {
+      "stage": "cached",
+      "title": "A comprehensive review of clinical and real-world safety data for the four-component serogroup B meningococcal vaccine (4CMenB) - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37278390",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff 2023 review article. Relevant because it concerns meningococcal vaccine safety data, supporting existence and established use of a vaccine against a bacterial meningitis pathogen."
+    },
+    {
+      "stage": "cached",
+      "title": "Hib vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hib_vaccine",
+      "query": "site:wikipedia.org List of infectious diseases bacterial meningitis vaccine",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background. Highly relevant because the Hib vaccine page explicitly categorizes Hib under bacterial vaccines; Hib is a known bacterial meningitis cause, so this bears directly on whether Wikipedia would indicate a vaccine exists."
+    },
+    {
+      "stage": "cached",
+      "title": "Decline in Haemophilus influenzae Type b Meningitis -- Seattle-King County, Washington, 1984-1989",
+      "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00001865.htm",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe historical CDC report. Highly relevant because it directly discusses Hib vaccines being effective in preventing Hib disease, including meningitis-causing infection, which is strong evidence of vaccine development for bacterial meningitis pathogens."
+    },
+    {
+      "stage": "cached",
+      "title": "Conjugate vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Conjugate_vaccine",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe background with no leakage. Highly relevant because it explicitly says the first human conjugate vaccine was the Hib conjugate, which protects against meningitis."
+    },
+    {
+      "stage": "cached",
+      "title": "Chapter 17: Pneumococcal Disease | Pink Book | CDC",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-17-pneumococcal-disease.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe CDC background. Highly relevant because it states pneumococcal disease is a leading cause of bacterial meningitis and discusses routine pneumococcal conjugate vaccine use, directly supporting existence of vaccines against bacterial meningitis causes."
+    },
+    {
+      "stage": "cached",
+      "title": "A Prospective Study of Etiology of Childhood Acute Bacterial Meningitis, Turkey - Volume 14, Number 7—July 2008 - Emerging Infectious Diseases journal - CDC",
+      "url": "https://wwwnc.cdc.gov/eid/article/14/7/07-0938_article",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe historical CDC article. Highly relevant because it identifies the main bacterial causes of childhood bacterial meningitis and states Hib vaccination has reduced or eliminated invasive Hib disease in some countries."
+    },
+    {
+      "stage": "cached",
+      "title": "Hib vaccine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hib_vaccine",
+      "query": "site:wikipedia.org bacterial meningitis vaccine wikipedia",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe duplicate-like Wikipedia background. Highly relevant because it again shows Hib listed among bacterial vaccines, supporting that vaccines exist for bacterial meningitis-causing organisms."
+    },
+    {
+      "stage": "cached",
+      "title": "Chapter 2: Haemophilus influenzae invasive disease | Manual for the Surveillance of Vaccine-Preventable Diseases | CDC",
+      "url": "https://www.cdc.gov/surv-manual/php/table-of-contents/chapter-2-haemophilus-influenzae.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff background from CDC stating Hib vaccines are effective and that Hib was a leading cause of bacterial meningitis. Directly supports that a vaccine exists for at least one bacterial cause of meningitis, which is highly relevant to whether Wikipedia would list a vaccine for bacterial meningitis."
+    },
+    {
+      "stage": "cached",
+      "title": "Disparities in healthcare providers' interpretations and implementations of ACIP's meningococcal vaccine recommendations - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31634035",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff PubMed article discussing ACIP recommendations for MenACWY and MenB vaccines against meningococcal disease, a bacterial cause of meningitis. Direct evidence that vaccines exist for bacterial meningitis pathogens."
+    },
+    {
+      "stage": "cached",
+      "title": "Chapter 14: Meningococcal Disease | Pink Book | CDC",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-14-meningococcal-disease.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe CDC Pink Book background explicitly stating that meningococcal disease is a leading cause of bacterial meningitis and that five meningococcal vaccines are licensed and available in the United States. Strong direct evidence of vaccine development for a bacterial meningitis cause."
+    },
+    {
+      "stage": "cached",
+      "title": "WHO EMRO - Vaccine and vaccination",
+      "url": "https://www.emro.who.int/health-topics/meningococcal-disease/vaccine-vaccination.html",
+      "query": "site:who.int bacterial meningitis vaccines fact sheet",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe WHO background page describing available meningococcal vaccines (bivalent, trivalent, tetravalent). Useful corroboration that vaccines exist for a bacterial meningitis pathogen, though less directly tied to the exact Wikipedia resolution wording."
+    },
+    {
+      "stage": "cached",
+      "title": "Types of Hib Vaccines",
+      "url": "https://www.cdc.gov/hi-disease/vaccines/types.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe CDC page on Hib vaccines showing available Hib vaccines and noting Hib disease was once a leading cause of bacterial meningitis. Direct evidence that vaccines exist for a bacterial meningitis-causing bacterium."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal Vaccine Safety",
+      "url": "https://www.cdc.gov/vaccine-safety/vaccines/meningococcal.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe CDC vaccine safety page explicitly says there are vaccines that can prevent meningococcal disease and notes meningococcus is a leading cause of bacterial meningitis. Strong direct relevance."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal Vaccination",
+      "url": "https://www.cdc.gov/meningococcal/vaccines/index.html",
+      "query": "site:cdc.gov bacterial meningitis vaccine history meningococcal pneumococcal Hib",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe CDC vaccination page recommending meningococcal vaccination. Direct contemporaneous evidence that a vaccine exists for meningococcal disease, a bacterial meningitis cause."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal Vaccination: Recommendations of the Advisory Committee on Immunization Practices, United States, 2020 - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33417592",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "high",
+      "disposition": "kept",
+      "reason": "Safe pre-cutoff ACIP recommendations article detailing licensed MenACWY and MenB vaccine use for meningococcal disease. Directly relevant evidence of developed vaccines for a bacterial meningitis pathogen."
+    },
+    {
+      "stage": "cached",
+      "title": "Meningococcal conjugate vaccines: efficacy and new combinations - PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16826310",
+      "query": "site:pubmed.ncbi.nlm.nih.gov bacterial meningitis vaccine review",
+      "llm_keep": true,
+      "relevance": "medium",
+      "disposition": "kept",
+      "reason": "Safe older PubMed review on meningococcal conjugate vaccines. Supports longstanding existence and efficacy of vaccines for a bacterial meningitis pathogen, though less current than CDC/ACIP sources."
+    }
+  ],
+  "refilter_stats": {
+    "kept": 39,
+    "dropped": 0,
+    "relevance": {
+      "high": 24,
+      "medium": 14,
+      "low": 1
+    },
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
+  }
 }

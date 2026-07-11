@@ -1,0 +1,309 @@
+{
+  "row_index": 169,
+  "market_id": "mkt_644629",
+  "slug": "",
+  "question": "Will the price of Bitcoin be above $116,000 on October 29?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "event_title": "Will the price of Bitcoin be above $116,000 on October 29?\n\nDescription: This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other sources or spot markets.\n\nPrice precision is determined by the number of decimal places in the source.",
+  "resolution_date": "2025-10-29",
+  "evidence_cutoff_date": "2025-10-28",
+  "end_date_limit": "2025-10-28",
+  "row_end_date_raw": "2025-10-29",
+  "expanded_queries": [
+    "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+    "Bitcoin BTC historical daily and intraday price around 116000 prior all-time highs comparable breakout episodes 2024 2025",
+    "BlackRock IBIT Fidelity FBTC MicroStrategy spot Bitcoin ETF issuers Treasury holdings flows impact BTC price 2025",
+    "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+    "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 50,
+    "hard_quarantined_late_date_count": 9,
+    "llm_filter_input_count": 50,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 24,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 26,
+    "llm_kept_count": 24,
+    "llm_kept_leak_no_count": 22,
+    "llm_rewrite_candidate_count": 2,
+    "llm_rewritten_kept_count": 2,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"e\": \"kline\", // Event type \"E\": 1672515782136, // Event time \"s\": \"BNBBTC\", // Symbol \"k\": { \"t\": 1672515780000, // Kline start time \"T\": 1672515839999, // Kline close time \"s\": \"BNBBTC\", // Symbol \"i\": \"1m\", // Interval \"f\": 100, // First trade ID \"L\": 200, // Last trade ID \"o\": \"0.0010\", // Open price \"c\": \"0.0020\", // Close price \"h\": \"0.0025\", // High price \"l\": \"0.0015\", // Low price \"v\": \"1000\", // Base asset volume \"n\": 100, // Number of trades \"x\": false, // Is this kline closed? \"q\": \"1.0000\", // Quote asset volume \"V\": \"500\", // Taker buy base asset volume \"Q\": \"0.500\", // Taker buy quote asset volume \"B\": \"123456\" // Ignore } } ``` [...] ``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\",...",
+      "score": 0.8616433,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Change Log – Binance API Documentation",
+      "url": "https://binance-docs.github.io/apidocs/delivery_testnet/en",
+      "content": "> Payload: ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1591261542539,// Event time \"ps\": \"BTCUSD\",// Pair \"ct\": \"NEXT_QUARTER\"// Contract type \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// volume \"n\": 31,// Number of trades \"x\": false,// Is this kline closed? \"q\":\"1.61836886\",// Base asset volume \"V\": \"73\",// Taker buy volume \"Q\":\"0.75731156\",// Taker buy base asset volume \"B\": \"0\"// Ignore}} ``` Contract type: PERPETUAL CURRENT\\_QUARTER NEXT\\_QUARTER Kline/Candlestick chart intervals: [...] ## Kline/Candlestick Streams > Payload: ``` {\"e\": \"kline\",// Event type \"E\": 1591261542539,// Event time \"s\": \"BTCUSD_200626\",// Symbol \"k\":{\"t\": 1591261500000,// Kline start time \"T\": 1591261559999,// Kline close time \"s\": \"BTCUSD_200626\",// Symbol \"i\": \"1m\",// Interval \"f\": 606400,// First trade ID \"L\": 606430,// Last trade ID \"o\":\"9638.9\",// Open price \"c\":\"9639.8\",// Close price \"h\":\"9639.8\",// High price \"l\":\"9638.6\",// Low price \"v\": \"156\",// vol...",
+      "score": 0.8145405,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of...",
+      "score": 0.7915799,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/legacy-docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "Data Source: Database Response: `{ \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 6000, \"count\": 2 } ] }` ### UI Klines​ [...] Data Source: Database Response: `{ \"id\": \"b137468a-fb20-4c06-bd6b-625148eec958\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType...",
+      "score": 0.7440808,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Charting Crypto Q4 2025: Navigating Uncertainty - Coinbase",
+      "url": "https://www.coinbase.com/institutional/research-insights/research/market-intelligence/charting-crypto-q4-2025",
+      "content": "October 16, 2025 Download Market Intelligence Image 7: Charting Crypto: Q4 2025 Key takeaways We have a cautiously optimistic stance for 4Q25. We believe that the crypto bull market has room to run, but we’re more cautious after the events of October 10. We still see resilient liquidity conditions, a strong macro backdrop, and supportive regulatory dynamics. While the labor market appears to be cooling, fears of a sharp contraction in the economy look overblown, in our view. Regulation is on the right track. With the signing of the GENIUS Act, we now have a clear framework for stablecoins, and we believe the CLARITY Act, which would define digital-asset classifications and establish clear jurisdictional authority, will be next. [...] ### DOWNLOAD THE FULL REPORT ## NAVIGATING UNCERTAINTY Heading into Q4, we had a constructive outlook on crypto markets, but the leverage flush on October 10 has led us to urge some caution. Nevertheless, we anticipate continued support from robust liquidity, a favorable macroeconomic environment, and encouraging regulatory developments. Bitcoin, in particular, may be able to outperform market expectations on the back of macro tailwinds. On the poli...",
+      "score": 0.69870013,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] | Name | Type | Mandatory | Description | --- --- | | symbol | STRING | YES | Either symbol or symbols must be provided Examples of accepted format for the symbols parameter: [\"BTCUSDT\",\"BNBUSDT\"] or %5B%22BTCUSDT%22,%22BNBUSDT%22%5D The maximum number of symbols allowed in a request is 100. | | symbols | | windowSize | ENUM | NO | Defaults to 1d if no parameter provided Supported windowSize values: 1m,2m....59m for minutes 1h, 2h....23h - for hours 1d...7d - for days Units cannot be combined (e.g. 1d2h is not allowed) | |...",
+      "score": 0.6762998,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin Peak Coming in October or November, “Fragile Stabilization ...",
+      "url": "https://finance.yahoo.com/news/bitcoin-peak-coming-october-november-134032455.html",
+      "content": "The late-cycle signal usually appears when the market overheats relative to the long-term holder base. Based on the current trajectory, Adler estimated that this signal could appear between October and November 2025, provided it coincides with a wave of experienced holder selling and a spike in volatility that eventually begins to fade. ## Short-Term Structure Is Fragile Glassnode data shows that Bitcoin's short-term momentum remains fragile. Over the past week, the asset has been trading just above the short-term holder cost basis, hovering around $111,000. Indicators showed a partial recovery as RSI climbed toward neutral territory and Spot CVD improved, but trading volumes fell, reflecting a lack of conviction.",
+      "score": 0.65597594,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Still Recovering From Crash, Digital Asset Treasury Boom | Bloomberg Crypto 10/21/2025",
+      "url": "https://www.youtube.com/watch?v=FoJp-pM0R5o",
+      "content": "appreciate it. Meridian is going great. You know, it's one of these things where you had a giant company that was really the dominant platform in that space, and it ran into, you know, a couple of regulatory hurdles. People your crypto viewers will recognize this from lots of crypto companies, Meridian, a traditional finance company, but the story is the same. You grow at a hyper growth rate. You have a handful of people who didn't get the compliance memo and somebody got to come in and impose some set of controls. So the markets are coming back. You see it with Bitcoin, but you also see it with commercial real estate. And as the animal spirits returned, we're in the market. We're feeling terrific. All of our restraints have been lifted. We're back doing business like it was 2022. Again, [...] the Genius Act is really driven a lot of the attention straight to the to the US. And in fact I was talking a couple of weeks ago in at Cyprus in Frankfurt with a lot of. Players in the industry. And there was this big concern that Europe is going to be left behind on Stablecoins because if you think about all, you know, most of the press you read, it's about dollar denominated stablecoins...",
+      "score": 0.65252984,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "Crypto Assets Monitor",
+      "url": "https://www.imfconnect.org/content/dam/imf/News%20and%20Generic%20Content/GMM/Special%20Features/GMM%20Special%20Feature%20-%20Crypto%20Monitor%20October%202025.pdf",
+      "content": "Payments Infrastructure 2 CRYPTO ASSETS MONITOR: Q3 2025 OCTOBER 9, 2025 Market Update Total crypto assets market cap surpassed USD 4.2 trillion. Bitcoin lost 4 percent market share of total crypto assets to Ether. 1. Selected Crypto Assets Market Cap (in USD billions) 2. Selected Crypto Assets Market Share (in percent) ▪ The total crypto assets market cap surpassed USD 4.2 trillion, setting a new historical high. This represents a 13 percent increase from the previous high of USD 3.9 trillion in December 2024. ▪ Similarly, the Bitcoin market cap increased by 9 percent in Q3 2025, hitting USD2.5 trillion for the first time. Bitcoin price reached USD 126,000 on October 6th. ▪ While Bitcoin’s share in crypto assets was close to its peak at the beginning of Q3 2025, it dropped by 4 percent [...] share relative to Bitcoin. ▪ The crypto-asset-focused funds reflected above directly invest in Bitcoin or Ether, and/or in futures contracts. ▪ Data on holdings of the five main Bitcoin ETPs highlights that investment advisors and brokers have increased their positioning compared with other investors since last year. ▪ Broader-based ownership may reflect improved risk-adjusted returns of Bi...",
+      "score": 0.6211049,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "[PDF] Kaiko Indices Rebalancing Report Q3 2025",
+      "url": "https://resources.kaiko.com/hubfs/Kaiko%20Indices%20Rebalancing%20Report%20Q3%202025.pdf",
+      "content": "Below, we observe that the BOLD index’s performance is driven by Bitcoin, but with much more controlled volatility, making it less sensitive to market shocks. The advantage of such an index is that it captures Bitcoin’s returns while hedging with gold. The current performance of gold (reaching historic highs) has thus been able to limit losses related to Crypto's Black Friday (10/10/2025). As a result, the index shows a YTD of around +47% with controlled volatility of roughly 16%. [...] Kaiko Indices Rebalancing Report Quarterly Update: Q3 2025 www.kaiko.com October 2025 Overview The Q3 2025 rebalancing period (July 1st – October 1st) captured a quarter of resilient institutional demand and dynamic price action across digital assets. Rebalancing is a time-driven process that ensures Kaiko Indices remain representative, transparent, and aligned with current market conditions by systematically adjusting constituent weights and reviewing eligibility criteria. This quarterly report provides comprehensive analysis of performance returns, rebalancing changes, key market trends, and methodology, revealing compelling performance patterns across all index families—from blue-chip to thema...",
+      "score": 0.61972505,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "Positive Bitcoin Fundamentals in Q4, But Price Mome...",
+      "url": "https://cryptoquant.com/insights/research/68dd396b49ecef589775913b-01-October-2025-This-Time-is-Not-Different-Positive-Bitcoin-Fundamentals-in-Q4-B",
+      "content": "Bullish conditions are starting in Q4 2025 at the same level as last year. CryptoQuant’s Bitcoin Bull Score Index has been at 40-50 in the last few days of Q3 2025, the same levels as at the end of Q3 2024. These levels represent the threshold before conditions turn bullish according to the index. Last year, as the index crossed above 50–bullish conditions–the price of Bitcoin rallied from ~$70K to ~$100K. ![[01 October 2025] This Time is Not Different: Positive Bitcoin Fundamentals in Q4, But Price Momentum is Needed to Ignite a Rally]( Access exclusive research with the Advanced plan. Our market reports are available to Advanced users after 30 days from release. Unlock historical CQ research reports. Explore insights backed by real data. [...] Search For Summary Chart Dashboard Query Pro Chart Quicktake Research Creator Popular search exchange flows BTC miner flows derivatives utxo View all results ↵ Navigate ↓ ↑ Open in new tab ctrl ↵ Close Esc BTC Long-term Short-term Technical Analysis On-chain Analysis Sentiment Analysis # [01 October 2025] This Time is Not Different: Positive Bitcoin Fundamentals in Q4, But Price Momentum is Needed to Ignite a Rally Executive Summary Bitc...",
+      "score": 0.6100127,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "Bitcoin Analysis & Research - Glassnode Insights",
+      "url": "https://research.glassnode.com/tag/analyses",
+      "content": "Avenir + Glassnode: Bitcoin's Liquidity Profile ## Avenir + Glassnode: Bitcoin's Liquidity Profile Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap ## Gemini + Glassnode: Bitcoin Adoption, Volatility, and Market Cap CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 ## CME + Glassnode: Bitcoin Insight and Market Trends H1 2025 Coinbase + Glassnode: Charting Crypto Q2 2025 ## Coinbase + Glassnode: Charting Crypto Q2 2025 Supply by Investor Behavior: Understanding Who’s Behind the Market Moves ## Supply by Investor Behavior: Understanding Who’s Behind the Market Moves Is the Metaverse Dead? On-Chain Data Tells a Different Story ## Is the Metaverse Dead? On-Chain Data Tells a Different Story [...] Introducing Options Premium & Taker Flow Analytics ## Introducing Options Premium & Taker Flow Analytics Pressure Points: Liquidation Heatmaps & Market Bias ## Pressure Points: Liquidation Heatmaps & Market Bias Systematic Feature Discovery for Digital Asset Markets ## Systematic Feature Discovery for Digital Asset Markets A Practical Guide to Glassnode’s MCP Server ## A Practical Guide to Glassnode’s MCP Server Coinbase + Glassnode: Charting Crypto Q3 2025 ## Coin...",
+      "score": 0.6044228,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "search_index": 5
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing timestamp in UTC Quote asset volume: Volume in quote asset (USDT) Number of trades: Number of trades during period Taker buy base asset volume: Volume of taker buy orders Taker buy quote asset volume: Volume of taker buy orders in quote asset Ignore: Unused field [...] menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bi...",
+      "score": 0.5354634,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Details on how to get Binance public data",
+      "url": "https://github.com/binance/binance-public-data",
+      "content": "| Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1499040000000 | 0.01634790 | 0.80000000 | 0.01575800 | 0.01577100 | 148976.11427815 | 1499644799999 | 2434.19055334 | 308 | 1756.87402397 | 28.46694368 | 17928899.62484339 | COIN-M Futures `klines` files' data is from `/dapi/v1/klines` API endpoint: | Open time | Open | High | Low | Close | Volume | Close time | Base asset volume | Number of trades | Taker buy volume | Taker buy base asset volume | Ignore | --- --- --- --- --- --- | | 1591258320000 | 9640.7 | 9642.4 | 9640.6 | 9642.0 | 206 | 1591258379999 | 2.13660389 | 48 | 119 | 1.23424865 | 0 | #### Trades [...] | Open time | Open | High | Low | Close | Volume | Close time | Quote asset volume | Number of trades | Taker buy base asset volume | Taker buy quote asset volume | Ignore | --- --- --- --- --- --- | | 1735689600000000 | 4.15070000 | 4.15870000 | 4.15060000 | 4.15540000 | 539.23000000 | 1735693199999999 | 2240.39860900 | 13 | 401.82000000 | 1669.98121300 | 0 | All kline intervals are supported: `1s`, `1m`, `3m`, `5m`, `...",
+      "score": 0.5126688,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "I expect bitcoin will breakout to new high since fall 2025: Miller Value Partners' Bill Miller",
+      "url": "https://www.youtube.com/watch?v=rLaRxw5aQRY",
+      "content": "I MENTIONED EARLIER THAT EVERYTHING'S MOVING ON CHAIN. THIS IS AN 11 BILLION ENTERPRISE VALUE AND $1 TRILLION OPPORTUNITY. THEY'VE GOT A 75% MARKET SHARE OKAY. IN IN REAL WORLD ASSET TOKENIZATION. AND WHAT THAT MEANS RIGHT NOW AT LEAST IS HELOCS HOME EQUITY LINES OF CREDIT. THEY'VE DONE ABOUT $19 BILLION IN ORIGINATIONS. THAT IS A MASSIVE MARKET. AND THE REASON THIS IS SO COMPELLING IS BECAUSE THEY LOWER THE COST OF [...] 41 comments ### Transcript: [...] FOR 800 YEARS, WHICH IS WHY BITCOIN IS A PARTICULARLY INTERESTING ASSET TO OWN. WHAT'S REALLY INTERESTING IS WE'RE A BIG INFLECTION POINT RIGHT NOW FOR DIGITAL ASSETS, BITCOIN, ESPECIALLY IF YOU LOOK AT THE REGULATORY CLARITY THAT'S COMING TO THE SYSTEM OVER THE PAST YEAR, IT'S IT'S A WHOLE NEW BALLGAME, HEAD OF THE SEC SAID A COUPLE WEEKS AGO THAT CAPITAL MARKETS ARE ALL MOVING ON CHAIN. JAMIE DIMON HAS REVERSED COURSE. THEY'RE NOW BUILDING ON BLOCKCHAIN. SO ALL OF THIS IS MASSIVELY POSITIVE FOR BITCOIN, WHICH LOOKS LIKE IT'S PUT IN A HIGHER BASE THAN IT DID IN THE SPRING OF 25. THE TECHNICALS ARE REALLY STARTING TO LINE UP AND IT LOOKS LIKE IT'S READY TO GO AGAIN. I PERSONALLY EXPECT IT TO BREAK OUT TO A HIGHER HIGH THAN ITS...",
+      "score": 0.50183165,
+      "query": "Bitcoin BTC historical daily and intraday price around 116000 prior all-time highs comparable breakout episodes 2024 2025",
+      "search_index": 2
+    },
+    {
+      "title": "Options Expiration Calendar - CME Group",
+      "url": "https://www.cmegroup.com/tools-information/quikstrike/options-calendar.html",
+      "content": ". Integrated U.S. economic event information notifies of potential high (red boxes) or medium (orange boxes) impact events for a given day, while clicking said boxes will pop-up a full list of the day’s events. Click on the product symbol of any currently listed option expiry to gain information on pricing, open interest, settlements and volatility. Click on the futures symbol for a price and volume chart. Click on the product name to open a window with the contract specs. View calendar month by “expiration date month” (default) or by “contract month.” Powered by QuikStrike Options Analysis Software [...] Disclaimer:The data and output from this tool does not constitute investment advice and is not a personal recommendation from CME Group. Nothing contained herein constitutes the solicitation of the purchase or sale of any futures or options. Any investment activities undertaken using this tool will be at the sole risk of the relevant investor. CME Group expressly disclaims all liability for the use or interpretation (whether by visitor or by others) of information contained herein. Decisions based on this information are the sole responsibility of the relevant investor. Any vis...",
+      "score": 0.50183165,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Bitcoin Breakout Puts $82,000 Resistance at the Center of the Trade",
+      "url": "https://www.investing.com/analysis/bitcoin-breakout-puts-82000-resistance-at-the-center-of-the-trade-200679826",
+      "content": "A subtle but important development is the cleanly decoupled behavior of spot Bitcoin pricing and DeFi credit signals over the past two weeks. For most of 2024 and 2025, spot BTC and stablecoin yield curves moved in rough sympathy — when one stretched, the other followed within a few sessions, and stress in either channel transmitted through to the other. That linkage has snapped. Aave V3 USDC supply rates spiked to 12% in late April following a cross-chain bridge exploit before governance normalized them back to 3.86%, and during the same week Bitcoin reclaimed $80,000, lending rates ran their own credit event with no spillover in either direction. Tesseract Group’s head of asset management Adam Haeems has characterized the separation as the cleanest such divergence the market has ever [...] below the $96,824.91 it traded at this time last year, and pricing remains approximately 30% beneath the $126,198 all-time high printed in late 2025 before the macro-driven drawdown took hold. The market capitalization sits at roughly $1.33 trillion, an order of magnitude larger than Ethereum’s (ETH-USD) $233 billion, while the broader digital asset complex has expanded to $2.69 trillion in...",
+      "score": 0.4680374,
+      "query": "Bitcoin BTC historical daily and intraday price around 116000 prior all-time highs comparable breakout episodes 2024 2025",
+      "search_index": 2
+    },
+    {
+      "title": "Changelog | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs",
+      "content": "For more information on SBE, please refer to the FAQ ### 2024-02-08 has been added to SPOT Testnet. This will be added to the live exchange at a later date. For more information on what SBE is, please refer to the FAQ ### 2023-12-04 `session.logon` `session.logout` `session.status` New request `ticker.tradingDay` `avgPrice` response has a new field `closeTime`, indicating the last trade time. `klines` and `uiKlines` have a new optional parameter `timeZone`. `order.test` and `sor.order.test` have a new optional parameter `computeCommissionRates`. Fixed a bug where unsolicited pongs sent before the ping would cause disconnection. WebSocket Streams [...] Websocket API `trades.aggregate` `klines` `allOrderList` `allOrders` `myTrades` Users connected to the websocket API will now be disconnected if their IP is banned due to violation of the IP rate limits (status `418`). The following changes will take effect approximately a week from the release date, but the rest of the documentation has been updated to reflect the future changes: Changes to Filter Evaluation: Previous behavior: `LOT_SIZE` and `MARKET_LOT_SIZE` required that (`quantity` - `minQty`) % `stepSize` == 0. New behavior:...",
+      "score": 0.45973158,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "How to pull REALTIME Cryptocurrency Prices with Python ...",
+      "url": "https://www.youtube.com/watch?v=P_SIZDsI3Ro",
+      "content": "just looping over those names and then adds this string and also transform the strings to lowercase letters here so I'm just reassigning that to assets so assets list is looking like this so that is exactly how we need to post that to the API so it is understanding what we want from it now we cannot provide a list here but we can only provide a string to the API so to subscribe to multiple streams you have to provide the Stream So in this this one stream here so the Bitcoin Kline stream for one minute Candlestick data and then you need to add this one to the string and separate them so you need to separate them with a slash here so this one and then you just provide this as a um as a string here so this has to be I'm missing the word word here let me quickly Google that for now uh let's [...] one and you need to add at Kline which is the Candlestick stream or the Kline stream and the time interval so the correct way this should look like would be this one here Bitcoin USD at Kine 1 minute so with that you are subscribing to the Candlestick one minute chart and then we are getting live prices for that one minute Kline chart or not chart but for that one minute data coming from th...",
+      "score": 0.45638612,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "search_index": 1
+    },
+    {
+      "title": "Options on Bitcoin futures - Expiration Date and Strike Price",
+      "url": "https://www.cmegroup.com/education/courses/introduction-to-bitcoin/options-on-bitcoin-futures",
+      "content": "## Understanding contract expirations First, let’s look at the contract expirations. CME Group will list six consecutive months of options on Bitcoin futures. Also, there will be two December options contracts. However, if the current year’s December contract is one of the front six consecutive listings – there will be only one additional December listing. Each option will expire into its underlying futures contract, and that futures contract instantaneously settles into cash. For example, assume it’s January. The six consecutive monthly futures listed are: January, February, March, April, May, and June. This year’s December contract and next year’s December contract will also be listed. [...] Additionally, CME will be listing more granular strike intervals as option expiration approaches – again allowing more precision when hedging. Additional strikes may be added based on the movement of the Bitcoin futures price. CME Group will manage the listing daily to ensure that appropriate instruments are available. ## Summary CME Group options on Bitcoin futures provide traders a variety of strikes and expirations. This enables multiple trading strategy “options” to manage bitcoin pric...",
+      "score": 0.43669468,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "search_index": 4
+    },
+    {
+      "title": "This Friday's Bitcoin Options Expiry Could Shake Up The Market",
+      "url": "https://www.tradingview.com/news/newsbtc:cb57e8c8e094b:0-this-friday-s-bitcoin-options-expiry-could-shake-up-the-market-what-to-look-out-for",
+      "content": "NewsBTC NewsBTC # This Friday’s Bitcoin Options Expiry Could Shake Up The Market: What To Look Out For As the year comes to a close, Bitcoin (BTC) is approaching a pivotal moment that could lead to increased market volatility. This Friday, December 26, more than $23 billion worth of Bitcoin options are set to expire, marking the largest options expiration in the cryptocurrency’s history. How $23 Billion Roll-Off May Impact Bitcoin Prices Market expert NoLimit took to social media platform X (formerly Twitter) to elucidate the significance of this event. Understanding options expiration is crucial to grasping its potential impact on the market. [...] The sheer scale of this upcoming expiry highlights a shift in the market landscape, indicating that it is now largely shaped by institutional investors rather than retail traders. The specificity of this Friday is particularly noteworthy. Dealers have strategically hedged their positions around key Bitcoin price levels, and as the options expiry arrives, these hedges will be unwound. This process could lead to sharp price movements in either direction, especially given the current low-liquidity conditions in the market. The holiday s...",
+      "score": 0.4018996,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "search_index": 4
+    },
+    {
+      "title": "Cryptocurrency Market Dynamics Around Bitcoin Futures ...",
+      "url": "https://quantpedia.com/cryptocurrency-market-dynamics-around-bitcoin-futures-expiration-events",
+      "content": "However, back on topic! Since we have an absolutely minuscule (weeks) sample of spot ETFs, events, and surroundings, their consequent influences on future prices during expiration have yet to be shown. We will leave any guesses open. What will definitely be interesting is to see if trad-fin “classical” events will emanate on spot ETFs and, therefore, influence spot and futures prices; we are talking about holiday effects, the turn of the months, etc. All of that is yet to be seen. # Main Results and Commentary",
+      "score": 0.28862974,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "search_index": 4
+    },
+    {
+      "title": "BlackRock names spot Bitcoin ETF among top investment themes for 2025",
+      "url": "",
+      "content": "BlackRock said its iShares Bitcoin Trust ETF (IBIT), together with an ETF tracking short-term Treasurys and another linked to major U.S. technology stocks, was among its top investment themes for 2025.",
+      "score": 0.7711725,
+      "query": "BlackRock IBIT Fidelity FBTC MicroStrategy spot Bitcoin ETF issuers Treasury holdings flows impact BTC price 2025",
+      "search_index": 3,
+      "rewritten_for_leakage": true
+    },
+    {
+      "title": "Options on Bitcoin Futures Calendar - CME Group",
+      "url": "",
+      "content": "CME Group provides a calendar for options on bitcoin futures showing contract months, product codes, trading windows, and settlement information.",
+      "score": 0.66699636,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "search_index": 4,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTCUSDT 1m kline close price timezone ET noon official trading interface API documentation",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin BTC historical daily and intraday price around 116000 prior all-time highs comparable breakout episodes 2024 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "BlackRock IBIT Fidelity FBTC MicroStrategy spot Bitcoin ETF issuers Treasury holdings flows impact BTC price 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "October 2025 Bitcoin options expiry CME futures ETF flow calendar macro events FOMC CPI jobs report late September to October 28 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "October 2025 Bitcoin market outlook analyst report Glassnode CryptoQuant Kaiko CoinShares research resistance 116000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}

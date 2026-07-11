@@ -368,7 +368,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe pre-cutoff background on eligible collateral and margins for temporary repo operations. No explicit post-cutoff publication/update or completed post-cutoff outcome."
+      "reason": "Pre-cutoff background on eligible collateral and margins for NY Fed repo operations. No explicit post-cutoff publication/update or completed outcome language. Useful operational context, though not a direct predictor of the 2026-06-21 vs 2026-06-28 value change."
     },
     {
       "stage": "cached",
@@ -378,7 +378,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly about the target FRED series and its construction. Provides primary context for what is being forecast. No explicit post-cutoff publication or result language in title, URL, or snippet."
+      "reason": "Directly about the target FRED series and its construction. Safe background with no explicit post-cutoff publication/update or realized post-cutoff value in the snippet. Highly relevant for understanding what resolves the question."
     },
     {
       "stage": "cached",
@@ -388,7 +388,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Related FRED series for overnight reverse repos; not the target series but useful contextual indicator about temporary open market operations. No explicit post-cutoff publication/update or completed outcome."
+      "reason": "Related FRED series for overnight reverse repos provides contextual information about temporary open market operations. No explicit post-cutoff publication/update or completed result. Indirectly relevant as supporting context."
     },
     {
       "stage": "cached",
@@ -396,9 +396,9 @@
       "url": "https://www.newyorkfed.org/markets/repo-agreement-ops-faq-200315",
       "query": "New York Fed trading desk temporary open market operations eligible counterparties Treasury repo schedule",
       "llm_keep": true,
-      "relevance": "high",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official NY Fed FAQ explaining repo operations and implementation intentions. Directly relevant institutional background with no explicit post-cutoff publication/update or retrospective result."
+      "reason": "NY Fed FAQ explaining repo operations, reserve effects, and implementation intentions. No explicit post-cutoff publication/update or post-cutoff outcome. Useful supporting context but not a direct leading indicator for the specific weekly comparison."
     },
     {
       "stage": "cached",
@@ -408,7 +408,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official historical report describing daily overnight repo operations under the SRF and counterparties. Useful background on operational patterns; no explicit post-cutoff publication/update beyond historical 2024 content."
+      "reason": "Historical official report describing that the Desk conducts daily overnight repo operations under the SRF and counterparties involved. Published before cutoff based on title/year context and snippet; no post-cutoff outcome leakage. Helpful institutional background."
     },
     {
       "stage": "cached",
@@ -418,7 +418,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "General explanatory background on daily Fed open market operations and announcement timing. Older contextual material, not directly predictive, but safe and non-leaky."
+      "reason": "Older explanatory article on the daily pattern of Fed temporary open market operations. No explicit post-cutoff publication/update relative to the cutoff. Generic background only, with limited forecasting value."
     },
     {
       "stage": "cached",
@@ -428,7 +428,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official NY Fed statements/policies index showing existence of standing repo facility statements and operational notices. Could help locate contemporaneous policy guidance; snippet only shows pre-cutoff dates and no post-cutoff outcomes."
+      "reason": "Official NY Fed statements/policies index showing prior statements regarding Desk operations and the standing repo facility. The dates shown are pre-cutoff, and there is no explicit post-cutoff publication/update or completed post-cutoff state. Potentially useful source hub for contemporaneous policy context."
     },
     {
       "stage": "cached",
@@ -438,7 +438,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Duplicate of item 5 with generic background on daily Fed operations. Safe but only tangentially useful."
+      "reason": "Duplicate/near-duplicate of the older Haver background article on daily Fed open market operations. Safe and pre-cutoff, but only generic context with low direct forecasting value."
     },
     {
       "stage": "cached",
@@ -448,7 +448,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Federal Reserve Board background on open market operations, including temporary OMOs and reverse repos. Useful institutional context without explicit post-cutoff publication or completed-result leakage."
+      "reason": "Federal Reserve Board background on open market operations, including temporary OMOs and reverse repos. No explicit post-cutoff publication/update or realized outcome. Useful institutional context, though not directly predictive."
     },
     {
       "stage": "cached",
@@ -456,9 +456,9 @@
       "url": "https://www.newyorkfed.org/markets/domestic-market-operations/monetary-policy-implementation/repo-reverse-repo-agreements",
       "query": "Federal Reserve temporary open market operations repo official definition RPONTSYD New York Fed",
       "llm_keep": true,
-      "relevance": "high",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Official NY Fed page on repo and reverse repo agreements, directly relevant to mechanics and schedule of operations that drive the target series. No explicit post-cutoff publication/update or completed outcome in the snippet."
+      "reason": "Official NY Fed page describing repo and reverse repo agreements and noting ON RRP operations each business day. No explicit post-cutoff publication/update or completed post-cutoff result in the snippet. Relevant operational background for the series."
     },
     {
       "stage": "cached",
@@ -468,17 +468,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe pre-cutoff background page listing New York Fed operating policy statements. No explicit post-cutoff publication/update tied to the evidence item itself, and it can help locate relevant repo-operation announcements."
-    },
-    {
-      "stage": "cached",
-      "title": "Annual Report on Open Market Operations during 2025",
-      "url": "https://www.newyorkfed.org/medialibrary/media/markets/omo/omo2025-pdf.pdf",
-      "query": "New York Fed temporary open market operations historical repo operations comparable periods",
-      "llm_keep": false,
-      "relevance": "medium",
-      "disposition": "dropped",
-      "reason": "Annual report on operations during 2025 is retrospective/completed-result material ('Operational Results', 'saw limited use in 2025'). Past-tense summary evidence should be dropped."
+      "reason": "Safe pre-cutoff policy/archive page with dated statements through 2025 only. Useful for background on New York Fed operating policies that can affect repo operations, though not a direct indicator for the specific 2026-06-21 vs 2026-06-28 comparison."
     },
     {
       "stage": "cached",
@@ -488,7 +478,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Direct source series page for the exact resolution metric RPONTSYD. Provides definition, units, and source methodology without explicit post-cutoff publication leakage."
+      "reason": "Directly relevant source series page for the exact resolution metric RPONTSYD. Snippet provides series definition and source methodology without explicit post-cutoff published/updated/result language."
     },
     {
       "stage": "cached",
@@ -498,7 +488,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "General explanatory background on temporary open market operations from the New York Fed. Safe and potentially useful for interpreting drivers of the series."
+      "reason": "General explanatory background on temporary open market operations from the New York Fed. Safe and potentially useful for understanding drivers of the series, though not a direct forecast signal."
     },
     {
       "stage": "cached",
@@ -508,27 +498,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Related FRED series page for overnight reverse repos. Safe background/context on adjacent operations that may inform repo usage, with no explicit post-cutoff publication or outcome leakage."
-    },
-    {
-      "stage": "cached",
-      "title": "Repo and Reverse Repo Agreements",
-      "url": "https://www.newyorkfed.org/markets/domestic-market-operations/monetary-policy-implementation/repo-reverse-repo-agreements",
-      "query": "New York Fed trading desk temporary open market operations eligible counterparties Treasury repo schedule",
-      "llm_keep": false,
-      "relevance": "high",
-      "disposition": "dropped",
-      "reason": "Snippet explicitly includes post-cutoff dated statements ('May 6, 2026', 'Mar 12, 2026'), which are after the 2026-06-20 cutoff. Explicit post-cutoff page state means drop."
-    },
-    {
-      "stage": "cached",
-      "title": "Federal Reserve Repo and Reverse Repo Market Operations: Before the Global Financial Crisis to 2015",
-      "url": "https://tellerwindow.newyorkfed.org/2025/07/16/federal-reserve-repo-and-reverse-repo-market-operations-before-the-global-financial-crisis-to-2015",
-      "query": "market commentary Federal Reserve repo operations liquidity demand analysis New York Fed",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "URL explicitly shows publication date 2025/07/16, which is after the cutoff. Must be dropped for post-cutoff publication leakage."
+      "reason": "Related FRED series for overnight reverse repos. Safe background/comparison data that may help contextualize reserve-management operations, though it is not the exact target series."
     },
     {
       "stage": "cached",
@@ -538,7 +508,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Research paper URL indicates 2025 publication, before cutoff. It analyzes determinants/transmission of Fed repo operations and could inform expectations, with no explicit post-cutoff outcome leakage in the snippet."
+      "reason": "Research paper PDF appears dated 2025 from the filename and discusses determinants/transmission of Fed repo usage. Pre-cutoff and potentially informative about drivers of repo operations, though not direct contemporaneous evidence."
     },
     {
       "stage": "cached",
@@ -548,7 +518,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Generic educational background on temporary open market operations. Safe but only tangentially useful for forecasting the specific week-over-week change."
+      "reason": "Generic educational background on open market operations. Safe but only tangentially useful for forecasting the specific daily repo value change."
     },
     {
       "stage": "cached",
@@ -556,9 +526,9 @@
       "url": "https://www.newyorkfed.org/markets/rrp_faq.html",
       "query": "Federal Reserve temporary open market operations repo official definition RPONTSYD New York Fed",
       "llm_keep": true,
-      "relevance": "low",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "General FAQ on reverse repo operations from the New York Fed. Safe contextual background, though only indirectly relevant to the exact RPONTSYD forecast."
+      "reason": "New York Fed FAQ on reverse repo operations gives operational context and mechanics. Safe background, though focused on RRP rather than the exact RP series."
     },
     {
       "stage": "cached",
@@ -568,7 +538,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe pre-cutoff background on New York Fed reverse repo operations and schedule/parameters. No explicit post-cutoff publication or completed post-cutoff outcome. Indirectly relevant context for temporary open market operations, though the target series is overnight repos rather than reverse repos."
+      "reason": "Same safe FAQ content with operational schedule details for ON RRP. Could provide contextual clues about standing facilities and money-market plumbing, but not direct evidence on RPONTSYD."
     },
     {
       "stage": "cached",
@@ -578,17 +548,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe background from the Federal Reserve explaining repos and reverse repos and noting historical usage patterns. No explicit post-cutoff publication/update or leaked post-cutoff state. Useful contextual information about the mechanism behind the series."
-    },
-    {
-      "stage": "cached",
-      "title": "Federal Reserve Repo and Reverse Repo Market Operations: 2015 to Now",
-      "url": "https://tellerwindow.newyorkfed.org/2025/07/17/federal-reserve-repo-and-reverse-repo-market-operations-2015-to-now",
-      "query": "New York Fed temporary open market operations historical repo operations comparable periods",
-      "llm_keep": false,
-      "relevance": "low",
-      "disposition": "dropped",
-      "reason": "Leakage: URL explicitly contains a post-cutoff publication date, 2025/07/17, which is after the 2026-06-20 cutoff. Must be dropped."
+      "reason": "Federal Reserve page on monetary policy tools includes background on repos/reverse repos and historical usage. Safe pre-cutoff context, though partly historical and not a direct leading indicator."
     },
     {
       "stage": "cached",
@@ -596,9 +556,9 @@
       "url": "https://fred.stlouisfed.org/graph?g=pb9s",
       "query": "FRED RPONTSYD series daily Treasury repo aggregated amount methodology",
       "llm_keep": true,
-      "relevance": "high",
+      "relevance": "medium",
       "disposition": "kept",
-      "reason": "Directly relevant FRED graph/page describing the exact series construction and meaning. Snippet contains no explicit post-cutoff publication/update or realized post-cutoff value. Useful primary-source background for interpreting the forecast target."
+      "reason": "FRED graph combining repo and reverse repo series is safe and relevant as contextual comparative data for the target series. No explicit post-cutoff publication/update or completed outcome language."
     },
     {
       "stage": "cached",
@@ -608,7 +568,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe historical analysis of repo operations and dealer balance sheets from 2021. No explicit post-cutoff publication/update or post-cutoff outcome. Helpful supporting context on drivers of repo usage, though not a direct leading indicator for the specific June 2026 comparison."
+      "reason": "Pre-cutoff 2021 Federal Reserve research note. Provides background on drivers of Fed repo usage and how overnight repo balances respond to funding stress; no post-cutoff publication or outcome leakage."
     },
     {
       "stage": "cached",
@@ -618,7 +578,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly relevant New York Fed page stating repo and reverse repo operations are conducted each day and linking operation results/historical data. This is contemporaneous structural context without explicit post-cutoff publication or completed post-cutoff result."
+      "reason": "Official New York Fed repo operations page describing that repo and reverse repo operations are conducted each day and linking operation results/historical data. Contemporaneous structural source directly relevant to how the series is generated; no explicit post-cutoff publication state."
     },
     {
       "stage": "cached",
@@ -628,7 +588,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe Federal Reserve background on monetary policy tools and historical reverse repo operations. No explicit post-cutoff publication/update or leaked post-cutoff state. Useful but indirect context."
+      "reason": "Federal Reserve background on monetary policy tools and repo/reverse repo operations. Useful institutional context for interpreting the series, with no post-cutoff publication or completed post-cutoff event."
     },
     {
       "stage": "cached",
@@ -638,7 +598,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Safe historical Richmond Fed background on repo market size and Fed operations. No explicit post-cutoff publication/update or post-cutoff result. Provides supporting context but not direct evidence on the exact June 2026 value change."
+      "reason": "Richmond Fed background article on repo market size and Fed involvement. Helpful context on determinants of repo operations and market functioning; safely pre-cutoff and not outcome-reporting."
     },
     {
       "stage": "cached",
@@ -648,7 +608,7 @@
       "llm_keep": true,
       "relevance": "high",
       "disposition": "kept",
-      "reason": "Directly relevant New York Fed FAQ on standing repo operations, including that the Desk conducts standing overnight repo operations and how changes are communicated. Safe prospective/structural context with no explicit post-cutoff publication or realized outcome."
+      "reason": "Official NY Fed FAQ on standing repo operations, directly relevant to overnight repo mechanics and operational parameters that influence the series. No explicit post-cutoff publication/update or realized outcome."
     },
     {
       "stage": "cached",
@@ -658,7 +618,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Same 2021 Federal Reserve note as item 4; safe historical analysis with no explicit post-cutoff publication/update or leaked post-cutoff state. Useful supporting context, though duplicative and indirect."
+      "reason": "Duplicate of item 0 from the Federal Reserve site. Safe pre-cutoff analytical background on repo usage; relevant though not unique."
     },
     {
       "stage": "cached",
@@ -668,7 +628,7 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff background speech page (URL indicates 2025) discussing Treasury repo market liquidity, repo volatility, and reserve fluctuations. No explicit post-cutoff publication/update or completed post-cutoff outcome. Useful contextual information for drivers of Fed overnight repo usage, though not direct primary data for the exact week."
+      "reason": "Speech URL indicates 2025, which is pre-cutoff. Discusses money market conditions, repo market resilience, reserves, and balance sheet dynamics that can inform expectations for repo usage. No explicit post-cutoff publication or completed post-cutoff result."
     },
     {
       "stage": "cached",
@@ -676,9 +636,9 @@
       "url": "https://www.brookings.edu/articles/what-is-the-repo-market-and-why-does-it-matter",
       "query": "market commentary Federal Reserve repo operations liquidity demand analysis New York Fed",
       "llm_keep": true,
-      "relevance": "medium",
+      "relevance": "low",
       "disposition": "kept",
-      "reason": "Background explainer on the repo market and Fed repo operations. Snippet describes historical policy actions and mechanics, with no explicit post-cutoff publication/update or leaked post-cutoff state. Helpful supporting context but not directly predictive of the 2026-06-21 vs 2026-06-28 comparison."
+      "reason": "Brookings explainer on the repo market. Generic background only, but safely pre-cutoff and may help with broad understanding of repo operations."
     },
     {
       "stage": "cached",
@@ -688,7 +648,7 @@
       "llm_keep": true,
       "relevance": "low",
       "disposition": "kept",
-      "reason": "Appears to be a generic TradingView ideas page for a related but different FRED series (RRPONTSYD, reverse repos rather than the target RPONTSYD). Snippet contains no explicit post-cutoff publication/update or completed outcome. Tangential and low relevance, but safe."
+      "reason": "TradingView ideas page for a related FRED reverse repo series. Tangential and low-value for this exact repo series, but snippet does not explicitly show post-cutoff publication or outcomes, so it is safe to retain as low relevance."
     },
     {
       "stage": "cached",
@@ -698,17 +658,18 @@
       "llm_keep": true,
       "relevance": "medium",
       "disposition": "kept",
-      "reason": "Pre-cutoff Federal Reserve research note dated 2025-02-12 analyzing repo rate sensitivity to Treasury issuance and quantitative tightening. No explicit post-cutoff publication/update or leaked post-cutoff page state. Useful supporting evidence on structural determinants of repo market conditions, though not direct contemporaneous data for the target series."
+      "reason": "Federal Reserve note dated 2025-02-12, safely pre-cutoff. Analyzes repo rate sensitivity to Treasury issuance and QT, which is a plausible leading indicator/background factor for overnight repo usage. No leakage."
     }
   ],
   "refilter_stats": {
     "kept": 30,
-    "dropped": 4,
+    "dropped": 0,
     "relevance": {
-      "high": 8,
-      "medium": 19,
-      "low": 7
+      "high": 4,
+      "medium": 21,
+      "low": 5
     },
-    "supplemental_for_relevance": false
+    "supplemental_for_relevance": false,
+    "skipped_long_recovered_queries": 0
   }
 }

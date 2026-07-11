@@ -1,0 +1,308 @@
+{
+  "row_index": 59,
+  "market_id": "mkt_686346",
+  "slug": "",
+  "question": "Will Bitcoin reach $102,000 November 17-23?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1-minute candle for BTC/USDT during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"High\" price equal to or greater than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"High\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "event_title": "Will Bitcoin reach $102,000 November 17-23?\n\nDescription: This market will immediately resolve to \"Yes\" if any Binance 1-minute candle for BTC/USDT during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"High\" price equal to or greater than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"High\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+  "resolution_date": "2025-11-24",
+  "evidence_cutoff_date": "2025-11-23",
+  "end_date_limit": "2025-11-23",
+  "row_end_date_raw": "2025-11-24",
+  "expanded_queries": [
+    "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+    "Bitcoin price historical November weekly highs all-time high timeline prior breakouts above round-number levels 100000",
+    "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+    "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+    "Bitcoin analyst outlook November 2025 BTC price target resistance 100000 102000 research report Glassnode Kaiko Coinbase Institutional"
+  ],
+  "supplemental_query": null,
+  "supplemental_queries": [],
+  "stats": {
+    "search_calls": 5,
+    "raw_result_count": 50,
+    "deduped_result_count": 49,
+    "hard_quarantined_late_date_count": 6,
+    "llm_filter_input_count": 49,
+    "supplemental_search_triggered": false,
+    "supplemental_search_count": 0,
+    "supplemental_raw_result_count": 0,
+    "supplemental_deduped_result_count": 0,
+    "final_evidence_count": 24,
+    "llm_filter_batch_count": 5,
+    "llm_filter_failed_batch_count": 0,
+    "llm_filtered_leak_count": 25,
+    "llm_kept_count": 24,
+    "llm_kept_leak_no_count": 23,
+    "llm_rewrite_candidate_count": 1,
+    "llm_rewritten_kept_count": 1,
+    "llm_rewrite_rejected_count": 0,
+    "llm_rewrite_verification_failed_batch_count": 0
+  },
+  "evidences": [
+    {
+      "title": "Top Market Events in November 2025: From FOMC to x402 Protocol ...",
+      "url": "https://www.xt.com/en/blog/post/november-2025-market-outlook-from-fomc-minutes-to-x402-protocol",
+      "content": "### Liquidity and Flow Factors ETF Flows: BlackRock’s IBIT remains the biggest driver of U.S. spot Bitcoin ETF inflows. Consistent inflows through November will be key to maintaining upward momentum in BTC. Derivatives Expiry: Both Deribit options and CME Bitcoin futures expire on Nov 28 at 08:00 UTC, during the U.S. Thanksgiving week. Lower liquidity could lead to sharper price swings around that date. ### Narrative Watch [...] For TradFi, this month serves as a reality check. Central banks are testing how far they can push policy easing without reigniting inflation, energy prices are stabilizing after sharp swings, and fiscal updates from the U.K. and other economies will show how governments plan to balance growth with discipline heading into 2026. For crypto traders, the tempo is just as intense. Institutional flows into Bitcoin ETFs remain strong, token unlocks are testing market depth, and new projects are reigniting interest across DeFi and AI-linked ecosystems. The tone set in November will shape how global markets move into 2026. ### TL;DR for Busy Readers [...] ## November Calendar At-a-Glance ### Macro highlights | | | | --- | Date | Event | Why It Matters | | Nov 6 |...",
+      "score": 0.80442166,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "Binance.US API Documentation: Introduction",
+      "url": "https://docs.binance.us",
+      "content": "``` { \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 1200, [...] ``` import requests resp = requests.get(' print(resp.json()) ``` > Response ``` [ [ 1499040000000, // Open time \"0.00386200\", // Open \"0.00386200\", // High \"0.00386200\", // Low \"0.00386200\", // Close \"0.47000000\", // Volume 1499644799999, // Close time \"0.00181514\", // Quote asset volume 1, // Number of trades \"0.47000000\", // Taker buy base asset volume \"0.00181514\", // Taker buy quote asset volume \"0\" // Ignore. ] ] ``` `GET /api/v3/klines` Use this endpoint to get Kline/candlestick bars for a token symbol. Klines are uniquely identified by their open time. Please note the maximum limit is 1,00...",
+      "score": 0.7882741,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "Binance API — python-binance 0.2.0 documentation",
+      "url": "https://python-binance.readthedocs.io/en/latest/binance.html",
+      "content": "Message Format ``` {\"e\": \"continuous_kline\",// Event type \"E\": 1607443058651,// Event time \"ps\": \"BTCUSDT\",// Pair \"ct\": \"PERPETUAL\"// Contract type \"k\":{\"t\": 1607443020000,// Kline start time \"T\": 1607443079999,// Kline close time \"i\": \"1m\",// Interval \"f\": 116467658886,// First trade ID \"L\": 116468012423,// Last trade ID \"o\":\"18787.00\",// Open price \"c\":\"18804.04\",// Close price \"h\":\"18804.04\",// High price \"l\":\"18786.54\",// Low price \"v\":\"197.664\",// volume \"n\": 543,// Number of trades \"x\": false,// Is this kline closed ? \"q\":\"3715253.19494\",// Quote asset volume \"V\":\"184.769\",// Taker buy volume \"Q\":\"3472925.84746\",// Taker buy quote asset volume \"B\": \"0\"// Ignore}}< pair> _< contractType> @continuousKline_< interval> ``` [...] Supported kline intervals: : seconds: 1s minutes: 1m, 3m, 5m, 15m, 30m hours: 1h, 2h, 4h, 6h, 8h, 12h days: 1d, 3d weeks: 1w months: 1M Notes: : If startTime/endTime not specified, returns most recent klines Supported timeZone values: : + Hours and minutes (e.g. “-1:00”, “05:45”) + Only hours (e.g. “0”, “8”, “4”) + Accepted range is strictly [-12:00 to +14:00] inclusive If timeZone provided, kline intervals are interpreted in that timezone instead of...",
+      "score": 0.7216064,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "Coinbase + Glassnode: Charting Crypto Q3 2025",
+      "url": "https://research.glassnode.com/coinbase-glassnode-charting-crypto-q3-2025",
+      "content": "💡 Download Charting Crypto Q3 2025 by Coinbase x Glassnode Highlights from this edition: Bitcoin leads the market as dominance reaches 64%, fueled by ETF inflows and renewed institutional accumulation. Spot ETF flows accelerate: Q2 saw over $14.6B in net inflows to BTC and ETH ETFs - more than 20x the Q1 figure. Stablecoins solidify their role in the financial stack, with total supply surpassing $230B and monthly volumes exceeding $4T. Ethereum shows signs of rotation, as investors reposition following Q1’s capitulation and Q2’s strong recovery. With analysis from both Coinbase and Glassnode analyst teams, this quarterly report remains a core resource for professional investors navigating crypto’s latest developments. ### Key Insights from Q3 2025 [...] ## Tailwinds Take Shape in Q3 The third quarter of 2025 marks a clear pivot in digital asset markets. Risk sentiment is rebounding, regulatory clarity is improving, and capital is flowing back into high-conviction assets. With Bitcoin reaching fresh all-time highs and stablecoin activity setting new records, market conditions are aligning for continued structural growth. Produced in collaboration with Coinbase Institutional, the...",
+      "score": 0.67166495,
+      "query": "Bitcoin analyst outlook November 2025 BTC price target resistance 100000 102000 research report Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Market Data endpoints | Binance Open Platform",
+      "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints",
+      "content": "Notes: `startTime` `endTime` `timeZone` `-1:00` `05:45` `0` `8` `4` `timeZone` `startTime` `endTime` `timeZone` Data Source: Database Response: `[ [ 1499040000000, // Kline open time \"0.01634790\", // Open price \"0.80000000\", // High price \"0.01575800\", // Low price \"0.01577100\", // Close price \"148976.11427815\", // Volume 1499644799999, // Kline Close time \"2434.19055334\", // Quote asset volume 308, // Number of trades \"1756.87402397\", // Taker buy base asset volume \"28.46694368\", // Taker buy quote asset volume \"0\" // Unused field, ignore. ] ]` ### UIKlines​ `GET /api/v3/uiKlines` The request is similar to klines having the same parameters and response. [...] Response - FULL: With `symbol`: `symbol` `{ \"symbol\": \"BTCUSDT\", \"priceChange\": \"-83.13000000\", // Absolute price change \"priceChangePercent\": \"-0.317\", // Relative price change in percent \"weightedAvgPrice\": \"26234.58803036\", // quoteVolume / volume \"openPrice\": \"26304.80000000\", \"highPrice\": \"26397.46000000\", \"lowPrice\": \"26088.34000000\", \"lastPrice\": \"26221.67000000\", \"volume\": \"18495.35066000\", // Volume in base asset \"quoteVolume\": \"485217905.04210480\", // Volume in quote asset \"openTime\": 1695686400000, \"closeTime\":...",
+      "score": 0.6685563,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "Q2 2025 Charting Crypto Report with Coinbase - Glassnode",
+      "url": "https://get.glassnode.com/charting-crypto-q2-2025",
+      "content": "Rising macro pressure and a sentiment shift Crypto markets are undergoing a significant reset in Q2 2025. The 48-page report includes many takeaways to help you navigate a crucial time for digital assets. Here are some of them: # Sovereign treasuries are anchoring long-term supply Governments like the U.S., El Salvador, and Bhutan are now strategic holders of bitcoin. Their passive, long-term custody plays a growing role in market psychology and liquidity. Learn more # Institutional custody now dominates the Bitcoin landscape 216 centralized entities—including ETFs, exchanges, and corporates—now hold over 30% of BTC supply. The report breaks down their influence by category and size. Learn more BTC Price Performance Since Cycle Low Chart by Glassnode [...] # The report includes: ##### Market Overview Including crypto market cap, cycle performance and correlations to other assets. ##### Bitcoin 9 slides on BTC including performance, holding patterns, and market trends. ##### Ethereum 14 slides on ETH iIncluding price trends, staking, Layer 2 activity, and more. ##### Stablecoins Insights on record-high stablecoin supply and their increasing utility in financial systems. ##### Mac...",
+      "score": 0.65146625,
+      "query": "Bitcoin analyst outlook November 2025 BTC price target resistance 100000 102000 research report Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Can Bitcoin's Price Hit $150,000 In 2025? Analyzing The Outlook ...",
+      "url": "https://www.forbes.com/sites/digital-assets/article/can-bitcoin-price-hit-150000-2025",
+      "content": "## Can Bitcoin Hit $150,000 In 2025? The path of least resistance is higher—supply growth is now below 0.8% annually post-halving, while demand from pensions, sovereign funds and retail apps keeps climbing. If ETF net inflows repeat Q1’s average $280 million per day, the modelled stock-to-flow ratio tips toward $175,000 by next summer. Yet timing matters. The last two cycles saw 30-40% mid-cycle draw-downs before blowing off. A correction to the low-$90s in late-2025, followed by a Q4 surge, could still land BTC above $150,000 by New Year’s Eve. In other words, yes—but probably not in a straight line. [...] ## Key Factors That Could Drive BTC’s Price Three forces dominate 2025’s bull case: surging institutional demand, relentless ETF inflows and accelerating real-world adoption. ### 1. Institutional Demand More than 30% of bitcoin’s circulating supply now sits in the hands of exchanges, ETFs, public companies and even sovereign entities, Gemini’s U.S. Strategic Bitcoin Reserve report shows, an all-time high that speaks to deepening mainstream acceptance. Consulting firm UTXO Management projects an additional $120 billion in institutional flows before year-end, potentially absorb...",
+      "score": 0.64719695,
+      "query": "Bitcoin analyst outlook November 2025 BTC price target resistance 100000 102000 research report Glassnode Kaiko Coinbase Institutional",
+      "search_index": 5
+    },
+    {
+      "title": "Market data requests | Binance Open Platform",
+      "url": "https://developers.binance.com/legacy-docs/binance-spot-api-docs/websocket-api/market-data-requests",
+      "content": "Data Source: Database Response: `{ \"id\": \"1dbbeb56-8eea-466a-8f6e-86bdcfa2fc0b\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType\": \"REQUEST_WEIGHT\", \"interval\": \"MINUTE\", \"intervalNum\": 1, \"limit\": 6000, \"count\": 2 } ] }` ### UI Klines​ [...] Data Source: Database Response: `{ \"id\": \"b137468a-fb20-4c06-bd6b-625148eec958\", \"status\": 200, \"result\": [ [ 1655971200000, // Kline open time \"0.01086000\", // Open price \"0.01086600\", // High price \"0.01083600\", // Low price \"0.01083800\", // Close price \"2290.53800000\", // Volume 1655974799999, // Kline close time \"24.85074442\", // Quote asset volume 2283, // Number of trades \"1171.64000000\", // Taker buy base asset volume \"12.71225884\", // Taker buy quote asset volume \"0\" // Unused field, ignore ] ], \"rateLimits\": [ { \"rateLimitType...",
+      "score": 0.63615024,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "binance cryptocurrency exchange - CCXT",
+      "url": "https://docs.ccxt.com/docs/exchanges/binance",
+      "content": "`binance` `Array<Array<int>>` See | Param | Type | Required | Description | --- --- | | symbolsAndTimeframes | `Array<Array<string>>` | Yes | array of arrays containing unified symbols and timeframes to fetch OHLCV data for, example | | since | `int` | No | timestamp in ms of the earliest candle to fetch | | limit | `int` | No | the maximum amount of candles to fetch | | params | `object` | No | extra parameters specific to the exchange API endpoint | | params.timezone | `object` | No | if provided, kline intervals are interpreted in that timezone instead of UTC, example '+08:00' | `Array<Array<string>>` `int` `int` `object` `object` `binance.watchOHLCVForSymbols (symbolsAndTimeframes, since?, limit?, params?)` ### unWatchOHLCVForSymbols [...] Kind: instance method of `binance` Returns: `Array<Array<int>>` - A list of candles ordered as timestamp, open, high, low, close, volume `binance` `Array<Array<int>>` See | Param | Type | Required | Description | --- --- | | symbol | `string` | Yes | unified symbol of the market to fetch OHLCV data for | | timeframe | `string` | Yes | the length of time each candle represents | | since | `int` | No | timestamp in ms of the earliest candle...",
+      "score": 0.6216563,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "The entire price history of Bitcoin (2009-2021)",
+      "url": "https://www.youtube.com/watch?v=wLLMg-Y-IvU",
+      "content": "in price steadily up until december where it's all-time high in 2016 was 956 there you can see another year where it goes from right around 260 270 towards the end of the year where it always seems to perform its best when it has its bull markets right around just under a thousand dollars january 2017 after a rally for most of the second half of 2016 bitcoin broke the 1000 mark for the first time in three years media coverage leads to an influx of new users who will allegedly raise the price even higher june 12 2017 bitcoin exchange rate exceeds three thousand dollars per btc september 1st 2017 bitcoin exchange rate exceeds 5 000 per btc november 29 2017 bitcoin price exceeds ten thousand dollars per btc this was the first full-on mainstream bull run in the crypto space december 18 2017 [...] papa john's pizzas for 10 000 btc which was 25 at the time at the time bitcoin at the time valued at 0.0025 cents for one coin so some dude buys two papa john's pizzas for 10 000 btc amazing amazing on october 1st the first public miner is created on october 7th bitcoin exchange rate rate begins to escalate after several months stuck at six cents per btc october 16th the first bitcoin depos...",
+      "score": 0.62000114,
+      "query": "Bitcoin price historical November weekly highs all-time high timeline prior breakouts above round-number levels 100000",
+      "search_index": 2
+    },
+    {
+      "title": "BTC/USDT Spot CVD Chart Reveals Critical Market Structure Insights for Savvy Traders",
+      "url": "https://www.binance.com/en/square/post/313330034279810",
+      "content": "Understanding the BTC/USDT Spot CVD Chart Structure The BTC/USDT spot CVD chart represents a sophisticated analytical tool that tracks order book dynamics for the world’s most liquid cryptocurrency trading pair. Market professionals utilize this visualization to identify institutional activity, retail participation patterns, and potential support and resistance zones. The chart’s dual-section design separates volume distribution analysis from cumulative order flow tracking, providing traders with complementary perspectives on market structure. [...] Historical Context and Evolution of Order Book Analytics Order book analysis has evolved significantly since Bitcoin’s early trading days. Initially, traders relied on simple depth charts showing bid and ask concentrations. The development of CVD methodology represented a major advancement, introducing temporal dimension to order flow analysis. Heatmap visualization added spatial understanding of liquidity distribution across price levels. [...] Market microstructure theory supports these analytical approaches. The distribution of liquidity across price levels fundamentally influences market efficiency and price discovery. CVD analys...",
+      "score": 0.5843666,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "search_index": 3
+    },
+    {
+      "title": "Within-Venue Monitoring of BTC/USDT Liquidity and Resiliency on ...",
+      "url": "https://www.mdpi.com/1911-8074/19/5/372",
+      "content": "Keywords: Bitcoin; market microstructure; order flow; queueing theory; market quality; liquidity risk; digital assets; market resiliency Graphical Abstract ## 1. Introduction Binance spot BTC/USDT is a useful venue for studying short-horizon liquidity and resiliency because it combines continuous high-turnover trading with auditable trade prints and aggressor-side information. Those features support venue-level diagnostics built directly from transaction data and make it possible to track how trading activity, signed flow, and recovery conditions evolve through time inside a single market. [...] Order-book depth measures are not added in this comparison because the public Binance data used here contain trade prints and aggressor-side information, not synchronized order-book snapshots. A depth comparison would require a different data source and a different reconstruction pipeline. Table A6. Matched benchmark-sample comparison of rolling with standard trade-based liquidity benchmarks. All predictors are measured at the end of UTC day d using trailing 30-day windows and are compared with the realized outcomes on day . Correlations with rolling are reported in the text; the table c...",
+      "score": 0.5602773,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "search_index": 3
+    },
+    {
+      "title": "A dive into liquidity demographics for crypto asset trading",
+      "url": "https://www.spglobal.com/en/research-insights/special-reports/liquidity-demographics-for-crypto-asset-trading",
+      "content": "Figure 17 shows the market depth on Binance for the asset pair EUR-USDT in euros for the 1% and 10% band (up and down) from the midpoint of the bid-ask price. Of note is the shallow market of less than €5 million for the 1% band and less than €8 million for the cumulative 10% band. This is not surprising as stablecoins have more utility on-chain than off-chain. By contrast, on Binance, USDT liquidity is much greater against other digital assets such as ETH and BTC than against fiat markets.Figure 18 shows a much higher market depth for BTC-USDT and ETH-USDT for the 1% band around the mid-price of USDT 15 million and USDT 30 million, respectively. [...] Figure 19 shows the average 1% market depth for selected markets (Binance) is lowest for EUR-USDC and highest for BTC-USDT. Crypto-USDT markets show a significantly higher market depth than crypto-fiat markets, which involve banks, fees, know your customer and other compliance measures. Crypto-USDT does not have any traditional banking constraints and is integrated seamlessly into trading strategies. External events or market news can affect market depth. During events of high volatility, such as the Silicon Valley Bank crisis in...",
+      "score": 0.55623144,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "search_index": 3
+    },
+    {
+      "title": "Order Book - BTC/USDT",
+      "url": "https://www.binance.com/en/orderbook/btc_usdt",
+      "content": "Image 1: Binance Buy Crypto Markets Trade Futures Earn Square More Log InSign Up Image 2 Scan to Download App iOS & Android More Download Options Back Order Book - BTC/USDT Depth 15 15 30 50 100 Group 2 decimals 0 decimals 1 decimals 2 decimals Buy Order Price (USDT) Amount (BTC) Total (USDT) Sum (USDT) Sell Order Price (USDT) Amount (BTC) Total (USDT) Sum (USDT) ### Community Azərbaycan Deutsch English (UAE) English (Australia) English (Bahrain) English (India) English (Japan) English (Kazakhstan) English (Nigeria) English (New Zealand) English (Philippines) English (Türkiye) English (South Africa) Español Español (Argentina) Español (Latinoamérica) Español (México) Français Français (Afrique) Bahasa Indonesia 日本語 Қазақша ລາວ [...] Binance ADGM entities are regulated by the Financial Services Regulatory Authority (FSRA) of the Abu Dhabi Global Markets (ADGM) as follows: (1) Nest Exchange Limited is recognised as a Recognised Investment Exchange (Derivatives), with a stipulation to Operate a Multilateral Trading Facility; (2) Nest Clearing and Custody Limited is recognised as a Recognised Clearing House, with a stipulation to Provide Custody and operating a Central Securities De...",
+      "score": 0.54317886,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "search_index": 3
+    },
+    {
+      "title": "Bitcoin price volatility ramps up around FOMC days — Will this time be different? — TradingView News",
+      "url": "https://www.tradingview.com/news/cointelegraph:b1959d19c094b:0-bitcoin-price-volatility-ramps-up-around-fomc-days-will-this-time-be-different",
+      "content": "Investors could also be anticipating a possible short squeeze. If traders were expecting Bitcoin to drop and positioned short, a sudden increase in ETF inflows could play a role in traders’ behaviors and trigger a short squeeze. Following the FOMC, BTC’s price action, along with onchain data and spot ETF flows will show whether the recent activity was part of a long-term accumulation trend or just speculative positioning. However, one thing that many traders agree on now is that BTC could experience a significant price movement after the FOMC announcement. As crypto trader Master of Crypto put it in a recent X post: Even without rate cuts, the chance of the Fed issuing dovish statements could lift markets, while the absence of them could drive prices lower. [...] If the rates remain unchanged, it is possible that Bitcoin price will continue its current downtrend. This may be exactly what the HyperLiquid whale was hoping for when it opened a 40x leveraged short position worth over $500 million at its peak. However, this position is now closed. How are the spot Bitcoin ETFs reacting? Unlike Bitcoin whales, investors in the spot Bitcoin ETFs have historically offloaded BTC holdings...",
+      "score": 0.4896749,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "BITCOIN Historical Datasets 2018-2026 Binance API",
+      "url": "https://www.kaggle.com/datasets/novandraanugrah/bitcoin-historical-datasets-2018-2024",
+      "content": "Daily Timeframe Specific: Open time: Always shows 00:00:00.000000 UTC (start of day) Close time: Always shows 23:59:59.999000 UTC (end of day) Timeframes Available: 15-minute intervals (15m) 1-hour intervals (1h) 4-hour intervals (4h) 1-day intervals (1d) Data Columns: Open time: Opening timestamp in UTC Open: Opening price High: Highest price during period Low: Lowest price during period Close: Closing price Volume: Trading volume Close time: Closing timestamp in UTC Quote asset volume: Volume in quote asset (USDT) Number of trades: Number of trades during period Taker buy base asset volume: Volume of taker buy orders Taker buy quote asset volume: Volume of taker buy orders in quote asset Ignore: Unused field [...] menu Skip to content Image 1: Kaggle Create search​ explore Home emoji_events Competitions leaderboard Benchmarks smart_toy Game Arena code Data Hubexpand_more format_list_bulleted Moreexpand_more menu Skip to content Image 2: Kaggle search​ Sign In Register Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic. Learn more OK, Got it. Discussion (2)Suggestions (0) ## About Dataset This dataset contains historical Bi...",
+      "score": 0.44492707,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "How to pull REALTIME Cryptocurrency Prices with Python ...",
+      "url": "https://www.youtube.com/watch?v=P_SIZDsI3Ro",
+      "content": "one and you need to add at Kline which is the Candlestick stream or the Kline stream and the time interval so the correct way this should look like would be this one here Bitcoin USD at Kine 1 minute so with that you are subscribing to the Candlestick one minute chart and then we are getting live prices for that one minute Kline chart or not chart but for that one minute data coming from the binance API so we need to transform this list so that it is looking like this just using a simple list comprehension here so opening up a list here and then coin. lower so because this is capitalized here I want to have it as a lowercase letters and then I'm just adding what I wrote here so add Kine one minute for coin in assets so this is just looping over those names and then adds this string and [...] just looping over those names and then adds this string and also transform the strings to lowercase letters here so I'm just reassigning that to assets so assets list is looking like this so that is exactly how we need to post that to the API so it is understanding what we want from it now we cannot provide a list here but we can only provide a string to the API so to subscribe to multiple s...",
+      "score": 0.4018996,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "search_index": 1
+    },
+    {
+      "title": "Bitcoin climbs to new all-time high above $109000 ...",
+      "url": "https://www.youtube.com/watch?v=1LYQtQYzMVk",
+      "content": "11 comments ### Transcript: [...] # Bitcoin climbs to new all-time high above $109,000, surpassing January record ## CNBC Television 3380000 subscribers 34 likes ### Description 3797 views Posted: 21 May 2025 CNBC's Tanaya Macheel breaks down what‘s driving moves in bitcoin. [...] even still under pressure, however, with the broader market now one point, Bitcoin did also give back all of its earlier gains. That's because it can act like a risk asset and a safe haven. Today, the combination of rising yields and deficit fears pushed traders out of volatile assets. So even if you see Bitcoin as a hedge against bad fiscal policy, long term tightening financial conditions dominate near-term. That said, Bitcoin does seem to be coming back now, possibly finishing in the green here. Mike yeah, obviously it's owned by a lot",
+      "score": 0.36114272,
+      "query": "Bitcoin price historical November weekly highs all-time high timeline prior breakouts above round-number levels 100000",
+      "search_index": 2
+    },
+    {
+      "title": "Economic Calendar - Investing.com",
+      "url": "https://www.investing.com/economic-calendar",
+      "content": "The highest-impact events include central bank interest rate decisions, Non-Farm Payrolls (NFP), GDP releases, the Consumer Price Index (CPI), and unemployment data. These are typically marked with three stars on the calendar because they can cause significant volatility across forex, equities, commodities, and bond markets. Filtering by high importance is a quick way to focus on the releases most likely to move prices. ### How can I filter and customize the Economic Calendar? Click the Show Filters button to access options for country selection, event category, and importance level. You can also adjust the display timezone and choose a date range using the tabs: Yesterday, Today, Tomorrow, This Week, Next Week, or Custom dates. Click Apply after making your selections. [...] Legend Speech Preliminary Release Revised Release Report Low Volatility Expected Moderate Volatility Expected High Volatility Expected ## FAQ ### What is the Investing.com Economic Calendar? The Economic Calendar is a real-time, streaming schedule of economic events and data releases that can move financial markets. It tracks indicators such as GDP, inflation, employment figures, interest rate decisions, ma...",
+      "score": 0.34840176,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "Bitcoin Price History and Historical Data | CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/bitcoin/historical-data",
+      "content": "Bitcoin's price history is a testament to its evolution and growth over the years. It started with a value of almost nothing and has grown to be one of the most valuable assets in the world. The price history shows a pattern of sharp rises followed by corrections, reflecting the volatile nature of the cryptocurrency market. It also shows periods of stability, indicating growing acceptance and use of Bitcoin. The price history is a reflection of Bitcoin's journey, from being a fringe asset to becoming a mainstream financial instrument. ### How Has Bitcoin's Market Cap History Shaped Its Perception in the Financial World? [...] Bitcoin's market cap history has played a significant role in shaping its perception in the financial world. As the market cap has grown, so has the recognition and acceptance of Bitcoin as a legitimate asset class. The increase in market cap has attracted institutional investors, hedge funds, and even governments, which has further boosted its credibility. However, the fluctuating market cap has also highlighted the volatility and risk associated with Bitcoin, leading to debates about its role in the financial system. Despite the controversies, the growing...",
+      "score": 0.34793633,
+      "query": "Bitcoin price historical November weekly highs all-time high timeline prior breakouts above round-number levels 100000",
+      "search_index": 2
+    },
+    {
+      "title": "FOMC Press Conference September 17, 2025",
+      "url": "https://www.youtube.com/watch?v=EEIs8ossWyM",
+      "content": "Visit the Federal Reserve’s website at www.federalreserve.gov for more information. [...] about monetary policy after briefly reviewing economic developments. Recent indicators suggest that growth of economic activity has moderated. GDP rose at a pace of around 1½ percent in the first half of the year, down from 2.5 percent last year. The moderation in growth largely reflects a slowdown in consumer spending. In contrast, business investment in equipment and intangibles has picked up from last year's pace. Activity in the housing sector remains weak. In our Summary of Economic Projections, the median participant projects GDP to rise 1.6 percent this year and 1.8 percent next year, a touch stronger than projected in June. In the labor market, the unemployment rate edged up to 4.3 percent in August but remains little changed over the past year at [...] the federal funds rate, based on what each participant judges to be the most likely scenario for the economy. The median participant projects that the appropriate level of the federal funds rate will be 3.6 percent at the end of this year, 3.4 percent at the end of 2026, and 3.1 percent at the end of 2027. This path is ¼ percentage p...",
+      "score": 0.333265,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "Economic Calendar: How Traders Use Market Events to Plan Trades | XBTFX Blog",
+      "url": "https://xbtfx.com/blog/economic-calendar-explained",
+      "content": "Should I trade before or after a major data release? Most experienced traders avoid entering positions seconds before a high-impact release. They either plan trades around expected levels in advance, or wait for volatility to settle before entering. Does the economic calendar apply to crypto trading? Yes. Crypto markets increasingly follow macro sentiment. Major releases like CPI and Fed decisions can push Bitcoin and altcoins alongside equities in risk-off moves. #### Share this article #### Categories #### In this article ## Trade your way. Trade with confidence. Trade with XBTFX XBTFX Chat ### 24/7 Chat Support Need help? Available around the clock. FAQ ### Knowledge Base Answers to common questions. Blog ### Latest Articles Trading insights and analysis. [...] ## FAQ What is an economic calendar used for? An economic calendar lists scheduled data releases, central bank decisions, and earnings events so traders can prepare for potential market-moving volatility in advance. Which economic events move markets the most? The most impactful events are typically FOMC interest rate decisions, CPI inflation reports, Non-Farm Payrolls, and GDP releases — all rated high-impact on most...",
+      "score": 0.33215925,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "Does the introduction of US spot Bitcoin ETFs affect spot returns and volatility of major cryptocurrencies?",
+      "url": "https://ideas.repec.org/a/eee/quaeco/v102y2025ics106297692500047x.html",
+      "content": "Access and download statistics ### Statistics ## Corrections All material on this site has been provided by the respective publishers and authors. You can help correct errors and omissions. When requesting a correction, please mention this item's handle: RePEc:eee:quaeco:v:102:y:2025:i:c:s106297692500047x. See general information about how to correct material in RePEc. If you have authored this item and are not yet registered with RePEc, we encourage you to do it here. This allows to link your profile to this item. It also allows you to accept potential citations to this item that we are uncertain about. If CitEc recognized a bibliographic reference but did not link an item in RePEc to it, you can help with this form . [...] ## References listed on IDEAS ## Citations Cited by: 1. Magner, Nicolás & Sanhueza, Aliro, 2025. \"The Moby Dick effect: Contagious Bitcoin whales in the crypto market,\" Finance Research Letters, Elsevier, vol. 85(PB).- Adebayo, Tomiwa Sunday, 2025. \"Cryptocurrency– U.S. equity co-movements under uncertainty: A rolling-window kernel regularized partial correlation approach,\" Finance Research Letters, Elsevier, vol. 86(PG).- Pirazzi Maffiola, Kevin & Sevim, Ha...",
+      "score": 0.32508168,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "search_index": 4
+    },
+    {
+      "title": "The Ultimate Order Book Guide: Heatmap, Depth and Overlay",
+      "url": "",
+      "content": "An order book is a real-time list of open buy and sell limit orders for a trading pair such as BTC/USDT. It shows bids and asks, including price levels and order size, and can be used with heatmaps, depth, and overlays to study liquidity and possible reversal signals.",
+      "score": 0.54855317,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "search_index": 3,
+      "rewritten_for_leakage": true
+    }
+  ],
+  "raw_response_meta": [
+    {
+      "search_index": 1,
+      "query": "Binance BTC/USDT 1m kline high price API documentation timezone ET UTC conversion November 17 2025 November 23 2025",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 2,
+      "query": "Bitcoin price historical November weekly highs all-time high timeline prior breakouts above round-number levels 100000",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 3,
+      "query": "Binance BTC/USDT spot market liquidity order book depth market share BTC USDT pair institutional flows ETF issuers MicroStrategy",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 4,
+      "query": "economic calendar Nov 17-23 2025 CPI FOMC Fed speeches options expiry Bitcoin ETF flows crypto unlocks events affecting BTC volatility",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    },
+    {
+      "search_index": 5,
+      "query": "Bitcoin analyst outlook November 2025 BTC price target resistance 100000 102000 research report Glassnode Kaiko Coinbase Institutional",
+      "response_keys": [
+        "answer",
+        "follow_up_questions",
+        "images",
+        "query",
+        "request_id",
+        "response_time",
+        "results"
+      ],
+      "results_count": 10
+    }
+  ]
+}
