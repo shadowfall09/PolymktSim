@@ -168,9 +168,16 @@ def run_s2(
     max_workers: int = 1,
     on_complete: Callable[[str, Forecast, list[dict]], None] | None = None,
     show_rationale: bool = True,
+    share_mode: str = "full",
+    evidence_pooling: bool = False,
     initial_forecasts_by_qid: dict[str, list[Forecast]] | None = None,
 ) -> tuple[list[tuple[str, Forecast]], list[dict]]:
-    """Multi agent deliberation, optionally reusing S1 forecasts as round 0."""
+    """Multi agent deliberation, optionally reusing S1 forecasts as round 0.
+
+    evidence_pooling: private docs cited by their owner (via evidence_used) are
+    disclosed in full to all agents in subsequent rounds, so private signal
+    travels as original evidence instead of a truncated rationale excerpt.
+    """
     results = []
     detail_records = []
 
@@ -186,6 +193,8 @@ def run_s2(
             for i in range(num_agents)
         ]
         local_details = []
+        promoted: list[EvidenceItem] = []  # cited private docs, now visible to everyone
+        promoted_ids: set[str] = set()
         reusable = (initial_forecasts_by_qid or {}).get(ex.qid)
         if reusable is not None and len(reusable) != num_agents:
             logger.warning(
@@ -194,6 +203,7 @@ def run_s2(
             )
             reusable = None
         for round_id in range(num_rounds):
+            pooled_by_agent: dict[int, list[str]] = {i: [] for i in range(num_agents)}
             if round_id == 0 and reusable is not None:
                 forecasts = list(reusable)
                 logger.info("S2 qid=%s round=1 reused %d S1 forecasts", ex.qid, len(forecasts))
@@ -202,7 +212,12 @@ def run_s2(
                 for i in range(num_agents):
                     agent = agent_factory(i)
                     priv = sp["private_map"].get(i, [])
-                    f = agent.predict(ex.qid, ex.question, sp["public_evidence"], priv, history)
+                    pooled: list[EvidenceItem] = []
+                    if evidence_pooling and promoted:
+                        own_ids = {d.doc_id for d in priv}
+                        pooled = [d for d in promoted if d.doc_id not in own_ids]
+                        pooled_by_agent[i] = [d.doc_id for d in pooled]
+                    f = agent.predict(ex.qid, ex.question, sp["public_evidence"] + pooled, priv, history)
                     forecasts.append(f)
                     logger.info("S2 qid=%s round=%d agent_id=%d p_yes=%.3f label=%s", ex.qid, round_id + 1, i, f.p_yes, f.label)
             for i, f in enumerate(forecasts):
@@ -211,10 +226,18 @@ def run_s2(
                     "p_yes": f.p_yes, "label": f.label,
                     "rationale": f.rationale, "evidence_used": f.evidence_used,
                     "reused_from_s1": round_id == 0 and reusable is not None,
+                    "pooled_evidence": pooled_by_agent.get(i, []),
                 })
+            if evidence_pooling:
+                for i, f in enumerate(forecasts):
+                    cited = {str(x).strip() for x in (f.evidence_used or [])}
+                    for d in sp["private_map"].get(i, []):
+                        if d.doc_id in cited and d.doc_id not in promoted_ids:
+                            promoted.append(d)
+                            promoted_ids.add(d.doc_id)
             if round_id == 0:
                 round1_forecasts = list(forecasts)
-            history = summarize_round(forecasts, show_rationale=show_rationale)
+            history = summarize_round(forecasts, show_rationale=show_rationale, share_mode=share_mode)
 
         # Selective update: revert herding agents to round-1 predictions
         if use_selective_update and len(round1_forecasts) == len(forecasts):

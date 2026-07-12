@@ -126,11 +126,15 @@ class LLMAgent(BaseAgent):
         api_key: str | None = None,
         base_url: str = os.environ.get("LLM_BASE_URL", "https://gpa-models.genai.prd.aws.saccap.int/v1"),
         evidence_max_chars_per_item: int = 500,
+        system_prompt: str | None = None,
+        require_citations: bool = False,
     ):
         self.model_name = model_name
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.evidence_max_chars = evidence_max_chars_per_item
+        self.system_prompt = system_prompt or SYSTEM_PROMPT
+        self.require_citations = require_citations
         self.base_url = base_url
         self.total_prompt_tokens = 0
         self.total_completion_tokens = 0
@@ -248,9 +252,10 @@ class LLMAgent(BaseAgent):
     ) -> Forecast:
         evidence = public_evidence + private_evidence
         evidence_text = format_evidence(evidence, max_chars=self.evidence_max_chars)
-        prompt = build_forecast_prompt(question, evidence_text, history_summary)
+        prompt = build_forecast_prompt(question, evidence_text, history_summary,
+                                       require_citations=self.require_citations)
         messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": self.system_prompt},
             {"role": "user", "content": prompt},
         ]
         raw, usage = self._call_api(messages)
@@ -269,7 +274,7 @@ class LLMAgent(BaseAgent):
         logger.warning("qid=%s parse failed, retrying once", qid)
         repair = REPAIR_TEMPLATE % raw[:2000]
         messages_retry = [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": self.system_prompt},
             {"role": "user", "content": prompt},
             {"role": "assistant", "content": raw[:2000]},
             {"role": "user", "content": repair},

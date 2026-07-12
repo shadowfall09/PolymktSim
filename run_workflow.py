@@ -313,6 +313,9 @@ def _update_registry(args, ts: str, out_path: Path, selected_qids: set | None):
         "public_ratio": args.public_ratio,
         "bm25": args.bm25,
         "extremizing_alpha": args.extremizing_alpha if args.aggregator == "extremizing" else None,
+        "share_mode": "numbers" if args.no_rationale_sharing else args.share_mode,
+        "evidence_pooling": args.evidence_pooling,
+        "calibrated_prompt": args.calibrated_prompt,
         "notes": "",
     }
 
@@ -378,8 +381,16 @@ def main():
     ap.add_argument("--extremizing-alpha", type=float, default=2.5,
                     help="Extremizing factor alpha (only used when --aggregator=extremizing, default 2.5)")
     ap.add_argument("--bm25", action="store_true", help="Use BM25 relevance-based evidence routing instead of random split")
+    ap.add_argument("--share-mode", choices=["full", "arguments", "numbers"], default="full",
+                    help="S2 between-round sharing: full (legacy: p_yes+rationale+round mean), "
+                         "arguments (rationale+citations only, no numeric anchors), "
+                         "numbers (p_yes+label only)")
+    ap.add_argument("--evidence-pooling", action="store_true",
+                    help="S2 only: private docs cited in a round are disclosed in full to all agents in later rounds")
+    ap.add_argument("--calibrated-prompt", action="store_true",
+                    help="Use the base-rate-anchored system prompt for all agents")
     ap.add_argument("--no-rationale-sharing", action="store_true",
-                    help="S2 only: only share p_yes and label between rounds, not rationale")
+                    help="[deprecated: use --share-mode numbers] S2 only: only share p_yes and label between rounds")
     ap.add_argument("--selective-update", action="store_true",
                     help="S2 only: revert herding agents to round-1 prediction")
     ap.add_argument("--herding-threshold", type=float, default=0.7,
@@ -425,20 +436,31 @@ def main():
 
     all_agents: list = []
 
+    share_mode = "numbers" if args.no_rationale_sharing else args.share_mode
+
     if args.dry_run:
         model_name = "stub"
         agent = StubAgent()
         agent_factory = lambda _: StubAgent()
     else:
         from src.agents.llm_agent import LLMAgent
+        from src.agents.prompts import SYSTEM_PROMPT_CALIBRATED
         model_name = LLMAgent().model_name
-        agent = LLMAgent(temperature=args.temperature, max_tokens=2048)
-        all_agents.append(agent)
+        system_prompt = SYSTEM_PROMPT_CALIBRATED if args.calibrated_prompt else None
+        # Citations are what carry private evidence between rounds, so require
+        # them whenever a mechanism downstream consumes them.
+        require_citations = share_mode == "arguments" or args.evidence_pooling
 
-        def agent_factory(i):
-            a = LLMAgent(temperature=args.temperature, max_tokens=2048)
+        def _new_agent():
+            a = LLMAgent(temperature=args.temperature, max_tokens=2048,
+                         system_prompt=system_prompt, require_citations=require_citations)
             all_agents.append(a)
             return a
+
+        agent = _new_agent()
+
+        def agent_factory(i):
+            return _new_agent()
 
     meta = {
         "model": model_name,
@@ -446,6 +468,13 @@ def main():
         "num_rounds": args.num_rounds,
         "run_ts": ts,
         "dry_run": args.dry_run,
+        "aggregator": args.aggregator,
+        "public_ratio": args.public_ratio,
+        "bm25": args.bm25,
+        "temperature": args.temperature,
+        "share_mode": share_mode,
+        "evidence_pooling": args.evidence_pooling,
+        "calibrated_prompt": args.calibrated_prompt,
     }
 
     if args.aggregator == "extremizing":
@@ -501,7 +530,7 @@ def main():
 
     if run_s0_:
         print(f"=== S0: Single agent, full evidence (workers={args.max_workers}) ===")
-        s0_agent_factory = (lambda: LLMAgent(temperature=args.temperature, max_tokens=2048)) if not args.dry_run else None
+        s0_agent_factory = _new_agent if not args.dry_run else None
         results = run_s0(examples, agent, args.evidence_max_items, args.evidence_max_chars,
                          max_workers=args.max_workers, agent_factory=s0_agent_factory,
                          on_complete=_make_on_complete("s0"))
@@ -535,6 +564,8 @@ def main():
                                   max_workers=args.max_workers,
                                   on_complete=_make_on_complete("s2"),
                                   show_rationale=not args.no_rationale_sharing,
+                                  share_mode=share_mode,
+                                  evidence_pooling=args.evidence_pooling,
                                   initial_forecasts_by_qid=s1_forecast_cache if run_s1_ else None)
         print_eval(results, outcome_map, "S2")
         print()

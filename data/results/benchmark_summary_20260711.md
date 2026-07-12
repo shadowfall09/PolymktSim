@@ -21,3 +21,10 @@ dataset column for that metric; ties are both bold.
 The two renamed InfoDelphi files retain matching `_detail.jsonl` companions.
 For ForecastBench, `forecastbench_infodelphi.jsonl` is the rerun; the
 superseded file is retained as `forecastbench_infodelphi_previous.jsonl`.
+
+2026-07-12: `polymarket_375_standard_debate(.jsonl|_detail.jsonl)` originally
+contained 29 leftover records from an aborted partial run (`run_ts=20260711_173531`)
+appended before the complete run (`run_ts=20260711_173944`). Both files now keep
+only the complete run (375 / 2250 records); originals are preserved as
+`*_with_dups.jsonl.bak`. Table numbers above are unchanged (they already
+corresponded to the complete run: Brier 0.2171 / Acc 60.0%).

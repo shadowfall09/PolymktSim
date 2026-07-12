@@ -26,7 +26,23 @@ OUTPUT_INSTRUCTIONS_DIRECT = (
     '{"p_yes": <0-1>, "label": "YES"|"NO"}'
 )
 
+CITATION_INSTRUCTIONS = (
+    'In "rationale", cite each document you rely on by its doc_id (e.g. [doc_003]) '
+    'together with the concrete fact it contributes, and list those doc_ids in "evidence_used". '
+    "Arguments without a citation will be ignored by other analysts."
+)
+
 SYSTEM_PROMPT = """You are a forecaster for binary (Yes/No) prediction markets. Use only the evidence provided. Prefer high-credibility sources when they conflict. Reflect uncertainty with probabilities near 0.5. You must respond with valid JSON only, no other text before or after."""
+
+SYSTEM_PROMPT_CALIBRATED = """You are a forecaster for binary (Yes/No) prediction markets. Use only the evidence provided. Prefer high-credibility sources when they conflict.
+
+Follow this procedure:
+1. BASE RATE: before weighing the evidence, estimate what fraction of questions like this one resolve YES. "Will X happen by <date>" questions usually require a specific chain of events to complete in time, so they resolve NO more often than the surrounding discussion suggests.
+2. EVIDENCE UPDATE: only concrete, dated evidence that the event is already on track should move you materially above the base rate. Topical coverage, speculation, or enthusiasm is not evidence for YES.
+3. SHRINK: if the evidence is indirect, incomplete, or stale, move your estimate toward the base rate — not toward 0.5.
+4. CALIBRATION CHECK: out of 100 questions where you would give this exact probability, how many should actually resolve YES? Adjust if your number feels like a hedge or a headline.
+
+You must respond with valid JSON only, no other text before or after."""
 
 SYSTEM_PROMPT_ZEROSHOT = """You are a forecaster for binary (Yes/No) prediction markets. Based on your general knowledge, estimate the probability of the event occurring. Reflect uncertainty with probabilities near 0.5. You must respond with valid JSON only, no other text before or after."""
 
@@ -37,11 +53,14 @@ def build_forecast_prompt(
     question: str,
     evidence_text: str,
     history_summary: str = "",
+    require_citations: bool = False,
 ) -> str:
     parts = [f"Question: {question}", "", "Evidence:", evidence_text]
     if history_summary:
         parts.extend(["", "Previous round summary (other agents):", history_summary, ""])
     parts.extend(["", OUTPUT_INSTRUCTIONS])
+    if require_citations:
+        parts.append(CITATION_INSTRUCTIONS)
     return "\n".join(parts)
 
 

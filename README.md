@@ -46,10 +46,33 @@ Final forecast is the aggregate of all individual predictions.
 
 **S2 — Multi-Agent Iterative Deliberation**
 Same evidence split as S1, but across `R` rounds (default 2).
-After each round, agents receive a *history summary* containing every other agent's
-`p_yes`, label, and rationale excerpt (≤ 300 chars) before re-predicting.
+After each round, agents receive a *history summary* before re-predicting.
 Final forecast aggregates the last-round predictions.
 Instantiates a structured Delphi process adapted for LLMs.
+
+What the history summary contains is controlled by `--share-mode`:
+
+- `full` (legacy) — every agent's `p_yes`, label, rationale excerpt (≤ 300 chars),
+  plus the round mean and an agree/disagree nudge. The numeric anchors drive
+  near-total convergence after one round (between-agent std ~0.07 → ~0.015),
+  which defeats the information-asymmetry design.
+- `arguments` — rationale (≤ 600 chars) + cited doc_ids only; **no numeric
+  estimates, no round mean**. Agents can only converge through evidence, not
+  through anchoring. Recommended for InfoDelphi runs.
+- `numbers` — `p_yes` + label only (replaces the deprecated
+  `--no-rationale-sharing`).
+
+**Evidence pooling (`--evidence-pooling`)**
+Private docs that an agent cites (via `evidence_used`) in one round are
+disclosed *in full* to all agents in later rounds. This widens the
+private-information channel: instead of a truncated second-hand rationale,
+other agents see the original document. With this flag (or
+`--share-mode arguments`) the prompt also requires doc_id citations in the
+rationale.
+
+Use `python herding_report.py <detail.jsonl>` after a run to check that
+between-agent disagreement survives deliberation (retention well above ~0.3);
+if it collapses, the run is herding regardless of evidence routing.
 
 When S1 and S2 are requested together (`--scenario s1s2` or `all`), S2 reuses
 the per-agent S1 forecasts as round 0 because the evidence routing and initial
@@ -80,11 +103,27 @@ Logit-space weighted average where each agent's weight is its expressed confiden
 p_agg = sigmoid(Σ wᵢ·logit(pᵢ) / Σ wᵢ),   wᵢ = |logit(pᵢ)|
 ```
 
-### 5. Evaluation
+### 5. Calibration
+
+The 2026-07-11 three-dataset benchmark shows every method (including baselines)
+shares a systematic overconfident-toward-YES bias: mean prediction ≈ base rate
++0.07 to +0.15, and cross-dataset Platt fits give `a ≈ 0.4–0.6, b ≈ −0.6`.
+Correcting it is worth ~0.03 Brier — several times any protocol-vs-protocol gap.
+Two tools:
+
+- `--calibrated-prompt` — base-rate-anchored system prompt (base rate →
+  evidence update → shrink → calibration check). Apply to *all* compared
+  methods to keep the comparison fair.
+- `python recalibrate.py --fit <other datasets> --apply <held-out> --scenario s2`
+  — post-hoc Platt scaling fitted on disjoint datasets (no leakage).
+
+### 6. Evaluation
 
 - **Brier score** — primary metric: `BS = (p_yes - outcome)²`, lower is better.
 - **Accuracy** — fraction of questions where `(p_yes ≥ 0.5) == outcome`.
 - **Log loss** — cross-entropy, reported but not primary.
+- Paired significance: differences of ~0.005 Brier on ≤400 questions are inside
+  the noise band — report a paired bootstrap CI, not just the means.
 
 ---
 
@@ -152,8 +191,11 @@ python run_workflow.py [options]
 | `--public-ratio F` | `0.5` | Fraction of evidence shared publicly |
 | `--bm25` | off | BM25 relevance-based evidence routing |
 | `--aggregator {mean,extremizing,confidence_weighted}` | `mean` | Aggregation method |
+| `--share-mode {full,arguments,numbers}` | `full` | S2 between-round sharing (see Method §2) |
+| `--evidence-pooling` | off | S2: disclose cited private docs to all agents in later rounds |
+| `--calibrated-prompt` | off | Base-rate-anchored system prompt for all agents |
 | `--max-workers N` | `1` | Parallel workers for concurrent questions |
-| `--no-rationale-sharing` | off | S2: only share p_yes+label, not rationale |
+| `--no-rationale-sharing` | off | Deprecated; use `--share-mode numbers` |
 | `--output PATH` | auto-timestamped | Output JSONL path |
 | `--dry-run` | off | Use stub agent (no API calls) |
 
@@ -174,11 +216,25 @@ python analyze_375.py
 
 ## Best Configuration
 
+> Note: the results table above is from an older PolyMarket-only run and does
+> not match `data/results/benchmark_summary_20260711.md` (three datasets). On
+> the 2026-07-11 benchmark, confidence-weighted aggregation is not better than
+> mean (agents converge before aggregation, and extremity ≠ information
+> quality), and legacy `full` sharing herds within one round. The recommended
+> configuration below reflects those findings; rerun to refresh this table.
+
 ```bash
 python run_workflow.py --scenario s2 --temperature 0.7 --max-workers 15 \
-  --aggregator confidence_weighted --bm25 \
+  --aggregator mean --bm25 \
+  --share-mode arguments --evidence-pooling --calibrated-prompt \
   --num-agents 3 --num-rounds 2 --public-ratio 0.5 \
   --limit 500
+
+# then check that disagreement survives deliberation (retention >> 0.3):
+python herding_report.py data/results/<run>_detail.jsonl
+
+# and report held-out recalibrated numbers:
+python recalibrate.py --fit <two other datasets>.jsonl --apply <this dataset>.jsonl --scenario s2
 ```
 
 ---
