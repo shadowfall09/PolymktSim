@@ -34,11 +34,19 @@ def _parse_bool_from_probability(value: str) -> bool | None:
 
 
 def _resolution_date(row: dict[str, str]) -> str:
+    """Use the earliest known end/close date as the forecasting boundary.
+
+    A market can close before its configured end date. Choosing the first CSV
+    field (the old behavior) can therefore put a post-settlement date into a
+    processed dataset and allow evidence leakage during collection.
+    """
+    candidates = []
     for key in ("endDateIso", "endDate", "closedTime", "umaEndDateIso", "umaEndDate"):
         value = _clean(row.get(key))
-        if value:
-            return value[:10]
-    return ""
+        date_value = value[:10]
+        if len(date_value) == 10 and date_value[4] == "-" and date_value[7] == "-":
+            candidates.append(date_value)
+    return min(candidates) if candidates else ""
 
 
 def _question_text(row: dict[str, str], include_description: bool) -> str:
@@ -81,6 +89,9 @@ def convert(csv_path: Path, include_description: bool, require_binary_outcome: b
                     "outcome": outcome,
                     "resolution_date": _resolution_date(row),
                     "market_id": market_id,
+                    "market_end_date": _clean(row.get("endDateIso") or row.get("endDate")) or None,
+                    "market_closed_time": _clean(row.get("closedTime")) or None,
+                    "resolution_date_policy": "min(endDate/endDateIso, closedTime, umaEndDate)",
                     "url": f"https://polymarket.com/market/{_clean(row.get('slug'))}" if _clean(row.get("slug")) else None,
                     "topic": _clean(row.get("topic")) or None,
                 }

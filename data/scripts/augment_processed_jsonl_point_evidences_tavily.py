@@ -290,9 +290,9 @@ def main() -> None:
         candidates, request_meta = search_queries(queries, cutoff, tavily, args.sleep_seconds, index)
         candidates = dedupe(candidates)
         quarantined = quarantine_late_dates_for_rewrite(candidates, cutoff)
-        safe, filter_stats = llm_post_filter_leaks(
+        safe, filter_stats, leakage_audit = llm_post_filter_leaks(
             candidates, question, resolution, cutoff, llm, args.llm_model
-        ) if candidates else ([], {"llm_filtered_leak_count": 0, "llm_rewritten_kept_count": 0})
+        ) if candidates else ([], {"llm_filtered_leak_count": 0, "llm_rewritten_kept_count": 0}, [])
         final_new = [item for item in safe if point_safe_after_verification(item, cutoff)]
         hard_rejected = len(safe) - len(final_new)
         final_new = final_new[:min(args.max_new_evidence, args.max_evidence)]
@@ -338,6 +338,7 @@ def main() -> None:
             ],
             "query_generation_error": query_error,
             "search_requests": request_meta,
+            "leakage_audit": leakage_audit,
             "stats": {
                 "raw_candidate_count": len(candidates),
                 "hard_quarantined_late_date_count": quarantined,

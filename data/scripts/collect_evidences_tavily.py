@@ -59,7 +59,25 @@ def evidence_cutoff_date(resolution_date: str, days_before: int = 1) -> str:
         return ""
 
 
+def effective_evidence_resolution_date(row: Dict[str, str]) -> tuple[str, str, str]:
+    """Return the earlier of the market end date and its actual close date.
+
+    A Polymarket market can close or resolve before its configured ``endDate``.
+    Using the later configured date would permit evidence published after the
+    market was already settled.  Date-only values are sufficient here because
+    the collector subsequently excludes the entire resolution day.
+    """
+    row_end_date_raw = normalize_ws(row.get("endDateIso", "") or row.get("endDate", ""))
+    row_closed_time_raw = normalize_ws(row.get("closedTime", ""))
+    candidates = [
+        value for value in (normalize_end_date(row_end_date_raw), normalize_end_date(row_closed_time_raw))
+        if value
+    ]
+    return (min(candidates) if candidates else ""), row_end_date_raw, row_closed_time_raw
+
+
 _ISO_DATE_RE = re.compile(r"(?<!\d)(20\d{2})[-/](\d{2})[-/](\d{2})(?!\d)")
+_NUMERIC_DAY_FIRST_DATE_RE = re.compile(r"(?<!\d)(\d{1,2})[/.\-](\d{1,2})[/.\-](20\d{2})(?!\d)")
 _MONTH_FIRST_DATE_RE = re.compile(
     r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
     r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|"
@@ -79,13 +97,24 @@ _MONTH_NUMBERS = {
 
 
 def extract_explicit_dates(text: str) -> List[date]:
-    """Extract complete calendar dates without treating standalone years as dates."""
+    """Extract complete calendar dates without treating standalone years as dates.
+
+    Numeric day/month/year dates are ambiguous when both first fields are at
+    most 12. Keep both valid interpretations: this may quarantine a harmless
+    candidate, but avoids retaining a post-cutoff result due to locale.
+    """
     found = set()
     for year, month, day in _ISO_DATE_RE.findall(text or ""):
         try:
             found.add(date(int(year), int(month), int(day)))
         except ValueError:
             pass
+    for first, second, year in _NUMERIC_DAY_FIRST_DATE_RE.findall(text or ""):
+        for day, month in ((int(first), int(second)), (int(second), int(first))):
+            try:
+                found.add(date(int(year), month, day))
+            except ValueError:
+                pass
     for month_name, day, year in _MONTH_FIRST_DATE_RE.findall(text or ""):
         try:
             found.add(date(int(year), _MONTH_NUMBERS[month_name[:3].lower()], int(day)))
@@ -399,6 +428,7 @@ def _leak_filter_prompt(
         "You are a strict temporal-leakage reviewer for a forecasting dataset.\n"
         "Decide whether each retrieved web snippet leaks information unavailable before the evidence cutoff.\n"
         "Return strict JSON only: {\"decisions\":[{\"index\":0,\"leak\":\"yes\",\"action\":\"drop\",\"reason\":\"...\",\"rewritten_title\":\"\",\"rewritten_content\":\"\"}]}.\n"
+        "Every decision MUST include a non-empty, concrete reason. State the decisive temporal signal or why the snippet is safe; do not use generic reasons such as 'looks fine'.\n"
         "The cutoff is a non-negotiable historical boundary. Judge the title, URL, and snippet together.\n"
         "Use leak=no for useful background and genuinely prospective pre-cutoff evidence: announcements,\n"
         "schedules, planned airings, filings, odds, forecasts, intentions, previews, and statements that an\n"
@@ -442,7 +472,8 @@ def _rewrite_verification_prompt(question: str, cutoff_date: str, items: List[Se
     return (
         "You are the final temporal-leakage gate for a forecasting dataset.\n"
         "These snippets were rewritten after their originals leaked. Return strict JSON only: \n"
-        "{\"decisions\":[{\"index\":0,\"leak\":\"no\"}]}.\n"
+        "{\"decisions\":[{\"index\":0,\"leak\":\"no\",\"reason\":\"...\"}]}.\n"
+        "Every decision MUST include a non-empty reason identifying the decisive safe or unsafe signal.\n"
         "Return leak=no only when the rewritten title and content contain no outcome, no post-cutoff fact,\n"
         "no hindsight, no completed-result language, and no concrete current page state such as 'today',\n"
         "'latest', 'at close', or 'after hours'. A future plan may remain if it is explicitly prospective\n"
@@ -460,11 +491,12 @@ def _verify_rewrites(
     llm_client: Any,
     llm_model: str,
     batch_size: int,
-) -> tuple[List[SearchItem], int, int]:
+) -> tuple[List[SearchItem], int, int, List[Dict[str, object]]]:
     """Return only rewritten evidence that passes an independent leak check."""
     kept: List[SearchItem] = []
     rejected = 0
     failed_batches = 0
+    audit: List[Dict[str, object]] = []
     for start in range(0, len(items), batch_size):
         batch = items[start : start + batch_size]
         try:
@@ -476,11 +508,15 @@ def _verify_rewrites(
             parsed = json.loads(_extract_text_response(response))
             decisions = parsed.get("decisions", []) if isinstance(parsed, dict) else []
             by_index = {
-                int(decision["index"]): normalize_ws(str(decision.get("leak", "yes"))).lower()
+                int(decision["index"]): {
+                    "leak": normalize_ws(str(decision.get("leak", "yes"))).lower(),
+                    "reason": normalize_ws(str(decision.get("reason", ""))),
+                }
                 for decision in decisions
                 if isinstance(decision, dict)
                 and isinstance(decision.get("index"), int)
                 and normalize_ws(str(decision.get("leak", "")).lower()) in {"yes", "no"}
+                and normalize_ws(str(decision.get("reason", "")))
             }
             if set(by_index) != set(range(len(batch))):
                 raise ValueError("rewrite verification returned incomplete decisions")
@@ -488,14 +524,28 @@ def _verify_rewrites(
             failed_batches += 1
             rejected += len(batch)
             print(f"rewrite_verification failed; dropped {len(batch)} rewritten items: {exc}")
+            for item in batch:
+                audit.append({
+                    "stage": "rewrite_verification", "title": item.title, "url": item.url,
+                    "query": item.query, "llm_leak": None, "llm_action": "drop",
+                    "llm_reason": f"verification_error: {exc}", "disposition": "dropped",
+                })
             continue
 
         for index, item in enumerate(batch):
-            if by_index[index] == "no":
+            decision = by_index[index]
+            if decision["leak"] == "no":
                 kept.append(item)
+                disposition = "kept"
             else:
                 rejected += 1
-    return kept, rejected, failed_batches
+                disposition = "dropped"
+            audit.append({
+                "stage": "rewrite_verification", "title": item.title, "url": item.url,
+                "query": item.query, "llm_leak": decision["leak"], "llm_action": "verify",
+                "llm_reason": decision["reason"], "disposition": disposition,
+            })
+    return kept, rejected, failed_batches, audit
 
 
 def llm_post_filter_leaks(
@@ -506,7 +556,7 @@ def llm_post_filter_leaks(
     llm_client: Any,
     llm_model: str,
     batch_size: int = 10,
-) -> tuple[List[SearchItem], Dict[str, int]]:
+) -> tuple[List[SearchItem], Dict[str, int], List[Dict[str, object]]]:
     """Keep only evidence explicitly judged non-leaky by the LLM.
 
     A failed or malformed batch is dropped rather than passed through. This
@@ -521,6 +571,7 @@ def llm_post_filter_leaks(
     batches = 0
     direct_kept = 0
     rewrite_candidates: List[SearchItem] = []
+    audit: List[Dict[str, object]] = []
     for start in range(0, len(items), batch_size):
         batch = items[start : start + batch_size]
         batches += 1
@@ -541,6 +592,7 @@ def llm_post_filter_leaks(
                 int(decision["index"]): {
                     "leak": normalize_ws(str(decision.get("leak", "yes"))).lower(),
                     "action": normalize_ws(str(decision.get("action", "drop"))).lower(),
+                    "reason": normalize_ws(str(decision.get("reason", ""))),
                     "rewritten_title": compact_text(str(decision.get("rewritten_title", "")), 300),
                     "rewritten_content": compact_text(str(decision.get("rewritten_content", "")), 1200),
                 }
@@ -548,6 +600,7 @@ def llm_post_filter_leaks(
                 if isinstance(decision, dict)
                 and isinstance(decision.get("index"), int)
                 and normalize_ws(str(decision.get("leak", "")).lower()) in {"yes", "no"}
+                and normalize_ws(str(decision.get("reason", "")))
             }
             if set(by_index) != set(range(len(batch))):
                 raise ValueError("LLM post-filter returned incomplete decisions")
@@ -555,6 +608,13 @@ def llm_post_filter_leaks(
             failed_batches += 1
             filtered += len(batch)
             print(f"llm_post_filter failed; dropped {len(batch)} evidence items: {exc}")
+            for item in batch:
+                audit.append({
+                    "stage": "initial_filter", "title": item.title, "url": item.url,
+                    "query": item.query, "requires_temporal_rewrite": item.requires_temporal_rewrite,
+                    "llm_leak": None, "llm_action": "drop", "llm_reason": f"filter_error: {exc}",
+                    "disposition": "dropped",
+                })
             continue
 
         for index, item in enumerate(batch):
@@ -563,9 +623,11 @@ def llm_post_filter_leaks(
                 if item.requires_temporal_rewrite:
                     # A hard temporal signal can never pass through unchanged.
                     filtered += 1
+                    disposition = "dropped_hard_temporal_gate"
                 else:
                     kept.append(item)
                     direct_kept += 1
+                    disposition = "kept"
             elif (
                 decision["leak"] == "yes"
                 and decision["action"] == "rewrite"
@@ -585,8 +647,16 @@ def llm_post_filter_leaks(
                         rewritten_for_leakage=True,
                     )
                 )
+                disposition = "rewrite_candidate"
             else:
                 filtered += 1
+                disposition = "dropped"
+            audit.append({
+                "stage": "initial_filter", "title": item.title, "url": item.url,
+                "query": item.query, "requires_temporal_rewrite": item.requires_temporal_rewrite,
+                "llm_leak": decision["leak"], "llm_action": decision["action"],
+                "llm_reason": decision["reason"], "disposition": disposition,
+            })
 
         batch_kept = sum(
             1
@@ -605,7 +675,7 @@ def llm_post_filter_leaks(
             f"rewrite_candidates={batch_rewrites} removed_leak_yes={len(batch) - batch_kept - batch_rewrites}"
         )
 
-    verified_rewrites, rewrite_rejected, rewrite_failed_batches = _verify_rewrites(
+    verified_rewrites, rewrite_rejected, rewrite_failed_batches, verification_audit = _verify_rewrites(
         items=rewrite_candidates,
         question=question,
         cutoff_date=cutoff_date,
@@ -615,6 +685,7 @@ def llm_post_filter_leaks(
     )
     kept.extend(verified_rewrites)
     filtered += rewrite_rejected
+    audit.extend(verification_audit)
 
     return kept, {
         "llm_filter_batch_count": batches,
@@ -626,7 +697,7 @@ def llm_post_filter_leaks(
         "llm_rewritten_kept_count": len(verified_rewrites),
         "llm_rewrite_rejected_count": rewrite_rejected,
         "llm_rewrite_verification_failed_batch_count": rewrite_failed_batches,
-    }
+    }, audit
 
 
 def output_filename(row_index: int, row: Dict[str, str]) -> str:
@@ -650,8 +721,7 @@ def collect_for_row(
     llm_model: str,
     evidence_cutoff_days: int = 1,
 ) -> Dict[str, object]:
-    row_end_date_raw = normalize_ws(row.get("endDateIso", "") or row.get("endDate", ""))
-    resolution_date = normalize_end_date(row_end_date_raw)
+    resolution_date, row_end_date_raw, row_closed_time_raw = effective_evidence_resolution_date(row)
     end_date = evidence_cutoff_date(resolution_date, evidence_cutoff_days)
     queries = build_queries(
         row, llm_client=llm_client, llm_model=llm_model, cutoff_date=end_date
@@ -709,7 +779,7 @@ def collect_for_row(
         reverse=True,
     )
     hard_quarantined_count = quarantine_late_dates_for_rewrite(sorted_items, end_date)
-    filtered_items, filter_stats = llm_post_filter_leaks(
+    filtered_items, filter_stats, leakage_audit = llm_post_filter_leaks(
         items=sorted_items,
         question=normalize_ws(row.get("question", "")),
         resolution_date=resolution_date,
@@ -773,7 +843,7 @@ def collect_for_row(
                 reverse=True,
             )
             supplemental_quarantined_count = quarantine_late_dates_for_rewrite(supplemental_items, end_date)
-            supplemental_filtered, supplemental_filter_stats = llm_post_filter_leaks(
+            supplemental_filtered, supplemental_filter_stats, supplemental_audit = llm_post_filter_leaks(
                 items=supplemental_items,
                 question=normalize_ws(row.get("question", "")),
                 resolution_date=resolution_date,
@@ -782,6 +852,7 @@ def collect_for_row(
                 llm_model=llm_model,
             )
             filtered_items.extend(supplemental_filtered)
+            leakage_audit.extend(supplemental_audit)
             filtered_items.sort(
                 key=lambda x: (x.score is not None, x.score if x.score is not None else -1.0),
                 reverse=True,
@@ -800,6 +871,8 @@ def collect_for_row(
         "evidence_cutoff_date": end_date,
         "end_date_limit": end_date,
         "row_end_date_raw": row_end_date_raw,
+        "row_closed_time_raw": row_closed_time_raw,
+        "resolution_date_policy": "min(endDate/endDateIso, closedTime)",
         "expanded_queries": queries,
         "supplemental_query": supplemental_queries[0] if supplemental_queries else None,
         "supplemental_queries": supplemental_queries,
@@ -817,6 +890,7 @@ def collect_for_row(
             **filter_stats,
         },
         "evidences": [x.to_dict() for x in filtered_items],
+        "leakage_audit": leakage_audit,
         "raw_response_meta": [
             {
                 "search_index": idx + 1,

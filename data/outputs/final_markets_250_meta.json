@@ -1,0 +1,41 @@
+{
+  "input": "data/polymarket-prediction-markets/polymarket_markets.csv",
+  "output": "data/outputs/final_markets_250_noncrypto_confident.csv",
+  "target": 250,
+  "closed_after_exclusive": "2025-09-01T00:00:00+00:00",
+  "confidence_rule": "p_yes >= 0.9 OR p_yes <= 0.09999999999999998",
+  "seed": 42,
+  "filter_counts": {
+    "input": 100795,
+    "yes_no": 45274,
+    "closed_after": 18190,
+    "p_yes_threshold": 18175
+  },
+  "eligible_total": 13605,
+  "available_by_topic": {
+    "Other": 4135,
+    "Sports": 5883,
+    "Politics": 955,
+    "Geopolitics": 374,
+    "ScienceTech": 104,
+    "Macro": 89,
+    "Entertainment": 299,
+    "Business": 1766
+  },
+  "selected_by_topic": {
+    "Sports": 106,
+    "Geopolitics": 5,
+    "Entertainment": 6,
+    "Other": 79,
+    "Politics": 23,
+    "Business": 28,
+    "Macro": 2,
+    "ScienceTech": 1
+  },
+  "selected_by_label": {
+    "YES": 58,
+    "NO": 192
+  },
+  "sampling": "uniform without topic/event/label balancing",
+  "note": "p_yes comes from final resolved outcomePrices."
+}
