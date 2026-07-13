@@ -397,6 +397,8 @@ def main():
                     help="Herding ratio threshold for selective update (default 0.7)")
     ap.add_argument("--max-workers", type=int, default=1, help="Parallel workers for concurrent question processing (default 1 = sequential)")
     ap.add_argument("--output", type=str, default=None, help="Output JSONL path (default: data/results/<timestamp>.jsonl)")
+    ap.add_argument("--resume", action="store_true",
+                    help="Resume an existing --output JSONL: skip qids already written and append only missing results")
     args = ap.parse_args()
 
     setup_logging()
@@ -404,6 +406,27 @@ def main():
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     out_path = Path(args.output) if args.output else RESULTS_DIR / f"{ts}.jsonl"
+
+    if args.resume and not args.output:
+        ap.error("--resume requires an explicit --output path")
+
+    completed_qids: set[str] = set()
+    if args.resume and out_path.exists():
+        with open(out_path, encoding="utf-8") as f:
+            for line_number, line in enumerate(f, start=1):
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    raise ValueError(
+                        f"Cannot resume from malformed JSONL at {out_path}:{line_number}"
+                    ) from exc
+                qid = str(record.get("qid", "")).strip()
+                if qid:
+                    completed_qids.add(qid)
+        print(f"Resume enabled: found {len(completed_qids)} completed qids in {out_path}")
 
     selected_qids = None
     if args.qid_file:
@@ -423,6 +446,11 @@ def main():
         else:
             print(f"Loading rows {args.start} to {args.start + args.limit - 1} from {MARKETS_CSV}")
             rows = load_examples(args.start, args.limit)
+
+    if completed_qids:
+        before_resume_filter = len(rows)
+        rows = [row for row in rows if row[0].qid not in completed_qids]
+        print(f"Resume enabled: skipped {before_resume_filter - len(rows)} completed rows; {len(rows)} remain")
     print(f"Loaded {len(rows)} examples  output -> {out_path}\n")
 
     examples = [ex for ex, _, _ in rows]
