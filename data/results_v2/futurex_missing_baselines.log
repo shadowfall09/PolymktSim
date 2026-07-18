@@ -1,0 +1,85 @@
+=== FutureX missing baselines started Fri Jul 17 10:44:42 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+
+=== ZERO-SHOT baseline (n=231, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+  [zeroshot] n=231  Brier=0.2419  Acc=0.641
+
+Done.
+=== zeroshot done Fri Jul 17 10:45:12 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+Sequential Bayesian Update: K=5, workers=10
+Output: data/results_v2/futurex_bayesian_k5.jsonl
+
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+
+  [bayesian_k5] n=231  Brier=0.3043  Acc=0.485
+
+Done.
+=== bayesian done Fri Jul 17 10:47:02 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+
+=== SELF-CONSISTENCY baseline (n=231, samples=3, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+  [self_consistency] n=231  Brier=0.2713  Acc=0.550
+
+Done.
+=== self-consistency done Fri Jul 17 10:48:54 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+=== SUPERFORECASTER baseline (n=231, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+
+  superforecaster Results (n=231):
+    Brier: 0.2596
+    Acc:   63.6%
+    Output: data/results_v2/futurex_superforecaster.jsonl
+=== superforecaster done Fri Jul 17 10:49:59 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+=== HALAWI et al. baseline (n=231, samples=3, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+
+  halawi Results (n=231):
+    Brier: 0.2654
+    Acc:   56.7%
+    Output: data/results_v2/futurex_halawi.jsonl
+=== halawi done Fri Jul 17 10:53:46 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+=== CROWD ENSEMBLE baseline (n=231, agents=5, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+
+  crowd_ensemble Results (n=231):
+    Brier: 0.2888
+    Acc:   52.4%
+    Output: data/results_v2/futurex_crowd_ensemble.jsonl
+=== crowd done Fri Jul 17 10:56:50 PM UTC 2026 ===
+Loaded 231 questions from data/processed/futurex_past_with_evidence.jsonl
+=== AIA FORECASTER baseline (n=231, agents=10, workers=10) ===
+  Progress: 50/231
+  Progress: 100/231
+  Progress: 150/231
+  Progress: 200/231
+
+  aia Results (n=231):
+    Brier: 0.2764
+    Acc:   55.0%
+    Output: data/results_v2/futurex_aia.jsonl
+=== aia done Fri Jul 17 11:05:03 PM UTC 2026 ===
+=== FutureX missing baselines finished Fri Jul 17 11:05:03 PM UTC 2026 ===
