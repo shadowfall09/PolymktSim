@@ -29,6 +29,7 @@ from src.aggregation.extremizing import ExtremizingAggregator
 from src.aggregation.confidence_weighted import ConfidenceWeightedAggregator
 from src.aggregation.adaptive_extremizing import AdaptiveExtremizingAggregator
 from src.aggregation.temporal_reliability import TemporalReliabilityAggregator
+from src.aggregation.calibrated_shrink import CalibratedShrinkAggregator
 from src.runner.experiment import run_s0, run_s1, run_s2
 from src.evaluation.metrics import brier_score, log_loss, accuracy
 from src.utils.logger import setup_logging
@@ -315,7 +316,8 @@ def _update_registry(args, ts: str, out_path: Path, selected_qids: set | None):
         "extremizing_alpha": args.extremizing_alpha if args.aggregator == "extremizing" else None,
         "share_mode": "numbers" if args.no_rationale_sharing else args.share_mode,
         "evidence_pooling": args.evidence_pooling,
-        "calibrated_prompt": args.calibrated_prompt,
+        "calibrated_prompt": ("v3" if args.calibrated_prompt_v3 else "v2" if args.calibrated_prompt_v2 else args.calibrated_prompt),
+        "devils_advocate": args.devils_advocate,
         "notes": "",
     }
 
@@ -376,8 +378,15 @@ def main():
     ap.add_argument("--temperature", type=float, default=0.7, help="Temperature for S1/S2 agents (default 0.7); S0 always uses 0")
     ap.add_argument("--public-ratio", type=float, default=0.5, help="Fraction of evidence shared publicly across S1/S2 agents (default 0.5)")
     ap.add_argument("--aggregator",
-                    choices=["mean", "extremizing", "confidence_weighted", "adaptive_extremizing", "temporal_reliability"],
+                    choices=["mean", "extremizing", "confidence_weighted", "adaptive_extremizing",
+                             "temporal_reliability", "calibrated_shrink"],
                     default="mean", help="Aggregation method for S1/S2 (default: mean)")
+    ap.add_argument("--shrink-p0", type=float, default=0.30,
+                    help="calibrated_shrink prior (default 0.30)")
+    ap.add_argument("--shrink-w-lo", type=float, default=0.8,
+                    help="calibrated_shrink weight below prior (default 0.8)")
+    ap.add_argument("--shrink-w-hi", type=float, default=0.5,
+                    help="calibrated_shrink weight above prior (default 0.5)")
     ap.add_argument("--extremizing-alpha", type=float, default=2.5,
                     help="Extremizing factor alpha (only used when --aggregator=extremizing, default 2.5)")
     ap.add_argument("--bm25", action="store_true", help="Use BM25 relevance-based evidence routing instead of random split")
@@ -389,6 +398,21 @@ def main():
                     help="S2 only: private docs cited in a round are disclosed in full to all agents in later rounds")
     ap.add_argument("--calibrated-prompt", action="store_true",
                     help="Use the base-rate-anchored system prompt for all agents")
+    ap.add_argument("--calibrated-prompt-v2", action="store_true",
+                    help="v2 calibrated prompt: adds a resolution-criteria step and a "
+                         "high-confidence gate for p_yes >= 0.7 (overrides --calibrated-prompt). "
+                         "NOTE: measured net-negative on polymarket_250 (over-shrinks the low side); "
+                         "prefer v3")
+    ap.add_argument("--calibrated-prompt-v3", action="store_true",
+                    help="v3 calibrated prompt: v1 plus a resolution-criteria step and a soft "
+                         "high-confidence re-check, without v2's hard cap (overrides v2/v1). "
+                         "NOTE: fixes high-confidence misses (p>=0.6 hit rate 0.29 -> 0.45) but "
+                         "suppresses mid-band true-YES questions; net-negative Brier on "
+                         "polymarket_250 (0.1780 vs v1's 0.1647 raw) — prefer plain "
+                         "--calibrated-prompt with --aggregator calibrated_shrink")
+    ap.add_argument("--devils-advocate", action="store_true",
+                    help="S2 only: when a round is unanimous, instruct agents to build the "
+                         "strongest opposing case before finalizing")
     ap.add_argument("--no-rationale-sharing", action="store_true",
                     help="[deprecated: use --share-mode numbers] S2 only: only share p_yes and label between rounds")
     ap.add_argument("--selective-update", action="store_true",
@@ -472,9 +496,20 @@ def main():
         agent_factory = lambda _: StubAgent()
     else:
         from src.agents.llm_agent import LLMAgent
-        from src.agents.prompts import SYSTEM_PROMPT_CALIBRATED
+        from src.agents.prompts import (
+            SYSTEM_PROMPT_CALIBRATED,
+            SYSTEM_PROMPT_CALIBRATED_V2,
+            SYSTEM_PROMPT_CALIBRATED_V3,
+        )
         model_name = LLMAgent().model_name
-        system_prompt = SYSTEM_PROMPT_CALIBRATED if args.calibrated_prompt else None
+        if args.calibrated_prompt_v3:
+            system_prompt = SYSTEM_PROMPT_CALIBRATED_V3
+        elif args.calibrated_prompt_v2:
+            system_prompt = SYSTEM_PROMPT_CALIBRATED_V2
+        elif args.calibrated_prompt:
+            system_prompt = SYSTEM_PROMPT_CALIBRATED
+        else:
+            system_prompt = None
         # Citations are what carry private evidence between rounds, so require
         # them whenever a mechanism downstream consumes them.
         require_citations = share_mode == "arguments" or args.evidence_pooling
@@ -502,7 +537,8 @@ def main():
         "temperature": args.temperature,
         "share_mode": share_mode,
         "evidence_pooling": args.evidence_pooling,
-        "calibrated_prompt": args.calibrated_prompt,
+        "calibrated_prompt": ("v3" if args.calibrated_prompt_v3 else "v2" if args.calibrated_prompt_v2 else args.calibrated_prompt),
+        "devils_advocate": args.devils_advocate,
     }
 
     if args.aggregator == "extremizing":
@@ -513,6 +549,9 @@ def main():
         aggregator = AdaptiveExtremizingAggregator()
     elif args.aggregator == "temporal_reliability":
         aggregator = TemporalReliabilityAggregator()
+    elif args.aggregator == "calibrated_shrink":
+        aggregator = CalibratedShrinkAggregator(p0=args.shrink_p0, w_lo=args.shrink_w_lo,
+                                                w_hi=args.shrink_w_hi)
     else:
         aggregator = MeanAggregator()
     run_s0_ = args.scenario in ("s0", "all")
@@ -594,6 +633,7 @@ def main():
                                   show_rationale=not args.no_rationale_sharing,
                                   share_mode=share_mode,
                                   evidence_pooling=args.evidence_pooling,
+                                  devils_advocate=args.devils_advocate,
                                   initial_forecasts_by_qid=s1_forecast_cache if run_s1_ else None)
         print_eval(results, outcome_map, "S2")
         print()

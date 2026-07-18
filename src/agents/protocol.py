@@ -26,6 +26,7 @@ def summarize_round(
     forecasts: list[Forecast],
     show_rationale: bool = True,
     share_mode: str = "full",
+    devils_advocate: bool = False,
     **_,
 ) -> str:
     """Build the between-round history summary.
@@ -36,6 +37,12 @@ def summarize_round(
       numbers   — p_yes + label only (legacy --no-rationale-sharing)
       arguments — rationale + cited doc_ids only; no numeric estimates and no
                   round mean, so agents can only converge through evidence
+
+    devils_advocate: when every agent in the previous round gave the same
+    label, append an instruction to build the strongest opposing case before
+    finalizing. Unanimity in round 0 usually means shared evidence, not
+    independent confirmation, so the second round otherwise just amplifies
+    correlated errors. Uses labels only — no numeric anchor is introduced.
     """
     if not forecasts:
         return ""
@@ -55,6 +62,7 @@ def summarize_round(
             "Re-examine your own evidence in light of these arguments, then give your own "
             "independent probability. Do not converge for the sake of agreement."
         )
+        lines.extend(_devils_advocate_lines(forecasts, devils_advocate))
         return "\n".join(lines)
 
     lines = ["Other agents' assessments from the previous round:"]
@@ -67,4 +75,23 @@ def summarize_round(
     ps = [f.p_yes for f in forecasts]
     mean = sum(ps) / len(ps)
     lines.append(f"Round mean p_yes={mean:.3f}. Consider whether you agree or disagree with the above.")
+    lines.extend(_devils_advocate_lines(forecasts, devils_advocate))
     return "\n".join(lines)
+
+
+def _devils_advocate_lines(forecasts: list[Forecast], enabled: bool) -> list[str]:
+    if not enabled:
+        return []
+    labels = {f.label for f in forecasts}
+    if len(labels) != 1:
+        return []
+    consensus = labels.pop()
+    other = "NO" if consensus == "YES" else "YES"
+    return [
+        f"All analysts currently lean {consensus}. Unanimity often reflects shared evidence "
+        "rather than independent confirmation. Before finalizing, construct the strongest "
+        f"concrete case that the market instead resolves {other}: check whether every "
+        "resolution criterion (exact wording, venue, source, deadline) is directly "
+        "established by cited evidence, and name the most plausible failure path. "
+        "Only keep a confident probability if that opposing case is genuinely weak."
+    ]

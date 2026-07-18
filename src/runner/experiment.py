@@ -170,6 +170,7 @@ def run_s2(
     show_rationale: bool = True,
     share_mode: str = "full",
     evidence_pooling: bool = False,
+    devils_advocate: bool = False,
     initial_forecasts_by_qid: dict[str, list[Forecast]] | None = None,
 ) -> tuple[list[tuple[str, Forecast]], list[dict]]:
     """Multi agent deliberation, optionally reusing S1 forecasts as round 0.
@@ -237,7 +238,8 @@ def run_s2(
                             promoted_ids.add(d.doc_id)
             if round_id == 0:
                 round1_forecasts = list(forecasts)
-            history = summarize_round(forecasts, show_rationale=show_rationale, share_mode=share_mode)
+            history = summarize_round(forecasts, show_rationale=show_rationale, share_mode=share_mode,
+                                      devils_advocate=devils_advocate)
 
         # Selective update: revert herding agents to round-1 predictions
         if use_selective_update and len(round1_forecasts) == len(forecasts):
