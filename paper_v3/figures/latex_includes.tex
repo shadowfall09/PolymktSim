@@ -1,0 +1,46 @@
+% === Fig 1: Architecture (MANUAL, reused from paper_v2) ===
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/framework.png}
+    \caption{Overview of the \textbf{InfoDelphi} framework.
+    (a)~\textbf{Evidence Routing}: documents are ranked by BM25 relevance and
+    distributed round-robin, constructing a shared public pool and disjoint private
+    subsets for each agent.
+    (b)~\textbf{Multi-Agent Deliberation}: agents exchange structured forecasts and
+    rationales over two rounds, enabling private information to propagate.
+    (c)~\textbf{Calibrated Aggregation}: final forecasts are pooled and passed through
+    an asymmetric shrinkage transform toward a NO-leaning prior.}
+    \label{fig:arch}
+\end{figure*}
+
+% === Fig 2: Herding dynamics ===
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/fig2_herding.pdf}
+    \caption{Deliberation dynamics with and without information asymmetry.
+    Left: mean per-question standard deviation of agent forecasts; right: mean
+    pairwise inter-agent error correlation. Under homogeneous input, deliberation
+    collapses forecast diversity (herding); partitioned evidence preserves
+    independent signal after deliberation on both datasets.}
+    \label{fig:herding}
+\end{figure}
+
+% === Fig 3: Calibration study ===
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/fig3_calibration.pdf}
+    \caption{Prompt-level vs.\ aggregation-level calibration on
+    \textsc{PolyGym}-250. Left: Brier score of three calibration prompts, with and
+    without aggregation-level shrinkage. Right: mean forecast $\bar p$ against the
+    empirical base rate. Skeptical prompt wording (v2, v3) depresses the entire
+    forecast distribution below the base rate and hurts accuracy in the mid-band,
+    whereas asymmetric shrinkage corrects overconfidence where it occurs.}
+    \label{fig:calibration}
+\end{figure}
+
+% === Tables: \input from figures/ ===
+% Tab 1: \input{figures/TABLE_main_results.tex}   (label tab:main)
+% Tab 2: \input{figures/TABLE_ablation.tex}       (label tab:ablation)
+% Tab 3: \input{figures/TABLE_sports.tex}         (label tab:sports)
+% Tab 4 (App): \input{figures/TABLE_shrink_control.tex} (label tab:shrink_control)
+% Tab 5 (App): \input{figures/TABLE_significance.tex}   (label tab:significance)

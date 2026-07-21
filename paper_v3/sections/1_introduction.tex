@@ -1,0 +1,35 @@
+\section{Introduction}
+\label{sec:intro}
+
+Prediction markets such as Polymarket\footnote{\url{https://polymarket.com/}} aggregate the beliefs of thousands of participants into real-time probability estimates for future events, achieving forecasting accuracy that often rivals or exceeds expert panels~\citep{tetlock2005expert}. With every question resolved against a definitive ground truth, these markets provide a natural benchmark for machine intelligence: \textit{\textbf{can an automated system reason over evidence and match human-level forecasting?}}
+Recent work has shown that large language models (LLMs) equipped with retrieved evidence can approach human-level performance on binary forecasting tasks~\citep{halawi2024approaching,turtel2025llms}, but these advances rely primarily on single-agent, single-pass pipelines that treat the entire evidence corpus as a monolithic context window.
+A natural extension is the \textit{multi-agent} setting, where a panel of LLMs deliberates over the evidence before producing a collective forecast.
+Such frameworks draw inspiration from well-studied human mechanisms for aggregating distributed knowledge---expert committees, structured interviews, and the Delphi method~\citep{DALKEY1969408}---and have shown promise in general reasoning tasks~\citep{chen2024reconcile,wangmixture}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/intro.png}
+    \caption{Effect of information asymmetry on a real prediction. \textbf{Left}: agents with identical evidence converge to the same incorrect forecast. \textbf{Right}: agents with complementary private evidence self-correct through rationale sharing.}
+    \label{fig:intro}
+    \vspace{-1em}
+\end{figure}
+
+Effective collective reasoning, however, requires that participants hold \textit{informationally diverse} views. As formalized in the Condorcet jury tradition and established empirically for human forecasters~\citep{Lorenz2011HowSI}, when agents share identical information, deliberation fails to improve collective accuracy: they reach the same conclusions independently, and iterative exchange merely reinforces the shared prior. In LLM systems this problem runs deeper. Recent work shows that models from different providers make correlated errors at rates above 60\%~\citep{kim2025correlated}, and that standard multi-agent debate under homogeneous input behaves as a \textit{martingale} whose expected accuracy does not improve over rounds~\citep{choi2025debate}.
+Figure~\ref{fig:intro} illustrates this failure mode on a real prediction market question: when all agents receive identical evidence, they converge to the same incorrect forecast (left), whereas agents equipped with complementary private evidence can self-correct through deliberation (right).
+
+To address this, we propose \textit{designed information asymmetry}, treating information asymmetry not as a limitation to overcome but as a principle to exploit.
+We introduce \textbf{InfoDelphi}, a multi-agent forecasting framework that partitions evidence into a shared public pool and disjoint private subsets, giving each agent distinct expertise while preserving common ground for communication.
+This mirrors effective human expert panels, where participants contribute complementary knowledge rather than reading the same briefing materials.
+InfoDelphi constructs informative evidence partitions using BM25 relevance ranking; during deliberation, agents exchange rationale excerpts rather than raw evidence, enabling efficient propagation of private signals.
+Beyond information structure, we find that LLM forecasters are systematically overconfident on the affirmative side of low-base-rate questions, and that this bias is best corrected \emph{after} deliberation: the final aggregation layer applies an asymmetric shrinkage toward a NO-leaning prior, with parameters validated across datasets.
+
+We evaluate on \textsc{PolyGym}, a controlled benchmark of 250 resolved binary Polymarket questions with fixed, pre-retrieved evidence shared across all methods, and on 231 resolved questions from the FutureX benchmark~\citep{zeng2025futurex}.
+Against nine single-agent and multi-agent baselines run with the same backbone model and the same evidence, InfoDelphi achieves the best Brier score on both datasets (0.158 and 0.201), and a paired bootstrap over questions confirms that every pairwise gap is significant at the 95\% level.
+Our analysis further traces \emph{why}: deliberation under homogeneous input collapses forecast diversity (herding), prompt-level skepticism cannot target overconfidence where it occurs, and for an evidence-limited domain (sports), even targeted retrieval augmentation yields no measurable gain.
+
+Our main contributions are as follows:
+\begin{itemize}[nosep,leftmargin=20pt,topsep=2pt,itemsep=1pt,parsep=0pt]
+  \item We propose \textit{designed information asymmetry} for multi-agent forecasting, and theoretically show that public/private evidence partitioning reduces inter-agent error correlation.
+  \item We introduce \textbf{InfoDelphi}, which instantiates this principle through relevance-aware evidence routing, rationale-based deliberation, and a calibrated shrinkage aggregation layer whose parameters transfer across datasets.
+  \item On \textsc{PolyGym}-250 and FutureX-231, InfoDelphi outperforms nine baselines with paired-bootstrap significance; ablations attribute the gains to information asymmetry and the aggregation layer, and deliberation-dynamics analysis provides direct empirical evidence of herding under homogeneous input.
+\end{itemize}

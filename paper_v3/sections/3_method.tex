@@ -1,0 +1,151 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Problem Formulation}
+
+Let $q$ denote a binary forecasting question with resolution date $\tau$ and ground truth $y \in \{0,1\}$.
+Each question is accompanied by a retrieved evidence corpus
+$\mathcal{E} = \{e_1, \dots, e_n\}$, where $e_i$ consists of a title, URL, and textual snippet retrieved prior to $\tau$.
+Given the question $q$ and evidence corpus $\mathcal{E}$, the goal is to estimate
+$p(y = 1 \mid q, \mathcal{E})$,
+where $p \in [0,1]$ denotes the predicted probability that the event resolves positively.
+
+\subsection{Theoretical Motivation}
+\label{sec:theory}
+
+We begin by formalizing why information asymmetry improves collective forecasting, drawing on the bias-variance-covariance decomposition of the ensemble mean squared error.
+
+\paragraph{Homogeneous input induces correlated errors.}
+Consider $J$ agents each receiving the same evidence $\mathcal{E}$.
+Let $p_j$ denote agent $j$'s forecast and $y$ the ground truth.
+The ensemble forecast $\bar{p} = \frac{1}{J}\sum_j p_j$ has mean squared error:
+\begin{equation}
+  \mathrm{MSE}(\bar{p}) \;=\; \mathrm{Bias}^2 + \bar{\sigma}^2 - \mathrm{Div},
+  \label{eq:bvd}
+\end{equation}
+where $\bar{\sigma}^2 = \frac{1}{J}\sum_j \mathrm{Var}(p_j)$ is the average agent variance and $\mathrm{Div} = \frac{1}{J}\sum_j \mathrm{Var}(p_j - \bar{p})$ is the diversity term~\citep{wood2023unified}.
+When all agents observe identical input, their prediction errors $\epsilon_j = p_j - y$ are driven by the same evidence and thus highly correlated: $\mathrm{Cov}(\epsilon_i, \epsilon_j) \approx \mathrm{Var}(\epsilon)$ for $i \neq j$.
+In this regime the diversity term collapses toward zero, and the ensemble provides no benefit over a single agent.
+Recent empirical work confirms this: LLM errors are correlated across providers, and optimal aggregation under full correlation has a non-zero error floor~\citep{kim2025correlated,turkmen2026don}.
+
+\paragraph{Information asymmetry reduces error correlation.}
+We now show that a public/private evidence partition directly reduces this correlation.
+
+\begin{proposition}[Diversity-Induced Decorrelation]
+    \label{prop:decorrelation}
+    Let each agent's prediction error decompose as
+    $\epsilon_j = \rho \cdot \epsilon^{\mathrm{pub}} + (1-\rho) \cdot \epsilon_j^{\mathrm{priv}}$,
+    where $\epsilon^{\mathrm{pub}}$ is the error component driven by shared public evidence,
+    $\epsilon_j^{\mathrm{priv}}$ is the component driven by agent $j$'s private evidence,
+    and $\rho \in [0,1]$ is the public ratio.
+    Let $\sigma_{\mathrm{pub}}^2 = \mathrm{Var}(\epsilon^{\mathrm{pub}})$ and assume:
+    \begin{enumerate}[label=(\roman*),nosep,leftmargin=20pt,topsep=2pt,itemsep=1pt]
+    \item $\mathrm{Cov}(\epsilon_i^{\mathrm{priv}}, \epsilon_j^{\mathrm{priv}}) = 0$ for $i \neq j$ \textit{(private--private independence)};
+    \item $\mathrm{Cov}(\epsilon^{\mathrm{pub}}, \epsilon_k^{\mathrm{priv}}) = 0$ for all $k$ \textit{(public--private independence)};
+    \item $\mathrm{Var}(\epsilon_j^{\mathrm{priv}}) = \sigma_{\mathrm{priv}}^2$ for all $j$ \textit{(symmetric private noise)}.
+  \end{enumerate}
+    Then:
+    \begin{equation}
+      \mathrm{Corr}(\epsilon_i, \epsilon_j) \;=\;
+      \frac{\rho^2\,\sigma_{\mathrm{pub}}^2}
+           {\rho^2\,\sigma_{\mathrm{pub}}^2 + (1{-}\rho)^2\,\sigma_{\mathrm{priv}}^2}.
+      \label{eq:corr}
+    \end{equation}
+  \end{proposition}
+
+\begin{proof}
+  By bilinearity of covariance and assumptions (i)--(ii), all cross-terms vanish,
+  giving $\mathrm{Cov}(\epsilon_i, \epsilon_j) = \rho^2\sigma_{\mathrm{pub}}^2$.
+  By assumptions (ii)--(iii), the cross-term in the variance expansion also vanishes,
+  so $\mathrm{Var}(\epsilon_j) = \rho^2\sigma_{\mathrm{pub}}^2 + (1{-}\rho)^2\sigma_{\mathrm{priv}}^2$,
+  which equals $\mathrm{Var}(\epsilon_i)$ by symmetry.
+  Dividing covariance by $\sqrt{\mathrm{Var}(\epsilon_i)\mathrm{Var}(\epsilon_j)} = \mathrm{Var}(\epsilon_j)$
+  gives~\eqref{eq:corr}.
+\end{proof}
+
+\noindent
+Proposition~\ref{prop:decorrelation} shows that inter-agent error correlation decreases
+monotonically as $\rho$ decreases from 1 to 0.
+As a concrete instance, at the default $\rho = 0.5$ with equal-variance components
+($\sigma_{\mathrm{pub}} = \sigma_{\mathrm{priv}}$), correlation equals $0.25/(0.25+0.25) = 0.5$,
+half the all-public baseline ($\rho{=}1$, correlation~$= 1$).
+At $\rho = 0$ (all-private), agents are fully decorrelated; at $\rho = 1$ (all-public,
+standard debate), correlation reaches its maximum.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/framework.png}
+  \caption{Overview of the \textbf{InfoDelphi} framework.
+  (a)~\textbf{Evidence Routing}: documents are ranked by BM25 relevance and
+  distributed round-robin, constructing a shared public pool and disjoint private
+  subsets for each agent.
+  (b)~\textbf{Multi-Agent Deliberation}: agents exchange structured forecasts and rationales over two rounds, enabling private information to propagate.
+  (c)~\textbf{Calibrated Aggregation}: final-round forecasts are averaged and passed through an asymmetric shrinkage transform toward a NO-leaning prior $p_0$, correcting systematic overconfidence.}
+    \vspace{-1em}
+    \label{fig:arch}
+\end{figure*}
+
+\begin{corollary}[Optimal Public Ratio Trade-off]
+\label{cor:tradeoff}
+Decreasing $\rho$ reduces error correlation (improving ensemble gain) but also reduces the shared context necessary for agents to interpret each other's rationales.
+An optimal $\rho^* \in (0,1)$ therefore exists that balances diversity against communicability.
+\end{corollary}
+
+\paragraph{Rationale sharing enables cross-agent information transfer.}
+Even with disjoint evidence, agents cannot benefit from each other's private signals unless they communicate their \textit{reasoning}, not just their conclusions.
+By the Data Processing Inequality~\citep{shin2026reasoning}, a deliberation system where agents only exchange numeric estimates forms a Markov chain $\mathcal{E}_j \to p_j^{(1)} \to p_j^{(2)} \to \cdots$, so $I(y; p_j^{(r+1)}) \leq I(y; p_j^{(r)})$: information about the ground truth can only decrease.
+Sharing rationales breaks this Markov structure: agent $i$ now observes a summary of agent $j$'s reasoning over $\Epriv{j}$, effectively receiving a lossy projection of $j$'s private evidence.
+This converts the system from closed to open, allowing $I(y; p_j^{(r+1)}) > I(y; p_j^{(r)})$, which is a necessary condition for iterative deliberation to improve over a single round.
+
+\subsection{The InfoDelphi Framework}
+
+\paragraph{Overview.}
+Figure~\ref{fig:arch} illustrates the end-to-end InfoDelphi pipeline, which instantiates the three conditions identified above --- diverse signals, common ground, and exchanged reasoning --- through three corresponding stages:
+(1)~\textit{evidence routing} partitions $\mathcal{E}$ into a shared public pool and disjoint private subsets via BM25 relevance ranking;
+(2)~\textit{iterative deliberation} enables agents to exchange rationale excerpts across rounds, converting private signals into shared knowledge;
+(3)~\textit{calibrated aggregation} averages final-round forecasts and applies an asymmetric shrinkage that corrects systematic overconfidence.
+
+\paragraph{Evidence Routing.}
+\label{sec:routing}
+We consider a panel of $J$ agents $\{A_1, \dots, A_J\}$ and a public ratio $\rho \in [0,1]$.
+The corpus is partitioned into a shared public subset $\Epub$ and $J$ disjoint private subsets:
+\begin{equation}
+  \mathcal{E} \;=\; \Epub \;\cup\; \bigsqcup_{j=1}^{J} \Epriv{j},
+  \ |\Epub| \;=\; \lfloor \rho \cdot |\mathcal{E}| \rfloor.
+  \label{eq:partition}
+\end{equation}
+Agent $A_j$ observes the private view $\Eview{j} = \Epub \cup \Epriv{j}$.
+To maximize information diversity across private subsets, we allocate documents via \textit{BM25 relevance routing}: each document $e_i$ receives a relevance score $s_i = \mathrm{BM25}(e_i, q)$.
+The top-$|\Epub|$ scoring documents form $\Epub$: since these are the most directly relevant to the question, they serve as the shared ``language'' through which agents can interpret each other's reasoning during deliberation.
+The remaining documents are sorted by $s_i$ and assigned to agents in round-robin order, so that adjacent relevance levels are spread across distinct private views.
+
+\paragraph{Iterative Deliberation with Rationale Sharing.}
+\label{sec:deliberation}
+At each round $r \in \{1, \dots, R\}$, agent $A_j$ produces a structured forecast
+\begin{equation}
+    f_j^{(r)} \;=\; \bigl(p_j^{(r)},\, \ell_j^{(r)},\, r_j^{(r)}\bigr),
+\end{equation}
+where $p_j^{(r)} \in [0,1]$ is a probability estimate, $\ell_j^{(r)} \in \{0,1\}$ is a categorical prediction, and $r_j^{(r)}$ is a free-text rationale.
+The agent conditions on its private view and a history summary of prior-round forecasts:
+\begin{equation}
+    f_j^{(r)} \;\sim\; \mathrm{LLM}\!\left(q,\;\Eview{j},\;h^{(r-1)}\right),
+    \label{eq:agent}
+\end{equation}
+where $h^{(0)} = \varnothing$ and, for $r \geq 2$,
+$h^{(r-1)} = \{(p_k^{(r-1)}, \ell_k^{(r-1)}, r_k^{(r-1)})\}_{k \neq j}$.
+Crucially, $h^{(r-1)}$ includes rationale excerpts from other agents, not only their numeric estimates; agents may also quote the specific evidence supporting an argument (evidence pooling), so that a private document cited by one agent becomes visible context for the others.
+The forecasting prompt instructs agents to reason about base rates and resolution criteria before committing to a probability (the \emph{calibrated prompt}; Appendix~\ref{sec:appendix_prompts}).
+We study two deliberation protocols: \textit{independent forecasting}, where agents reason solely from their private view (one round), and \textit{iterative deliberation} (the full InfoDelphi protocol), where agents additionally observe all other agents' Round~1 forecasts and rationales before producing their final prediction.
+
+\paragraph{Calibrated Aggregation.}
+\label{sec:aggregation}
+Given the final-round forecasts $\{p_j^{(R)}\}_{j=1}^{J}$, InfoDelphi first pools them by the mean, $\bar{p} = \frac{1}{J}\sum_j p_j^{(R)}$, and then applies an \emph{asymmetric shrinkage} toward a prior $p_0$:
+\begin{equation}
+  \hat{p} \;=\; p_0 + w\,(\bar{p} - p_0), \qquad
+  w = \begin{cases} w_{\mathrm{hi}} & \bar{p} > p_0, \\ w_{\mathrm{lo}} & \bar{p} \le p_0, \end{cases}
+  \label{eq:shrink}
+\end{equation}
+with $p_0 = 0.30$, $w_{\mathrm{lo}} = 0.8$, and $w_{\mathrm{hi}} = 0.5$.
+The design responds to a systematic bias we observe across prompts and datasets: LLM forecasters are overconfident specifically on the \emph{affirmative} side of low-base-rate questions, so forecasts above the prior are shrunk harder ($w_{\mathrm{hi}} < w_{\mathrm{lo}}$) than forecasts below it.
+The three parameters are fit on one dataset and validated on the other (Section~\ref{sec:calibration_study}); the same setting transfers between Polymarket and FutureX without re-tuning.
+Section~\ref{sec:calibration_study} contrasts this aggregation-layer correction with prompt-level attempts at instilling skepticism, which depress the entire forecast distribution rather than the overconfident region.

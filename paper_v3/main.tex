@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{multirow}
+% Change "preprint" to "review" for anonymous submission, "final" for camera-ready.
+\usepackage[preprint]{acl}
+
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{pifont}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[proposition]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\cmark}{\textcolor{green!60!black}{$\checkmark$}}
+\newcommand{\xmark}{\textcolor{red}{$\times$}}
+\newcommand{\Epub}{\mathcal{E}^{\mathrm{pub}}}
+\newcommand{\Epriv}[1]{\mathcal{E}_{#1}^{\mathrm{priv}}}
+\newcommand{\Eview}[1]{\mathcal{E}_{#1}}
+
+\title{Diverse Evidence, Better Forecasts: \\ Multi-Agent Deliberation Under Information Asymmetry}
+
+\author{Anonymous Authors \\
+  Anonymous Institution \\
+  \texttt{anonymous@example.com}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_related_work}
+\input{sections/3_method}
+\input{sections/4_setup}
+\input{sections/5_results}
+\input{sections/6_analysis}
+\input{sections/7_conclusion}
+
+\bibliography{custom}
+
+\appendix
+\input{sections/A_appendix}
+
+\end{document}

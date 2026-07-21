@@ -1,0 +1,22 @@
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Datasets.}
+Current LLM forecasting systems~\citep{halawi2024approaching,turtel2025llms} primarily emphasize \textit{retrieval quality}, while an equally important capability is \textit{information utilization}: how agents interpret, distribute, and collaboratively reason over retrieved evidence.
+To study this dimension in isolation, we construct \textbf{\textsc{PolyGym}}, a controlled forecasting benchmark of 250 resolved binary Polymarket questions (resolution dates 2025-09 to 2025-12; empirical YES rate 0.232) spanning Sports, Business, Politics, and other domains.
+Each question is paired with up to 20 pre-retrieved documents collected before market resolution under a strict temporal cutoff, and all methods operate over the same fixed evidence pool, eliminating variability from changing web environments and unstable search results (details in Appendix~\ref{sec:appendix_dataset}).
+To test generalization beyond Polymarket, we additionally evaluate on 231 resolved questions from the FutureX benchmark~\citep{zeng2025futurex} (YES rate 0.355), constructed with the same fixed-evidence protocol.
+
+\paragraph{Baselines.}
+We compare against two categories of baselines, all run with the same backbone model and the same evidence pools (details in Appendix~\ref{sec:appendix_details}).
+\ding{182} \textit{Single-agent methods}: Chain-of-Thought~\citep{wei2022chain}, Self-Consistency~\citep{wangself}, Sequential Bayesian~\citep{shi2023language}, Superforecaster~\citep{karger2024forecastbench}, and the structured scratchpad pipeline of Halawi et al.~\citep{halawi2024approaching}.
+\ding{183} \textit{Multi-agent methods with homogeneous input}: Standard Debate~\citep{du2023improving}, MoA~\citep{wangmixture}, Crowd Ensemble~\citep{schoenegger2024wisdom}, and AIA Forecaster~\citep{alur2025aia}.
+Notably, our Standard Debate implementation shares InfoDelphi's prompt, deliberation protocol, and mean aggregation, differing only in information structure ($\rho{=}1$ with full evidence sharing); it therefore doubles as a controlled ablation of information asymmetry.
+
+\paragraph{Metrics and significance.}
+We report the \textit{Brier score} $\mathrm{BS} = \frac{1}{N}\sum_{k=1}^{N}(\hat{p}_k - y_k)^2$ (lower is better) and \textit{accuracy}, the fraction of questions for which $\mathbf{1}[\hat{p} \geq 0.5]$ matches $y$.
+For every pairwise comparison we run a paired bootstrap over questions (5{,}000 resamples, fixed seed) and report the 95\% confidence interval of the mean Brier difference; a gap is called significant when the interval excludes zero.
+
+\paragraph{Implementation.}
+All experiments use \texttt{gpt-5.4-mini} via the OpenRouter API\footnote{\href{https://openrouter.ai/}{openrouter.ai}} as the primary model.\footnote{A run of the same InfoDelphi configuration (without the shrinkage layer) with \texttt{gpt-4o-mini} on FutureX-231 reaches Brier 0.237 vs.\ 0.221 for \texttt{gpt-5.4-mini}, suggesting the architecture is not tied to one backbone; we leave a full cross-model baseline suite to future work.}
+We use $J=3$ agents, $R=2$ deliberation rounds, $\rho=0.5$, temperature 0.7, and the shrinkage parameters of Eq.~\eqref{eq:shrink} for all main results.

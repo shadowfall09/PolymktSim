@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Targeted retrieval augmentation on the 106 Sports questions of \textsc{PolyGym}-250 (InfoDelphi full; paired bootstrap vs.\ original evidence, 5{,}000 resamples). Neither augmentation yields a significant improvement.}
+\label{tab:sports}
+\begin{tabular}{lccc}
+\toprule
+Evidence & Brier$\,\downarrow$ & AUC$\,\uparrow$ & $\Delta$Brier [95\% CI] \\
+\midrule
+Original & 0.1908 & 0.696 & --- \\
+$+$ opponent identity & 0.1890 & 0.690 & -0.0018 [-0.010, +0.006] \\
+$+$ opponent odds/form & 0.1873 & 0.720 & -0.0035 [-0.013, +0.005] \\
+\bottomrule
+\end{tabular}
+\end{table}

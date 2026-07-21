@@ -1,0 +1,24 @@
+\section{Main Results}
+\label{sec:results}
+
+\input{figures/TABLE_main_results}
+
+Table~\ref{tab:main} reports Brier score and accuracy for all methods on both datasets.
+Three observations stand out.
+
+\paragraph{InfoDelphi is best on both datasets, and the gaps are significant.}
+The full system attains Brier 0.1575 on \textsc{PolyGym}-250 and 0.2006 on FutureX-231, the best result in every column.
+Under the paired bootstrap, the Brier improvement over each of the nine baselines is significant on both datasets (all 95\% CIs exclude zero; full intervals in Appendix Table~\ref{tab:significance}).
+Relative to the strongest baseline on each dataset (Standard Debate), the full system reduces Brier by 13.2\% on \textsc{PolyGym} and 17.6\% on FutureX.
+Even without the shrinkage layer, InfoDelphi's raw ensemble (Brier 0.1647 / 0.2212) already outperforms every baseline on both datasets, so the ranking does not depend on the calibration layer alone; the ablation in Section~\ref{sec:analysis} quantifies each component's contribution, and Appendix~\ref{sec:appendix_control} reports a control in which the same shrinkage is applied to every baseline.
+
+\paragraph{Homogeneous-input deliberation often underperforms single agents.}
+On FutureX, every multi-agent baseline except Standard Debate is \emph{worse} than the strongest single-agent prompting methods: MoA reaches 0.2944 and Crowd Ensemble 0.2888, compared to 0.2596 for the single-agent Superforecaster prompt.
+The same pattern appears in weaker form on \textsc{PolyGym}.
+This is consistent with the martingale view of homogeneous-input debate~\citep{choi2025debate}: when agents share identical evidence, adding agents and rounds mostly redistributes the same information.
+Information asymmetry is what converts the additional inference cost into additional skill.
+
+\paragraph{Calibration matters as much as protocol.}
+Sequential Bayesian, the weakest baseline on both datasets (0.2523 / 0.3043), fails primarily through calibration: its sequential updates drift toward extreme probabilities.
+Conversely, InfoDelphi's shrinkage layer converts a 0.1647 raw score into 0.1575 on \textsc{PolyGym} ($-0.0072$, paired CI $[-0.0180, +0.0029]$) and 0.2212 into 0.2006 on FutureX ($-0.0206$, CI $[-0.0417, -0.0013]$), with the same parameters on both datasets.
+Section~\ref{sec:calibration_study} shows that this correction cannot be reproduced at the prompt level.

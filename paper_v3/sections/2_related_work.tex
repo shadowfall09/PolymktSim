@@ -1,0 +1,29 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{LLM-based Forecasting.}
+Early work established a substantial gap between LLM and human forecasting accuracy.
+\citet{zou2022forecasting} find that language models achieve only 65\% accuracy on Autocast compared to 92\% for human aggregates, while \citet{schoenegger2023large} show that GPT-4 without augmentation does not significantly outperform a random baseline on Metaculus.
+Retrieval-augmented generation~\citep{lewis2020retrieval} substantially closes this gap: \citet{yanautocast++} improve Autocast accuracy through zero-shot re-ranking and summarization of retrieved news, and \citet{halawi2024approaching} present a full pipeline achieving near-human performance on Polymarket and Metaculus.
+More recent work focuses on training: \citet{turtel2025llms} fine-tune on 12,100 resolved Polymarket questions, and \citet{chandakscaling} train an 8B model via reinforcement learning that matches proprietary LLMs on prediction benchmarks.
+On the aggregation side, \citet{schoenegger2024wisdom} show that ensembling diverse LLMs produces forecasts statistically indistinguishable from human forecasters, and \citet{tian2023just} document that verbalized LLM probabilities are systematically miscalibrated, motivating post-hoc correction.
+Benchmark design has matured in parallel: ForecastBench~\citep{karger2024forecastbench} and FutureX~\citep{zeng2025futurex} provide continuously updated evaluations with strict temporal controls, and \citet{paleka2025pitfalls} identify systematic pitfalls including temporal leakage and piggybacking on existing forecasts.
+Despite this progress, existing pipelines treat forecasting as a single-agent process and do not study evidence distribution across a deliberating panel.
+
+\paragraph{Multi-Agent Reasoning and Deliberation.}
+Multi-agent debate has emerged as a general strategy for improving LLM reasoning~\citep{du2023improving}.
+\citet{wangself} show that sampling diverse chain-of-thought paths and selecting by majority vote improves accuracy, while \citet{wangmixture} propose Mixture-of-Agents, a layered architecture where later agents condition on all prior outputs.
+\citet{chen2024reconcile} demonstrate that a round-table conference of diverse LLMs with confidence-weighted voting outperforms single-agent baselines across reasoning benchmarks.
+However, recent theory suggests multi-agent debate is not uniformly beneficial.
+\citet{choi2025debate} prove that under a Dirichlet-Categorical belief model, standard multi-agent debate forms a \textit{martingale}: expected correctness does not improve over rounds when agents receive identical inputs.
+\citet{shin2026reasoning} formalize this via the Data Processing Inequality: closed-system deliberation forms a Markov chain, so mutual information with the ground truth can only decrease.
+\citet{kim2025correlated} document that LLM errors are 60\%+ correlated, implying that naive ensembling hits a non-zero error floor.
+Our work addresses these limitations by varying the \emph{information structure} of debate rather than its protocol: designed information asymmetry breaks error correlation and converts the martingale into productive belief revision.
+
+\paragraph{Information Aggregation and Collective Intelligence.}
+The conditions under which groups outperform individuals are well studied.
+\citet{surowiecki2004wisdom} identifies independence, diversity, and decentralized knowledge as key conditions for collective intelligence.
+The DeGroot model~\citep{612bb50a-4bdd-3a32-b6eb-7837600cc9c4} formalizes iterative belief aggregation, and the Delphi method~\citep{DALKEY1969408} applies structured multi-round elicitation to reduce expert disagreement.
+For probabilistic forecasting, the linear opinion pool~\citep{9ca5e582-1e4c-323f-9ab1-c62032d22e48} and logit-space extremization~\citep{SATOPAA2014344} provide principled aggregation; shrinkage toward a prior is the classical remedy when individual forecasts are overconfident.
+Meanwhile, social influence can suppress diversity without improving accuracy~\citep{Lorenz2011HowSI}, and informational cascades may cause agents to ignore private signals once consensus emerges~\citep{bikhchandani1992theory}.
+Our framework operationalizes the positive conditions for collective intelligence while explicitly mitigating herding and information loss through evidence partitioning, rationale-based communication, and calibrated aggregation.
