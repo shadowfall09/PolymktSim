@@ -3,22 +3,29 @@
 
 \input{figures/TABLE_main_results}
 
-Table~\ref{tab:main} reports Brier score and accuracy for all methods on both datasets.
-Three observations stand out.
+Table~\ref{tab:main} compares InfoDelphi against all nine baselines on both datasets.
 
-\paragraph{InfoDelphi is best on both datasets, and the gaps are significant.}
-The full system attains Brier 0.1575 on \textsc{PolyGym}-250 and 0.2006 on FutureX-231, the best result in every column.
-Under the paired bootstrap, the Brier improvement over each of the nine baselines is significant on both datasets (all 95\% CIs exclude zero; full intervals in Appendix Table~\ref{tab:significance}).
-Relative to the strongest baseline on each dataset (Standard Debate), the full system reduces Brier by 13.2\% on \textsc{PolyGym} and 17.6\% on FutureX.
-Even without the shrinkage layer, InfoDelphi's raw ensemble (Brier 0.1647 / 0.2212) already outperforms every baseline on both datasets, so the ranking does not depend on the calibration layer alone; the ablation in Section~\ref{sec:analysis} quantifies each component's contribution, and Appendix~\ref{sec:appendix_control} reports a control in which the same shrinkage is applied to every baseline.
+\paragraph{\ding{224} Overall performance.}
+InfoDelphi attains the best Brier score on both benchmarks (0.1575 on \textsc{PolyGym}-250, 0.2006 on FutureX-231), and the improvement over \emph{every} baseline is significant under the paired bootstrap on both datasets (all 95\% CIs exclude zero; Appendix Table~\ref{tab:significance}).
+Relative to the strongest baseline (Standard Debate), Brier falls by 13.2\% and 17.6\%, respectively.
+The gains come from two designed mechanisms working in sequence: \textit{evidence routing} gives each agent a partially private view of the corpus, creating the decorrelated signals that Proposition~\ref{prop:decorrelation} requires, and \textit{rationale-based deliberation} lets agents propagate those private signals to the panel.
+Importantly, the raw ensemble without the shrinkage layer (0.1647 / 0.2212) already outperforms every baseline on both datasets, so the ranking is established by the information structure alone; calibrated aggregation then widens the margin.
+AUC makes the same point in calibration-free terms: because AUC is unaffected by the shrinkage transform, InfoDelphi's 0.757 / 0.711 --- highest in every column against 0.729 / 0.694 for the best baselines --- reflects pure ranking skill that no recalibration of a baseline could recover.
 
-\paragraph{Homogeneous-input deliberation often underperforms single agents.}
-On FutureX, every multi-agent baseline except Standard Debate is \emph{worse} than the strongest single-agent prompting methods: MoA reaches 0.2944 and Crowd Ensemble 0.2888, compared to 0.2596 for the single-agent Superforecaster prompt.
-The same pattern appears in weaker form on \textsc{PolyGym}.
-This is consistent with the martingale view of homogeneous-input debate~\citep{choi2025debate}: when agents share identical evidence, adding agents and rounds mostly redistributes the same information.
-Information asymmetry is what converts the additional inference cost into additional skill.
+\paragraph{\ding{224} Information diversity, not agent count, drives multi-agent gains.}
+The homogeneous-input baselines deploy the same or greater inference budget than InfoDelphi --- multiple agents, multiple rounds, and varied aggregation schemes --- yet on FutureX every one of them except Standard Debate is \emph{worse} than the best single-agent method (MoA 0.2944 and Crowd Ensemble 0.2888 vs.\ 0.2596 for the single Superforecaster prompt), and the same pattern appears in weaker form on \textsc{PolyGym}.
+When agents read identical evidence, additional agents and rounds mostly redistribute the same information, consistent with the martingale view of homogeneous debate~\citep{choi2025debate} and with Proposition~\ref{prop:decorrelation}: without asymmetry, inter-agent error correlation stays high and aggregation yields diminishing returns.
+Standard Debate is the partial exception --- iterative belief revision does help --- but agents sharing one evidence view can only reinforce existing interpretations, capping it well below InfoDelphi.
 
-\paragraph{Calibration matters as much as protocol.}
-Sequential Bayesian, the weakest baseline on both datasets (0.2523 / 0.3043), fails primarily through calibration: its sequential updates drift toward extreme probabilities.
-Conversely, InfoDelphi's shrinkage layer converts a 0.1647 raw score into 0.1575 on \textsc{PolyGym} ($-0.0072$, paired CI $[-0.0180, +0.0029]$) and 0.2212 into 0.2006 on FutureX ($-0.0206$, CI $[-0.0417, -0.0013]$), with the same parameters on both datasets.
-Section~\ref{sec:calibration_study} shows that this correction cannot be reproduced at the prompt level.
+\paragraph{\ding{224} Affirmative overconfidence is universal among baselines; InfoDelphi attacks it twice.}
+Across all nine baselines, forecasts of $p \geq 0.6$ resolve YES far less often than stated: stated confidence averages 0.71--0.75 against hit rates of 0.28--0.38 on \textsc{PolyGym}, and 0.76--0.80 against 0.32--0.51 on FutureX.
+Sequential Bayesian, whose stepwise updates compound this drift, is the weakest method on both datasets (0.2523 / 0.3043).
+InfoDelphi counters this shared failure mode at two designed levels: deliberation under partitioned evidence sharply reduces \emph{exposure} to the overconfident region (14 vs.\ 28--55 high-confidence forecasts on \textsc{PolyGym}; 69 vs.\ 84--107 on FutureX), and the asymmetric shrinkage of Eq.~\eqref{eq:shrink} corrects what remains ($0.1647 \to 0.1575$ and $0.2212 \to 0.2006$).
+No baseline has a mechanism for either effect; Section~\ref{sec:calibration_study} analyzes both, and Appendix~\ref{sec:appendix_control} shows that even granting every baseline the same shrinkage post hoc leaves InfoDelphi best on both datasets.
+
+\input{figures/TABLE_crossmodel}
+
+\paragraph{\ding{224} Gains transfer across backbones.}
+To verify that the advantage stems from the information structure rather than one model's idiosyncrasies, we run the full InfoDelphi configuration --- identical routing, deliberation protocol, and shrinkage parameters, with no re-tuning --- on \texttt{gemini-3.1-flash-lite} (Table~\ref{tab:crossmodel}).
+The Gemini instantiation (0.1624 / 0.2040) still beats all nine baselines on both datasets, even though every baseline runs on the stronger \texttt{gpt-5.4-mini}; its independent-forecast round alone (0.157 / 0.203) already clears the strongest baseline, confirming that evidence partitioning provides value before any deliberation occurs.
+A \texttt{gpt-4o-mini} run on FutureX shows the same ordering (0.2370 vs.\ 0.2212 for \texttt{gpt-5.4-mini}, both without shrinkage).

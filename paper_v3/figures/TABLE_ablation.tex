@@ -1,7 +1,7 @@
 \begin{table}[t]
 \centering
 \small
-\caption{Component ablation (Brier$\,\downarrow$). Each row removes one component from the full system. ``$-$ asymmetry'' gives every agent the full evidence pool ($\rho{=}1$, full sharing) with the same calibrated prompt, i.e., the Standard Debate configuration of our pipeline. Paired 95\% CIs for each removal are given in the text.}
+\caption{Component ablation (Brier$\,\downarrow$). Each row removes one component from the full system. ``$-$ asymmetry'' gives every agent the full evidence pool ($\rho{=}1$, full sharing) with the same calibrated prompt, i.e., the Standard Debate configuration of our pipeline. FutureX round-1 forecasts are recovered from the winner run's recorded round-0 agent outputs. Paired 95\% CIs for each removal are given in the text.}
 \label{tab:ablation}
 \begin{tabular}{lcc}
 \toprule
@@ -9,7 +9,7 @@ Configuration & \textsc{PolyGym} & FutureX \\
 \midrule
 InfoDelphi (full) & \textbf{0.1575} & \textbf{0.2006} \\
 $-$ calibrated shrink (mean agg.) & 0.1647 & 0.2212 \\
-$-$ deliberation (round 1 only) & 0.1698 & --- \\
+$-$ deliberation (round 1 only) & 0.1698 & 0.2352 \\
 $-$ information asymmetry & 0.1815 & 0.2433 \\
 \bottomrule
 \end{tabular}

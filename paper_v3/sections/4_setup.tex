@@ -14,9 +14,10 @@ We compare against two categories of baselines, all run with the same backbone m
 Notably, our Standard Debate implementation shares InfoDelphi's prompt, deliberation protocol, and mean aggregation, differing only in information structure ($\rho{=}1$ with full evidence sharing); it therefore doubles as a controlled ablation of information asymmetry.
 
 \paragraph{Metrics and significance.}
-We report the \textit{Brier score} $\mathrm{BS} = \frac{1}{N}\sum_{k=1}^{N}(\hat{p}_k - y_k)^2$ (lower is better) and \textit{accuracy}, the fraction of questions for which $\mathbf{1}[\hat{p} \geq 0.5]$ matches $y$.
+We report the \textit{Brier score} $\mathrm{BS} = \frac{1}{N}\sum_{k=1}^{N}(\hat{p}_k - y_k)^2$ (lower is better), \textit{accuracy}, the fraction of questions for which $\mathbf{1}[\hat{p} \geq 0.5]$ matches $y$, and \textit{AUC}, the probability that a randomly chosen YES question receives a higher forecast than a randomly chosen NO question.
+AUC is invariant to any strictly monotone recalibration --- including the shrinkage of Eq.~\eqref{eq:shrink} --- and therefore measures ranking skill independently of the calibration layer.
 For every pairwise comparison we run a paired bootstrap over questions (5{,}000 resamples, fixed seed) and report the 95\% confidence interval of the mean Brier difference; a gap is called significant when the interval excludes zero.
 
 \paragraph{Implementation.}
-All experiments use \texttt{gpt-5.4-mini} via the OpenRouter API\footnote{\href{https://openrouter.ai/}{openrouter.ai}} as the primary model.\footnote{A run of the same InfoDelphi configuration (without the shrinkage layer) with \texttt{gpt-4o-mini} on FutureX-231 reaches Brier 0.237 vs.\ 0.221 for \texttt{gpt-5.4-mini}, suggesting the architecture is not tied to one backbone; we leave a full cross-model baseline suite to future work.}
+All experiments use \texttt{gpt-5.4-mini} via the OpenRouter API\footnote{\href{https://openrouter.ai/}{openrouter.ai}} as the primary model; Table~\ref{tab:crossmodel} additionally evaluates the full framework on \texttt{gemini-3.1-flash-lite} and \texttt{gpt-4o-mini}.
 We use $J=3$ agents, $R=2$ deliberation rounds, $\rho=0.5$, temperature 0.7, and the shrinkage parameters of Eq.~\eqref{eq:shrink} for all main results.

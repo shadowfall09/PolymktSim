@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Cross-model generalization: the full InfoDelphi configuration
+(same routing, deliberation, and shrinkage parameters, no re-tuning) on a
+different vendor's backbone, vs.\ the strongest baseline. The Gemini
+Polymarket run covers 248/250 questions.}
+\label{tab:crossmodel}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{\textsc{PolyGym}} & \multicolumn{2}{c}{FutureX} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Brier$\,\downarrow$ & Acc$\,\uparrow$ & Brier$\,\downarrow$ & Acc$\,\uparrow$ \\
+\midrule
+\textit{Strongest baseline (Std.\ Debate)} & 0.1815 & 0.720 & 0.2433 & 0.602 \\
+\midrule
+InfoDelphi, \texttt{gpt-5.4-mini} & \textbf{0.1575} & 0.744 & \textbf{0.2006} & \textbf{0.701} \\
+InfoDelphi, \texttt{gemini-3.1-flash-lite} & 0.1624 & \textbf{0.758} & 0.2040 & 0.688 \\
+\bottomrule
+\end{tabular}
+\end{table}

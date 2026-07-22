@@ -12,7 +12,7 @@ Consistently, the empirical error correlations in Figure~\ref{fig:herding} remai
 
 \paragraph{Effect sizes and scope.}
 The deliberation-round effect is small relative to question-level noise and not individually significant, and the advantage over the strongest homogeneous-input baseline, while significant on \textsc{PolyGym}, is directional on FutureX; when the shrinkage transform is granted to all baselines (Appendix~\ref{sec:appendix_control}), InfoDelphi remains best on both datasets but several pairwise gaps are no longer individually significant.
-Our primary experiments use a single backbone model (\texttt{gpt-5.4-mini}), binary questions, and fixed evidence pools; live-retrieval settings, open-ended questions, and heterogeneous model panels remain untested.
+Our baseline suite runs on a single backbone model (\texttt{gpt-5.4-mini}); the cross-model check of Table~\ref{tab:crossmodel} covers additional backbones for InfoDelphi only, and our experiments are limited to binary questions and fixed evidence pools --- live-retrieval settings, open-ended questions, and heterogeneous model panels remain untested.
 The shrinkage parameters, while validated across our two datasets, are not guaranteed to transfer to models or question distributions with different bias profiles.
 API cost scales linearly with agents $\times$ rounds ($1{,}500$ forecasting calls for a full \textsc{PolyGym}-250 run at $J{=}3$, $R{=}2$), which limited exploration of larger panels and longer deliberation.
 

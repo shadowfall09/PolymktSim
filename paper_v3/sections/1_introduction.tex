@@ -25,7 +25,7 @@ Beyond information structure, we find that LLM forecasters are systematically ov
 
 We evaluate on \textsc{PolyGym}, a controlled benchmark of 250 resolved binary Polymarket questions with fixed, pre-retrieved evidence shared across all methods, and on 231 resolved questions from the FutureX benchmark~\citep{zeng2025futurex}.
 Against nine single-agent and multi-agent baselines run with the same backbone model and the same evidence, InfoDelphi achieves the best Brier score on both datasets (0.158 and 0.201), and a paired bootstrap over questions confirms that every pairwise gap is significant at the 95\% level.
-Our analysis further traces \emph{why}: deliberation under homogeneous input collapses forecast diversity (herding), prompt-level skepticism cannot target overconfidence where it occurs, and for an evidence-limited domain (sports), even targeted retrieval augmentation yields no measurable gain.
+Our analysis further traces \emph{why} the baselines fall short: deliberation under homogeneous input collapses forecast diversity (herding), and the affirmative-side overconfidence that afflicts every baseline is corrected by our aggregation layer with parameters that transfer across datasets --- an advantage that persists even when the same correction is granted to all baselines, and when the framework is ported to a different backbone model.
 
 Our main contributions are as follows:
 \begin{itemize}[nosep,leftmargin=20pt,topsep=2pt,itemsep=1pt,parsep=0pt]

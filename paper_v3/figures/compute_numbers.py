@@ -52,7 +52,11 @@ def metrics(d, sh=False):
     n = len(d)
     briers = [((shrink(p) if sh else p) - y) ** 2 for p, y in d.values()]
     acc = sum(((shrink(p) if sh else p) >= 0.5) == (y >= 0.5) for p, y in d.values()) / n
-    return {"n": n, "brier": sum(briers) / n, "acc": acc}
+    # AUC is invariant to the (strictly monotone) shrink transform, so no sh branch
+    pos = [p for p, y in d.values() if y >= 0.5]
+    neg = [p for p, y in d.values() if y < 0.5]
+    auc = sum((p > q) + 0.5 * (p == q) for p in pos for q in neg) / (len(pos) * len(neg))
+    return {"n": n, "brier": sum(briers) / n, "acc": acc, "auc": auc}
 
 
 def paired_boot(a, b, sh_a=False, sh_b=False):
@@ -180,6 +184,49 @@ def main():
         W = load(wf, scen)
         ab[f"{ds}_shrink_vs_raw"] = paired_boot(W, W, sh_a=True, sh_b=False)
     R["ablation"] = ab
+
+    # ---------- ablation suite (2026-07-22 runs: one flag varied from winner) ----------
+    suite = {}
+    W_poly = load(WINNER["polymarket_250"][0], WINNER["polymarket_250"][1])
+    for name in ["rho03", "rho07", "numshare", "randroute", "r3", "seed1", "seed2"]:
+        d = load(f"polymarket_250_s1s2_argpool_cal_{name}_5.4mini.jsonl", "s2")
+        suite[name] = {
+            "raw": metrics(d),
+            "shrink": metrics(d, sh=True),
+            "vs_winner_shrunk": paired_boot(d, W_poly, sh_a=True, sh_b=True),
+        }
+    # seed spread of the winner config (seed 42 = original winner run)
+    seeds_shrunk = [R["polymarket_250"]["ours_shrink"]["brier"],
+                    suite["seed1"]["shrink"]["brier"], suite["seed2"]["shrink"]["brier"]]
+    seeds_raw = [R["polymarket_250"]["ours_raw"]["brier"],
+                 suite["seed1"]["raw"]["brier"], suite["seed2"]["raw"]["brier"]]
+    mean_s = sum(seeds_shrunk) / 3
+    mean_r = sum(seeds_raw) / 3
+    suite["seed_spread"] = {
+        "shrunk": {"vals": seeds_shrunk, "mean": mean_s,
+                   "std": math.sqrt(sum((v - mean_s) ** 2 for v in seeds_shrunk) / 2)},
+        "raw": {"vals": seeds_raw, "mean": mean_r,
+                "std": math.sqrt(sum((v - mean_r) ** 2 for v in seeds_raw) / 2)},
+    }
+    # R=1 (round 1 only) from the winner run's recorded s1
+    s1_poly = load("polymarket_250_s1s2_arguments_pooling_calibrated_5.4mini.jsonl", "s1")
+    suite["r1"] = {"raw": metrics(s1_poly), "shrink": metrics(s1_poly, sh=True),
+                   "vs_winner_shrunk": paired_boot(s1_poly, W_poly, sh_a=True, sh_b=True)}
+    # futurex "- deliberation": mean-pool of round-0 agent forecasts from the
+    # winner-run detail file (verified identical to a recorded s1 on polymarket)
+    det = {}
+    for line in open(RV2 / "futurex_s2_arguments_pooling_calibrated_5.4mini_full_detail.jsonl"):
+        r = json.loads(line)
+        if r["round_id"] == 0 and r.get("p_yes") is not None:
+            det.setdefault(r["qid"], []).append(float(r["p_yes"]))
+    W_fx = load(WINNER["futurex"][0], WINNER["futurex"][1])
+    fx_s1 = {q: (sum(ps) / len(ps), W_fx[q][1]) for q, ps in det.items() if q in W_fx}
+    suite["futurex_s1_round0"] = {"raw": metrics(fx_s1), "shrink": metrics(fx_s1, sh=True),
+                                  "s2_vs_s1_raw": paired_boot(W_fx, fx_s1)}
+    assert abs(suite["futurex_s1_round0"]["raw"]["brier"] - 0.2352) < 5e-4
+    assert abs(suite["rho07"]["raw"]["brier"] - 0.1561) < 5e-4
+    assert suite["seed_spread"]["shrunk"]["std"] < 0.001
+    R["ablation_suite"] = suite
 
     # ---------- calibration study (poly s2) ----------
     cal = {}

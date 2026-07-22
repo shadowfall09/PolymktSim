@@ -59,6 +59,35 @@ docs contain numeric odds) but does not convert into measurable skill. The A/A c
 subsets moved as much as the treated subsets. Sports remains evidence-limited at the
 model level, not the retrieval level.
 
+## Ablation suite (2026-07-22, gpt-5.4-mini, polymarket_250)
+
+One flag varied from the winner config (s1s2, aggregator=mean + offline shrink,
+calibrated prompt v1, share-mode arguments, evidence pooling, bm25, rho=0.5,
+3 agents x 2 rounds, temp 0.7, seed 42). Files:
+`polymarket_250_s1s2_argpool_cal_{rho03,rho07,numshare,randroute,r3,seed1,seed2}_5.4mini.jsonl`
+(+ `_detail`). Launched via `scripts/run_ablation_suite.sh`; logs `ablation_*.log`.
+
+| run | varied flag | s2 raw Brier | +shrink | AUC |
+|---|---|---:|---:|---:|
+| rho03 | --public-ratio 0.3 | 0.1594 | 0.1553 | 0.763 |
+| rho07 | --public-ratio 0.7 | 0.1561 | 0.1536 | 0.770 |
+| numshare | --share-mode numbers | 0.1687 | 0.1585 | 0.751 |
+| randroute | (no --bm25) | 0.1665 | 0.1586 | 0.746 |
+| r3 | --num-rounds 3 | 0.1593 | 0.1544 | 0.768 |
+| seed1 | --seed 1 | 0.1651 | 0.1577 | 0.748 |
+| seed2 | --seed 2 | 0.1631 | 0.1578 | 0.747 |
+
+Takeaways: (1) winner config is seed-stable (shrunk Brier std 0.0002, raw 0.0011);
+(2) every variation is within seed noise vs the default (paired CIs straddle 0)
+EXCEPT rho=1.0 (standard debate, 0.1815 raw) — the advantage comes from having
+any private evidence, not a tuned split; (3) R=3 does NOT reverse gains (old
+paper_v2 claim from superseded runs is wrong) — gains saturate at R=2;
+(4) numbers-only sharing and random routing mildly hurt raw Brier and AUC,
+directionally consistent with the DPI/routing design arguments.
+FutureX "round 1 only" needs no new run: mean-pooling round-0 agent forecasts
+from the winner detail file reproduces s1 exactly (verified on polymarket);
+futurex s1 raw Brier = 0.2352 (vs s2 0.2212).
+
 Recommended command:
 
     python run_workflow.py --dataset-jsonl data/processed/polymarket_250_with_evidence.jsonl \

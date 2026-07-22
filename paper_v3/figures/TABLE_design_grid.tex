@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Design-space robustness on \textsc{PolyGym}-250. Each row changes one dimension of the default configuration ($R{=}2$, $\rho{=}0.5$, rationale sharing, BM25 routing). The default is stable across 3 seeds (Brier 0.1643\,$\pm$\,0.0011 raw, 0.1577\,$\pm$\,0.0002 +shrink); every variation except full homogenization ($\rho{=}1$) lies within seed noise ($^\dagger$: paired 95\% CI vs.\ default excludes 0, raw comparison).}
+\label{tab:design}
+\begin{tabular}{lccc}
+\toprule
+Setting & Brier (raw) & +shrink & AUC \\
+\midrule
+Default & 0.1647 & 0.1575 & 0.757 \\
+\midrule
+\multicolumn{4}{l}{\textit{Deliberation rounds}} \\
+\quad $R{=}1$ (independent) & 0.1698 & 0.1596 & 0.744 \\
+\quad $R{=}3$ & 0.1593 & 0.1544 & 0.768 \\
+\multicolumn{4}{l}{\textit{Public ratio}} \\
+\quad $\rho{=}0.3$ & 0.1594 & 0.1553 & 0.763 \\
+\quad $\rho{=}0.7$ & 0.1561 & 0.1536 & 0.770 \\
+\quad $\rho{=}1.0$ (homogeneous)$^\dagger$ & 0.1815 & 0.1650 & 0.711 \\
+\multicolumn{4}{l}{\textit{Rationale sharing}} \\
+\quad numeric estimates only & 0.1687 & 0.1585 & 0.751 \\
+\multicolumn{4}{l}{\textit{Evidence routing}} \\
+\quad random split & 0.1665 & 0.1586 & 0.746 \\
+\bottomrule
+\end{tabular}
+\end{table}

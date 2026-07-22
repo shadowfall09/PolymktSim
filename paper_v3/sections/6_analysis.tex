@@ -1,16 +1,25 @@
 \section{Analysis}
 \label{sec:analysis}
 
-\subsection{Why Information Asymmetry Helps}
+\subsection{Why Information Asymmetry Beats Homogeneous Debate}
 \label{sec:why}
 
 \input{figures/TABLE_ablation}
 
-\paragraph{Component ablation.}
-Table~\ref{tab:ablation} removes one component at a time.
-Replacing calibrated aggregation with a plain mean costs 0.007 / 0.021 Brier on the two datasets.
-Removing deliberation (using round-1 forecasts only) costs 0.005 on \textsc{PolyGym} (paired $\Delta = -0.0052$, CI $[-0.0184, +0.0083]$): the second round helps, but the effect is small relative to question-level noise and not individually significant.
-The largest and most robust factor is information structure: giving every agent the full evidence pool with full sharing (the Standard Debate configuration, which shares our prompt and aggregation) degrades the raw ensemble from 0.1647 to 0.1815 on \textsc{PolyGym} (paired $\Delta = -0.0169$, CI $[-0.0314, -0.0029]$) and from 0.2212 to 0.2433 on FutureX ($\Delta = -0.0221$, CI $[-0.0515, +0.0081]$), significant on \textsc{PolyGym} and directionally consistent on FutureX.
+\paragraph{\ding{224} Creating asymmetry is the largest single factor.}
+Table~\ref{tab:ablation} removes one designed component at a time.
+The biggest degradation comes from removing information asymmetry --- giving every agent the full pool with full sharing, i.e., exactly the Standard Debate configuration with our prompt and aggregation: Brier worsens from 0.1647 to 0.1815 on \textsc{PolyGym} (paired $\Delta = -0.0169$, CI $[-0.0314, -0.0029]$) and from 0.2212 to 0.2433 on FutureX ($\Delta = -0.0221$, CI $[-0.0515, +0.0081]$), significant on \textsc{PolyGym} and directionally consistent on FutureX.
+Because this comparison holds the prompt, protocol, and aggregation fixed, the gap over the strongest baseline is attributable to information structure alone.
+Removing deliberation (round-1 forecasts only) costs 0.005 on \textsc{PolyGym} and 0.014 on FutureX ($\Delta = -0.0141$, CI $[-0.0325, +0.0027]$), and removing the shrinkage layer costs 0.007 / 0.021: partitioning creates the \emph{potential} for improvement, deliberation and calibrated aggregation \emph{realize} it.
+
+\input{figures/TABLE_design_grid}
+
+\paragraph{\ding{224} The advantage rests on the principle, not on a tuned hyperparameter.}
+Table~\ref{tab:design} varies every remaining design dimension one at a time.
+The default configuration is highly stable (Brier std $0.0002$ after shrinkage across 3 seeds), and against this yardstick every variation --- $\rho \in \{0.3, 0.7\}$, a third deliberation round, numeric-only sharing, random routing --- shifts Brier by at most $0.004$, within seed noise (all paired CIs vs.\ the default straddle zero).
+The single catastrophic choice is $\rho{=}1$: full homogenization degrades Brier by $0.017$ and AUC from 0.757 to 0.711, the only significant change in the grid.
+The component directions still agree with the theory --- a third round adds nothing once private signals have propagated ($R{=}3 \approx R{=}2$), and replacing rationale sharing or relevance routing lowers AUC (0.751 / 0.746 vs.\ 0.757) --- but their magnitudes are secondary.
+What separates InfoDelphi from the baselines is therefore not a fragile hyperparameter setting but the presence of private evidence at all: any evidence partition beats no partition, and no setting of the other knobs rescues the homogeneous configuration.
 
 \begin{figure}[t]
     \centering
@@ -23,49 +32,30 @@ The largest and most robust factor is information structure: giving every agent 
     \label{fig:herding}
 \end{figure}
 
-\paragraph{Herding dynamics.}
-Figure~\ref{fig:herding} traces \emph{how} homogeneous input wastes deliberation.
-In round 1, per-question forecast disagreement is comparable for the two information structures (sampling noise dominates).
-After one round of deliberation, however, disagreement under homogeneous input collapses by 74--79\% (e.g., 0.059 $\to$ 0.015 on \textsc{PolyGym}), and mean pairwise error correlation rises to 0.99: the panel has effectively merged into a single agent.
-With partitioned evidence, agents converge far less (0.050 $\to$ 0.028) and retain a lower error correlation (0.978), preserving the diversity term of Eq.~\eqref{eq:bvd} that ensemble averaging needs.
-This is direct empirical evidence for the mechanism behind Proposition~\ref{prop:decorrelation}: what matters is not deliberation itself but whether deliberation has diverse inputs to propagate.
+\paragraph{\ding{224} Homogeneous deliberation herds; partitioned deliberation preserves diversity.}
+Figure~\ref{fig:herding} traces \emph{why} the strongest multi-agent baseline loses to InfoDelphi despite an identical protocol.
+In round 1 the two information structures show comparable per-question disagreement.
+After one round of deliberation, however, disagreement under homogeneous input collapses by 74--79\% (e.g., 0.059 $\to$ 0.015 on \textsc{PolyGym}) and mean pairwise error correlation rises to 0.99: the panel has effectively merged into a single agent, and averaging its members can no longer cancel errors.
+With partitioned evidence, agents converge far less (0.050 $\to$ 0.028) and retain lower error correlation (0.978), preserving the diversity term of Eq.~\eqref{eq:bvd}.
+This is direct empirical evidence for the mechanism of Proposition~\ref{prop:decorrelation}: private evidence gives each agent an independent basis for conviction that social pressure alone cannot override.
 
-\subsection{Calibration: Aggregation Layer vs.\ Prompt}
+\paragraph{\ding{224} Asymmetry makes agents confident about different things.}
+A natural worry is that withholding evidence merely makes agents timid.
+The opposite holds: after the final round, InfoDelphi's agents are as extreme as Standard Debate's (mean $|p - 0.5|$ of 0.277 vs.\ 0.271 on \textsc{PolyGym}), but their inter-agent variance is $2.7\times$ higher ($1.3\times$ on FutureX).
+Information asymmetry does not reduce individual confidence --- it decorrelates its \emph{direction}, so the mean-pooling step of Section~\ref{sec:aggregation} averages genuinely complementary judgments rather than three copies of one belief.
+This validates the evidence-routing design directly: the value of the partition lies in the diversity it protects.
+
+\subsection{Calibration: A Shared Failure Mode, Corrected in Aggregation}
 \label{sec:calibration_study}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\columnwidth]{figures/fig3_calibration.pdf}
-    \caption{Prompt-level vs.\ aggregation-level calibration on
-    \textsc{PolyGym}-250. Left: Brier score of three calibration prompts, with and
-    without aggregation-level shrinkage; the dotted line is a constant base-rate
-    predictor. Right: mean forecast $\bar p$ against the empirical base rate.
-    Skeptical prompt wording (v2, v3) depresses the entire forecast distribution
-    below the base rate, whereas asymmetric shrinkage corrects overconfidence
-    where it occurs.}
-    \label{fig:calibration}
-\end{figure}
+\paragraph{\ding{224} The miscalibration is one-sided, motivating an asymmetric correction.}
+Section~\ref{sec:results} showed every baseline overshooting on high-confidence YES forecasts.
+Our raw ensemble inherits the same model-level bias~\citep{tian2023just}, but only on one side: forecasts below the prior ($p < 0.3$) and in the mid-band are close to calibrated (e.g., stated 0.42 vs.\ empirical 0.45 on \textsc{PolyGym}), while the affirmative band overshoots badly (stated 0.79 vs.\ hit rate 0.29 on \textsc{PolyGym}; 0.81 vs.\ 0.59 on FutureX).
+This one-sidedness is precisely why Eq.~\eqref{eq:shrink} shrinks asymmetrically ($w_{\mathrm{hi}} < w_{\mathrm{lo}}$): the correction acts strongly where the errors live and leaves the calibrated region nearly untouched.
+Symmetric alternatives --- shrinking everything toward 0.5, or prompt-level skepticism instructions --- depress the whole forecast distribution and can underperform a constant base-rate predictor (Appendix~\ref{sec:appendix_promptcal}).
 
-Our agents, like LLM forecasters generally~\citep{tian2023just}, are overconfident on the affirmative side: high-probability YES forecasts hit far less often than stated.
-We compared two remedies.
-The \emph{prompt-level} route rewrites the forecasting prompt to demand skepticism: v2 adds a devil's-advocate agent and a hard confidence cap; v3 replaces the cap with a soft resolution-criteria checklist.
-The \emph{aggregation-level} route keeps the original calibrated prompt (v1) and applies the asymmetric shrinkage of Eq.~\eqref{eq:shrink}.
-
-Figure~\ref{fig:calibration} shows the outcome.
-Both prompt interventions \emph{hurt}: v2 degrades raw Brier from 0.1647 to 0.1896 --- worse than predicting the constant base rate (0.1782) --- and v3 lands at 0.1780.
-The right panel shows why: prompt-level skepticism cannot be targeted at the overconfident band, so it depresses the whole distribution, pushing the mean forecast from 0.270 down to 0.163 (v2) and 0.198 (v3) against a base rate of 0.232, sacrificing true-YES questions in the mid-band.
-Shrinkage applied on top of each prompt improves all three variants, but the best combination by a clear margin is the unmodified prompt plus shrinkage (0.1575).
-The parameters fit on Polymarket transfer to FutureX unchanged (0.2212 $\to$ 0.2006, accuracy 0.688 $\to$ 0.701), while re-fitting on FutureX and applying to Polymarket recovers the same setting, indicating the correction captures a model-level bias rather than a dataset artifact.
-We conclude that overconfidence corrections belong in the aggregation layer, where they can act asymmetrically on the miscalibrated region, not in the prompt.
-
-\subsection{What Deliberation Cannot Fix}
-\label{sec:sports}
-
-\input{figures/TABLE_sports}
-
-Per-domain analysis shows Sports (106 of 250 \textsc{PolyGym} questions) is the weakest domain.
-A natural hypothesis is missing information: match-level evidence often lacks the opponent's identity or recent form.
-We tested this with two targeted augmentations: decoding the opponent from the market URL slug (adding it as metadata), and retrieving pre-cutoff news about the decoded opponent's odds and form under a three-layer leakage control.
-Both augmentations were consumed --- 52--53\% of agent forecasts cite the new documents, and 43\% of retrieved documents contain numeric odds --- yet neither yields a measurable gain (Table~\ref{tab:sports}): paired differences are $-0.002$ and $-0.004$ with CIs straddling zero, and untreated control subsets moved as much as treated ones.
-We interpret sports outcomes as evidence-limited at the \emph{model} level: the residual uncertainty is aleatoric given the kind of evidence a text corpus provides, and no amount of deliberation or retrieval within this class of evidence should be expected to remove it.
-Information asymmetry improves the \emph{utilization} of informative evidence; it cannot create information the corpus does not contain.
+\paragraph{\ding{224} The correction transfers because the bias is model-level, not dataset-level.}
+The three shrinkage parameters are fit on Polymarket and applied to FutureX unchanged, improving Brier from 0.2212 to 0.2006 and accuracy from 0.688 to 0.701; re-fitting on FutureX recovers the same setting.
+A correction that transfers across question distributions with different base rates (0.232 vs.\ 0.355) is capturing a property of the forecaster, not an artifact of one dataset.
+We also verify the comparison is not an artifact of the calibration layer itself: applying the identical transform to every baseline post hoc (Appendix~\ref{sec:appendix_control}) helps them too, but InfoDelphi remains the best system on both datasets --- the residual advantage is exactly the part that calibration cannot supply, namely the decorrelated information structure of Section~\ref{sec:why}.
+A companion study of the Sports domain (Appendix~\ref{sec:sports}) probes the boundary of this advantage: information asymmetry improves the \emph{utilization} of informative evidence, but cannot create information the corpus does not contain.

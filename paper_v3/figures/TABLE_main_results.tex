@@ -1,30 +1,30 @@
 \begin{table*}[t]
 \centering
 \small
-\caption{Main results on \textsc{PolyGym}-250 and FutureX-231. All methods use \texttt{gpt-5.4-mini} over the same fixed pre-resolution evidence pools. $\dagger$: InfoDelphi (full) is significantly better under a paired bootstrap over questions (5{,}000 resamples; 95\% CI of the Brier difference excludes 0; Appendix Table~\ref{tab:significance}). Best in \textbf{bold}.}
+\caption{Main results on \textsc{PolyGym}-250 and FutureX-231. All methods use \texttt{gpt-5.4-mini} over the same fixed pre-resolution evidence pools. AUC is invariant to monotone recalibration, so it isolates ranking skill from the calibration layer (identical for our raw and full rows). $\dagger$: InfoDelphi (full) is significantly better under a paired bootstrap over questions (5{,}000 resamples; 95\% CI of the Brier difference excludes 0; Appendix Table~\ref{tab:significance}). Best in \textbf{bold}.}
 \label{tab:main}
-\begin{tabular}{lcccc}
+\begin{tabular}{lcccccc}
 \toprule
- & \multicolumn{2}{c}{\textsc{PolyGym}-250} & \multicolumn{2}{c}{FutureX-231} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-Method & Brier$\,\downarrow$ & Acc$\,\uparrow$ & Brier$\,\downarrow$ & Acc$\,\uparrow$ \\
+ & \multicolumn{3}{c}{\textsc{PolyGym}-250} & \multicolumn{3}{c}{FutureX-231} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & Brier$\,\downarrow$ & Acc$\,\uparrow$ & AUC$\,\uparrow$ & Brier$\,\downarrow$ & Acc$\,\uparrow$ & AUC$\,\uparrow$ \\
 \midrule
-\multicolumn{5}{l}{\textit{Single-agent}} \\
-Chain-of-Thought~\citep{wei2022chain}$^\dagger$ & 0.2063 & 0.6960 & 0.2611 & 0.6061 \\
-Self-Consistency~\citep{wangself}$^\dagger$ & 0.1965 & 0.7120 & 0.2713 & 0.5498 \\
-Sequential Bayesian~\citep{shi2023language}$^\dagger$ & 0.2523 & 0.5400 & 0.3043 & 0.4848 \\
-Superforecaster~\citep{karger2024forecastbench}$^\dagger$ & 0.1937 & 0.7000 & 0.2596 & 0.6364 \\
-Halawi et al.~\citep{halawi2024approaching}$^\dagger$ & 0.1944 & 0.7160 & 0.2654 & 0.5671 \\
+\multicolumn{7}{l}{\textit{Single-agent}} \\
+Chain-of-Thought~\citep{wei2022chain}$^\dagger$ & 0.2063 & 0.696 & 0.678 & 0.2611 & 0.606 & 0.663 \\
+Self-Consistency~\citep{wangself}$^\dagger$ & 0.1965 & 0.712 & 0.699 & 0.2713 & 0.550 & 0.630 \\
+Sequential Bayesian~\citep{shi2023language}$^\dagger$ & 0.2523 & 0.540 & 0.591 & 0.3043 & 0.485 & 0.534 \\
+Superforecaster~\citep{karger2024forecastbench}$^\dagger$ & 0.1937 & 0.700 & 0.722 & 0.2596 & 0.636 & 0.672 \\
+Halawi et al.~\citep{halawi2024approaching}$^\dagger$ & 0.1944 & 0.716 & 0.711 & 0.2654 & 0.567 & 0.629 \\
 \midrule
-\multicolumn{5}{l}{\textit{Multi-agent, homogeneous input}} \\
-Standard Debate~\citep{du2023improving}$^\dagger$ & 0.1815 & 0.7200 & 0.2433 & 0.6017 \\
-MoA~\citep{wangmixture}$^\dagger$ & 0.1905 & 0.7200 & 0.2944 & 0.5455 \\
-Crowd Ensemble~\citep{schoenegger2024wisdom}$^\dagger$ & 0.1992 & 0.7000 & 0.2888 & 0.5238 \\
-AIA Forecaster~\citep{alur2025aia}$^\dagger$ & 0.1897 & 0.7040 & 0.2764 & 0.5498 \\
+\multicolumn{7}{l}{\textit{Multi-agent, homogeneous input}} \\
+Standard Debate~\citep{du2023improving}$^\dagger$ & 0.1815 & 0.720 & 0.711 & 0.2433 & 0.602 & 0.694 \\
+MoA~\citep{wangmixture}$^\dagger$ & 0.1905 & 0.720 & 0.716 & 0.2944 & 0.545 & 0.599 \\
+Crowd Ensemble~\citep{schoenegger2024wisdom}$^\dagger$ & 0.1992 & 0.700 & 0.700 & 0.2888 & 0.524 & 0.599 \\
+AIA Forecaster~\citep{alur2025aia}$^\dagger$ & 0.1897 & 0.704 & 0.729 & 0.2764 & 0.550 & 0.635 \\
 \midrule
-\multicolumn{5}{l}{\textit{Ours}} \\
-InfoDelphi w/o calibrated shrink & 0.1647 & \textbf{0.748} & 0.2212 & 0.688 \\
-\textbf{InfoDelphi (full)} & \textbf{0.1575} & 0.744 & \textbf{0.2006} & \textbf{0.701} \\
+\multicolumn{7}{l}{\textit{Ours}} \\
+InfoDelphi w/o calibrated shrink & 0.1647 & \textbf{0.748} & \textbf{0.757} & 0.2212 & 0.688 & \textbf{0.711} \\
+\textbf{InfoDelphi (full)} & \textbf{0.1575} & 0.744 & \textbf{0.757} & \textbf{0.2006} & \textbf{0.701} & \textbf{0.711} \\
 \bottomrule
 \end{tabular}
 \end{table*}
